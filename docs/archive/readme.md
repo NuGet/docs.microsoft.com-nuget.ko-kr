@@ -1,0 +1,1 @@
+<span data-ttu-id="b5c09-101">주 설명서에서 제거된 콘텐츠의 임시 위치인 이 폴더는 일반적으로 영구 보관 위치로 이동할 수 있는 이전 버전에 적용되는 내용입니다.</span><span class="sxs-lookup"><span data-stu-id="b5c09-101">This folder a holding location for content being removed from the main documentation, typically material that applies to earlier versions that will likely be moved into a permanent archive location.</span></span>
