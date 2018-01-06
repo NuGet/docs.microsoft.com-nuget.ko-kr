@@ -13,11 +13,11 @@ keywords: "NuGet 1.2 릴리스 정보, 버그 수정, 알려진 문제, 추가 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d69a65352d42025b61df9068473ddedffc5f1663
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 79e82f19d2be96fee3832eeb24ebb443aebc2b64
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-12-release-notes"></a>NuGet 1.2 릴리스 정보
 

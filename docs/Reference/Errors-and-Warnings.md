@@ -14,17 +14,17 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3423e30eae07ff0c70a010576b8e701be027b847
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 53fccbb86f2920d870b5383070d043e25045a626
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="errors-and-warnings"></a>오류 및 경고
 
 오류 및 경고가이 항목에 설명 된 대로 번호가 매겨집니다 4.3.0 NuGet 및 관련 된 문제를 해결할 수 있도록 자세한 정보를 제공 합니다. 
 
-오류 및 여기에 나열 된 경고에만 사용할 수 있는 [PackageReference 기반](../Consume-Packages/Package-References-in-Project-Files.md) 프로젝트와 NuGet 4.3.0입니다. 또한 NuGet를 경고를 표시 하거나 오류를 상승을 MSBuild 속성을 준수 합니다. 자세한 내용은 참조 [하는 방법: 컴파일러 경고 표시 안 함](https://docs.microsoft.com/visualstudio/ide/how-to-suppress-compiler-warnings) Visual Studio 설명서에 있습니다.
+오류 및 여기에 나열 된 경고에만 사용할 수 있는 [PackageReference 기반](../Consume-Packages/Package-References-in-Project-Files.md) 프로젝트와 NuGet 4.3.0입니다. 또한 NuGet를 경고를 표시 하거나 오류를 상승을 MSBuild 속성을 준수 합니다. 자세한 내용은 참조 [하는 방법: 컴파일러 경고 표시 안 함](/visualstudio/ide/how-to-suppress-compiler-warnings) Visual Studio 설명서에 있습니다.
 
 **오류**
 
@@ -295,7 +295,7 @@ ms.lasthandoff: 12/14/2017
 | --- | --- |
 | **문제** | 피드를 읽을 때 오류가 발생 했습니다 때 `IgnoreFailedSources` 설정을 true로 변환 하는 치명적이 지 않은 경고 합니다. 이 모든 메시지를 포함할 수 이며 일반 합니다. |
 | **일반적인 원인** | 원본이 올바르지 않습니다. |
-| **예제 메시지** | 해당 없음 |
+| **예제 메시지** | N/A |
 
 ## <a name="nuget-internal-errors-and-warnings"></a>NuGet 내부 오류 및 경고
 

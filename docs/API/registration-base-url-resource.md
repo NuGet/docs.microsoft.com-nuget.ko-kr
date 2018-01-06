@@ -17,11 +17,11 @@ keywords: "NuGet API 패키지 메타 데이터, NuGet API 등록, NuGet API 목
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 15d3c836a5748497fe33dadc17e5a44846b4a8c0
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 1aabe6ae5c661e12b2639700813946e7a9a58b24
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-metadata"></a>패키지 메타 데이터
 
@@ -33,7 +33,7 @@ NuGet V3 API를 사용 하 여 패키지 원본에서 사용할 수 있는 패�
 
 다음 `@type` 값이 사용 됩니다.
 
-@type 값                     | 참고
+@type 값                     | 노트
 ------------------------------- | -----
 RegistrationsBaseUrl            | 초기 릴리스
 RegistrationsBaseUrl/3.0.0-beta | 별칭`RegistrationsBaseUrl`
@@ -76,7 +76,7 @@ HTTP 메서드를 등록 리소스 지원에 있는 모든 Url `GET` 및 `HEAD`�
 
 ### <a name="registration-pages-and-leaves"></a>등록 페이지 및 리프
 
-저장할 서버 구현에 대 한 꼭 필요 하지는 않지만 등록 별도 등록 페이지 문서에서 리프, 클라이언트 쪽 메모리를 절약 하는 것이 좋습니다. 대신 인라인 처리 모두 등록 페이지 문서에서 리프를 즉시 저장 하거나 인덱스 유지, 서버 구현 정의 추론 패키지 버전 번호를 기반으로 하는 두 가지 방법 중 하나를 선택 하는 것이 좋습니다. 또는 패키지의 누적 크기를 유지합니다.
+필요는 않지만 하지 엄격 하 게 저장 하는 서버 구현에 대 한 별도 등록 페이지 문서에서 리프 등록, 클라이언트 쪽 메모리를 절약 하는 것은 합니다. 대신 인라인 처리 모두 등록 페이지 문서에서 리프를 즉시 저장 하거나 인덱스 유지, 서버 구현 정의 추론 패키지 버전 번호를 기반으로 하는 두 가지 방법 중 하나를 선택 하는 것이 좋습니다. 또는 패키지의 누적 크기를 유지합니다.
 
 모든 패키지 버전을 저장할 (시) 등록 인덱스 저장에 HTTP 요청 수가 인출 패키지 메타 데이터는 있지만 더 큰 문서를 다운로드 해야 하 고 더 많은 클라이언트 메모리를 할당 해야 하는 데 필요한 있습니다. 반면에 별도 페이지 문서 등록 leaves를 즉시 저장 하는 서버 구현,이 클라이언트는 필요한 정보를 가져오기 위해 더 많은 HTTP 요청을 수행 해야 합니다.
 
@@ -88,17 +88,17 @@ GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-이름     | 입력     | 형식    | 필수 | 참고
+name     | 입력     | 형식    | 필수 | 노트
 -------- | ------ | ------- | -------- | -----
 LOWER_ID | URL    | string  | 예      | 소문자를 유지 하는 패키지 ID,
 
-`LOWER_ID` 값은 소문자를 유지 하 여 구현 하는 규칙을 사용 하 여 원하는 패키지 ID입니다. NET의 [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) 메서드.
+`LOWER_ID` 값은 소문자를 유지 하 여 구현 하는 규칙을 사용 하 여 원하는 패키지 ID입니다. NET의 [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) 메서드.
 
 ### <a name="response"></a>응답
 
 응답은 JSON 문서에 다음 속성이 설정 된 루트 개체입니다.
 
-이름  | 형식             | 필수 | 참고
+name  | 형식             | 필수 | 노트
 ----- | ---------------- | -------- | -----
 count | 정수          | 예      | 인덱스의 등록 페이지 수
 항목 | 개체의 배열 | 예      | 등록 페이지의 배열
@@ -109,13 +109,13 @@ Index 개체의 각 항목 `items` 배열이 등록 페이지를 나타내는 JS
 
 등록 인덱스에서 찾은 등록 page 개체에 다음 속성이 있습니다.
 
-이름   | 형식             | 필수 | 참고
+name   | 형식             | 필수 | 노트
 ------ | ---------------- | -------- | -----
 @id    | string           | 예      | 등록 페이지에 대 한 URL
 count  | 정수          | 예      | 페이지의 리프 등록의 수
-항목  | 개체의 배열 | no       | 등록 leaves 고 보조 메타 데이터의 배열
+항목  | 개체의 배열 | 아니요       | 등록 leaves 고 보조 메타 데이터의 배열
 더 낮은  | string           | 예      | (포함) 페이지에서 가장 낮은 SemVer 2.0.0 버전
-부모 | string           | no       | 등록 인덱스에 대 한 URL
+부모 | string           | 아니요       | 등록 인덱스에 대 한 URL
 위쪽  | string           | 예      | (포함) 페이지에서 가장 높은 SemVer 2.0.0 버전
 
 `lower` 및 `upper` page 개체의 범위는 특정 페이지 버전에 대 한 메타 데이터가 필요한 경우에 유용 합니다.
@@ -133,7 +133,7 @@ Page 개체에 있는 각 항목 `items` 배열이 등록 리프 나타내는 JS
 
 등록 페이지에서 찾은 등록 리프 개체에 다음 속성이 있습니다.
 
-이름           | 형식   | 필수 | 참고
+name           | 형식   | 필수 | 노트
 -------------- | ------ | -------- | -----
 @id            | string | 예      | URL 등록 리프를
 catalogEntry   | object | 예      | 패키지 메타 데이터가 포함 된 카탈로그 항목
@@ -145,24 +145,24 @@ packageContent | string | 예      | 패키지 콘텐츠 (.nupkg)의 URL
 
 `catalogEntry` 등록 리프 개체의 속성에는 다음 속성이 있습니다.
 
-이름                     | 형식                       | 필수 | 참고
+name                     | 형식                       | 필수 | 노트
 ------------------------ | -------------------------- | -------- | -----
 @id                      | string                     | 예      | 이 개체를 생성 하는 데 사용 되는 문서에 대 한 URL
-authors                  | 문자열 또는 문자열의 배열 | no       | 
-dependencyGroups         | 개체의 배열           | no       | 패키지 콘텐츠 (.nupkg)의 URL
-설명              | string                     | no       | 
-iconUrl                  | string                     | no       | 
+authors                  | 문자열 또는 문자열의 배열 | 아니요       | 
+dependencyGroups         | 개체의 배열           | 아니요       | 패키지 콘텐츠 (.nupkg)의 URL
+설명              | string                     | 아니요       | 
+iconUrl                  | string                     | 아니요       | 
 ID                       | string                     | 예      | 패키지의 ID
-licenseUrl               | string                     | no       | 
-나열                   | boolean                    | no       | 없는 경우에 나열 된 것으로 간주 해야
-Minclientversion이         | string                     | no       | 
-projectUrl               | string                     | no       | 
-게시                | string                     | no       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
-requireLicenseAcceptance | boolean                    | no       | 
-요약                  | string                     | no       | 
-태그                     | 문자열 또는 문자열의 배열  | no       | 
-제목                    | string                     | no       | 
-version                  | string                     | 예      | 패키지의 버전
+licenseUrl               | string                     | 아니요       | 
+나열                   | boolean                    | 아니요       | 없는 경우에 나열 된 것으로 간주 해야
+Minclientversion이         | string                     | 아니요       | 
+projectUrl               | string                     | 아니요       | 
+게시                | string                     | 아니요       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
+requireLicenseAcceptance | boolean                    | 아니요       | 
+요약                  | string                     | 아니요       | 
+태그                     | 문자열 또는 문자열의 배열  | 아니요       | 
+제목                    | string                     | 아니요       | 
+버전                  | string                     | 예      | 패키지의 버전
 
 `dependencyGroups` 속성은 대상 프레임 워크로 그룹화 된 패키지의 종속성을 나타내는 개체의 배열입니다. 패키지에 종속성이 없는 경우는 `dependencyGroups` 속성에 없으면 빈 배열 또는 `dependencies` 모든 그룹의 속성은 비어 있거나 없습니다.
 
@@ -170,10 +170,10 @@ version                  | string                     | 예      | 패키지의 
 
 각 종속성 그룹 개체에 다음 속성이 있습니다.
 
-이름            | 형식             | 필수 | 참고
+name            | 형식             | 필수 | 노트
 --------------- | ---------------- | -------- | -----
-targetFramework | string           | no       | 이러한 종속성에 적용 되는 대상 프레임 워크
-종속성    | 개체의 배열 | no       |
+targetFramework | string           | 아니요       | 이러한 종속성에 적용 되는 대상 프레임 워크
+종속성    | 개체의 배열 | 아니요       |
 
 `targetFramework` 문자열 NuGet의.NET 라이브러리에서 구현 형식을 사용 하 여 [NuGet.Frameworks](https://www.nuget.org/packages/NuGet.Frameworks/)합니다. 하지 않으면 `targetFramework` 지정, 종속성 그룹 모든 대상 프레임 워크에 적용 됩니다.
 
@@ -183,11 +183,11 @@ targetFramework | string           | no       | 이러한 종속성에 적용 �
 
 각 패키지 종속성에 다음과 같은 속성이 있습니다.
 
-이름         | 형식   | 필수 | 참고
+name         | 형식   | 필수 | 노트
 ------------ | ------ | -------- | -----
 ID           | string | 예      | 패키지 종속성의 ID
-range        | object | no       | 허용 된 [버전 범위](../reference/package-versioning.md#version-ranges-and-wildcards) 종속성의
-등록 | string | no       | 이 종속성에 대 한 등록 인덱스에 대 한 URL
+range        | object | 아니요       | 허용 된 [버전 범위](../reference/package-versioning.md#version-ranges-and-wildcards) 종속성의
+등록 | string | 아니요       | 이 종속성에 대 한 등록 인덱스에 대 한 URL
 
 경우는 `range` 속성은 제외 되거나 빈 문자열인 경우 클라이언트의 버전 범위는 기본값은 `(, )`합니다. 즉, 종속성의 모든 버전은 허용 됩니다.
 
@@ -209,7 +209,7 @@ GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
 
 때는 `items` 배열 등록 인덱스를 제공 하지 않으면 HTTP GET 요청 하는 `@id` 값 루트인 개체는 JSON 문서를 반환 합니다. 개체에 다음 속성이 있습니다.
 
-이름   | 형식             | 필수 | 참고
+name   | 형식             | 필수 | 노트
 ------ | ---------------- | -------- | -----
 @id    | string           | 예      | 등록 페이지에 대 한 URL
 count  | 정수          | 예      | 페이지의 리프 등록의 수
@@ -238,14 +238,14 @@ URL을 등록 리프 인출에서 가져온는 `@id` 등록 인덱스 또는 등
 
 등록 리프는 다음 속성이 설정 된 루트 개체 JSON 문서입니다.
 
-이름           | 형식    | 필수 | 참고
+name           | 형식    | 필수 | 노트
 -------------- | ------- | -------- | -----
 @id            | string  | 예      | URL 등록 리프를
-catalogEntry   | string  | no       | 이러한 리프 생성 되는 카탈로그 항목에 대 한 URL
-나열         | boolean | no       | 없는 경우에 나열 된 것으로 간주 해야
-packageContent | string  | no       | 패키지 콘텐츠 (.nupkg)의 URL
-게시      | string  | no       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
-등록   | string  | no       | 등록 인덱스에 대 한 URL
+catalogEntry   | string  | 아니요       | 이러한 리프 생성 되는 카탈로그 항목에 대 한 URL
+나열         | boolean | 아니요       | 없는 경우에 나열 된 것으로 간주 해야
+packageContent | string  | 아니요       | 패키지 콘텐츠 (.nupkg)의 URL
+게시      | string  | 아니요       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
+등록   | string  | 아니요       | 등록 인덱스에 대 한 URL
 
 > [!Note]
 > Nuget.org에 `published` 값 패키지 나열 되어 있지 않으면 경우 1900 년으로 설정 됩니다.

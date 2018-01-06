@@ -13,11 +13,11 @@ keywords: "NuGet 1.8 릴리스 정보, 버그 수정, 알려진 문제, 추가 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 875cb752fed102c24da255a336d3f16729ca082c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 350f0d9590c1e0ef1a843fd783203b158059efa7
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-18-release-notes"></a>NuGet 1.8 릴리스 정보
 
@@ -72,7 +72,7 @@ NuGet 1.8에서 म 토대가 패키지 복원 사용자의 개인 정보 보호
 
 두 번째 방법은 환경을 변수 "EnableNuGetPackageRestore" 값 "true 로" 설정 하는 것입니다.  이 메서드를 사용 하 여 CI 또는 빌드 서버와 같이 무인된 컴퓨터에 대 한 합니다.
 
-이제 위에서 설명한 대로 우리는 토대가이 기능에 대 한 NuGet 1.8에서 합니다.  실제로,이 모든 기능을 사용 하려면 논리를 추가 했습니다 동안 적용 되지 않습니다 현재이 버전에서 의미 합니다. 그러나 사용할 수 있게, 동의 제약 조건을 적용 버전의 NuGet 이해 하 고 가능한 한 빨리 따라서 영향을 받지 시작할 때 및 사용자 환경을 적절 하 게 구성할 수 있도록 주고자 하므로 다음에서 합니다.
+이제 위에서 설명한 대로 우리는 토대가이 기능에 대 한 NuGet 1.8에서 합니다.  실제로,이 모든 기능을 사용 하려면 논리를 추가 했습니다 하는 동안 현재는 아님 적용이 버전에서 의미 합니다. 그러나 사용할 수 있게, 동의 제약 조건을 적용 버전의 NuGet 이해 하 고 가능한 한 빨리 따라서 영향을 받지 시작할 때 및 사용자 환경을 적절 하 게 구성할 수 있도록 주고자 하므로 다음에서 합니다.
 
 자세한 내용은 참조 하십시오는 [팀 블로그 게시물](http://blog.nuget.org/20120518/package-restore-and-consent.html) 이 기능에 있습니다.
 

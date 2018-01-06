@@ -13,11 +13,11 @@ keywords: "NuGet 패키지 관리자 콘솔에서 NuGet 패키지를 관리 하�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d9df514c6f92a3ea0841503d86c44271e70f95f2
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: cc11963a9b9bfe9aa456d8cd4c8397e1084f660b
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-manager-console"></a>패키지 관리자 콘솔
 
@@ -62,7 +62,7 @@ NuGet 패키지 관리자 콘솔이 Windows 2012 이상 버전에서 Visual Stud
 
 ## <a name="opening-the-console-and-console-controls"></a>콘솔 및 콘솔 컨트롤 열기
 
-1. Visual Studio를 사용 하 여 콘솔을 열고는 **도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔** 명령입니다. 그러나 콘솔은 정렬 하 고 원하는 배치 수 있는 Visual Studio 창 (참조 [Visual Studio에서 창 레이아웃 사용자 지정](https://docs.microsoft.com/visualstudio/ide/customizing-window-layouts-in-visual-studio)).
+1. Visual Studio를 사용 하 여 콘솔을 열고는 **도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔** 명령입니다. 그러나 콘솔은 정렬 하 고 원하는 배치 수 있는 Visual Studio 창 (참조 [Visual Studio에서 창 레이아웃 사용자 지정](/visualstudio/ide/customizing-window-layouts-in-visual-studio)).
 
 1. 기본적으로 콘솔 명령 특정 패키지 소스 및 프로젝트에 대해 창의 위쪽에 있는 컨트롤에 설정 된 대로 작동 합니다.
 
@@ -171,7 +171,7 @@ Visual Studio 2017 NuGet 및 NuGet 패키지 관리자는 자동으로 설치 �
 
 NuGet 패키지 관리자 및 이전 버전 Visual Studio 2015에서 누락 된 하는 경우 확인 **도구 > 확장 및 업데이트 중...**  NuGet 패키지 관리자 확장에 대 한 검색 합니다. Visual studio에서 확장명 설치 관리자를 사용 하는 경우에에서 직접 확장을 다운로드할 수 있습니다 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)합니다.
 
-패키지 관리자 콘솔을 현재 Mac.에 대 한 Visual Studio와 함께 사용할 수 없습니다. 해당 명령 사항은 통해 사용할 수는 [NuGet CLI](nuget-exe-CLI-reference.md)합니다. Mac 용 visual Studio NuGet 패키지 관리를 위한 UI가 있습니다. 참조 [프로젝트에 포함 하는 NuGet 패키지](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)합니다.
+패키지 관리자 콘솔을 현재 Mac.에 대 한 Visual Studio와 함께 사용할 수 없습니다. 해당 명령 사항은 통해 사용할 수는 [NuGet CLI](nuget-exe-CLI-reference.md)합니다. Mac 용 visual Studio NuGet 패키지 관리를 위한 UI가 있습니다. 참조 [프로젝트에 포함 하는 NuGet 패키지](/visualstudio/mac/nuget-walkthrough)합니다.
 
 패키지 관리자 콘솔을 Visual Studio 코드 포함 되지 않습니다.
 

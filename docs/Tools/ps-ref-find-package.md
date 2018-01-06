@@ -13,15 +13,15 @@ keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, Find-packa
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b6af6098da9c00e47b81ac9ec37bd5210a99a9fe
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: fb55cc71e0d4b8eee28b232e64d2cc42364fc153
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>Find-package (Visual Studio에서 패키지 관리자 콘솔)
 
-*버전 3.0 +; 이 항목에서는 내에서 명령을 설명에서 [NuGet 패키지 관리자 콘솔](Package-Manager-Console.md) Windows에서 Visual Studio에서 합니다. 일반 PowerShell Find-package 명령에 대 한 참조는 [PowerShell PackageManagement 참조](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6)합니다.*
+*버전 3.0 +; 이 항목에서는 내에서 명령을 설명에서 [NuGet 패키지 관리자 콘솔](Package-Manager-Console.md) Windows에서 Visual Studio에서 합니다. 일반 PowerShell Find-package 명령에 대 한 참조는 [PowerShell PackageManagement 참조](/powershell/module/packagemanagement/?view=powershell-6)합니다.*
 
 패키지 소스에서 지정 된 ID 또는 키워드를 사용 하 여 원격 패키지 세트를 가져옵니다.
 

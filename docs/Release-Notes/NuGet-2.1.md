@@ -13,11 +13,11 @@ keywords: "NuGet 2.1 릴리스 정보, 버그 수정, 알려진 문제, 추가 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c45cfb9f6a46a1efd9fe4531602191973da66290
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: dafe575eedbfed215c0b1c86795bea281de97252
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-21-release-notes"></a>NuGet 2.1 릴리스 정보
 
@@ -80,7 +80,7 @@ NuGet 2.1에서는 보다 세부적으로 제어를 통해 패키지 폴더의 �
 이 예제에서는 공유 `Nuget.Config` 파일 깊이 관계 없이 C:\myteam, 아래에 만들어진 모든 프로젝트에 대 한 패키지 공유 폴더를 지정 합니다. 참고 솔루션 루트 아래의 기존 패키지 폴더를 설정한 NuGet는 새 위치를 패키지에 배치 하기 전에 삭제할 해야 합니다.
 
 ## <a name="support-for-portable-libraries"></a>이식 가능한 라이브러리에 대 한 지원
-[이식 가능한 라이브러리](http://msdn.microsoft.com/library/gg597391.aspx) 는.NET 4 버전의.net Framework에도 Xbox 및 Windows Phone silverlight에서 여러 Microsoft 플랫폼에서 수정 없이 작동할 수 있는 어셈블리를 빌드할 수 있도록 처음 도입 된 기능 360 (하지만 현재 NuGet Xbox 이식 가능한 라이브러리 대상을 지원 하지 않음).  확장 하 여는 [규칙 패키지](../create-packages/supporting-multiple-target-frameworks.md) framework 버전 및 프로필에 대 한 NuGet 2.1 이제 지원 이식 가능한 라이브러리 복합 프레임 워크 및 프로필 대상에 있는 패키지를 만들 수 있도록 하 여 `lib` 폴더입니다.
+[이식 가능한 라이브러리](/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library) 는.NET 4 버전의.net Framework에도 Xbox 및 Windows Phone silverlight에서 여러 Microsoft 플랫폼에서 수정 없이 작동할 수 있는 어셈블리를 빌드할 수 있도록 처음 도입 된 기능 360 (하지만 현재 NuGet Xbox 이식 가능한 라이브러리 대상을 지원 하지 않음).  확장 하 여는 [규칙 패키지](../create-packages/supporting-multiple-target-frameworks.md) framework 버전 및 프로필에 대 한 NuGet 2.1 이제 지원 이식 가능한 라이브러리 복합 프레임 워크 및 프로필 대상에 있는 패키지를 만들 수 있도록 하 여 `lib` 폴더입니다.
 
 예를 들어, 다음 이식 가능한 클래스 라이브러리의 사용 가능한 대상 플랫폼을 고려 합니다.
 

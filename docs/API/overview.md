@@ -17,17 +17,17 @@ keywords: "NuGet V3 API, NuGet V2 API, NuGet JSON, NuGet 등록 API를 NuGet API
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: a9515d90ad66d8840f575bba542f0cf887c41718
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 05ed17f12f413d29d97a253d7d55f154d4910834
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-api"></a>NuGet API
 
 NuGet API는 패키지를 다운로드, 메타 데이터 인출, 새로운 패키지를 게시 및 공식 NuGet 클라이언트에서 사용할 수 있는 다른 대부분 작업을 수행 하는 데 사용할 수 있는 HTTP 끝점의 집합입니다.
 
-이 API는 데 Visual Studio, nuget.exe,.NET CLI에는 NuGet 클라이언트와 같은 NuGet 작업을 수행 [ `dotnet restore` ](https://docs.microsoft.com/dotnet/articles/core/preview3/tools/dotnet-restore), Visual Studio UI에서 검색 하 고 [ `nuget.exe push` ](../tools/cli-ref-push.md)합니다.
+이 API는 데 Visual Studio, nuget.exe,.NET CLI에는 NuGet 클라이언트와 같은 NuGet 작업을 수행 [ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore), Visual Studio UI에서 검색 하 고 [ `nuget.exe push` ](../tools/cli-ref-push.md)합니다.
 
 Nuget.org의 다른 패키지 소스에 적용 되지 않은 다른 요구 사항이 있을 경우에 따라 note 합니다. 이러한 차이 단계의 유형별로 설명 되어는 [nuget.org 프로토콜](nuget-protocols.md)합니다.
 
@@ -64,9 +64,9 @@ NuGet V3 API V2 API의 후속 작업을 설정 하는 공식 NuGet 클라이언�
 [`SearchQueryService`](search-query-service-resource.md)               | 예      | 필터 및 키워드로 패키지에 대 한 검색 합니다.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | 예      | 패키지 메타 데이터를 가져옵니다.
 [`PackageBaseAddress`](package-base-address-resource.md)               | 예      | 패키지 콘텐츠를 (.nupkg)를 가져옵니다.
-[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | no       | 부분 문자열이 패키지 Id 및 버전을 검색 합니다.
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | no       | "신고" 웹 페이지에 액세스 하는 URL을 구성 합니다.
-[`Catalog`](catalog-resource.md)                                       | no       | 모든 패키지 이벤트의 전체 레코드입니다.
+[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | 아니요       | 부분 문자열이 패키지 Id 및 버전을 검색 합니다.
+[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | 아니요       | "신고" 웹 페이지에 액세스 하는 URL을 구성 합니다.
+[`Catalog`](catalog-resource.md)                                       | 아니요       | 모든 패키지 이벤트의 전체 레코드입니다.
 
 일반적으로 API 리소스에 의해 반환 되는 모든 이진이 아닌 데이터는 JSON을 사용 하 여 serialize 됩니다. 서비스 인덱스의 각 리소스에서 반환 된 응답 스키마는 해당 리소스에 대해 개별적으로 정의 됩니다. 각 리소스에 대 한 자세한 내용은 위에 나열 된 항목을 참조 하십시오.
 
@@ -79,7 +79,7 @@ API에서 반환 하는 모든 타임 스탬프는 UTC 또는 사용 하 여 별
 
 ## <a name="http-methods"></a>HTTP 메서드
 
-동사   | 기능
+동사   | 사용
 ------ | -----------
 가져오기    | 일반적으로 데이터를 검색 하는 읽기 전용 작업을 수행 합니다.
 HEAD   | 응답 헤더에는 해당 인출 `GET` 요청 합니다.
@@ -110,7 +110,7 @@ Delete | 삭제 하거나 리소스 unlists 합니다.
 
 ## <a name="http-request-headers"></a>HTTP 요청 헤더
 
-이름                     | 설명
+name                     | 설명
 ------------------------ | -----------
 X-NuGet-ApiKey           | 필수 푸시 및 삭제를 참조 하십시오 [ `PackagePublish` 리소스](package-publish-resource.md)
 NuGet 클라이언트 버전 X   | **사용 되지 않는** 대체`X-NuGet-Protocol-Version`

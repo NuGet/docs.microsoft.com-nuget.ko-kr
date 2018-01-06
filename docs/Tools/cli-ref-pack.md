@@ -13,11 +13,11 @@ keywords: "nuget 팩 참조 팩 명령"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 353d5d839d85c04bc315c3a0e9cfe274a361bd15
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 22643ee4c7d5f858da728ba9d9d2886d600d20f0
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="pack-command-nuget-cli"></a>팩 명령 (NuGet CLI)
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 12/14/2017
 > [!Important]
 > 모노, 아래에서 프로젝트 파일에서 패키지를 만드는 지원 되지 않습니다. 로컬이 아닌 경로 조정 해야 할 수도 있습니다는 `.nuspec` Unix 스타일 경로 파일 nuget.exe Windows 경로 이름 자체를 변환 하지 않습니다.
 
-## <a name="usage"></a>용도
+## <a name="usage"></a>사용법
 
 ```
 nuget pack <nuspecPath | projectPath> [options]
@@ -53,7 +53,7 @@ nuget pack <nuspecPath | projectPath> [options]
 | NoDefaultExcludes | NuGet의 기본 예외 방지 패키지 파일 및 파일 및 폴더와 같은 점으로 시작 `.svn` 및 `.gitignore`합니다. |
 | NoPackageAnalysis | 패키지를 빌드한 후 팩에서 패키지 분석을 실행하지 않아야 함을 지정합니다. |
 | OutputDirectory | 생성된 된 패키지 저장 된 폴더를 지정 합니다. 없는 폴더를 지정 하는 경우 현재 폴더가 사용 됩니다. |
-| 속성 | 프로젝트 파일;의 값을 재정의 하는 속성의 목록을 지정 합니다. 참조 [일반적인 MSBuild 프로젝트 속성](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-properties) 속성 이름에 대 한 합니다. 여기에 속성 인수는 토큰의 목록 = 값 쌍을 세미콜론으로 구분 하 여기서 발생할 때마다 `$token$` 에 `.nuspec` 파일이 지정된 된 값으로 바뀝니다. 따옴표로 문자열 일 수 있습니다. "구성" 속성에 대 한 기본값은 "Debug" note 합니다. 릴리스 구성으로 변경 하려면 사용 `-Properties Configuration=Release`합니다. |
+| 속성 | 프로젝트 파일;의 값을 재정의 하는 속성의 목록을 지정 합니다. 참조 [일반적인 MSBuild 프로젝트 속성](/visualstudio/msbuild/common-msbuild-project-properties) 속성 이름에 대 한 합니다. 여기에 속성 인수는 토큰의 목록 = 값 쌍을 세미콜론으로 구분 하 여기서 발생할 때마다 `$token$` 에 `.nuspec` 파일이 지정된 된 값으로 바뀝니다. 따옴표로 문자열 일 수 있습니다. "구성" 속성에 대 한 기본값은 "Debug" note 합니다. 릴리스 구성으로 변경 하려면 사용 `-Properties Configuration=Release`합니다. |
 | 접미사 | *(3.4.4+)*  빌드 또는 기타 시험판 버전 식별자를 추가 하기 위한 일반적으로 사용 되는 내부적으로 생성 된 버전 번호에 접미사를 추가 합니다. 예를 들어,를 사용 하 여 `-suffix nightly` 버전 번호 like 패키지를 만듭니다 `1.2.3-nightly`합니다. 접미사는 경고, 오류 및 다른 버전의 NuGet과 NuGet 패키지 관리자 잠재적인 호환성 문제를 방지 하기 위해 문자로 시작 해야 합니다. |
 | 기호 | 소스 및 기호 패키지에 포함 되도록 지정 합니다. 와 함께 사용할 경우는 `.nuspec` 해당 기호 패키지 하 고 파일을 일반 NuGet 패키지 파일이 만들어집니다. |
 | 도구 | 프로젝트의 출력 파일에 배치할를 지정 된 `tool` 폴더입니다. |

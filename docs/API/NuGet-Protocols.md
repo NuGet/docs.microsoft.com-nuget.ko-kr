@@ -12,11 +12,11 @@ description: "NuGet 클라이언트와 상호 작용할 수 발전 nuget.org 프
 ms.reviewer:
 - kraigb
 - karann-msft
-ms.openlocfilehash: 097b7a86d056b692c52d6de76bc2fb99d1b58c6f
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0bc71795d120256b9eb14ca64141f0b69f01e620
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nugetorg-protocols"></a>nuget.org 프로토콜
 
@@ -43,7 +43,7 @@ NuGet 에코 시스템에서 광범위 하 게 구현 하는 NuGet API에 대 �
 X-NuGet-Protocol-Version: 4.1.0
 ```
 
-기존 `X-NuGet-Client-Version` 헤더 같은 목적에 있지만 현재 사용 되지 않으며 더 이상 사용 해야 합니다.
+`X-NuGet-Client-Version` 헤더와 유사한 의미 체계를 갖지만 공식 NuGet 클라이언트 에서만 사용 하도록 예약 되어 있습니다. 제 3 자 클라이언트를 사용 해야는 `X-NuGet-Protocol-Version` 헤더와 값입니다.
 
 **푸시** 프로토콜 자체에 대 한 설명서에서 설명 된 [ `PackagePublish` 리소스](package-publish-resource.md)합니다.
 
@@ -59,10 +59,10 @@ POST api/v2/package/create-verification-key/{ID}/{VERSION}
 
 #### <a name="request-parameters"></a>요청 매개 변수
 
-이름           | 입력     | 형식   | 필수 | 참고
+name           | 입력     | 형식   | 필수 | 노트
 -------------- | ------ | ------ | -------- | -----
 ID             | URL    | string | 예      | 범위 확인 키를 요청한 대상 패키지 identidier
-VERSION        | URL    | string | no       | 패키지 버전
+VERSION        | URL    | string | 아니요       | 패키지 버전
 X-NuGet-ApiKey | Header | string | 예      | 예를 들면 `X-NuGet-ApiKey: {USER_API_KEY}`과 같습니다.
 
 #### <a name="response"></a>응답
@@ -84,10 +84,10 @@ GET api/v2/verifykey/{ID}/{VERSION}
 
 #### <a name="request-parameters"></a>요청 매개 변수
 
-이름           | 입력     | 형식   | 필수 | 참고
+name           | 입력     | 형식   | 필수 | 노트
 -------------  | ------ | ------ | -------- | -----
 ID             | URL    | string | 예      | 범위 확인 키를 요청한 대상 패키지 식별자
-VERSION        | URL    | string | no       | 패키지 버전
+VERSION        | URL    | string | 아니요       | 패키지 버전
 X-NuGet-ApiKey | Header | string | 예      | 예를 들면 `X-NuGet-ApiKey: {VERIFY_SCOPE_KEY}`과 같습니다.
 
 > [!Note]

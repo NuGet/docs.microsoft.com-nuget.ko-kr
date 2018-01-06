@@ -17,15 +17,15 @@ keywords: "NuGet 패키지 관리자 UI에서 NuGet 패키지 관리자 Visual S
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 88e987054f3c59a327f71b15330a99eb350449e5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0f08e5a36499c4481c4e0cd70738d67d65cd980a
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 패키지 관리자 UI
 
-Windows에서 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하면 쉽게 설치, 제거 및 프로젝트와 솔루션에서 NuGet 패키지를 업데이트할 수 있습니다. Mac 용 Visual Studio에서 차원에서 참조 [프로젝트에 포함 하는 NuGet 패키지](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)합니다. 패키지 관리자 UI를 Visual Studio 코드 포함 되지 않습니다.
+Windows에서 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하면 쉽게 설치, 제거 및 프로젝트와 솔루션에서 NuGet 패키지를 업데이트할 수 있습니다. Mac 용 Visual Studio에서 차원에서 참조 [프로젝트에 포함 하는 NuGet 패키지](/visualstudio/mac/nuget-walkthrough)합니다. 패키지 관리자 UI를 Visual Studio 코드 포함 되지 않습니다.
 
 항목 내용:
 

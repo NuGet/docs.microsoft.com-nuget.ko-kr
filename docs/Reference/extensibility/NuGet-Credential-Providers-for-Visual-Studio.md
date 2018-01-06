@@ -13,11 +13,11 @@ keywords: "NuGet 자격 증명 공급자 피드를 사용 하 여 인증, 갤러
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2b2fac23102865a08509acc1cc3d09f0cd375f26
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 8d7360205387d4813f95560018e2ac68f71f5603
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>Visual Studio에서 NuGet 자격 증명 공급자를 사용한 피드 인증
 
@@ -88,5 +88,5 @@ Visual Studio에 대 한 사용자 지정 NuGet 자격 증명 공급자를 구�
 | bool isRetry | True 자격 증명 이전에이 Uri에 대해 요청 된 있지만 제공 된 자격 증명 권한이 부여 된 액세스를 허용 하지 않았습니다. |
 | 비 대화형 bool | True 인 경우, 자격 증명 공급자는 모든 사용자 프롬프트를 표시 하지 않는 하 고 기본값을 대신 사용 해야 합니다. |
 | CancellationToken cancellationToken | 이 취소 토큰을 선택 하 여를 작업 요청 자격 증명 취소 되었습니다 결정 해야 합니다. |
-  
-**반환 값**: 구현 하는 자격 증명 개체는 [ `System.Net.ICredentials` 인터페이스](https://msdn.microsoft.com/library/system.net.icredentials.aspx)합니다.
+
+**반환 값**: 구현 하는 자격 증명 개체는 [ `System.Net.ICredentials` 인터페이스](/dotnet/api/system.net.icredentials?view=netstandard-2.0)합니다.

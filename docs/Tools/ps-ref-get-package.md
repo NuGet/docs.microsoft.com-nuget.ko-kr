@@ -13,15 +13,15 @@ keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, NuGet Powe
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3f93ab82e9fb769ee20070aa39ba8e3e05953839
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 632936fe4dd9736f7c3740a2f763173dc725424a
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>패키지 가져오기 (Visual Studio에서 패키지 관리자 콘솔)
 
-*이 항목에서는 내에서 명령을 설명에서 [NuGet 패키지 관리자 콘솔](Package-Manager-Console.md) Windows에서 Visual Studio에서 합니다. 일반 PowerShell 패키지 가져오기 명령에 대 한 참조는 [PowerShell PackageManagement 참조](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6)합니다.*
+*이 항목에서는 내에서 명령을 설명에서 [NuGet 패키지 관리자 콘솔](Package-Manager-Console.md) Windows에서 Visual Studio에서 합니다. 일반 PowerShell 패키지 가져오기 명령에 대 한 참조는 [PowerShell PackageManagement 참조](/powershell/module/packagemanagement/?view=powershell-6)합니다.*
 
 로컬 저장소에 설치 된 패키지 목록을 검색 하 고,-ListAvailable 스위치와 함께 사용 하면 패키지 소스에서 사용할 수 있는 패키지를 나열 또는-업데이트 스위치와 함께 사용할 경우 사용 가능한 업데이트를 나열 합니다.
 

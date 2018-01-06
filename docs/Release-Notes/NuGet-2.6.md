@@ -13,11 +13,11 @@ keywords: "NuGet 2.6 릴리스 정보, 버그 수정, 알려진 문제, 추가 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f93e34326aa9ab3d6bd5d1756126e6bfa24fd82e
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: b34c0049a5ba42f6bcd5b36fa5b0ba261e27ecd5
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-26-release-notes"></a>NuGet 2.6 릴리스 정보
 
@@ -35,8 +35,8 @@ Visual Studio 2010 및 Visual Studio 2012를 지원 하 고 가능한 한 작게
 
 NuGet 2.6 이상에서는 아래와 같이 두 가지 확장 발표 합니다.
 
-1. [NuGet 패키지 관리자](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c/file/37502/30/NuGet.Tools.vsix) (Visual Studio 2010 및 2012에 적용)
-2. [Visual Studio 2013 용 NuGet 패키지 관리자](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)
+1. [NuGet 패키지 관리자](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManager) (Visual Studio 2010 및 2012에 적용)
+1. [Visual Studio 2013 용 NuGet 패키지 관리자](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManagerforVisualStudio2013)
 
 이 분할은 [nuget.org](https://nuget.org) 홈 페이지의 "NuGet 설치" 버튼 이제으로 이동 됩니다는 [NuGet 설치](../guides/install-nuget.md) 페이지에서 다른 NuGet 클라이언트를 설치 하는 방법에 대 한 자세한 정보를 찾을 수 있습니다.
 
@@ -44,7 +44,8 @@ NuGet 2.6 이상에서는 아래와 같이 두 가지 확장 발표 합니다.
 
 ### <a name="xdt-webconfig-transformation-support"></a>XDT Web.config 변환 지원
 
-Visual Studio에서 사용 되는 XDT 변환 엔진을 사용 하 여 강력한 XML 변환을 지 원하는 데 된 NuGet 클라이언트에 대 한 가장 높은 요청 된 기능 중 하나는 [구성 변환 빌드](http://msdn.microsoft.com/library/dd465318(v=vs.100).aspx)합니다.
+NuGet 클라이언트에 대 한 가장 높은 요청 된 기능 중 하나는 Visual Studio 빌드 구성 변환에 사용 되는 XDT 변환 엔진을 사용 하 여 강력한 XML 변환을 지 원하는 데 되었습니다.
+
 2013 년 4 월 XDT에 대 한 NuGet 지원에 대 한 두 개의 큰 공고가 만들었습니다. XDT 라이브러리 자체 자체 되는 첫 번째가 [NuGet 패키지로 릴리스](https://nuget.org/packages/Microsoft.Web.Xdt) 및 [CodePlex의 오픈 소싱](http://xdt.codeplex.com/)합니다. 이 단계는 NuGet 클라이언트를 포함 하 여 다른 오픈 소스 소프트웨어에서 자유롭게 사용할 XDT 엔진을 사용할 수 있습니다. 두 번째는 NuGet 클라이언트에서의 변환 XDT 엔진 사용을 지원 하도록 계획 이었습니다. NuGet 2.6이 통합이 포함 되어 있습니다.
 
 #### <a name="how-it-works"></a>작동 방법

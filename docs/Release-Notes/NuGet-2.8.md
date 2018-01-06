@@ -13,11 +13,11 @@ keywords: "NuGet 2.8 릴리스 정보, 버그 수정, 알려진 문제, 추가 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0bb35e9d6ef6f3dde7919cd502b32ba5a550c689
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 182e7d1e2224c431631cddd14fdbea8dd9e14278
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-28-release-notes"></a>NuGet 2.8 릴리스 정보
 
@@ -96,7 +96,7 @@ NuGet 2.8 변경 하지만 _기본_ 동작 종속성을 확인 하는 것에 대
 
 ## <a name="development-dependencies"></a>개발 종속성
 
-개발 프로세스를 최적화 하는 데 사용 되는 도구를 포함 하 여 NuGet 패키지로-다양 한 유형의 기능을 제공할 수 있습니다. 이러한 구성 요소를 새 패키지를 개발에 도움이 될 수 있지만 간주 되지 않아야 이후이 경우 새 패키지의 종속성 게시 합니다. NuGet 2.8를 사용 하면 패키지에서 자신을 식별 하는 `.nuspec` 는 developmentDependency 파일입니다. 설치 되 면이 메타 데이터도에 추가할는 `packages.config` 패키지가 설치 된 프로젝트의 파일입니다. 경우는 `packages.config` 파일이 중 NuGet 종속성에 대 한 나중에 분석 된 `nuget.exe pack`, 개발 종속성으로 표시 하는 해당 종속성을 제외 합니다.
+개발 프로세스를 최적화 하는 데 사용 되는 도구를 포함 하 여 NuGet 패키지로-다양 한 유형의 기능을 제공할 수 있습니다. 이러한 구성 요소를 새 패키지를 개발에 도움이 될 수 있지만 간주 되지 않아야 새 패키지의 종속성 나중에 게시할 때. NuGet 2.8를 사용 하면 패키지에서 자신을 식별 하는 `.nuspec` 는 developmentDependency 파일입니다. 설치 되 면이 메타 데이터도에 추가할는 `packages.config` 패키지가 설치 된 프로젝트의 파일입니다. 경우는 `packages.config` 파일이 중 NuGet 종속성에 대 한 나중에 분석 된 `nuget.exe pack`, 개발 종속성으로 표시 하는 해당 종속성을 제외 합니다.
 
 ## <a name="individual-packagesconfig-files-for-different-platforms"></a>다른 플랫폼에 대해 개별 packages.config 파일
 

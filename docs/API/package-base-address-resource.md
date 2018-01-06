@@ -17,11 +17,11 @@ keywords: "컨테이너, NuGet 패키지에 대 한 기본 주소, NuGet nupkg A
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 756001ff7376a8dd8d66bd2136408e90e6a85d19
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: a581f9854410bc1a84d65310b38928a1d889ece2
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-content"></a>패키지 내용
 
@@ -33,7 +33,7 @@ V3 API를 사용 하는 임의의 패키지의 콘텐츠 (.nupkg 파일)를 인�
 
 다음 `@type` 값이 사용 됩니다.
 
-@type 값              | 참고
+@type 값              | 노트
 ------------------------ | -----
 PackageBaseAddress/3.0.0 | 초기 릴리스
 
@@ -58,11 +58,11 @@ GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-이름     | 입력     | 형식    | 필수 | 참고
+name     | 입력     | 형식    | 필수 | 노트
 -------- | ------ | ------- | -------- | -----
 LOWER_ID | URL    | string  | 예      | 패키지 ID, 소문자
 
-`LOWER_ID` 값은 소문자를 유지 하 여 구현 하는 규칙을 사용 하 여 원하는 패키지 ID입니다. NET의 [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) 메서드.
+`LOWER_ID` 값은 소문자를 유지 하 여 구현 하는 규칙을 사용 하 여 원하는 패키지 ID입니다. NET의 [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) 메서드.
 
 ### <a name="response"></a>응답
 
@@ -70,7 +70,7 @@ LOWER_ID | URL    | string  | 예      | 패키지 ID, 소문자
 
 패키지 소스가 하나 이상의 버전을 가진 경우에 200 상태 코드가 반환 됩니다. 응답 본문은 다음과 같은 속성이 JSON 개체입니다.
 
-이름     | 형식             | 필수 | 참고
+name     | 형식             | 필수 | 노트
 -------- | ---------------- | -------- | -----
 버전 | 문자열의 배열 | 예      | 패키지 Id 제공
 
@@ -98,12 +98,12 @@ GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-이름          | 입력     | 형식   | 필수 | 참고
+name          | 입력     | 형식   | 필수 | 노트
 ------------- | ------ | ------ | -------- | -----
 LOWER_ID      | URL    | string | 예      | 패키지 ID, 소문자
 LOWER_VERSION | URL    | string | 예      | 소문자를 유지 하 고 정규화 된 패키지 버전
 
-둘 다 `LOWER_ID` 및 `LOWER_VERSION` 하 여 구현 하는 규칙을 사용 하 여 소문자를 유지 됩니다. NET의 [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) 메서드.
+둘 다 `LOWER_ID` 및 `LOWER_VERSION` 하 여 구현 하는 규칙을 사용 하 여 소문자를 유지 됩니다. NET의 [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) 메서드.
 
 `LOWER_VERSION` 원하는 패키지 버전 정규화 된 NuGet의 버전을 사용 하 여 [정규화 규칙](../reference/package-versioning.md#normalized-version-numbers)합니다. 즉, SemVer 2.0.0 사양에서 허용 되는 빌드 메타 데이터를이 경우 제외 해야 합니다.
 
@@ -133,12 +133,12 @@ GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-이름          | 입력     | 형식    | 필수 | 참고
+name          | 입력     | 형식    | 필수 | 노트
 ------------- | ------ | ------- | -------- | -----
 LOWER_ID      | URL    | string  | 예      | 패키지 ID, 소문자
 LOWER_VERSION | URL    | 정수 | 예      | 소문자를 유지 하 고 정규화 된 패키지 버전
 
-둘 다 `LOWER_ID` 및 `LOWER_VERSION` 하 여 구현 하는 규칙을 사용 하 여 소문자를 유지 됩니다. NET의 [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) 메서드.
+둘 다 `LOWER_ID` 및 `LOWER_VERSION` 하 여 구현 하는 규칙을 사용 하 여 소문자를 유지 됩니다. NET의 [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) 메서드.
 
 `LOWER_VERSION` 원하는 패키지 버전 정규화 된 NuGet의 버전을 사용 하 여 [정규화 규칙](../reference/package-versioning.md#normalized-version-numbers)합니다. 즉, SemVer 2.0.0 사양에서 허용 되는 빌드 메타 데이터를이 경우 제외 해야 합니다.
 

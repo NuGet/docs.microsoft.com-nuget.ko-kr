@@ -17,11 +17,11 @@ keywords: "NuGet V3 API 카탈로그, nuget.org 트랜잭션 로그를 NuGet.org
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 50e329680c5527d2a69d9c2b1421dc3aa609b478
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4c98b7cbd92575f6905e98a5bca5602a4d8ac0dd
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="catalog"></a>Catalog
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 12/14/2017
 
 다음 `@type` 값이 사용 됩니다.
 
-@type 값   | 참고
+@type 값   | 노트
 ------------- | -----
 Catalog/3.0.0 | 초기 릴리스
 
@@ -79,7 +79,7 @@ GET {@id}
 
 카탈로그의 인덱스는 다음 속성을 가진 개체가 포함 된 JSON 문서:
 
-이름            | 형식             | 필수 | 참고
+name            | 형식             | 필수 | 노트
 --------------- | ---------------- | -------- | -----
 commitId        | string           | 예      | 가장 최근의 커밋와 연결 된 고유 ID
 commitTimeStamp | string           | 예      | 가장 최근의 커밋 타임 스탬프
@@ -96,7 +96,7 @@ count           | 정수          | 예      | 인덱스의 페이지 수
 
 카탈로그의 인덱스에서 카탈로그 페이지 개체 찾을 수 `items` 속성에는 다음과 같은 속성이 있어야 합니다.
 
-이름            | 형식    | 필수 | 참고
+name            | 형식    | 필수 | 노트
 --------------- | ------- | -------- | -----
 @id             | string  | 예      | Fetch 카탈로그 페이지의 URL
 commitId        | string  | 예      | 이 페이지에서 가장 최근의 커밋와 연결 된 고유 ID
@@ -123,7 +123,7 @@ GET https://api.nuget.org/v3/catalog0/index.json
 
 카탈로그 페이지 문서는 다음 속성을 가진 JSON 개체:
 
-이름            | 형식             | 필수 | 참고
+name            | 형식             | 필수 | 노트
 --------------- | ---------------- | -------- | -----
 commitId        | string           | 예      | 이 페이지에서 가장 최근의 커밋와 연결 된 고유 ID
 commitTimeStamp | string           | 예      | 이 페이지에서 가장 최근의 커밋 타임 스탬프
@@ -143,7 +143,7 @@ count           | 정수          | 예      | 페이지의 항목 수
 
 카탈로그 페이지에서 카탈로그 항목 개체를 찾을 `items` 속성에는 다음과 같은 속성이 있어야 합니다.
 
-이름            | 형식    | 필수 | 참고
+name            | 형식    | 필수 | 노트
 --------------- | ------- | -------- | -----
 @id             | string  | 예      | 카탈로그 항목을 인출 하는 URL
 @type           | string  | 예      | 카탈로그 항목의 형식
@@ -175,14 +175,14 @@ GET https://api.nuget.org/v3/catalog0/page2926.json
 
 카탈로그 리프 문서는 다음 속성을 가진 JSON 개체:
 
-이름                    | 형식                       | 필수 | 참고
+name                    | 형식                       | 필수 | 노트
 ----------------------- | -------------------------- | -------- | -----
 @type                   | 문자열 또는 문자열의 배열 | 예      | 카탈로그 항목의 형식
 카탈로그: commitId        | string                     | 예      | 이 카탈로그 항목에 연결 된 커밋 ID
 카탈로그: commitTimeStamp | string                     | 예      | 이 카탈로그 항목의 커밋 타임 스탬프
 ID                      | string                     | 예      | 카탈로그 항목의 패키지 ID
 게시               | string                     | 예      | 패키지 카탈로그 항목의 게시 된 날짜
-version                 | string                     | 예      | 카탈로그 항목의 패키지 버전
+버전                 | string                     | 예      | 카탈로그 항목의 패키지 버전
 
 ### <a name="item-types"></a>항목 형식
 
@@ -206,28 +206,28 @@ version                 | string                     | 예      | 카탈로그 �
 
 패키지 세부 정보 카탈로그 항목 외에 다음 속성이 [모든 카탈로그 리프에 포함 된](#catalog-leaf)합니다.
 
-이름                    | 형식                       | 필수 | 참고
+name                    | 형식                       | 필수 | 노트
 ----------------------- | -------------------------- | -------- | -----
-authors                 | string                     | no       |
+authors                 | string                     | 아니요       |
 created                 | string                     | 예      | 패키지를 처음 만들 때의 타임 스탬프
-dependencyGroups        | 개체의 배열           | no       | 동일한 형식으로 [패키지 메타 데이터 리소스](registration-base-url-resource.md#package-dependency-group)
-설명             | string                     | no       |
-iconUrl                 | string                     | no       |
+dependencyGroups        | 개체의 배열           | 아니요       | 동일한 형식으로 [패키지 메타 데이터 리소스](registration-base-url-resource.md#package-dependency-group)
+설명             | string                     | 아니요       |
+iconUrl                 | string                     | 아니요       |
 isPrerelease            | boolean                    | 예      | 패키지 버전은 시험판 여부
-language                | string                     | no       |
-licenseUrl              | string                     | no       |
-나열                  | boolean                    | no       | 패키지가 나열 되는 여부
-Minclientversion이        | string                     | no       |
+language                | string                     | 아니요       |
+licenseUrl              | string                     | 아니요       |
+나열                  | boolean                    | 아니요       | 패키지가 나열 되는 여부
+Minclientversion이        | string                     | 아니요       |
 packageHash             | string                     | 예      | 인코딩을 사용 하 여 패키지의 해시가 [표준 base 64](https://tools.ietf.org/html/rfc4648#section-4)
 packageHashAlgorithm    | string                     | 예      |
 packageSize             | 정수                    | 예      | 패키지.nupkg 바이트 크기
-projectUrl              | string                     | no       |
-releaseNotes            | string                     | no       |
-requireLicenseAgreement | boolean                    | no       | 가정 `false` 제외 하는 경우
-요약                 | string                     | no       |
-태그                    | 문자열의 배열           | no       |
-제목                   | string                     | no       |
-verbatimVersion         | string                     | no       | 그대로 버전 문자열이 고.nuspec에 있는 원래
+projectUrl              | string                     | 아니요       |
+releaseNotes            | string                     | 아니요       |
+requireLicenseAgreement | boolean                    | 아니요       | 가정 `false` 제외 하는 경우
+요약                 | string                     | 아니요       |
+태그                    | 문자열의 배열           | 아니요       |
+제목                   | string                     | 아니요       |
+verbatimVersion         | string                     | 아니요       | 그대로 버전 문자열이 고.nuspec에 있는 원래
 
 패키지 `version` 속성은 전체, 정규화 된 버전 문자열입니다. 즉,는 SemVer 2.0.0 빌드 데이터를 여기 포함 될 수 있습니다.
 
@@ -320,7 +320,7 @@ GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_li
 
 클라이언트의 출력 다른 클라이언트의 출력에 따라 달라 집니다 inherant 종속성이 있는 있는 두 명의 카탈로그 클라이언트가 가정 합니다. 
 
-#### <a name="example"></a>예제
+#### <a name="example"></a>예
 
 예를 들어 nuget.org 새로 게시 된 패키지 해야에 나타나지 검색 리소스 패키지 메타 데이터 리소스에 표시 되기 전에 합니다. 패키지 메타 데이터 리소스를 사용 하는 공식 NuGet 클라이언트가 수행한 "복원" 작업 때문입니다. 고객 검색 서비스를 사용 하 여 패키지를 발견 패키지 메타 데이터 리소스를 사용 하 여 해당 패키지를 성공적으로 복원할 수 있습니다. 즉, 검색 리소스 패키지 메타 데이터 리소스에 따라 달라 집니다. 각 리소스에 해당 리소스를 업데이트 하는 카탈로그 클라이언트 백그라운드 작업이 됩니다. 각 클라이언트는 자체 커서를 있습니다.
 

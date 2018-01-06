@@ -13,11 +13,11 @@ keywords: "NuGet 2.2 릴리스 정보, 버그 수정, 알려진 문제, 추가 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 690e76a0686a5e7bb699410edef4a6e62ccd2a32
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 1f6080e01777431c4dfb2278db167bd3bc9a67ea
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-22-release-notes"></a>NuGet 2.2 릴리스 정보
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 NuGet 2.2는 2012 년 12 월 12 일에 출시 되었습니다.
 
 ## <a name="visual-studio-quick-launch"></a>Visual Studio 빠른 실행
-Visual Studio 2012에서 추가 된 새로운 기능 중 하나인는 [빠른 실행 대화](http://msdn.microsoft.com/library/hh417697.aspx)합니다. NuGet 2.2 하므로 검색어를 빠른 실행에서 입력 한 패키지 관리자 대화 상자를 초기화 하는이 대화 상자에서을 확장 합니다. 예를 들어, 빠른 실행에서 이제 'jquery'를 입력 'jquery'와 일치 하는 NuGet 패키지를 검색 하 고 결과에 옵션을 포함 합니다.
+Visual Studio 2012에서 추가 된 새로운 기능 중 하나인는 [빠른 실행 대화](/visualstudio/ide/reference/quick-launch-environment-options-dialog-box)합니다. NuGet 2.2 하므로 검색어를 빠른 실행에서 입력 한 패키지 관리자 대화 상자를 초기화 하는이 대화 상자에서을 확장 합니다. 예를 들어, 빠른 실행에서 이제 'jquery'를 입력 'jquery'와 일치 하는 NuGet 패키지를 검색 하 고 결과에 옵션을 포함 합니다.
 
 ![Visual Studio 빠른 실행에서 NuGet](./media/quick-launch.png)
 
