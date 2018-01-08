@@ -13,11 +13,11 @@ keywords: "NuGet 1.1 릴리스 정보, 버그 수정, 알려진 문제, 추가 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 00b6a8c6095e12ea2f4ca3fb5129d6c999071e3a
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 593848b3e5e063816fbbec8b4d11e6fc789d05cd
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-10-and-11-release-notes"></a>NuGet 1.0 및 1.1 릴리스 정보
 
@@ -158,7 +158,7 @@ CTP 2 이후이 릴리스 후보에서 변경한 내용을 다음과 같습니�
 * [프로젝트 메뉴에도 없는 프로젝트/솔루션 로드 되 표시](http://nuget.codeplex.com/workitem/54)
 * [build.cmd 코드 베이스의 클린 복제본에서 실패](http://nuget.codeplex.com/workitem/56)
 * [업데이트 사용 가능한 기능](http://nuget.codeplex.com/workitem/57)
-* [콘솔에서 메시지를 제거 대화 상자를 통해 대화 상자:](http://nuget.codeplex.com/workitem/73)
+* [콘솔에서 메시지를 제거 대화 상자를 통해 ׀ 대화 상자:](http://nuget.codeplex.com/workitem/73)
 * [시각적 알려와 느린 방식은 '설치'를 클릭 하 여 패키지 추가](http://nuget.codeplex.com/workitem/80)
 * [업데이트를 설치 하는 내 설치 된 패키지는 검색 방법이 없습니다.](http://nuget.codeplex.com/workitem/82)
 * [대화 상자에서 설치 된 패키지를 업데이트 하려면 방식은 없습니다.](http://nuget.codeplex.com/workitem/83)
