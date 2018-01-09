@@ -14,11 +14,11 @@ ms.reviewer:
 - anandr
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 25b74ab629cab0fff7114bf1621606de5fc18dd2
-ms.sourcegitcommit: 89bb9d429c19ff69084c35acad09daea3e16d56b
+ms.openlocfilehash: cb5624a2fd99e8afd8a8226fd786343f485041c4
+ms.sourcegitcommit: c27e565de485cbe836e6c2a66e44a50b35b487ff
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="package-versioning"></a>패키지 버전 관리
 
@@ -59,8 +59,8 @@ ms.lasthandoff: 12/14/2017
 즉, 패키지 개발자가 일반적으로 인식 된 명명 규칙을 따릅니다.
 
 - `-alpha`: 알파 버전에서는 일반적으로 작업 중인 및 실험에 사용 합니다.
-- `-beta`: 베타 릴리스, 일반적으로 하나 다음에 대 한 기능 릴리스 계획 이지만 알려진된 버그를 포함할 수 있습니다.
-- `-rc`: 릴리스 후보는 잠재적으로 최종 릴리스에 일반적으로 중요 한 버그 발생 하지 않는 한 (stable).
+- `-beta`: 일반적으로 다음에 계획된 릴리스에 대한 기능 완료인 베타 릴리스이지만 알려진 버그를 포함할 수 있습니다.
+- `-rc`: 일반적으로 심각한 버그가 발생하지 않는 한 잠재적으로 최종적(안정적)인 릴리스인 릴리스 후보입니다.
 
 > [!Note]
 > NuGet 4.3.0+ 지원 [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html)에서 같이 점 표기법을 포함 하는 시험판 숫자 지 원하는 *1.0.1-build.23*합니다. 점 표기법 4.3.0 이전 버전의 NuGet 지원 되지 않습니다. 과 같은 폼을 사용할 수 있습니다 *1.0.1-build23*합니다.
@@ -95,7 +95,8 @@ SemVer v2.0.0의 특정 의미 체계는 이전 버전의 클라이언트에서 
 Nuget.org를 SemVer v2.0.0 관련 패키지를 업로드 하는 경우 패키지 되며 이전 버전의 클라이언트로 테스트를 수행할 수는 다음과 같은 NuGet 클라이언트에만:
 
 - NuGet 4.3.0+
-- Visual Studio 2017 버전 15.3 + 
+- Visual Studio 2017 버전 15.3 +
+- Visual Studio 2015 [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
 - dotnet.exe (.NET SDK 2.0.0+)
 
 제 3 자 클라이언트:
