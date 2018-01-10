@@ -17,11 +17,11 @@ keywords: "NuGet 패키지 관리자 UI에서 NuGet 패키지 관리자 Visual S
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0f08e5a36499c4481c4e0cd70738d67d65cd980a
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: fb2166b727dd01de0f7096535fdbc71c5ab0e2a3
+ms.sourcegitcommit: cde52deee5691d3e8bcb96f46f9645c7ba579af8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 패키지 관리자 UI
 
@@ -39,7 +39,7 @@ Windows에서 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하면 
 > [!Note]
 > Visual Studio 2015의 NuGet 패키지 관리자를 누락 하는 경우 확인 **도구 > 확장 및 업데이트 중...**  검색 한는 *NuGet 패키지 관리자* 확장 합니다. Visual studio에서 확장명 설치 관리자를 사용 하는 경우에서 직접 확장을 다운로드 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)합니다.
 >
-> Visual Studio 2017에 NuGet 및 NuGet 패키지 관리자 자동으로 함께 설치 됩니다. NET 관련 작업 합니다. 선택 하 여 individuall 설치는 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** Visual Studio 2017 설치 관리자에 대 한 옵션입니다.
+> Visual Studio 2017에 NuGet 및 NuGet 패키지 관리자 자동으로 함께 설치 됩니다. NET 관련 작업 합니다. 선택 하 여 개별적으로 설치 된 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** Visual Studio 2017 설치 관리자에 대 한 옵션입니다.
 
 ## <a name="finding-and-installing-a-package"></a>찾기 및 설치 패키지
 
