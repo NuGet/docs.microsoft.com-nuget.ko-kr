@@ -17,11 +17,11 @@ keywords: "NuGet API 푸시 패키지 API NuGet 패키지를 삭제, API NuGet �
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 87970a701c63bce2b74c619069ec1d231ea77ab5
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 5fbcd82b09ebd56ae21103640e7c39b482059525
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="push-and-delete"></a>밀어넣기 및 삭제
 
@@ -127,5 +127,5 @@ X-NuGet-ApiKey | Header | string | 예      | 예를 들면 `X-NuGet-ApiKey: {US
 
 상태 코드 | 의미
 ----------- | -------
-204         | 패키지 나열 되어
+200         | 패키지 나열 되어
 404         | 제공 된 패키지가 `ID` 및 `VERSION` 존재

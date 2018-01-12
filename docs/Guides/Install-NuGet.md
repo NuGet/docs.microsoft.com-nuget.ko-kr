@@ -13,11 +13,11 @@ keywords: "nuget.exe CLI, NuGet 클라이언트 도구, NuGet 패키지 관리�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b1abb30458c9ebfb0ffb28be254efd9709a9627f
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 2f67c298d269149bba9f36ad9e026d5443c39b6a
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="installing-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
 
@@ -29,7 +29,7 @@ NuGet 패키지를 빌드, 게시 및 사용하는 데 사용할 수 있는 두 
 1. [**NuGet CLI**](#nuget-cli)는 모든 NuGet 기능을 제공하는 Windows용 명령줄 유틸리티입니다. Mono 또는 .NET Core CLI(`dotnet`)를 사용하여 Mac OSX 및 Linux에서 실행할 수도 있습니다.
 1. [**Visual Studio의 NuGet 패키지 관리자**](#nuget-package-manager-in-visual-studio)(Windows 전용)는 패키지를 관리하기 위한 GUI 도구이며, Visual Studio 내에서 특정 NuGet 명령을 직접 사용할 수 있는 PowerShell 콘솔을 포함하고 있습니다. 패키지 관리자 UI 및 콘솔은 모두 Visual Studio(Windows) 2012 이상에 포함되어 있으며 이전 버전에는 수동으로 설치할 수 있습니다.
 
-    Mac용 Visual Studio에는 NuGet 기능이 직접 기본적으로 제공됩니다. 연습은 [프로젝트에 NuGet 패키지 포함](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)을 참조하세요.
+    Mac용 Visual Studio에는 NuGet 기능이 직접 기본적으로 제공됩니다. 연습은 [프로젝트에 NuGet 패키지 포함](/visualstudio/mac/nuget-walkthrough)을 참조하세요.
 
     현재 Visual Studio Code에는 기본 제공 NuGet 지원이 없습니다. NuGet CLI 또는 [dotnet CLI](../Tools/dotnet-Commands.md)를 사용합니다.
 
@@ -53,7 +53,7 @@ NuGet CLI 및 패키지 관리자는 모두 다음 작업을 지원합니다.
 
 > [!Note]
 > 또 다른 좋은 도구는 NuGet 패키지를 시각적으로 탐색, 생성 및 편집할 수 있는 오픈 소스 독립 실행형 도구인 [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)입니다. 예를 들어 매번 패키지를 다시 빌드할 필요 없이 패키지 구조를 실험적으로 변경하는 것이 매우 유용합니다.
-> .NET Core 응용 프로그램 개발에 사용되는 플랫폼 간 [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/tools/index#installation) 도구 체인은 delete, locals, push, pack 및 restore와 같은 몇 가지 NuGet 명령을 지원합니다. 
+> .NET Core 응용 프로그램 개발에 사용되는 플랫폼 간 [.NET Core CLI](/dotnet/articles/core/tools/index#installation) 도구 체인은 delete, locals, push, pack 및 restore와 같은 몇 가지 NuGet 명령을 지원합니다. 
 
 ## <a name="nuget-cli"></a>NuGet CLI
 

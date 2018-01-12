@@ -13,11 +13,11 @@ keywords: "NuGet UWP 컨트롤, Visual Studio XAML 디자이너, Blend 디자이
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f51dbabd406199752e4f9d612b498f59ffb54021
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 8756ce472c11a05370914841245295361b3f179b
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="creating-uwp-controls-as-nuget-packages"></a>NuGet 패키지인 UWP 컨트롤 만들기
 
@@ -55,7 +55,7 @@ Visual Studio 및 Blend의 자산 창에 있는 XAML 디자이너의 도구 상�
 </FileList>
 ```
 
-여기서
+다음은 각 문자에 대한 설명입니다.
 
 - *your_package_file*: `ManagedPackage.winmd`와 같은 컨트롤 파일의 이름입니다("ManagedPackage"는 이 예제에 사용되고 다른 의미가 없음).
 - *vs_category*: Visual Studio 디자이너의 도구 상자에서 컨트롤이 표시되어야 하는 그룹의 레이블입니다. `VSCategory`는 컨트롤을 도구 상자에 표시하기 위해 필요합니다.
@@ -105,7 +105,7 @@ UWP 패키지에는 앱을 설치할 수 있는 OS 버전의 상한 및 하한 �
 \ref\uap10.0\*
 ```
 
-적절한 TPMinV 검사를 적용하려면 [MSBuild 대상 파일](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets)을 만들고 빌드 폴더에서 패키지합니다("your_assembly_name"을 특정 어셈블리의 이름으로 바꿈).
+적절한 TPMinV 검사를 적용하려면 [MSBuild 대상 파일](/visualstudio/msbuild/msbuild-targets)을 만들고 빌드 폴더에서 패키지합니다("your_assembly_name"을 특정 어셈블리의 이름으로 바꿈).
 
 ```
 \build
@@ -133,7 +133,7 @@ UWP 패키지에는 앱을 설치할 수 있는 OS 버전의 상한 및 하한 �
 
 ## <a name="add-design-time-support"></a>디자인 타임 지원 추가
 
-속성 검사자에서 컨트롤 속성이 표시되는 위치를 구성하려면 사용자 지정 표시기 등을 추가하고, `design.dll` 파일을 `lib\<platform>\Design` 폴더에 대상 플랫폼에 적합하도록 배치합니다. 또한 **[템플릿 편집 > 복사본 편집](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** 기능이 작동하도록 하려면 `<AssemblyName>\Themes` 폴더에서 병합되는 `Generic.xaml` 및 리소스가 포함되어야 합니다. (이 파일은 컨트롤의 런타임 동작에 아무런 영향을 주지 않습니다.)
+속성 검사자에서 컨트롤 속성이 표시되는 위치를 구성하려면 사용자 지정 표시기 등을 추가하고, `design.dll` 파일을 `lib\<platform>\Design` 폴더에 대상 플랫폼에 적합하도록 배치합니다. 또한 **[템플릿 편집 > 복사본 편집](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** 기능이 작동하도록 하려면 `<AssemblyName>\Themes` 폴더에서 병합되는 `Generic.xaml` 및 리소스가 포함되어야 합니다. (이 파일은 컨트롤의 런타임 동작에 아무런 영향을 주지 않습니다.)
 
 
 ```
@@ -172,7 +172,7 @@ UWP 패키지에는 앱을 설치할 수 있는 OS 버전의 상한 및 하한 �
 \tools
 ```
 
-[MSBuild 대상 파일](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets)을 작성하여 자산이 사용 중인 프로젝트의 출력 폴더에 복사되었는지 확인할 수도 있습니다.
+[MSBuild 대상 파일](/visualstudio/msbuild/msbuild-targets)을 작성하여 자산이 사용 중인 프로젝트의 출력 폴더에 복사되었는지 확인할 수도 있습니다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

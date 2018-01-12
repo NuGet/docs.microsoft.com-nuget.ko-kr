@@ -13,17 +13,17 @@ keywords: "패키지 만들기, .NET Standard 패키지, .NET Core"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 82e413119b12503336becd6019e4fa3e4ac0b1f3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 5b48ad2f062fd3a9b99985dbda6f89e6039dac4d
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-net-standard-20-packages-with-visual-studio-2017"></a>Visual Studio 2017을 사용하여 .NET Standard 2.0 패키지 만들기
 
 *Visual Studio 2017 업데이트 3에서 제공하는 NuGet 4.x 이상 및 MSBuild 15.3 이상에 적용됩니다. Visual Studio 2017 이전 버전의 경우 이 지침은 \<TargetFramework\> 속성을 변경하여 .NET Standard 1.4 - 1.6에 적용됩니다. 또한 NuGet 3.x 이상을 사용하려면 [Visual Studio 2015를 사용하여 .NET Standard 패키지 만들기](../guides/create-net-standard-packages-vs2015.md)를 참조하세요.*
 
-[.NET Standard 라이브러리](https://docs.microsoft.com/dotnet/articles/standard/library)는 모든 .NET 런타임에서 사용할 수 있도록 만들어진 .NET API의 공식 사양이며, 이에 따라 .NET 생태계에서 더 균일하게 설정됩니다. .NET Standard 라이브러리는 워크로드와는 별도로 구현할 모든 .NET 플랫폼에 대해 균일한 BCL(기본 클래스 라이브러리) API 집합을 정의합니다. 개발자가 모든 .NET 런타임에서 사용할 수 있는 PCL을 생성할 수 있으며, 공유 코드에서 플랫폼별 조건부 컴파일 지시문을 제거하지 않더라도 이를 줄일 수 있습니다.
+[.NET Standard 라이브러리](/dotnet/articles/standard/library)는 모든 .NET 런타임에서 사용할 수 있도록 만들어진 .NET API의 공식 사양이며, 이에 따라 .NET 생태계에서 더 균일하게 설정됩니다. .NET Standard 라이브러리는 워크로드와는 별도로 구현할 모든 .NET 플랫폼에 대해 균일한 BCL(기본 클래스 라이브러리) API 집합을 정의합니다. 개발자가 모든 .NET 런타임에서 사용할 수 있는 PCL을 생성할 수 있으며, 공유 코드에서 플랫폼별 조건부 컴파일 지시문을 제거하지 않더라도 이를 줄일 수 있습니다.
 
 이 가이드에서는 Visual Studio 2017 업데이트 3 및 NuGet 4.0을 사용하여 .NET Standard 라이브러리 2.0을 대상으로 하는 NuGet 패키지를 만드는 과정을 안내합니다.
 
@@ -113,5 +113,5 @@ NuGet 4.0 및 .NET Core 프로젝트를 사용하면 패키지 메타데이터�
 
 - [프로젝트 파일의 패키지 참조](../consume-packages/package-references-in-project-files.md)는 프로젝트 파일에서 패키지를 직접 설명하는 모든 세부 정보를 설명합니다.
 - [MSBuild 대상으로서의 NuGet pack 및 restore](../schema/msbuild-targets.md)는 `msbuild /t:pack`을 사용하여 패키지를 만드는 모든 옵션을 설명합니다.
-- [.NET Standard 라이브러리 설명서](https://docs.microsoft.com/dotnet/articles/standard/library)
-- [.NET Framework에서 .NET Core로 이식](https://docs.microsoft.com/dotnet/articles/core/porting/index)
+- [.NET Standard 라이브러리 설명서](/dotnet/articles/standard/library)
+- [.NET Framework에서 .NET Core로 이식](/dotnet/articles/core/porting/index)

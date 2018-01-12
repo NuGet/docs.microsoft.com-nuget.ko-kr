@@ -13,11 +13,11 @@ keywords: "패키지 만들기, Xamarin에 대한 패키지, 플랫폼 간 패�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8ee825a6299d7de375fd2f242cf456da13b777d9
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: f372856232f151efcf972881cffbe7d4bb7ed6ee
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-cross-platform-packages"></a>플랫폼 간 패키지 만들기
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 12/14/2017
 
 ## <a name="create-the-project-structure-and-abstraction-code"></a>프로젝트 구조 및 추상화 코드 만들기
 
-1. Visual Studio용 [Plugin for Xamarin Templates 확장](https://visualstudiogallery.msdn.microsoft.com/afead421-3fbf-489a-a4e8-4a244ecdbb1e)을 다운로드하여 실행합니다. 이러한 템플릿을 사용하면 이 연습에 필요한 프로젝트 구조를 쉽게 만들 수 있습니다.
+1. Visual Studio용 [Plugin for Xamarin Templates 확장](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates)을 다운로드하여 실행합니다. 이러한 템플릿을 사용하면 이 연습에 필요한 프로젝트 구조를 쉽게 만들 수 있습니다.
 1. Visual Studio의 **파일 > 새로 만들기 > 프로젝트**에서 `Plugin`을 검색하고, **Plugin for Xamarin** 템플릿을 선택하고, 이름을 LoggingLibrary로 변경한 다음, [확인]을 클릭합니다.
 
     ![Visual Studio에서 비어 있는 새 앱(이식 가능한 Xamarin.Forms) 프로젝트](media/CrossPlatform-NewProject.png)

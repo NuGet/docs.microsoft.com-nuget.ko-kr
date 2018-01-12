@@ -14,17 +14,17 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b1a29fe6e9a3dec6847dbed07761e28fb8eb9b19
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 2bdb8a2c946618b0c297c70bf7fcf6a9038b2a02
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="creating-symbol-packages"></a>기호 패키지 만들기
 
 NuGet에서는 nuget.org 또는 기타 소스에 대한 패키지를 빌드하는 것 외에도 연관된 기호 패키지를 만들고 [SymbolSource 리포지토리](http://www.symbolsource.org/Public)에 게시하도록 지원합니다.
 
-패키지 소비자는 Visual Studio에서 해당 기호 원본에 `http://srv.symbolsource.org/pdb/Public`을 추가할 수 있습니다. 그러면 Visual Studio 디버거에서 코드 패키지를 한 단계씩 실행할 수 있습니다. 해당 프로세스에 대한 자세한 내용은 [Visual Studio 디버거에서 기호 파일(.pdb) 및 원본 파일 지정](https://docs.microsoft.com/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger)을 참조하세요.
+패키지 소비자는 Visual Studio에서 해당 기호 원본에 `http://srv.symbolsource.org/pdb/Public`을 추가할 수 있습니다. 그러면 Visual Studio 디버거에서 코드 패키지를 한 단계씩 실행할 수 있습니다. 해당 프로세스에 대한 자세한 내용은 [Visual Studio 디버거에서 기호 파일(.pdb) 및 원본 파일 지정](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger)을 참조하세요.
 
 
 ## <a name="creating-a-symbol-package"></a>기호 패키지 만들기

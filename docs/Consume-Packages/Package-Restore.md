@@ -13,11 +13,11 @@ keywords: "NuGet 패키지 복원, NuGet 패키지 설치, 패키지 설치, 패
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c2567f45b6bb36cdd94c4ce6f1418cb1c7ceac5e
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4e819a2bb34bbe70f0f11d5adeed82b976a8cb65
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-restore"></a>패키지 복원
 
@@ -64,7 +64,7 @@ ms.lasthandoff: 12/14/2017
 | 명령 | 적용 가능한 시나리오 |
 | --- | --- | 
 | `nuget restore` | 모든 NuGet 버전 및 모든 참조 형식에 적용됩니다. 아래의 [명령줄 복원](#command-line-restore)을 참조하세요. | 
-| `dotnet restore` | .NET Core 프로젝트에 대한 `nuget restore`와 동일합니다. [dotnet restore](https://docs.microsoft.com/dotnet/articles/core/tools/dotnet-restore)를 참조하세요. |
+| `dotnet restore` | .NET Core 프로젝트에 대한 `nuget restore`와 동일합니다. [dotnet restore](/dotnet/articles/core/tools/dotnet-restore)를 참조하세요. |
 | `msbuild /t:restore` | [프로젝트 파일의 패키지 참조](../Consume-Packages/Package-References-in-Project-Files.md)만 있는 Nuget 4.x 이상 및 MSBuild 15.1 이상에 적용됩니다. `nuget restore` 및 `dotnet restore`는 모두 해당 프로젝트에 대해 이 명령을 사용합니다. [MSBuild 대상으로서의 NuGet pack 및 restore - restore 대상](../schema/msbuild-targets.md#restore-target)을 참조하세요.|
 
 Visual Studio 자체에서도 다른 시간에 패키지를 복원합니다.

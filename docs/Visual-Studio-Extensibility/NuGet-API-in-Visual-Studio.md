@@ -13,15 +13,15 @@ keywords: "NuGet API, Visual Studio의 NuGet, NuGet 프로그래밍 인터페이
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1d5c4cba1474f4215c6cc83497e347b2145f21ef
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: e1279f5c0c36bfdf99a6bae240c779fd0c39f04c
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-api-in-visual-studio"></a>Visual Studio의 NuGet API
 
-Visual Studio의 패키지 관리자 UI 및 콘솔 외에도 NuGet은 [MEF(Managed Extensibility Framework)](http://msdn.microsoft.com/library/dd460648.aspx)를 통해 몇 가지 유용한 서비스를 내보냅니다. 이 인터페이스를 사용하면 Visual Studio의 다른 구성 요소에서 NuGet과 상호 작용하여 패키지를 설치하거나 제거하고, 설치된 패키지에 대한 정보를 얻을 수 있습니다.
+Visual Studio의 패키지 관리자 UI 및 콘솔 외에도 NuGet은 [MEF(Managed Extensibility Framework)](/dotnet/framework/mef/index)를 통해 몇 가지 유용한 서비스를 내보냅니다. 이 인터페이스를 사용하면 Visual Studio의 다른 구성 요소에서 NuGet과 상호 작용하여 패키지를 설치하거나 제거하고, 설치된 패키지에 대한 정보를 얻을 수 있습니다.
 
 NuGet 3.3 이상에서는 NuGet에서 `NuGet.VisualStudio.dll` 어셈블리의 `NuGet.VisualStudio` 네임스페이스에 있는 다음 서비스를 모두 내보냅니다.
 
@@ -47,7 +47,7 @@ NuGet 3.3 이상에서는 NuGet에서 `NuGet.VisualStudio.dll` 어셈블리의 `
 > [!Warning]
 > 코드에서 공용 인터페이스 외에 다른 형식을 사용하지 말고, `NuGet.Core.dll`을 포함하여 다른 NuGet 어셈블리를 참조하지 마세요.
 
-1. 서비스를 사용하려면 [MEF 가져오기 특성](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes) 또는 [IComponentModel 서비스](http://msdn.microsoft.com/library/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx)를 통해 가져옵니다.
+1. 서비스를 사용하려면 [MEF 가져오기 특성](/dotnet/framework/mef/index#imports-and-exports-with-attributes) 또는 [IComponentModel 서비스](/dotnet/api/microsoft.visualstudio.componentmodelhost.icomponentmodel?redirectedfrom=MSDN&view=visualstudiosdk-2017)를 통해 가져옵니다.
 
     ```cs
     //Using the Import attribute

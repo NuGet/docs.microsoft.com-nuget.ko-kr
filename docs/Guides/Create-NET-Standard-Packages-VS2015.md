@@ -13,17 +13,17 @@ keywords: "패키지 만들기, .NET Standard 패키지, .NET Standard 매핑 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: a912c27e1873d60426f2147995f69e2dcc433ca9
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: e02888bf552997afe25e967f13e021e78e40d48d
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-net-standard-packages-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 .NET Standard 패키지 만들기
 
 *NuGet 3.x에 적용됩니다. NuGet 4.x 이상을 사용하려면 [Visual Studio 2017을 사용하여 .NET Standard 패키지 만들기](../guides/create-net-standard-packages-vs2017.md)를 참조하세요.*
 
-[.NET Standard 라이브러리](https://docs.microsoft.com/dotnet/articles/standard/library)는 모든 .NET 런타임에서 사용할 수 있도록 만들어진 .NET API의 공식 사양이며, 이에 따라 .NET 생태계에서 더 균일하게 설정됩니다. .NET Standard 라이브러리는 워크로드와는 별도로 구현할 모든 .NET 플랫폼에 대해 균일한 BCL(기본 클래스 라이브러리) API 집합을 정의합니다. 개발자가 모든 .NET 런타임에서 사용할 수 있는 PCL을 생성할 수 있으며, 공유 코드에서 플랫폼별 조건부 컴파일 지시문을 제거하지 않더라도 이를 줄일 수 있습니다.
+[.NET Standard 라이브러리](/dotnet/articles/standard/library)는 모든 .NET 런타임에서 사용할 수 있도록 만들어진 .NET API의 공식 사양이며, 이에 따라 .NET 생태계에서 더 균일하게 설정됩니다. .NET Standard 라이브러리는 워크로드와는 별도로 구현할 모든 .NET 플랫폼에 대해 균일한 BCL(기본 클래스 라이브러리) API 집합을 정의합니다. 개발자가 모든 .NET 런타임에서 사용할 수 있는 PCL을 생성할 수 있으며, 공유 코드에서 플랫폼별 조건부 컴파일 지시문을 제거하지 않더라도 이를 줄일 수 있습니다.
 
 이 가이드에서는 .NET Standard 라이브러리 1.4를 대상으로 하는 NuGet 패키지를 만드는 과정을 안내합니다. 이 패키지는 .NET Framework 4.6.1, 유니버설 Windows 플랫폼 10, .NET Core 및 Mono/Xamarin에서 작동합니다. 자세한 내용은 이 항목의 뒷부분에 있는 [.NET Standard 매핑 테이블](#net-standard-mapping-table)을 참조하세요.
 
@@ -310,12 +310,12 @@ nuget pack AppLogger.nuspec
 
 |플랫폼 이름 |Alias|
 |--------------|-----|
-|.NET 표준 | netstandard| 1.0| 1.1| 1.2| 1.3| 1.4| 1.5| 1.6|
+|.NET Standard | netstandard| 1.0| 1.1| 1.2| 1.3| 1.4| 1.5| 1.6|
 |.NET Core | netcoreapp| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| 1.0|
 |.NET Framework| net| 4.5| 4.5.1| 4.6| 4.6.1| 4.6.2| 4.6.3|
 |Mono/Xamarin 플랫폼| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;|
 |유니버설 Windows 플랫폼| uap| &#x2192;| &#x2192;| &#x2192;| &#x2192;|10.0|
-|창| win| &#x2192;| 8.0| 8.1|
+|Windows| win| &#x2192;| 8.0| 8.1|
 |Windows Phone| wpa| &#x2192;| &#x2192;|8.1|
 |Windows Phone Silverlight| wp| 8.0|
 
@@ -329,5 +329,5 @@ nuget pack AppLogger.nuspec
 - [여러 .NET Framework 버전 지원](../create-packages/supporting-multiple-target-frameworks.md)
 - [패키지에 MSBuild props 및 targets 포함](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)
-- [.NET Standard 라이브러리 설명서](https://docs.microsoft.com/dotnet/articles/standard/library)
-- [.NET Framework에서 .NET Core로 이식](https://docs.microsoft.com/dotnet/articles/core/porting/index)
+- [.NET Standard 라이브러리 설명서](/dotnet/articles/standard/library)
+- [.NET Framework에서 .NET Core로 이식](/dotnet/articles/core/porting/index)

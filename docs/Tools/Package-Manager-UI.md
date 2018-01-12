@@ -12,13 +12,14 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
+- vs.nuget.packagemanager.ui
 description: "NuGet 패키지를 사용 하기 위한 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하기 위한 지침입니다."
 keywords: "NuGet 패키지 관리자 UI에서 NuGet 패키지 관리자 Visual Studio에서 NuGet 패키지, NuGet 사용자 인터페이스를 관리 하는 Visual Studio에서 NuGet UI"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: fb2166b727dd01de0f7096535fdbc71c5ab0e2a3
-ms.sourcegitcommit: cde52deee5691d3e8bcb96f46f9645c7ba579af8
+ms.openlocfilehash: 39ce53184755887c419c8872148a6c13dc2c65ec
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/10/2018

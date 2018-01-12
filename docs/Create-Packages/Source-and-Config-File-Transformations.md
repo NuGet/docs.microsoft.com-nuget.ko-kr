@@ -14,11 +14,11 @@ ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: 7d380b7f2ff52ec39a2ac9a2b939ee51db6054f3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 89a55716ccbc9043cfce4c7f38ec8ab9a0e2f768
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>소스 코드 및 구성 파일 변환
 
@@ -27,20 +27,19 @@ ms.lasthandoff: 12/14/2017
 > [!Note]
 > 패키지가 [프로젝트 파일의 패키지 참조](../Consume-Packages/Package-References-in-Project-Files.md)를 사용하여 프로젝트에 설치된 경우 원본 및 구성 파일 변환이 적용되지 않습니다. 
 
-**소스 코드 변환**은 패키지를 설치할 때 단방향 토큰 교체를 패키지의 `content` 폴더에 있는 파일에 적용합니다. 여기서 토큰은 Visual Studio [프로젝트 속성](https://msdn.microsoft.com/library/vslangproj.projectproperties_properties.aspx)을 참조합니다. 이렇게 하면 프로젝트의 네임스페이스에 파일을 삽입하거나 일반적으로 ASP.NET 프로젝트에서 `global.asax`로 이동하는 코드를 사용자 지정할 수 있습니다.
+**소스 코드 변환**은 패키지를 설치할 때 단방향 토큰 교체를 패키지의 `content` 폴더에 있는 파일에 적용합니다. 여기서 토큰은 Visual Studio [프로젝트 속성](/dotnet/api/vslangproj.projectproperties?redirectedfrom=MSDN&view=visualstudiosdk-2017#properties_)을 참조합니다. 이렇게 하면 프로젝트의 네임스페이스에 파일을 삽입하거나 일반적으로 ASP.NET 프로젝트에서 `global.asax`로 이동하는 코드를 사용자 지정할 수 있습니다.
 
 **구성 파일 변환**을 사용하면 `web.config` 및 `app.config`와 같은 대상 프로젝트에 있는 파일을 수정할 수 있습니다. 예를 들어 패키지가 구성 파일의 `modules` 섹션에 항목을 추가해야 합니다. 구성 파일에 추가할 섹션을 설명하는 패키지에서 특별한 파일을 포함하여 이 변환을 수행합니다. 패키지를 제거하는 경우 동일한 변경 내용을 되돌려서 양방향 변환으로 만듭니다.
-
 
 ## <a name="specifying-source-code-transformations"></a>소스 코드 변환 지정
 
 1. 프로젝트에 패키지를 삽입하려고 하는 파일은 패키지의 `content` 폴더 내에 위치해야 합니다. 예를 들어, `ContosoData.cs`라는 파일을 대상 프로젝트의 `Models` 폴더에 설치하려는 경우 패키지의 `content\Models` 폴더 내에 있어야 합니다.
 
-2. 설치 시 토큰 대체를 적용하도록 NuGet에 지시하려면 소스 코드 파일 이름에 `.pp`를 추가합니다. 설치 후에 파일에는 `.pp` 확장명이 없습니다.
+1. 설치 시 토큰 대체를 적용하도록 NuGet에 지시하려면 소스 코드 파일 이름에 `.pp`를 추가합니다. 설치 후에 파일에는 `.pp` 확장명이 없습니다.
 
     예를 들어 `ContosoData.cs`에서 변환하려면 `ContosoData.cs.pp` 패키지에서 파일 이름을 지정합니다. 설치 후에 `ContosoData.cs`로 나타납니다.
 
-3. 소스 코드 파일에서 `$token$` 양식인 대/소문자 비구분 토큰을 사용하여 NuGet이 프로젝트 속성으로 대체해야 하는 값을 나타냅니다.
+1. 소스 코드 파일에서 `$token$` 양식인 대/소문자 비구분 토큰을 사용하여 NuGet이 프로젝트 속성으로 대체해야 하는 값을 나타냅니다.
 
     ```cs
     namespace $rootnamespace$.Models
@@ -58,8 +57,7 @@ ms.lasthandoff: 12/14/2017
 
     설치 시 NuGet은 `$rootnamespace$`를 `Fabrikam`으로 바꾸어 루트 네임스페이스가 `Fabrikam`인 대상 프로젝트를 가정합니다.
 
-`$rootnamespace$` 토큰은 가장 일반적으로 사용되는 프로젝트 속성입니다. 다른 모든 토큰은 MSDN에 대한 [프로젝트 속성](https://msdn.microsoft.com/library/vslangproj.projectproperties_properties.aspx) 설명서에 나열됩니다. 물론 일부 속성은 프로젝트 형식에 특정될 수 있습니다.
-
+`$rootnamespace$` 토큰은 가장 일반적으로 사용되는 프로젝트 속성입니다. 다른 모든 토큰은 MSDN에 대한 [프로젝트 속성](/dotnet/api/vslangproj.projectproperties?redirectedfrom=MSDN&view=visualstudiosdk-2017#properties_) 설명서에 나열됩니다. 물론 일부 속성은 프로젝트 형식에 특정될 수 있습니다.
 
 ## <a name="specifying-config-file-transformations"></a>구성 파일 변환 지정
 
@@ -91,7 +89,6 @@ XDT를 사용하는 장점은 단순히 두 개의 고정 파일을 병합하는
 
 패키지를 설치하는 동안 `MyNuModule` 요소를 `modules` 섹션에 추가하려면 다음과 같은 패키지의 `content` 폴더에서 `web.config.transform` 파일을 만듭니다.
 
-    
 ```xml
 <configuration>
     <system.webServer>
@@ -125,10 +122,9 @@ NuGet이 `modules` 섹션을 대체하지 않았습니다. 새 요소 및 특성
 
 패키지를 설치 및 제거하는 영향을 보려면 Visual Studio에서 새 ASP.NET 프로젝트를 만들고(템플릿이 새 프로젝트 대화 상자의 **Visual C# > 웹** 아래에 있음), 빈 ASP.NET 응용 프로그램을 선택합니다. `web.config`를 열어 초기 상태를 확인합니다. 그런 다음 프로젝트를 마우스 오른쪽 단추로 클릭하고, **NuGet 패키지 관리**를 선택하고, nuget.org에서 ELMAH를 찾고, 최신 버전을 설치합니다. `web.config`의 모든 변경 내용을 확인합니다. 이제 패키지를 제거하면 `web.config`가 이전 상태로 되돌아갑니다.
 
-
 ### <a name="xdt-transforms"></a>XDT 변환
 
-NuGet 2.6 이상에서 [XDT 구문](https://msdn.microsoft.com/library/dd465326.aspx)을 사용하여 구성 파일을 수정할 수 있습니다. `$` 구분 기호(대/소문자 구분) 내에서 속성 이름을 포함하여 NuGet에서 토큰을 [프로젝트 속성](https://msdn.microsoft.com/library/vslangproj.projectproperties_properties.aspx)으로 바꿀 수도 있습니다.
+NuGet 2.6 이상에서 [XDT 구문](https://msdn.microsoft.com/library/dd465326.aspx)을 사용하여 구성 파일을 수정할 수 있습니다. `$` 구분 기호(대/소문자 구분) 내에서 속성 이름을 포함하여 NuGet에서 토큰을 [프로젝트 속성](/dotnet/api/vslangproj.projectproperties?redirectedfrom=MSDN&view=visualstudiosdk-2017#properties_)으로 바꿀 수도 있습니다.
 
 예를 들어 다음 `app.config.install.xdt` 파일은 프로젝트의 `FullPath`, `FileName` 및 `ActiveConfigurationSettings` 값을 포함하는 `app.config`에 `appSettings` 요소를 삽입합니다.
 
