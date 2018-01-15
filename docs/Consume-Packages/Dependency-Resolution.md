@@ -13,11 +13,11 @@ keywords: "NuGet 패키지 종속성, NuGet 버전 관리, 종속성 버전, 버
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 44c69c07990fed72b439698d22021ebcbb2eed89
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 93a3d077a6dd1946485fc8c48f97c8009280890c
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet에서 패키지 종속성을 확인하는 방법
 
@@ -151,6 +151,12 @@ NuGet restore 프로세스가 빌드하기 전에 실행되면, 먼저 메모리
             }
         }
     }
+    ```
+
+- [프로젝트 파일에 있는 패키지 참조](../consume-packages/package-references-in-project-files.md)(NuGet 4.0 이상만)로 종속성에 `ExcludeAssets="All"`을 추가합니다.
+
+    ```xml
+    <PackageReference Include="packageC" Version="1.0.0" ExcludeAssets="All" />
     ```
 
 ## <a name="dependency-updates-during-package-install"></a>패키지 설치 중 종속성 업데이트 

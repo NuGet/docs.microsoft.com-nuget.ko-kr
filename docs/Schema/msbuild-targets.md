@@ -11,11 +11,11 @@ ms.assetid: 86f7e724-2509-4d7d-aa8d-4a3fb913ded6
 description: "NuGet pack 및 restore는 NuGet 4.0 이상에서 MSBuild 대상으로 직접 작동할 수 있습니다."
 keywords: "NuGet 및 MSBuild, NuGet pack 대상, NuGet restore 대상"
 ms.reviewer: karann-msft
-ms.openlocfilehash: def01380e5bc3bf878e72dd437f52cd033641ca5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: d4778a21a96de6d76d7a20ff9a305960dd6c2bf1
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -55,7 +55,7 @@ pack 대상, 즉 `msbuild /t:pack`을 사용하는 경우 MSBuild는 `project.js
 `.nuspec`의 `Owners` 및 `Summary` 속성은 MSBuild에서 지원되지 않습니다.
 
 
-| 특성/NuSpec 값 | MSBuild 속성 | 기본 | 참고 |
+| 특성/NuSpec 값 | MSBuild 속성 | 기본 | 노트 |
 |--------|--------|--------|--------|
 | ID | PackageId | AssemblyName | MSBuild의 $(AssemblyName)입니다. |
 | 버전 | PackageVersion | 버전 | "1.0.0", "1.0.0-beta" 또는 "1.0.0-beta-00345"와 같이 semver와 호환됩니다. |
@@ -66,7 +66,7 @@ pack 대상, 즉 `msbuild /t:pack`을 사용하는 경우 MSBuild는 `project.js
 | 제목 | 제목 | PackageId| |
 | 설명 | 설명 | "패키지 설명" | |
 | Copyright | Copyright | 비어 있음 | |
-| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
+| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | 비어 있음 | |
 | ProjectUrl | PackageProjectUrl | 비어 있음 | |
 | IconUrl | PackageIconUrl | 비어 있음 | |

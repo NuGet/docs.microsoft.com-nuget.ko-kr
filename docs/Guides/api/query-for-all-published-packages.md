@@ -17,11 +17,11 @@ keywords: "NuGet API는 모든 패키지를 열거하고, NuGet API는 패키지
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 50a5be4cb0405ad78a72d0497612781a4b346060
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 5559a7cd104861b1a10aa8d1513696e609c51c15
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>nuget.org에 게시된 모든 패키지에 대한 쿼리
 

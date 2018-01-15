@@ -13,11 +13,11 @@ keywords: "NuGet 패키지 종속성, 패키지 참조, 프로젝트 파일, Pac
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c8fc9e558557af444d9a35ace36d043a5f6382a7
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 275957c94e4a4bb45f359cd48816acf4f286ebad
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 > [!Important]
 > 현재 패키지 참조는 Windows 10 빌드 15063(작성자 업데이트)를 대상으로 하는 .NET Core 프로젝트, .NET Standard 프로젝트 및 UWP 프로젝트용 Visual Studio 2017에서만 지원됩니다.
 
-`PackageReference` 접근 방식을 사용하면 MSBuild 조건을 사용하여 대상 프레임워크, 구성, 플랫폼 또는 기타 그룹화당 패키지 참조를 선택할 수 있습니다. 종속성과 콘텐츠 흐름을 세밀하게 제어할 수도 있습니다. 동작 및 [종속성 확인](Dependency-Resolution.md) 면에서 `project.json`를 사용하는 방법과 동일합니다.
+`PackageReference` 접근 방식을 사용하면 MSBuild 조건을 사용하여 대상 프레임워크, 구성, 플랫폼 또는 기타 그룹화당 패키지 참조를 선택할 수 있습니다. 종속성과 콘텐츠 흐름을 세밀하게 제어할 수도 있습니다. 동작 및 [종속성 확인](Dependency-Resolution.md) 면에서 `project.json`을 사용하는 방법과 동일합니다.
 
 프로젝트 파일에서 패키지 참조와 MSBuild의 통합에 대한 자세한 내용은 [NuGet 팩 및 MSBuild 대상으로 복원](../schema/msbuild-targets.md)을 참조하세요.
 

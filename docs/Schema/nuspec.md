@@ -14,11 +14,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d002f55a75b3daaa2fed7a94e88582dd4f04e05f
-ms.sourcegitcommit: 1ebfff1263992c54de75366a1b1c26dbae6c0318
+ms.openlocfilehash: cd5b7c79ad0af07b167e062d4a2f5142ef2d718a
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -172,8 +172,8 @@ nuget pack MyProject.csproj
 `<metadata>` 내의 `<dependencies>` 요소에는 최상위 패키지가 종속되는 다른 패키지를 식별하는 임의 개수의 `<dependency>` 요소가 포함됩니다. 각 `<dependency>`에 대한 특성은 다음과 같습니다.
 
 | 특성 | 설명 |
-| --- | --- | 
-| `id` | (필수) 종속성의 패키지 ID입니다. |
+| --- | --- |
+| `id` | (필수) 패키지 페이지에서 “EntityFramework” 및 “NUnit” 패키지 nuget.org의 이름인 같은 종속성의 패키지 ID를 보여 줍니다. |
 | `version` | (필수) 종속성으로 허용되는 버전 범위입니다. 정확한 구문은 [패키지 버전 관리](../reference/package-versioning.md#version-ranges-and-wildcards)를 참조하세요. |
 | include | 최종 패키지에 포함할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 `none`입니다. |
 | Exclude | 최종 패키지에서 제외할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 `all`입니다. `exclude`로 지정된 태그는 `include`로 지정된 태그보다 우선 순위가 높습니다. 예를 들어 `include="runtime, compile" exclude="compile"`은 `include="runtime"`과 같습니다. |
@@ -254,7 +254,7 @@ nuget pack MyProject.csproj
 </references>
 ```
 
-명시적 참조는 일반적으로 디자인 타임 전용 어셈블리에만 사용됩니다. 예를 들어 [코드 계약](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/code-contracts)을 사용하는 경우 계약 어셈블리는 확장하는 런타임 어셈블리 옆에 있어야 Visual Studio에서 찾을 수 있습니다. 그러나 계약 어셈블리는 프로젝트에서 참조하거나 프로젝트의 `bin` 폴더에 복사할 필요가 없습니다.
+명시적 참조는 일반적으로 디자인 타임 전용 어셈블리에만 사용됩니다. 예를 들어 [코드 계약](/dotnet/framework/debug-trace-profile/code-contracts)을 사용하는 경우 계약 어셈블리는 확장하는 런타임 어셈블리 옆에 있어야 Visual Studio에서 찾을 수 있습니다. 그러나 계약 어셈블리는 프로젝트에서 참조하거나 프로젝트의 `bin` 폴더에 복사할 필요가 없습니다.
 
 마찬가지로 명시적 참조는 런타임 어셈블리 옆에 있는 도구 어셈블리가 필요하지만 프로젝트 참조로 포함될 필요가 없는 XUnit과 같은 단위 테스트 프레임워크에 사용할 수 있습니다.
 

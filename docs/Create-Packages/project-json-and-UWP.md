@@ -13,11 +13,11 @@ keywords: "NuGet 종속성, NuGet 및 UWP, UWP 및 project.json, NuGet project.j
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 40507e541997cea368052c373a4124d9c4a00a51
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: ae49c017365e1a63622fde318d5c94b64ed1ea2e
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="projectjson-and-uwp"></a>project.json 및 UWP
 
@@ -70,7 +70,7 @@ ms.lasthandoff: 12/14/2017
 
 NuGet 패키지에는 패키지가 설치된 MSBuild 프로젝트에 가져오는 `.targets` 및 `.props` 파일이 포함될 수 있습니다. NuGet 2.x에서는 `<Import>` 문을 `.csproj` 파일에 삽입하여 수행했지만, NuGet 3.0에서는 특정 "프로젝트에 설치" 작업이 없습니다. 대신 패키지 복원 프로세스는 두 파일, `[projectname].nuget.props`과 `[projectname].NuGet.targets`를 씁니다.
 
-MSBuild는 이러한 두 파일을 찾고 프로젝트 빌드 프로세스의 시작과 끝 무렵에 자동으로 해당 파일을 가져옵니다. 이는 NuGet 2.x와 매우 비슷한 동작을 제공하지만, 주요 차이점 중 하나는 *이 경우 targets/props 파일의 순서가 보장되지 않는다*는 것입니다. 그러나 MSBuild는 `<Target>` 정의의 `BeforeTargets` 및 `AfterTargets` 특성을 통해 대상의 순서를 지정하는 방법을 제공합니다([Target 요소(MSBuild)](https://docs.microsoft.com/visualstudio/msbuild/target-element-msbuild) 참조).
+MSBuild는 이러한 두 파일을 찾고 프로젝트 빌드 프로세스의 시작과 끝 무렵에 자동으로 해당 파일을 가져옵니다. 이는 NuGet 2.x와 매우 비슷한 동작을 제공하지만, 주요 차이점 중 하나는 *이 경우 targets/props 파일의 순서가 보장되지 않는다*는 것입니다. 그러나 MSBuild는 `<Target>` 정의의 `BeforeTargets` 및 `AfterTargets` 특성을 통해 대상의 순서를 지정하는 방법을 제공합니다([Target 요소(MSBuild)](/visualstudio/msbuild/target-element-msbuild) 참조).
 
 
 ## <a name="lib-and-ref"></a>Lib 및 Ref
@@ -93,7 +93,7 @@ lib 구조의 예:
 
 대부분의 패키지 작성자에게는 `ref` 폴더가 필요하지 않습니다. 이 폴더는 컴파일 및 IntelliSense에 일관된 노출 영역을 제공해야 하지만 다른 TxM에 대해 별도의 구현이 필요한 패키지에 유용합니다. 이 폴더에 대한 가장 큰 사용 사례는 NuGet에 대한 .NET Core 제공의 일환으로 생성되는 `System.*` 패키지입니다. 이러한 패키지에는 일관된 참조 어셈블리 집합으로 통합되는 다양한 구현이 있습니다.
 
-`ref` 폴더에 포함된 어셈블리는 컴파일러에 기계적으로 전달되는 참조 어셈블리입니다. csc.exe를 사용한 사용자의 어셈블리는 [C# /reference 옵션](https://docs.microsoft.com/dotnet/articles/csharp/language-reference/compiler-options/reference-compiler-option) 스위치에 전달할 어셈블리입니다.
+`ref` 폴더에 포함된 어셈블리는 컴파일러에 기계적으로 전달되는 참조 어셈블리입니다. csc.exe를 사용한 사용자의 어셈블리는 [C# /reference 옵션](/dotnet/articles/csharp/language-reference/compiler-options/reference-compiler-option) 스위치에 전달할 어셈블리입니다.
 
 `ref` 폴더의 구조는 `lib`와 같습니다. 예를 들어 다음과 같습니다.
 
@@ -121,7 +121,7 @@ lib 구조의 예:
 
 ## <a name="runtimes"></a>runtimes
 
-runtimes 폴더는 일반적으로 운영 체제 및 CPU 아키텍처에서 정의되는 특정 "런타임"에서 실행하는 데 필요한 어셈블리 및 네이티브 라이브러리를 포함합니다. 이러한 런타임은 `win`, `win-x86`, `win7-x86`, `win8-64` 등과 같이 [RID(런타임 식별자)](https://docs.microsoft.com/dotnet/core/rid-catalog)를 사용하여 식별됩니다.
+runtimes 폴더는 일반적으로 운영 체제 및 CPU 아키텍처에서 정의되는 특정 "런타임"에서 실행하는 데 필요한 어셈블리 및 네이티브 라이브러리를 포함합니다. 이러한 런타임은 `win`, `win-x86`, `win7-x86`, `win8-64` 등과 같이 [RID(런타임 식별자)](/dotnet/core/rid-catalog)를 사용하여 식별됩니다.
 
 ## <a name="native-light-up"></a>네이티브 폴더에 대한 설명
 

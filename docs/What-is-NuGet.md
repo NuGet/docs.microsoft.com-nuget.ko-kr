@@ -13,15 +13,15 @@ keywords: "NuGet 패키지 관리자, 사용, 패키지 만들기, 패키지 호
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 29dcedf33a54e249fe0b6acf588e4aafde28304f
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 2bc6a9e154df287fee6a7e00cc1349dfa2100643
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 소개
 
-모든 최신 개발 플랫폼에 필수적인 도구는 개발자가 유용한 코드 라이브러리를 작성, 공유 및 사용할 수 있는 메커니즘입니다. 이러한 라이브러리는 컴파일된 코드(DLL) 및 해당 라이브러리를 사용하는 프로젝트에 필요할 수 있는 다른 콘텐츠를 포함할 수 있기 때문에 일반적으로 "패키지"라고 합니다.
+모든 최신 개발 플랫폼에 필수적인 도구는 개발자가 유용한 코드를 작성, 공유 및 사용할 수 있는 메커니즘입니다. 대부분 이러한 코드는 이러한 패키지를 사용하는 프로젝트에 필요한 다른 내용과 함께 컴파일된 코드를 포함하는(DLL로) “패키지”로 제공됩니다.
 
 .NET의 경우 코드를 공유하는 메커니즘은 **NuGet**이며, 이는 .NET용 패키지를 만들고 호스팅하고 사용하는 방법을 정의하고 각 역할에 대한 도구를 제공합니다. 
 
@@ -45,7 +45,7 @@ NuGet은 호스팅 지원 외에도 작성자와 소비자 모두가 사용하�
 | --- | --- | --- | --- |
 | [nuget.exe CLI](Tools/nuget-exe-CLI-Reference.md) | 모두 | 만들기, 사용 | 모든 NuGet 기능을 제공합니다. 일부 명령은 패키지 작성자에게만 적용되고, 일부는 소비자에게만 적용되고, 다른 일부는 둘 다에 적용됩니다. 예를 들어 패키지 작성자는 `nuget pack` 명령을 사용하여 다양한 어셈블리 및 관련 파일에서 패키지를 만들고, 패키지 소비자는 `nuget install`을 사용하여 프로젝트에 패키지를 포함하고, 모든 사용자는 `nuget config`를 사용하여 NuGet 구성 변수를 설정합니다.  |
 | [패키지 관리자 UI](Tools/Package-Manager-UI.md) | Windows의 Visual Studio | 사용 | .NET 프로젝트에서 패키지를 설치하고 관리하는 데 사용하기 쉬운 UI를 제공합니다. | 
-| [NuGet UI 관리](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | 사용 | .NET 프로젝트에서 패키지를 설치하고 관리하는 데 사용하기 쉬운 UI를 제공합니다. |
+| [NuGet UI 관리](/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | 사용 | .NET 프로젝트에서 패키지를 설치하고 관리하는 데 사용하기 쉬운 UI를 제공합니다. |
 | [패키지 관리자 콘솔](Tools/Package-Manager-Console.md) | Windows의 Visual Studio | 사용 | .NET 프로젝트에서 패키지를 설치하고 관리하기 위한 [PowerShell 명령](Tools/Powershell-Reference.md)을 제공합니다. | 
 | [dotnet CLI](Tools/dotnet-Commands.md) | 모두 | 만들기, 사용 | .NET Core 도구 체인 내에서 특정 NuGet CLI 기능을 직접 제공합니다. |
 | [MSBuild](Schema/msbuild-targets.md) | Windows | 만들기, 사용 | MSBuild 도구 체인을 통해 프로젝트에서 사용되는 패키지를 직접 만들고 복원할 수 있는 기능을 제공합니다. |

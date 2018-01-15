@@ -13,11 +13,11 @@ keywords: "NuGet Q&A, 질문과 대답, 일반적인 문제, NuGet 버전, 패�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 105fa6e1cad3d163b673376c74ce9c835a0b5059
-ms.sourcegitcommit: 122bf7ce308365ea45da018b0768f0536de76a1f
+ms.openlocfilehash: d19a24a2d1955e996e18d44fee346865d36493f8
+ms.sourcegitcommit: e5b7cf6675be9891341c196afe822cea6f71d60c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -57,9 +57,9 @@ UI 및 명령줄 도구에 관한 모든 정보는 [설치 가이드](../guides/
 **다른 Visual Studio 제품에서는 NuGet을 어떻게 지원하나요?**
 
 - Windows에서 Visual Studio는 [패키지 관리자 UI](../tools/Package-Manager-UI.md)와 [패키지 관리자 콘솔](../tools/Package-Manager-Console.md)을 지원합니다.
-- Mac용 Visual Studio에는 [프로젝트에 NuGet 패키지 포함](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)에서 설명한 대로 NuGet 기능이 기본적으로 제공됩니다.
+- Mac용 Visual Studio에는 [프로젝트에 NuGet 패키지 포함](/visualstudio/mac/nuget-walkthrough)에서 설명한 대로 NuGet 기능이 기본적으로 제공됩니다.
 - Visual Studio Code(모든 플랫폼)에는 직접적인 NuGet 통합이 없습니다. [NuGet CLI](../tools/nuget-exe-CLI-Reference.md) 또는 [dotnet CLI](../tools/dotnet-commands.md)를 사용하세요.
-- Visual Studio Team Services는 [NuGet 패키지를 복원하는 빌드 단계](https://docs.microsoft.com/vsts/build-release/tasks/package/nuget)를 제공합니다. 또한 [Team Services에서 전용 NuGet 패키지 피드를 호스팅](https://www.visualstudio.com/docs/package/nuget/publish)할 수도 있습니다.
+- Visual Studio Team Services는 [NuGet 패키지를 복원하는 빌드 단계](/vsts/build-release/tasks/package/nuget)를 제공합니다. 또한 [Team Services에서 전용 NuGet 패키지 피드를 호스팅](https://www.visualstudio.com/docs/package/nuget/publish)할 수도 있습니다.
 
 **설치된 NuGet 도구의 정확한 버전을 확인하려면 어떻게 할까요?**
 
@@ -101,7 +101,7 @@ NuGet은 Windows, 웹, 클라우드, SharePoint, Wix 등과 같은 다양한 프
 
 **패키지 관리자 콘솔에서 DTE 개체에 액세스하려면 어떻게 할까요?**
 
-Visual Studio 자동화 개체 모델의 최상위 개체를 DTE(개발 도구 환경) 개체라고 합니다. 콘솔에서 `$DTE`라는 변수를 통해 이 개체를 제공합니다. 자세한 내용은 Visual Studio 확장성 설명서에서 [자동화 모델 개요](https://docs.microsoft.com/visualstudio/extensibility/internals/automation-model-overview)를 참조하세요.
+Visual Studio 자동화 개체 모델의 최상위 개체를 DTE(개발 도구 환경) 개체라고 합니다. 콘솔에서 `$DTE`라는 변수를 통해 이 개체를 제공합니다. 자세한 내용은 Visual Studio 확장성 설명서에서 [자동화 모델 개요](/visualstudio/extensibility/internals/automation-model-overview)를 참조하세요.
 
 **$DTE 변수를 DTE2 형식으로 캐스팅하려고 했지만 ""EnvDTE.DTEClass" 형식의 "EnvDTE.DTEClass" 값을 "EnvDTE80.DTE2" 형식으로 변환할 수 없습니다."라는 오류가 발생합니다. 무엇이 문제인가요?**
 
@@ -177,9 +177,9 @@ Visual Studio 자동화 개체 모델의 최상위 개체를 DTE(개발 도구 �
 
 ## <a name="managing-packages-on-nugetorg"></a>nuget.org의 패키지 관리
 
-**패키지 메타데이터를 업로드한 후에 편집할 수 있나요? 패키지 메타데이터를 변경하기 위해 nuspec을 편집하고 새 패키지를 업로드하는 것이 좋은 이유는 무엇인가요?**
+**패키지 메타데이터를 업로드한 후에 편집할 수 있나요? 패키지 메타데이터를 변경하기 위해 nuspec을 편집하고 새 패키지를 업로드하는 것이 필요한 이유는 무엇인가요?**
 
-NuGet은 패키지 서명을 구현할 예정입니다. 패키지 서명의 디자인 원칙은 nuspec을 포함한 서명된 패키지 콘텐츠를 변경할 수 없다는 것입니다. 패키지 메타데이터를 편집하면 nuspec이 변경되고 기존 서명이 무효화됩니다. 패키지를 만든 후에 패키지 메타데이터를 편집할 필요가 없도록 기존 워크플로를 수정하는 것이 좋습니다.
+NuGet은 모든 패키지에 서명이 필요 합니다. 패키지 서명의 디자인 원칙은 nuspec을 포함한 서명된 패키지 콘텐츠를 변경할 수 없다는 것입니다. 패키지 메타데이터를 편집하면 nuspec이 변경되고 기존 서명이 무효화됩니다. 패키지를 만든 후에 패키지 메타데이터를 편집할 필요가 없도록 기존 워크플로를 수정하는 것이 좋습니다.
 
 패키지에 대해 나열된 종속성은 패키지 자체에서 자동으로 생성되며 편집할 수 없습니다.
 

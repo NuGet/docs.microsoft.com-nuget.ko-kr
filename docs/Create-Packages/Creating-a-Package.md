@@ -13,11 +13,11 @@ keywords: "NuGet 패키지 만들기, 패키지 만들기, nuspec 매니페스�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: e7a2c4d02afb2387161c22fe5bd443eb0991ea8c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 6675d21a2900a1b61e17c08518b328732f4472c5
+ms.sourcegitcommit: 1cb047b24b3b69d80e808c23b2ace0d98d2dfdcc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="creating-nuget-packages"></a>NuGet 패키지 만들기
 
@@ -284,7 +284,7 @@ NuGet 3.5 이상을 사용하면 의도한 용도를 나타내기 위해 패키�
 
 - `Dependency` 유형 패키지는 라이브러리 또는 응용 프로그램에 빌드 시간 자산 또는 런타임 자산을 추가하며, 모든 프로젝트 형식에 설치할 수 있습니다(호환된다고 가정할 경우).
 
-- `DotnetCliTool` 유형 패키지는 [.NET CLI](https://docs.microsoft.com/dotnet/articles/core/tools/index)의 확장이며, 명령줄에서 호출됩니다. 이러한 패키지는 .NET Core 프로젝트에만 설치할 수 있으며 복원 작업에는 영향을 주지 않습니다. 이러한 프로젝트별 확장에 대한 자세한 내용은 [.NET Core 확장성](https://docs.microsoft.com/dotnet/articles/core/tools/extensibility#per-project-based-extensibility) 설명서를 참조하세요.
+- `DotnetCliTool` 유형 패키지는 [.NET CLI](/dotnet/articles/core/tools/index)의 확장이며, 명령줄에서 호출됩니다. 이러한 패키지는 .NET Core 프로젝트에만 설치할 수 있으며 복원 작업에는 영향을 주지 않습니다. 이러한 프로젝트별 확장에 대한 자세한 내용은 [.NET Core 확장성](/dotnet/articles/core/tools/extensibility#per-project-based-extensibility) 설명서를 참조하세요.
 
     DotnetCliTool 패키지가 설치되면 Visual Studio에서 패키지를 `dependencies` 노드 대신 `project.json` `tools` 노드에 배치합니다.
 

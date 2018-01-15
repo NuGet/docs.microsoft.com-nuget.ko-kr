@@ -13,13 +13,15 @@ keywords: "NuGet 설치, NuGet 패키지 사용, NuGet 패키지 설치, NuGet �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: bcccc7139de31a8d07e9ed52abfd12fe9e6d687b
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 639f4883f5ce904a44d8aa23d76c93ed79ea4b9d
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="install-and-use-a-package"></a>패키지 설치 및 사용
+
+NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 제공하는 다시 사용할 수 있는 코드 단위입니다. 배경 지식은 [NuGet이란?](../What-is-NuGet.md)을 참조하세요.
 
 [!INCLUDE [install-methods](../includes/install-methods.md)]
 

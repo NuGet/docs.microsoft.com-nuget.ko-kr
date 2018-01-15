@@ -13,11 +13,11 @@ keywords: "NuGet 패키지 만들기, NuGet 패키지 게시, NuGet 자습서"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 36a7c2b1d056dddf07a59737de1c3e94294689ac
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: ab5235537d869047075b93f9d8255ae9e61dfedd
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="create-and-publish-a-package"></a>패키지 만들기 및 게시
 
@@ -52,7 +52,7 @@ ms.lasthandoff: 12/14/2017
     nuget spec
     ```
 
-1. 텍스트 편집기에서 파일을 엽니다. 매니페스트는 패키징 프로세스 중에 *$`<token>`$* 형식의 토큰이 프로젝트의 Properties/AssemblyInfo.cs 파일의 값으로 대체되는 아래 코드와 비슷합니다. 토큰에 대한 자세한 내용은 [.nuspec 파일 만들기](../create-packages/creating-a-package.md#creating-the-nuspec-file)를 참조하세요.
+1. 텍스트 편집기에서 파일을 엽니다. 매니페스트는 패키징 프로세스 중에 `<token>` 형식(예: `$id$`)의 토큰이 프로젝트의 Properties/AssemblyInfo.cs 파일의 값으로 대체되는 아래 코드와 비슷합니다. 토큰에 대한 자세한 내용은 [.nuspec 파일 만들기](../create-packages/creating-a-package.md#creating-the-nuspec-file)를 참조하세요.
 
     ```xml
     <?xml version="1.0"?>
@@ -115,7 +115,6 @@ nuget pack AppLogger.csproj
 > [!Warning]
 > nuget.org에 게시한 패키지는 다른 개발자에게 공개적으로 표시됩니다. 패키지를 개인적으로 호스팅하려면 [패키지 호스팅](../hosting-packages/overview.md)을 참조하세요.
 
-
 1. [nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)에 체험 계정을 만듭니다. 해당 계정이 이미 있으면 로그인합니다. 새 계정을 만들면 확인 전자 메일을 보냅니다. 패키지를 업로드하려면 먼저 계정을 확인해야 합니다.
 
 1. 로그인되면 사용자 이름(오른쪽 위)을 선택한 다음 **API 키**를 선택합니다.
@@ -134,7 +133,7 @@ nuget pack AppLogger.csproj
     ```
     nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://api.nuget.org/v3/index.json
     ```
-    
+
 1. nuget.exe에서 게시 프로세스의 결과를 표시합니다.
 
     ```

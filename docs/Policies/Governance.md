@@ -13,11 +13,11 @@ keywords: "NuGet 거버넌스, NuGet 선한 독재자, 대리인 책임, 참가�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: db2ed774b35d5698a88f9afba43fd30692001f6a
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0437b7d41f965da6a7ad44a7d0675916ed655fe1
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-governance"></a>NuGet 거버넌스
 
@@ -64,7 +64,7 @@ NuGet Core 팀은 자체적으로 선한 독재자 또는 프로젝트 책임자
 - [NuGet 클라이언트 및 NuGet 갤러리에 대한 참가 지침](https://github.com/NuGet/Home/wiki/Contributing-to-NuGet)
 - [NuGet 문서에 대한 참가 지침](https://github.com/NuGet/NuGetDocs/wiki/Contributing-to-NuGet-Documentation)
 
-### <a name="users"></a>Users
+### <a name="users"></a>사용자
 
 사용자는 패키지 소비자 및/또는 작성자로서 NuGet이 필요하고 이를 사용하는 커뮤니티 구성원입니다. 사용자는 커뮤니티에서 가장 중요한 구성원이며, 이들이 없으면 프로젝트에는 아무런 목적이 없을 것입니다. 누구나 사용자가 될 수 있으며, 특별한 요구 사항은 없습니다.
 

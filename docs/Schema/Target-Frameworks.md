@@ -14,11 +14,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4d1d2e6850f22306d715b1c2071ee45b0eb050dc
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 36e1f0cd6e4284a6bd272ce3c85749e9ed72cbcd
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="target-frameworks"></a>대상 프레임워크
 
@@ -40,7 +40,7 @@ NuGet은 다양한 위치에서 대상 프레임워크 참조를 사용하여 �
 
 NuGet 클라이언트는 아래 표의 프레임워크를 지원합니다. 대괄호([]) 안에 표시된 항목은 동등한 항목입니다. `dotnet`과 같은 일부 도구는 일부 파일에서 정식 TFM의 변형을 사용할 수 있습니다. 예를 들어 `dotnet pack`은 `.nuspec` 파일에서 `netcoreapp2.0` 대신 `.NETCoreApp2.0`을 사용합니다. 다양한 NuGet 클라이언트 도구에서 이러한 변형을 적절하게 처리하지만, 파일을 직접 편집할 때는 항상 정식 TFM을 사용해야 합니다.
 
-| 이름           | 약어 | TFM/TxM |
+| name           | 약어 | TFM/TxM |
 | -------------  | ------------ | --------- |
 |.NET Framework  | net          | net11     |
 |                |              | net20     |
@@ -53,7 +53,7 @@ NuGet 클라이언트는 아래 표의 프레임워크를 지원합니다. 대�
 |                |              | net46      |
 |                |              | net461     |
 |                |              | net462     |
-|Windows 스토어   | netcore      | netcore [netcore45] |
+|Microsoft Store(Windows 스토어) | netcore      | netcore [netcore45] |
 |                |              | netcore45 [win, win8] |
 |                |              | netcore451 [win81] |
 |                |              | netcore50 |
@@ -70,9 +70,9 @@ Windows Phone(SL) | wp | wp [wp7] |
 | | | wp8 |
 | | | wp81 |
 Windows Phone(UWP) | | wpa81 |
-범용 Windows 플랫폼 | uap | uap [uap10.0] |
+유니버설 Windows 플랫폼 | uap | uap [uap10.0] |
 | | | uap10.0 |
-.NET 표준 | netstandard | netstandard1.0 |
+.NET Standard | netstandard | netstandard1.0 |
 | | | netstandard1.1 |
 | | | netstandard1.2 |
 | | | netstandard1.3 |
@@ -122,7 +122,7 @@ Tizen | tizen | tizen3 |
 
 ## <a name="net-platform-standard"></a>.NET 플랫폼 표준
 
-[.NET 플랫폼 표준](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md)은 이진 호환 가능 프레임워크 간의 참조를 간소화하여 단일 대상 프레임워크가 다른 프레임워크의 조합을 참조할 수 있게 합니다. (배경 지식에 대한 자세한 내용은 [.NET 입문서](https://docs.microsoft.com/dotnet/articles/standard/index)를 참조하세요.)
+[.NET 플랫폼 표준](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md)은 이진 호환 가능 프레임워크 간의 참조를 간소화하여 단일 대상 프레임워크가 다른 프레임워크의 조합을 참조할 수 있게 합니다. (배경 지식에 대한 자세한 내용은 [.NET 입문서](/dotnet/articles/standard/index)를 참조하세요.)
 
 [NuGet Get Nearest Framework 도구](https://aka.ms/s2m3th)는 NuGet에서 프로젝트 프레임워크에 따라 패키지에서 사용할 수 있는 많은 프레임워크 자산 중에서 하나의 프레임워크를 선택하는 데 사용하는 것을 시뮬레이션합니다.
 
@@ -137,7 +137,7 @@ Tizen | tizen | tizen3 |
 
 타사에서 정의한 추가 프레임워크는 이러한 방식으로 액세스할 수 있는 다른 환경과의 호환성을 제공합니다. 또한 관련 프레임워크의 이러한 조합을 `Profile#`으로 참조할 수 있는 약식 프로필 번호가 있지만 폴더 및 `.nuspec`의 가독성을 떨어뜨리기 때문에 이러한 번호를 사용하지 않는 것이 좋습니다.
 
-| Profile# | 프레임워크 | 전체 이름 | .NET 표준 |
+| Profile# | 프레임워크 | 전체 이름 | .NET Standard |
  --- | --- | --- | ---
  Profile2 | .NETFramework 4.0 | portable-net40+win8+sl4+wp7 |
  | | Windows 8.0 | |
@@ -282,7 +282,7 @@ Tizen | tizen | tizen3 |
 
 또한 Xamarin을 대상으로 하는 NuGet 패키지는 Xamarin에서 정의한 추가 프레임워크를 사용할 수 있습니다. [Xamarin에 대한 NuGet 패키지 만들기](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/)를 참조하세요.
 
-| 이름 | 설명 | .NET 표준 |
+| name | 설명 | .NET Standard |
 | --- | --- | ---
 | monoandroid | Android OS에 대한 Mono 지원 | netstandard1.4 |
 | monotouch | iOS에 대한 Mono 지원 | netstandard1.4 |

@@ -13,11 +13,11 @@ keywords: "NuGet 패키지 복원, NuGet 및 TFS, NuGet 및 VSTS, NuGet 빌드 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4be1bb83549958897a15d690439cac073c9683d1
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 82decfa1a39cb99c405840a8f13b0bc993111c09
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Team Foundation 빌드를 사용하여 패키지 복원 설정
 
@@ -29,9 +29,9 @@ ms.lasthandoff: 12/14/2017
 >
 > 해당 빌드 프로세스 템플릿에서 Visual Studio Team Services 또는 온-프레미스 Team Foundation Server 2013을 사용하는 경우 빌드 프로세스의 일부로 자동 패키지가 복원됩니다.
 
-이 섹션은 [Team Foundation 빌드](http://msdn.microsoft.com/library/ms181710(v=VS.90).aspx)의 일환으로 [git](http://en.wikipedia.org/wiki/Git_(software)) 및 [TF 버전 제어](http://msdn.microsoft.com/library/ms181237(v=vs.120).aspx)에서 패키지를 복원하는 방법에 대한 자세한 연습을 제공합니다.
+이 섹션은 [Team Services 빌드](/vsts/build-release/index)의 일환으로 Git 및 Team Services 버전 제어에서 패키지를 복원하는 방법에 대한 자세한 연습을 제공합니다.
 
-[Team Foundation Service](http://tfs.visualstudio.com/)를 사용하는 시나리오에 이 연습이 지정되지만 개념은 다른 버전 제어에도 적용되고 시스템을 빌드합니다.
+Visual Studio Team Services를 사용하는 시나리오에 이 연습이 지정되지만 개념은 다른 버전 제어에도 적용되고 시스템을 빌드합니다.
 
 ## <a name="the-general-approach"></a>일반적인 접근 방법
 
@@ -119,7 +119,7 @@ nuget restore path\to\solution.sln
 
 이렇게 하면 모든 `packages` 폴더를 제외하지만 포함된 모든 `.targets` 파일을 다시 포함합니다. Visual Studio 개발자의 요구를 위해 특별히 조정된 `.gitignore` 파일의 템플릿을 [여기](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore)에서 찾을 수 있습니다.
 
-TF 버전 제어는 [.tfignore](http://msdn.microsoft.com/library/ms245454.aspx) 파일을 통해 매우 유사한 메커니즘을 지원합니다. 구문은 거의 동일합니다.
+TF 버전 제어는 [.tfignore](/vsts/tfvc/add-files-server#customize-which-files-are-ignored-by-version-control) 파일을 통해 매우 유사한 메커니즘을 지원합니다. 구문은 거의 동일합니다.
 
     *.user
     *.suo
@@ -135,7 +135,7 @@ TF 버전 제어는 [.tfignore](http://msdn.microsoft.com/library/ms245454.aspx)
 
 - `Build` 및 `Rebuild` 대상은 둘 다 `RestorePackages`에 따라 달라집니다. 이렇게 하면 `Build` 및 `Rebuild` 둘 다를 실행하고 복원되는 패키지를 사용할 수 있습니다.
 - `Clean`, `Build` 및 `Rebuild`는 모든 솔루션 파일에서 해당하는 MSBuild 대상을 호출합니다.
-- `RestorePackages` 대상은 각 솔루션 파일의 `nuget.exe`를 호출합니다. [MSBuild 일괄 처리 기능](http://msdn.microsoft.com/library/ms171473.aspx)을 사용하여 수행합니다.
+- `RestorePackages` 대상은 각 솔루션 파일의 `nuget.exe`를 호출합니다. [MSBuild 일괄 처리 기능](/visualstudio/msbuild/msbuild-batching)을 사용하여 수행합니다.
 
 결과는 다음과 같습니다.
 

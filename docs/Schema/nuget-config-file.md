@@ -13,11 +13,11 @@ keywords: "NuGet.Config 파일, NuGet 구성 참조, NuGet 구성 옵션"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: fa471e1ad419c6a4cab99e271375d9be94c29a50
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 830c622f622b894a228b18dfdb3a790bccfde8a3
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="nugetconfig-reference"></a>NuGet.Config 참조
 
@@ -31,12 +31,11 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 - [bindingRedirects 섹션](#bindingredirects-section)
 - [packageRestore 섹션](#packagerestore-section)
 - [solution 섹션](#solution-section)
-- [패키지 원본 섹션](#package-source-sections):
-    - [packageSources](#packagesources)
-    - [packageSourceCredentials](#packagesourcecredentials)
-    - [apikeys](#apikeys)
-    - [disabledPackageSources](#disabledpackagesources)
-    - [activePackageSource](#activepackagesource)
+- [패키지 원본 섹션](#package-source-sections): -[packageSources](#packagesources)
+  - [packageSourceCredentials](#packagesourcecredentials)
+  - [apikeys](#apikeys)
+  - [disabledPackageSources](#disabledpackagesources)
+  - [activePackageSource](#activepackagesource)
 - [환경 변수 사용](#using-environment-variables)
 - [config 파일 예제](#example-config-file)
 
@@ -59,7 +58,6 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 | defaultPushSource | 작업에 대한 다른 패키지 원본이 없을 때 기본값으로 사용해야 하는 패키지 원본의 URL 또는 경로를 식별합니다. |
 | http_proxy, http_proxy.user, http_proxy.password, no_proxy | 패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다. 암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다. `no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다. 이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다. 자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요. |
 
-
 **예제**:
 
 ```xml
@@ -70,7 +68,6 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
     <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
 </config>
 ```
-
 
 ## <a name="bindingredirects-section"></a>bindingRedirects 섹션
 
@@ -116,7 +113,6 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 | --- | --- |
 | disableSourceControlIntegration | 원본 제어로 작업할 때 패키지 폴더를 무시할지 여부를 나타내는 부울입니다. 기본값은 false입니다. |
 
-
 **예제**:
 
 ```xml
@@ -125,13 +121,13 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 </solution>
 ```
 
-
 ## <a name="package-source-sections"></a>패키지 원본 섹션
 
 `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource` 및 `disabledPackageSources` 모두가 함께 작동하여 NuGet에서 설치, 복원 및 업데이트 작업 중에 패키지 리포지토리와 함께 작동하는 방식을 구성합니다.
 
 [`nuget setapikey` 명령](../tools/cli-ref-setapikey.md)을 사용하여 관리되는 `apikeys`를 제외하고는 일반적으로 [`nuget sources` 명령](../tools/cli-ref-sources.md)이 이러한 설정을 관리하는 데 사용됩니다.
 
+nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다.
 
 ### <a name="packagesources"></a>packageSources
 
@@ -150,7 +146,6 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
     <add key="Test Source" value="c:\packages" />
 </packageSources>
 ```
-
 
 ### <a name="packagesourcecredentials"></a>packageSourceCredentials
 
@@ -190,7 +185,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
     <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
-    </Test_x0020_Source>    
+    </Test_x0020_Source>
 </packageSourceCredentials>
 ```
 
@@ -210,7 +205,6 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 </apikeys>
 ```
 
-
 ### <a name="disabledpackagesources"></a>disabledPackageSources
 
 현재 사용할 수 없는 원본을 식별합니다. 비어 있을 수 있습니다.
@@ -218,8 +212,6 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 | Key | 값 |
 | --- | --- |
 | (원본 이름) | 원본을 사용할 수 없는지 여부를 나타내는 부울입니다. |
-
-
 
 **예제:**
 
@@ -263,7 +255,6 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 마찬가지로, Mac/Linux의 `HOME`이 `/home/myStuff`로 설정되면 구성 파일의 `$HOME/NuGetRepository`가 `/home/myStuff/NuGetRepository`로 해석됩니다.
 
 환경 변수가 없으면 NuGet에서 구성 파일의 리터럴 값을 사용합니다.
-
 
 ## <a name="example-config-file"></a>config 파일 예제
 
