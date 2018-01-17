@@ -158,7 +158,7 @@ CTP 2 이후이 릴리스 후보에서 변경한 내용을 다음과 같습니�
 * [프로젝트 메뉴에도 없는 프로젝트/솔루션 로드 되 표시](http://nuget.codeplex.com/workitem/54)
 * [build.cmd 코드 베이스의 클린 복제본에서 실패](http://nuget.codeplex.com/workitem/56)
 * [업데이트 사용 가능한 기능](http://nuget.codeplex.com/workitem/57)
-* [콘솔에서 메시지를 제거 대화 상자를 통해 ׀ 대화 상자:](http://nuget.codeplex.com/workitem/73)
+* [콘솔에서 메시지를 제거 대화 상자를 통해 대화 상자:](http://nuget.codeplex.com/workitem/73)
 * [시각적 알려와 느린 방식은 '설치'를 클릭 하 여 패키지 추가](http://nuget.codeplex.com/workitem/80)
 * [업데이트를 설치 하는 내 설치 된 패키지는 검색 방법이 없습니다.](http://nuget.codeplex.com/workitem/82)
 * [대화 상자에서 설치 된 패키지를 업데이트 하려면 방식은 없습니다.](http://nuget.codeplex.com/workitem/83)
