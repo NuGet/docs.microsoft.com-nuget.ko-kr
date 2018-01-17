@@ -13,11 +13,11 @@ keywords: "nuget 팩 참조 팩 명령"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 22643ee4c7d5f858da728ba9d9d2886d600d20f0
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 0dbecb8f01acf781ab8d2e77e8df7fa405f74cf1
+ms.sourcegitcommit: d576d84fb4b6a178eb2ac11f55deb08ac771ba1c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/16/2018
 ---
 # <a name="pack-command-nuget-cli"></a>팩 명령 (NuGet CLI)
 
@@ -42,7 +42,7 @@ nuget pack <nuspecPath | projectPath> [options]
 | --- | --- |
 | BasePath | 에 정의 된 파일의 기본 경로 설정의 `.nuspec` 파일입니다. |
 | 빌드 | 패키지를 빌드하기 전에 프로젝트를 빌드해야 함을 지정 합니다. |
-| 제외 | 패키지를 만들 때를 제외 하려면 와일드 카드 패턴을 하나 이상 지정 합니다. |
+| 제외 | 패키지를 만들 때를 제외 하려면 와일드 카드 패턴을 하나 이상 지정 합니다. 둘 이상의 패턴을 지정 하려면 반복-Exclude 플래그입니다. 아래 예제를 참조 하십시오. |
 | ExcludeEmptyDirectories | 패키지를 작성 하는 경우 빈 디렉터리를 포함을 하지 않습니다. |
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
@@ -100,4 +100,6 @@ nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="
 nuget pack foo.nuspec -Version 2.1.0
 
 nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
+
+nuget pack Package.nuspec -exclude "*.exe" -exclude "*.bat"
 ```
