@@ -14,11 +14,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 53fccbb86f2920d870b5383070d043e25045a626
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 29eb72cbb6c095cd3aeb524fd8b28416ec5dc798
+ms.sourcegitcommit: 6ccb963e065680ab2e7df1d8dd5492897fd56b04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="errors-and-warnings"></a>오류 및 경고
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/05/2018
 | 그룹화 | 오류 번호 |
 | --- | --- |
 | [잘못 된 입력된 오류](#invalid-input-errors) | [NU1001](#nu1001), [NU1002](#nu1002), [NU1003](#nu1003) |
-| [패키지 및 프로젝트에 대 한 누락 오류](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [ NU1106](#nu1106), [NU1107](#nu1107) (이전에 NU1607) [NU1108](#nu1107) (이전에 NU1606) |
+| [패키지 및 프로젝트에 대 한 누락 오류](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [ NU1106](#nu1106), [NU1107](#nu1107) (이전에 NU1607) [NU1108](#nu1108) (이전에 NU1606) |
 | [호환성 오류](#compatibility-errors) | [NU1201](#nu1201), [NU1202](#nu1202), [NU1203](#nu1203), [NU1401](#nu1401) |
 
 **경고**
@@ -75,7 +75,7 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="missing-package-and-project-errors"></a>패키지 및 프로젝트에 대 한 누락 오류
 
-[NU1100](#nu1100) | [NU1101](#nu1101) | [NU1102](#nu1102) | [NU1103](#nu1103) | [NU1104 ](#nu1104)  |  [NU1105](#nu1105) | [NU1106](#nu1106)
+[NU1100](#nu1100) | [NU1101](#nu1101) | [NU1102](#nu1102) | [NU1103](#nu1103) | [NU1104](#nu1104) | [NU1105](#nu1105) | [NU1106](#nu1106)
 
 ### <a name="nu1100"></a>NU1100
 
@@ -133,7 +133,7 @@ ms.lasthandoff: 01/05/2018
 | **일반적인 원인** | 패키지 범위를 제한 하는 대신 패키지의 정확한 버전에 대 한 종속성을 포함합니다. |
 | **예제 메시지** | *{Id}에 대 한 충돌 하는 요청을 충족할 수 없습니다. {충돌 경로} 프레임 워크: {대상 그래프}* |
 
-< a name = "NU1107 ></a>
+<a name="nu1107"></a> 
 
 ### <a name="nu1107-previously-nu1607"></a>NU1107 (이전에 NU1607)
 
@@ -143,7 +143,7 @@ ms.lasthandoff: 01/05/2018
 | **일반적인 원인** | 정확한 버전에 대 한 종속성 제약 조건 사용 하 여 패키지에는 다른 패키지 버전을 필요에 따라 증가를 허용 하지 않습니다. |
 | **예제 메시지** | *NuGet.Versioning에 대 한 검색 버전 충돌 합니다. 이 문제를 해결 하려면 프로젝트에서 직접 패키지를 참조 합니다.<br/>  NuGet.Packaging 3.5.0 NuGet.Versioning (3.5.0 =)-><br/> NuGet.Configuration 4.0.0 NuGet.Versioning (4.0.0 =)->* |
 
-< a name = "NU1108 ></a>
+<a name="nu1108"></a>
 
 ### <a name="nu1108-previously-nu1606"></a>NU1108 (이전에 NU1606)
 
@@ -263,8 +263,6 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="resolver-conflict-warnings"></a>해결 프로그램이 충돌 경고
 
-[NU1608](#nu1608)
-
 ### <a name="nu1608"></a>NU1608
 
 | | |
@@ -275,8 +273,6 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="package-fallback-warnings"></a>패키지 대체 (fallback) 경고
 
-[NU1701](#nu1701)
-
 ### <a name="nu1701"></a>NU1701
 
 | | |
@@ -286,8 +282,6 @@ ms.lasthandoff: 01/05/2018
 | **예제 메시지** | *패키지 'NuGet.Versioning'를 사용 하 여 '노트북 net45 + win8' 대신 프로젝트 대상 프레임 워크 'netstandard1.5' 복원 되었습니다. 이 패키지는 프로젝트와 완전히 호환 하지 못할 수 있습니다.* |
 
 ## <a name="feed-warnings"></a>피드 경고
-
-[NU1801](#nu1801)
 
 ### <a name="nu1801"></a>NU1801
 
