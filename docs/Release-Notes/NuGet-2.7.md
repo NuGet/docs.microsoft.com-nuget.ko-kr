@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ba2edaad-4795-47a0-a572-d0e1716bd540
 description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 2.7에 대 한 릴리스 정보입니다."
 keywords: "NuGet 2.7 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 502cb5e68f905e9ad8f4003bb0690d3e676f6bb7
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: b0e12f7e2cffa6e721dd13c117b7b3727cfcb5d7
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-27-release-notes"></a>NuGet 2.7 릴리스 정보
 
@@ -77,7 +76,7 @@ NuGet 2.7 부터는 패키지 복원 동의 기본적으로 켜져 하므로 사
 * Visual Studio 2013 Preview
 * Visual Studio 2012
 * Visual Studio 2010
-* nuget.exe 명령줄 유틸리티
+* nuget.exe Command-Line Utility
 
 #### <a name="automatic-package-restore-in-visual-studio"></a>Visual Studio에서 자동 패키지 복원
 
@@ -103,7 +102,7 @@ NuGet 2.7 nuget.exe는 새로운 기능이 도입 되었습니다.`nuget.exe res
 
 이 새로운 복원 명령에는 솔루션 파일 또는 폴더를 인수로 사용 하 여 하나의 명령으로 솔루션에 대 한 모든 패키지를 쉽게 복원할 수 있습니다. 또한 인수에 지정 된 현재 폴더에 있는 단일 솔루션만 있을 때 포함 됩니다. 즉, 단일 솔루션 파일 (MySolution.sln)를 포함 하는 폴더에서 모든 다음 작동 합니다.
 
-1. nuget.exe 복원 MySolution.sln
+1. nuget.exe restore MySolution.sln
 1. nuget.exe 복원 작업입니다.
 1. nuget.exe 복원
 

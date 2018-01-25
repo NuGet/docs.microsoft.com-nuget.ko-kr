@@ -3,21 +3,20 @@ title: "NuGet v3 클라이언트 및 NuGetGallery Api | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/09/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: d1a393b7-51b1-4840-b1a8-fdd76455077d
 description: "NuGet 및 NuGetGallery Api 진화 하 고 아직 문서화 하지는 예는 Dave Glick 블로그에서 제공 됩니다."
 keywords: "NuGet API, NuGetGallery API NuGet v3 라이브러리"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 43a2e569b64f5e9d6e93cc6c279faf91a6dda9ee
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 3eeb4d4df06c235e3b6af50859899c12db3f8f18
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-client-sdk"></a>NuGet 클라이언트 SDK
 

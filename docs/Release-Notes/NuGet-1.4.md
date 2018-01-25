@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: e4856d0a-b408-4c60-ac51-f80ea06d9f79
 description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.4에 대 한 릴리스 정보입니다."
 keywords: "NuGet 1.4 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c4c27861c8697c75a06712b8ca6243b3b206cbb3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: a69f4f5c7172817d711fa5e995cf6db3875c4810
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-14-release-notes"></a>NuGet 1.4의 릴리스 정보
 
@@ -150,10 +149,10 @@ NuGet 1.4 88 총 작업 항목을 고정 했습니다. 그 중 71 버그로 표�
 * [문제 1036](http://nuget.codeplex.com/workitem/1036): 추가 `NuGet Pack SomeProject.csproj` 빌드 후 더 이상 이벤트를에서는 무한 루프가 발생 합니다.
 * [문제 961](http://nuget.codeplex.com/workitem/961): `-Source` 플래그 상대 경로 지원 합니다.
 
-# <a name="nuget-14-update"></a>NuGet 1.4 업데이트
+## <a name="nuget-14-update"></a>NuGet 1.4 업데이트
 NuGet 1.4의 릴리스 직후 몇 가지 된 문제를 해결 하는 것이 중요 문제를 발견 했습니다.
 1.4-이 업데이트의 특정 버전 번호가 1.4.20615.9020입니다.
 
-## <a name="bug-fixes"></a>버그 수정
+### <a name="bug-fixes"></a>버그 수정
 * [문제 1220](http://nuget.codeplex.com/workitem/1220): 업데이트 패키지를 실행 하지 않습니다 `install.ps1` / `uninstall.ps1` 둘 이상의 프로젝트는 경우 모든 프로젝트에
 * [문제 1156](http://nuget.codeplex.com/workitem/1156): (Powershell 2가 설치 되지 않음) 하는 경우 패키지 관리자 콘솔 W2K3/XP에서 중단

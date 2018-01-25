@@ -3,21 +3,20 @@ title: "NuGet CLI (명령줄 인터페이스) 참조 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
 description: "Nuget.exe CLI에 대 한 명령줄 참조 인덱스"
 keywords: "nuget.exe 참조 인덱스, nuget.exe 명령줄 인터페이스, nuget.exe CLI, nuget 명령"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5dba358b1dda46f551721461e0460219f8210f9a
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: 8b1ee17702f5a54a77dc2cd663e13729a9b4a39f
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-cli-reference"></a>NuGet CLI 참조
 
@@ -31,11 +30,16 @@ NuGet 명령줄 인터페이스 (CLI) `nuget.exe`, NuGet 설치, 생성, 게시 
 
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
+> [!Tip]
+> NuGet CLI를 사용 하려면 패키지 관리자 콘솔 내에서 Visual Studio에서 참조 [콘솔에서 nuget.exe CLI를 사용 하 여](package-manager-console.md#using-the-nugetexe-cli-in-the-console)합니다.
+
 ## <a name="availability"></a>가용성
 
+참조 [가용성 기능](../install-nuget-client-tools.md#feature-availability) 정확한 세부 정보에 대 한 합니다.
+
 - Windows에서 모든 명령을 사용할 수 있습니다.
-- 모든 명령을 작업할 [nuget.exe 모노에서 실행 중인](../guides/install-nuget.md#mac-osx-and-linux) 에 대 한 표시 된 위치를 제외 하 고 `pack`, `restore`, 및 `update`합니다.
-- `pack`, `restore`, `delete`, `locals`, 및 `push` 명령을 Mac 및 Linux를 통해 사용할 수 있습니다는 [dotnet CLI](dotnet-Commands.md)합니다.
+- 모든 명령에 대해 표시 된 경우를 제외 하 고 모노에서 실행 중인 nuget.exe 작업할 `pack`, `restore`, 및 `update`합니다.
+- `pack`, `restore`, `delete`, `locals`, 및 `push` 명령을 dotnet CLI 통해 Mac 및 Linux에서 사용할 수 있습니다.
 
 ## <a name="commands-and-applicability"></a>명령 및 적용 가능성
 
@@ -51,7 +55,6 @@ NuGet 명령줄 인터페이스 (CLI) `nuget.exe`, NuGet 설치, 생성, 게시 
 | [restore](cli-ref-restore.md) | 사용 | 2.7+ | 사용 중인 패키지 참조 형식에서 참조 하는 모든 패키지를 복원 합니다. 모노를 실행할 때 PackageReference 형식을 사용 하 여 패키지를 복원 지원 되지 않습니다. |
 | [setapikey](cli-ref-setapikey.md) | 게시와 소비 | 모두 | 해당 패키지 원본에 대 한 액세스 키가 필요한 경우 지정 된 패키지 소스에 대 한 API 키를 저장 합니다. |
 | [spec](cli-ref-spec.md) | 만들기 | 모두 | 생성 된 `.nuspec` 파일을 Visual Studio 프로젝트에서 파일을 생성 하는 경우 토큰을 사용 합니다. |
-
 
 | 보조 명령 | 해당 하는 역할 | NuGet 버전 | 설명 |
 | --- | --- | --- | --- |

@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: df7becc6-993d-4d06-8495-a0c26748bdfa
 description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.7에 대 한 릴리스 정보입니다."
 keywords: "NuGet 1.7 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 420b40576cb3862f0e4406966f9ccca9fd1f39a1
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 7b16bea8c6bcc77f814dd32a43b895b5e656c95d
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-17-release-notes"></a>NuGet 1.7 릴리스 정보
 
@@ -28,7 +27,7 @@ NuGet 1.7은 2012 년 4 월 4 일에 출시 되었습니다.
 ## <a name="known-installation-issue"></a>알려진된 설치 문제
 VS 2010 s p 1을 실행 하는 경우 이전 버전이 설치 되어 있는 경우 NuGet을 업그레이드 하는 동안 설치 오류에 실행할 수 있습니다.
 
-해결 하려면 NuGet 제거한 다음 VS 확장 갤러리에서 설치 됩니다.  참조 [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) 자세한 정보에 대 한 합니다.
+해결 하려면 NuGet 제거한 다음 VS 확장 갤러리에서 설치 됩니다.  자세한 내용은 [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019)를 참조하세요.
 
 참고: Visual Studio 확장 (제거 단추 사용 안 함)을 제거 하도록 허용 하지, 한 후 가능성 하면 "관리자 권한으로 실행"을 사용 하 여 Visual Studio를 다시 시작
 

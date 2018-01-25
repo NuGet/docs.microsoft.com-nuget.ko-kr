@@ -3,21 +3,20 @@ title: "NuGet CLI 미러 명령을 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 190d7010-172e-44b8-8a32-94a2a63be4f3
 description: "Nuget.exe 미러 명령에 대 한 참조"
 keywords: "nuget 미러 참조, 미러 명령"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 67daa1aa278b42b7974c562ba4097a525e7bb105
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 7ff5f1c1a915943e8a2eb9c6d6ab09a850968371
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="mirror-command-nuget-cli"></a>미러 명령 (NuGet CLI)
 
@@ -28,9 +27,9 @@ ms.lasthandoff: 12/14/2017
 > [!NOTE]
 > 3.2 전에 NuGet 버전에 대 한이 명령을 사용 하려면로 이동 [https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases)안정적인 최신 버전을 다운로드 `NuGet.ServerExtensions.dll` 및 `Nuget-Signed.exe` 로컬 디스크와 이름 바꾸기 `Nuget-Signed.exe` 를 `nuget.exe`.
 
-## <a name="usage"></a>용도
+## <a name="usage"></a>사용법
 
-```
+```cli
 nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [options]
 ```
 
@@ -46,7 +45,7 @@ nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [op
 | --- | --- |
 | apiKey | 대상 저장소에 대 한 API 키입니다. 없음, 1에 지정 된 경우 *%AppData%\NuGet\NuGet.Config* 사용 됩니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| 캐시 없음 | NuGet 패키지를 사용 하 여 로컬 컴퓨터 캐시에서 방지 합니다. |
+| NoCache | NuGet 패키지를 사용 하 여 로컬 컴퓨터 캐시에서 방지 합니다. |
 | Noop | 기록 수행 기능 하지만; 작업을 수행 하지 않습니다. 푸시 작업에 대 한 성공을 가정합니다. |
 | 시험판 | 미러링 작업에 시험판 패키지를 포함합니다. |
 | 소스 | 목록으로 미러링 하기 위해 패키지 소스입니다. 것에 정의 된 원본이 지정 된 경우 *%AppData%\NuGet\NuGet.Config* nuget.org를 지정 하지 않으면 기본값으로 사용 됩니다. |
@@ -57,7 +56,7 @@ nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [op
 
 ## <a name="examples"></a>예제
 
-```
+```cli
 nuget mirror packages.config  https://MyRepo/nuget https://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -nocache
 
 nuget mirror Microsoft.AspNet.Mvc https://MyRepo/nuget https://MyRepo/api/v2/package -version 4.0.20505.0

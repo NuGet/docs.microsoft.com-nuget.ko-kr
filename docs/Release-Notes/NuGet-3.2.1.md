@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: d27c3bb9-8db1-439a-a134-54e20b7a7766
 description: "3.2.1 NuGet 포함에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다."
 keywords: "3.2.1 NuGet 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b2001d9518a34bbd5f2879de6123ec13abf4ae08
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 7c9c2457c33eb3630f632c98bf0cf96703c3a548
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-321-release-notes"></a>3.2.1 NuGet 릴리스 정보
 

@@ -7,17 +7,16 @@ ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 42476008-64b3-480e-a966-98b2fa38b681
 description: "Visual Studio에서 NuGet 패키지 관리자 콘솔에서 패키지 가져오기 PowerShell 명령에 대 한 참조입니다."
 keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, NuGet Powershell 참조, 패키지 가져오기"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 632936fe4dd9736f7c3740a2f763173dc725424a
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: c38e0da2e98d2e5bf5b4fc165462e9abcfdd73c0
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>패키지 가져오기 (Visual Studio에서 패키지 관리자 콘솔)
 
@@ -83,4 +82,3 @@ Get-Package -Updates
 # Lists packages installed in a specific project that have available updates
 Get-Package -Updates -ProjectName MyProject
 ```
-

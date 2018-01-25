@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ec68b5d1-a684-4995-b1a6-6210dbb24875
 description: "패키지의 기본 주소는 패키지 자체를 가져오기 위해 간단한 인터페이스입니다."
 keywords: "컨테이너, NuGet 패키지에 대 한 기본 주소, NuGet nupkg API NuGet API 패키지 버전 NuGet API NuGet 플랫 목록에 없는 패키지, 다운로드 nuspec NuGet API"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: a581f9854410bc1a84d65310b38928a1d889ece2
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: c2e631dc0bba95ac849430d77142f27ef591f741
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="package-content"></a>패키지 내용
 
@@ -52,9 +51,7 @@ HTTP 메서드를 등록 리소스 지원에 있는 모든 Url `GET` 및 `HEAD`�
 > [!Note]
 > 이 목록에 나열 된 및 목록에 없는 패키지 버전을 모두 포함 되어 있습니다.
 
-```
-GET {@id}/{LOWER_ID}/index.json
-```
+    GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
@@ -80,9 +77,7 @@ name     | 형식             | 필수 | 노트
 
 ### <a name="sample-request"></a>샘플 요청
 
-```
-GET https://api.nuget.org/v3-flatcontainer/owin/index.json
-```
+    GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 
 ### <a name="sample-response"></a>샘플 응답
 
@@ -92,9 +87,7 @@ GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 
 클라이언트 패키지 ID와 버전을 알고 있는 패키지 콘텐츠 다운로드 하려는 경우 다음 URL을 생성할만 필요:
 
-```
-GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
-```
+    GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
@@ -115,9 +108,7 @@ LOWER_VERSION | URL    | string | 예      | 소문자를 유지 하 고 정규�
 
 ### <a name="sample-request"></a>샘플 요청
 
-```
-GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
-```
+    GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
 
 ### <a name="sample-response"></a>샘플 응답
 
@@ -127,9 +118,7 @@ Newtonsoft.Json 9.0.1에 대 한.nupkg 있는 이진 스트림.
 
 클라이언트 패키지 ID와 버전을 알고 있는 패키지 매니페스트를 다운로드 하는 경우 다음 URL을 생성할만 필요:
 
-```
-GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
-```
+    GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
@@ -150,9 +139,7 @@ LOWER_VERSION | URL    | 정수 | 예      | 소문자를 유지 하 고 정규�
 
 ### <a name="sample-request"></a>샘플 요청
 
-```
-GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
-```
+    GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
 
 ### <a name="sample-response"></a>샘플 응답
 

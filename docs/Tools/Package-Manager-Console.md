@@ -3,28 +3,27 @@ title: "NuGet 패키지 관리자 콘솔 가이드 | Microsoft Docs"
 author: kraigb
 hms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 2b92b119-6861-406c-82af-9d739af230e4
 f1_keywords: vs.nuget.packagemanager.console
 description: "패키지 작업에 대 한 Visual Studio에서 NuGet 패키지 관리자 콘솔을 사용 하기 위한 지침입니다."
 keywords: "NuGet 패키지 관리자 콘솔에서 NuGet 패키지를 관리 하는 NuGet powershell"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b8f1df23d1a43412868c14e508ee5221d48dcc7c
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: b89c51812cee0f64c6f5c39cd9d86bc4a0be068e
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="package-manager-console"></a>패키지 관리자 콘솔
 
 NuGet 패키지 관리자 콘솔이 Windows 2012 이상 버전에서 Visual Studio에 빌드됩니다. (이 Visual Studio Code 또는 Mac에 대 한 Visual Studio에 포함 합니다.)
 
-콘솔을 통해 사용할 수 있습니다 [NuGet PowerShell 명령을](../tools/powershell-reference.md) 를 찾으려면 설치, 제거 및 NuGet 패키지를 업데이트 합니다. 콘솔을 사용 하는 패키지 관리자 UI 작업을 수행 하는 방법을 제공 하지 않는 경우에 필요 합니다.
+콘솔을 통해 사용할 수 있습니다 [NuGet PowerShell 명령을](../tools/powershell-reference.md) 를 찾으려면 설치, 제거 및 NuGet 패키지를 업데이트 합니다. 콘솔을 사용 하는 패키지 관리자 UI 작업을 수행 하는 방법을 제공 하지 않는 경우에 필요 합니다. 사용 하도록 `nuget.exe` 콘솔에서 명령을 참조 [콘솔에서 nuget.exe CLI를 사용 하 여](#using-the-nugetexe-cli-in-the-console)합니다.
 
 예를 들어, 찾기 및 설치 패키지는 3 개의 쉬운 단계를 통해 수행 됩니다.
 
@@ -43,17 +42,6 @@ NuGet 패키지 관리자 콘솔이 Windows 2012 이상 버전에서 Visual Stud
     # Install the Elmah package to the project named MyProject.
     Install-Package Elmah -ProjectName MyProject
     ```
-
-항목 내용:
-
-- [콘솔을 열고](#opening-the-console-and-console-controls)
-- [패키지 설치](#installing-a-package)
-- [패키지를 제거합니다.](#uninstalling-a-package)
-- [패키지 찾기](#finding-a-package)
-- [패키지를 업데이트합니다.](#updating-a-package)
-- [콘솔의 가용성](#availability-of-the-console)
-- [패키지 관리자 콘솔을 확장합니다.](#extending-the-package-manager-console)
-- [NuGet PowerShell 프로 파일 설정](#setting-up-a-nuget-powershell-profile)
 
 > [!Important]
 > 콘솔에서 사용할 수 있는 모든 작업으로 수행할 수 있습니다는 [NuGet CLI](../tools/nuget-exe-cli-reference.md)합니다. 그러나 콘솔 명령 Visual Studio 및 저장 된 프로젝트/솔루션의 컨텍스트 내에서 작동 하 고 종종의 상응 하는 CLI 명령 이상 수행. 예를 들어 콘솔을 통해 패키지를 설치 하는 CLI 명령에는 없는 반면 프로젝트에 대 한 참조를 추가 합니다. 이러한 이유로 Visual Studio에서 일반적으로 작업 하는 개발자가 CLI에 콘솔을 사용 하 여 선호 합니다.
@@ -96,8 +84,8 @@ Install-Package Elmah -ProjectName UtilitiesLib
 - 암시 된 계약을 사용 하 여 콘솔 창에 해당 사용 조건을 표시합니다. 약관에 동의 하지 않는 경우 패키지를 즉시 제거 해야 합니다.
 - 사용 되 고 참조 형식에서 프로젝트에 대 한 참조를 추가 합니다. 이후에 참조 솔루션 탐색기와 해당 참조 서식 파일에 표시 합니다. 단, PackageReference,으로 할 경우 프로젝트 파일에서 변경 내용을 직접 보려면 프로젝트를 저장 합니다.
 - 패키지를 캐시 합니다.
-    - PackageReference: 패키지에 캐시 되며 `%USERPROFILE%\.nuget\packages` 잠금을 즉, 파일 및 `project.assets.json` 업데이트 됩니다.
-    - `packages.config`: 만듭니다는 `packages` 폴더 내의 하위 폴더에 파일을 패키지 솔루션의 루트와 복사본입니다. `package.config` 파일이 업데이트 됩니다.
+  - PackageReference: 패키지에 캐시 되며 `%USERPROFILE%\.nuget\packages` 잠금을 즉, 파일 및 `project.assets.json` 업데이트 됩니다.
+  - `packages.config`: 만듭니다는 `packages` 폴더 내의 하위 폴더에 파일을 패키지 솔루션의 루트와 복사본입니다. `package.config` 파일이 업데이트 됩니다.
 - 업데이트 `app.config` 및/또는 `web.config` 패키지를 사용 하는 경우 [소스 및 config 파일 변환](../create-packages/source-and-config-file-transformations.md)합니다.
 - 프로젝트에 아직 없는 경우 종속성을 설치 합니다. 에 설명 된 대로 과정에서 패키지 버전을 업데이트할 수 있습니다이 [종속성 확인](../consume-packages/dependency-resolution.md)합니다.
 - Visual Studio 창에 제공 되는 경우 패키지의 추가 정보 파일을 표시 합니다.
@@ -186,9 +174,7 @@ NuGet 패키지 관리자 및 이전 버전 Visual Studio 2015에서 누락 된 
 
 PowerShell 프로필에는 PowerShell을 사용 하 여 때마다 일반적으로 사용 되는 명령을 사용할 수 있도록 수 있습니다. NuGet에서는 일반적으로 다음 위치에서 발견 하는 NuGet 특정 프로필을 지원 합니다.
 
-```
-%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
-```
+    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
 
 프로필을 찾으려면 입력 `$profile` 콘솔에서:
 
@@ -198,3 +184,12 @@ C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
 자세한 내용은 참조 [Windows PowerShell 프로필](https://technet.microsoft.com/library/bb613488.aspx)합니다.
+
+## <a name="using-the-nugetexe-cli-in-the-console"></a>콘솔에서 nuget.exe CLI를 사용 하 여
+
+확인 하는 [ `nuget.exe` CLI](nuget-exe-CLI-Reference.md) 패키지 관리자 콘솔에서 사용할 수 있는 설치는 [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) 콘솔에서 패키지:
+
+```ps
+# Other versions are available, see http://www.nuget.org/packages/NuGet.CommandLine/
+Install-Package NuGet.CommandLine -Version 4.4.1
+```

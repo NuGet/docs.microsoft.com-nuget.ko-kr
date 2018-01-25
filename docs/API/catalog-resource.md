@@ -11,17 +11,16 @@ ms.date: 10/30/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: cfd338b5-6253-48c0-88ba-17c6b98fc935
 description: "카탈로그는 모든 패키지를 만들고 삭제할 nuget.org에의 한 인덱스입니다."
 keywords: "NuGet V3 API 카탈로그, nuget.org 트랜잭션 로그를 NuGet.org 복제, NuGet.org, 추가 전용 레코드 NuGet.org의 복제"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 4c98b7cbd92575f6905e98a5bca5602a4d8ac0dd
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: d1a24be68a60085a40361c374ffb34dc221f09c4
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="catalog"></a>Catalog
 
@@ -73,9 +72,7 @@ Catalog/3.0.0 | 초기 릴리스
 
 다음 요청 카탈로그의 인덱스를 인출합니다.
 
-```
-GET {@id}
-```
+    GET {@id}
 
 카탈로그의 인덱스는 다음 속성을 가진 개체가 포함 된 JSON 문서:
 
@@ -107,9 +104,7 @@ count           | 정수 | 예      | 카탈로그 페이지의 항목 수
 
 ### <a name="sample-request"></a>샘플 요청
 
-```
-GET https://api.nuget.org/v3/catalog0/index.json
-```
+    GET https://api.nuget.org/v3/catalog0/index.json
 
 ### <a name="sample-response"></a>샘플 응답
 
@@ -161,9 +156,7 @@ nuget:version   | string  | 예      | 이 리프 관련이 패키지 버전
 
 ### <a name="sample-request"></a>샘플 요청
 
-```
-GET https://api.nuget.org/v3/catalog0/page2926.json
-```
+    GET https://api.nuget.org/v3/catalog0/page2926.json
 
 ### <a name="sample-response"></a>샘플 응답
 
@@ -178,10 +171,10 @@ GET https://api.nuget.org/v3/catalog0/page2926.json
 name                    | 형식                       | 필수 | 노트
 ----------------------- | -------------------------- | -------- | -----
 @type                   | 문자열 또는 문자열의 배열 | 예      | 카탈로그 항목의 형식
-카탈로그: commitId        | string                     | 예      | 이 카탈로그 항목에 연결 된 커밋 ID
-카탈로그: commitTimeStamp | string                     | 예      | 이 카탈로그 항목의 커밋 타임 스탬프
+catalog:commitId        | string                     | 예      | 이 카탈로그 항목에 연결 된 커밋 ID
+catalog:commitTimeStamp | string                     | 예      | 이 카탈로그 항목의 커밋 타임 스탬프
 ID                      | string                     | 예      | 카탈로그 항목의 패키지 ID
-게시               | string                     | 예      | 패키지 카탈로그 항목의 게시 된 날짜
+published               | string                     | 예      | 패키지 카탈로그 항목의 게시 된 날짜
 버전                 | string                     | 예      | 카탈로그 항목의 패키지 버전
 
 ### <a name="item-types"></a>항목 형식
@@ -217,7 +210,7 @@ isPrerelease            | boolean                    | 예      | 패키지 버�
 language                | string                     | 아니요       |
 licenseUrl              | string                     | 아니요       |
 나열                  | boolean                    | 아니요       | 패키지가 나열 되는 여부
-Minclientversion이        | string                     | 아니요       |
+minClientVersion        | string                     | 아니요       |
 packageHash             | string                     | 예      | 인코딩을 사용 하 여 패키지의 해시가 [표준 base 64](https://tools.ietf.org/html/rfc4648#section-4)
 packageHashAlgorithm    | string                     | 예      |
 packageSize             | 정수                    | 예      | 패키지.nupkg 바이트 크기
@@ -242,9 +235,7 @@ verbatimVersion         | string                     | 아니요       | 그대�
 
 #### <a name="sample-request"></a>샘플 요청
 
-```
 GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
-```
 
 #### <a name="sample-response"></a>샘플 응답
 
@@ -265,9 +256,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 #### <a name="sample-request"></a>샘플 요청
 
-```
 GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
-```
 
 #### <a name="sample-response"></a>샘플 응답
 

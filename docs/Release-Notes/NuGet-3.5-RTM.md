@@ -7,19 +7,18 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 082a96b9-607b-4225-864d-e1cea537f591
 description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 3.5에 대 한 릴리스 정보입니다."
 keywords: "NuGet 3.5 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0a0f039d2529e1d41bbc0c7f9ac3f76f51f96ce5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: ee78ceb2ff032c05c0f8ef9a6623b94cc56ee0a9
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
-#<a name="nuget-35-release-notes"></a>NuGet 3.5 릴리스 정보
+# <a name="nuget-35-release-notes"></a>NuGet 3.5 릴리스 정보
 
 [NuGet 3.5 RC 릴리스 정보](../release-notes/nuget-3.5-RC.md) | [NuGet 4.0 RC 릴리스 정보](../release-notes/nuget-4.0-RC.md)
 
@@ -145,7 +144,7 @@ ms.lasthandoff: 12/14/2017
 
 * 모든 패키지 소스 하지만 1 원본에서 누락 된 패키지와 함께 Nuget 설치 실패- [#2322](https://github.com/NuGet/Home/issues/2322)
 
-* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll! NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+*lt; &gt;c__DisplayClass_0 +&lt;&lt;AddReference&gt;b__&gt;d.MoveNext- [#2285](https://github.com/NuGet/Home/issues/2285)
+* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+*lt;&gt;c__DisplayClass_0+&lt;&lt;AddReference&gt;b__&gt;d.MoveNext - [#2285](https://github.com/NuGet/Home/issues/2285)
 
 * 단일 소스 권한 부여-에 실패 하는 경우 블록 설치 [#2034](https://github.com/NuGet/Home/issues/2034)
 
@@ -185,7 +184,7 @@ ms.lasthandoff: 12/14/2017
 
 * 에 대 한 nuget 팩 `project.json` 요약, 작성자, 등-소유자와 같은 packOptions 태그를 무시 [#3161](https://github.com/NuGet/Home/issues/3161)
 
-* NullReferenceException NuGet.Packaging.PhysicalPackageFile.GetStream-통해 [#3160](https://github.com/NuGet/Home/issues/3160)
+* NullReferenceException via NuGet.Packaging.PhysicalPackageFile.GetStream - [#3160](https://github.com/NuGet/Home/issues/3160)
 
 * 출력에서 종속성을 무시 하는 NuGet 팩 `.nuspec` 에 대 한 `project.json`  -  [#3145](https://github.com/NuGet/Home/issues/3145)
 
@@ -274,7 +273,7 @@ ms.lasthandoff: 12/14/2017
 
 * 팩-SemVer 2.0.0을 사용 하도록 설정 [#3356](https://github.com/NuGet/Home/issues/3356)
 
-## <a name="dcrs"></a>Dcr
+## <a name="dcrs"></a>DCR
 
 * nuget.exe 푸시-timeout 매개 변수 작동 하지 않는- [#2785](https://github.com/NuGet/Home/issues/2785)
 

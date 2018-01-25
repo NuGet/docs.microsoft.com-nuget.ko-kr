@@ -7,17 +7,16 @@ ms.date: 12/12/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 3cf592de-39f2-4e7f-a597-62635fdcedfa
 description: "nuget.exe 자격 증명 공급자는 피드를 사용 하 여 인증 하며 특정 규칙을 따르는 명령줄 실행 파일로 구현 됩니다."
 keywords: "nuget.exe 자격 증명 공급자, 자격 증명 공급자 API 피드를 사용 하 여 인증, 갤러리를 사용 하 여 인증"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 82ab4d6e9be0736e008f5bd27d46e1db166d7bb4
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 88ce0106ad4e628ba8120f94b7951c7746ab67f3
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>Nuget.exe 자격 증명 공급자를 사용한 피드 인증
 
@@ -58,8 +57,8 @@ nuget.exe 자격 증명 공급자는 세 가지 방법에서 사용할 수 있�
 
 | 매개 변수/스위치 |설명|
 |----------------|-----------|
-| {Value} Uri | 패키지 원본 URI 필요한 자격 증명입니다.|
-| 비 대화형 | 있는 경우 공급자는 대화형 프롬프트를 발급 하지 않습니다. |
+| Uri {value} | 패키지 원본 URI 필요한 자격 증명입니다.|
+| NonInteractive | 있는 경우 공급자는 대화형 프롬프트를 발급 하지 않습니다. |
 | IsRetry | 있는 경우에이 시도이 대해서는 이전에 실패 한 시도의 다시 시도 임을 나타냅니다. 일반적으로 공급자는 모든 기존 캐시를 무시 하 고 가능한 경우 새 자격 증명을 요청 하도록이 플래그를 사용 합니다.|
 | 자세한 정도 {value} | 있는 경우 다음 값 중 하나: "normal", "자동" 또는 "자세히"입니다. 변수에 값이 없는 경우에 "보통" 기본값입니다. 공급자를 사용 해야이의 선택적 로깅 수준 표시로 표준 오류 스트림에 내보냅니다. |
 
@@ -73,7 +72,7 @@ nuget.exe 자격 증명 공급자는 세 가지 방법에서 사용할 수 있�
 
 ### <a name="standard-output"></a>표준 출력
 
-| 속성 |참고|
+| 속성 |노트|
 |----------------|-----------|
 | 사용자 이름 | 인증 된 요청에 대 한 사용자 이름입니다.|
 | 암호 | 인증 된 요청에 대 한 암호입니다.|

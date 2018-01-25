@@ -7,7 +7,6 @@ ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 62f6962b-7b84-4452-ae0d-a9e1ef1fc6f0
 f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager
 - vs.toolsoptionspages.nuget_package_manager.general
@@ -18,11 +17,11 @@ keywords: "NuGet 패키지 관리자 UI에서 NuGet 패키지 관리자 Visual S
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 39ce53184755887c419c8872148a6c13dc2c65ec
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: 0ff60c3cecee5fd9b7f698d2abed7553f5d89c1d
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 패키지 관리자 UI
 
@@ -137,7 +136,7 @@ Visual Studio는 패키지를 가져올 소스를 변경 하려면 소스 선택
 
 ## <a name="package-manager-options-control"></a>패키지 관리자 옵션 제어
 
-패키지를 선택한 경우 패키지 관리자 UI는 작고를 표시 하는 확장 가능한 **옵션** (축소 및 확장 모두 표시) 버전 선택기 아래에 컨트롤입니다. 일부에 대 한 프로젝트 형식.NET Core 및 사용 하 여 같은 `project.json` 만 참조 형식으로는 **미리 보기 창 표시** 옵션이 제공 됩니다.
+패키지를 선택한 경우 패키지 관리자 UI는 작고를 표시 하는 확장 가능한 **옵션** (축소 및 확장 모두 표시) 버전 선택기 아래에 컨트롤입니다. 일부 프로젝트에 대 한 형식 에서만 **미리 보기 창 표시** 옵션이 제공 됩니다.
 
 ![패키지 관리자 옵션](media/PackageManagerUIOptions.png)
 

@@ -3,21 +3,20 @@ title: "NuGet Uninstall-package PowerShell 참조 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
+ms.date: 06/01/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: f4f5dc79-8e8e-4012-8986-873a5d9283d9
 description: "Visual Studio에서 NuGet 패키지 관리자 콘솔의 제거 패키지 PowerShell 명령에 대 한 참조입니다."
 keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령 제거 패키지 NuGet Powershell 참조"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0899198a354a56615a48a1f7f428674a205f386b
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: b8c1690e0ddda6ad88e045a2097d65d135e233d2
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>(Visual Studio에서 패키지 관리자 콘솔) Uninstall-package
 

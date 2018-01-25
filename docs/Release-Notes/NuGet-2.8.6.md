@@ -13,11 +13,11 @@ keywords: "NuGet 2.8.6 릴리스 정보, 버그 수정, 알려진 문제, 추가
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f33c1edd3ef703a8cd97b7bdd97c37e12426aafa
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4dfd0a76967280cc6a16b37fe2b2a3362231fce5
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-286-release-notes"></a>NuGet 2.8.6 릴리스 정보
 

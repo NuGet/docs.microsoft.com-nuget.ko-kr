@@ -11,26 +11,22 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 2f6d6cf2-53fb-417a-b1d8-e0ac591c1699
 description: "서비스 인덱스 NuGet HTTP API의 진입점이 고 서버 기능을 열거 합니다."
 keywords: "NuGet API 진입점을 NuGetA PI 끝점 검색"
 ms.reviewer:
 - karann
 - unnir
-ms.openlocfilehash: 0c43a09d8564964bd0140b9ac5deb9d3063e4dc5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 9d0bb421c163520df4a1f0e9f3f71aab823aace3
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="service-index"></a>서비스 인덱스
 
 서비스 인덱스에는 NuGet 패키지 원본에 대 한 진입점이 되며 패키지 원본 기능을 검색 하는 클라이언트 구현이 포함을 허용 하는 JSON 문서입니다. 서비스 인덱스는 두 개의 필수 속성만 사용 하는 JSON 개체: `version` (서비스 인덱스의 스키마 버전) 및 `resources` (끝점 또는 패키지 원본의 기능).
 
-nuget.org의 서비스 인덱스는 다음 위치에 있습니다.
-```
-https://api.nuget.org/v3/index.json
-```
+nuget.org의 서비스 인덱스에 위치한 `https://api.nuget.org/v3/index.json`합니다.
 
 ## <a name="versioning"></a>버전 관리
 
@@ -53,19 +49,17 @@ API 버전 문자열의 주 버전 번호에 보내도록 규정 `3`합니다. �
 
 리소스는에 있는 개체는 `resources` 배열입니다. 패키지 원본 버전 관리 기능을 나타냅니다. 리소스에는 다음과 같은 속성이 있습니다.
 
-이름          | 형식   | 필수 | 참고
+name          | 형식   | 필수 | 노트
 ------------- | ------ | -------- | -----
 @id           | string | 예      | 리소스에 대 한 URL
 @type         | string | 예      | 리소스 종류를 나타내는 문자열 상수입니다.
-주석       | string | no       | 리소스의 사람이 읽을 수 있는 설명
+주석       | string | 아니요       | 리소스의 사람이 읽을 수 있는 설명
 
 `@id` 절대 경로 여야 하 고 수행 해야 할 하는 URL에는 HTTP 또는 HTTPS 스키마가 됩니다.
 
 `@type` 리소스와 상호 작용할 때 사용 하 여 특정 프로토콜을 식별 하는 데 사용 됩니다. 리소스의 불투명 문자열이 아니지만 일반적으로 형식이:
 
-```
-{RESOURCE_NAME}/{RESOURCE_VERSION}
-```
+    {RESOURCE_NAME}/{RESOURCE_VERSION}
 
 클라이언트는 하드 코딩 것으로 예상 되는 `@type` 것을 파악 하 고 패키지 소스의 서비스 인덱스에서 조회 값입니다. 정확한 `@type` 오늘날에서 사용 되는 값에 나열 된 개별 리소스 참조 문서에 열거 되는 [API 개요](overview.md#resources-and-schema)합니다.
 
@@ -75,9 +69,7 @@ API 버전 문자열의 주 버전 번호에 보내도록 규정 `3`합니다. �
 
 ### <a name="sample-request"></a>샘플 요청
 
-```
 GET https://api.nuget.org/v3/index.json
-```
 
 ### <a name="sample-response"></a>샘플 응답
 

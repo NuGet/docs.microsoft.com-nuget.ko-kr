@@ -7,17 +7,16 @@ ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 0c81dbc4-2c14-4ec8-b87a-b802a899c3ea
 description: "Dotnet 명령줄 인터페이스를 사용 하 여 NuGet 관련 명령에 대 한 간단한 참조 합니다."
 keywords: "dotnet NuGet 명령, dotnet 팩, dotnet 복원, dotnet nuget 지역, dotnet nuget 푸시, dotnet nuget 삭제"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d020e62b8bd04c8f4a75756fb30ebcf13ffdb1b3
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: d06e4590ab87b68e7846a13b2eba0f59eb9529d6
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="dotnet-commands"></a>dotNet 명령
 

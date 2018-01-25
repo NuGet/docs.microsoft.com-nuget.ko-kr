@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: d99bbf29-2b9a-4dc5-a823-5eb4f9e30f7f
 description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 2.6에 대 한 릴리스 정보입니다."
 keywords: "NuGet 2.6 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b34c0049a5ba42f6bcd5b36fa5b0ba261e27ecd5
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: c2df9721e6941c110948af1a2d4ec4b7aeb476dd
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-26-release-notes"></a>NuGet 2.6 릴리스 정보
 
@@ -38,7 +37,7 @@ NuGet 2.6 이상에서는 아래와 같이 두 가지 확장 발표 합니다.
 1. [NuGet 패키지 관리자](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManager) (Visual Studio 2010 및 2012에 적용)
 1. [Visual Studio 2013 용 NuGet 패키지 관리자](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManagerforVisualStudio2013)
 
-이 분할은 [nuget.org](https://nuget.org) 홈 페이지의 "NuGet 설치" 버튼 이제으로 이동 됩니다는 [NuGet 설치](../guides/install-nuget.md) 페이지에서 다른 NuGet 클라이언트를 설치 하는 방법에 대 한 자세한 정보를 찾을 수 있습니다.
+이 분할은 [nuget.org](https://nuget.org) 홈 페이지의 "설치 NuGet" 단추를 사용 하면는 [NuGet 설치](../install-nuget-client-tools.md) 페이지에서 다른 NuGet 클라이언트를 설치 하는 방법에 대 한 자세한 정보를 찾을 수 있습니다.
 
 <a name="xdt"></a>
 
@@ -71,8 +70,8 @@ NuGet 2.6 ProgramData%/NuGet/Config % 경로 아래의 폴더 계층 구조를 �
 
 1. %ProgramData%\NuGet\Config\*.config
 2. %ProgramData%\NuGet\Config\{IDE}\*.config
-3. %ProgramData%\NuGet\Config\{IDE}\{버전}\*.config
-4. %ProgramData%\NuGet\Config\{IDE}\{버전}\{SKU}\*.config
+3. %ProgramData%\NuGet\Config\{IDE}\{Version}\*.config
+4. %ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config
 
 이 목록에 {IDE} 자리 표시자 이므로 NuGet 실행 되는 IDE에 특정 Visual Studio의 경우 "visual Studio" 됩니다. {버전} 및 {SKU} 자리 표시자는 IDE에서 표시 됩니다 (예: "11.0" 및 "WDExpress", "VWDExpress" 및 "Pro" 각각). 다음 폴더에는 많은 다른 *.config 파일 포함 될 수 있습니다.
 따라서 ACME 구성 요소 회사, 해당 제품 설치 관리자의 일부로 추가할 수 파일 경로 만들어 Visual Studio 2012 Professional 및 Ultimate 버전 에서만 볼 수 있는 사용자 지정 패키지 소스:

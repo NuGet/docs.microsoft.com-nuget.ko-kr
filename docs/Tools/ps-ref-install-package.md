@@ -3,7 +3,7 @@ title: "NuGet Install-package PowerShell 참조 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
+ms.date: 06/01/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
@@ -13,11 +13,11 @@ keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, Install-pa
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5da523d8b517a6867a86998dceaa1eba7b55b5fc
-ms.sourcegitcommit: 51eae111f0fec4fbb21e5e702629beaa3e8abc2b
+ms.openlocfilehash: d6b0c20545ecb82b0c2fa5214508381c0279c7cd
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>설치 패키지 (Visual Studio에서 패키지 관리자 콘솔)
 

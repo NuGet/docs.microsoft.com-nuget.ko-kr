@@ -7,16 +7,15 @@ ms.date: 10/30/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ba1d9742-9f1c-42ff-8c30-8e953e23c501
 description: "NuGet 클라이언트와 상호 작용할 수 발전 nuget.org 프로토콜입니다."
 ms.reviewer:
 - kraigb
 - karann-msft
-ms.openlocfilehash: 0bc71795d120256b9eb14ca64141f0b69f01e620
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 488a86a36a6bc83c91f0182bf437ddb83e707e31
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nugetorg-protocols"></a>nuget.org 프로토콜
 
@@ -39,9 +38,7 @@ NuGet 에코 시스템에서 광범위 하 게 구현 하는 NuGet API에 대 �
 
 클라이언트에 대 한 API 호출을 할 때 다음 헤더를 전달 하는 데 필요한 **푸시** nuget.org 패키지:
 
-```
-X-NuGet-Protocol-Version: 4.1.0
-```
+    X-NuGet-Protocol-Version: 4.1.0
 
 `X-NuGet-Client-Version` 헤더와 유사한 의미 체계를 갖지만 공식 NuGet 클라이언트 에서만 사용 하도록 예약 되어 있습니다. 제 3 자 클라이언트를 사용 해야는 `X-NuGet-Protocol-Version` 헤더와 값입니다.
 
@@ -53,9 +50,7 @@ X-NuGet-Protocol-Version: 4.1.0
 
 이 API는 즉 사용자가 소유 하는 패키지의 유효성 검사에 nuget.org 작성자에 대 한 범위 확인 키를 가져오는 데 사용 됩니다.
 
-```
-POST api/v2/package/create-verification-key/{ID}/{VERSION}
-```
+    POST api/v2/package/create-verification-key/{ID}/{VERSION}
 
 #### <a name="request-parameters"></a>요청 매개 변수
 
@@ -67,7 +62,7 @@ X-NuGet-ApiKey | Header | string | 예      | 예를 들면 `X-NuGet-ApiKey: {US
 
 #### <a name="response"></a>응답
 
-```
+```json
 {
     "Key": "{Verify scope key from nuget.org}",
     "Expires": "{Date}"
@@ -78,9 +73,7 @@ X-NuGet-ApiKey | Header | string | 예      | 예를 들면 `X-NuGet-ApiKey: {US
 
 이 API는 사용 하 여을 nuget.org 작성자가 소유 하는 패키지에 대 한 범위 확인 키를 검사 합니다.
 
-```
-GET api/v2/verifykey/{ID}/{VERSION}
-```
+    GET api/v2/verifykey/{ID}/{VERSION}
 
 #### <a name="request-parameters"></a>요청 매개 변수
 

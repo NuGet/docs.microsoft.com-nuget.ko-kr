@@ -3,21 +3,20 @@ title: "Visual Studio에 대 한 자격 증명 공급자 NuGet | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 9c7f6d16-f437-47c4-82d4-6c996e0b18ec
 description: "자격 증명 공급자 NuGet 피드 Visual Studio 확장에 IVsCredentialProvider 인터페이스를 구현 하 여 인증 합니다."
 keywords: "NuGet 자격 증명 공급자 피드를 사용 하 여 인증, 갤러리, NuGet visual studio 확장을 사용 하 여 인증"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8d7360205387d4813f95560018e2ac68f71f5603
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: ff143526c814c69f1a133a62c1ad1a8f5fbedd60
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>Visual Studio에서 NuGet 자격 증명 공급자를 사용한 피드 인증
 

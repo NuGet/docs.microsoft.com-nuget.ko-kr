@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: b514da09-da1f-416b-9bfc-692f08fb6957
 description: "포함 하 여 NuGet 3.4.2에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다."
 keywords: "NuGet 3.4.2 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6761c59b6dc85b9a8503041928c2707549006d9c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 892a965e67762af2ae42c2d6ee75d2838104d1c2
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-342-release-notes"></a>NuGet 3.4.2 릴리스 정보
 
@@ -36,7 +35,7 @@ Nuget.exe 3.4.2의 릴리스 후보를 다운로드할 수 있습니다 [여기]
 * 이 변경 외에도 해결 했습니다 문제가 있는 VS UI에 계산 업데이트를 인출 하는 경우에 두 번 네트워크 적중 된 것입니다. 이 부분적으로 3.4/3.4.1 한 경험이 일부 시간 초과 문제 고객에 대 한 책임입니다.
 * No_proxy 설정에 대 한 지원 추가
 
-##<a name="fixes"></a>수정 프로그램
+## <a name="fixes"></a>수정 프로그램
 
 * 3.4.1으로 업데이트 한 후 nuget.org 소스 NuGet 설정 또는 구성에서 누락 된 문제를 해결 합니다.
 * 3.4.1 FindPackagesById 대/소문자 변경 Artifactory을 중단 문제를 해결 합니다.

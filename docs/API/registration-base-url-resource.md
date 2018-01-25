@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 96b07019-c2e1-4f40-9290-f65ad71af3b1
 description: "패키지 등록 기준 URL을 사용 하면 패키지에 대 한 메타 데이터를 인출 합니다."
 keywords: "NuGet API 패키지 메타 데이터, NuGet API 등록, NuGet API 목록에 없는 패키지"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 1aabe6ae5c661e12b2639700813946e7a9a58b24
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: c098d70d58011bad7f9829f0c95c87c1339dd362
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="package-metadata"></a>패키지 메타 데이터
 
@@ -82,9 +81,7 @@ HTTP 메서드를 등록 리소스 지원에 있는 모든 Url `GET` 및 `HEAD`�
 
 추론을 사용 하 여 nuget.org 다음과 같이: 128 개 이상 버전의 패키지에 있는 경우 리프 페이지로 나눌 크기가 64입니다. 최대 128 버전이 경우 모든 인라인 등록 인덱스에 유지 합니다.
 
-```
-GET {@id}/{LOWER_ID}/index.json
-```
+    GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
@@ -155,9 +152,9 @@ iconUrl                  | string                     | 아니요       |
 ID                       | string                     | 예      | 패키지의 ID
 licenseUrl               | string                     | 아니요       | 
 나열                   | boolean                    | 아니요       | 없는 경우에 나열 된 것으로 간주 해야
-Minclientversion이         | string                     | 아니요       | 
+minClientVersion         | string                     | 아니요       | 
 projectUrl               | string                     | 아니요       | 
-게시                | string                     | 아니요       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
+published                | string                     | 아니요       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
 requireLicenseAcceptance | boolean                    | 아니요       | 
 요약                  | string                     | 아니요       | 
 태그                     | 문자열 또는 문자열의 배열  | 아니요       | 
@@ -193,11 +190,9 @@ range        | object | 아니요       | 허용 된 [버전 범위](../referenc
 
 ### <a name="sample-request"></a>샘플 요청
 
-```
-GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
-```
+    GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
 
-### <a name="sample-response"></a>샘플 응답 
+### <a name="sample-response"></a>샘플 응답
 
 [!code-JSON [package-registration-index.json](./_data/package-registration-index.json)]
 
@@ -222,9 +217,7 @@ count  | 정수          | 예      | 페이지의 리프 등록의 수
 
 ## <a name="sample-request"></a>샘플 요청
 
-```
-GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
-```
+    GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
 
 ## <a name="sample-response"></a>샘플 응답
 
@@ -244,7 +237,7 @@ name           | 형식    | 필수 | 노트
 catalogEntry   | string  | 아니요       | 이러한 리프 생성 되는 카탈로그 항목에 대 한 URL
 나열         | boolean | 아니요       | 없는 경우에 나열 된 것으로 간주 해야
 packageContent | string  | 아니요       | 패키지 콘텐츠 (.nupkg)의 URL
-게시      | string  | 아니요       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
+published      | string  | 아니요       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
 등록   | string  | 아니요       | 등록 인덱스에 대 한 URL
 
 > [!Note]
@@ -252,9 +245,7 @@ packageContent | string  | 아니요       | 패키지 콘텐츠 (.nupkg)의 URL
 
 ### <a name="sample-request"></a>샘플 요청
 
-```
-GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
-```
+    GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
 
 ### <a name="sample-response"></a>샘플 응답
 

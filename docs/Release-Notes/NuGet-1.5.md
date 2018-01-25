@@ -7,19 +7,18 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 3ec1ff28-18fc-4d53-bd43-208619a7270a
 description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.5에 대 한 릴리스 정보입니다."
 keywords: "NuGet 1.5 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 29792f4c7399155bcf5fb3361d7f10ddd1b18ca1
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 261cfbbd262bad28f142b0c3dff8a541641d9fda
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
- # <a name="nuget-15-release-notes"></a>NuGet 1.5 릴리스 정보
+# <a name="nuget-15-release-notes"></a>NuGet 1.5 릴리스 정보
 
 [NuGet 1.4 릴리스 정보](../release-notes/nuget-1.4.md) | [NuGet 1.6 릴리스 정보](../release-notes/nuget-1.6.md)
 
@@ -35,6 +34,7 @@ ASP.NET MVC 3 프로젝트 템플릿은 프로젝트 템플릿은 호출 될 때
 이 기능에 대 한 자세한 내용은이 내용을 읽고 [기능의 개발자가 블로그 게시물](http://blogs.msdn.com/b/marcinon/archive/2011/07/08/project-templates-and-preinstalled-nuget-packages.aspx)합니다.
 
 ### <a name="explicit-assembly-references"></a>명시적 어셈블리 참조
+
 새 추가 `<references />` 내에서 어셈블리를 명시적으로 지정 하는 데 사용 되는 요소는 패키지를 참조 해야 합니다.
 
 예를 들어, 다음을 추가 하는 경우:

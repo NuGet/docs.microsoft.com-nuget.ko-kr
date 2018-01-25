@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 4153ff3f-f97f-4e54-b638-e844f70edf22
 description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 3.0 Beta에 대 한 릴리스 정보입니다."
 keywords: "NuGet 3.0 베타 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 46b2a81845f5ac06b8c80975c55fcfc33b86636e
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 618d140c443d51f4d7eb87bac2381ad961ed85d1
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-30-beta-release-notes"></a>NuGet 3.0 베타 릴리스 정보
 
@@ -27,7 +26,7 @@ NuGet 3.0 베타는 2015 년 2 월 23 일에 Visual Studio 2015 CTP 6 릴리스�
 
 이 새 버전을 설치 하기 전에 모든 이전 버전의 Visual Studio 2015 NuGet 확장을 제거 하는 것이 좋습니다.  이 버전의 확장에 문제가 있는 경우 되돌린는 것이 좋습니다는 [이전 버전](http://nuget.codeplex.com/downloads/get/909582) Visual Studio 2015 preview와 함께 사용할 합니다.
 
-## <a name="visual-studio-2012"></a>Visual Studio 2012 이상
+## <a name="visual-studio-2012"></a>Visual Studio 2012+
 
 이 NuGet 3.0 Beta를 Visual Studio 2015 CTP 6 확장 갤러리에서 설치할 수 있습니다. 가져오려는 미리 보기 삭제 Visual Studio 2012 및 Visual Studio 2013에 대 한 가능한 한 빨리 노력 하 고 합니다. 에서는 이전에 공유 우리의 의도 [Visual Studio 2010에 대 한 업데이트를 중단](http://blog.nuget.org/20141002/visual-studio-2010.html), 해당 어려운 결정 하도록 않았습니다 고 합니다.
 

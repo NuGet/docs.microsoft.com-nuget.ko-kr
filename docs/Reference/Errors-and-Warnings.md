@@ -7,7 +7,6 @@ ms.date: 12/13/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: b76b8a00-7155-4163-b533-894086d2ef78
 description: "경고 및 패키지를 복원 하는 동안 NuGet에서 발급 한 오류에 대 한 완전 한 지침"
 keywords: "NuGet 오류, 경고 NuGet 진단"
 ms.reviewer:
@@ -44,11 +43,11 @@ f1_keywords:
 - NU1608
 - NU1701
 - NU1801
-ms.openlocfilehash: 9e22b63636980ce64017c950148d9005bf9c2fb1
-ms.sourcegitcommit: ed01eaeef9bf488c36556b97247ca440384c0242
+ms.openlocfilehash: c7d77af04744888ce8af92d617a2ffc7daef4eb0
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="errors-and-warnings"></a>오류 및 경고
 

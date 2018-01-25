@@ -3,21 +3,20 @@ title: "NuGet PowerShell 참조 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/2/2017
+ms.date: 10/02/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: cd08b869-44c6-480e-90f7-494a6d08e6d0
 description: "Visual Studio에서 NuGet 패키지 관리자 콘솔에서 사용할 수 있는 PowerShell 명령에 대 한 전체 참조 합니다."
 keywords: "NuGet 패키지 관리자 콘솔에서 NuGet Powershell 명령 NuGet Powershell 참조"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 64450a8bcca7f6028d4ce389d51ac35e9209cfae
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 0cbd9b13b34bd93fea6c6684c03bca9cff5d9e5e
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="powershell-reference"></a>PowerShell 참조
 
@@ -41,7 +40,7 @@ ms.lasthandoff: 01/05/2018
 | [Add-BindingRedirect](ps-ref-add-bindingredirect.md) | 프로젝트에 대 한 출력 경로 내의 모든 어셈블리를 확인 하 고 바인딩 리디렉션을 추가 `app.config` 또는 `web.config` 필요 합니다. | 모두 |
 | [Get-Project](ps-ref-get-project.md) | 기본 또는 지정 된 프로젝트에 대 한 정보를 표시합니다. | 3.0+ |
 | [Open-PackagePage](ps-ref-open-packagepage.md) | 프로젝트, 라이선스 또는 지정된 된 패키지에 대 한 보고서 남용 URL을 사용 하 여 기본 브라우저를 시작합니다. | 3.0 이상에서 사용 되지 않습니다. |
-| [레지스터 TabExpansion](ps-ref-register-tabexpansion.md) | 일반적으로 사용 되는 매개 변수 값에 대 한 사용자 지정된 확장을 만들 수 있도록, 명령의 매개 변수에 대해 탭 확장을 등록 합니다. | 모두 |
+| [Register-TabExpansion](ps-ref-register-tabexpansion.md) | 일반적으로 사용 되는 매개 변수 값에 대 한 사용자 지정된 확장을 만들 수 있도록, 명령의 매개 변수에 대해 탭 확장을 등록 합니다. | 모두 |
 | [Sync-Package](ps-ref-sync-package.md) | 패키지를 설치 하는 버전은 get 프로젝트를 지정 하 고 버전을 솔루션의 프로젝트의 나머지를 동기화 합니다. | 3.0+ |
 | [Uninstall-Package](ps-ref-uninstall-package.md) | 필요에 따라 해당 종속성을 제거 하는 프로젝트에서 패키지를 제거 합니다. | 모두 |
 
@@ -57,7 +56,7 @@ Get-Help <command> -full
 - ErrorAction
 - ErrorVariable
 - OutBuffer
-- Outvariable을 지원
+- OutVariable
 - PipelineVariable
 - 자세히
 - WarningAction

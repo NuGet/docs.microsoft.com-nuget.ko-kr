@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 6762b6f8-82b7-4bab-a1f0-cd25e5dc1fb4
 description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 3.0 미리 보기에 대 한 릴리스 정보입니다."
 keywords: "NuGet 3.0 미리 보기 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ae137af6f9722c454458fdcb4f20760c08d6e8bb
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: e07bcad2bf713deee0add72663c84b9979f8c5c4
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-30-preview-release-notes"></a>NuGet 3.0 미리 보기 릴리스 정보
 
@@ -25,7 +24,7 @@ ms.lasthandoff: 01/05/2018
 
 NuGet 3.0 미리 보기는 Visual Studio 2015 Preview 릴리스의 일부로 서 2014 년 11 월 12 일에 출시 되었습니다. NuGet 3.0 미리 보기를 발표 했습니다. 이 us에 대 한 큰 릴리스 (하지만 미리 보기), 기능 변경 내용이에 피드백 시작 하 고 있습니다.
 
-## <a name="visual-studio-2012"></a>Visual Studio 2012 이상
+## <a name="visual-studio-2012"></a>Visual Studio 2012+
 
 이 NuGet 3.0 미리 보기는 Visual Studio 2015 Preview에 포함 됩니다. 가져오려는 미리 보기 삭제 Visual Studio 2012 및 Visual Studio 2013에 대 한 가능한 한 빨리 노력 하 고 합니다. 에서는 이전에 공유 우리의 의도 [Visual Studio 2010에 대 한 업데이트를 중단](http://blog.nuget.org/20141002/visual-studio-2010.html), 해당 어려운 결정 하도록 않았습니다 고 합니다.
 
