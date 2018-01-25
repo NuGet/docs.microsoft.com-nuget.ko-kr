@@ -9,7 +9,6 @@
 ## [UWP 패키지 만들기](Guides/Create-UWP-Packages.md)
 ## [NuGet 패키지인 UWP 컨트롤 만들기](Guides/Create-UWP-Controls.md)
 ## [플랫폼 간 패키지 만들기](Guides/Create-Cross-Platform-Packages.md)
-## [API를 사용하는 모든 패키지에 대한 쿼리](Guides/api/query-for-all-published-packages.md)
 # 패키지 만들기
 ## [개요 및 워크플로](Create-Packages/Overview-and-Workflow.md)
 ## [패키지 만들기](Create-Packages/Creating-a-Package.md)
@@ -86,6 +85,7 @@
 ### [nuget.exe 자격 증명 공급자](Reference/extensibility/nuget-exe-Credential-Providers.md)
 # API
 ## [개요](API/overview.md)
+## [방법: API를 사용하는 모든 패키지에 대한 쿼리](Guides/api/query-for-all-published-packages.md)
 ## [서비스 인덱스](API/service-index.md)
 ## [푸시 및 삭제](API/package-publish-resource.md)
 ## [검색](API/search-query-service-resource.md)
