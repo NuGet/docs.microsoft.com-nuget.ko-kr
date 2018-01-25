@@ -1,9 +1,9 @@
-# [NuGet이란?](What-is-NuGet.md)
+# [NuGet이란?](what-is-nuget.md)
+# [NuGet 클라이언트 도구 설치](install-nuget-client-tools.md)
 # 빠른 시작
 ## [패키지 만들기 및 게시](Quickstart/Create-and-Publish-a-Package.md)
 ## [패키지 사용](Quickstart/Use-a-Package.md)
 # 안내선
-## [NuGet 클라이언트 도구 설치](Guides/Install-NuGet.md)
 ## [NET Standard 패키지 만들기(Visual Studio 2017)](Guides/Create-NET-Standard-Packages-VS2017.md)
 ## [NET Standard 패키지 만들기(Visual Studio 2015)](Guides/Create-NET-Standard-Packages-VS2015.md)
 ## [UWP 패키지 만들기](Guides/Create-UWP-Packages.md)
@@ -19,8 +19,6 @@
 ## [네이티브 패키지](Create-Packages/Native-Packages.md)
 ## [기호 패키지](Create-Packages/Symbol-Packages.md)
 ## [패키지 게시](Create-Packages/Publish-a-package.md)
-## [project.json 및 UWP](Create-Packages/project-json-and-UWP.md)
-## [project.json 영향](Create-Packages/project-json-Impact.md)
 # 패키지 사용
 ## [개요 및 워크플로](Consume-Packages/Overview-and-Workflow.md)
 ## [패키지 찾기 및 선택](Consume-Packages/Finding-and-Choosing-Packages.md)
@@ -71,7 +69,6 @@
 # 참조
 ## [.nuspec](Schema/nuspec.md)
 ## [packages.config](Schema/packages-config.md)
-## [project.json](Schema/project-json.md)
 ## [패키지 버전 관리](reference/package-versioning.md)
 ## [Nuget.Config 파일](Schema/nuget-config-file.md)
 ## [MSBuild 대상](Schema/msbuild-targets.md)
@@ -83,6 +80,10 @@
 ## 확장성
 ### [Visual Studio용 NuGet 자격 증명 공급자](Reference/extensibility/Nuget-Credential-Providers-for-Visual-Studio.md)
 ### [nuget.exe 자격 증명 공급자](Reference/extensibility/nuget-exe-Credential-Providers.md)
+## 보관된 내용
+### [project.json 참조 형식](archive/project-json.md)
+### [project.json 및 UWP](archive/project-json-and-UWP.md)
+### [project.json impact](archive/project-json-impact.md)
 # API
 ## [개요](API/overview.md)
 ## [방법: API를 사용하는 모든 패키지에 대한 쿼리](Guides/api/query-for-all-published-packages.md)
