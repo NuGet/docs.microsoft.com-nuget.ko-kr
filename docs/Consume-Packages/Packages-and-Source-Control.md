@@ -3,21 +3,20 @@ title: "NuGet 패키지 및 소스 제어 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 07/17/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 2c874e6f-99eb-46dd-997f-f67d98d0237e
 description: "버전 제어와 소스 제어 시스템 내에서 NuGet 패키지를 처리하는 방법 및 Git과 TFVC를 사용하여 패키지를 생략하는 방법에 대한 고려 사항입니다."
 keywords: "NuGet 소스 제어, NuGet 버전 제어, NuGet 및 Git, NuGet 및 TFS, NuGet 및 TFVC, 패키지 생략, 소스 제어 리포지토리, 버전 제어 리포지토리"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c73dea74f2363f49fb476a5812c29de63fec89a3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 6261625d5d7eaa748f9ad15510b7b2af3c814e44
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>소스 제어 시스템에서 NuGet 패키지 생략
 
@@ -38,7 +37,7 @@ ms.lasthandoff: 12/14/2017
 
 `.gitignore` 파일의 중요한 부분은 다음과 같습니다.
 
-```
+```gitignore
 # Ignore NuGet Packages
 *.nupkg
 
@@ -70,7 +69,7 @@ project.assets.json
 
 1. 해당 폴더에서 `NuGet.Config`라는 파일을 만들고 편집하기 위해 엽니다.
 
-1. 최소한 다음 텍스트를 추가합니다. 여기서 [disableSourceControlIntegration](../Schema/nuget-config-file.md#solution-section) 설정을 통해 Visual Studio에서 `packages` 폴더에 있는 모든 항목을 건너뜁니다.
+1. 최소한 다음 텍스트를 추가합니다. 여기서 [disableSourceControlIntegration](../reference/nuget-config-file.md#solution-section) 설정을 통해 Visual Studio에서 `packages` 폴더에 있는 모든 항목을 건너뜁니다.
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -85,9 +84,9 @@ project.assets.json
 
 1. [서버에 파일 추가](https://www.visualstudio.com/en-us/docs/tfvc/add-files-server#tfignore)에 설명된 대로 TFS 2012 이상 또는 Visual Studio Team Services를 사용하여 `.tfignore` 파일을 만듭니다. 해당 파일에서 리포지토리 수준의 `\packages` 폴더 및 다른 몇 가지 중간 파일에 대한 수정을 명시적으로 무시하려면 아래 내용을 포함합니다. (후행 점이 있는 `.tfignore.`라는 이름을 사용하여 Windows 탐색기에서 파일을 만들 수 있지만 먼저 "알려진 파일 확장명 숨기기" 옵션을 비활성화해야 합니다.)
 
-   ```
+   ```cli
    # Ignore NuGet Packages
-   *.nupkg   
+   *.nupkg
 
    # Ignore the NuGet packages folder in the root of the repository. If needed, prefix 'packages'
    # with additional folder names if it's not in the same folder as .tfignore.   

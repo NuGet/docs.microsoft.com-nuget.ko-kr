@@ -3,21 +3,20 @@ title: "NuGet 에코시스템 개요 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/18/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 8971dcf5-1d05-46e1-adf2-ce0f55521a49
 description: "NuGet 소스, 비 Microsoft NuGet 프로젝트, 유틸리티 및 교육 자료를 포함하여 NuGet 에코시스템에 있는 포괄적인 리소스입니다."
 keywords: "NuGet 에코시스템, 비 Microsoft NuGet 프로젝트, NuGet 오픈 소스, NuGet 유틸리티, NuGet 교육 자료"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: de64cf96595825b7c1bf2e235e370f5a95c64096
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 7c1e457c034f239fbea4e75f24851ea38182a294
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>NuGet 에코시스템 개요
 
@@ -41,38 +40,37 @@ Microsoft에서는 NuGet을 개발하는 데 광범위하게 기여했습니다.
 
 다른 개인 및 회사에서도 NuGet 에코시스템에 상당히 기여했습니다. 여기에 나열된 각 프로젝트에서는 주요 NuGet 구성 요소와 다른 라이선스를 사용할 수 있습니다. 따라서 사용하기 전에 사용 약관을 허용할 수 있는지 확인합니다.
 
-* [AppVeyor CI](https://www.appveyor.com/)
-* [Artifactory](https://www.jfrog.com/artifactory/)
-* [BoxStarter](http://boxstarter.org/)
-* [Chocolatey](https://chocolatey.org/)
-* [CoApp](http://coapp.org/)
-* [JetBrains ReSharper](https://resharper-plugins.jetbrains.com/)
-* [JetBrains TeamCity](https://www.jetbrains.com/teamcity/)
-* [Klondike](https://github.com/themotleyfool/Klondike)
-* [MinimalNugetServer](https://github.com/TanukiSharp/MinimalNugetServer)
-* [MyGet(또는 NuGet-as-a-service)](http://www.myget.org/)
-* [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)
-* [NuGet 서버](http://nugetserver.net/)
-* [OctopusDeploy](https://octopus.com/)
-* [Paket](https://fsprojects.github.io/Paket/)
-* [ProGet(Inedo)](http://inedo.com/proget)
-* [scriptcs](http://scriptcs.net/)
-* [SharpDevelop](http://community.sharpdevelop.net/blogs/mattward/archive/2011/01/23/NuGetSupportInSharpDevelop.aspx)
-* [Sonatype Nexus](http://www.sonatype.com/nexus-repository-sonatype)
-* [SymbolSource](http://www.symbolsource.org/Public)
-* [Xamarin 및 MonoDevelop](https://github.com/mrward/monodevelop-nuget-addin)
-
+- [AppVeyor CI](https://www.appveyor.com/)
+- [Artifactory](https://www.jfrog.com/artifactory/)
+- [BoxStarter](http://boxstarter.org/)
+- [Chocolatey](https://chocolatey.org/)
+- [CoApp](http://coapp.org/)
+- [JetBrains ReSharper](https://resharper-plugins.jetbrains.com/)
+- [JetBrains TeamCity](https://www.jetbrains.com/teamcity/)
+- [Klondike](https://github.com/themotleyfool/Klondike)
+- [MinimalNugetServer](https://github.com/TanukiSharp/MinimalNugetServer)
+- [MyGet(또는 NuGet-as-a-service)](http://www.myget.org/)
+- [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)
+- [NuGet 서버](http://nugetserver.net/)
+- [OctopusDeploy](https://octopus.com/)
+- [Paket](https://fsprojects.github.io/Paket/)
+- [ProGet(Inedo)](http://inedo.com/proget)
+- [scriptcs](http://scriptcs.net/)
+- [SharpDevelop](http://community.sharpdevelop.net/blogs/mattward/archive/2011/01/23/NuGetSupportInSharpDevelop.aspx)
+- [Sonatype Nexus](http://www.sonatype.com/nexus-repository-sonatype)
+- [SymbolSource](http://www.symbolsource.org/Public)
+- [Xamarin 및 MonoDevelop](https://github.com/mrward/monodevelop-nuget-addin)
 
 ## <a name="other-nuget-based-utilities"></a>기타 NuGet 기반 유틸리티
 
 NuGet에 기반한 도구 및 유틸리티는 다음과 같습니다.
 
-* [슬라이드 확장](http://getglimpse.com/Packages)(플러그 인이 패키지)
-* [NuGetMustHaves.com](http://nugetmusthaves.com/)
-* [Orchard](http://www.orchardproject.net/)(Orchard 갤러리에서 호스트되는 v1 NuGet 피드에서 CMS 모듈을 가져옴)
-* [NuGet 서버의 Java 구현](http://jonnyzzz.com/blog/2012/03/07/nuget-server-in-pure-java/)
-* [NuGetLatest](https://twitter.com/NuGetLatest)(새 패키지 게시를 트윗하는 Twitter 봇)
-* [DefinitelyTyped](http://definitelytyped.org/)([자동](https://github.com/DefinitelyTyped/NugetAutomation/) TypeScript 형식 [NuGet에 게시된 정의](http://www.nuget.org/packages?q=DefinitelyTyped))
+- [슬라이드 확장](http://getglimpse.com/Packages)(플러그 인이 패키지)
+- [NuGetMustHaves.com](http://nugetmusthaves.com/)
+- [Orchard](http://www.orchardproject.net/)(Orchard 갤러리에서 호스트되는 v1 NuGet 피드에서 CMS 모듈을 가져옴)
+- [NuGet 서버의 Java 구현](http://jonnyzzz.com/blog/2012/03/07/nuget-server-in-pure-java/)
+- [NuGetLatest](https://twitter.com/NuGetLatest)(새 패키지 게시를 트윗하는 Twitter 봇)
+- [DefinitelyTyped](http://definitelytyped.org/)([자동](https://github.com/DefinitelyTyped/NugetAutomation/) TypeScript 형식 [NuGet에 게시된 정의](http://www.nuget.org/packages?q=DefinitelyTyped))
 
 ## <a name="training-materials-and-references"></a>교육 자료 및 참조
 
@@ -83,8 +81,8 @@ NuGet에 기반한 도구 및 유틸리티는 다음과 같습니다.
 - [NuGet 블로그](http://blog.nuget.org/)
 - [Twitter의 NuGet 팀@nuget](http://twitter.com/nuget)
 - 서적:
-    * [Apress Pro NuGet](http://bit.ly/ProNuGet)
-    * [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
+  - [Apress Pro NuGet](http://bit.ly/ProNuGet)
+  - [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
 
 ## <a name="documentation-for-individual-packages"></a>개별 패키지에 대한 설명서
 

@@ -3,21 +3,20 @@ title: "NuGet 패키지의 시험판 버전 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/14/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: df6a366a-22c1-47bb-8017-18231311ce88
 description: "시험판 패키지를 빌드하기 위한 지침"
 keywords: "버전 관리, NuGet 패키지 버전 관리, NuGet 시험판 버전, NuGet 시험판 패키지, 패키지 버전 미리 보기, RC 패키지 버전, 베타 패키지 버전, NuGet 유의적 버전"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 07cb9b9bdeeea6f283e95a11a06d7f2043c9b17c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: f07b4a0428685b036640a7153190fd8454885608
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="building-pre-release-packages"></a>시험판 패키지 빌드
 
@@ -47,7 +46,6 @@ ms.lasthandoff: 12/14/2017
 
 안정적인 버전을 출시할 준비가 되면 접미사를 제거합니다. 그러면 패키지가 시험판 버전보다 우선 적용됩니다. 다시 [패키지 버전 관리](../reference/package-versioning.md#pre-release-versions)를 참조하세요.
 
-
 ## <a name="installing-and-updating-pre-release-packages"></a>시험판 패키지 설치 및 업데이트
 
 기본적으로 NuGet은 패키지에서 작업할 때 시험판 버전을 포함하지 않지만 다음과 같이 이 동작을 변경할 수 있습니다.
@@ -61,7 +59,6 @@ ms.lasthandoff: 12/14/2017
 - **패키지 관리자 콘솔**: `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` 및 `Update-Package` 명령과 함께 `-IncludePrerelease` 스위치를 사용합니다. [PowerShell 참조](../tools/powershell-reference.md)를 참조하세요.
 
 - **NuGet CLI**: `install`, `update`, `delete` 및 `mirror` 명령과 함께 `-prerelease` 스위치를 사용합니다. [NuGet CLI 참조](../tools/nuget-exe-cli-reference.md)를 참조하세요.
-
 
 ## <a name="semantic-versioning"></a>유의적 버전
 
@@ -86,16 +83,14 @@ ms.lasthandoff: 12/14/2017
 
 그러나 어떤 접미사를 사용하든지 NuGet은 알파벳 역순으로 우선 순위를 적용합니다.
 
-```
-1.0.1
-1.0.1-zzz
-1.0.1-rc
-1.0.1-open
-1.0.1-beta12
-1.0.1-beta05
-1.0.1-beta
-1.0.1-alpha2
-1.0.1-alpha
-```
+    1.0.1
+    1.0.1-zzz
+    1.0.1-rc
+    1.0.1-open
+    1.0.1-beta12
+    1.0.1-beta05
+    1.0.1-beta
+    1.0.1-alpha2
+    1.0.1-alpha
 
 표시된 대로 접미사가 없는 버전은 항상 시험판 버전보다 우선합니다. 또한 두 자리 숫자(이상)를 사용할 수 있는 시험판 태그에서 숫자 접미사를 사용하는 경우 앞에 오는 숫자 0(예: beta01 및 beta05)을 사용하여 숫자가 커지는 경우 올바르게 정렬하도록 합니다.

@@ -7,18 +7,17 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 97577ddd-c294-432d-81a7-b4aebe88bd1c
 description: "로컬 또는 원격으로 사용자 고유의 NuGet 패키지 피드 또는 갤러리를 호스팅하기 위한 개요입니다."
 keywords: "NuGet 피드, NuGet 갤러리, 패키지 피드 사용자 지정, NuGet.Server"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: c3c6b17cdeb4fe959adbc56bdc6ace73202a98fc
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 738190e20603046d075faa3f50402601890583c1
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>사용자 고유의 NuGet 피드 호스팅
 
@@ -27,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 NuGet은 이러한 모든 용도에서 다음과 같은 방법으로 개인 패키지 소스를 설정하도록 지원합니다.
 
 - 로컬 피드: 패키지는 계층적 폴더 구조를 만드는 `nuget init` 및 `nuget add`를 사용하여 적합한 네트워크 파일 공유에 배치합니다(NuGet 3.3+). 자세한 내용은 [로컬 피드](../hosting-packages/local-feeds.md)를 참조하세요.
-- NuGet.Server: 로컬 HTTP 서버를 통해 패키지를 사용할 수 있습니다. 자세한 내용은 [NuGet.Server](../hosting-packages/NuGet-Server.md)를 참조하세요.
+- NuGet.Server: 로컬 HTTP 서버를 통해 패키지를 사용할 수 있습니다. 자세한 내용은 [NuGet.Server](../hosting-packages/nuget-server.md)를 참조하세요.
 - NuGet 갤러리: [NuGet 갤러리 프로젝트](https://github.com/NuGet/NuGetGallery#build-and-run-the-gallery-in-arbitrary-number-easy-steps)를 사용하여 인터넷 서버에서 패키지를 호스트합니다(github.com). NuGet 갤러리에서는 nuget.org와 비슷하게 브라우저 내에서 패키지를 검색하고 탐색할 수 있는 광범위한 웹 UI와 같은 사용자 관리 및 기능을 제공합니다.
 
 다음을 포함하여 원격 개인 피드를 지원하는 제품을 호스팅하는 다른 여러 NuGet이 있습니다.

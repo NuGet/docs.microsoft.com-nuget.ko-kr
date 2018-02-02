@@ -7,17 +7,16 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 1354a527-d988-43d1-8dcf-6ce46ec5d3d4
 description: "로컬 네트워크에서 폴더를 사용하여 NuGet 패키지에 로컬 피드를 만드는 방법"
 keywords: "NuGet 피드, NuGet 갤러리, 로컬 패키지 피드"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 32217622077ff983abaf00b2e6e5baf3064fff56
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0b8633db78b19fecddeb057a9f287ef971aef27a
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="local-feeds"></a>로컬 피드
 
@@ -40,7 +39,7 @@ ms.lasthandoff: 12/14/2017
 
 [`nuget add`](../tools/cli-ref-add.md) 명령을 사용하여 피드에 패키지를 복사할 때 NuGet이 이 구조를 자동으로 만듭니다.
 
-```
+```cli
 nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 ```
 
@@ -48,7 +47,7 @@ nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 
 이러한 경우에 개별적으로 `nuget add`를 실행한 경우와 같이 피드에 폴더의 모든 패키지를 복사하는 [`nuget init`](../tools/cli-ref-init.md) 명령을 사용합니다. 예를 들어 다음 명령은 `c:\packages`의 모든 패키지를 `\\myserver\packages`의 계층적 트리에 복사합니다.
 
-```
+```cli
 nuget init c:\packages \\myserver\packages
 ```
 
