@@ -13,24 +13,24 @@ ms.reviewer:
 - karann-msft
 - unniravindranathan
 ms.openlocfilehash: 61b8e5e6838da4293d4d09499495a79044f68dce
-ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 02/02/2018
 ---
-# <a name="nuget-212-rc-release-notes"></a><span data-ttu-id="67ca9-104">NuGet 2.12 RC 릴리스 정보</span><span class="sxs-lookup"><span data-stu-id="67ca9-104">NuGet 2.12-RC Release Notes</span></span>
+# <a name="nuget-212-rc-release-notes"></a><span data-ttu-id="95f01-104">NuGet 2.12 RC 릴리스 정보</span><span class="sxs-lookup"><span data-stu-id="95f01-104">NuGet 2.12-RC Release Notes</span></span>
 
-<span data-ttu-id="67ca9-105">NuGet 2.12 RC는 Visual Studio 2013 용 2016 년 6 월 22 일 2.12.0-rc VSIX에 대 한 업데이트로 릴리스 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="67ca9-105">NuGet 2.12-RC was released June 22, 2016 as an update to the 2.12.0-rc VSIX for Visual Studio 2013.</span></span>
+<span data-ttu-id="95f01-105">NuGet 2.12 RC는 Visual Studio 2013 용 2016 년 6 월 22 일 2.12.0-rc VSIX에 대 한 업데이트로 릴리스 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="95f01-105">NuGet 2.12-RC was released June 22, 2016 as an update to the 2.12.0-rc VSIX for Visual Studio 2013.</span></span>
 
-### <a name="updates-in-this-release"></a><span data-ttu-id="67ca9-106">이 릴리스에서 업데이트</span><span class="sxs-lookup"><span data-stu-id="67ca9-106">Updates in this release</span></span>
+### <a name="updates-in-this-release"></a><span data-ttu-id="95f01-106">이 릴리스에서 업데이트</span><span class="sxs-lookup"><span data-stu-id="95f01-106">Updates in this release</span></span>
 
-* <span data-ttu-id="67ca9-107">전체 NetStandard 및 NetCoreApp VS2013에 대 한 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="67ca9-107">Full NetStandard  and NetCoreApp support for VS2013.</span></span>
-* <span data-ttu-id="67ca9-108">에 포함/제외 추가 `.nuspec` 종속성 항목입니다.</span><span class="sxs-lookup"><span data-stu-id="67ca9-108">Adding include/exclude to `.nuspec` dependency entries.</span></span>
-* <span data-ttu-id="67ca9-109">프록시 예외를 지정 하려면 "no_proxy"에 대 한 지원을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="67ca9-109">Add support for "no_proxy" to specify proxy exceptions.</span></span>
-* <span data-ttu-id="67ca9-110">TFS 관련 수정 합니다.</span><span class="sxs-lookup"><span data-stu-id="67ca9-110">TFS related fixes.</span></span>
+* <span data-ttu-id="95f01-107">전체 NetStandard 및 NetCoreApp VS2013에 대 한 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="95f01-107">Full NetStandard  and NetCoreApp support for VS2013.</span></span>
+* <span data-ttu-id="95f01-108">에 포함/제외 추가 `.nuspec` 종속성 항목입니다.</span><span class="sxs-lookup"><span data-stu-id="95f01-108">Adding include/exclude to `.nuspec` dependency entries.</span></span>
+* <span data-ttu-id="95f01-109">프록시 예외를 지정 하려면 "no_proxy"에 대 한 지원을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="95f01-109">Add support for "no_proxy" to specify proxy exceptions.</span></span>
+* <span data-ttu-id="95f01-110">TFS 관련 수정 합니다.</span><span class="sxs-lookup"><span data-stu-id="95f01-110">TFS related fixes.</span></span>
 
-<span data-ttu-id="67ca9-111">이 릴리스에서 수정 사항 목록은의 GitHub에서 찾을 수 수는 [2.12 마일스 톤](https://github.com/NuGet/Home/issues?q=milestone%3A2.12+is%3Aclosed)</span><span class="sxs-lookup"><span data-stu-id="67ca9-111">A list of fixes in this release can be found on GitHub in the [2.12 milestone](https://github.com/NuGet/Home/issues?q=milestone%3A2.12+is%3Aclosed)</span></span>
+<span data-ttu-id="95f01-111">이 릴리스에서 수정 사항 목록은의 GitHub에서 찾을 수 수는 [2.12 마일스 톤](https://github.com/NuGet/Home/issues?q=milestone%3A2.12+is%3Aclosed)</span><span class="sxs-lookup"><span data-stu-id="95f01-111">A list of fixes in this release can be found on GitHub in the [2.12 milestone](https://github.com/NuGet/Home/issues?q=milestone%3A2.12+is%3Aclosed)</span></span>
 
-<span data-ttu-id="67ca9-112">에 대 한 확장을 다운로드 합니다.</span><span class="sxs-lookup"><span data-stu-id="67ca9-112">Download the extension for:</span></span>
+<span data-ttu-id="95f01-112">에 대 한 확장을 다운로드 합니다.</span><span class="sxs-lookup"><span data-stu-id="95f01-112">Download the extension for:</span></span>
 
-* [<span data-ttu-id="67ca9-113">Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="67ca9-113">Visual Studio 2013</span></span>](https://dist.nuget.org/visualstudio-2013-vsix/v2.12.0-rc/NuGet.Tools.vsix)
+* [<span data-ttu-id="95f01-113">Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="95f01-113">Visual Studio 2013</span></span>](https://dist.nuget.org/visualstudio-2013-vsix/v2.12.0-rc/NuGet.Tools.vsix)
