@@ -1,0 +1,17 @@
+nuget.org의 프로필에서 **패키지 관리**를 선택하여 방금 게시한 패키지를 확인합니다. 또한 확인 전자 메일을 받게 됩니다. 패키지가 인덱싱되어 다른 사용자가 찾을 수 있는 검색 결과에 표시되는 데 시간이 걸릴 수 있습니다. 그 동안 아래 메시지가 패키지 페이지에 표시됩니다.
+
+    ![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](../media/QS_Create-03-NotIndexed.png)
+
+됐습니다! 방금 첫 번째 NuGet 패키지를 nuget.org에 게시했으므로 다른 개발자가 자신의 프로젝트에서 이 패키지를 사용할 수 있습니다.
+
+이 연습에서 실제로는 유용하지 않은 패키지(예: 빈 클래스 라이브러리를 사용하여 만든 패키지)를 만든 경우 검색 결과에서 패키지를 *나열 취소*해야 합니다.
+
+1. nuget.org에서 사용자 이름(페이지 오른쪽 위)을 선택한 다음 **패키지 관리**를 선택합니다.
+
+1. **게시됨** 아래에서 나열 취소할 패키지를 찾고 오른쪽에 있는 휴지통 아이콘을 선택합니다.
+
+    ![nuget.org의 패키지 목록에 대해 표시된 휴지통 아이콘](../media/qs_create-vs-03-trash-can.png)
+
+1. 후속 페이지에서 **검색 결과에 (패키지 이름) 나열** 상자의 선택을 취소하고 **저장**을 선택합니다.
+
+    ![nuget.org의 패키지에 대한 목록 확인란 선택 취소](../media/qs_create-vs-04-unlist.png)
