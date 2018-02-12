@@ -12,11 +12,11 @@ keywords: "dotnet.exe CLI, nuget.exe CLI, NuGet 클라이언트 도구, NuGet �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 07ca66b44a981f7fcc108e1b4d97c0cf5e206a6f
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: ec8de83c9e05981016215e487888ab68a616d977
+ms.sourcegitcommit: dbcb872ec10430e1d761f34b851650e31c87a96d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="installing-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
 
@@ -59,7 +59,7 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 > `nuget update -self`를 사용하여 기존 nuget.exe를 최신 버전으로 업데이트합니다.
 
 > [!Note]
-> 최신 권장 NuGet CLI는 항상 `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`에서 사용할 수 있습니다. 이전 지속적인 통합 시스템과 호환되도록 이전 URL `https://nuget.org/nuget.exe`는 항상 2.8.6 CLI 도구를 제공합니다.
+> 최신 권장 NuGet CLI는 항상 `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`에서 사용할 수 있습니다. 이전 지속적인 통합 시스템과 호환되도록 이전 URL `https://nuget.org/nuget.exe`는 현재 2.8.6 CLI 도구를 제공합니다. [이 항목은 사용되지 않습니다](https://github.com/NuGet/NuGetGallery/issues/5381).
 
 ## <a name="visual-studio"></a>Visual Studio
 

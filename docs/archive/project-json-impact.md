@@ -12,11 +12,11 @@ keywords: "NuGet 및 project.json, project.json 영향, 패키지 작성 고려 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6104b4dac330869bc5724ffcf15cc0ac9ee26c1f
-ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
+ms.openlocfilehash: b732d48b169825764d614c338658f8c6ef45e765
+ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>패키지를 만들 때 project.json의 영향
 
@@ -61,7 +61,7 @@ NuGet 3+에서 사용되는 `project.json` 시스템은 다음 섹션에 설명�
 
 대부분의 기존 패키지는 아래에 설명된 패키지 형식을 사용할 필요가 없습니다.
 
-이 형식은 네이티브 콘텐츠를 최고 수준의 시나리오로 활성화합니다. 즉, 사용하는 관리 어셈블리는 하드웨어 구현을 닫고 대상 플랫폼에 기반하는 관리 어셈블리와 함께 이진 구현을 제공합니다. 예를 들어 System.IO.Compression 패키지는 이 기술을 활용합니다. [https://www.nuget.org/packages/System.IO.Compression](https://www.nuget.org/packages/System.IO.Compression)
+이 형식은 네이티브 콘텐츠를 최고 수준의 시나리오로 활성화합니다. 즉, 대상 플랫폼을 기반으로 하여 관리되는 어셈블리와 함께 이진 구현을 제공하도록 하드웨어 구현에 가까운 관리되는 어셈블리를 사용합니다. 예를 들어 System.IO.Compression 패키지는 이 기술을 활용합니다. [https://www.nuget.org/packages/System.IO.Compression](https://www.nuget.org/packages/System.IO.Compression)
 
 요약에서 위의 기능이 반드시 필요하지 않은 경우 여기에 설명된 형식이 NuGet 3.x+에서만 지원되므로 기존 패키지 형식을 사용하는 것이 좋습니다.
 
