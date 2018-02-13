@@ -12,11 +12,11 @@ keywords: "NuGet.Config 파일, NuGet 구성 참조, NuGet 구성 옵션"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9a183b67ae18f4fa5c042f1806f8abcc9b799b77
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: df602cb561a19f0eac085695de80db1fbaa1a313
+ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="nugetconfig-reference"></a>NuGet.Config 참조
 
@@ -48,7 +48,7 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 
 [`nuget config` 명령](../tools/cli-ref-config.md)을 사용하여 설정할 수 있는 기타 구성 설정을 포함합니다.
 
-참고: `dependencyVersion` 및 `repositoryPath`는 `packages.config`를 사용하는 프로젝트에만 적용됩니다. `globalPackagesFolder`PackageReference 형식을 사용 하 여 프로젝트에만 적용 됩니다.
+참고: `dependencyVersion` 및 `repositoryPath`는 `packages.config`를 사용하는 프로젝트에만 적용됩니다. `globalPackagesFolder` PackageReference 형식을 사용 하 여 프로젝트에만 적용 됩니다.
 
 | Key | 값 |
 | --- | --- |
@@ -131,7 +131,7 @@ nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다
 
 ### <a name="packagesources"></a>packageSources
 
-알려진 모든 패키지 원본을 나열합니다.
+알려진 모든 패키지 원본을 나열합니다. 복원 작업 중 및 PackageReference 형식을 사용 하 여 모든 프로젝트와 순서는 무시 됩니다. NuGet 설치 원본 순서를 적용 및 업데이트 작업을 사용 하 여 프로젝트와 함께 `packages.config`합니다.
 
 | Key | 값 |
 | --- | --- |
