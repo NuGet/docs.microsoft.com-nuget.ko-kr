@@ -16,17 +16,17 @@ keywords:
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 08/15/2017
+ms.date: 02/12/2018
 ms.topic: hub-page
 ms.prod: nuget
 ms.technology: 
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 58cd4b41c555b38334b10b3bb5aa2e22a430a5d4
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 901327a37f378e16210d4e0272fa3d5638af9bff
+ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 <div id="main" class="v2">
 <div class="container">
@@ -58,7 +58,7 @@ ms.lasthandoff: 02/01/2018
                             </a>
                         </li>
                         <li>
-                            <a href="quickstart/use-a-package.md">
+                            <a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -68,8 +68,8 @@ ms.lasthandoff: 02/01/2018
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>빠른 시작</h3>
-                                            <p>간단한 패키지를 만들고 패키지를 사용하는 데 집중하는 연습을 통해 NuGet을 사용해보세요.</p>
+                                            <h3>빠른 시작: 패키지 사용</h3>
+                                            <p>프로젝트 내에서 NuGet 패키지를 설치하고 사용하는 방법을 알아봅니다(연습은 dotnet CLI 및 Visual Studio용으로 모두 사용 가능).</p>
                                         </div>
                                     </div>
                                 </div>
@@ -77,18 +77,18 @@ ms.lasthandoff: 02/01/2018
                             </a>
                         </li>
                         <li>
-                            <a href="install-nuget-client-tools.md">
+                            <a href="quickstart/create-and-publish-a-package-using-the-dotnet-cli.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-guides.svg" alt="Guides: experience NuGet's tools and capabilities with installation and package creation walkthroughs." />
+                                                <img src="media/hub/nuget-get-started-guides.svg" alt="Guides: experience NuGet's tools and capabilities for creating a package." />
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>안내선</h3>
-                                            <p>설치 및 패키지 생성 연습을 통해 NuGet의 도구와 기능을 사용해보세요.</p>
+                                            <h3>빠른 시작: 패키지 만들기</h3>
+                                            <p>패키지를 만들기 위한 NuGet의 도구 및 기능을 사용해 봅니다(연습은 dotnet CLI 및 Visual Studio용으로 모두 사용 가능).</p>
                                         </div>
                                     </div>
                                 </div>
