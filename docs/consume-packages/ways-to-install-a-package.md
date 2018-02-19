@@ -3,7 +3,7 @@ title: "NuGet 패키지 설치 방법 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/30/2018
+ms.date: 02/12/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: 
@@ -12,11 +12,11 @@ keywords: "NuGet 설치, NuGet 패키지 사용, NuGet 패키지 설치, NuGet �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e48bbe813168e773bc46b7fe25af29785ff75df
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 3bae03e148a366388c10d08e83c89dac6ff56d06
+ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>NuGet 패키지를 설치하는 다양한 방법
 
@@ -35,7 +35,10 @@ NuGet 패키지는 다음 방법 중 하나를 사용하여 다운로드 및 설
 
 1. 패키지 가져오기:
     - 요청된 패키지가 이미 캐시에 있는지 확인합니다([NuGet 캐시 관리](managing-the-nuget-cache.md) 참조).
-    - 패키지가 캐시에 없으면 구성 파일에 나열된 소스에서, 목록의 첫 번째부터 패키지를 다운로드하려고 합니다. 이 동작을 사용하면 nuget.org에서 패키지를 검색하기 전에 전용 패키지 피드를 사용할 수 있습니다([NuGet 동작 구성](configuring-nuget-behavior.md) 참조).
+    - 패키지가 캐시에 없으면 [구성 파일](Configuring-NuGet-Behavior.md)에 나열된 원본에서 패키지를 다운로드하려고 합니다.
+      - NuGet은 `packages.config` 참조 형식을 사용하는 프로젝트의 경우 구성의 원본 순서를 사용합니다.
+      - NuGet은 PackageReference 형식을 사용하는 프로젝트의 경우 먼저 로컬 폴더인 원본을 확인한 다음, 네트워크 공유에 있는 원본과 HTTP(인터넷) 원본을 차례로 확인합니다.
+      - 일반적으로 특정 식별자 및 버전 번호를 갖는 모든 패키지는 어떤 원본에서 찾든 똑같으므로 NuGet이 원본을 확인하는 순서는 특별히 중요하지는 않습니다.
     - 소스 중 하나에서 패키지를 성공적으로 가져오면 NuGet이 패키지를 캐시에 추가합니다. 그렇지 않으면 설치에 실패합니다.
 
 1. 패키지를 프로젝트로 확장합니다.
