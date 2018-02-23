@@ -11,17 +11,17 @@ description: "NuGet pack 및 restore는 NuGet 4.0 이상에서 MSBuild 대상으
 keywords: "NuGet 및 MSBuild, NuGet pack 대상, NuGet restore 대상"
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 6c488f49e12b014e7bd197d57041745387a4d7b4
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 4d448af3d31e0907cba223c0ccec55604e94f055
+ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
 *NuGet 4.0 이상*
 
-NuGet 4.0 이상 PackageReference 형식으로 별도 사용 하 여 보다는 프로젝트 파일 내에서 직접 모든 매니페스트 메타 데이터를 저장할 수 `.nuspec` 파일입니다.
+PackageReference 형식을 사용하면 NuGet 4.0 이상은 별도의 `.nuspec` 파일을 사용하는 대신 프로젝트 파일 내에서 모든 매니페스트 메타데이터를 직접 저장할 수 있습니다.
 
 MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `restore` 대상이 있는 일류 MSBuild 시민이기도 합니다. 이러한 대상을 사용하면 다른 MSBuild 작업 또는 대상과 마찬가지로 NuGet을 사용하여 작업할 수 있습니다. (NuGet 3.x 및 이전 버전의 경우 NuGet CLI를 통해 [pack](../tools/cli-ref-pack.md) 및 [restore](../tools/cli-ref-restore.md) 명령을 대신 사용합니다.)
 
@@ -42,7 +42,7 @@ MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `res
 
 ## <a name="pack-target"></a>pack 대상
 
-즉, 팩 대상을 사용 하는 경우 `msbuild /t:pack`, MSBuild 프로젝트 파일에서 입력을 그립니다. 다음 표에서 첫 번째 내에서 프로젝트 파일에 추가할 수 있는 MSBuild 속성을 설명 `<PropertyGroup>` 노드. Visual Studio 2017 이상에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **{project_name} 편집**을 선택하여 이러한 편집 작업을 쉽게 수행할 수 있습니다. 편의상 이 표는 [`.nuspec` 파일 ](../reference/nuspec.md)에 있는 동등한 속성으로 구성되었습니다.
+pack 대상을 사용할 경우(`msbuild /t:pack`) MSBuild는 프로젝트 파일에서 해당 입력을 가져옵니다. 아래 표에서는 첫 번째 `<PropertyGroup>` 노드 내에서 프로젝트 파일에 추가할 수 있는 MSBuild 속성을 설명합니다. Visual Studio 2017 이상에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **{project_name} 편집**을 선택하여 이러한 편집 작업을 쉽게 수행할 수 있습니다. 편의상 이 표는 [`.nuspec` 파일 ](../reference/nuspec.md)에 있는 동등한 속성으로 구성되었습니다.
 
 `.nuspec`의 `Owners` 및 `Summary` 속성은 MSBuild에서 지원되지 않습니다.
 
@@ -50,8 +50,8 @@ MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `res
 |--------|--------|--------|--------|
 | ID | PackageId | AssemblyName | MSBuild의 $(AssemblyName)입니다. |
 | 버전 | PackageVersion | 버전 | "1.0.0", "1.0.0-beta" 또는 "1.0.0-beta-00345"와 같이 semver와 호환됩니다. |
-| VersionPrefix | PackageVersionPrefix | 비어 있음 | PackageVersionPrefix 덮어씁니다 PackageVersion 설정 |
-| VersionSuffix | PackageVersionSuffix | 비어 있음 | MSBuild의 $(VersionSuffix)입니다. PackageVersionSuffix 덮어씁니다 PackageVersion 설정 |
+| VersionPrefix | PackageVersionPrefix | 비어 있음 | PackageVersion을 설정하면 PackageVersionPrefix를 덮어씁니다. |
+| VersionSuffix | PackageVersionSuffix | 비어 있음 | MSBuild의 $(VersionSuffix)입니다. PackageVersion을 설정하면 PackageVersionSuffix를 덮어씁니다. |
 | 만든 이 | 만든 이 | 현재 사용자의 사용자 이름 | |
 | Owners | N/A | NuSpec에는 없음 | |
 | 제목 | 제목 | PackageId| |
@@ -63,8 +63,10 @@ MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `res
 | IconUrl | PackageIconUrl | 비어 있음 | |
 | Tags | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
 | ReleaseNotes | PackageReleaseNotes | 비어 있음 | |
-| RepositoryUrl | RepositoryUrl | 비어 있음 | |
-| RepositoryType | RepositoryType | 비어 있음 | |
+| 리포지토리/Url | RepositoryUrl | 비어 있음 | 리포지토리 URL을 복제 하거나 소스 코드를 검색 하는 데 사용 합니다. Example: *https://github.com/NuGet/NuGet.Client.git* |
+| 저장소/유형 | RepositoryType | 비어 있음 | 리포지토리 유형입니다. 예: *git*, *tfs*합니다. |
+| 리포지토리/분기 | RepositoryBranch | 비어 있음 | 선택적 리포지토리 분기 정보입니다. *RepositoryUrl* 포함 되도록 하려면이 속성에도 지정 해야 합니다. 예: *마스터* (NuGet 4.7.0+) |
+| 리포지토리/커밋 | RepositoryCommit | 비어 있음 | 선택적 저장소 커밋 또는 패키지 소스를 나타내기 위해 변경 집합에 대해 작성 합니다. *RepositoryUrl* 포함 되도록 하려면이 속성에도 지정 해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | 요약 | 지원 안 함 | | |
 
@@ -90,6 +92,8 @@ MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `res
 - IsTool
 - RepositoryUrl
 - RepositoryType
+- RepositoryBranch
+- RepositoryCommit
 - NoPackageAnalysis
 - MinClientVersion
 - IncludeBuildOutput
@@ -170,7 +174,7 @@ MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `res
 위의 항목 중 하나에서 설정할 수 있는 다른 pack 특정 메타데이터에는 nuspec 출력의 ```contentFiles``` 항목에 ```CopyToOutput``` 및 ```Flatten``` 값을 설정하는 ```<PackageCopyToOutput>``` 및 ```<PackageFlatten>```이 포함됩니다.
 
 > [!Note]
-> 콘텐츠 항목을 별개로 `<Pack>` 및 `<PackagePath>` 컴파일, 포함 리소스, ApplicationDefinition, 페이지, 리소스, 시작 화면, DesignData, DesignDataWithDesignTimeCreateableTypes 빌드 작업을 사용 하 여 파일에서 메타 데이터를 설정할 수도 있습니다 CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource 또는 None입니다.
+> Content 항목 외에도, 빌드 작업이 Compile, EmbeddedResource, ApplicationDefinition, Page, Resource, SplashScreen, DesignData, DesignDataWithDesignTimeCreateableTypes, CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource 또는 None으로 설정된 파일에 `<Pack>` 및 `<PackagePath>` 메타데이터를 설정할 수도 있습니다.
 >
 > GLOB 패턴을 사용할 때 pack에서 파일 이름을 패키지 경로에 추가하려면 패키지 경로가 폴더 구분 문자로 끝나야 합니다. 그렇지 않으면 패키지 경로가 파일 이름을 포함한 전체 경로로 처리됩니다.
 

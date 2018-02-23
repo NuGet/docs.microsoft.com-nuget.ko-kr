@@ -13,23 +13,23 @@ keywords: "NuGet 2.6.1 WebMatrix 릴리스 정보, 버그 수정, 알려진된 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6150fc34dd05c2e7ce132d2d6744b823daeb1a07
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 633b71011dd1bc897ad95fd706337cef3aeef34c
+ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="nuget-261-for-webmatrix-release-notes"></a>NuGet 2.6.1 WebMatrix 릴리스 정보
 
 [NuGet 2.6 릴리스 정보](../release-notes/nuget-2.6.md) | [NuGet 2.7 릴리스 정보](../release-notes/nuget-2.7.md)
 
-NuGet 팀 WebMatrix 용 2014 년 3 월 26 일에 업데이트 된 NuGet 패키지 관리자 확장을 릴리스 했습니다.  이 업데이트에서 설치할 수 있습니다는 [WebMatrix 확장 갤러리](http://extensions.webmatrix.com/packages/NuGetPackageManager/) 다음 단계를 사용 하 여:
+NuGet 팀 WebMatrix 용 2014 년 3 월 26 일에 업데이트 된 NuGet 패키지 관리자 확장을 릴리스 했습니다.  이 업데이트에서 설치할 수 있습니다는 [WebMatrix 확장 갤러리](https://blogs.iis.net/webmatrix/retiring-the-webmatrix-extensions-gallery) 다음 단계를 사용 하 여:
 
 1. 열기 WebMatrix 3
-2. 홈 리본에서 확장 아이콘을 클릭 합니다.
-3. 업데이트 탭을 선택
-4. 2.6.1에 NuGet 패키지 관리자를 업데이트 하려면 클릭
-6. 닫고 WebMatrix 3을 다시 시작
+1. 홈 리본에서 확장 아이콘을 클릭 합니다.
+1. 업데이트 탭을 선택
+1. 2.6.1에 NuGet 패키지 관리자를 업데이트 하려면 클릭
+1. 닫고 WebMatrix 3을 다시 시작
 
 ## <a name="notable-changes"></a>중요 한 변경 내용
 

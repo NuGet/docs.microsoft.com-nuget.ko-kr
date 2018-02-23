@@ -13,11 +13,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: dbeec1d3332571d8e9616dfe9675b5fcf3c85589
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 7e3621f01312e3b4fdbef116e5044869416b851c
+ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="target-frameworks"></a>대상 프레임워크
 
@@ -129,7 +129,7 @@ Tizen | tizen | tizen3 |
 ## <a name="portable-class-libraries"></a>이식 가능한 클래스 라이브러리
 
 > [!Warning]
-> **PCL은 권장되지 않습니다**. PCL이 지원되지만 패키지 작성자는 netstandard를 대신 지원해야 합니다. .NET 플랫폼 표준은 진화된 PCL이며, *portable-a+b+c* 모니커와 같이 정적으로 연결되지 않은 단일 모니커를 사용하여 플랫폼 간 이진 파일 이식성을 나타냅니다.
+> **PCL은 권장되지 않습니다**. PCL이 지원되지만 패키지 작성자는 netstandard를 대신 지원해야 합니다. .NET 플랫폼 표준을 PCLs 발전 하 고 같은 정적 라이브러리에 연결 되지 않은 단일 모니커를 사용 하 여 플랫폼 간에 이식 나타냅니다 *휴대용-a + b + c* 모니커 합니다.
 
 여러 자식 대상 프레임워크를 참조하는 대상 프레임워크를 정의하려면 `portable` 키워드를 사용하여 참조된 프레임워크 목록의 접두사로 지정합니다. 이러한 프레임워크에서 의도하지 않은 부작용이 발생할 수 있으므로 직접 컴파일되지 않은 추가 프레임워크를 인위적으로 포함하지 않습니다.
 
