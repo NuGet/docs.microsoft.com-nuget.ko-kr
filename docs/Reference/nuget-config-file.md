@@ -12,11 +12,11 @@ keywords: "NuGet.Config 파일, NuGet 구성 참조, NuGet 구성 옵션"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: df602cb561a19f0eac085695de80db1fbaa1a313
-ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
+ms.openlocfilehash: c76ebcb06adc5e5b862647de6b6f4e19bde87b91
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="nugetconfig-reference"></a>NuGet.Config 참조
 
@@ -87,7 +87,7 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 
 ## <a name="packagerestore-section"></a>packageRestore 섹션
 
-*2.7 이상에서는 무시됨*
+*모든 최신 버전 (2.7 이상)에서 무시 됩니다.*
 
 빌드하는 동안의 패키지 복원을 제어합니다.
 

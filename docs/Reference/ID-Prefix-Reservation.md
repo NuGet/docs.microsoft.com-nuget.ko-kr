@@ -13,15 +13,15 @@ ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: bee215fcc88b03dbdde6c15d1583898bdf205952
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: f74ea3c772a129f4b9cd286a77cf3e88eba2d33b
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="package-id-prefix-reservation"></a>패키지 ID 접두사 예약
 
-패키지 소유자는을 예약 하 고 ID 접두사를 예약 하 여 자신의 id를 보호 합니다. 소비자가 패키지에는 추가 정보는 패키지를 사용 하는 경우 사용 하는 패키지 이것 들은 하지 식별 하는 속성이에 제공 됩니다. 
+패키지 소유자를 예약 하 고 ID 접두사를 예약 하 여 자신의 id를 보호할 수 있습니다. 소비자가 패키지에는 추가 정보는 패키지를 사용 하는 경우 사용 하는 패키지 이것 들은 하지 식별 하는 속성이에 제공 됩니다. 
 
 [nuget.org](https://www.nuget.org/) 패키지 전송 하는 예약 된 패키지 ID 접두사와 소유자가 패키지에는 예약 된 ID와 일치 하기만 접두사로 명명 패턴에 대 한 Visual Studio 2017 15.4 이후 버전 시각적 표시기를 표시 합니다. 아래 참조 ID 접두사 예약의 수반, 소유자 ID 접두사에 대 한 적용할 수 있는 방법 및 설명 합니다.
 

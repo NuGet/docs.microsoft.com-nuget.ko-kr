@@ -12,11 +12,11 @@ keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, NuGet Powe
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 7ebb5a420e469c70a9dd790231a92fedbc4713b6
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 293d9a7fdcce633eb5a97e5f76398deb5c13bdb4
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>업데이트 패키지 (Visual Studio에서 패키지 관리자 콘솔)
 
@@ -37,8 +37,6 @@ NuGet 2.8 +에서 `Update-Package` 는 프로젝트에서 기존 패키지를 �
 ```ps
 Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 ```
-
-2.7 및 이전 버전의 NuGet을 최신 버전이 이미 설치 되어 있는지 라는 오류가 제공 합니다.
 
 ## <a name="parameters"></a>매개 변수
 

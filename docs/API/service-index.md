@@ -16,11 +16,11 @@ keywords: "NuGet API 진입점을 NuGetA PI 끝점 검색"
 ms.reviewer:
 - karann
 - unnir
-ms.openlocfilehash: 9d0bb421c163520df4a1f0e9f3f71aab823aace3
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 8de0bc15edc358d091d84da54b8b67c085f29645
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="service-index"></a>서비스 인덱스
 
@@ -30,18 +30,17 @@ nuget.org의 서비스 인덱스에 위치한 `https://api.nuget.org/v3/index.js
 
 ## <a name="versioning"></a>버전 관리
 
-`version` 값은 서비스 인덱스의 스키마 버전을 나타내는 SemVer 2.0.0 구문 버전 문자열입니다.
-API 버전 문자열의 주 버전 번호에 보내도록 규정 `3`합니다. 서비스 인덱스 스키마에 사소한 변경, 버전 문자열의 부 버전을 늘릴 수 있습니다.
+`version` 값은 서비스 인덱스의 스키마 버전을 나타내는 SemVer 2.0.0 구문 버전 문자열입니다. API 버전 문자열의 주 버전 번호에 보내도록 규정 `3`합니다. 서비스 인덱스 스키마에 사소한 변경, 버전 문자열의 부 버전을 늘릴 수 있습니다.
 
 서비스 인덱스의 각 리소스는 서비스 인덱스 스키마 버전에서 독립적으로 버전이 지정 합니다.
 
-현재 스키마 버전은 `3.0.0-beta.1`합니다.
+현재 스키마 버전은 `3.0.0`합니다. `3.0.0` 버전은 다음 이전 `3.0.0-beta.1` 버전 수 있지만 기본 설정으로 안정적이 고 정의 된 스키마를 보다 명확 하 게 통신 합니다.
 
 ## <a name="http-methods"></a>HTTP 메서드
 
 서비스 인덱스는 HTTP 메서드를 사용 하 여 액세스할 `GET` 및 `HEAD`합니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 `resources` 속성에는이 패키지 소스에서 지 원하는 리소스의 배열을 포함 합니다.
 

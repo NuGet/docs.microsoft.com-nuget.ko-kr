@@ -11,11 +11,11 @@ description: "NuGet pack 및 restore는 NuGet 4.0 이상에서 MSBuild 대상으
 keywords: "NuGet 및 MSBuild, NuGet pack 대상, NuGet restore 대상"
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 4d448af3d31e0907cba223c0ccec55604e94f055
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.openlocfilehash: 798b3550718294072d86b6e4827ec5017178d2cc
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -55,7 +55,7 @@ pack 대상을 사용할 경우(`msbuild /t:pack`) MSBuild는 프로젝트 파�
 | 만든 이 | 만든 이 | 현재 사용자의 사용자 이름 | |
 | Owners | N/A | NuSpec에는 없음 | |
 | 제목 | 제목 | PackageId| |
-| 설명 | 설명 | "패키지 설명" | |
+| 설명 | PackageDescription | "패키지 설명" | |
 | Copyright | Copyright | 비어 있음 | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | 비어 있음 | |
@@ -222,6 +222,9 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 1. restore를 실행합니다.
 1. 패키지를 다운로드합니다.
 1. 자산, targets 및 props 파일을 작성합니다.
+
+> [!Note]
+> `restore` MSBuild 대상을 사용 하 여 프로젝트에 대해서만 작동 `PackageReference` 항목 및 사용 하 여 참조 하는 패키지를 복원 하지 않습니다는 `packages.config` 파일입니다.
 
 ### <a name="restore-properties"></a>restore 속성
 

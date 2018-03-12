@@ -13,11 +13,11 @@ keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, Install-pa
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f5f6b3dffb27af510b750650561cdff597c927e0
-ms.sourcegitcommit: a40a6ce6897b2d9411397b2e29b1be234eb6e50c
+ms.openlocfilehash: f01c990d12392795e90e95e4efe66c6051011c51
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>설치 패키지 (Visual Studio에서 패키지 관리자 콘솔)
 
@@ -39,8 +39,6 @@ NuGet 2.8 +에서 `Install-Package` 프로젝트에서 기존 패키지를 다�
 Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 ```
 
-2.7 및 이전 버전의 NuGet을 최신 버전이 이미 설치 되어 있는지 라는 오류가 제공 합니다.
-  
 ## <a name="parameters"></a>매개 변수
 
 | 매개 변수 | 설명 |
