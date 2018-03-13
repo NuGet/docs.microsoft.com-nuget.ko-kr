@@ -26,6 +26,7 @@
 ## [시험판 패키지](create-packages/prerelease-packages.md)
 ## [네이티브 패키지](create-packages/native-packages.md)
 ## [기호 패키지](create-packages/symbol-packages.md)
+## [패키지 서명](create-packages/sign-a-package.md)
 ## [패키지 게시](create-packages/publish-a-package.md)
 ## 안내선
 ### [UWP 패키지 만들기](guides/create-uwp-packages.md)
@@ -51,9 +52,11 @@
 ### [push](tools/cli-ref-push.md)
 ### [restore](tools/cli-ref-restore.md)
 ### [setapikey](tools/cli-ref-setapikey.md)
+### [sign](tools/cli-ref-sign.md)
 ### [sources](tools/cli-ref-sources.md)
 ### [spec](tools/cli-ref-spec.md)
 ### [update](tools/cli-ref-update.md)
+### [verify](tools/cli-ref-verify.md)
 ### [환경 변수](tools/cli-ref-environment-variables.md)
 ## [패키지 관리자 UI](tools/package-manager-ui.md)
 ## [패키지 관리자 콘솔](tools/package-manager-console.md)
@@ -79,6 +82,7 @@
 ## [오류 및 경고](reference/errors-and-warnings.md)
 ## [ID 접두사 예약](reference/id-prefix-reservation.md)
 ## [NuGet 클라이언트 SDK](reference/nuget-client-sdk.md)
+## [서명된 패키지 참조](reference/signed-packages-reference.md)
 ## 확장성
 ### [Visual Studio용 NuGet 자격 증명 공급자](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe 자격 증명 공급자](reference/extensibility/nuget-exe-credential-providers.md)
@@ -108,9 +112,9 @@
 ## [에코시스템](policies/ecosystem.md)
 ## [분쟁 해결](policies/dispute-resolution.md)
 ## [패키지 삭제](policies/deleting-packages.md)
-# [GitHub 리포지토리](https://github.com/NuGet)
 # 릴리스 정보
 ## [알려진 문제](release-notes/known-issues.md)
+## [NuGet 4.6 RTM](release-notes/NuGet-4.6-RTM.md)
 ## [NuGet 4.5 RTM](release-notes/NuGet-4.5-RTM.md)
 ## [NuGet 4.4 RTM](release-notes/NuGet-4.4-RTM.md)
 ## [NuGet 4.3 RTM](release-notes/NuGet-4.3-RTM.md)
