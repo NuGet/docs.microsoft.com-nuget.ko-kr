@@ -12,15 +12,15 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: 
 description: "보고서 남용 URL 서식 파일에는 클라이언트를 신고 링크는 해당 UI에 표시할 수 있습니다."
-keywords: "NuGet API 신고, NuGet API 파일 불만, NuGet.org 보고서 URL 서식 파일"
+keywords: "NuGet API 신고, NuGet API 파일 불만, nuget.org 보고서 URL 서식 파일"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: c12be294c71547fbce421c72aa091e0eee15aacd
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: efbe5704e6e6028f9382fea3fe5ec453f573a2e9
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="report-abuse-url-template"></a>보고서 남용 URL 서식 파일
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 02/02/2018
 @type 값                       | 노트
 --------------------------------- | -----
 ReportAbuseUriTemplate/3.0.0-beta | 초기 릴리스
-ReportAbuseUriTemplate/3.0.0-rc   | 별칭`ReportAbuseUriTemplate/3.0.0-beta`
+ReportAbuseUriTemplate/3.0.0-rc   | 별칭 `ReportAbuseUriTemplate/3.0.0-beta`
 
 ## <a name="url-template"></a>URL 템플릿
 
@@ -58,7 +58,7 @@ name        | 형식    | 필수 | 노트
 `{id}`      | string  | 아니요       | 패키지 ID를 신고 하기에 대 한
 `{version}` | string  | 아니요       | 패키지 버전에 대 한 신고를
 
-`{id}` 및 `{version}` 서버 구현에 의해 해석 하는 값에는 소문자 구분 안 함을 사용 해야 합니다.와 버전 정규화 된 있는지 여부를 중요 하지 않습니다.
+`{id}` 및 `{version}` 서버 구현에 의해 해석 하는 값은 대/소문자 구분 및 버전 정규화 되는 여부에 민감한 하지 여야 합니다.
 
 예를 들어 nuget.org의 보고서 남용 서식 파일은 다음과 같습니다.
 

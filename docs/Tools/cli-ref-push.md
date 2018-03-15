@@ -12,11 +12,11 @@ keywords: "nuget 푸시 참조, 푸시 명령"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: df8ef42f650a20b92a281fff3e597ac8d484544e
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 095e81406df3db5fbfc6c5202362894b2c6d7cf8
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="push-command-nuget-cli"></a>푸시 명령 (NuGet CLI)
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/14/2018
 
 패키지를 패키지 원본에 푸시합니다를 게시 합니다.
 
-NuGet의 기본 구성을 로드 하 여 가져온 `%AppData%\NuGet\NuGet.Config`을 로드 한 다음 `Nuget.Config` 또는 `.nuget\Nuget.Config` 드라이브의 루트에서 시작 하 고 현재 디렉터리에서 끝나는 파일 (참조 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md))
+NuGet의 기본 구성을 로드 하 여 가져온 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), 다음 모든 로드 `Nuget.Config` 또는 `.nuget\Nuget.Config` 드라이브의 루트에서 시작 하 고 현재 디렉터리에서 끝나는 파일 (참조 [구성 NuGet 동작](../consume-packages/configuring-nuget-behavior.md))
 
 ## <a name="usage"></a>사용법
 
@@ -41,8 +41,8 @@ nuget push <packagePath> [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| apiKey | 대상 저장소에 대 한 API 키입니다. 없음, 1에 지정 된 경우 *%AppData%\NuGet\NuGet.Config* 사용 됩니다. |
-| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 *%AppData%\NuGet\NuGet.Config* 사용 됩니다. |
+| apiKey | 대상 저장소에 대 한 API 키입니다. 래퍼가 없는 경우 구성 파일에 지정 된 사용 됩니다. |
+| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
 | DisableBuffering | 메모리 사용량을 줄이기 위해 http (s) 서버에 적용할 때 버퍼링 하는 데 사용 하지 않습니다. 주의:이 옵션을 사용 Windows 통합된 인증 작동 하지 않을 수 있습니다. |
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |

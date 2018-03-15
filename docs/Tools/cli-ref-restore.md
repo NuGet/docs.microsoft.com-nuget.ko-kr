@@ -12,11 +12,11 @@ keywords: "nuget 복원 참조, 패키지 명령 복원"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0ad5156a065e20dfced99da6b2e2860dbd748ad5
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 2416ad652244e0ea60651147ad74a1513cdb75ff
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="restore-command-nuget-cli"></a>restore 명령 (NuGet CLI)
 
@@ -38,7 +38,7 @@ nuget restore <projectPath> [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 *%AppData%\NuGet\NuGet.Config* 사용 됩니다. |
+| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
 | DirectDownload | *(4.0 이상)*  이진 파일 및 메타 데이터에 대해 캐시를 채우지 않고 직접 패키지를 다운로드 합니다. |
 | DisableParallelProcessing | 동시에 여러 패키지를 복원 하는 데 사용 하지 않습니다. |
 | FallbackSource | *(3.2 +)*  패키지 주에서 찾을 수 없는 경우 대체도 사용할 패키지 소스 목록 또는 기본 소스입니다. |

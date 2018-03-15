@@ -13,11 +13,11 @@ ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4763b0dde0153f9e8ea840d5e788b5a3d96b9bd8
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.openlocfilehash: 9bf9885aaf42bedb681a5d916202fa8b26749a0c
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="signed-packages"></a>서명 된 패키지
 
@@ -51,7 +51,7 @@ NuGet 패키지는 변조 된 콘텐츠에 대 한 보호를 제공 하는 디�
 - [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)
 - [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 
 
-Windows에서 신뢰할 수 있는 인증 기관의 전체 목록을 가져올 수 있습니다 [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners)합니다.
+Windows에서 신뢰할 수 있는 인증 기관의 전체 목록을 가져올 수 있습니다 [ http://aka.ms/trustcertpartners ](http://aka.ms/trustcertpartners)합니다.
 
 ## <a name="create-a-test-certificate"></a>테스트 인증서 만들기
 

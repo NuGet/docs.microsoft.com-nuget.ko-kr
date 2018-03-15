@@ -12,15 +12,15 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: 
 description: "카탈로그는 모든 패키지를 만들고 삭제할 nuget.org에의 한 인덱스입니다."
-keywords: "NuGet V3 API 카탈로그, nuget.org 트랜잭션 로그를 NuGet.org 복제, NuGet.org, 추가 전용 레코드 NuGet.org의 복제"
+keywords: "NuGet V3 API 카탈로그, nuget.org 트랜잭션 로그를 복제할 nuget.org, 복제 nuget.org nuget.org의 추가 전용 레코드"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: d1a24be68a60085a40361c374ffb34dc221f09c4
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: be30b21d488c323c439a59fff290a95adaefd902
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="catalog"></a>Catalog
 
@@ -50,7 +50,7 @@ Catalog/3.0.0 | 초기 릴리스
 
 ## <a name="catalog-index"></a>카탈로그의 인덱스
 
-카탈로그의 인덱스는 cronologically 정렬 카탈로그 항목의 목록이 있는 잘 알려진 위치에 문서. 카탈로그 리소스의 진입점은
+카탈로그의 인덱스는 시간순으로 정렬 된 카탈로그 항목 목록이 있는 잘 알려진 위치에 문서. 카탈로그 리소스의 진입점은
 
 인덱스는 카탈로그 페이지의 구성 됩니다. 각 카탈로그 페이지는 카탈로그 항목을 포함 합니다. 카탈로그 항목에 각 시간에서 지점에서 단일 패키지에 관한 이벤트를 나타냅니다. 카탈로그 항목은 생성 된 목록에 없는 relisted, 또는 삭제 된 패키지 소스에서 패키지를 나타낼 수 있습니다. 시간 순서에 따라 카탈로그 항목을 처리 하 여 클라이언트 V3 패키지 소스에 있는 모든 패키지의 최신 상태 보기를 빌드할 수 있습니다.
 
@@ -128,7 +128,7 @@ count           | 정수          | 예      | 페이지의 항목 수
 
 각 요소에는 `items` 배열은 카탈로그 항목에 대 한 최소한의 몇 가지 세부 정보를 가진 개체입니다. 이러한 항목 개체의 모든 카탈로그 항목의 데이터를 포함 되지 않습니다. 페이지의 항목 순서 `items` 배열 정의 되어 있지 않습니다. 클라이언트가 사용 하 여 메모리에 항목을 정렬할 수 자신의 `commitTimeStamp` 속성입니다.
 
-페이지에서 카탈로그 항목의 수는 서버 구현에 의해 정의 됩니다. Nuget.org에 대 한 항목이 최대 550 각 페이지에서 시간에 실제 수는 일부 페이지 dependong 지점에서 다음 커밋 일괄 처리의 크기에 대 한 더 작은 수 있지만.
+페이지에서 카탈로그 항목의 수는 서버 구현에 의해 정의 됩니다. Nuget.org에 대 한 항목이 최대 550 각 페이지의 실제 수 시간에서 지점에서 다음 커밋 일괄 처리의 크기에 따라 일부 페이지에는 더 적을 수도 있지만.
 
 새 항목 도입 되는 `count` 에 증가 하 고 새 카탈로그 항목 개체 표시 되는 `items` 배열입니다.
 
@@ -164,7 +164,7 @@ nuget:version   | string  | 예      | 이 리프 관련이 패키지 버전
 
 ## <a name="catalog-leaf"></a>리프 카탈로그
 
-카탈로그 리프 시간에 특정 패키지 ID 및 특정 시점에는 버전에 대 한 메타 데이터를 포함합니다. 가 사용 하 여 인출 된 문서는 `@id` 카탈로그 페이지에서 값을 찾을 수 있습니다. 카탈로그 리프 URL predictedable 수 없습니다 및 카탈로그 페이지에만 사용 하 여 검색 해야 합니다.
+카탈로그 리프 시간에 특정 패키지 ID 및 특정 시점에는 버전에 대 한 메타 데이터를 포함합니다. 가 사용 하 여 인출 된 문서는 `@id` 카탈로그 페이지에서 값을 찾을 수 있습니다. URL은 카탈로그 리프 예측 가능 하 게 아니며 카탈로그 페이지에만 사용 하 여 검색 해야 합니다.
 
 카탈로그 리프 문서는 다음 속성을 가진 JSON 개체:
 
@@ -226,7 +226,7 @@ verbatimVersion         | string                     | 아니요       | 그대�
 
 `created` 타임 스탬프는 패키지는 일반적으로 짧은 시간 카탈로그 항목의 커밋 타임 스탬프 이전의 패키지 소스에서 먼저 수신 되었을 때.
 
-`packageHashAlgorithm` 서버 구현 represeting에서 정의 문자열 해시 알고리즘을 생성 하는 데 사용 되는 `packageHash`합니다. 항상 사용 nuget.org는 `packageHashAlgorithm` 값 `SHA512`합니다.
+`packageHashAlgorithm` 생성 하기 위해 사용 되는 해시 알고리즘을 나타내는 서버 구현에서 정의 하는 문자열은 `packageHash`합니다. 항상 사용 nuget.org는 `packageHashAlgorithm` 값 `SHA512`합니다.
 
 `published` 타임 스탬프는 패키지가 마지막으로 나열 된 시간입니다.
 
@@ -307,7 +307,7 @@ GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_li
 
 ### <a name="dependent-cursors"></a>종속 커서
 
-클라이언트의 출력 다른 클라이언트의 출력에 따라 달라 집니다 inherant 종속성이 있는 있는 두 명의 카탈로그 클라이언트가 가정 합니다. 
+클라이언트의 출력 다른 클라이언트의 출력에 따라 달라 집니다 내재 된 종속성이 있는 있는 두 명의 카탈로그 클라이언트가 가정 합니다. 
 
 #### <a name="example"></a>예
 
@@ -317,7 +317,7 @@ GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_li
 
 #### <a name="algorithm"></a>알고리즘
 
-를 구현 하기 위해이 제한을 단순 되도록 위의 알고리즘을 수정 합니다.
+이 제한 사항은 구현 하려면 단순히 되도록 위의 알고리즘을 수정 합니다.
 
 1. 로컬 저장소에서 기록 된 커서 값을 인출 합니다.
 1. 다운로드 한 카탈로그의 인덱스를 deserialize 합니다.

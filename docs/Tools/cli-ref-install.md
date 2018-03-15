@@ -12,11 +12,11 @@ keywords: "nuget 참조 패키지 명령을 설치,"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e824b08486704371eebefb964f86315d82fc222
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 8d5f53c833fb42c9fe37d0629eab33e8f0bc70d7
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-command-nuget-cli"></a>명령 (NuGet CLI)를 설치 합니다.
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/14/2018
 > [!Tip]
 > 프로젝트의 컨텍스트 외부 직접 패키지를 다운로드 하려면 패키지의 페이지를 방문 하십시오 [nuget.org](https://www.nuget.org) 선택 하 고는 **다운로드** 링크 합니다.
 
-글로벌 구성 파일에 나열 된 원본이 지정 된 경우 `%APPDATA%\NuGet\NuGet.Config`, 사용 됩니다. 참조 [NuGet 구성 동작](../consume-packages/configuring-nuget-behavior.md) 추가 세부 정보에 대 한 합니다.
+글로벌 구성 파일에 나열 된 원본이 지정 된 경우 `%APPDATA%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), 사용 됩니다. 참조 [NuGet 구성 동작](../consume-packages/configuring-nuget-behavior.md) 추가 세부 정보에 대 한 합니다.
 
 특정 패키지를 지정 하는 경우 `install` 프로젝트의에 나열 된 패키지를 모두 설치 `packages.config` 파일 그룹과 같이 [ `restore` ](cli-ref-restore.md)합니다.
 
@@ -47,7 +47,7 @@ nuget install <packageID | configFilePath> [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 *%AppData%\NuGet\NuGet.Config* 사용 됩니다. |
+| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
 | DependencyVersion | *(4.4 +)*  기본 종속성 확인 하는 동작을 재정의 하는 특정 버전을 지정 합니다. |
 | DisableParallelProcessing | 동시에 여러 패키지를 설치 하는 데 사용 하지 않습니다. |
 | ExcludeVersion | 패키지 이름과 버전 번호가 아닙니다 라는 폴더를 패키지를 설치 합니다. |

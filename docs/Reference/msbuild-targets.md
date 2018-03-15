@@ -3,7 +3,7 @@ title: "MSBuild 대상으로서의 NuGet pack 및 restore | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 04/03/2017
+ms.date: 03/13/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
@@ -11,11 +11,11 @@ description: "NuGet pack 및 restore는 NuGet 4.0 이상에서 MSBuild 대상으
 keywords: "NuGet 및 MSBuild, NuGet pack 대상, NuGet restore 대상"
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 798b3550718294072d86b6e4827ec5017178d2cc
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.openlocfilehash: bb0ade1b0f5f81d7c8822d3c2b2f9dd45745fb8d
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -42,7 +42,9 @@ MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `res
 
 ## <a name="pack-target"></a>pack 대상
 
-pack 대상을 사용할 경우(`msbuild /t:pack`) MSBuild는 프로젝트 파일에서 해당 입력을 가져옵니다. 아래 표에서는 첫 번째 `<PropertyGroup>` 노드 내에서 프로젝트 파일에 추가할 수 있는 MSBuild 속성을 설명합니다. Visual Studio 2017 이상에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **{project_name} 편집**을 선택하여 이러한 편집 작업을 쉽게 수행할 수 있습니다. 편의상 이 표는 [`.nuspec` 파일 ](../reference/nuspec.md)에 있는 동등한 속성으로 구성되었습니다.
+PackageReference 형식을 사용 하 여, 사용 하 여 표준.NET 프로젝트에 대 한 `msbuild /t:pack` NuGet 패키지를 만드는 데 사용할 프로젝트 파일에서 입력을 그립니다.
+
+아래 표에서는 첫 번째 `<PropertyGroup>` 노드 내에서 프로젝트 파일에 추가할 수 있는 MSBuild 속성을 설명합니다. Visual Studio 2017 이상에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **{project_name} 편집**을 선택하여 이러한 편집 작업을 쉽게 수행할 수 있습니다. 편의상 이 표는 [`.nuspec` 파일 ](../reference/nuspec.md)에 있는 동등한 속성으로 구성되었습니다.
 
 `.nuspec`의 `Owners` 및 `Summary` 속성은 MSBuild에서 지원되지 않습니다.
 
@@ -63,7 +65,7 @@ pack 대상을 사용할 경우(`msbuild /t:pack`) MSBuild는 프로젝트 파�
 | IconUrl | PackageIconUrl | 비어 있음 | |
 | Tags | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
 | ReleaseNotes | PackageReleaseNotes | 비어 있음 | |
-| 리포지토리/Url | RepositoryUrl | 비어 있음 | 리포지토리 URL을 복제 하거나 소스 코드를 검색 하는 데 사용 합니다. Example: *https://github.com/NuGet/NuGet.Client.git* |
+| 리포지토리/Url | RepositoryUrl | 비어 있음 | 리포지토리 URL을 복제 하거나 소스 코드를 검색 하는 데 사용 합니다. 예: *https://github.com/NuGet/NuGet.Client.git* |
 | 저장소/유형 | RepositoryType | 비어 있음 | 리포지토리 유형입니다. 예: *git*, *tfs*합니다. |
 | 리포지토리/분기 | RepositoryBranch | 비어 있음 | 선택적 리포지토리 분기 정보입니다. *RepositoryUrl* 포함 되도록 하려면이 속성에도 지정 해야 합니다. 예: *마스터* (NuGet 4.7.0+) |
 | 리포지토리/커밋 | RepositoryCommit | 비어 있음 | 선택적 저장소 커밋 또는 패키지 소스를 나타내기 위해 변경 집합에 대해 작성 합니다. *RepositoryUrl* 포함 되도록 하려면이 속성에도 지정 해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
@@ -194,7 +196,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 ### <a name="packing-using-a-nuspec"></a>.nuspec을 사용하여 압축
 
-pack 작업을 실행할 수 있도록 `NuGet.Build.Tasks.Pack.targets`를 가져오는 프로젝트 파일이 있는 경우 `.nuspec` 파일을 사용하여 프로젝트를 압축할 수 있습니다. 다음 세 가지 MSBuild 속성은 `.nuspec`을 사용하여 압축하는 것과 관련이 있습니다.
+사용할 수는 `.nuspec` SDK 프로젝트 파일을 가져올 있는 경우 프로젝트에 포함 시킬 파일 `NuGet.Build.Tasks.Pack.targets` 팩 작업을 실행 될 수 있도록 합니다. Nuspec 파일을 압축 하기 전에 프로젝트를 복원 해야 합니다. 프로젝트 파일의 대상 프레임 워크는와 관련이 없습니다 및 압축 된 nuspec 때 사용 되지 않습니다. 다음 세 가지 MSBuild 속성은 `.nuspec`을 사용하여 압축하는 것과 관련이 있습니다.
 
 1. `NuspecFile`: 압축에 사용되는 `.nuspec` 파일에 대한 상대 또는 절대 경로입니다.
 1. `NuspecProperties`: 세미콜론으로 구분된 key=value 쌍의 목록입니다. MSBuild 명령줄 구문 분석이 작동하는 방식으로 인해 여러 속성을 `/p:NuspecProperties=\"key1=value1;key2=value2\"`와 같이 지정해야 합니다.  
@@ -212,6 +214,23 @@ MSBuild를 사용하여 프로젝트를 압축하는 경우 다음 명령을 사
 msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
+해당 압축 dotnet.exe를 사용 하 여 nuspec 점에 유의 하십시오 또는 msbuild는 또한 기본적으로 프로젝트를 빌드하면 까지로 합니다. 전달 하 여 방지할 수 있습니다 ```--no-build``` 속성 설정에 해당 하는 dotnet.exe ```<NoBuild>true</NoBuild> ``` 설정과 함께, 프로젝트 파일의 ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` 프로젝트 파일에서
+
+압축할 nuspec 파일 csproj 파일의 예는.
+
+```
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <NoBuild>true</NoBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NuspecFile>PATH_TO_NUSPEC_FILE</NuspecFile>
+    <NuspecProperties>add nuspec properties here</NuspecProperties>
+    <NuspecBasePath>optional to provide</NuspecBasePath>
+  </PropertyGroup>
+</Project>
+```
+
 ## <a name="restore-target"></a>restore 대상
 
 `MSBuild /t:restore`(.NET Core 프로젝트에서 `nuget restore` 및 `dotnet restore` 사용)는 프로젝트 파일에서 참조된 패키지를 다음과 같이 복원합니다.
@@ -223,8 +242,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 1. 패키지를 다운로드합니다.
 1. 자산, targets 및 props 파일을 작성합니다.
 
-> [!Note]
-> `restore` MSBuild 대상을 사용 하 여 프로젝트에 대해서만 작동 `PackageReference` 항목 및 사용 하 여 참조 하는 패키지를 복원 하지 않습니다는 `packages.config` 파일입니다.
+`restore` works 대상 **만** PackageReference 형식을 사용 하 여 프로젝트에 대 한 합니다. 그렇게 **하지** 사용 하 여 프로젝트에 대 한 회사는 `packages.config` 서식을 지정 합니다; 사용 [nuget 복원](../tools/cli-ref-restore.md) 대신 합니다.
 
 ### <a name="restore-properties"></a>restore 속성
 

@@ -12,11 +12,11 @@ keywords: "NuGet.Config 파일, NuGet 구성 참조, NuGet 구성 옵션"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c76ebcb06adc5e5b862647de6b6f4e19bde87b91
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.openlocfilehash: 6a5be1ebcca0accafcdaf32f0b1b7ca66ec53425
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="nugetconfig-reference"></a>NuGet.Config 참조
 
@@ -86,8 +86,6 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 ```
 
 ## <a name="packagerestore-section"></a>packageRestore 섹션
-
-*모든 최신 버전 (2.7 이상)에서 무시 됩니다.*
 
 빌드하는 동안의 패키지 복원을 제어합니다.
 
@@ -159,7 +157,7 @@ nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다
 
 **예제:**
 
-config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 원본 이름 각각에 대한 자식 노드가 포함됩니다(이름에 포함된 공백은 `_x0020+`로 바뀜). 즉 "Contoso" 및 "Test Source"라는 원본의 경우 암호화된 암호를 사용하면 config 파일에는 다음이 포함됩니다.
+config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 원본 이름 각각에 대한 자식 노드가 포함됩니다(이름에 포함된 공백은 `_x0020_`로 바뀜). 즉 "Contoso" 및 "Test Source"라는 원본의 경우 암호화된 암호를 사용하면 config 파일에는 다음이 포함됩니다.
 
 ```xml
 <packageSourceCredentials>

@@ -12,11 +12,11 @@ keywords: "nuget 기호 참조, sign 명령"
 ms.reviewer:
 - karann
 - rmpablos
-ms.openlocfilehash: 109b0f6aca0ebaae2ea56fbb45226bc1b14f2ea1
-ms.sourcegitcommit: df7158169e84900d135416cd5e52f937df0beb52
+ms.openlocfilehash: f600a0830472703f40ef62f1b1538c53671703a9
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="sign-command-nuget-cli"></a>sign 명령 (NuGet CLI)
 
@@ -44,7 +44,7 @@ nuget sign <package(s)> [options]
 | CertificateStoreLocation | 인증서를 검색할 X.509 인증서 저장소 사용의 이름을 지정 합니다. 기본값은 "CurrentUser", 현재 사용자가 사용 되는 X.509 인증서 저장소입니다. -CertificateSubjectName 또는-CertificateFingerprint 옵션을 통해 인증서를 지정 하는 경우이 옵션을 사용 해야 합니다. |
 | CertificateStoreName | X.509 인증서 저장소를 사용 하는 인증서에 대 한 검색의 이름을 지정 합니다. 기본값은 "My", 개인 인증서에 대 한 X.509 인증서 저장소입니다. -CertificateSubjectName 또는-CertificateFingerprint 옵션을 통해 인증서를 지정 하는 경우이 옵션을 사용 해야 합니다. |
 | CertificateSubjectName | 인증서에 대 한 로컬 인증서 저장소를 검색 하는 데 사용 되는 인증서의 주체 이름을 지정 합니다.  검색은 다른 주체 값에 관계 없이 해당 문자열을 포함 하는 주체 이름을 가진 모든 인증서를 찾습니다는 제공 된 값을 사용 하 여 대/소문자 구분 문자열 비교 합니다.  인증서 저장소-CertificateStoreName 및-CertificateStoreLocation 옵션에 지정할 수 있습니다. |
-| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 *%AppData%\NuGet\NuGet.Config* 사용 됩니다. |
+| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
 | ForceEnglishOutput | Nuget.exe 고정, 영어 기반 문화권을 사용 하 여 실행을 강제로 수행 합니다. |
 | HashAlgorithm | 패키지에 서명 하는 데 사용할 해시 알고리즘입니다. 기본값은 s h a 256입니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
