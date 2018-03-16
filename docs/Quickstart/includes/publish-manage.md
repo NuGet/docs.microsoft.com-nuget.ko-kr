@@ -1,6 +1,6 @@
 nuget.org의 프로필에서 **패키지 관리**를 선택하여 방금 게시한 패키지를 확인합니다. 또한 확인 전자 메일을 받게 됩니다. 패키지가 인덱싱되어 다른 사용자가 찾을 수 있는 검색 결과에 표시되는 데 시간이 걸릴 수 있습니다. 그 동안 아래 메시지가 패키지 페이지에 표시됩니다.
 
-    ![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](../media/QS_Create-03-NotIndexed.png)
+![이 패키지는 아직 인덱싱되지 않았습니다. 인덱싱이 완료되면 검색 결과에 표시되며 설치/복원하는 데 사용할 수 있습니다.](../media/QS_Create-03-NotIndexed.png)
 
 됐습니다! 방금 첫 번째 NuGet 패키지를 nuget.org에 게시했으므로 다른 개발자가 자신의 프로젝트에서 이 패키지를 사용할 수 있습니다.
 

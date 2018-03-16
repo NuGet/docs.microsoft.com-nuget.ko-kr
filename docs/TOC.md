@@ -3,8 +3,9 @@
 # 빠른 시작
 ## [패키지 설치 및 사용(dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
 ## [패키지 설치 및 사용(Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
-## [패키지 만들기 및 게시(dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
-## [패키지 만들기 및 게시(Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
+## [NET Standard 패키지 만들기 및 게시(dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
+## [NET Standard 패키지 만들기 및 게시(Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
+## [NET Framework 패키지 만들기 및 게시(Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
 # 패키지 사용
 ## [개요 및 워크플로](consume-packages/overview-and-workflow.md)
 ## [패키지 찾기 및 선택](consume-packages/finding-and-choosing-packages.md)
