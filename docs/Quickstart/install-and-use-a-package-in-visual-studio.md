@@ -12,11 +12,11 @@ keywords: "NuGet 설치, NuGet 패키지 사용, NuGet 패키지 설치, NuGet �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c0030877803ac7403f26e27ac3c5a0303d69c489
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: ff905fec6d6af4fa40fd4331cb970121b6eb0879
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-a-package-in-visual-studio"></a>Visual Studio에서 패키지 설치 및 사용
 
@@ -27,7 +27,7 @@ NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 �
 > [!Tip]
 > **nuget.org 시작**: nuget.org 검색은 일반적으로 .NET 개발자가 고유의 응용 프로그램에서 다시 사용할 수 있는 구성 요소를 찾는 방법입니다. nuget.org를 직접 검색하거나 이 문서에 표시된 대로 Visual Studio 내에서 패키지를 설치할 수 있습니다.
 
-## <a name="pre-requisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 - Visual Studio 2017(유니버설 Windows 플랫폼 개발 워크로드 포함) 또는
 - Visual Studio 2015 업데이트 3(유니버설 Windows 앱용 도구 포함).
@@ -40,7 +40,7 @@ NuGet 패키지는 일종의 .NET 프로젝트에 설치할 수 있습니다. �
 
 ## <a name="add-the-newtonsoftjson-nuget-package"></a>Newtonsoft.Json NuGet 패키지 추가
 
-패키지를 설치하는 데는 패키지 관리자 UI 또는 패키지 관리자 콘솔을 사용할 수 있습니다.
+패키지를 설치하는 데는 패키지 관리자 UI 또는 패키지 관리자 콘솔을 사용할 수 있습니다. 패키지를 설치하면 NuGet에서 프로젝트 파일 또는 `packages.config` 파일에 종속성을 기록합니다. 자세한 내용은 [패키지 소비 개요 및 워크플로](../consume-packages/Overview-and-Workflow.md)를 참조하세요.
 
 ### <a name="package-manager-ui"></a>패키지 관리자 UI
 

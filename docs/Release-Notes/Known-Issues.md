@@ -12,11 +12,11 @@ keywords: "알려진 NuGet 문제, NuGet 문제"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2b9190c058215d9e63894de45c0c55c8ddae0e0f
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: ac00e3f11c54290a31319e7f2946fd965a0a9288
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="known-issues-with-nuget"></a>알려진 NuGet 문제
 
@@ -45,7 +45,7 @@ NuGet 3.4 및 3.4.1에서 NuGet 추가 기능을 사용하면 사용 가능한 �
 
 ![원본이 없는 NuGet config 파일](./media/knownIssue-34-NoSources.PNG)
 
-`%AppData%\NuGet\` 폴더에 있는 `NuGet.Config` 파일이 실수로 비어 있습니다. 이 문제를 해결하려면 Visual Studio 2015를 닫고, `%AppData%\NuGet\` 폴더에서 `NuGet.Config` 파일을 삭제한 다음, Visual Studio를 다시 시작합니다.  새 `NuGet.Config` 파일이 생성되고 계속 진행할 수 있습니다.
+`%AppData%\NuGet\`(Windows) 또는 `~/.nuget/`(Mac/Linux) 폴더에 있는 `NuGet.Config` 파일이 실수로 비어 있습니다. 이 문제를 해결하려면 Visual Studio(Windows에서 해당하는 경우)를 닫고 `NuGet.Config` 파일을 삭제하고 작업을 다시 시도해 봅니다. NuGet이 새 `NuGet.Config`를 생성한 후에 계속할 수 있습니다.
 
 ## <a name="error-installing-packages-with-nuget-27"></a>NuGet 2.7 패키지 설치 오류
 
@@ -165,7 +165,7 @@ Visual Studio 확장 관리자를 통해 NuGet을 제거하려고 하면 [제거
 
 ## <a name="the-package-manager-console-crashes-when-i-open-it-in-windows-xp-whats-wrong"></a>Windows XP에서 패키지 관리자 콘솔을 열면 패키지 관리자 콘솔 작동이 중단됩니다. 무엇이 문제인가요?
 
-NuGet에는 Powershell 2.0 런타임이 필요합니다. Windows XP에는 기본적으로 Powershell 2.0이 없습니다. Powershell 2.0 런타임은 [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929)에서 다운로드할 수 있습니다. 설치한 후에 Visual Studio를 다시 시작하면 패키지 관리자 콘솔을 열 수 있습니다.
+NuGet에는 Powershell 2.0 런타임이 필요합니다. Windows XP에는 기본적으로 Powershell 2.0이 없습니다. [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929)에서 Powershell 2.0 런타임을 다운로드할 수 있습니다. 설치한 후에 Visual Studio를 다시 시작하면 패키지 관리자 콘솔을 열 수 있습니다.
 
 ## <a name="visual-studio-2010-sp1-beta-crashes-on-exit-if-the-package-manager-console-is-open"></a>패키지 관리자 콘솔이 열려 있으면 종료 시 Visual Studio 2010 SP1 베타가 충돌합니다.
 

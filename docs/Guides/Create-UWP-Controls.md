@@ -3,7 +3,7 @@ title: "NuGet에서 UWP 컨트롤을 패키지하는 방법 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/21/2017
+ms.date: 03/14/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: 
@@ -12,17 +12,17 @@ keywords: "NuGet UWP 컨트롤, Visual Studio XAML 디자이너, Blend 디자이
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3af17121f73b878decd5f0c933696fc1b0c786d7
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 1af5118eb71836d8b8bcfa8ff713d9fef3c86374
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="creating-uwp-controls-as-nuget-packages"></a>NuGet 패키지인 UWP 컨트롤 만들기
 
 Visual Studio 2017에서 NuGet 패키지에서 제공하는 UWP 컨트롤에 추가된 기능을 활용할 수 있습니다. 이 가이드는 [ExtensionSDKasNuGetPackage 샘플](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)을 사용하여 이러한 기능을 설명합니다. 
 
-## <a name="pre-requisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 1. Visual Studio 2017
 1. [UWP 패키지를 만드는](create-uwp-packages.md) 방법 이해
@@ -100,13 +100,7 @@ UWP 패키지에는 앱을 설치할 수 있는 OS 버전의 상한 및 하한 �
     \lib\uap10.0\*
     \ref\uap10.0\*
 
-적절한 TPMinV 검사를 적용하려면 [MSBuild 대상 파일](/visualstudio/msbuild/msbuild-targets)을 만들고 빌드 폴더에서 패키지합니다("your_assembly_name"을 특정 어셈블리의 이름으로 바꿈).
-
-    \build
-      \uap10.0
-        your_assembly_name.targets
-    \lib
-    \tools
+적절한 TPMinV 검사를 적용하려면 [MSBuild 대상 파일](/visualstudio/msbuild/msbuild-targets)을 만들고 특정 어셈블리의 이름을 사용하여 `build\uap10.0" folder as `<your_assembly_name>.targets`, replacing `<your_assembly_name>` 아래에 패키징합니다.
 
 대상 파일이 표시되는 예는 다음과 같습니다.
 
@@ -114,7 +108,7 @@ UWP 패키지에는 앱을 설치할 수 있는 OS 버전의 상한 및 하한 �
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <Target Name="TPMinVCheck" BeforeTargets="Build;ReBuild" Condition="'$(TargetPlatformMinVersion)' != ''">
+  <Target Name="TPMinVCheck" BeforeTargets="ResolveAssemblyReferences" Condition="'$(TargetPlatformMinVersion)' != ''">
     <PropertyGroup>
       <RequiredTPMinV>10.0.14393</RequiredTPMinV>
       <ActualTPMinV>$(TargetPlatformMinVersion)</ActualTPMinV>
@@ -126,17 +120,15 @@ UWP 패키지에는 앱을 설치할 수 있는 OS 버전의 상한 및 하한 �
 
 ## <a name="add-design-time-support"></a>디자인 타임 지원 추가
 
-속성 검사자에서 컨트롤 속성이 표시되는 위치를 구성하려면 사용자 지정 표시기 등을 추가하고, `design.dll` 파일을 `lib\<platform>\Design` 폴더에 대상 플랫폼에 적합하도록 배치합니다. 또한 **[템플릿 편집 > 복사본 편집](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** 기능이 작동하도록 하려면 `<AssemblyName>\Themes` 폴더에서 병합되는 `Generic.xaml` 및 리소스가 포함되어야 합니다. (이 파일은 컨트롤의 런타임 동작에 아무런 영향을 주지 않습니다.)
+속성 검사자에서 컨트롤 속성이 표시되는 위치를 구성하려면 사용자 지정 표시기 등을 추가하고, `design.dll` 파일을 `lib\uap10.0\Design` 폴더에 대상 플랫폼에 적합하도록 배치합니다. 또한 **[템플릿 편집 > 복사본 편집](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** 기능이 작동하도록 하려면 `<your_assembly_name>\Themes` 폴더에서 병합되는 `Generic.xaml` 및 리소스가 포함되어야 합니다(실제 어셈블리 이름 사용). (이 파일은 컨트롤의 런타임 동작에 아무런 영향을 주지 않습니다.) 따라서 폴더 구조는 다음과 같이 나타납니다.
 
-    \build
     \lib
-      \uap10.0.14393.0
+      \uap10.0
         \Design
           \MyControl.design.dll
         \your_assembly_name
           \Themes
             Generic.xaml
-    \tools
 
 > [!Note]
 > 기본적으로 컨트롤 속성은 속성 검사자의 기타 범주에 표시됩니다.
@@ -149,15 +141,7 @@ UWP 패키지에는 앱을 설치할 수 있는 OS 버전의 상한 및 하한 �
 
 ## <a name="package-content-such-as-images"></a>이미지 등 패키지 콘텐츠
 
-컨트롤 또는 사용 중인 UWP 프로젝트에서 사용할 수 있는 이미지와 같은 콘텐츠를 패키지하려면 다음과 같이 해당 파일을 `lib\uap10.0.14393.0` 폴더에 추가합니다("your_assembly_name"은 특정 컨트롤과 일치해야 함).
-
-    \build
-    \lib
-      \uap10.0.14393.0
-        \Design
-          \your_assembly_name
-    \contosoSampleImage.jpg
-    \tools
+컨트롤 또는 사용 중인 UWP 프로젝트에서 사용할 수 있는 이미지와 같은 콘텐츠를 패키지하려면 이러한 파일을 `lib\uap10.0` 폴더에 보관합니다.
 
 [MSBuild 대상 파일](/visualstudio/msbuild/msbuild-targets)을 작성하여 자산이 사용 중인 프로젝트의 출력 폴더에 복사되었는지 확인할 수도 있습니다.
 
@@ -165,7 +149,7 @@ UWP 패키지에는 앱을 설치할 수 있는 OS 버전의 상한 및 하한 �
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
-        <Content Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393.0\contosoSampleImage.jpg">
+        <Content Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0\contosoSampleImage.jpg">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>

@@ -12,11 +12,11 @@ keywords: "NuGet 종속성, NuGet 및 UWP, UWP 및 project.json, NuGet project.j
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f1ec086d6404c441ca5ad53028af2265a2344905
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 3ef3703b2be92f84d37866bce9934ebcfed3a9f7
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="projectjson-and-uwp"></a>project.json 및 UWP
 
@@ -121,7 +121,7 @@ lib 구조의 예:
 
 runtimes 폴더는 일반적으로 운영 체제 및 CPU 아키텍처에서 정의되는 특정 "런타임"에서 실행하는 데 필요한 어셈블리 및 네이티브 라이브러리를 포함합니다. 이러한 런타임은 `win`, `win-x86`, `win7-x86`, `win8-64` 등과 같이 [RID(런타임 식별자)](/dotnet/core/rid-catalog)를 사용하여 식별됩니다.
 
-## <a name="native-light-up"></a>네이티브 폴더에 대한 설명
+## <a name="native-helpers-to-use-platform-specific-apis"></a>플랫폼 관련 API를 사용하는 네이티브 도우미
 
 다음 예에서는 여러 플랫폼에 대해 전적으로 관리되는 구현이 있지만 Windows 8 특정 네이티브 API를 호출할 수 있는 네이티브 도우미를 Windows 8에서 사용하는 패키지를 보여줍니다.
 

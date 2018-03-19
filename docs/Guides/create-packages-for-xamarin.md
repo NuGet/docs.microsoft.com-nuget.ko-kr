@@ -1,5 +1,5 @@
 ---
-title: "플랫폼 간 NuGet 패키지 만들기(iOS, Android 및 Windows용) | Microsoft Docs"
+title: "Xamarin용 NuGet 패키지 만들기(iOS, Android 및 Windows용) | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -12,26 +12,26 @@ keywords: "패키지 만들기, Xamarin에 대한 패키지, 플랫폼 간 패�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2f0131e4f447e2e0ab5a1d17e476a425eaa01b61
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 3e1460de060980365a5eaa2ef91c052cc359bb70
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="create-cross-platform-packages"></a>플랫폼 간 패키지 만들기
+# <a name="create-packages-for-xamarin"></a>Xamarin용 패키지 만들기
 
 플랫폼 간 패키지에는 런타임 운영 체제에 따라 iOS, Android 및 Windows에서 네이티브 API를 사용하는 코드가 포함되어 있습니다. 이 작업은 간단하지만 개발자가 공통 API 노출 영역을 통해 PCL 또는 .NET Standard 라이브러리에서 패키지를 사용할 수 있게 하는 것이 좋습니다.
 
 이 연습에서는 iOS, Android 및 Windows의 모바일 프로젝트에 사용할 수 있는 플랫폼 간 NuGet 패키지를 만듭니다.
 
-1. [필수 구성 요소](#pre-requisites)
+1. [필수 조건](#prerequisites)
 1. [프로젝트 구조 및 추상화 코드 만들기](#create-the-project-structure-and-abstraction-code)
 1. [플랫폼 특정 코드 작성](#write-your-platform-specific-code)
 1. [.nuspec 파일 만들기 및 업데이트](#create-and-update-the-nuspec-file)
 1. [구성 요소 패키징](#package-the-component)
 1. [관련 항목](#related-topics)
 
-## <a name="pre-requisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 1. UWP(유니버설 Windows 플랫폼) 및 Xamarin이 있는 Visual Studio 2015 - [visualstudio.com](https://www.visualstudio.com/)에서 추가 비용 없이 Community 버전을 설치합니다. Professional 및 Enterprise 버전도 사용할 수 있습니다. UWP 및 Xamarin 도구를 포함하려면 사용자 지정 설치를 선택하고 적절한 옵션을 선택합니다.
 1. NuGet CLI - [nuget.org/downloads](https://nuget.org/downloads)에서 최신 버전의 nuget.exe를 다운로드하여 원하는 위치에 저장합니다. 그런 다음 해당 위치를 PATH 환경 변수에 추가합니다(아직 없는 경우).
@@ -112,9 +112,9 @@ namespace Plugin.LoggingLibrary.Abstractions
 
 1. 명령 프롬프트를 열고, `.sln` 파일이 있는 위치에서 한 수준 아래의 `LoggingLibrary` 폴더로 이동한 다음, NuGet `spec` 명령을 실행하여 초기 `Package.nuspec` 파일을 만듭니다.
 
-```cli
-nuget spec
-```
+    ```cli
+    nuget spec
+    ```
 
 1. 이 파일의 이름을 `LoggingLibrary.nuspec`으로 변경하고 편집기에서 엽니다.
 1. YOUR_NAME을 적절한 값으로 바꿔 다음과 일치하도록 파일을 업데이트합니다. 특히 `<id>` 값은 nuget.org 전체에서 고유해야 합니다([패키지 만들기](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)에서 설명한 명명 규칙 참조). 또한 작성자 및 설명 태그도 업데이트해야 합니다. 그렇지 않으면 압축 단계에서 오류가 발생합니다.

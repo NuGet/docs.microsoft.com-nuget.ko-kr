@@ -1,5 +1,5 @@
 ---
-title: "dotnet CLI를 사용하여 NuGet 패키지 만들기 및 게시에 대한 소개 가이드 | Microsoft Docs"
+title: "dotnet CLI를 사용하여 NuGet 패키지 만들기 및 게시 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -12,17 +12,17 @@ keywords: "NuGet 패키지 만들기, NuGet 패키지 게시, NuGet 자습서, d
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c9f46cafafcdc238e43979d6f05521e19bf3d7f6
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: 086de5378fe4ae928e6bd00cd3a87afd7c366a01
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="create-and-publish-a-package"></a>패키지 만들기 및 게시
 
 .NET 클래스 라이브러리에서 NuGet 패키지를 만들고 `dotnet` CLI(명령줄 인터페이스)를 사용하여 nuget.org에 게시하는 간단한 과정입니다.
 
-## <a name="pre-requisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 1. `dotnet` CLI를 포함하는 [.NET Core SDK](https://www.microsoft.com/net/download/)를 설치합니다.
 
@@ -95,7 +95,6 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 [!INCLUDE[publish-errors](includes/publish-errors.md)]
 
-
 ### <a name="manage-the-published-package"></a>게시된 패키지 관리
 
 [!INCLUDE[publish-manage](includes/publish-manage.md)]
@@ -107,3 +106,4 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 - [여러 대상 프레임워크 지원](../create-packages/supporting-multiple-target-frameworks.md)
 - [패키지 버전 관리](../reference/package-versioning.md)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)
+- [패키지 서명](../create-packages/Sign-a-package.md)

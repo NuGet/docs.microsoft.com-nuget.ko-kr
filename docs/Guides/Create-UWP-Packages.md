@@ -12,11 +12,11 @@ keywords: "패키지 만들기, UWP 패키지, Windows 런타임 구성 요소"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6d35b484ff708d7174c19791ab1ad7904bea0d2f
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: af650b6cd67855a67d0f49cdbd9f510bf90a60f6
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="create-uwp-packages"></a>UWP 패키지 만들기
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 02/14/2018
 
 이 연습에서는 관리 및 네이티브 프로젝트에서 모두 사용할 수 있는 네이티브 UWP 구성 요소(XAML 컨트롤 포함)를 사용하여 NuGet 패키지를 만듭니다.
 
-## <a name="pre-requisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 1. Visual Studio 2017 또는 Visual Studio 2015 - [visualstudio.com](https://www.visualstudio.com/)에서 추가 비용 없이 2017 Community 버전을 설치합니다. Professional 및 Enterprise 버전도 사용할 수 있습니다.
 
@@ -156,7 +156,7 @@ Windows 런타임 구성 요소에는 공개적으로 사용할 수 있는 모�
 
 ### <a name="adding-targets"></a>.targets 추가
 
-다음으로 NuGet 패키지를 사용할 수 있는 C++ 및 JavaScript 프로젝트에는 필요한 어셈블리 및 winmd 파일을 식별하는 .targets 파일이 필요합니다. (C# 및 Visual Basic 프로젝트는 이 작업을 자동으로 수행합니다.) 이 파일은 아래 텍스트를 `ImageEnhancer.targets`에 복사하여 만들고 `.nuspec` 파일과 동일한 폴더에 저장합니다.
+다음으로 NuGet 패키지를 사용할 수 있는 C++ 및 JavaScript 프로젝트에는 필요한 어셈블리 및 winmd 파일을 식별하는 .targets 파일이 필요합니다. (C# 및 Visual Basic 프로젝트는 이 작업을 자동으로 수행합니다.) 이 파일은 아래 텍스트를 `ImageEnhancer.targets`에 복사하여 만들고 `.nuspec` 파일과 동일한 폴더에 저장합니다. _참고_:이 `.targets` 파일은 패키지 ID와 같은 이름이어야 합니다(예: `.nupspec` 파일의 `<Id>` 요소).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

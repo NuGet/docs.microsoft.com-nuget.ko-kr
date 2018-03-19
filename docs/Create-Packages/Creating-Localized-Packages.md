@@ -12,18 +12,18 @@ keywords: "NuGet 패키지 지역화, NuGet 위성 어셈블리, 지역화된 �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1ce8cff07bf629fcdeeaace901a185f2446b077a
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 5946ba6b43d3c418a1624aeb27d12b385d66b2fb
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="creating-localized-nuget-packages"></a>지역화된 NuGet 패키지 만들기
 
 두 가지 방법으로 라이브러리의 지역화된 버전을 만들 수 있습니다.
 
 1. 단일 패키지에 모든 지역화된 리소스 어셈블리를 포함합니다.
-1. 엄격한 규칙 집합에 따라 별도의 지역화된 위성 패키지(NuGet 1.8 이상)를 만듭니다.
+1. 엄격한 규칙 집합에 따라 별도의 지역화된 위성 패키지를 만듭니다.
 
 두 방법에는 다음 섹션에서 설명된 장점과 단점이 있습니다.
 
