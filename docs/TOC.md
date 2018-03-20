@@ -17,7 +17,6 @@
 ## [NuGet 캐시 관리](consume-packages/managing-the-nuget-cache.md)
 ## [NuGet 동작 구성](consume-packages/configuring-nuget-behavior.md)
 ## [종속성 확인](consume-packages/dependency-resolution.md)
-## [프로젝트 파일의 패키지 참조](consume-packages/package-references-in-project-files.md)
 # 패키지 만들기
 ## [개요 및 워크플로](create-packages/overview-and-workflow.md)
 ## [패키지 만들기](create-packages/creating-a-package.md)
@@ -74,6 +73,7 @@
 ## [dotnet 명령](tools/dotnet-Commands.md)
 # 참조
 ## [.nuspec](reference/nuspec.md)
+## [프로젝트 파일의 패키지 참조](consume-packages/package-references-in-project-files.md)
 ## [packages.config](reference/packages-config.md)
 ## [패키지 버전 관리](reference/package-versioning.md)
 ## [Nuget.Config 파일](reference/nuget-config-file.md)
