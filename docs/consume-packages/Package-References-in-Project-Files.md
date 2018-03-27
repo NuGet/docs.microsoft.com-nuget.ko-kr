@@ -1,22 +1,22 @@
 ---
-title: "NuGet PackageReference 형식(프로젝트 파일의 패키지 참조) | Microsoft Docs"
+title: NuGet PackageReference 형식(프로젝트 파일의 패키지 참조) | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 07/17/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 4.0 이상, VS2017 및 .NET Core 2.0에서 지원되는 프로젝트 파일에 있는 NuGet PackageReference에 대한 세부 정보"
-keywords: "NuGet 패키지 종속성, 패키지 참조, 프로젝트 파일, PackageReference, packages.config, VS2017, Visual Studio 2017, NuGet 4, .NET Core 2.0"
+ms.technology: ''
+description: NuGet 4.0 이상, VS2017 및 .NET Core 2.0에서 지원되는 프로젝트 파일에 있는 NuGet PackageReference에 대한 세부 정보
+keywords: NuGet 패키지 종속성, 패키지 참조, 프로젝트 파일, PackageReference, packages.config, VS2017, Visual Studio 2017, NuGet 4, .NET Core 2.0
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 679871a280c158c863e0daf790af1b7cef509943
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.openlocfilehash: e1880c9b294e19ef1b71c7b17b02df8ff1cf1b73
+ms.sourcegitcommit: 718e6cb88e45fa07c85d653f216bf92eaaf81625
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 02/20/2018
 
 또한 PackageReference를 사용하면 MSBuild 조건을 사용하여 대상 프레임워크, 구성, 플랫폼 또는 기타 그룹화당 패키지 참조를 선택할 수 있습니다. 종속성과 콘텐츠 흐름을 세밀하게 제어할 수도 있습니다. (자세한 내용은 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.)
 
-기본적으로 PackageReference는 Windows 10 빌드 15063(크리에이터스 업데이트) 이상을 대상으로 하는 .NET Core 프로젝트, .NET Standard 프로젝트 및 UWP 프로젝트에 사용됩니다. .NET 전체 프레임워크 프로젝트는 PackageReference를 지원하지만 현재 기본값은 `packages.config`입니다. PackageReference를 사용하려면 종속성을 `packages.config`에서 프로젝트 파일로 마이그레이션한 후 packages.config를 제거하세요.
+기본적으로 PackageReference는 Windows 10 빌드 15063(크리에이터스 업데이트) 이상을 대상으로 하는 .NET Core 프로젝트, .NET Standard 프로젝트 및 UWP 프로젝트에 사용됩니다(C++ UWP 프로젝트는 제외). .NET 전체 프레임워크 프로젝트는 PackageReference를 지원하지만 현재 기본값은 `packages.config`입니다. PackageReference를 사용하려면 종속성을 `packages.config`에서 프로젝트 파일로 마이그레이션한 후 packages.config를 제거하세요.
 
 ## <a name="adding-a-packagereference"></a>PackageReference 추가
 
@@ -94,7 +94,7 @@ ms.lasthandoff: 02/20/2018
 | 값 | 설명 |
 | --- | ---
 | compile | `lib` 폴더의 콘텐츠 |
-| 런타임(runtime) | `runtime` 폴더의 콘텐츠 |
+| 런타임(runtime) | `runtimes` 폴더의 콘텐츠 |
 | contentFiles | `contentfiles` 폴더의 콘텐츠 |
 | 빌드 | `build` 폴더의 prop 및 대상 |
 | 분석기 | .NET 분석기 |
