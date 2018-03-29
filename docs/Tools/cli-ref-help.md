@@ -1,56 +1,59 @@
 ---
-title: "NuGet CLI 도움말 명령을 | Microsoft Docs"
+title: NuGet CLI 도움말 명령을 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe 도움말 명령에 대 한 참조"
-keywords: "nuget 도움말 참조, 도움말 명령"
+ms.technology: ''
+description: Nuget.exe 도움말 명령에 대 한 참조
+keywords: nuget 도움말 참조, 도움말 명령
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 281c6ccc7c58d153280441430be063d9ee89955d
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 440861e53b4a9ff73a9d3e8a2a3dad7dbddc9584
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="help-or--command-nuget-cli"></a><span data-ttu-id="7d86c-104">도움말 또는?</span><span class="sxs-lookup"><span data-stu-id="7d86c-104">help or ?</span></span> <span data-ttu-id="7d86c-105">명령 (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="7d86c-105">command (NuGet CLI)</span></span>
+# <a name="help-or--command-nuget-cli"></a><span data-ttu-id="67488-104">도움말 또는?</span><span class="sxs-lookup"><span data-stu-id="67488-104">help or ?</span></span> <span data-ttu-id="67488-105">명령 (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="67488-105">command (NuGet CLI)</span></span>
 
-<span data-ttu-id="7d86c-106">**적용 대상:** 모든 &bullet; **지원 되는 버전**: 모든</span><span class="sxs-lookup"><span data-stu-id="7d86c-106">**Applies to:** all &bullet; **Supported versions**: all</span></span>
+<span data-ttu-id="67488-106">**적용 대상:** 모든 &bullet; **지원 되는 버전**: 모든</span><span class="sxs-lookup"><span data-stu-id="67488-106">**Applies to:** all &bullet; **Supported versions**: all</span></span>
 
-<span data-ttu-id="7d86c-107">일반 표시 도움말 정보 및 특정 명령에 대 한 정보를 지원 합니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-107">Displays general help information and help information about specific commands.</span></span>
+<span data-ttu-id="67488-107">일반 표시 도움말 정보 및 특정 명령에 대 한 정보를 지원 합니다.</span><span class="sxs-lookup"><span data-stu-id="67488-107">Displays general help information and help information about specific commands.</span></span>
 
-## <a name="usage"></a><span data-ttu-id="7d86c-108">사용법</span><span class="sxs-lookup"><span data-stu-id="7d86c-108">Usage</span></span>
+## <a name="usage"></a><span data-ttu-id="67488-108">사용법</span><span class="sxs-lookup"><span data-stu-id="67488-108">Usage</span></span>
 
 ```cli
 nuget help [command] [options]
 nuget ? [command] [options]
 ```
 
-<span data-ttu-id="7d86c-109">여기서 [command] 도움말을 표시 하려는 특정 명령을 식별 합니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-109">where [command] identifies a specific command for which to display help.</span></span>
+<span data-ttu-id="67488-109">여기서 [command] 도움말을 표시 하려는 특정 명령을 식별 합니다.</span><span class="sxs-lookup"><span data-stu-id="67488-109">where [command] identifies a specific command for which to display help.</span></span>
 
 > [!Warning]
-> <span data-ttu-id="7d86c-110">일부 명령으로 지정 하려면 주의 해야 *도움말* 와 함께으로 first `nuget help install`nuget.org에 "help" 라는 패키지 이므로, 합니다. 명령을 제공 하는 경우 `nuget install help`를에 설치 명령을 도움말은 가져올 없지만 대신 도움말 라는 패키지를 설치 합니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-110">With some commands, be mindful to specify *help* first, as with `nuget help install`, because there is a package named "help" on nuget.org. If you give the command `nuget install help`, you won't get help on the install command but will instead install the package named help.</span></span>
+> <span data-ttu-id="67488-110">일부 명령으로 지정 하려면 주의 해야 *도움말* 와 함께으로 first `nuget help install`nuget.org에 "help" 라는 패키지 이므로, 합니다. 명령을 제공 하는 경우 `nuget install help`를에 설치 명령을 도움말은 가져올 없지만 대신 도움말 라는 패키지를 설치 합니다.</span><span class="sxs-lookup"><span data-stu-id="67488-110">With some commands, be mindful to specify *help* first, as with `nuget help install`, because there is a package named "help" on nuget.org. If you give the command `nuget install help`, you won't get help on the install command but will instead install the package named help.</span></span>
 
-## <a name="options"></a><span data-ttu-id="7d86c-111">옵션</span><span class="sxs-lookup"><span data-stu-id="7d86c-111">Options</span></span>
+## <a name="options"></a><span data-ttu-id="67488-111">옵션</span><span class="sxs-lookup"><span data-stu-id="67488-111">Options</span></span>
 
-| <span data-ttu-id="7d86c-112">옵션</span><span class="sxs-lookup"><span data-stu-id="7d86c-112">Option</span></span> | <span data-ttu-id="7d86c-113">설명</span><span class="sxs-lookup"><span data-stu-id="7d86c-113">Description</span></span> |
+| <span data-ttu-id="67488-112">옵션</span><span class="sxs-lookup"><span data-stu-id="67488-112">Option</span></span> | <span data-ttu-id="67488-113">설명</span><span class="sxs-lookup"><span data-stu-id="67488-113">Description</span></span> |
 | --- | --- |
-| <span data-ttu-id="7d86c-114">모두</span><span class="sxs-lookup"><span data-stu-id="7d86c-114">All</span></span> | <span data-ttu-id="7d86c-115">사용 가능한 모든 명령;에 대 한 자세한 도움말이 인쇄 특정 명령을 지정 하는 경우 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-115">Print detailed help for all available commands; ignored if a specific command is given.</span></span> |
-| <span data-ttu-id="7d86c-116">ConfigFile</span><span class="sxs-lookup"><span data-stu-id="7d86c-116">ConfigFile</span></span> | <span data-ttu-id="7d86c-117">적용할 NuGet 구성 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-117">The NuGet configuration file to apply.</span></span> <span data-ttu-id="7d86c-118">지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-118">If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.</span></span>|
-| <span data-ttu-id="7d86c-119">ForceEnglishOutput</span><span class="sxs-lookup"><span data-stu-id="7d86c-119">ForceEnglishOutput</span></span> | <span data-ttu-id="7d86c-120">*(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-120">*(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.</span></span> |
-| <span data-ttu-id="7d86c-121">도움말</span><span class="sxs-lookup"><span data-stu-id="7d86c-121">Help</span></span> | <span data-ttu-id="7d86c-122">도움말 도움말 명령 자체에 대 한 정보를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-122">Displays help information for the help command itself.</span></span> |
-| <span data-ttu-id="7d86c-123">Markdown</span><span class="sxs-lookup"><span data-stu-id="7d86c-123">Markdown</span></span> | <span data-ttu-id="7d86c-124">마크 다운 형태로 함께 사용할 경우 자세한 도움말을 인쇄 `-All`합니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-124">Print detailed help in markdown format when used with `-All`.</span></span> <span data-ttu-id="7d86c-125">그렇지 않은 경우 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-125">Ignored otherwise.</span></span> |
-| <span data-ttu-id="7d86c-126">NonInteractive</span><span class="sxs-lookup"><span data-stu-id="7d86c-126">NonInteractive</span></span> | <span data-ttu-id="7d86c-127">사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-127">Suppresses prompts for user input or confirmations.</span></span> |
-| <span data-ttu-id="7d86c-128">자세한 정도</span><span class="sxs-lookup"><span data-stu-id="7d86c-128">Verbosity</span></span> | <span data-ttu-id="7d86c-129">출력에 표시 되는 세부 정보 수준을 지정: *일반*, *quiet*, *자세한*합니다.</span><span class="sxs-lookup"><span data-stu-id="7d86c-129">Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.</span></span> |
+| <span data-ttu-id="67488-114">모두</span><span class="sxs-lookup"><span data-stu-id="67488-114">All</span></span> | <span data-ttu-id="67488-115">사용 가능한 모든 명령;에 대 한 자세한 도움말이 인쇄 특정 명령을 지정 하는 경우 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="67488-115">Print detailed help for all available commands; ignored if a specific command is given.</span></span> |
+| <span data-ttu-id="67488-116">ConfigFile</span><span class="sxs-lookup"><span data-stu-id="67488-116">ConfigFile</span></span> | <span data-ttu-id="67488-117">적용할 NuGet 구성 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="67488-117">The NuGet configuration file to apply.</span></span> <span data-ttu-id="67488-118">지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="67488-118">If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.</span></span>|
+| <span data-ttu-id="67488-119">ForceEnglishOutput</span><span class="sxs-lookup"><span data-stu-id="67488-119">ForceEnglishOutput</span></span> | <span data-ttu-id="67488-120">*(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="67488-120">*(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.</span></span> |
+| <span data-ttu-id="67488-121">도움말</span><span class="sxs-lookup"><span data-stu-id="67488-121">Help</span></span> | <span data-ttu-id="67488-122">도움말 도움말 명령 자체에 대 한 정보를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="67488-122">Displays help information for the help command itself.</span></span> |
+| <span data-ttu-id="67488-123">Markdown</span><span class="sxs-lookup"><span data-stu-id="67488-123">Markdown</span></span> | <span data-ttu-id="67488-124">마크 다운 형태로 함께 사용할 경우 자세한 도움말을 인쇄 `-All`합니다.</span><span class="sxs-lookup"><span data-stu-id="67488-124">Print detailed help in markdown format when used with `-All`.</span></span> <span data-ttu-id="67488-125">그렇지 않은 경우 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="67488-125">Ignored otherwise.</span></span> |
+| <span data-ttu-id="67488-126">NonInteractive</span><span class="sxs-lookup"><span data-stu-id="67488-126">NonInteractive</span></span> | <span data-ttu-id="67488-127">사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="67488-127">Suppresses prompts for user input or confirmations.</span></span> |
+| <span data-ttu-id="67488-128">자세한 정도</span><span class="sxs-lookup"><span data-stu-id="67488-128">Verbosity</span></span> | <span data-ttu-id="67488-129">출력에 표시 되는 세부 정보 수준을 지정: *일반*, *quiet*, *자세한*합니다.</span><span class="sxs-lookup"><span data-stu-id="67488-129">Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.</span></span> |
 
-<span data-ttu-id="7d86c-130">또한 참조 [환경 변수](cli-ref-environment-variables.md)</span><span class="sxs-lookup"><span data-stu-id="7d86c-130">Also see [Environment variables](cli-ref-environment-variables.md)</span></span>
+<span data-ttu-id="67488-130">또한 참조 [환경 변수](cli-ref-environment-variables.md)</span><span class="sxs-lookup"><span data-stu-id="67488-130">Also see [Environment variables](cli-ref-environment-variables.md)</span></span>
 
-## <a name="examples"></a><span data-ttu-id="7d86c-131">예제</span><span class="sxs-lookup"><span data-stu-id="7d86c-131">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="67488-131">예제</span><span class="sxs-lookup"><span data-stu-id="67488-131">Examples</span></span>
 
 ```cli
 nuget help

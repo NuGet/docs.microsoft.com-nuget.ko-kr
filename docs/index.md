@@ -1,17 +1,17 @@
 ---
 layout: HubPage
-hide_bc: 
-title: "NuGet 설명서 | Microsoft Docs"
-description: "NuGet은 .NET을 포함한 Microsoft 개발 플랫폼에 대한 패키지 관리자입니다. NuGet 클라이언트 도구는 패키지를 만들고 사용하는 기능을 제공합니다."
+hide_bc: ''
+title: NuGet 설명서 | Microsoft Docs
+description: NuGet은 .NET을 포함한 Microsoft 개발 플랫폼에 대한 패키지 관리자입니다. NuGet 클라이언트 도구는 패키지를 만들고 사용하는 기능을 제공합니다.
 keywords:
 - nuget
-- "nuget 관리자"
+- nuget 관리자
 - nupkg
-- "nuget 패키지 탐색기"
-- "nuget 패키지"
-- "nuget 확장"
+- nuget 패키지 탐색기
+- nuget 패키지
+- nuget 확장
 - nuget.exe
-- "nuget 명령줄"
+- nuget 명령줄
 - nuget cli
 author: kraigb
 ms.author: kraigb
@@ -19,14 +19,17 @@ manager: ghogen
 ms.date: 02/12/2018
 ms.topic: hub-page
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 9af8cd5bd3333c8e47e363ad449057d18803ee58
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: c5b1a1b10ea74aa7ad47ecc94918a72486094828
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 <div id="main" class="v2">
 <div class="container">
@@ -45,7 +48,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="What is NuGet? Learn how NuGet, the package manager for .NET, allows developers to create, share, and consume libraries." />        
+                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="" />        
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -64,7 +67,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-quickstarts.svg" alt="Quickstarts: Experience NuGet with focused walkthroughs for creating a simple package and using a package." />
+                                                <img src="media/hub/nuget-get-started-quickstarts.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -83,7 +86,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-guides.svg" alt="Guides: experience NuGet's tools and capabilities for creating a package." />
+                                                <img src="media/hub/nuget-get-started-guides.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -102,7 +105,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-create-packages.svg" alt="Create Packages: Everything you need to know about creating NuGet packages, from overall workflow to versioning, pre-release, and other specialized packages." />
+                                                <img src="media/hub/nuget-get-started-create-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -121,7 +124,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-consume-packages.svg" alt="Consume Packages: Everything you need to know about using NuGet packages, from finding and choosing good packages to restoration updates, and caching." />
+                                                <img src="media/hub/nuget-get-started-consume-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -140,7 +143,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-host-packages.svg" alt="Host Packages: Learn how to host packages on your own servers or galleries to make them available to only a limited audience." />
+                                                <img src="media/hub/nuget-get-started-host-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -169,7 +172,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-tools.svg" alt="Tools: The complete guides to the nuget.exe command-line tool, and the Package Manager UI and Package Manager Console in Visual Studio." />
+                                                <img src="media/hub/nuget-tools-tools.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -188,7 +191,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-reference.svg" alt="Reference: Details about artifacts and formats NuGet cares about, supported frameworks, and errors and warnings." />
+                                                <img src="media/hub/nuget-tools-reference.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -207,7 +210,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-api.svg" alt="API: Details about the NuGet API" />
+                                                <img src="media/hub/nuget-tools-api.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -226,7 +229,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-vs-extensibility.svg" alt="Visual Studio Extensibility: Details about the API to the NuGet Package Manager UI and Console in Visual Studio, project system support, and integrating into Visual Studio templates." />
+                                                <img src="media/hub/nuget-tools-vs-extensibility.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -245,7 +248,7 @@ ms.lasthandoff: 02/20/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-policies.svg" alt="Policies: Frequently-asked questions along with information about NuGet as an open-source project, deleting packages, and resolving disputes." />
+                                                <img src="media/hub/nuget-tools-policies.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
