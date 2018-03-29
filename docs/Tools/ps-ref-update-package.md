@@ -1,22 +1,25 @@
 ---
-title: "NuGet 업데이트 패키지 PowerShell 참조 | Microsoft Docs"
+title: NuGet 업데이트 패키지 PowerShell 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio에서 NuGet 패키지 관리자 콘솔에 업데이트 패키지 PowerShell 명령에 대 한 참조입니다."
-keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, NuGet Powershell 참조에 업데이트 패키지"
+ms.technology: ''
+description: Visual Studio에서 NuGet 패키지 관리자 콘솔에 업데이트 패키지 PowerShell 명령에 대 한 참조입니다.
+keywords: NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, NuGet Powershell 참조에 업데이트 패키지
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 293d9a7fdcce633eb5a97e5f76398deb5c13bdb4
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 05772159d62f73e7d25f71ad36809f5ae8ef6aae
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>업데이트 패키지 (Visual Studio에서 패키지 관리자 콘솔)
 
@@ -47,7 +50,7 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | ProjectName | 업데이트할 패키지가 포함 된, 모든 프로젝트를 프로젝트의 이름입니다. |
 | 버전 | 를 업그레이드 하는 최신 버전으로 기본 설정에 사용할 버전입니다. NuGet 3.0 +에서 버전 값 중 하나 여야 합니다 *Lowest, 최고, HighestMinor*, 또는 *HighestPatch* (에서-Safe와 동일). |
 | 안전 | 유일한 버전 현재 설치 된 패키지와 같은 주 / 부 버전으로 업그레이드를 제한합니다. |
-| 소스 | 검색 하기 위해 패키지 원본에 대 한 URL 또는 폴더 경로입니다. 로컬 폴더 경로는 현재 폴더에 상대적 이거나 절대 경로일 수 있습니다. 생략 하면 `Uninstall-Package` 현재 선택된 된 패키지 소스를 검색 합니다. |
+| 소스 | 검색 하기 위해 패키지 원본에 대 한 URL 또는 폴더 경로입니다. 로컬 폴더 경로는 현재 폴더에 상대적 이거나 절대 경로일 수 있습니다. 생략 하면 `Update-Package` 현재 선택된 된 패키지 소스를 검색 합니다. |
 | IncludePrerelease | 업데이트에 대 한 시험판 패키지를 포함합니다. |
 | 다시 설치 | 현재 설치 된 버전을 사용 하 여 Resintalls 패키지 합니다. [패키지 다시 설치 및 업데이트](../consume-packages/reinstalling-and-updating-packages.md)를 참조하세요. |
 | FileConflictAction | 덮어쓰거나 프로젝트에서 참조 하는 기존 파일을 무시 하도록 요청 시 수행할 동작입니다. 가능한 값은 *덮어쓰기, 건너뛰기, None, OverwriteAll*, 및 *IgnoreAll* (3.0 이상)입니다. |

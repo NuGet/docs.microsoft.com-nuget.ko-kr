@@ -1,28 +1,31 @@
 ---
-title: "NuGet CLI 명령 원본 | Microsoft Docs"
+title: NuGet CLI 명령 원본 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "nuget.exe에 대 한 참조의 소스가 명령"
-keywords: "nuget 원본 참조, 명령 원본"
+ms.technology: ''
+description: nuget.exe에 대 한 참조의 소스가 명령
+keywords: nuget 원본 참조, 명령 원본
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 139a9494e1ea898c90ce79d5990530fbe08642bd
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: f682a5209556ec6741473ccf2648e8f38bb568b9
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="sources-command-nuget-cli"></a>소스 명령은 NuGet CLI)
 
 **적용 대상:** 패키지 소비, 게시 &bullet; **지원 되는 버전:** 모든
 
-사용자 범위 구성 파일 또는 지정된 된 구성 파일에 있는 원본 목록을 관리 합니다. 사용자 범위 구성 파일은 `%APPDATA%\NuGet\NuGet.Config` (Windows) 및 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).
+사용자 범위 구성 파일 또는 지정된 된 구성 파일에 있는 원본 목록을 관리 합니다. 사용자 범위 구성 파일은 `%appdata%\NuGet\NuGet.Config` (Windows) 및 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).
 
 nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다.
 

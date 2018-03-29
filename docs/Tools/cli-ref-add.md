@@ -1,28 +1,31 @@
 ---
-title: "NuGet CLI 명령을 추가 | Microsoft Docs"
+title: NuGet CLI 명령을 추가 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "nuget.exe에 대 한 참조 추가 명령"
-keywords: "nuget 참조를 추가, 패키지 명령 추가"
+ms.technology: ''
+description: nuget.exe에 대 한 참조 추가 명령
+keywords: nuget 참조를 추가, 패키지 명령 추가
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 70c86f8d240bd308224f6b7887b630cc1e953bf8
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 48e093cbae2cecb1652e17a9b26920107aa8aef7
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="add-command-nuget-cli"></a>명령 (NuGet CLI)를 추가 합니다.
 
 **적용 대상**: 게시 패키지 &bullet; **지원 되는 버전**: 3.3 +
 
-패키지 ID 및 버전 번호에 대 한 폴더가 만들어지고 여기서 계층적 레이아웃에서 HTTP가 아닌 패키지 소스 (폴더 또는 UNC 경로)에 지정 된 패키지를 추가 합니다. 예:
+패키지 ID 및 버전 번호에 대 한 폴더가 만들어지고 여기서 계층적 레이아웃에서 HTTP가 아닌 패키지 소스 (폴더 또는 UNC 경로)에 지정 된 패키지를 추가 합니다. 예를 들어:
 
     \\myserver\packages
       └─<packageID>
@@ -47,7 +50,7 @@ nuget add <packagePath> -Source <sourcePath> [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 *%AppData%\NuGet\NuGet.Config* 사용 됩니다.| 
+| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
 | Expand | 패키지의 패키지 원본에 있는 모든 파일을 추가합니다. |
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |

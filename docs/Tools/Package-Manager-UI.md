@@ -1,27 +1,30 @@
 ---
-title: "NuGet 패키지 관리자 UI 참조 | Microsoft Docs"
+title: NuGet 패키지 관리자 UI 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-description: "NuGet 패키지를 사용 하기 위한 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하기 위한 지침입니다."
-keywords: "NuGet 패키지 관리자 UI에서 NuGet 패키지 관리자 Visual Studio에서 NuGet 패키지, NuGet 사용자 인터페이스를 관리 하는 Visual Studio에서 NuGet UI"
+description: NuGet 패키지를 사용 하기 위한 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하기 위한 지침입니다.
+keywords: NuGet 패키지 관리자 UI에서 NuGet 패키지 관리자 Visual Studio에서 NuGet 패키지, NuGet 사용자 인터페이스를 관리 하는 Visual Studio에서 NuGet UI
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 35bb856ccff43c77af7eac67da4614d83dcdc533
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ad36c2ab0c6e62c7fe624b35d92e852303ecfdfb
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 패키지 관리자 UI
 
@@ -37,7 +40,7 @@ Windows에서 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하면 
 - [패키지 관리자 옵션 제어](#package-manager-options-control)
 
 > [!Note]
-> Visual Studio 2015의 NuGet 패키지 관리자를 누락 하는 경우 확인 **도구 > 확장 및 업데이트 중...**  검색 한는 *NuGet 패키지 관리자* 확장 합니다. Visual studio에서 확장명 설치 관리자를 사용 하는 경우에서 직접 확장을 다운로드 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)합니다.
+> Visual Studio 2015의 NuGet 패키지 관리자를 누락 하는 경우 확인 **도구 > 확장 및 업데이트 중...**  검색 한는 *NuGet 패키지 관리자* 확장 합니다. Visual studio에서 확장명 설치 관리자를 사용 하는 경우에서 직접 확장을 다운로드 [ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html)합니다.
 >
 > Visual Studio 2017에 NuGet 및 NuGet 패키지 관리자 자동으로 함께 설치 됩니다. NET 관련 작업 합니다. 선택 하 여 개별적으로 설치 된 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** Visual Studio 2017 설치 관리자에 대 한 옵션입니다.
 
@@ -125,7 +128,7 @@ Visual Studio는 패키지를 가져올 소스를 변경 하려면 소스 선택
 
     ![패키지 소스 옵션](media/options.png)
 
-1. 소스를 추가 하려면 선택  **+** , 이름을 편집 하 고, URL 또는 경로 입력의 **소스** 컨트롤을 선택 **업데이트**합니다. 이제 원본 선택기 드롭다운에에서 나타납니다.
+1. 소스를 추가 하려면 선택 **+**, 이름을 편집 하 고, URL 또는 경로 입력의 **소스** 컨트롤을 선택 **업데이트**합니다. 이제 원본 선택기 드롭다운에에서 나타납니다.
 1. 패키지 소스를 변경 하려면 선택에서 항목을 편집 하 고 **이름** 및 **소스** 상자 및 선택 **업데이트**합니다.
 1. 패키지 소스를 사용 하지 않으려면 목록의 이름 왼쪽에 확인란의 선택을 취소 합니다.
 1. 패키지 소스를 제거 하려면 선택 하 고 다음 선택에서 **X** 단추입니다.

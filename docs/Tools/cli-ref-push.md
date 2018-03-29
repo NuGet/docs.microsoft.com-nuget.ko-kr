@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI 푸시 명령을 | Microsoft Docs"
+title: NuGet CLI 푸시 명령을 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe 푸시 명령에 대 한 참조"
-keywords: "nuget 푸시 참조, 푸시 명령"
+ms.technology: ''
+description: Nuget.exe 푸시 명령에 대 한 참조
+keywords: nuget 푸시 참조, 푸시 명령
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 095e81406df3db5fbfc6c5202362894b2c6d7cf8
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 832f7aeb2b485acbb83e5213916fc3423df961ab
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="push-command-nuget-cli"></a>푸시 명령 (NuGet CLI)
 

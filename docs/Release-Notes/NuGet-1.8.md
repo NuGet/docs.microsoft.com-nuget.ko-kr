@@ -1,22 +1,25 @@
 ---
-title: "NuGet 1.8 릴리스 정보 | Microsoft Docs"
+title: NuGet 1.8 릴리스 정보 | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.8에 대 한 릴리스 정보입니다."
-keywords: "NuGet 1.8 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
+ms.technology: ''
+description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.8에 대 한 릴리스 정보입니다.
+keywords: NuGet 1.8 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 139c30e29d8148eab7298329a07d8e412259e595
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: b94382f79143cac6bd5deccb5e5253ba8c6f60ec
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-18-release-notes"></a>NuGet 1.8 릴리스 정보
 
@@ -27,7 +30,7 @@ NuGet 1.8은 2012 년 5 월 23 일에 출시 되었습니다.
 ## <a name="known-installation-issue"></a>알려진된 설치 문제
 VS 2010 s p 1을 실행 하는 경우 이전 버전이 설치 되어 있는 경우 NuGet을 업그레이드 하는 동안 설치 오류에 실행할 수 있습니다.
 
-해결 하려면 NuGet 제거한 다음 VS 확장 갤러리에서 설치 됩니다.  참조 [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) 자세한 내용은 또는 [VS 핫픽스로 직접 이동](http://bit.ly/vsixcertfix)합니다.
+해결 하려면 NuGet 제거한 다음 VS 확장 갤러리에서 설치 됩니다.  참조 [ http://support.microsoft.com/kb/2581019 ](http://support.microsoft.com/kb/2581019) 자세한 내용은 또는 [VS 핫픽스로 직접 이동](http://bit.ly/vsixcertfix)합니다.
 
 참고: Visual Studio 확장 (제거 단추 사용 안 함)을 제거 하도록 허용 하지, 한 후 가능성 하면 "관리자 권한으로 실행"을 사용 하 여 Visual Studio를 다시 시작
 
@@ -60,7 +63,7 @@ NuGet 1.8는 이제.NET Framework의 위성 어셈블리 기능와 유사한 지
 
 위성 패키지와를 하나의 기존 버그는 NuGet을 지역화 된 리소스를 복사 하지 않습니다는 `bin` 웹 사이트 프로젝트에 대 한 폴더입니다.  이 문제는 NuGet의 다음 릴리스에서 수정 될 예정입니다.
 
-만들고 위성 패키지를 사용 하는 방법을 보여 주는 전체 샘플을 참조 하십시오. [https://github.com/NuGet/SatellitePackageSample](https://github.com/NuGet/SatellitePackageSample)합니다.
+만들고 위성 패키지를 사용 하는 방법을 보여 주는 전체 샘플을 참조 하십시오. [ https://github.com/NuGet/SatellitePackageSample ](https://github.com/NuGet/SatellitePackageSample)합니다.
 
 ### <a name="package-restore-consent"></a>패키지 복원 동의
 NuGet 1.8에서 म 토대가 패키지 복원 사용자의 개인 정보 보호에 대 한 중요 한 제약 조건을 지원 합니다. 이 제약 조건에서는 프로젝트 및 패키지를 복원 패키지 복원에 명시적으로 동의를 사용 하 여 솔루션을 빌드하는 개발자의 구성 된 패키지 소스에서 패키지를 다운로드 하려면 온라인으로 전환 합니다.

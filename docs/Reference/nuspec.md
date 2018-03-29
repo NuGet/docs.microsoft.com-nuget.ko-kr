@@ -1,23 +1,26 @@
 ---
-title: "NuGet에 대한 .nuspec 파일 참조 | Microsoft Docs"
+title: NuGet에 대한 .nuspec 파일 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 08/29/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: ".nuspec 파일은 패키지를 빌드하고 패키지 소비자에게 정보를 제공하는 데 사용되는 패키지 메타데이터를 포함합니다."
-keywords: "nuspec 참조, NuGet 패키지 메타데이터, NuGet 패키지 매니페스트, nuspec 스키마"
+ms.technology: ''
+description: .nuspec 파일은 패키지를 빌드하고 패키지 소비자에게 정보를 제공하는 데 사용되는 패키지 메타데이터를 포함합니다.
+keywords: nuspec 참조, NuGet 패키지 메타데이터, NuGet 패키지 매니페스트, nuspec 스키마
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 90693b09fce966e3bc28ca24360a3fb4e1f73386
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 3cc9ab4e352de9b3fabbfd92303f0d528d804c20
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -319,7 +322,7 @@ nuget pack MyProject.csproj
 > [!Important]
 > 패키지가 프로젝트에 설치되면 어셈블리 참조가 지역화된 위성 어셈블리로 간주되므로 NuGet은 `.resources.dll`이라는 DLL을 *제외한* 패키지의 DLL에 해당 어셈블리 참조를 자동으로 추가합니다. 이러한 이유로 다른 경우에 필수 패키지 코드가 포함되는 파일에는 `.resources.dll`을 사용하지 마세요.
 
-이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예:
+이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들어:
 
 ```xml
 <files>
@@ -559,7 +562,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 - `TxM`은 NuGet에서 지원하는 모든 법적 대상 프레임워크 모니커입니다([대상 프레임워크](../reference/target-frameworks.md) 참조).
 - 모든 폴더 구조는 이 구문의 끝에 추가될 수 있습니다.
 
-예:
+예를 들어:
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml

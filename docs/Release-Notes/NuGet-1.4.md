@@ -1,22 +1,25 @@
 ---
-title: "NuGet 1.4 릴리스 정보 | Microsoft Docs"
+title: NuGet 1.4 릴리스 정보 | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.4에 대 한 릴리스 정보입니다."
-keywords: "NuGet 1.4 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
+ms.technology: ''
+description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.4에 대 한 릴리스 정보입니다.
+keywords: NuGet 1.4 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: bc0800361551b996d958e03b9cfa3d745b78e43d
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 1229cd7fddb826902478b69cfdbc16a8ed192b64
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-14-release-notes"></a>NuGet 1.4의 릴리스 정보
 

@@ -1,22 +1,25 @@
 ---
-title: "NuGet 레지스터 TabExpansion PowerShell 참조 | Microsoft Docs"
+title: NuGet 레지스터 TabExpansion PowerShell 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio에서 NuGet 패키지 관리자 콘솔에서 레지스터 TabExpansion PowerShell 명령에 대 한 참조입니다."
-keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, 레지스터 TabExpansion NuGet Powershell 참조"
+ms.technology: ''
+description: Visual Studio에서 NuGet 패키지 관리자 콘솔에서 레지스터 TabExpansion PowerShell 명령에 대 한 참조입니다.
+keywords: NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, 레지스터 TabExpansion NuGet Powershell 참조
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e363b8a7fa7e25d24331eb3e4eb87141e6a3b97
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: c7b95c46c55b95a8d743f9661ef9c63433b0192d
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="register-tabexpansion-package-manager-console-in-visual-studio"></a>등록 키를 누른 채 TabExpansion (Visual Studio에서 패키지 관리자 콘솔)
 
@@ -34,7 +37,7 @@ Register-TabExpansion [-Name] <String> [-Definition] <Object> [<CommonParameters
 
 | 매개 변수 | 설명 |
 | --- | --- |
-| name | (필수) 확장을 등록할 수 있는 명령입니다. -Name 자체 스위치는 선택 사항입니다. |
+| 이름 | (필수) 확장을 등록할 수 있는 명령입니다. -Name 자체 스위치는 선택 사항입니다. |
 | 정의 | (필수) 구문에 대 한 인수를 설명 하는 개체 `@{'<parameter>' = {'<value1>', '<value2>', ...}}` 여기서 `<parameter>` 매개 변수를 수정 하 고 각각의 이름인 `<value>` 특정 확장을 제공 합니다. 작은따옴표와 큰따옴표가 허용 됩니다. |
 
 매개 변수가 파이프라인 입력 또는 와일드 카드 문자를 입력할 수 있습니다.

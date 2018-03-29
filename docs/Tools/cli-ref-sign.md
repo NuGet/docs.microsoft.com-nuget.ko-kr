@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI 기호 명령을 | Microsoft Docs"
+title: NuGet CLI 기호 명령을 | Microsoft Docs
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe sign 명령에 대 한 참조"
-keywords: "nuget 기호 참조, sign 명령"
+ms.technology: ''
+description: Nuget.exe sign 명령에 대 한 참조
+keywords: nuget 기호 참조, sign 명령
 ms.reviewer:
 - karann
 - rmpablos
-ms.openlocfilehash: f600a0830472703f40ef62f1b1538c53671703a9
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 9c83e5abae0e70cdc62917861c1febfce4f792c7
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="sign-command-nuget-cli"></a>sign 명령 (NuGet CLI)
 

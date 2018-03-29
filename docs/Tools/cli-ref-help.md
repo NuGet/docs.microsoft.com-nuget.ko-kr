@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI 도움말 명령을 | Microsoft Docs"
+title: NuGet CLI 도움말 명령을 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe 도움말 명령에 대 한 참조"
-keywords: "nuget 도움말 참조, 도움말 명령"
+ms.technology: ''
+description: Nuget.exe 도움말 명령에 대 한 참조
+keywords: nuget 도움말 참조, 도움말 명령
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 281c6ccc7c58d153280441430be063d9ee89955d
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 440861e53b4a9ff73a9d3e8a2a3dad7dbddc9584
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="help-or--command-nuget-cli"></a>도움말 또는? 명령 (NuGet CLI)
 

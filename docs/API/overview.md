@@ -1,5 +1,5 @@
 ---
-title: "개요, NuGet API | Microsoft Docs"
+title: 개요, NuGet API | Microsoft Docs
 author:
 - joelverhagen
 - kraigb
@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "NuGet API는 패키지를 다운로드, 메타 데이터 인출, 새로운 패키지 등 게시를 사용할 수 있는 HTTP 끝점의 집합입니다."
-keywords: "NuGet V3 API, NuGet V2 API, NuGet JSON, NuGet 등록 API를 NuGet API 플랫 컨테이너, NuGet nupkg API, NuGet 메타 데이터 API, NuGet 검색 API, NuGet 푸시 API NuGe API를 게시, NuGet API를 삭제, NuGet unlist API, NuGet 프로토콜"
+ms.technology: ''
+description: NuGet API는 패키지를 다운로드, 메타 데이터 인출, 새로운 패키지 등 게시를 사용할 수 있는 HTTP 끝점의 집합입니다.
+keywords: NuGet V3 API, NuGet V2 API, NuGet JSON, NuGet 등록 API를 NuGet API 플랫 컨테이너, NuGet nupkg API, NuGet 메타 데이터 API, NuGet 검색 API, NuGet 푸시 API NuGe API를 게시, NuGet API를 삭제, NuGet unlist API, NuGet 프로토콜
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: c28b0912be6dbccab06078100cb71821c3658e08
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 7053a971c80a94cf035e8f149c332b36e66a9ea9
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -32,8 +35,7 @@ Nuget.org의 다른 패키지 소스에 적용 되지 않은 다른 요구 사�
 
 ## <a name="service-index"></a>서비스 인덱스
 
-API에 대 한 진입점에는 잘 알려진 위치에 JSON 문서입니다. 이 문서는 라고는 **서비스 인덱스**합니다.
-Nuget.org에 대 한 서비스 인덱스의 위치는 `https://api.nuget.org/v3/index.json`합니다.
+API에 대 한 진입점에는 잘 알려진 위치에 JSON 문서입니다. 이 문서는 라고는 **서비스 인덱스**합니다. Nuget.org에 대 한 서비스 인덱스의 위치는 `https://api.nuget.org/v3/index.json`합니다.
 
 이 JSON 문서 목록이 포함 되어 *리소스* 다른 기능을 제공 하 고 다른 사용 사례를 수행 합니다.
 
@@ -109,11 +111,12 @@ Delete | 삭제 하거나 리소스 unlists 합니다.
 
 ## <a name="http-request-headers"></a>HTTP 요청 헤더
 
-name                     | 설명
+이름                     | 설명
 ------------------------ | -----------
 X-NuGet-ApiKey           | 필수 푸시 및 삭제를 참조 하십시오 [ `PackagePublish` 리소스](package-publish-resource.md)
-X-NuGet-Client-Version   | **사용 되지 않는** 대체`X-NuGet-Protocol-Version`
+X-NuGet-Client-Version   | **사용 되지 않는** 대체 `X-NuGet-Protocol-Version`
 X-NuGet-Protocol-Version | Nuget.org에 대해서만 특정 경우에 필요한 참조 [nuget.org 프로토콜](NuGet-Protocols.md)
+X-NuGet-Session-Id       | *선택적*합니다. NuGet 클라이언트가 v4.7 + 같은 NuGet 클라이언트 세션의 일부인 HTTP 요청을 식별 합니다. 에 대 한 `PackageReference` 있는 복원 작업은 자동 완성, 등의 다른 시나리오에는 단일 세션 id 및 `packages.config` 복원 몇 가지 다른 세션 id의 코드는 포함 하는 방법으로 인해 있을 수 있습니다.
 
 ## <a name="authentication"></a>인증
 

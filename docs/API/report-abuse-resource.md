@@ -1,5 +1,5 @@
 ---
-title: "보고서 남용 URL 템플릿, NuGet API | Microsoft Docs"
+title: 보고서 남용 URL 템플릿, NuGet API | Microsoft Docs
 author:
 - joelverhagen
 - kraigb
@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "보고서 남용 URL 서식 파일에는 클라이언트를 신고 링크는 해당 UI에 표시할 수 있습니다."
-keywords: "NuGet API 신고, NuGet API 파일 불만, nuget.org 보고서 URL 서식 파일"
+ms.technology: ''
+description: 보고서 남용 URL 서식 파일에는 클라이언트를 신고 링크는 해당 UI에 표시할 수 있습니다.
+keywords: NuGet API 신고, NuGet API 파일 불만, nuget.org 보고서 URL 서식 파일
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: efbe5704e6e6028f9382fea3fe5ec453f573a2e9
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ded861e3eaf73e45b8d4bd80b96d54bfeb38e9d6
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="report-abuse-url-template"></a>보고서 남용 URL 서식 파일
 
@@ -53,7 +56,7 @@ ReportAbuseUriTemplate/3.0.0-rc   | 별칭 `ReportAbuseUriTemplate/3.0.0-beta`
 
 ### <a name="url-placeholders"></a>URL 자리 표시자
 
-name        | 형식    | 필수 | 노트
+이름        | 형식    | 필수 | 노트
 ----------- | ------- | -------- | -----
 `{id}`      | string  | 아니요       | 패키지 ID를 신고 하기에 대 한
 `{version}` | string  | 아니요       | 패키지 버전에 대 한 신고를

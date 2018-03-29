@@ -1,23 +1,25 @@
 ---
-title: "WebMatrix 릴리스 정보에 대 한 NuGet 2.6.1 | Microsoft Docs"
+title: WebMatrix 릴리스 정보에 대 한 NuGet 2.6.1 | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-ms.assetid: 119ea65b-b38b-4a8c-a4ed-6ea06f1aad09
-description: "2.6.1의 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 WebMatrix 용 NuGet에 대 한 릴리스 정보입니다."
-keywords: "NuGet 2.6.1 WebMatrix 릴리스 정보, 버그 수정, 알려진된 문제에 대 한 추가 기능을 Dcr"
+ms.technology: ''
+description: 2.6.1의 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 WebMatrix 용 NuGet에 대 한 릴리스 정보입니다.
+keywords: NuGet 2.6.1 WebMatrix 릴리스 정보, 버그 수정, 알려진된 문제에 대 한 추가 기능을 Dcr
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 633b71011dd1bc897ad95fd706337cef3aeef34c
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 505054e42234f313bade496315e94ad485050dbb
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-261-for-webmatrix-release-notes"></a>NuGet 2.6.1 WebMatrix 릴리스 정보
 

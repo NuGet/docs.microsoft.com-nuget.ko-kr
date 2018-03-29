@@ -1,22 +1,25 @@
 ---
-title: "NuGet 1.0 및 1.1 릴리스 정보 | Microsoft Docs"
+title: NuGet 1.0 및 1.1 릴리스 정보 | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.1에 대 한 릴리스 정보입니다."
-keywords: "NuGet 1.1 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
+ms.technology: ''
+description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.1에 대 한 릴리스 정보입니다.
+keywords: NuGet 1.1 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6a596e61f144e7269f703f2dba3dddb4fd338e6a
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dd320df2d725e58182cd908ce621571ea018b350
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-10-and-11-release-notes"></a>NuGet 1.0 및 1.1 릴리스 정보
 
@@ -49,7 +52,7 @@ NuGet 명령줄 도구에는 다음 사항이 필요합니다.
 
 * 먼저 이전 빌드를 제거 합니다. 이 작업을 수행 하려면 관리자 권한으로 VS를 실행 해야 합니다.
 * 해야 하는 모든 기존 피드를 제거 합니다.
-* 가리키는 새 피드 추가 [http://go.microsoft.com/fwlink/?LinkId=206669](http://go.microsoft.com/fwlink/?LinkId=206669)합니다.
+* 가리키는 새 피드 추가 [ http://go.microsoft.com/fwlink/?LinkId=206669 ](http://go.microsoft.com/fwlink/?LinkId=206669)합니다.
 
 ## <a name="nuget-11"></a>NuGet 1.1
 
@@ -135,7 +138,7 @@ CTP 2 이후이 릴리스 후보에서 변경한 내용을 다음과 같습니�
 
 다음은 CTP 2에서 가장 중요 한 변경입니다.
 
-* OData 서비스 끝점에 atom에서 피드 패키지 전환: CTP2 버전의 NuGet 업그레이드 하는 경우 수를 패키지 소스로 다음 URL을 추가 해야: https://feed.nuget.org/ctp2/odata/v1/ 합니다.
+* OData 서비스 끝점에 atom에서 피드 패키지 전환: CTP2 버전의 NuGet 업그레이드 하는 경우 수를 패키지 소스로 다음 URL을 추가 해야: `https://feed.nuget.org/ctp2/odata/v1/`합니다.
 * 에 패키지 추가 명령으로 바뀌었습니다 *Install-package*합니다.
 * 업데이트는 `.nuspec` 형식입니다. `.nuspec` 형식에 포함 되어 이제는 *iconUrl* 패키지 추가 대화 상자에 표시 되는 32 x 32 png 아이콘을 지정 하는 데 필드입니다. 패키지를 구분 하는 설정 해야 합니다. `.nuspec` 형식에 포함 됩니다 새 *projectUrl* 패키지에 대 한 자세한 정보를 제공 하는 웹 페이지를 가리키는 데 사용할 수 있는 필드입니다.
 

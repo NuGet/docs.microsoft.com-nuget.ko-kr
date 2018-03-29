@@ -1,22 +1,25 @@
 ---
-title: "NuGet 오픈 PackagePage PowerShell 참조 | Microsoft Docs"
+title: NuGet 오픈 PackagePage PowerShell 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio에서 NuGet 패키지 관리자 콘솔에서 오픈 PackagePage PowerShell 명령에 대 한 참조입니다."
-keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, 오픈 PackagePage NuGet Powershell 참조"
+ms.technology: ''
+description: Visual Studio에서 NuGet 패키지 관리자 콘솔에서 오픈 PackagePage PowerShell 명령에 대 한 참조입니다.
+keywords: NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, 오픈 PackagePage NuGet Powershell 참조
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4cc645d9a2779fd6b1b329e9aac4777d50f75d16
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 5e0955e58daacf381666c676c8fcf22c698e9db6
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="open-packagepage-package-manager-console-in-visual-studio"></a>열기-PackagePage (Visual Studio에서 패키지 관리자 콘솔)
 

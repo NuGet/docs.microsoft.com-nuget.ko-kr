@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI setapikey 명령을 | Microsoft Docs"
+title: NuGet CLI setapikey 명령을 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe setapikey 명령에 대 한 참조"
-keywords: "nuget setapikey 참조, setapikey 명령"
+ms.technology: ''
+description: Nuget.exe setapikey 명령에 대 한 참조
+keywords: nuget setapikey 참조, setapikey 명령
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ca6caddbf1404bcaa1ca068c9556f7cf0c651947
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 696ccf9df5af487d3bf75925c1c1e0d1d1bf7f7b
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="setapikey-command-nuget-cli"></a>setapikey 명령 (NuGet CLI)
 
@@ -36,7 +39,7 @@ nuget setapikey <key> -Source <url> [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| ConfigFile | NuGet 구성 파일 수정입니다. 지정 하지 않으면 *%AppData%\NuGet\NuGet.Config* 사용 됩니다. |
+| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
 | NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |

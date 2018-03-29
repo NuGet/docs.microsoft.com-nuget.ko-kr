@@ -1,26 +1,29 @@
 ---
-title: "NuGet에 대한 .NET 컴파일러 플랫폼 분석기 형식 | Microsoft Docs"
+title: NuGet에 대한 .NET 컴파일러 플랫폼 분석기 형식 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "API 또는 라이브러리를 구현하는 NuGet 패키지를 포함하여 패키지되고 배포되는 .NET 분석기 규칙입니다."
-keywords: "NuGet 분석기 규칙, .NET 분석기, NuGet 및 .NET 컴파일러 플랫폼, NuGet 및 Roslyn"
+ms.technology: ''
+description: API 또는 라이브러리를 구현하는 NuGet 패키지를 포함하여 패키지되고 배포되는 .NET 분석기 규칙입니다.
+keywords: NuGet 분석기 규칙, .NET 분석기, NuGet 및 .NET 컴파일러 플랫폼, NuGet 및 Roslyn
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: e44cfa609c14422d50769e512108844cbd2f96a4
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 26e40346b1d76d2f4f0e4177dbe0670f10db164c
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="analyzer-nuget-formats"></a>NuGet 분석기 형식
 
-.NET 컴파일러 플랫폼("Roslyn"이라고도 함)을 사용하면 개발자가 코드의 구문 트리와 의미를 검사하는 [분석기](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix)를 만들 수 있습니다. 개발자는 이를 통해 특정 API 또는 라이브러리의 사용을 안내하는 데 도움이 되는 도구와 같은 도메인 특정 분석 도구를 만들 수 있습니다. 자세한 내용은 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub Wiki에서 찾을 수 있습니다. 또한 MSDN Magazine의 [Roslyn을 사용하여 API에 대한 라이브 코드 분석기 작성](https://msdn.microsoft.com/magazine/dn879356.aspx) 문서도 참조하세요.
+.NET 컴파일러 플랫폼 (라고도 "Roslyn") [분석기] 만들 수 (https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix) 검사 하는 코드의 의미 및 구문 트리를 기록할 때. 개발자는 이를 통해 특정 API 또는 라이브러리의 사용을 안내하는 데 도움이 되는 도구와 같은 도메인 특정 분석 도구를 만들 수 있습니다. 자세한 내용은 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub Wiki에서 찾을 수 있습니다. 또한 MSDN Magazine의 [Roslyn을 사용하여 API에 대한 라이브 코드 분석기 작성](https://msdn.microsoft.com/magazine/dn879356.aspx) 문서도 참조하세요.
 
 분석기 자체는 일반적으로 문제의 API 또는 라이브러리를 구현하는 NuGet 패키지의 일부로 패키지되어 배포됩니다.
 

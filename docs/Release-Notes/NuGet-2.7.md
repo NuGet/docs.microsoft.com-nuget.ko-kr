@@ -1,22 +1,25 @@
 ---
-title: "NuGet 2.7 릴리스 정보 | Microsoft Docs"
+title: NuGet 2.7 릴리스 정보 | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 2.7에 대 한 릴리스 정보입니다."
-keywords: "NuGet 2.7 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
+ms.technology: ''
+description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 2.7에 대 한 릴리스 정보입니다.
+keywords: NuGet 2.7 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 43638626661ae034bb0a1cc28958a2e2929f047f
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 71ced70af127c8219001069739a6cec59d7d1684
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-27-release-notes"></a>NuGet 2.7 릴리스 정보
 
@@ -158,7 +161,7 @@ NuGet 영향을 받는 패키지를 다시 설치 하려면 자동 작업을 수
 
 ### <a name="renaming-the-default-package-source"></a>기본 패키지 소스 이름 바꾸기
 
-NuGet에 항상 "NuGet 공식 패키지 소스 라는" nuget.org를 가리키는 기본 패키지 소스를 등록 했습니다. 해당 이름이 verbose 고 것도 지정 하지 않은 가리키는 실제로 되었습니다. 이러한 두 가지 문제를 해결 하기 위해이 패키지 소스를 단순히 "nuget.org" UI에 이름을 했습니다. 패키지 원본에 대 한 URL은 "www"를 포함 하도록 변경 수 또한 접두사입니다. NuGet 2.7를 사용한 후에 기존 "NuGet 공식 패키지 소스" 이름으로 "nuget.org" 및 "https://www.nuget.org/api/v2/" url을 업데이트 자동으로 됩니다.
+NuGet에 항상 "NuGet 공식 패키지 소스 라는" nuget.org를 가리키는 기본 패키지 소스를 등록 했습니다. 해당 이름이 verbose 고 것도 지정 하지 않은 가리키는 실제로 되었습니다. 이러한 두 가지 문제를 해결 하기 위해이 패키지 소스를 단순히 "nuget.org" UI에 이름을 했습니다. 패키지 원본에 대 한 URL은 "www"를 포함 하도록 변경 수 또한 접두사가 있는 번들 ID인 식별자가 있습니다. NuGet 2.7를 사용한 후에 기존 "NuGet 공식 패키지 소스" 자동 업데이트 됩니다 "nuget.org" 이름으로를 및 "https://www.nuget.org/api/v2/" url입니다.
 
 ### <a name="performance-improvements"></a>성능 향상
 

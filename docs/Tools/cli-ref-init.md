@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI init 명령을 | Microsoft Docs"
+title: NuGet CLI init 명령을 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe 초기화 명령에 대 한 참조"
-keywords: "nuget init 참조, init 명령"
+ms.technology: ''
+description: Nuget.exe 초기화 명령에 대 한 참조
+keywords: nuget init 참조, init 명령
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6d7710cd024e2c2956fb73aa767c3be55b9fb0f9
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 01a3553622020b5868e33ece09cd7555cb712fd3
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="init-command-nuget-cli"></a>초기화 명령 (NuGet CLI)
 
@@ -38,7 +41,7 @@ nuget init <source> <destination> [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 *%AppData%\NuGet\NuGet.Config* 사용 됩니다. |
+| ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | Expand | 모든 파일은 패키지 소스에 추가 된 각 패키지에 추가 와 동일 `-Expand` 와 `add` 명령입니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |

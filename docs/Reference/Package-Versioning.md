@@ -1,23 +1,26 @@
 ---
-title: "NuGet 패키지 버전 참조 | Microsoft Docs"
+title: NuGet 패키지 버전 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/08/2017
+ms.date: 03/23/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "버전 번호와 NuGet 패키지에 따라 달라 지는 및 종속성 설치 되는 방식과에 다른 패키지에 대 한 범위를 지정 하는 정확한 세부 정보입니다."
-keywords: "버전 관리, NuGet 패키지 종속 파일, NuGet 종속성 버전, NuGet 버전 번호, NuGet 패키지 버전, 버전 범위, 버전 사양, 정규화 된 버전 번호"
+ms.technology: ''
+description: 버전 번호와 NuGet 패키지에 따라 달라 지는 및 종속성 설치 되는 방식과에 다른 패키지에 대 한 범위를 지정 하는 정확한 세부 정보입니다.
+keywords: 버전 관리, NuGet 패키지 종속 파일, NuGet 종속성 버전, NuGet 버전 번호, NuGet 패키지 버전, 버전 범위, 버전 사양, 정규화 된 버전 번호
 ms.reviewer:
 - anandr
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 70472d7d97d073009237a047e0fdf528b221dfd0
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 678ad79d9106a9f592ae4f47bc93cc117496e2c9
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="package-versioning"></a>패키지 버전 관리
 
@@ -61,7 +64,7 @@ ms.lasthandoff: 02/02/2018
 - `-rc`: 일반적으로 심각한 버그가 발생하지 않는 한 잠재적으로 최종적(안정적)인 릴리스인 릴리스 후보입니다.
 
 > [!Note]
-> NuGet 4.3.0+ 지원 [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html)에서 같이 점 표기법을 포함 하는 시험판 숫자 지 원하는 *1.0.1-build.23*합니다. 점 표기법 4.3.0 이전 버전의 NuGet 지원 되지 않습니다. 과 같은 폼을 사용할 수 있습니다 *1.0.1-build23*합니다.
+> NuGet 4.3.0+ 지원 [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html)에서 같이 점 표기법을 포함 하는 시험판 숫자 지 원하는 *1.0.1-build.23*합니다. NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다. 과 같은 폼을 사용할 수 있습니다 *1.0.1-build23*합니다.
 
 접미사에 의해서만 달라 패키지 참조 및 여러 패키지 버전을 확인할 때 NuGet 접미사가 없는 버전을 먼저 선택 후 시험판 버전에 내림차순 우선 적용 됩니다. 예를 들어 다음 버전이 표시 된 정확한 순서에서 선택:
 
@@ -109,8 +112,8 @@ Nuget.org를 SemVer v2.0.0 관련 패키지를 업로드 하는 경우 패키지
 
 | Notation | 적용 된 규칙 | 설명 |
 |----------|--------------|-------------|
-| 1.0 | 1.0 ≤ x | 최소 버전 (포함) |
-| (1.0,) | 1.0 < x | 단독 최소 버전 |
+| 1.0 | x ≥ 1.0 | 최소 버전 (포함) |
+| (1.0,) | x > 1.0 | 단독 최소 버전 |
 | [1.0] | x == 1.0 | 일치 하는 정확한 버전 |
 | (,1.0] | x ≤ 1.0 | 최대 버전 (포함) |
 | (,1.0) | x < 1.0 | 단독 최대 버전 |

@@ -1,21 +1,25 @@
 ---
-title: "MSBuild 대상으로서의 NuGet pack 및 restore | Microsoft Docs"
+title: MSBuild 대상으로서의 NuGet pack 및 restore | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/13/2018
+ms.date: 03/23/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet pack 및 restore는 NuGet 4.0 이상에서 MSBuild 대상으로 직접 작동할 수 있습니다."
-keywords: "NuGet 및 MSBuild, NuGet pack 대상, NuGet restore 대상"
+ms.technology: ''
+description: NuGet pack 및 restore는 NuGet 4.0 이상에서 MSBuild 대상으로 직접 작동할 수 있습니다.
+keywords: NuGet 및 MSBuild, NuGet pack 대상, NuGet restore 대상
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: bb0ade1b0f5f81d7c8822d3c2b2f9dd45745fb8d
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+- unniravindranathan
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a9c2c2229d717dff8472dce0ba568e4a21900b19
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -110,7 +114,7 @@ PackageReference 형식을 사용 하 여, 사용 하 여 표준.NET 프로젝�
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-[NuGet 문제 2582](https://github.com/NuGet/Home/issues/2582)에 대한 변경의 일부로서 `PackageIconUrl`은 최종적으로 `PackageIconUri`로 변경되며, 결과 패키지의 루트에 포함될 아이콘 파일에 대한 상대 경로일 수 있습니다.
+에 대 한 변경의 일부로 [NuGet 문제 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` 최종적으로 변경 됩니다 `PackageIconUri` 및 결과 패키지의 루트를 포함 하는 아이콘 파일에 상대 경로일 수 있습니다.
 
 ### <a name="output-assemblies"></a>출력 어셈블리
 
@@ -231,6 +235,61 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 </Project>
 ```
 
+### <a name="advanced-extension-points-to-create-customized-package"></a>고급 사용자 지정 된 패키지를 만들려면 확장 지점
+
+`pack` 대상, 내부 대상 프레임 워크의 특정 빌드를 실행 하는 두 가지 확장 지점을 제공 합니다. 대상 프레임 워크에 대 한 특정 콘텐츠 및 어셈블리를 패키지에 포함 하 여 확장 지점을 지원합니다.
+
+- `TargetsForTfmSpecificBuildOutput` 대상: 내의 파일에 대 한 사용은 `lib` 폴더 또는 사용 하 여 지정 된 폴더 `BuildOutputTargetFolder`합니다.
+- `TargetsForTfmSpecificContentInPackage` 대상: 외부 파일에 사용 된 `BuildOutputTargetFolder`합니다.
+
+#### <a name="targetsfortfmspecificbuildoutput"></a>TargetsForTfmSpecificBuildOutput
+
+사용자 지정 대상 쓰기의 값으로 지정 하는 `$(TargetsForTfmSpecificBuildOutput)` 속성입니다. 로 이동 해야 하는 모든 파일에는 `BuildOutputTargetFolder` (기본적으로 lib) 대상에 있는 p 해당 파일을 써야 `BuildOutputInPackage` 다음 두 메타 데이터 값을 설정 하 고:
+
+- `FinalOutputPath`: 파일의 절대 경로 을 지정 하지 않으면 소스 경로 평가 하는 Id 사용 됩니다.
+- `TargetPath`: (선택 사항) 파일 내에서 하위 폴더로 이동 해야 할 때 설정 `lib\<TargetFramework>` 위성 어셈블리의 각 문화권 폴더 아래에서 해당 go 같이 합니다. 기본값은 파일의 이름입니다.
+
+예제:
+
+```
+<PropertyGroup>
+  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
+</PropertyGroup>
+
+<Target Name="GetMyPackageFiles">
+  <ItemGroup>
+    <BuildOutputInPackage Include="$(OutputPath)cs\$(AssemblyName).resources.dll">
+        <TargetPath>cs</TargetPath>
+    </BuildOutputInPackage>
+  </ItemGroup>
+</Target>
+```
+
+#### <a name="targetsfortfmspecificcontentinpackage"></a>TargetsForTfmSpecificContentInPackage
+
+사용자 지정 대상 쓰기의 값으로 지정 하는 `$(TargetsForTfmSpecificContentInPackage)` 속성입니다. 패키지에 포함할 파일 대상 해야 해당 파일에 쓸 ItemGroup `TfmSpecificPackageFile` 다음과 같은 선택적 메타 데이터를 설정 합니다.
+
+- `PackagePath`: 파일 패키지의 출력 위치 해야 하는 경로입니다. NuGet 둘 이상의 파일이 동일한 패키지 경로에 추가 되 면 경고를 발생 시킵니다.
+- `BuildAction`: 빌드 동작을 파일에 할당할 경우 해당 패키지 경로에 필요는 `contentFiles` 폴더입니다. 기본값은 "None"입니다.
+
+예를 들어 다음
+```
+<PropertyGroup>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
+</PropertyGroup>
+
+<Target Name=""CustomContentTarget"">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include=""abc.txt"">
+        <PackagePath>mycontent/$(TargetFramework)</PackagePath>
+      </TfmSpecificPackageFile>
+      <TfmSpecificPackageFile Include=""Extensions/ext.txt"" Condition=""'$(TargetFramework)' == 'net46'"">
+        <PackagePath>net46content</PackagePath>
+      </TfmSpecificPackageFile>  
+    </ItemGroup>
+  </Target>  
+```
+
 ## <a name="restore-target"></a>restore 대상
 
 `MSBuild /t:restore`(.NET Core 프로젝트에서 `nuget restore` 및 `dotnet restore` 사용)는 프로젝트 파일에서 참조된 패키지를 다음과 같이 복원합니다.
@@ -254,7 +313,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 | RestorePackagesPath | 사용자 패키지 폴더에 대한 경로입니다. |
 | RestoreDisableParallel | 다운로드를 한 번에 하나씩으로 제한합니다. |
 | RestoreConfigFile | 적용할 `Nuget.Config` 파일에 대한 경로입니다. |
-| RestoreNoCache | true이면 웹 캐시를 사용하지 않도록 방지합니다. |
+| RestoreNoCache | True 이면 캐시 된 패키지를 사용 하 여 방지할 수 있습니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
 | RestoreIgnoreFailedSources | true이면 실패했거나 누락된 패키지 원본을 무시합니다. |
 | RestoreTaskAssemblyFile | `NuGet.Build.Tasks.dll`에 대한 경로입니다. |
 | RestoreGraphProjectInput | 세미콜론으로 구분된 복원할 프로젝트의 목록이며, 절대 경로가 포함되어야 합니다. |
@@ -282,7 +341,7 @@ restore는 `obj` 빌드 폴더에 다음 파일을 만듭니다.
 
 | 파일 | 설명 |
 |--------|--------|
-| `project.assets.json` | 이전의 `project.lock.json` |
+| `project.assets.json` | 모든 패키지 참조의 종속성 그래프를 포함합니다. |
 | `{projectName}.projectFileExtension.nuget.g.props` | 패키지에 포함된 MSBuild props 파일에 대한 참조 |
 | `{projectName}.projectFileExtension.nuget.g.targets` | 패키지에 포함된 MSBuild targets 파일에 대한 참조 |
 

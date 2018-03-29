@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI 복원 명령을 | Microsoft Docs"
+title: NuGet CLI 복원 명령을 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe 복원 명령에 대 한 참조"
-keywords: "nuget 복원 참조, 패키지 명령 복원"
+ms.technology: ''
+description: Nuget.exe 복원 명령에 대 한 참조
+keywords: nuget 복원 참조, 패키지 명령 복원
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2416ad652244e0ea60651147ad74a1513cdb75ff
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 64f12fdedc8fbfcee15c1dcddc445148f458c030
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="restore-command-nuget-cli"></a>restore 명령 (NuGet CLI)
 
@@ -46,15 +49,15 @@ nuget restore <projectPath> [options]
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
 | MSBuildPath | *(4.0 이상)*  우선 순위를 차지 명령으로 사용 하는 MSBuild의 경로 지정 `-MSBuildVersion`합니다. |
 | MSBuildVersion | *(3.2 +)*  이 명령과 함께 사용할 MSBuild의 버전을 지정 합니다. 지원 되는 값은 4, 12, 14, 15입니다. 경로에 MSBuild 선택은 기본적으로 그렇지 않은 경우 기본값이 가장 높은 설치 된 버전의 MSBuild 됩니다. |
-| NoCache | NuGet 패키지를 사용 하 여 로컬 컴퓨터 캐시에서 방지 합니다. |
+| NoCache | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
 | NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
-| OutputDirectory | 패키지 설치 되는 폴더를 지정 합니다. 없는 폴더를 지정 하는 경우 현재 폴더가 사용 됩니다. |
+| OutputDirectory | 패키지 설치 되는 폴더를 지정 합니다. 없는 폴더를 지정 하는 경우 현재 폴더가 사용 됩니다. 복구 하는 경우 필수는 `packages.config` 하지 않는 한 파일 `PackagesDirectory` 또는 `SolutionDirectory` 사용 됩니다.|
 | PackageSaveMode | 패키지 설치 후 저장할 파일의 형식을 지정 합니다: 중 `nuspec`, `nupkg`, 또는 `nuspec;nupkg`합니다. |
-| PackagesDirectory | `OutputDirectory`와 동일합니다. |
+| PackagesDirectory | `OutputDirectory`와 동일합니다. 복구 하는 경우 필수는 `packages.config` 하지 않는 한 파일 `OutputDirectory` 또는 `SolutionDirectory` 사용 됩니다. |
 | Project2ProjectTimeOut | 프로젝트 간 참조를 확인 하기 위한 시간 (초)의 시간이 초과 되었습니다. |
 | 재귀 | *(4.0 이상)*  UWP 및.NET Core 프로젝트에 대 한 모든 참조 프로젝트를 복원 합니다. 사용 하 여 프로젝트에 적용 되지 않습니다 `packages.config`합니다. |
 | RequireConsent | 다운로드 하 고 패키지를 설치 하기 전에 패키지를 복원 활성화 되어 있는지 확인 합니다. 자세한 내용은 참조 [패키지 복원](../consume-packages/package-restore.md)합니다. |
-| SolutionDirectory | 솔루션 폴더를 지정합니다. 솔루션에 대 한 패키지를 복원 하는 경우 유효 하지 않습니다. |
+| SolutionDirectory | 솔루션 폴더를 지정합니다. 솔루션에 대 한 패키지를 복원 하는 경우 유효 하지 않습니다. 복구 하는 경우 필수는 `packages.config` 하지 않는 한 파일 `PackagesDirectory` 또는 `OutputDirectory` 사용 됩니다. |
 | 소스 | 복원에 사용할 하도록 (Url)로 패키지 소스 목록을 지정 합니다. 구성 파일에 제공 된 원본을 사용 하 여 생략 된 경우, 참조 [NuGet 구성 동작](../consume-packages/configuring-nuget-behavior.md)합니다. |
 | 자세한 정도 |>-출력에 표시 되는 하위 크기를 지정 하는 중: *일반*, *quiet*, *자세한*합니다. |
 

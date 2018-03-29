@@ -1,23 +1,26 @@
 ---
-title: "패키지 참조 서명 | Microsoft Docs"
+title: 패키지 참조 서명 | Microsoft Docs
 author: rido-min
 ms.author: rido-min
 manager: unniravindranathan
 ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "패키지 기능 설명을 서명합니다."
-keywords: "NuGet 패키지 서명, 서명, 인증서"
+ms.technology: ''
+description: 패키지 기능 설명을 서명합니다.
+keywords: NuGet 패키지 서명, 서명, 인증서
 ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9bf9885aaf42bedb681a5d916202fa8b26749a0c
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a2a338596f7d98ded11da6fb02bafba3521249ab
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="signed-packages"></a>서명 된 패키지
 
@@ -34,7 +37,7 @@ NuGet 패키지는 변조 된 콘텐츠에 대 한 보호를 제공 하는 디�
 서명된 된 패키지를 만드는 방법에 대 한 세부 정보를 참조 하십시오. [패키지 서명](../create-packages/Sign-a-package.md) 및 [nuget sign 명령](../tools/cli-ref-sign.md)합니다.
 
 > [!Important]
-> nuget.org 현재 서명 된 패키지를 받아들이지 않습니다. 사용자 지정 피드를 게시에 대 한 패키지를 서명할 수 있습니다.
+> nuget.org 현재 서명 된 패키지를 받아들이지 않습니다. 사용자 지정 피드에 게시할 패키지에 서명할 수 있습니다.
 
 ## <a name="certificate-requirements"></a>인증서 요구 사항
 

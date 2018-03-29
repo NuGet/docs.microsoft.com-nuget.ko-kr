@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI config 명령 | Microsoft Docs"
+title: NuGet CLI config 명령 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe config 명령에 대 한 참조"
-keywords: "nuget 구성 참조, config 명령"
+ms.technology: ''
+description: Nuget.exe config 명령에 대 한 참조
+keywords: nuget 구성 참조, config 명령
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 7cf7c06000904a617752567ed7612c0c48042db9
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: e3d08f210bd56fcb8eb701fc9b241a3ab45998ec
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="config-command-nuget-cli"></a>구성 명령 (NuGet CLI)
 

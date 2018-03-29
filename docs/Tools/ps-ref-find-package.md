@@ -1,22 +1,25 @@
 ---
-title: "NuGet Find-package PowerShell 참조 | Microsoft Docs"
+title: NuGet Find-package PowerShell 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 6/1/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio에서 NuGet 패키지 관리자 콘솔에서 Find-package PowerShell 명령에 대 한 참조입니다."
-keywords: "NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, Find-package NuGet Powershell 참조"
+ms.technology: ''
+description: Visual Studio에서 NuGet 패키지 관리자 콘솔에서 Find-package PowerShell 명령에 대 한 참조입니다.
+keywords: NuGet 패키지 관리자 콘솔, NuGet Powershell 명령, Find-package NuGet Powershell 참조
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4303421c5f11177f3e5fc051a450934df47ab117
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 32b15ff415e77c3e063ded637a614fc8a04d5a0c
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>Find-package (Visual Studio에서 패키지 관리자 콘솔)
 

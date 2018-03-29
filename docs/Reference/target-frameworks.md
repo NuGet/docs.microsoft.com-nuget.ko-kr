@@ -1,23 +1,26 @@
 ---
-title: "NuGet 대상 프레임워크 참조 | Microsoft Docs"
+title: NuGet 대상 프레임워크 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/11/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 대상 프레임워크 참조는 패키지의 프레임워크 종속 구성 요소를 식별하고 격리합니다."
-keywords: "NuGet 패키지 대상 지정, .NET Framework 대상, .NET Framework 버전"
+ms.technology: ''
+description: NuGet 대상 프레임워크 참조는 패키지의 프레임워크 종속 구성 요소를 식별하고 격리합니다.
+keywords: NuGet 패키지 대상 지정, .NET Framework 대상, .NET Framework 버전
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 7e3621f01312e3b4fdbef116e5044869416b851c
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 0a9c45ef31e27c2242edce48e2cf272e5280dcff
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="target-frameworks"></a>대상 프레임워크
 
@@ -38,7 +41,7 @@ NuGet은 다양한 위치에서 대상 프레임워크 참조를 사용하여 �
 
 NuGet 클라이언트는 아래 표의 프레임워크를 지원합니다. 대괄호([]) 안에 표시된 항목은 동등한 항목입니다. `dotnet`과 같은 일부 도구는 일부 파일에서 정식 TFM의 변형을 사용할 수 있습니다. 예를 들어 `dotnet pack`은 `.nuspec` 파일에서 `netcoreapp2.0` 대신 `.NETCoreApp2.0`을 사용합니다. 다양한 NuGet 클라이언트 도구에서 이러한 변형을 적절하게 처리하지만, 파일을 직접 편집할 때는 항상 정식 TFM을 사용해야 합니다.
 
-| name           | 약어 | TFM/TxM |
+| 이름           | 약어 | TFM/TxM |
 | -------------  | ------------ | --------- |
 |.NET Framework  | net          | net11     |
 |                |              | net20     |
@@ -280,7 +283,7 @@ Tizen | tizen | tizen3 |
 
 또한 Xamarin을 대상으로 하는 NuGet 패키지는 Xamarin에서 정의한 추가 프레임워크를 사용할 수 있습니다. [Xamarin에 대한 NuGet 패키지 만들기](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/)를 참조하세요.
 
-| name | 설명 | .NET Standard |
+| 이름 | 설명 | .NET Standard |
 | --- | --- | ---
 | monoandroid | Android OS에 대한 Mono 지원 | netstandard1.4 |
 | monotouch | iOS에 대한 Mono 지원 | netstandard1.4 |

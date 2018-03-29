@@ -1,18 +1,21 @@
 ---
-title: "NuGet 오류 및 경고 참조 | Microsoft Docs"
+title: NuGet 오류 및 경고 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "경고 및 다양 한 NuGet 작업 도중 NuGet에서 발생 한 오류에 대 한 참조를 완료 합니다."
-keywords: "NuGet 오류, 경고 NuGet 진단"
+ms.technology: ''
+description: 경고 및 다양 한 NuGet 작업 도중 NuGet에서 발생 한 오류에 대 한 참조를 완료 합니다.
+keywords: NuGet 오류, 경고 NuGet 진단
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
+ms.workload:
+- dotnet
+- aspnet
 f1_keywords:
 - NU1000
 - NU1001
@@ -50,11 +53,11 @@ f1_keywords:
 - NU3008
 - NU3018
 - NU3028
-ms.openlocfilehash: 59bbe37d1a965e5167800148603869645fc5e0b2
-ms.sourcegitcommit: df21fe770900644d476d51622a999597a6f20ef8
+ms.openlocfilehash: 020e31dc8646c43b86bcee555f1772e8b1db7761
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="errors-and-warnings"></a>오류 및 경고
 
@@ -136,7 +139,7 @@ ms.lasthandoff: 03/12/2018
 | --- | --- |
 | **문제** | 패키지 식별자를 찾았지만 소스 중 하나에서 지정 된 종속성 범위 내에서 버전을 찾을 수 없습니다. 패키지와 사용자가 아니라에서 범위를 지정할 수 있습니다. |
 | **예제 메시지** | *버전으로 NuGet.Versioning 패키지를 찾을 수 없습니다. (> = 9.0.1)<br/> -nuget.org에 30 찾을 버전 [버전 가장 가까운: 4.0.0]<br/> -dotnet buildtools에서 찾은 10 버전 [버전 가장 가까운: 4.0.0-rc-2129]<br/> -9 찾을 수 NuGetVolatile에서 버전 [버전 가장 가까운: 3.0.0-beta-00032]<br/> -0 버전 dotnet 코어 있는<br/> -dotnet roslyn에서 0 버전을 찾을 수* |
-| **해결 방법** | 프로젝트 파일을 편집 또는 `packages.config` 패키지 버전을 수정 하려면. 도 있는지 여부를 확인는 [NuGet 구성이](../consume-packages/Configuring-NuGet-Behavior.md) 패키지 소스를 식별 프로그램 사용 해야 합니다. 이 패키지는 프로젝트에서 직접 참조 하는 경우 requeted 버전을 변경 해야 합니다. |
+| **해결 방법** | 패키지 버전을 해결 하려면 프로젝트 파일을 편집 합니다. 도 있는지 여부를 확인는 [NuGet 구성이](../consume-packages/Configuring-NuGet-Behavior.md) 패키지 소스를 식별 프로그램 사용 해야 합니다. 이 패키지는 프로젝트에서 직접 참조 하는 경우 requeted 버전을 변경 해야 합니다. |
 
 ### <a name="nu1103"></a>NU1103
 
@@ -144,7 +147,7 @@ ms.lasthandoff: 03/12/2018
 | --- | --- |
 | **문제** | 프로젝트 종속성 범위에 대 한 안정적인 버전을 지정 하지만 해당 범위에 안정적 버전을 찾지 못했습니다. 시험판 버전을 찾았지만 허용 되지 않습니다. |
 | **예제 메시지** | *버전과 NuGet.Versioning 안정적인 패키지를 찾을 수 없습니다. (> = 3.0.0)<br/> -dotnet buildtools에서 찾은 10 버전 [버전 가장 가까운: 4.0.0-rc-2129]<br/> -NuGetVolatile에서 찾을 9 버전 [버전 가장 가까운: 3.0.0-beta-00032] <br/> -0 버전 dotnet 코어 있는<br/> -dotnet roslyn에서 0 버전을 찾을 수* |
-| **해결 방법** |  프로젝트 파일에 버전 범위를 편집 또는 `packages.config` 시험판 버전을 포함 하도록 합니다. 참조 [패키지 버전 관리](../reference/Package-Versioning.md)합니다. |
+| **해결 방법** |  시험판 버전을 포함 하도록 프로젝트 파일에 버전 범위를 편집 합니다. 참조 [패키지 버전 관리](../reference/Package-Versioning.md)합니다. |
 
 ### <a name="nu1104"></a>NU1104
 
@@ -167,8 +170,8 @@ ms.lasthandoff: 03/12/2018
 | | |
 | --- | --- |
 | **문제** | 종속성 제약 조건을 확인할 수 없습니다. |
-| **예제 메시지** | *{Id}에 대 한 충돌 하는 요청을 충족할 수 없습니다. {충돌 경로} 프레임 워크: {대상 그래프}* 
-| **해결 방법** | 프로젝트 파일을 편집 또는 `packages.config` 정확한 버전 보다는 종속성에 대 한 보다 자유로운 범위를 지정할 수 있습니다. |
+| **예제 메시지** | *{Id}에 대 한 충돌 하는 요청을 충족할 수 없습니다. {충돌 경로} 프레임 워크: {대상 그래프}* |
+| **해결 방법** | 정확한 버전 보다는 종속성에 대 한 보다 자유로운 범위를 지정 하려면 프로젝트 파일을 편집 합니다. |
 |
 
 <a name="nu1107"></a>
@@ -179,7 +182,7 @@ ms.lasthandoff: 03/12/2018
 | --- | --- |
 | **문제** | 패키지 간에 종속성 제약 조건을 확인할 수 없습니다. |
 | **예제 메시지** | *NuGet.Versioning에 대 한 검색 버전 충돌 합니다. 이 문제를 해결 하려면 프로젝트에서 직접 패키지를 참조 합니다.<br/>  NuGet.Packaging 3.5.0 NuGet.Versioning (3.5.0 =)-><br/> NuGet.Configuration 4.0.0 NuGet.Versioning (4.0.0 =)->* |
-| **해결 방법** | 정확한 버전에 대 한 종속성 제약 조건 사용 하 여 패키지에는 다른 패키지 버전을 필요에 따라 증가를 허용 하지 않습니다. 프로젝트에 대 한 참조를 직접 추가 (프로젝트 파일에서 또는 `packages.config`) 필요한 정확한 버전으로 합니다. |
+| **해결 방법** | 정확한 버전에 대 한 종속성 제약 조건 사용 하 여 패키지에는 다른 패키지 버전을 필요에 따라 증가를 허용 하지 않습니다. 필요한 정확한 버전으로 직접 (프로젝트 파일에서) 프로젝트에 대 한 참조를 추가 합니다. |
 
 <a name="nu1108"></a>
 

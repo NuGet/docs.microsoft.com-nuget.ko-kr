@@ -1,24 +1,27 @@
 ---
-title: "NuGet 패키지 관리자 콘솔 가이드 | Microsoft Docs"
+title: NuGet 패키지 관리자 콘솔 가이드 | Microsoft Docs
 author: kraigb
 hms.author: kraigb
 manager: ghogen
 ms.date: 01/23/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 f1_keywords:
 - vs.nuget.packagemanager.console
-description: "패키지 작업에 대 한 Visual Studio에서 NuGet 패키지 관리자 콘솔을 사용 하기 위한 지침입니다."
-keywords: "NuGet 패키지 관리자 콘솔에서 NuGet 패키지를 관리 하는 NuGet powershell"
+description: 패키지 작업에 대 한 Visual Studio에서 NuGet 패키지 관리자 콘솔을 사용 하기 위한 지침입니다.
+keywords: NuGet 패키지 관리자 콘솔에서 NuGet 패키지를 관리 하는 NuGet powershell
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 60c7edd0497e162cc511424e9acfbbfd6f53fd46
-ms.sourcegitcommit: a40a6ce6897b2d9411397b2e29b1be234eb6e50c
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: af22a524f6b4a41a4c24077fe396846da6fb1ff8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="package-manager-console"></a>패키지 관리자 콘솔
 
@@ -80,19 +83,10 @@ Install-Package Elmah -ProjectName UtilitiesLib
 
 참조 [Install-package](../tools/ps-ref-install-package.md)합니다.
 
-패키지를 설치 하면 다음 작업을 수행 합니다.
+에 설명 된 대로 동일한 단계를 수행 하는 콘솔에서 패키지를 설치 [패키지 설치 될 때 어떤 일이 생기](../consume-packages/ways-to-install-a-package.md#what-happens-when-a-package-is-installed), 다음 사항이 추가:
 
-- 암시 된 계약을 사용 하 여 콘솔 창에 해당 사용 조건을 표시합니다. 약관에 동의 하지 않는 경우 패키지를 즉시 제거 해야 합니다.
-- 사용 되 고 참조 형식에서 프로젝트에 대 한 참조를 추가 합니다. 이후에 참조 솔루션 탐색기와 해당 참조 서식 파일에 표시 합니다. 단, PackageReference,으로 할 경우 프로젝트 파일에서 변경 내용을 직접 보려면 프로젝트를 저장 합니다.
-- 패키지를 캐시 합니다.
-  - PackageReference: 패키지에 캐시 되며 `%USERPROFILE%\.nuget\packages` 잠금을 즉, 파일 및 `project.assets.json` 업데이트 됩니다.
-  - `packages.config`: 만듭니다는 `packages` 폴더 내의 하위 폴더에 파일을 패키지 솔루션의 루트와 복사본입니다. `package.config` 파일이 업데이트 됩니다.
-- 업데이트 `app.config` 및/또는 `web.config` 패키지를 사용 하는 경우 [소스 및 config 파일 변환](../create-packages/source-and-config-file-transformations.md)합니다.
-- 프로젝트에 아직 없는 경우 종속성을 설치 합니다. 에 설명 된 대로 과정에서 패키지 버전을 업데이트할 수 있습니다이 [종속성 확인](../consume-packages/dependency-resolution.md)합니다.
-- Visual Studio 창에 제공 되는 경우 패키지의 추가 정보 파일을 표시 합니다.
-
-> [!Tip]
-> 사용 하 여 패키지를 설치 하는 주요 이점 중 하나는 `Install-Package` 명령 콘솔에서 패키지 관리자 UI를 사용 하면 마치 방금 프로젝트에 대 한 참조를 추가 하는 합니다. 반면,는 `nuget install` CLI 명령을 패키지를 다운로드 하 고 자동으로 참조를 추가 하지 않습니다.
+- 암시 된 계약의 창에서 해당 사용 조건 콘솔에 표시 됩니다. 약관에 동의 하지 않는 경우 패키지를 즉시 제거 해야 합니다.
+- 또한 패키지에 대 한 참조를 프로젝트 파일에 추가 되 고 표시 **솔루션 탐색기** 아래는 **참조** 직접 프로젝트 파일에서 변경 내용을 보려면 프로젝트를 저장 해야 하는 노드를 합니다.
 
 ## <a name="uninstalling-a-package"></a>패키지를 제거합니다.
 
@@ -111,12 +105,9 @@ Uninstall-Package Elmah -Force
 
 패키지를 제거 합니다. 다음 작업을 수행 합니다.
 
-- 프로젝트 (및 사용 되 고 참조 형식)에서 패키지에 대 한 참조를 제거 합니다. 솔루션 탐색기의 참조가 더 이상 표시 합니다. (프로젝트 참조에서 제거를 다시 작성 해야 할 수도 있습니다는 **Bin** 폴더입니다.)
+- 프로젝트 (및 사용 되 고 모든 관리 형식)에서 패키지에 대 한 참조를 제거 합니다. 에 표시 되지 않는 참조 **솔루션 탐색기**합니다. (프로젝트 참조에서 제거를 다시 작성 해야 할 수도 있습니다는 **Bin** 폴더입니다.)
 - 변경 내용이 취소 `app.config` 또는 `web.config` 패키지가 설치 된 경우.
 - 나머지 패키지 해당 종속성을 사용 하는 경우 종속성을 제거 이전에 설치 합니다.
-
-> [!Tip]
-> 마찬가지로 `Install-Package`, `Uninstall-Package` 명령에서 프로젝트의 참조와 달리 관리 되는 이점이 `nuget uninstall` CLI 명령을 합니다.
 
 ## <a name="updating-a-package"></a>패키지를 업데이트합니다.
 
@@ -159,7 +150,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 Visual Studio 2017 NuGet 및 NuGet 패키지 관리자는 자동으로 설치 어떤를 선택 합니다. NET 관련 작업; 설치할 수 있습니다도 개별적으로 확인 하 여는 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** Visual Studio 2017 설치 관리자에 대 한 옵션입니다.
 
-NuGet 패키지 관리자 및 이전 버전 Visual Studio 2015에서 누락 된 하는 경우 확인 **도구 > 확장 및 업데이트 중...**  NuGet 패키지 관리자 확장에 대 한 검색 합니다. Visual studio에서 확장명 설치 관리자를 사용 하는 경우에에서 직접 확장을 다운로드할 수 있습니다 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)합니다.
+NuGet 패키지 관리자 및 이전 버전 Visual Studio 2015에서 누락 된 하는 경우 확인 **도구 > 확장 및 업데이트 중...**  NuGet 패키지 관리자 확장에 대 한 검색 합니다. Visual studio에서 확장명 설치 관리자를 사용 하는 경우에에서 직접 확장을 다운로드할 수 있습니다 [ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html)합니다.
 
 패키지 관리자 콘솔을 현재 Mac.에 대 한 Visual Studio와 함께 사용할 수 없습니다. 해당 명령 사항은 통해 사용할 수는 [NuGet CLI](nuget-exe-CLI-reference.md)합니다. Mac 용 visual Studio NuGet 패키지 관리를 위한 UI가 있습니다. 참조 [프로젝트에 포함 하는 NuGet 패키지](/visualstudio/mac/nuget-walkthrough)합니다.
 

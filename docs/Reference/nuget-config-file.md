@@ -1,22 +1,25 @@
 ---
-title: "NuGet.Config 파일 참조 | Microsoft Docs"
+title: NuGet.Config 파일 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 10/25/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "config, bindingRedirects, packageRestore, solution 및 packageSource 섹션이 포함된 NuGet.Config 파일 참조입니다."
-keywords: "NuGet.Config 파일, NuGet 구성 참조, NuGet 구성 옵션"
+ms.technology: ''
+description: config, bindingRedirects, packageRestore, solution 및 packageSource 섹션이 포함된 NuGet.Config 파일 참조입니다.
+keywords: NuGet.Config 파일, NuGet 구성 참조, NuGet 구성 옵션
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6a5be1ebcca0accafcdaf32f0b1b7ca66ec53425
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: e2a9d4f10ac6af4e5bc7386d4f78e18c2a5752c4
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nugetconfig-reference"></a>NuGet.Config 참조
 
@@ -48,13 +51,13 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 
 [`nuget config` 명령](../tools/cli-ref-config.md)을 사용하여 설정할 수 있는 기타 구성 설정을 포함합니다.
 
-참고: `dependencyVersion` 및 `repositoryPath`는 `packages.config`를 사용하는 프로젝트에만 적용됩니다. `globalPackagesFolder` PackageReference 형식을 사용 하 여 프로젝트에만 적용 됩니다.
+`dependencyVersion` 및 `repositoryPath` 사용 하 여 프로젝트에만 적용 `packages.config`합니다. `globalPackagesFolder` PackageReference 형식을 사용 하 여 프로젝트에만 적용 됩니다.
 
 | Key | 값 |
 | --- | --- |
 | dependencyVersion(`packages.config`만) | `-DependencyVersion` 스위치가 직접 지정되지 않은 경우 패키지 설치, 복원 및 업데이트에 대한 기본 `DependencyVersion` 값입니다. 이 값은 NuGet 패키지 관리자 UI에서도 사용됩니다. 값은 `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`입니다. |
-| globalPackagesFolder(`packages.config`을 사용하지 않는 프로젝트) | 기본 전역 패키지 폴더의 위치입니다. 기본값은 `%USERPROFILE%\.nuget\packages`(Windows) 또는 `~/.nuget/packages`(Mac/Linux)입니다. 상대 경로는 프로젝트별 `Nuget.Config` 파일에서 사용할 수 있습니다. |
-| repositoryPath(`packages.config`만) | 기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다. 상대 경로는 프로젝트별 `Nuget.Config` 파일에서 사용할 수 있습니다. |
+| globalPackagesFolder (프로젝트만 PackageReference를 사용 하 여) | 기본 전역 패키지 폴더의 위치입니다. 기본값은 `%userprofile%\.nuget\packages`(Windows) 또는 `~/.nuget/packages`(Mac/Linux)입니다. 상대 경로는 프로젝트별 `Nuget.Config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 선행 하는이 설정이 무시 됩니다. |
+| repositoryPath(`packages.config`만) | 기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다. 상대 경로는 프로젝트별 `Nuget.Config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 선행 하는이 설정이 무시 됩니다. |
 | defaultPushSource | 작업에 대한 다른 패키지 원본이 없을 때 기본값으로 사용해야 하는 패키지 원본의 URL 또는 경로를 식별합니다. |
 | http_proxy, http_proxy.user, http_proxy.password, no_proxy | 패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다. 암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다. `no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다. 이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다. 자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요. |
 
@@ -64,7 +67,7 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 <config>
     <add key="dependencyVersion" value="Highest" />
     <add key="globalPackagesFolder" value="c:\packages" />
-    <add key="repositoryPath" value="c:\repo" />
+    <add key="repositoryPath" value="c:\installed_packages" />
     <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
 </config>
 ```

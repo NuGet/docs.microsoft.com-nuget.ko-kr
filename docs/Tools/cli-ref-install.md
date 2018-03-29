@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI 설치 명령 | Microsoft Docs"
+title: NuGet CLI 설치 명령 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe 설치 명령에 대 한 참조"
-keywords: "nuget 참조 패키지 명령을 설치,"
+ms.technology: ''
+description: Nuget.exe 설치 명령에 대 한 참조
+keywords: nuget 참조 패키지 명령을 설치,
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8d5f53c833fb42c9fe37d0629eab33e8f0bc70d7
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 121d7b50767f1d466d6d0d8494f324b02d8ff6f1
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-command-nuget-cli"></a>명령 (NuGet CLI)를 설치 합니다.
 
@@ -27,7 +30,7 @@ ms.lasthandoff: 03/15/2018
 > [!Tip]
 > 프로젝트의 컨텍스트 외부 직접 패키지를 다운로드 하려면 패키지의 페이지를 방문 하십시오 [nuget.org](https://www.nuget.org) 선택 하 고는 **다운로드** 링크 합니다.
 
-글로벌 구성 파일에 나열 된 원본이 지정 된 경우 `%APPDATA%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), 사용 됩니다. 참조 [NuGet 구성 동작](../consume-packages/configuring-nuget-behavior.md) 추가 세부 정보에 대 한 합니다.
+글로벌 구성 파일에 나열 된 원본이 지정 된 경우 `%appdata%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), 사용 됩니다. 참조 [NuGet 구성 동작](../consume-packages/configuring-nuget-behavior.md) 추가 세부 정보에 대 한 합니다.
 
 특정 패키지를 지정 하는 경우 `install` 프로젝트의에 나열 된 패키지를 모두 설치 `packages.config` 파일 그룹과 같이 [ `restore` ](cli-ref-restore.md)합니다.
 
@@ -55,7 +58,7 @@ nuget install <packageID | configFilePath> [options]
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 프레임워크 | *(4.4 +)*  대상 프레임 워크 종속성을 선택 하는 데 사용 합니다. 기본값은 'Any' 형식 지정 하지 않은 경우입니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| NoCache | NuGet 패키지를 사용 하 여 로컬 컴퓨터 캐시에서 방지 합니다. |
+| NoCache | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
 | NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | OutputDirectory | 패키지 설치 되는 폴더를 지정 합니다. 없는 폴더를 지정 하는 경우 현재 폴더가 사용 됩니다. |
 | PackageSaveMode | 패키지 설치 후 저장할 파일의 형식을 지정 합니다: 중 `nuspec`, `nupkg`, 또는 `nuspec;nupkg`합니다. |

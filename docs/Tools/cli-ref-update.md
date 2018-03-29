@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI 명령 업데이트 | Microsoft Docs"
+title: NuGet CLI 명령 업데이트 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe update 명령에 대 한 참조"
-keywords: "nuget 업데이트 참조에 업데이트 패키지 명령"
+ms.technology: ''
+description: Nuget.exe update 명령에 대 한 참조
+keywords: nuget 업데이트 참조에 업데이트 패키지 명령
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6acf3a74e5c26bc4e2cef9b0db4a72442d311449
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 1ea04f2fa2a753065ee4f17cbb926e37acf129e0
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="update-command-nuget-cli"></a>업데이트 명령 (NuGet CLI)
 

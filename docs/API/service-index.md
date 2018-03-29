@@ -1,5 +1,5 @@
 ---
-title: "서비스 인덱스, NuGet API | Microsoft Docs"
+title: 서비스 인덱스, NuGet API | Microsoft Docs
 author:
 - joelverhagen
 - kraigb
@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "서비스 인덱스 NuGet HTTP API의 진입점이 고 서버 기능을 열거 합니다."
-keywords: "NuGet API 진입점을 NuGetA PI 끝점 검색"
+ms.technology: ''
+description: 서비스 인덱스 NuGet HTTP API의 진입점이 고 서버 기능을 열거 합니다.
+keywords: NuGet API 진입점을 NuGetA PI 끝점 검색
 ms.reviewer:
 - karann
 - unnir
-ms.openlocfilehash: 8de0bc15edc358d091d84da54b8b67c085f29645
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 1c1dea25067cc582a14a0dd22c2f3f7f70d40a02
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="service-index"></a>서비스 인덱스
 
@@ -48,7 +51,7 @@ nuget.org의 서비스 인덱스에 위치한 `https://api.nuget.org/v3/index.js
 
 리소스는에 있는 개체는 `resources` 배열입니다. 패키지 원본 버전 관리 기능을 나타냅니다. 리소스에는 다음과 같은 속성이 있습니다.
 
-name          | 형식   | 필수 | 노트
+이름          | 형식   | 필수 | 노트
 ------------- | ------ | -------- | -----
 @id           | string | 예      | 리소스에 대 한 URL
 @type         | string | 예      | 리소스 종류를 나타내는 문자열 상수입니다.
