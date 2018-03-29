@@ -14,7 +14,7 @@
 ### [문제 해결](consume-packages/package-restore-troubleshooting.md)
 ## [패키지 다시 설치 및 업데이트](consume-packages/reinstalling-and-updating-packages.md)
 ## [패키지 및 소스 제어](consume-packages/packages-and-source-control.md)
-## [NuGet 캐시 관리](consume-packages/managing-the-nuget-cache.md)
+## [전역 패키지 및 캐시 폴더 관리](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ## [NuGet 동작 구성](consume-packages/configuring-nuget-behavior.md)
 ## [종속성 확인](consume-packages/dependency-resolution.md)
 # 패키지 만들기
@@ -31,8 +31,8 @@
 ## 안내선
 ### [UWP 패키지 만들기](guides/create-uwp-packages.md)
 ### [NuGet 패키지인 UWP 컨트롤 만들기](guides/create-uwp-controls.md)
-### [NET Standard 패키지 만들기(Visual Studio 2015)](guides/create-net-standard-packages-vs2015.md)
-### [Xamarin용 패키지 만들기](guides/create-packages-for-xamarin.md)
+### [Visual Studio 2015를 사용하여 NET Standard/NET Framework 패키지 만들기](guides/create-net-standard-packages-vs2015.md)
+### [Visual Studio 2015를 사용하여 Xamarin용 패키지 만들기](guides/create-packages-for-xamarin.md)
 # 패키지 호스트
 ## [개요](hosting-packages/overview.md)
 ## [로컬 피드](hosting-packages/local-feeds.md)
@@ -88,7 +88,7 @@
 ### [Visual Studio용 NuGet 자격 증명 공급자](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe 자격 증명 공급자](reference/extensibility/nuget-exe-credential-providers.md)
 ## 보관된 내용
-### [project.json 참조 형식](archive/project-json.md)
+### [project.json 관리 형식](archive/project-json.md)
 ### [project.json 및 UWP](archive/project-json-and-uwp.md)
 ### [project.json impact](archive/project-json-impact.md)
 # API
