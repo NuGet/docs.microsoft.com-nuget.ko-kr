@@ -1,5 +1,5 @@
 ---
-title: "nuget.org에 게시된 모든 패키지에 대한 쿼리 | Microsoft Docs"
+title: nuget.org에 게시된 모든 패키지에 대한 쿼리 | Microsoft Docs
 author:
 - joelverhagen
 - kraigb
@@ -8,19 +8,22 @@ ms.author:
 - kraigb
 manager: skofman
 ms.date: 11/02/2017
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "NuGet API를 사용하면 nuget.org에 게시된 모든 패키지에 대해 쿼리하고 시간이 지남에 따라 최신 상태를 유지할 수 있습니다."
-keywords: "NuGet API는 모든 패키지를 열거하고, NuGet API는 패키지, 즉 nuget.org에 게시된 최신 패키지를 복제합니다."
+ms.technology: ''
+description: NuGet API를 사용하면 nuget.org에 게시된 모든 패키지에 대해 쿼리하고 시간이 지남에 따라 최신 상태를 유지할 수 있습니다.
+keywords: NuGet API는 모든 패키지를 열거하고, NuGet API는 패키지, 즉 nuget.org에 게시된 최신 패키지를 복제합니다.
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: ce25680f3b591e9c6b0234b6ac30b82205d10ad3
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 5ea11e1b4edd87b6d30d3838986ca60aaa77870f
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>nuget.org에 게시된 모든 패키지에 대한 쿼리
 

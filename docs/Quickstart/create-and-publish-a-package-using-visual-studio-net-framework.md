@@ -1,22 +1,22 @@
 ---
-title: "Visual Studio를 사용하여 .NET Framework NuGet 패키지 만들기 및 게시에 대한 소개 가이드 | Microsoft Docs"
+title: Visual Studio를 사용하여 .NET Framework NuGet 패키지 만들기 및 게시에 대한 소개 가이드 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/13/2018
 ms.topic: get-started-article
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio 2017을 사용하여 .NET Framework NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다."
-keywords: "NuGet 패키지 만들기, NuGet 패키지 게시, NuGet 자습서, Visual Studio에서 NuGet 패키지 만들기, msbuild 팩"
+ms.technology: ''
+description: Visual Studio 2017을 사용하여 .NET Framework NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
+keywords: NuGet 패키지 만들기, NuGet 패키지 게시, NuGet 자습서, Visual Studio에서 NuGet 패키지 만들기, msbuild 팩
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 ms.openlocfilehash: 613cb6e8cf5762f354d69aa271c1e2f0d4851c97
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.sourcegitcommit: 718e6cb88e45fa07c85d653f216bf92eaaf81625
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="create-and-publish-a-package-using-visual-studio-net-framework"></a>Visual Studio(.NET Framework)를 사용하여 패키지 만들기 및 게시
 

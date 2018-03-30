@@ -1,22 +1,25 @@
 ---
-title: "Team Foundation 빌드를 사용하여 NuGet 패키지 복원 연습 | Microsoft Docs"
+title: Team Foundation 빌드를 사용하여 NuGet 패키지 복원 연습 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Team Foundation Build(TFS 및 Visual Studio Team Services)에서 NuGet 패키지를 복원하는 방법의 연습입니다."
-keywords: "NuGet 패키지 복원, NuGet 및 TFS, NuGet 및 VSTS, NuGet 빌드 시스템, Team Foundation 빌드, MSBuild 프로젝트 사용자 지정, 클라우드 빌드, 연속 통합"
+ms.technology: ''
+description: Team Foundation Build(TFS 및 Visual Studio Team Services)에서 NuGet 패키지를 복원하는 방법의 연습입니다.
+keywords: NuGet 패키지 복원, NuGet 및 TFS, NuGet 및 VSTS, NuGet 빌드 시스템, Team Foundation 빌드, MSBuild 프로젝트 사용자 지정, 클라우드 빌드, 연속 통합
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e3ef6e3bcc55705315fcb6ccf3e917963c62250
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: f46a7402214bf965918a5195605027913a8c60c2
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Team Foundation 빌드를 사용하여 패키지 복원 설정
 
@@ -110,6 +113,9 @@ nuget restore path\to\solution.sln
     bin
     obj
     packages
+    *.nupkg
+    project.lock.json
+    project.assets.json
 
 `.gitignore` 파일은 [매우 강력](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html)합니다. 예를 들어, 일반적으로 `packages` 폴더의 콘텐츠를 체크 인하지 않지만 `.targets` 파일을 체크인하는 이전 지침으로 이동하려는 경우 대신 다음 규칙이 있을 수 있습니다.
 
@@ -125,6 +131,9 @@ TF 버전 제어는 [.tfignore](/vsts/tfvc/add-files-server#customize-which-file
     bin
     obj
     packages
+    *.nupkg
+    project.lock.json
+    project.assets.json
 
 ## <a name="buildproj"></a>build.proj
 

@@ -1,22 +1,25 @@
 ---
-title: "NuGet에서 UWP 컨트롤을 패키지하는 방법 | Microsoft Docs"
+title: NuGet에서 UWP 컨트롤을 패키지하는 방법 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/14/2018
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio 및 Blend 디자이너에 필요한 메타데이터 및 지원되는 파일을 포함하여 UWP 컨트롤을 포함하는 NuGet 패키지를 만드는 방법입니다."
-keywords: "NuGet UWP 컨트롤, Visual Studio XAML 디자이너, Blend 디자이너, 컨트롤 사용자 지정"
+ms.technology: ''
+description: Visual Studio 및 Blend 디자이너에 필요한 메타데이터 및 지원되는 파일을 포함하여 UWP 컨트롤을 포함하는 NuGet 패키지를 만드는 방법입니다.
+keywords: NuGet UWP 컨트롤, Visual Studio XAML 디자이너, Blend 디자이너, 컨트롤 사용자 지정
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1af5118eb71836d8b8bcfa8ff713d9fef3c86374
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: f024fd1823c77d57d30c4f841bf03494194c8339
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-uwp-controls-as-nuget-packages"></a>NuGet 패키지인 UWP 컨트롤 만들기
 

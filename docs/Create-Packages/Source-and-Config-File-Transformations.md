@@ -1,23 +1,26 @@
 ---
-title: "NuGet 패키지의 원본 및 구성 파일 변환 | Microsoft Docs"
+title: NuGet 패키지의 원본 및 구성 파일 변환 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 04/24/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "소스 코드 및 구성(XML) 파일을 설치할 때 변환하는 NuGet 패키지의 기능에 대한 자세한 내용입니다."
-keywords: "NuGet 패키지 설치, NuGet 패키지 변환, 구성 파일 수정, 소스 코드 수정"
+ms.technology: ''
+description: 소스 코드 및 구성(XML) 파일을 설치할 때 변환하는 NuGet 패키지의 기능에 대한 자세한 내용입니다.
+keywords: NuGet 패키지 설치, NuGet 패키지 변환, 구성 파일 수정, 소스 코드 수정
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: 47d02d160a7e40f323edcbd87e2c8642905b8ddf
-ms.sourcegitcommit: df21fe770900644d476d51622a999597a6f20ef8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: b2c25acdd37489a2965d29356742a826b62afa2c
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>소스 코드 및 구성 파일 변환
 

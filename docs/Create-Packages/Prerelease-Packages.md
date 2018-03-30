@@ -1,22 +1,25 @@
 ---
-title: "NuGet 패키지의 시험판 버전 | Microsoft Docs"
+title: NuGet 패키지의 시험판 버전 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "시험판 패키지를 빌드하기 위한 지침"
-keywords: "버전 관리, NuGet 패키지 버전 관리, NuGet 시험판 버전, NuGet 시험판 패키지, 패키지 버전 미리 보기, RC 패키지 버전, 베타 패키지 버전, NuGet 유의적 버전"
+ms.technology: ''
+description: 시험판 패키지를 빌드하기 위한 지침
+keywords: 버전 관리, NuGet 패키지 버전 관리, NuGet 시험판 버전, NuGet 시험판 패키지, 패키지 버전 미리 보기, RC 패키지 버전, 베타 패키지 버전, NuGet 유의적 버전
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 03f744a96841a8c49d9f1dde89620b85de968d6f
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 57f59e3906e2d49b6b6e078f530885a601553b06
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="building-pre-release-packages"></a>시험판 패키지 빌드
 

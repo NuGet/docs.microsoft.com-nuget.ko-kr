@@ -1,22 +1,25 @@
 ---
-title: "NuGet 패키지의 멀티 타기팅 | Microsoft Docs"
+title: NuGet 패키지의 멀티 타기팅 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 09/27/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "단일 NuGet 패키지 내에서 여러 .NET Framework 버전을 대상으로 하는 다양한 방법에 대한 설명입니다."
-keywords: "NuGet 패키지 타기팅, .NET Framework 버전, NuGet 및.NET, 여러 프레임워크 대상 지정, NuGet 패키지 만들기"
+ms.technology: ''
+description: 단일 NuGet 패키지 내에서 여러 .NET Framework 버전을 대상으로 하는 다양한 방법에 대한 설명입니다.
+keywords: NuGet 패키지 타기팅, .NET Framework 버전, NuGet 및.NET, 여러 프레임워크 대상 지정, NuGet 패키지 만들기
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 723dbcc12ecc4e16d2ba4662559f107b9b22e2c2
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 4349fed276b1a1f46845c990718f9202b356072c
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="supporting-multiple-net-framework-versions"></a>여러 .NET Framework 버전 지원
 

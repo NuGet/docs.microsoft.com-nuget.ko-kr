@@ -1,22 +1,25 @@
 ---
-title: "NuGet 질문과 대답 | Microsoft Docs"
+title: NuGet 질문과 대답 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/11/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "명령줄 및 Visual Studio에서 NuGet을 사용하고 NuGet 갤러리에서 작업하는 경우와 관련된 일반적인 질문과 대답입니다."
-keywords: "NuGet Q&A, 질문과 대답, 일반적인 문제, NuGet 버전, 패키지 버전"
+ms.technology: ''
+description: 명령줄 및 Visual Studio에서 NuGet을 사용하고 NuGet 갤러리에서 작업하는 경우와 관련된 일반적인 질문과 대답입니다.
+keywords: NuGet Q&A, 질문과 대답, 일반적인 문제, NuGet 버전, 패키지 버전
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3782fe5dcf8df002d99446aa7548a6eacc62211c
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 33e4776054b1cdd874dcd7e955552ef873dbbf5b
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 

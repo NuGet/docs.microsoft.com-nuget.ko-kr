@@ -1,22 +1,25 @@
 ---
-title: "UWP 프로젝트가 있는 NuGet project.json 파일 | Microsoft Docs"
+title: UWP 프로젝트가 있는 NuGet project.json 파일 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 07/17/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "project.json 파일을 사용하여 UWP(유니버설 Windows 플랫폼) 프로젝트에서 NuGet 종속성을 추적하는 방법을 설명합니다."
-keywords: "NuGet 종속성, NuGet 및 UWP, UWP 및 project.json, NuGet project.json 파일"
+ms.technology: ''
+description: project.json 파일을 사용하여 UWP(유니버설 Windows 플랫폼) 프로젝트에서 NuGet 종속성을 추적하는 방법을 설명합니다.
+keywords: NuGet 종속성, NuGet 및 UWP, UWP 및 project.json, NuGet project.json 파일
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3ef3703b2be92f84d37866bce9934ebcfed3a9f7
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 453a38456670db850d3d2845b23bd4ad36fc8fd2
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="projectjson-and-uwp"></a>project.json 및 UWP
 

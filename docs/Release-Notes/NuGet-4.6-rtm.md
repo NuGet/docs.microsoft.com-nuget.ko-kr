@@ -1,23 +1,26 @@
 ---
-title: "NuGet 4.6 RTM 릴리스 정보 | Microsoft Docs"
+title: NuGet 4.6 RTM 릴리스 정보 | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unnir
 ms.date: 3/7/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 4.6.0에 대한 릴리스 정보(알려진 문제, 버그 수정, 추가된 기능 및 DCR 포함)"
-keywords: "NuGet 4.6.0 릴리스 정보, 버그 수정, 알려진 문제, 추가된 기능, DCR"
+ms.technology: ''
+description: NuGet 4.6.0에 대한 릴리스 정보(알려진 문제, 버그 수정, 추가된 기능 및 DCR 포함)
+keywords: NuGet 4.6.0 릴리스 정보, 버그 수정, 알려진 문제, 추가된 기능, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: 32bfe8a7d5d60a0ad24444749beff64edcaab305
-ms.sourcegitcommit: fa31ae10b5a5add7184bf7420554aade8adce6ed
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 004ad16018443292840b00fa88aa78350e371414
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-46-rtm-release-notes"></a>NuGet 4.6 RTM 릴리스 정보
 

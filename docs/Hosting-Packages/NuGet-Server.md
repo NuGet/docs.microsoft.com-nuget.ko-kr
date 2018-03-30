@@ -1,22 +1,25 @@
 ---
-title: "NuGet.Server를 사용하여 NuGet 피드 호스트 | Microsoft Docs"
+title: NuGet.Server를 사용하여 NuGet 피드 호스트 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/13/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet.Server를 사용하여 IIS를 실행하는 모든 서버에서 NuGet 패키지 피드를 만들고 호스트하는 방법입니다. OData 및 HTTP를 통해 패키지를 사용할 수 있습니다."
-keywords: "NuGet 피드, NuGet 갤러리, 원격 패키지 피드, NuGet.Server"
+ms.technology: ''
+description: NuGet.Server를 사용하여 IIS를 실행하는 모든 서버에서 NuGet 패키지 피드를 만들고 호스트하는 방법입니다. OData 및 HTTP를 통해 패키지를 사용할 수 있습니다.
+keywords: NuGet 피드, NuGet 갤러리, 원격 패키지 피드, NuGet.Server
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d85c1ca88ca44c8f8bfa5cb9c453279f65f26f50
-ms.sourcegitcommit: 9adf5349eab91bd1d044e11f34836d53cfb115b3
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a8996fed537e5745a1dbeb1c3d12b2a0670e744d
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nugetserver"></a>NuGet.Server
 

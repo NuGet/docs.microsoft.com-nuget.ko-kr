@@ -1,26 +1,29 @@
 ---
-title: "네이티브 NuGet 패키지 만들기 | Microsoft Docs"
+title: 네이티브 NuGet 패키지 만들기 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "관리 코드 대신 C++ 프로젝트에서 사용할 C++ 코드가 포함된 네이티브 NuGet 패키지를 만드는 방법에 대한 세부 정보입니다."
-keywords: "네이티브 NuGet 패키지, NuGet C++ 패키지, 네이티브 코드 패키지, C++ 프로젝트 대상 지정"
+ms.technology: ''
+description: 관리 코드 대신 C++ 프로젝트에서 사용할 C++ 코드가 포함된 네이티브 NuGet 패키지를 만드는 방법에 대한 세부 정보입니다.
+keywords: 네이티브 NuGet 패키지, NuGet C++ 패키지, 네이티브 코드 패키지, C++ 프로젝트 대상 지정
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 71f4eca411d520630ca7d77165b8f03cd32af290
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ed33f906f11a80c0d033292f7de151e93b8368fd
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-native-packages"></a>네이티브 패키지 만들기
 
-네이티브 패키지에는 관리 코드 대신 C++ 프로젝트 내에서 사용할 수 있도록 하는 네이티브 C++ 코드가 포함됩니다. (사용 섹션에서 [네이티브 C++ 패키지](../consume-packages/finding-and-choosing-packages.md#native-cpp-packages)를 참조하세요.)
+네이티브 패키지에는 관리 코드 대신 C++ 프로젝트 내에서 사용할 수 있도록 하는 네이티브 C++ 코드가 포함됩니다. (사용 섹션에서 [네이티브 C++ 패키지](../consume-packages/finding-and-choosing-packages.md#native-c-packages)를 참조하세요.)
 
 C++ 프로젝트에서 사용할 수 있으려면 패키지는 `native` 프레임워크를 대상으로 지정해야 합니다. NuGet이 모든 C++ 프로젝트를 동일하게 처리하므로 현재 이 프레임워크와 연결된 버전 번호가 없습니다.
 
