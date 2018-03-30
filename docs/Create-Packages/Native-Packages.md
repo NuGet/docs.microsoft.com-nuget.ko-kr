@@ -1,32 +1,35 @@
 ---
-title: "네이티브 NuGet 패키지 만들기 | Microsoft Docs"
+title: 네이티브 NuGet 패키지 만들기 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "관리 코드 대신 C++ 프로젝트에서 사용할 C++ 코드가 포함된 네이티브 NuGet 패키지를 만드는 방법에 대한 세부 정보입니다."
-keywords: "네이티브 NuGet 패키지, NuGet C++ 패키지, 네이티브 코드 패키지, C++ 프로젝트 대상 지정"
+ms.technology: ''
+description: 관리 코드 대신 C++ 프로젝트에서 사용할 C++ 코드가 포함된 네이티브 NuGet 패키지를 만드는 방법에 대한 세부 정보입니다.
+keywords: 네이티브 NuGet 패키지, NuGet C++ 패키지, 네이티브 코드 패키지, C++ 프로젝트 대상 지정
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 71f4eca411d520630ca7d77165b8f03cd32af290
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ed33f906f11a80c0d033292f7de151e93b8368fd
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="creating-native-packages"></a><span data-ttu-id="a0f09-104">네이티브 패키지 만들기</span><span class="sxs-lookup"><span data-stu-id="a0f09-104">Creating native packages</span></span>
+# <a name="creating-native-packages"></a><span data-ttu-id="d3d01-104">네이티브 패키지 만들기</span><span class="sxs-lookup"><span data-stu-id="d3d01-104">Creating native packages</span></span>
 
-<span data-ttu-id="a0f09-105">네이티브 패키지에는 관리 코드 대신 C++ 프로젝트 내에서 사용할 수 있도록 하는 네이티브 C++ 코드가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="a0f09-105">A native package contains native C++ code instead of managed code, allowing it to be used within C++ projects.</span></span> <span data-ttu-id="a0f09-106">(사용 섹션에서 [네이티브 C++ 패키지](../consume-packages/finding-and-choosing-packages.md#native-cpp-packages)를 참조하세요.)</span><span class="sxs-lookup"><span data-stu-id="a0f09-106">(See [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-cpp-packages) in the Consume section.)</span></span>
+<span data-ttu-id="d3d01-105">네이티브 패키지에는 관리 코드 대신 C++ 프로젝트 내에서 사용할 수 있도록 하는 네이티브 C++ 코드가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="d3d01-105">A native package contains native C++ code instead of managed code, allowing it to be used within C++ projects.</span></span> <span data-ttu-id="d3d01-106">(사용 섹션에서 [네이티브 C++ 패키지](../consume-packages/finding-and-choosing-packages.md#native-c-packages)를 참조하세요.)</span><span class="sxs-lookup"><span data-stu-id="d3d01-106">(See [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-c-packages) in the Consume section.)</span></span>
 
-<span data-ttu-id="a0f09-107">C++ 프로젝트에서 사용할 수 있으려면 패키지는 `native` 프레임워크를 대상으로 지정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a0f09-107">To be consumable in a C++ project, a package must target the `native` framework.</span></span> <span data-ttu-id="a0f09-108">NuGet이 모든 C++ 프로젝트를 동일하게 처리하므로 현재 이 프레임워크와 연결된 버전 번호가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="a0f09-108">At present there are not any version numbers associated with this framework as NuGet treats all C++ projects the same.</span></span>
+<span data-ttu-id="d3d01-107">C++ 프로젝트에서 사용할 수 있으려면 패키지는 `native` 프레임워크를 대상으로 지정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3d01-107">To be consumable in a C++ project, a package must target the `native` framework.</span></span> <span data-ttu-id="d3d01-108">NuGet이 모든 C++ 프로젝트를 동일하게 처리하므로 현재 이 프레임워크와 연결된 버전 번호가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="d3d01-108">At present there are not any version numbers associated with this framework as NuGet treats all C++ projects the same.</span></span>
 
 > [!Note]
-> <span data-ttu-id="a0f09-109">다른 개발자가 해당 태그를 검색하여 패키지를 찾을 수 있도록 `.nuspec`의 `<tags>` 섹션에 *네이티브*를 포함해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a0f09-109">Be sure to include *native* in the `<tags>` section of your `.nuspec` to help other developers find your package by searching on that tag.</span></span>
+> <span data-ttu-id="d3d01-109">다른 개발자가 해당 태그를 검색하여 패키지를 찾을 수 있도록 `.nuspec`의 `<tags>` 섹션에 *네이티브*를 포함해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3d01-109">Be sure to include *native* in the `<tags>` section of your `.nuspec` to help other developers find your package by searching on that tag.</span></span>
 
-<span data-ttu-id="a0f09-110">그러면 `native`를 대상으로 지정한 네이티브 NuGet 패키지는 `\build`, `\content` 및 `\tools` 폴더에 파일을 제공합니다. `\lib`은 이 경우에 사용되지 않습니다(NuGet은 C++ 프로젝트에 직접 참조를 추가할 수 없음).</span><span class="sxs-lookup"><span data-stu-id="a0f09-110">Native NuGet packages targeting `native` then provide files in `\build`, `\content`, and `\tools` folders; `\lib` is not used in this case (NuGet cannot directly add references to a C++ project).</span></span> <span data-ttu-id="a0f09-111">NuGet에서 패키지를 사용하는 프로젝트에 자동으로 가져오는 `\build`의 대상 및 props 파일이 패키지에 포함될 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a0f09-111">A package may also include targets and props files in `\build` that NuGet will automatically import into projects that consume the package.</span></span> <span data-ttu-id="a0f09-112">`.targets` 및/또는 `.props` 확장명으로 패키지 ID와 동일하게 해당 파일의 이름을 지정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a0f09-112">Those files must be named the same as the package ID with the `.targets` and/or `.props` extensions.</span></span> <span data-ttu-id="a0f09-113">예를 들어 [cpprestsdk](https://nuget.org/packages/cpprestsdk/) 패키지에는 해당 `\build` 폴더에 있는 `cpprestsdk.targets` 파일이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="a0f09-113">For example, the [cpprestsdk](https://nuget.org/packages/cpprestsdk/) package includes a `cpprestsdk.targets` file in its `\build` folder.</span></span>
+<span data-ttu-id="d3d01-110">그러면 `native`를 대상으로 지정한 네이티브 NuGet 패키지는 `\build`, `\content` 및 `\tools` 폴더에 파일을 제공합니다. `\lib`은 이 경우에 사용되지 않습니다(NuGet은 C++ 프로젝트에 직접 참조를 추가할 수 없음).</span><span class="sxs-lookup"><span data-stu-id="d3d01-110">Native NuGet packages targeting `native` then provide files in `\build`, `\content`, and `\tools` folders; `\lib` is not used in this case (NuGet cannot directly add references to a C++ project).</span></span> <span data-ttu-id="d3d01-111">NuGet에서 패키지를 사용하는 프로젝트에 자동으로 가져오는 `\build`의 대상 및 props 파일이 패키지에 포함될 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d3d01-111">A package may also include targets and props files in `\build` that NuGet will automatically import into projects that consume the package.</span></span> <span data-ttu-id="d3d01-112">`.targets` 및/또는 `.props` 확장명으로 패키지 ID와 동일하게 해당 파일의 이름을 지정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3d01-112">Those files must be named the same as the package ID with the `.targets` and/or `.props` extensions.</span></span> <span data-ttu-id="d3d01-113">예를 들어 [cpprestsdk](https://nuget.org/packages/cpprestsdk/) 패키지에는 해당 `\build` 폴더에 있는 `cpprestsdk.targets` 파일이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="d3d01-113">For example, the [cpprestsdk](https://nuget.org/packages/cpprestsdk/) package includes a `cpprestsdk.targets` file in its `\build` folder.</span></span>
 
-<span data-ttu-id="a0f09-114">네이티브 패키지뿐만 아니라 모든 NuGet 패키지에 `\build` 폴더를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a0f09-114">The `\build` folder can be used for all NuGet packages and not just native packages.</span></span> <span data-ttu-id="a0f09-115">`\build` 폴더는 `\content`, `\lib` 및 `\tools` 폴더와 같은 대상 프레임워크를 그대로 보존합니다.</span><span class="sxs-lookup"><span data-stu-id="a0f09-115">The `\build` folder respects target frameworks just like the `\content`, `\lib`, and `\tools` folders.</span></span> <span data-ttu-id="a0f09-116">즉, `\build\net40` 폴더 및 `\build\net45` 폴더를 만들 수 있습니다. 또한 NuGet에서는 적절한 props 및 대상 파일을 프로젝트로 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="a0f09-116">This means you can create a `\build\net40` folder and a `\build\net45` folder and NuGet will import the appropriate props and targets files into the project.</span></span> <span data-ttu-id="a0f09-117">(MSBuild 대상을 가져오기 위해 PowerShell 스크립트를 사용하지 않아도 됩니다.)</span><span class="sxs-lookup"><span data-stu-id="a0f09-117">(Use of PowerShell scripts to import MSBuild targets is not needed.)</span></span>
+<span data-ttu-id="d3d01-114">네이티브 패키지뿐만 아니라 모든 NuGet 패키지에 `\build` 폴더를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d3d01-114">The `\build` folder can be used for all NuGet packages and not just native packages.</span></span> <span data-ttu-id="d3d01-115">`\build` 폴더는 `\content`, `\lib` 및 `\tools` 폴더와 같은 대상 프레임워크를 그대로 보존합니다.</span><span class="sxs-lookup"><span data-stu-id="d3d01-115">The `\build` folder respects target frameworks just like the `\content`, `\lib`, and `\tools` folders.</span></span> <span data-ttu-id="d3d01-116">즉, `\build\net40` 폴더 및 `\build\net45` 폴더를 만들 수 있습니다. 또한 NuGet에서는 적절한 props 및 대상 파일을 프로젝트로 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="d3d01-116">This means you can create a `\build\net40` folder and a `\build\net45` folder and NuGet will import the appropriate props and targets files into the project.</span></span> <span data-ttu-id="d3d01-117">(MSBuild 대상을 가져오기 위해 PowerShell 스크립트를 사용하지 않아도 됩니다.)</span><span class="sxs-lookup"><span data-stu-id="d3d01-117">(Use of PowerShell scripts to import MSBuild targets is not needed.)</span></span>
