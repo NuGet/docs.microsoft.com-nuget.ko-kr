@@ -102,6 +102,7 @@
 ## [패키지 콘텐츠](api/package-base-address-resource.md)
 ## [악성 URL 신고](api/report-abuse-resource.md)
 ## [카탈로그](api/catalog-resource.md)
+## [속도 제한](api/rate-limits.md)
 ## [nuget.org 프로토콜](api/nuget-protocols.md)
 # Visual Studio 확장성
 ## [Visual Studio의 NuGet API](visual-studio-extensibility/nuget-api-in-visual-studio.md)
