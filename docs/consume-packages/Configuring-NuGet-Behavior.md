@@ -1,22 +1,25 @@
 ---
-title: "NuGet 동작 구성 | Microsoft Docs"
+title: NuGet 동작 구성 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 10/25/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet.Config 파일은 NuGet의 동작을 전역 및 프로젝트별로 제어하며 nuget config 명령으로 수정됩니다."
-keywords: "NuGet config 파일, NuGet 구성, NuGet 동작 설정, NuGet 설정, Nuget.Config, NuGetDefaults.Config, 기본값"
+ms.technology: ''
+description: NuGet.Config 파일은 NuGet의 동작을 전역 및 프로젝트별로 제어하며 nuget config 명령으로 수정됩니다.
+keywords: NuGet config 파일, NuGet 구성, NuGet 동작 설정, NuGet 설정, Nuget.Config, NuGetDefaults.Config, 기본값
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c46f23fcbec5dfcb6122434d43097212f6230fb0
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a575868894d5ca9992b1c9984cf4920bd2858209
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="configuring-nuget-behavior"></a>NuGet 동작 구성
 
@@ -27,7 +30,7 @@ NuGet의 동작은 프로젝트, 사용자 및 컴퓨터 수준에서 존재할 
 | 범위 | NuGet.Config 파일 위치 | 설명 |
 | --- | --- | --- |
 | 프로젝트 | 현재 폴더(프로젝트 폴더) 또는 드라이브 루트까지의 모든 폴더| 프로젝트 폴더의 설정은 해당 프로젝트에만 적용됩니다. 여러 프로젝트 하위 폴더가 있는 부모 폴더의 설정은 해당 하위 폴더의 모든 프로젝트에 적용됩니다. |
-| 사용자 | Windows: `%APPDATA%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.nuget/NuGet/NuGet.Config` | 설정은 모든 작업에 적용되지만, 프로젝트 수준 설정에 따라 재정의됩니다. |
+| 사용자 | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.nuget/NuGet/NuGet.Config` | 설정은 모든 작업에 적용되지만, 프로젝트 수준 설정에 따라 재정의됩니다. |
 | 컴퓨터 | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`(일반적으로 `~/.local/share`) | 설정은 컴퓨터의 모든 작업에 적용되지만, 사용자 또는 프로젝트 수준 설정에 따라 재정의됩니다. |
 
 이전 버전의 NuGet에 대한 참고 사항:
@@ -94,7 +97,7 @@ nuget config -set repositoryPath= -configfile /home/my.Config
 
 ### <a name="creating-a-new-config-file"></a>새 구성 파일 만들기
 
-아래 템플릿을 새 파일에 복사한 다음 `nuget config --configFile <filename>`을 사용하여 값을 설정합니다.
+아래 템플릿을 새 파일에 복사한 다음 `nuget config -configFile <filename>`을 사용하여 값을 설정합니다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -137,7 +140,7 @@ NuGet은 이러한 파일에서 설정을 찾으면 다음과 같이 적용합�
 
 다음으로, 지정된 내용이 포함된 4개의 `NuGet.Config` 파일이 다음 위치에 있습니다. (컴퓨터 수준 파일은 이 예제에 포함되어 있지 않지만 사용자 수준 파일과 비슷하게 작동합니다.)
 
-파일 A - 사용자 수준 파일(Windows의 경우 `%APPDATA%\NuGet\NuGet.Config`, Mac/Linux의 경우 `~/.nuget/NuGet/NuGet.Config`):
+파일 A - 사용자 수준 파일(Windows의 경우 `%appdata%\NuGet\NuGet.Config`, Mac/Linux의 경우 `~/.nuget/NuGet/NuGet.Config`):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -220,7 +223,7 @@ NuGet은 이러한 파일에서 설정을 찾으면 다음과 같이 적용합�
 
 ### <a name="nugetdefaultsconfig-settings"></a>NuGetDefaults.Config 설정
 
-- `packageSources`: 이 컬렉션은 일반 설정 파일에서 `packageSources`와 동일한 의미를 가지며, 기본 원본을 지정합니다. NuGet은 `packages.config` 참조 형식을 사용하는 프로젝트에서 패키지를 설치하거나 업데이트할 때 소스를 순서대로 사용합니다. PackageReference 형식을 사용하는 프로젝트의 경우, NuGet은 구성 파일의 순서에 관계없이 로컬 소스를 먼저 사용하고, 네트워크 공유의 소스를 사용한 후, HTTP 소스를 사용합니다. NuGet은 복원 작업에서 소스 순서를 항상 무시합니다.
+- `packageSources`: 이 컬렉션은 일반 설정 파일에서 `packageSources`와 동일한 의미를 가지며, 기본 원본을 지정합니다. NuGet은 `packages.config` 관리 형식을 사용하는 프로젝트에서 패키지를 설치하거나 업데이트할 때 소스를 순서대로 사용합니다. PackageReference 형식을 사용하는 프로젝트의 경우, NuGet은 구성 파일의 순서에 관계없이 로컬 소스를 먼저 사용하고, 네트워크 공유의 소스를 사용한 후, HTTP 소스를 사용합니다. NuGet은 복원 작업에서 소스 순서를 항상 무시합니다.
 
 - `disabledPackageSources`: 이 컬렉션은 `NuGet.Config` 파일과 동일한 의미를 가지며, 영향을 받는 각 원본이 이름 및 사용하지 않도록 설정되어 있는지 여부를 나타내는 true/false 값으로 나열됩니다. 이렇게 하면 원본 이름과 URL이 기본적으로 설정되지 않고 `packageSources`에 남아 있게 됩니다. 개별 개발자는 올바른 URL을 다시 찾지 않고도 다른 `NuGet.Config` 파일에서 원본의 값을 false로 설정하여 원본을 사용하도록 다시 설정할 수 있습니다. 또한 이는 기본적으로 개별 팀의 원본만 사용하도록 설정하면서 개발자에게 조직의 내부 원본 URL에 대한 전체 목록을 제공하는 데에도 유용합니다.
 

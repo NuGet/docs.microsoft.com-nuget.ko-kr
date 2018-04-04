@@ -1,22 +1,25 @@
 ---
-title: "dotnet CLI를 사용하여 NuGet 패키지 만들기 및 게시 | Microsoft Docs"
+title: dotnet CLI를 사용하여 NuGet 패키지 만들기 및 게시 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/24/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
-ms.technology: 
-description: ".NET Core CLI, dotnet을 사용하여 NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다."
-keywords: "NuGet 패키지 만들기, NuGet 패키지 게시, NuGet 자습서, dotnet 게시 NuGet 패키지"
+ms.technology: ''
+description: .NET Core CLI, dotnet을 사용하여 NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
+keywords: NuGet 패키지 만들기, NuGet 패키지 게시, NuGet 자습서, dotnet 게시 NuGet 패키지
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 086de5378fe4ae928e6bd00cd3a87afd7c366a01
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 536e39ae64649ca1c11afa95c20872515e9e4c83
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-and-publish-a-package"></a>패키지 만들기 및 게시
 
@@ -59,14 +62,14 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="run-the-pack-command"></a>pack 명령 실행
 
-프로젝트에서 NuGet 패키지(`.nupkg` 파일)를 빌드하려면 `dotnet pack` 명령을 실행합니다.
+프로젝트에서 NuGet 패키지(`.nupkg` 파일)를 빌드하려면 `dotnet pack` 명령을 실행합니다. 이 명령은 프로젝트도 자동으로 빌드합니다.
 
 ```cli
 # Uses the project file in the current folder by default
 dotnet pack
 ```
 
-출력은 `.nupkg` 파일의 경로를 표시합니다.
+출력에는 `.nupkg` 파일의 경로가 표시됩니다.
 
 ```output
 Microsoft (R) Build Engine version 15.5.180.51428 for .NET Core
@@ -75,6 +78,14 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   Restore completed in 29.91 ms for D:\proj\AppLoggerNet\AppLogger\AppLogger.csproj.
   AppLogger -> D:\proj\AppLoggerNet\AppLogger\bin\Debug\netstandard2.0\AppLogger.dll
   Successfully created package 'D:\proj\AppLoggerNet\AppLogger\bin\Debug\AppLogger.1.0.0.nupkg'.
+```
+
+### <a name="automatically-generate-package-on-build"></a>빌드 시 패키지를 자동으로 생성
+
+`dotnet build`를 실행할 때 `dotnet pack`을 자동으로 실행하려면 프로젝트 파일의 `<PropertyGroup>` 내에 다음 줄을 추가합니다.
+
+```xml
+<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 ```
 
 ## <a name="publish-the-package"></a>패키지 게시

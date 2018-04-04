@@ -1,22 +1,25 @@
 ---
-title: "Visual Studio 템플릿의 NuGet 패키지 | Microsoft Docs"
+title: Visual Studio 템플릿의 NuGet 패키지 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/03/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio 프로젝트 및 항목 템플릿의 일부로 NuGet 패키지를 포함하는 방법에 대한 지침입니다."
-keywords: "Visual Studio의 NuGet, Visual Studio 프로젝트 템플릿, Visual Studio 항목 템플릿, 프로젝트 템플릿의 패키지, 항목 템플릿의 패키지"
+ms.technology: ''
+description: Visual Studio 프로젝트 및 항목 템플릿의 일부로 NuGet 패키지를 포함하는 방법에 대한 지침입니다.
+keywords: Visual Studio의 NuGet, Visual Studio 프로젝트 템플릿, Visual Studio 항목 템플릿, 프로젝트 템플릿의 패키지, 항목 템플릿의 패키지
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 65b914e1fa59c28615f195b470880a12bf80efbb
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 8c1751ba9caf5e71ace7a81575e4e5448b1e4185
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="packages-in-visual-studio-templates"></a>Visual Studio 템플릿의 패키지
 
@@ -62,7 +65,7 @@ Visual Studio 프로젝트 및 항목 템플릿에서는 프로젝트 또는 항
     </WizardData>
     ```
 
-    *(NuGet 2.2.1 이상)* 마법사는 여러 `<package>` 요소를 지원하여 여러 패키지 원본을 지원합니다. `id` 및 `version` 특성은 모두 필요합니다. 즉 최신 버전을 사용할 수 있는 경우에도 특정 버전의 패키지가 설치됩니다. 이렇게 하면 패키지 업데이트로 인해 템플릿이 손상되지 않도록 방지하고, 템플릿을 사용하여 개발자에게 패키지를 업데이트하도록 선택할 수 있게 합니다.
+    마법사는 여러 `<package>` 요소를 지원하여 여러 패키지 소스를 지원합니다. `id` 및 `version` 특성은 모두 필요합니다. 즉 최신 버전을 사용할 수 있는 경우에도 특정 버전의 패키지가 설치됩니다. 이렇게 하면 패키지 업데이트로 인해 템플릿이 손상되지 않도록 방지하고, 템플릿을 사용하여 개발자에게 패키지를 업데이트하도록 선택할 수 있게 합니다.
 
 1. 다음 섹션에서 설명한 대로 NuGet에서 패키지를 찾을 수 있는 리포지토리를 지정합니다.
 

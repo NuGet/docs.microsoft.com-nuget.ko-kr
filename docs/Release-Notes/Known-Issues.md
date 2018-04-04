@@ -1,22 +1,25 @@
 ---
-title: "알려진 NuGet 문제 | Microsoft Docs"
+title: 알려진 NuGet 문제 | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "인증, 패키지 설치 및 도구를 포함하여 알려진 NuGet 관련 문제입니다."
-keywords: "알려진 NuGet 문제, NuGet 문제"
+ms.technology: ''
+description: 인증, 패키지 설치 및 도구를 포함하여 알려진 NuGet 관련 문제입니다.
+keywords: 알려진 NuGet 문제, NuGet 문제
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ac00e3f11c54290a31319e7f2946fd965a0a9288
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: c36da5dc73dddbd540a36d171583cbf542e0678f
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="known-issues-with-nuget"></a>알려진 NuGet 문제
 
@@ -227,7 +230,7 @@ Windows Phone 도구는 Visual Studio 확장 관리자를 지원하지 않습니
 
 ## <a name="changing-the-capitalization-of-nuget-package-ids-breaks-package-restore"></a>NuGet 패키지 ID의 대/소문자를 변경하면 패키지 복원이 중단됩니다.
 
-[이 GitHub 문제](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932)에서 설명한 대로, NuGet 패키지의 대문자 표시 변경은 NuGet 지원을 통해 수행할 수 있지만, 패키지를 복원하는 동안 로컬 패키지 캐시에서 대/소문자를 다르게 사용한 기존 패키지가 있는 사용자에 대한 복잡성이 발생합니다 . 빌드 시간 패키지 복원에 발생할 수 있는 중단에 대해 패키지의 기존 사용자와 통신할 수 있는 경우에만 대/소문자 변경을 요청하는 것이 좋습니다.
+[이 GitHub 문제](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932)에서 설명한 대로, NuGet 패키지의 대문자 표시 변경은 NuGet 지원을 통해 수행할 수 있지만, 패키지를 복원하는 동안 *global-packages* 폴더에서 대/소문자를 다르게 사용한 기존 패키지가 있는 사용자에 대한 복잡성이 발생합니다. 빌드 시간 패키지 복원에 발생할 수 있는 중단에 대해 패키지의 기존 사용자와 통신할 수 있는 경우에만 대/소문자 변경을 요청하는 것이 좋습니다.
 
 ## <a name="reporting-issues"></a>문제 보고
 

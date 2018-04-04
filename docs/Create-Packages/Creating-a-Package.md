@@ -1,23 +1,25 @@
 ---
-title: "NuGet 패키지를 만드는 방법 | Microsoft Docs"
+title: NuGet 패키지를 만드는 방법 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/12/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
-description: "파일 및 버전 관리와 같은 주요 결정 사항을 포함하여 NuGet 패키지를 디자인하고 만드는 과정을 자세히 안내합니다."
-keywords: "NuGet 패키지 만들기, 패키지 만들기, nuspec 매니페스트, NuGet 패키지 규칙, NuGet 패키지 버전"
+ms.technology: ''
+description: 파일 및 버전 관리와 같은 주요 결정 사항을 포함하여 NuGet 패키지를 디자인하고 만드는 과정을 자세히 안내합니다.
+keywords: NuGet 패키지 만들기, 패키지 만들기, nuspec 매니페스트, NuGet 패키지 규칙, NuGet 패키지 버전
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 613e3eb9d08a0da96340f32b13c486508fa32439
-ms.sourcegitcommit: df21fe770900644d476d51622a999597a6f20ef8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 7bb7e16a317aff908effe0b6c603ea53c9e8a563
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-nuget-packages"></a>NuGet 패키지 만들기
 
@@ -131,7 +133,7 @@ ms.lasthandoff: 03/12/2018
 
 종속성 선언 및 버전 번호 지정에 대한 자세한 내용은 [패키지 버전 관리](../reference/package-versioning.md)를 참조하세요. `dependency` 요소의 `include` 및 `exclude` 특성을 사용하여 패키지에 종속성의 자산을 직접 공개할 수도 있습니다. [.nuspec 참조 - 종속성](../reference/nuspec.md#dependencies)을 참조하세요.
 
-매니페스트는 이 매니페스트에서 만든 패키지에 포함되어 있으므로 기존 패키지를 검사하여 임의 개수의 추가 예제를 찾을 수 있습니다. 좋은 원본은 컴퓨터에 있는 전역 패키지 캐시이며, 해당 위치는 다음 명령으로 반환됩니다.
+매니페스트는 이 매니페스트에서 만든 패키지에 포함되어 있으므로 기존 패키지를 검사하여 임의 개수의 추가 예제를 찾을 수 있습니다. 좋은 소스는 컴퓨터에 있는 *global-packages* 폴더이며, 해당 위치는 다음 명령으로 반환됩니다.
 
 ```cli
 nuget locals -list global-packages
@@ -351,7 +353,9 @@ NuGet 3.5 이상을 사용하면 의도한 용도를 나타내기 위해 패키�
 
 패키지에 MSBuild props 및 targets 포함은 [NuGet 2.5부터 도입](../release-notes/NuGet-2.5.md#automatic-import-of-msbuild-targets-and-props-files)되었으므로 `minClientVersion="2.5"` 특성을 `metadata` 요소에 추가하여 패키지를 사용하는 데 필요한 최소 NuGet 클라이언트 버전을 나타내는 것이 좋습니다.
 
-NuGet에서 `\build` 파일이 포함된 패키지를 설치하는 경우 `.targets` 및 `.props` 파일을 가리키는 MSBuild `<Import>` 요소를 프로젝트 파일에 추가합니다. (`.props`는 프로젝트 파일의 위쪽에 추가되고, `.targets`는 아래쪽에 추가됩니다.)
+NuGet에서 `\build` 파일이 포함된 패키지를 설치하는 경우 `.targets` 및 `.props` 파일을 가리키는 MSBuild `<Import>` 요소를 프로젝트 파일에 추가합니다. (`.props`는 프로젝트 파일의 위쪽에 추가되고, `.targets`는 아래쪽에 추가됩니다.) 각 대상 프레임워크에 대해 별도의 조건부 MSBuild `<Import>` 요소가 추가됩니다.
+
+프레임워크 간 대상 지정을 위한 MSBuild `.props` 및 `.targets` 파일은 `\buildCrossTargeting` 폴더에 넣을 수 있습니다. 패키지 설치 중 NuGet은 해당 `<Import>` 요소를 프로젝트 파일에 추가하고, 대상 프레임워크를 설정하지 않는다는 조건(MSBuild 속성 `$(TargetFramework)`가 비어 있어야 함)을 함께 지정합니다.
 
 NuGet 3.x를 사용하면 대상이 프로젝트에 추가되지 않고 대신 `project.lock.json`을 통해 사용할 수 있게 됩니다.
 
@@ -372,7 +376,7 @@ COM interop 어셈블리가 포함된 패키지에는 적절한 [targets 파일]
 </Target>
 ```
 
-`packages.config` 참조 형식을 사용하는 경우 패키지에서 어셈블리에 대한 참조를 추가하면 NuGet 및 Visual Studio에서 COM interop 어셈블리를 확인하고 프로젝트 파일에서 `EmbedInteropTypes`를 true로 설정합니다. 이 경우 targets 파일이 재정의됩니다.
+`packages.config` 관리 형식을 사용하는 경우 패키지에서 어셈블리에 대한 참조를 추가하면 NuGet 및 Visual Studio에서 COM interop 어셈블리를 확인하고 프로젝트 파일에서 `EmbedInteropTypes`를 true로 설정합니다. 이 경우 targets 파일이 재정의됩니다.
 
 또한 기본적으로 [빌드 자산은 전이적으로 이동하지 않습니다](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets). 여기서 설명한 대로 작성된 패키지는 프로젝트 간 참조에서 전이 종속성으로 끌어올 때 다르게 작동합니다. 패키지 소비자는 빌드를 포함하지 않도록 PrivateAssets 기본값을 수정하여 패키지를 이동할 수 있도록 합니다.
 

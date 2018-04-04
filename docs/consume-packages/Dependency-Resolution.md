@@ -1,22 +1,25 @@
 ---
-title: "NuGet 패키지 종속성 확인 | Microsoft Docs"
+title: NuGet 패키지 종속성 확인 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 패키지의 종속성을 확인하여 NuGet 2.x 및 NuGet 3.x 이상에 모두 설치하는 프로세스를 자세히 설명합니다."
-keywords: "NuGet 패키지 종속성, NuGet 버전 관리, 종속성 버전, 버전 그래프, 버전 확인, 전이적 복원"
+ms.technology: ''
+description: NuGet 패키지의 종속성을 확인하여 NuGet 2.x 및 NuGet 3.x 이상에 모두 설치하는 프로세스를 자세히 설명합니다.
+keywords: NuGet 패키지 종속성, NuGet 버전 관리, 종속성 버전, 버전 그래프, 버전 확인, 전이적 복원
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: aa2537a2538d0ea665944784ef183dc12faa9b38
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: d387acd369c88a64abaa2cb94a913fe211df8da1
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet에서 패키지 종속성을 확인하는 방법
 
@@ -24,7 +27,7 @@ ms.lasthandoff: 03/08/2018
 
 그런 다음 이러한 직접적인 종속성에도 자체의 종속성이 있을 수 있으며, 이에 따라 임의의 수준까지 계속 종속될 수 있습니다. 이렇게 하면 패키지 간의 관계가 모든 수준임을 설명하는 *종속성 그래프*를 생성합니다.
 
-여러 패키지의 종속성이 같은 경우 동일한 패키지 ID가 그래프에 여러 번 표시될 수 있으며, 잠재적으로 서로 다른 버전 제약 조건이 있을 수 있습니다. 그러나 프로젝트에서 특정 패키지의 한 버전만 사용할 수 있으므로 NuGet은 사용할 버전을 선택해야 합니다. 정확한 프로세스는 사용되는 패키지 참조 형식에 따라 다릅니다.
+여러 패키지의 종속성이 같은 경우 동일한 패키지 ID가 그래프에 여러 번 표시될 수 있으며, 잠재적으로 서로 다른 버전 제약 조건이 있을 수 있습니다. 그러나 프로젝트에서 특정 패키지의 한 버전만 사용할 수 있으므로 NuGet은 사용할 버전을 선택해야 합니다. 정확한 프로세스는 사용되는 패키지 관리 형식에 따라 다릅니다.
 
 ## <a name="dependency-resolution-with-packagereference"></a>PackageReference를 사용하여 종속성 확인
 
@@ -109,7 +112,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 기본적으로 NuGet 2.8은 가장 낮은 패치 버전을 찾습니다([NuGet 2.8 릴리스 정보](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies) 참조). `Nuget.Config`의 `DependencyVersion` 특성 및 명령줄의 `-DependencyVersion` 스위치를 통해 이 설정을 제어할 수 있습니다.  
 
-더 큰 종속성 그래프의 경우 종속성을 확인하기 위한 `packages.config` 프로세스가 복잡해집니다. 새 패키지를 설치할 때마다 그래프 전체를 통과해야 하며 버전 충돌이 발생할 가능성이 높습니다. 충돌이 발생하면 특히 프로젝트 파일 자체를 잠재적으로 수정하여 설치가 중지되고 프로젝트가 확정되지 않은 상태로 유지됩니다. 다른 패키지 참조 형식을 사용하는 경우에는 문제가 되지 않습니다.
+더 큰 종속성 그래프의 경우 종속성을 확인하기 위한 `packages.config` 프로세스가 복잡해집니다. 새 패키지를 설치할 때마다 그래프 전체를 통과해야 하며 버전 충돌이 발생할 가능성이 높습니다. 충돌이 발생하면 특히 프로젝트 파일 자체를 잠재적으로 수정하여 설치가 중지되고 프로젝트가 확정되지 않은 상태로 유지됩니다. 다른 패키지 관리 형식을 사용하는 경우에는 문제가 되지 않습니다.
 
 ## <a name="managing-dependency-assets"></a>종속성 자산 관리
 
@@ -121,7 +124,7 @@ PackageReference 형식을 사용하는 경우 종속성에서 최상위 프로�
 
 프로젝트에서 동일한 이름의 어셈블리를 두 번 이상 참조하여 디자인 타임 및 빌드 시간 오류를 생성할 수 있는 시나리오가 있습니다. `C.dll`의 사용자 지정 버전을 포함하고 `C.dll`도 포함된 C 패키지를 참조하는 프로젝트를 생각해 보세요. 동시에 이 프로젝트는 C 패키지와 `C.dll`에도 종속된 B 패키지에 종속됩니다. 결과적으로 NuGet은 사용할 `C.dll`을 결정할 수 없지만 B 패키지도 이에 종속되기 때문에 C 패키지에 대한 프로젝트의 종속성을 제거할 수 없습니다.
 
-이 문제를 해결하려면, 원하는 `C.dll`을 직접 참조하거나 올바른 패키지를 참조하는 다른 패키지를 사용한 다음, 해당 자산을 모두 제외하는 C 패키지에 대한 종속성을 추가해야 합니다. 이렇게 하려면 사용 중인 패키지 참조 형식에 따라 다음과 같이 수행합니다.
+이 문제를 해결하려면, 원하는 `C.dll`을 직접 참조하거나 올바른 패키지를 참조하는 다른 패키지를 사용한 다음, 해당 자산을 모두 제외하는 C 패키지에 대한 종속성을 추가해야 합니다. 이렇게 하려면 사용 중인 패키지 관리 형식에 따라 다음과 같이 수행합니다.
 
 - [PackageReference](../consume-packages/package-references-in-project-files.md): 종속성에 `Exclude="All"`을 추가합니다.
 

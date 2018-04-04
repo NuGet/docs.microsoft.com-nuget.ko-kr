@@ -1,22 +1,25 @@
 ---
-title: "Visual Studio에서 NuGet 패키지 복원 문제 해결 | Microsoft Docs"
+title: Visual Studio에서 NuGet 패키지 복원 문제 해결 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/13/2018
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio의 일반적인 NuGet 복원 오류 및 해당 오류를 해결하는 방법의 설명입니다."
-keywords: "NuGet 패키지 복원, 패키지 복원, 문제 해결, 문제 해결"
+ms.technology: ''
+description: Visual Studio의 일반적인 NuGet 복원 오류 및 해당 오류를 해결하는 방법의 설명입니다.
+keywords: NuGet 패키지 복원, 패키지 복원, 문제 해결, 문제 해결
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8efaed497a596921af3c73ab919831c73bf598e0
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 27a43ceaefdf3a7842183a64ea57d05416d6cb02
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="troubleshooting-package-restore-errors"></a>패키지 복원 오류 문제 해결
 
@@ -48,7 +51,10 @@ This project references NuGet package(s) that are missing on this computer.
 Use NuGet Package Restore to download them. The missing file is {name}.
 ```
 
-이 오류는 하나 이상의 NuGet 패키지에 대한 참조를 포함하는 프로젝트를 빌드하려고 시도할 때 해당 패키지가 프로젝트에 현재 캐시되지 않은 경우에 발생합니다. (패키지는 프로젝트가 `packages.config`를 사용하는 경우 솔루션 루트의 `packages` 폴더에, 프로젝트가 PackageReference 형식을 사용하는 경우 `obj/project.assets.json` 파일에 캐시됩니다.)
+이 오류는 하나 이상의 NuGet 패키지에 대한 참조를 포함하는 프로젝트를 빌드하려고 시도할 때 해당 패키지가 컴퓨터 또는 프로젝트에 현재 설치되지 않은 경우에 발생합니다.
+
+- PackageReference 관리 형식을 사용할 경우 이 오류는 [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md)(글로벌 패키지 및 캐시 폴더 관리)에 설명된 대로 패키지가 *global-packages* 폴더에 설치되지 않았음을 나타냅니다.
+- `packages.config`를 사용할 경우 이 오류는 패키지가 솔루션 루트의 `packages` 폴더에 설치되어 있지 않음을 의미합니다.
 
 이러한 상황은 일반적으로 소스 제어 또는 다른 다운로드에서 프로젝트의 소스 코드를 가져올 때 발생합니다. 패키지는 nuget.org 같은 패키지 피드에서 복원할 수 있으므로 일반적으로 소스 제어 또는 다운로드에는 패키지가 없습니다([패키지 및 소스 제어](Packages-and-Source-Control.md) 참조). 그렇지 않고 이를 포함할 경우 리포지토리가 블로트되거나 불필요하게 큰 .zip 파일이 생성됩니다.
 
@@ -59,7 +65,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 - 명령줄에서 `nuget restore`를 실행합니다(단, `dotnet`을 사용하여 만든 프로젝트의 경우에는 `dotnet restore` 사용).
 - PackageReference 형식을 사용하는 프로젝트의 경우 명령줄에서 `msbuild /t:restore`를 실행합니다.
 
-복원에 성공하면 `packages` 폴더(`packages.config` 사용 시) 또는 `obj/project.assets.json` 파일(PackageReference 사용 시)이 표시됩니다. 이제 프로젝트가 성공적으로 빌드됩니다. 그렇지 않을 경우 후속 조치를 위해 [GitHub에서 문제를 제출](https://github.com/NuGet/docs.microsoft.com-nuget/issues)해 주세요.
+복원되면 패키지가 *global-packages* 폴더에 있어야 합니다. PackageReference를 사용하는 프로젝트의 경우 복원에서 `obj/project.assets.json` 파일을 다시 만들어야 하고, `packages.config`를 사용하는 프로젝트의 경우 패키지가 프로젝트의 `packages` 폴더에 표시되어야 합니다. 이제 프로젝트가 성공적으로 빌드됩니다. 그렇지 않을 경우 후속 조치를 위해 [GitHub에서 문제를 제출](https://github.com/NuGet/docs.microsoft.com-nuget/issues)해 주세요.
 
 <a name="assets"></a>
 
@@ -71,7 +77,9 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 Assets file '<path>\project.assets.json' not found. Run a NuGet package restore to generate this file.
 ```
 
-이 오류는 [이전 섹션](#missing)에 설명된 것과 같은 이유로 발생하며 해결책도 동일합니다. 예를 들어 소스 제어에서 가져온 .NET Core 프로젝트에 대해 `msbuild`를 실행하면 패키지가 자동으로 복원되지 않습니다. 이 경우 `msbuild /t:restore` 및 `msbuild`를 차례로 실행하거나 `dotnet build`를 사용합니다(그러면 패키지가 자동으로 복원됨).
+`project.assets.json` 파일은 PackageReference 관리 형식을 사용할 때 프로젝트의 종속성 그래프를 유지하며, 필요한 모든 패키지가 컴퓨터에 설치되어 있는지 확인하는 데 사용됩니다. 이 파일은 패키지 복원을 통해 동적으로 생성되므로 일반적으로 소스 제어에는 추가되지 않습니다. 따라서 이 오류는 패키지를 자동으로 복원하지 않는 `msbuild`와 같은 도구를 사용하여 프로젝트를 빌드할 때 발생합니다.
+
+이 경우 `msbuild /t:restore` 및 `msbuild`를 차례로 실행하거나 `dotnet build`를 사용합니다(그러면 패키지가 자동으로 복원됨). [이전 섹션](#missing)에서는 원하는 패키지 복원 방법을 사용할 수도 있습니다.
 
 <a name="consent"></a>
 
@@ -103,11 +111,12 @@ during build.' You can also give consent by setting the environment variable
 </configuration>
 ```
 
-`nuget.config`에서 `packageRestore` 설정을 바로 편집할 경우 Visual Studio를 다시 시작해야 옵션 대화 상자에 최신 값이 표시됩니다.
+> [!Important]
+> `nuget.config`에서 `packageRestore` 설정을 바로 편집할 경우 Visual Studio를 다시 시작해야 옵션 대화 상자에 최신 값이 표시됩니다.
 
 ## <a name="other-potential-conditions"></a>다른 잠재적 상태
 
-- 파일이 없을 경우 NuGet 복원을 사용하려면 해당 파일을 다운로드하라는 메시지와 함께 빌드 오류가 발생할 수 있습니다. 하지만 복원을 실행할 때 "모든 패키지가 이미 설치되어 있으며 복원할 항목이 없습니다"라는 메시지가 나타날 수 있습니다. 이 경우 `packages` 폴더(`packages.config` 사용 시) 또는 `obj/project.assets.json` 파일(PackageReference 사용 시)을 삭제하고 복원을 다시 실행하세요.
+- 파일이 없을 경우 NuGet 복원을 사용하려면 해당 파일을 다운로드하라는 메시지와 함께 빌드 오류가 발생할 수 있습니다. 하지만 복원을 실행할 때 "모든 패키지가 이미 설치되어 있으며 복원할 항목이 없습니다"라는 메시지가 나타날 수 있습니다. 이 경우 `packages` 폴더(`packages.config` 사용 시) 또는 `obj/project.assets.json` 파일(PackageReference 사용 시)을 삭제하고 복원을 다시 실행하세요. 그래도 오류가 지속되면 명령줄에서 [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md)(전역 패키지 및 캐시 폴더 관리)에 설명된 대로 `nuget locals all -clear` 또는 `dotnet locals all --clear`를 사용하여 *global-packages* 및 캐시 폴더를 지웁니다.
 
 - 소스 제어에서 프로젝트를 가져올 때 프로젝트 폴더가 읽기 전용으로 설정되어 있을 수 있습니다. 폴더 사용 권한을 변경하고 패키지를 다시 복원해 보세요.
 

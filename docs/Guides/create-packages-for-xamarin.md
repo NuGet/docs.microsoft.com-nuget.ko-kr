@@ -1,28 +1,31 @@
 ---
-title: "Xamarin용 NuGet 패키지 만들기(iOS, Android 및 Windows용) | Microsoft Docs"
+title: Visual Studio 2015를 사용하여 Xamarin용 NuGet 패키지 만들기(iOS, Android 및 Windows용) | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "iOS, Android 및 Windows에서 네이티브 API를 사용하는 Xamarin에 대한 NuGet 패키지를 만드는 종단 간 연습입니다."
-keywords: "패키지 만들기, Xamarin에 대한 패키지, 플랫폼 간 패키지"
+ms.technology: ''
+description: iOS, Android 및 Windows에서 네이티브 API를 사용하는 Xamarin에 대한 NuGet 패키지를 만드는 종단 간 연습입니다.
+keywords: 패키지 만들기, Xamarin에 대한 패키지, 플랫폼 간 패키지
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3e1460de060980365a5eaa2ef91c052cc359bb70
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: e101ca2d124a19d2cf758776717b3680aa5bbdd8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="create-packages-for-xamarin"></a>Xamarin용 패키지 만들기
+# <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 Xamarin용 패키지 만들기
 
-플랫폼 간 패키지에는 런타임 운영 체제에 따라 iOS, Android 및 Windows에서 네이티브 API를 사용하는 코드가 포함되어 있습니다. 이 작업은 간단하지만 개발자가 공통 API 노출 영역을 통해 PCL 또는 .NET Standard 라이브러리에서 패키지를 사용할 수 있게 하는 것이 좋습니다.
+Xamarin용 패키지에는 런타임 운영 체제에 따라 iOS, Android 및 Windows에서 네이티브 API를 사용하는 코드가 포함되어 있습니다. 이 작업은 간단하지만 개발자가 공통 API 노출 영역을 통해 PCL 또는 .NET Standard 라이브러리에서 패키지를 사용할 수 있게 하는 것이 좋습니다.
 
-이 연습에서는 iOS, Android 및 Windows의 모바일 프로젝트에 사용할 수 있는 플랫폼 간 NuGet 패키지를 만듭니다.
+이 연습에서는 Visual Studio 2015를 사용하여 iOS, Android 및 Windows의 모바일 프로젝트에 사용할 수 있는 플랫폼 간 NuGet 패키지를 만듭니다.
 
 1. [필수 조건](#prerequisites)
 1. [프로젝트 구조 및 추상화 코드 만들기](#create-the-project-structure-and-abstraction-code)

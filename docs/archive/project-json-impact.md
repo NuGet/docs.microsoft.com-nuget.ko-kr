@@ -1,22 +1,25 @@
 ---
-title: "NuGet 패키지 작성자에게 미치는 project.json 영향 | Microsoft Docs"
+title: NuGet 패키지 작성자에게 미치는 project.json 영향 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 3.x에서 project.json의 구현이 지원되지 않는 기능, 콘텐츠 및 패키지 형식 등 패키지 작성자에 영향을 주는 방법에 대한 세부 정보입니다."
-keywords: "NuGet 및 project.json, project.json 영향, 패키지 작성 고려 사항, project.json 기능"
+ms.technology: ''
+description: NuGet 3.x에서 project.json의 구현이 지원되지 않는 기능, 콘텐츠 및 패키지 형식 등 패키지 작성자에 영향을 주는 방법에 대한 세부 정보입니다.
+keywords: NuGet 및 project.json, project.json 영향, 패키지 작성 고려 사항, project.json 기능
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b732d48b169825764d614c338658f8c6ef45e765
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 6e8af98504a2866106e84943989aeb91f2e9c1fb
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>패키지를 만들 때 project.json의 영향
 

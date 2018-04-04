@@ -1,28 +1,31 @@
 ---
-title: "NuGet에 대한 project.json 파일 참조 | Microsoft Docs"
+title: NuGet에 대한 project.json 파일 참조 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 07/27/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "일부 프로젝트 형식에서 project.json은 프로젝트에 사용된 NuGet 패키지 목록을 유지 관리합니다."
-keywords: "NuGet project.json, NuGet 패키지 참조, NuGet 종속성, project.lock.json"
+ms.technology: ''
+description: 일부 프로젝트 형식에서 project.json은 프로젝트에 사용된 NuGet 패키지 목록을 유지 관리합니다.
+keywords: NuGet project.json, NuGet 패키지 참조, NuGet 종속성, project.lock.json
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2e2c521b18dd67e49942cc20eafef0be7f91573a
-ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 21542a219faa3d1fa0c32a838645d4471c5aa935
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="projectjson-reference"></a>project.json 참조
 
 *NuGet 3.x 이상*
 
-`project.json` 파일은 패키지 참조 형식이라고 하는 프로젝트에 사용되는 패키지의 목록을 유지 관리합니다. `packages.config`를 대체하여 NuGet 4.0 이상이 포함된 [PackageReference](../consume-packages/package-references-in-project-files.md)로 대체합니다.
+`project.json` 파일은 패키지 관리 형식이라고 하는 프로젝트에 사용되는 패키지의 목록을 유지 관리합니다. `packages.config`를 대체하여 NuGet 4.0 이상이 포함된 [PackageReference](../consume-packages/package-references-in-project-files.md)로 대체합니다.
 
 [`project.lock.json`](#projectlockjson) 파일(아래 설명 참조)도 `project.json`을 사용하는 프로젝트에서 사용됩니다.
 

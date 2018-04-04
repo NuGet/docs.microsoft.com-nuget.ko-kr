@@ -1,26 +1,29 @@
 ---
-title: "NuGet project.json 보관 콘텐츠 | Microsoft Docs"
+title: NuGet project.json 보관 콘텐츠 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/17/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "project.json 콘텐츠의 기타 비트는 NuGet 설명서의 다른 영역에서 제거됩니다."
-keywords: "NuGet project.json 파일"
+ms.technology: ''
+description: project.json 콘텐츠의 기타 비트는 NuGet 설명서의 다른 영역에서 제거됩니다.
+keywords: NuGet project.json 파일
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 42a40c6c637839c13effc9e476ac5702a92cfd2a
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 16361fe16d8ecc7064af4b6d636435a31a5663dc
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="projectjson-archive"></a>project.json 보관 파일
 
-`project.json` 참조 형식은 NuGet 3.x와 함께 도입되었으며 특정 프로젝트 유형에 사용됩니다. 이 참조 형식은 종속성이 프로젝트 파일에 직접 나열되는 PackageReference 형식이 도입되면서 더 이상 사용되지 않습니다.
+`project.json` 관리 형식은 NuGet 3.x와 함께 도입되었으며 특정 프로젝트 유형에 사용됩니다. 이 참조 형식은 종속성이 프로젝트 파일에 직접 나열되는 PackageReference 형식이 도입되면서 더 이상 사용되지 않습니다.
 
 다음 항목도 참조하세요.
 
@@ -28,11 +31,11 @@ ms.lasthandoff: 02/01/2018
 - [project.json이 패키지 작성자에 미치는 영향](project-json-impact.md)
 - [project.json 및 UWP](project-json-and-uwp.md)
 
-## <a name="projectjson-reference-format"></a>project.json 참조 형식
+## <a name="projectjson-management-format"></a>project.json 관리 형식
 
 *원래 [패키지 복원](../what-is-nuget.md)에 포함됩니다.*
 
-참조 형식 목록에서:
+관리 형식 목록에서:
 
 - [`project.json`](project-json.md): *(사용되지 않음)* 연결된 `project.lock.json` 파일의 전체 패키지 그래프와 함께 프로젝트의 종속성 목록을 유지 관리하는 JSON 파일입니다. 이 형식 대신 PackageReference가 사용됩니다.
 
@@ -138,7 +141,7 @@ PackageReference의 동작은 `project.json`에도 적용됩니다. NuGet 복원
 
 *원래 [NuGet.Config 참조](../reference/nuget-config-file.md)에 포함됩니다.*
 
-`globalPackagesFolder`는 `project.json`에만 적용됩니다.
+`globalPackagesFolder`는 `project.json`에만 적용됩니다. (추가 참고: PackageReference에도 적용됩니다.)
 
 ### <a name="nuspec-file-reference"></a>nuspec 파일 참조
 
@@ -150,7 +153,7 @@ PackageReference의 동작은 `project.json`에도 적용됩니다. NuGet 복원
 
 *원래 [패키지 관리자 UI 참조](../tools/package-manager-ui.md)에 포함됩니다.*
 
-`project.json` 참조 형식을 사용하는 프로젝트는 **미리 보기 창 표시** 옵션만 표시합니다.
+`project.json` 관리 형식을 사용하는 프로젝트는 **미리 보기 창 표시** 옵션만 표시합니다.
 
 ### <a name="visual-studio-templates"></a>Visual Studio 템플릿
 

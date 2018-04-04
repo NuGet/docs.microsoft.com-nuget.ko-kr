@@ -1,26 +1,29 @@
 ---
-title: "Visual Studio 내에서 NuGet 패키지 사용에 대한 소개 가이드 | Microsoft Docs"
+title: Visual Studio 내에서 NuGet 패키지 사용에 대한 소개 가이드 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/23/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio 프로젝트에서 NuGet 패키지를 설치하고 사용하는 프로세스에 대한 연습 자습서입니다."
-keywords: "NuGet 설치, NuGet 패키지 사용, NuGet 패키지 설치, NuGet 패키지 참조, NuGet 패키지 사용"
+ms.technology: ''
+description: Visual Studio 프로젝트에서 NuGet 패키지를 설치하고 사용하는 프로세스에 대한 연습 자습서입니다.
+keywords: NuGet 설치, NuGet 패키지 사용, NuGet 패키지 설치, NuGet 패키지 참조, NuGet 패키지 사용
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ff905fec6d6af4fa40fd4331cb970121b6eb0879
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 4205893cc02cffff8926513a555393d10c046f43
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-and-use-a-package-in-visual-studio"></a>Visual Studio에서 패키지 설치 및 사용
 
-NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 제공하는 다시 사용할 수 있는 코드를 포함합니다. 배경 지식은 [NuGet이란?](../What-is-NuGet.md)을 참조하세요. 패키지는 이 문서에 설명된 대로 널리 사용되는 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 패키지 및 UWP(유니버설 Windows 플랫폼) 프로젝트에 대해 패키지 관리자 UI 또는 패키지 관리자 콘솔을 사용하여 Visual Studio 프로젝트에 설치됩니다.
+NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 제공하는 다시 사용할 수 있는 코드를 포함합니다. 배경 지식은 [NuGet이란?](../What-is-NuGet.md)을 참조하세요. 패키지는 패키지 관리자 UI 또는 패키지 관리자 콘솔을 사용하여 Visual Studio 프로젝트에 설치됩니다. 이 문서에서는 널리 사용되는 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 패키지 및 UWP(유니버설 Windows 플랫폼) 프로젝트를 사용하는 프로세스를 보여줍니다. 같은 프로세스가 다른 .NET 또는 .NET Core 프로젝트에 모두에 적용됩니다.
 
 패키지가 설치되면 `using <namespace>`를 사용하여 코드에서 패키지를 참조합니다. 여기서 \<네임스페이스\>는 사용 중인 패키지에 특정됩니다. 일단 참조를 만들면 해당 API를 통해 패키지를 호출할 수 있습니다.
 
@@ -36,7 +39,9 @@ NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 �
 
 ## <a name="create-a-project"></a>프로젝트 만들기
 
-NuGet 패키지는 일종의 .NET 프로젝트에 설치할 수 있습니다. 이 연습에서는 간단한 유니버설 Windows(UWP) 앱을 사용합니다. **파일 > 새 프로젝트...**를 사용하고 **Windows 유니버설 > 빈 앱(유니버설 Windows)**을 선택하여 Visual Studio에서 프로젝트를 만듭니다. 메시지가 표시되면 대상 버전 및 최소 버전에 대한 기본값을 적용합니다.
+NuGet 패키지는 패키지가 프로젝트와 동일한 대상 프레임워크를 지원하는 경우 어느 .NET 프로젝트에나 설치할 수 있습니다.
+
+이 연습에서는 간단한 유니버설 Windows(UWP) 앱을 사용합니다. **파일 > 새 프로젝트...**를 사용하고 **Windows 유니버설 > 빈 앱(유니버설 Windows)**을 선택하여 Visual Studio에서 프로젝트를 만듭니다. 메시지가 표시되면 대상 버전 및 최소 버전에 대한 기본값을 적용합니다.
 
 ## <a name="add-the-newtonsoftjson-nuget-package"></a>Newtonsoft.Json NuGet 패키지 추가
 
@@ -56,7 +61,7 @@ NuGet 패키지는 일종의 .NET 프로젝트에 설치할 수 있습니다. �
 
 1. (Visual Studio 2017) 패키지 관리 형식을 선택하라는 메시지가 표시되면 **프로젝트 파일에서 PackageReference**를 선택합니다.
 
-    ![패키지 참조 형식 선택](media/QS_Use-03b-SelectFormat.png)
+    ![패키지 관리 형식 선택](media/QS_Use-03b-SelectFormat.png)
 
 1. 변경 내용을 검토하라는 메시지가 표시되면 **확인**을 선택합니다.
 

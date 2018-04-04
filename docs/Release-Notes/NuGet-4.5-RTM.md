@@ -1,23 +1,26 @@
 ---
-title: "NuGet 4.5 RTM 릴리스 정보 | Microsoft Docs"
+title: NuGet 4.5 RTM 릴리스 정보 | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unniravindranathan
 ms.date: 12/4/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 4.5 RTM에 대한 릴리스 정보(알려진 문제, 버그 수정, 추가된 기능 및 DCR 포함)"
-keywords: "NuGet 4.5 RTM 릴리스 정보, 버그 수정, 알려진 문제, 추가된 기능, DCR"
+ms.technology: ''
+description: NuGet 4.5 RTM에 대한 릴리스 정보(알려진 문제, 버그 수정, 추가된 기능 및 DCR 포함)
+keywords: NuGet 4.5 RTM 릴리스 정보, 버그 수정, 알려진 문제, 추가된 기능, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: e4727d46812cbfeb2e7094ddf28bf4e738e8aeea
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dbde7256ed5526761107272792d7c7cdc324a3ef
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-45-rtm-release-notes"></a>NuGet 4.5 RTM 릴리스 정보
 

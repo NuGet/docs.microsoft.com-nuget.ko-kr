@@ -1,23 +1,25 @@
 ---
-title: "NuGet 패키지 다시 설치 및 업데이트 | Microsoft Docs"
+title: NuGet 패키지 다시 설치 및 업데이트 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-ms.assetid: 2785879b-97f0-4a85-b3cc-bf4eaa5c39bf
-description: "Visual Studio에서 손상된 패키지 참조와 같이 패키지를 다시 설치하고 업데이트해야 하는 경우에 대해 자세히 설명합니다."
-keywords: "NuGet 패키지 설치, NuGet 패키지 다시 설치, NuGet 패키지 복원, 패키지 업데이트, 패키지 복원, 손상된 참조 수정"
+ms.technology: ''
+description: Visual Studio에서 손상된 패키지 참조와 같이 패키지를 다시 설치하고 업데이트해야 하는 경우에 대해 자세히 설명합니다.
+keywords: NuGet 패키지 설치, NuGet 패키지 다시 설치, NuGet 패키지 복원, 패키지 업데이트, 패키지 복원, 손상된 참조 수정
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: e2875630b24fbe04fc7bcab52335d849e54160de
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 9da385f51abf5877589c29ebdeffefc9a1a20a2e
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>패키지를 다시 설치하고 업데이트하는 방법
 
@@ -48,7 +50,7 @@ ms.lasthandoff: 03/08/2018
 
 기본적으로 패키지를 다시 설치하거나 업데이트하는 경우 *항상* 패키지 원본에서 사용 가능한 최신 버전이 설치됩니다.
 
-그러나 `packages.config` 참조 형식을 사용하는 프로젝트에서는 버전 범위를 구체적으로 제한할 수 있습니다. 예를 들어 패키지 API의 주요 변경으로 인해 응용 프로그램이 패키지 버전 1.x에서만 작동하고 2.0 이상에서는 작동하지 않는 것으로 알고 있는 경우 업그레이드를 1.x 버전으로 제한하려고 합니다. 이렇게 하면 우발적인 업데이트로 인해 응용 프로그램이 중단되는 것을 방지할 수 있습니다.
+그러나 `packages.config` 관리 형식을 사용하는 프로젝트에서는 버전 범위를 구체적으로 제한할 수 있습니다. 예를 들어 패키지 API의 주요 변경으로 인해 응용 프로그램이 패키지 버전 1.x에서만 작동하고 2.0 이상에서는 작동하지 않는 것으로 알고 있는 경우 업그레이드를 1.x 버전으로 제한하려고 합니다. 이렇게 하면 우발적인 업데이트로 인해 응용 프로그램이 중단되는 것을 방지할 수 있습니다.
 
 제한 조건을 설정하려면 텍스트 편집기에서 `packages.config`를 열고, 문제의 종속성을 찾고, 버전 범위가 있는 `allowedVersions` 특성을 추가합니다. 예를 들어 업데이트를 1.x 버전으로 제한하려면 `allowedVersions`를 `[1,2)`로 설정합니다.
 

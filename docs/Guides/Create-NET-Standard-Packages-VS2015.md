@@ -1,35 +1,38 @@
 ---
-title: "Visual Studio 2015를 사용하여 .NET Standard NuGet 패키지 만들기 | Microsoft Docs"
+title: Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework NuGet 패키지 만들기 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 02/02/2018
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 3.x 및 Visual Studio 2015를 사용하여 .NET Standard NuGet 패키지를 만드는 종단 간 연습입니다."
-keywords: "패키지 만들기, .NET Standard 패키지, .NET Standard 매핑 테이블"
+ms.technology: ''
+description: NuGet 3.x 및 Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework NuGet 패키지를 만드는 종단 간 연습입니다.
+keywords: 패키지 만들기, .NET Standard 패키지, .NET Framework 패키지
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: abf6a56cbc84bdd066e31e77c7883825a8456144
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dbe0a0788b5fc9ba37f7db601bd51c3e4f78f5b8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="create-net-standard-packages-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 .NET Standard 패키지 만들기
+# <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework 패키지 만들기
 
-*NuGet 3.x에 적용됩니다. NuGet 4.x 이상을 사용하려면 [Visual Studio 2017을 사용하여 패키지 생성 및 게시](../quickstart/create-and-publish-a-package-using-visual-studio.md)를 참조하세요.*
+**참고:** .NET Standard 라이브러리를 개발할 때는 Visual Studio 2017을 사용하는 것이 좋습니다. Visual Studio 2015도 사용해도 되지만 .NET Core 도구가 미리 보기 상태로만 제공되었습니다. NuGet 4.x 이상과 Visual Studio 2017을 사용하려면 [Visual Studio 2017을 사용하여 패키지 생성 및 게시](../quickstart/create-and-publish-a-package-using-visual-studio.md)를 참조하세요.
 
 [.NET Standard 라이브러리](/dotnet/articles/standard/library)는 모든 .NET 런타임에서 사용할 수 있도록 만들어진 .NET API의 공식 사양이며, 이에 따라 .NET 생태계에서 더 균일하게 설정됩니다. .NET Standard 라이브러리는 워크로드와는 별도로 구현할 모든 .NET 플랫폼에 대해 균일한 BCL(기본 클래스 라이브러리) API 집합을 정의합니다. 개발자가 모든 .NET 런타임에서 사용할 수 있는 코드를 생성할 수 있으며, 공유 코드에서 플랫폼별 조건부 컴파일 지시문을 제거하지 않더라도 이를 줄일 수 있습니다.
 
-이 가이드에서는 .NET Standard 라이브러리 1.4를 대상으로 하는 NuGet 패키지를 만드는 과정을 안내합니다. 이러한 라이브러리는 .NET Framework 4.6.1, 유니버설 Windows 플랫폼 10, .NET Core 및 Mono/Xamarin에서 작동합니다. 자세한 내용은 이 항목의 뒷부분에 있는 [.NET Standard 매핑 테이블](#net-standard-mapping-table)을 참조하세요.
+이 가이드에서는 .NET Standard 라이브러리 1.4를 대상으로 하는 NuGet 패키지 또는 .NET Framework 4.6을 대상으로 하는 NuGet 패키지를 만드는 과정을 안내합니다. .NET Standard 1.4 라이브러리는 .NET Framework 4.6.1, 유니버설 Windows 플랫폼 10, .NET Core 및 Mono/Xamarin에서 작동합니다. 자세한 내용은 [.NET Standard 매핑 테이블](/dotnet/standard/net-standard#net-implementation-support)(.NET 설명서)을 참조하세요. 원하는 경우 다른 버전의 .NET Standard 라이브러리를 선택할 수 있습니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
 1. Visual Studio 2015 업데이트 3
-1. [.NET Core SDK](https://www.microsoft.com/net/download/)
+1. (.NET Standard에만 해당) [.NET Core SDK](https://www.microsoft.com/net/download/)
 1. NuGet CLI - [nuget.org/downloads](https://nuget.org/downloads)에서 최신 버전의 nuget.exe를 다운로드하여 원하는 위치에 저장합니다. 그런 다음 해당 위치를 PATH 환경 변수에 추가합니다(아직 없는 경우).
 
     > [!Note]
@@ -37,13 +40,13 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="create-the-class-library-project"></a>클래스 라이브러리 프로젝트 만들기
 
-1. Visual Studio의 **파일> 새로 만들기> 프로젝트**에서 **Visual C# > Windows** 노드를 차례로 펼치고, **클래스 라이브러리(이식 가능)**를 선택하고, 이름을 AppLogger로 변경한 다음, [확인]을 클릭합니다.
+1. Visual Studio의 **파일> 새로 만들기> 프로젝트**에서 **Visual C# > Windows** 노드를 확장하고, **클래스 라이브러리(이식 가능)**를 선택하고, 이름을 AppLogger로 변경한 다음, **확인**을 클릭합니다.
 
     ![새 클래스 라이브러리 프로젝트 만들기](media/NetStandard-NewProject.png)
 
-1. **이식 가능한 클래스 라이브러리 추가** 대화 상자가 표시되면 `.NET Framework 4.6` 및 `ASP.NET Core 1.0` 옵션을 선택합니다.
+1. **이식 가능한 클래스 라이브러리 추가** 대화 상자가 표시되면 `.NET Framework 4.6` 및 `ASP.NET Core 1.0`에 대한 옵션을 선택합니다. (.NET Framework를 대상으로 하는 경우에는 원하는 적절한 옵션을 선택할 수 있습니다.)
 
-1. [솔루션 탐색기]에서 `AppLogger (Portable)`을 마우스 오른쪽 단추로 클릭하고, **속성**을 선택하고, **라이브러리** 탭을 선택한 다음, **대상 지정** 섹션에서 **.NET 플랫폼 표준을 대상으로 지정**을 클릭합니다. 그러면 확인 메시지가 표시되며, 드롭다운 목록에서 `.NET Standard 1.4`를 선택할 수 있습니다.
+1. .NET Standard를 대상으로 지정하는 경우 솔루션 탐색기에서 `AppLogger (Portable)`을 마우스 오른쪽 단추로 클릭하고, **속성**을 선택하고, **라이브러리** 탭을 선택한 다음, **대상 지정** 섹션에서 **.NET 플랫폼 표준을 대상으로 지정**을 선택합니다. 그러면 확인을 묻는 메시지가 표시되며, 확인하면 드롭다운에서 `.NET Standard 1.4`(또는 다른 사용 가능한 버전)를 선택할 수 있습니다.
 
     ![대상을 .NET Standard 1.4로 설정](media/NetStandard-ChangeTarget.png)
 
@@ -96,11 +99,23 @@ ms.lasthandoff: 03/15/2018
 
 1. 참조 어셈블리를 `.nuspec` 파일, 즉 라이브러리의 DLL 및 IntelliSense XML 파일에 추가합니다.
 
+    .NET Standard를 대상으로 지정하는 경우 항목은 다음과 유사하게 표시되고,
+
     ```xml
     <!-- Insert below <metadata> element -->
     <files>
         <file src="bin\Release\AppLogger.dll" target="lib\netstandard1.4\AppLogger.dll" />
         <file src="bin\Release\AppLogger.xml" target="lib\netstandard1.4\AppLogger.xml" />
+    </files>
+    ```
+
+    .NET Framework를 대상으로 하는 경우 항목이 다음과 유사하게 표시됩니다.
+
+    ```xml
+    <!-- Insert below <metadata> element -->
+    <files>
+        <file src="bin\Release\AppLogger.dll" target="lib\net46\AppLogger.dll" />
+        <file src="bin\Release\AppLogger.xml" target="lib\net46\AppLogger.xml" />
     </files>
     ```
 
@@ -146,7 +161,7 @@ ms.lasthandoff: 03/15/2018
 nuget pack AppLogger.nuspec
 ```
 
-그러면 `AppLogger.YOUR_NAME.1.0.0.nupkg`가 생성됩니다. [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)와 같은 도구에서 이 파일을 열고 모든 노드를 확장하면 다음과 같은 내용이 표시됩니다.
+이 명령은 `AppLogger.YOUR_NAME.1.0.0.nupkg`를 생성합니다. [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)와 같은 도구에서 이 파일을 열고 모든 노드를 확장하면 다음과 같은 내용이 표시됩니다(.NET Standard의 경우).
 
 ![AppLogger 패키지를 보여 주는 NuGet 패키지 탐색기](media/NetStandard-PackageExplorer.png)
 
@@ -156,19 +171,6 @@ nuget pack AppLogger.nuspec
 다른 개발자가 패키지를 사용할 수 있게 하려면 [패키지 게시](../create-packages/publish-a-package.md)의 지침을 따르세요.
 
 `pack`에는 Mac OS X에서 Mono 4.4.2가 필요하며, Linux 시스템에서는 작동하지 않습니다. 또한 Mac에서는 `.nuspec` 파일의 Windows 경로 이름을 Unix 스타일 경로로 변환해야 합니다.
-
-## <a name="net-standard-mapping-table"></a>.NET Standard 매핑 테이블
-
-| 플랫폼 이름 | Alias |
-| --- | --- |
-| .NET Standard | netstandard | 1.0 | 1.1 | 1.2 | 1.3 | 1.4 | 1.5 | 1.6 |
-| .NET Core | netcoreapp | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; | 1.0 |
-| .NET Framework | net | 4.5 | 4.5.1 | 4.6 | 4.6.1 | 4.6.2 | 4.6.3 |
-| Mono/Xamarin 플랫폼 | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; |
-| 유니버설 Windows 플랫폼 | uap | &#x2192; | &#x2192; | &#x2192; | &#x2192; |10.0 |
-| Windows | win| &#x2192; | 8.0 | 8.1 |
-| Windows Phone | wpa| &#x2192;| &#x2192; | 8.1 |
-| Windows Phone Silverlight | wp | 8.0 |
 
 ## <a name="related-topics"></a>관련 항목
 

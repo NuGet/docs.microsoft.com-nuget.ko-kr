@@ -1,22 +1,25 @@
 ---
-title: "NuGet 프로젝트 거버넌스 | Microsoft Docs"
+title: NuGet 프로젝트 거버넌스 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "대리인, 참가자 및 사용자에 대한 역할과 책임을 포함한 NuGet 거버넌스 모델입니다."
-keywords: "NuGet 거버넌스, NuGet 선한 독재자, 대리인 책임, 참가자 책임, 사용자 책임"
+ms.technology: ''
+description: 대리인, 참가자 및 사용자에 대한 역할과 책임을 포함한 NuGet 거버넌스 모델입니다.
+keywords: NuGet 거버넌스, NuGet 선한 독재자, 대리인 책임, 참가자 책임, 사용자 책임
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ea1ddcc3e145afe3b905b23db37e1e61500200bb
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: aa48b95482c65de47d54daff142402dd2ff6558a
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-governance"></a>NuGet 거버넌스
 
