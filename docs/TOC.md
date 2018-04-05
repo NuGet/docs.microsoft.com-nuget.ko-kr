@@ -74,6 +74,7 @@
 # 참조
 ## [.nuspec](reference/nuspec.md)
 ## [프로젝트 파일의 패키지 참조](consume-packages/package-references-in-project-files.md)
+## [packages.config를 PackageReference로 마이그레이션](reference/migrate-packages-config-to-package-reference.md)
 ## [packages.config](reference/packages-config.md)
 ## [패키지 버전 관리](reference/package-versioning.md)
 ## [Nuget.Config 파일](reference/nuget-config-file.md)
