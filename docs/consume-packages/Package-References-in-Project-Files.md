@@ -15,11 +15,11 @@ ms.reviewer:
 ms.workload:
 - dotnet
 - aspnet
-ms.openlocfilehash: 99caf371ca1bd85e6af4e879741e3e2caab6e860
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 7844ace0565b2e70f8f68e6e61548f0f28171689
+ms.sourcegitcommit: 5b223c5814799caa6309e95792a2d338df692778
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -96,8 +96,8 @@ ms.lasthandoff: 03/28/2018
 
 | 값 | 설명 |
 | --- | ---
-| compile | `lib` 폴더의 콘텐츠 |
-| 런타임(runtime) | `runtimes` 폴더의 콘텐츠 |
+| compile | `lib` 폴더의 콘텐츠이며 프로젝트에서 폴더 내의 어셈블리를 컴파일할 수 있는지 여부 제어 |
+| 런타임(runtime) | `lib` 및 `runtimes` 폴더의 콘텐츠이며 이러한 어셈블리가 빌드 출력 디렉터리에 복사되는지 여부 제어 |
 | contentFiles | `contentfiles` 폴더의 콘텐츠 |
 | 빌드 | `build` 폴더의 prop 및 대상 |
 | 분석기 | .NET 분석기 |

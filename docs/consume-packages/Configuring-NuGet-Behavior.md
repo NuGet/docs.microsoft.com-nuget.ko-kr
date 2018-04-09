@@ -15,11 +15,11 @@ ms.reviewer:
 ms.workload:
 - dotnet
 - aspnet
-ms.openlocfilehash: a575868894d5ca9992b1c9984cf4920bd2858209
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 88f10cf15e16013ac99f315e572f932fd3948f73
+ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="configuring-nuget-behavior"></a>NuGet 동작 구성
 
@@ -30,8 +30,8 @@ NuGet의 동작은 프로젝트, 사용자 및 컴퓨터 수준에서 존재할 
 | 범위 | NuGet.Config 파일 위치 | 설명 |
 | --- | --- | --- |
 | 프로젝트 | 현재 폴더(프로젝트 폴더) 또는 드라이브 루트까지의 모든 폴더| 프로젝트 폴더의 설정은 해당 프로젝트에만 적용됩니다. 여러 프로젝트 하위 폴더가 있는 부모 폴더의 설정은 해당 하위 폴더의 모든 프로젝트에 적용됩니다. |
-| 사용자 | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.nuget/NuGet/NuGet.Config` | 설정은 모든 작업에 적용되지만, 프로젝트 수준 설정에 따라 재정의됩니다. |
-| 컴퓨터 | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`(일반적으로 `~/.local/share`) | 설정은 컴퓨터의 모든 작업에 적용되지만, 사용자 또는 프로젝트 수준 설정에 따라 재정의됩니다. |
+| 사용자 | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.config/NuGet/NuGet.Config` 또는 `~/.nuget/NuGet/NuGet.Config`(OS 배포에 따라 다름) | 설정은 모든 작업에 적용되지만, 프로젝트 수준 설정에 따라 재정의됩니다. |
+| 컴퓨터 | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. `$XDG_DATA_HOME`이 null이거나 비어 있으면 `~/.local/share` 또는 `/usr/local/share`가 사용됨(OS 배포에 따라 다름)  | 설정은 컴퓨터의 모든 작업에 적용되지만, 사용자 또는 프로젝트 수준 설정에 따라 재정의됩니다. |
 
 이전 버전의 NuGet에 대한 참고 사항:
 - NuGet 3.3 및 이전 버전에서는 솔루션 수준 설정에 대해 `.nuget` 폴더를 사용했습니다. NuGet 3.4 이상에서는 이 파일이 사용되지 않습니다.
@@ -140,7 +140,7 @@ NuGet은 이러한 파일에서 설정을 찾으면 다음과 같이 적용합�
 
 다음으로, 지정된 내용이 포함된 4개의 `NuGet.Config` 파일이 다음 위치에 있습니다. (컴퓨터 수준 파일은 이 예제에 포함되어 있지 않지만 사용자 수준 파일과 비슷하게 작동합니다.)
 
-파일 A - 사용자 수준 파일(Windows의 경우 `%appdata%\NuGet\NuGet.Config`, Mac/Linux의 경우 `~/.nuget/NuGet/NuGet.Config`):
+파일 A - 사용자 수준 파일(Windows의 경우 `%appdata%\NuGet\NuGet.Config`, Mac/Linux의 경우 `~/.config/NuGet/NuGet.Config`):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -218,8 +218,8 @@ NuGet은 이러한 파일에서 설정을 찾으면 다음과 같이 적용합�
 
 | OS 플랫폼  | NuGetDefaults.Config 위치 |
 | --- | --- |
-| Windows      | **Visual Studio 2017 또는 NuGet 4.x+:** %ProgramFiles(x86)%\NuGet\Config <br />**Visual Studio 2015 이하 또는 NuGet 3.x 이하:** %PROGRAMDATA%\NuGet |
-| Mac/Linux    | $XDG_DATA_HOME(일반적으로 ~/.local/share)|
+| Windows      | **Visual Studio 2017 또는 NuGet 4.x 이상:** `%ProgramFiles(x86)%\NuGet\Config` <br />**Visual Studio 2015 이하 또는 NuGet 3.x 이하:** `%PROGRAMDATA%\NuGet` |
+| Mac/Linux    | `$XDG_DATA_HOME`(일반적으로 OS 배포에 따라 `~/.local/share` 또는 `/usr/local/share`)|
 
 ### <a name="nugetdefaultsconfig-settings"></a>NuGetDefaults.Config 설정
 

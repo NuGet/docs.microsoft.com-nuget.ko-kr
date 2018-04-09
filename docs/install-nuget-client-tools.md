@@ -15,11 +15,11 @@ ms.reviewer:
 ms.workload:
 - dotnet
 - aspnet
-ms.openlocfilehash: dd9ca3b39c4bc9b00d8fca6fe1479d64016bad86
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: e4dfe1102d1e0e2013136b0ae4975e5036e34642
+ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="installing-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
 
@@ -59,7 +59,7 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 [!INCLUDE[install-cli](includes/install-cli.md)]
 
 > [!Tip]
-> `nuget update -self`를 사용하여 기존 nuget.exe를 최신 버전으로 업데이트합니다.
+> Windows에서 `nuget update -self`를 사용하여 기존 nuget.exe를 최신 버전으로 업데이트합니다.
 
 > [!Note]
 > 최신 권장 NuGet CLI는 항상 `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`에서 사용할 수 있습니다. 이전 지속적인 통합 시스템과 호환되도록 이전 URL `https://nuget.org/nuget.exe`는 현재 [사용되지 않는 2.8.6 CLI 도구](https://github.com/NuGet/NuGetGallery/issues/5381)를 제공합니다.
