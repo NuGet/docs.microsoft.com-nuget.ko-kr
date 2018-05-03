@@ -1,28 +1,20 @@
 ---
-title: 속도 제한 | Microsoft Docs
-author:
-- cmanu
-- anangaur
-ms.author:
-- cmanu
+title: 속도 제한을 NuGet API
+description: NuGet Api 남용 하지 않으려면 속도 제한을 강제 적용 됩니다.
+author: cmanu
+ms.author: cmanu
 manager: skofman
 ms.date: 03/20/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: NuGet Api 남용 하지 않으려면 속도 제한을 강제 적용 됩니다.
-keywords: NuGet API 비율 제한
 ms.reviewer:
 - skofman
 - anangaur
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: f7891d5e4c008219d9f4808f223f3e5e7ae06ced
-ms.sourcegitcommit: fa40be739d093a37d5f7072b62ebdb4f595f4110
+- kraigb
+ms.openlocfilehash: 3aaebef8fff670759c6484a5a8f90a2f4dd58c66
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="rate-limits"></a>속도 제한
 
@@ -55,4 +47,4 @@ NuGet.org API 남용 하지 않으려면 속도 제한 적용 합니다. 요청 
 | API | 제한 유형 | 제한 값 | 동력 사용 | 
 |:---|:---|:---|:--- |
 **PUT** `/api/v2/package` | API 키 | 100 / 분 | V2 푸시 끝점을 통해 새 NuGet 패키지 (버전)를 업로드 합니다. 
-**DELETE** `/api/v2/package/{id}/{version}` | API 키 | 100 / 분 | Unlist v2 끝점을 통해 NuGet 패키지 (버전) 
+**삭제** `/api/v2/package/{id}/{version}` | API 키 | 100 / 분 | Unlist v2 끝점을 통해 NuGet 패키지 (버전) 

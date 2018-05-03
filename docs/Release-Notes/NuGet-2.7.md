@@ -1,25 +1,16 @@
 ---
-title: NuGet 2.7 릴리스 정보 | Microsoft Docs
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: NuGet 2.7 릴리스 정보
 description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 2.7에 대 한 릴리스 정보입니다.
-keywords: NuGet 2.7 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 71ced70af127c8219001069739a6cec59d7d1684
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: 4b7cea360764e1b069afacabadd9b94d87e21ecc
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-27-release-notes"></a>NuGet 2.7 릴리스 정보
 
@@ -33,36 +24,36 @@ NuGet 2.7로의 중요 한 기여에 대 한 다음과 같은 외부 참가자�
 
 1. [Mike Roth](http://www.codeplex.com/site/users/view/mxrss) ([@mxrss](https://twitter.com/mxrss))
     - 패키지를 나열 하는 자세한 정도 자세히 설명 되어 라이선스 url을 표시 합니다.
-1. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+2. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - [#1956](http://nuget.codeplex.com/workitem/1956) -developmentDependency 특성을 추가할 `packages.config` 런타임 패키지 포함 하도록 팩 명령에 사용 하 고
-1. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
+3. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
     - Nuget.exe 팩 명령에 중복 속성 키를 하지 마십시오.
-1. [Ben Phegan](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
+4. [Ben Phegan](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
     - [#2610](http://nuget.codeplex.com/workitem/2610) -200 컴퓨터 캐시 크기를 늘리세요.
-1. [Slava Trenogin](http://www.codeplex.com/site/users/view/derigel) ([@derigel](https://twitter.com/derigel))
+5. [Slava Trenogin](http://www.codeplex.com/site/users/view/derigel) ([@derigel](https://twitter.com/derigel))
     - [#3217](http://nuget.codeplex.com/workitem/3217) -해결 NuGet 대화 업데이트에 잘못 된 탭 표시
     - 수정 프로그램 Project.TargetFramework 프로젝트 관리자에는 null 일 수 있습니다.
     - [#3248](http://nuget.codeplex.com/workitem/3248) -해결 SharedPackageRepository FindPackage/FindPackagesById가 존재 하지 않는 packageId에서 실패
-1. [Kevin Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
+6. [Kevin Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
     - [#3234](http://nuget.codeplex.com/workitem/3234) -이주 단계 프로젝트에 대 한 지원을 사용 하도록 설정
-1. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
+7. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
     - [#3252](http://nuget.codeplex.com/workitem/3252) -파일이 존재 하지 않는 경우 수정 푸시 명령이 실패 종료 코드 0입니다.
-1. [Martin Veselý](http://www.codeplex.com/site/users/view/veselkamartin)
+8. [Martin Veselý](http://www.codeplex.com/site/users/view/veselkamartin)
     - [#3226](http://nuget.codeplex.com/workitem/3226) -프로젝트는 데이터베이스 프로젝트를 참조 하는 경우 추가 BindingRedirect 명령 사용 하 여 버그 수정.
-1. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
+9. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
     - [#2891](http://nuget.codeplex.com/workitem/2891) -nuget.pack '제외' 특성에 와일드 카드를 잘못 구문 분석의 버그 수정.
-1. [Justin Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
-    - [#3307](http://nuget.codeplex.com/workitem/3307) -버그 수정 프로그램 `NuGet.targets` 패키지를 복원 하는 경우 nuget.exe에 $(Platform)를 전달 하지 않습니다.
-1. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin)
-    - [#3294](http://nuget.codeplex.com/workitem/3294) -nuget.exe 패키지 명령 이름은 같지만 "항목이 이미 있습니다." 예외를 일으키는 결국 다른 대/소문자를 사용 하 여 파일을 추가할 수 있는 버그 수정.
-1. [이 Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
-    - [#2990](http://nuget.codeplex.com/workitem/2990) -NetPortableProfile 클래스에 추가 버전 속성입니다.
-1. [David Simner](https://www.codeplex.com/site/users/view/DavidSimner)
-    - [#3460](https://nuget.codeplex.com/workitem/3460) -경우에 NullReferenceException 버그를 수정 requireApiKey = true 인데 헤더 X-NUGET-APIKEY 존재 하지
-1. [Michael Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
-    - [#3278](https://nuget.codeplex.com/workitem/3278) -MonoDevelop에서 제대로 작동 되도록 수정 NuGet.Build 대상 파일을
-1. [Pranav Krishnamoorthy](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
-    - 병렬 처리를 늘려 복원 명령 성능을 향상합니다
+10. [Justin Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
+     - [#3307](http://nuget.codeplex.com/workitem/3307) -버그 수정 프로그램 `NuGet.targets` 패키지를 복원 하는 경우 nuget.exe에 $(Platform)를 전달 하지 않습니다.
+11. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin)
+     - [#3294](http://nuget.codeplex.com/workitem/3294) -nuget.exe 패키지 명령 이름은 같지만 "항목이 이미 있습니다." 예외를 일으키는 결국 다른 대/소문자를 사용 하 여 파일을 추가할 수 있는 버그 수정.
+12. [이 Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
+     - [#2990](http://nuget.codeplex.com/workitem/2990) -NetPortableProfile 클래스에 추가 버전 속성입니다.
+13. [David Simner](https://www.codeplex.com/site/users/view/DavidSimner)
+     - [#3460](https://nuget.codeplex.com/workitem/3460) -경우에 NullReferenceException 버그를 수정 requireApiKey = true 인데 헤더 X-NUGET-APIKEY 존재 하지
+14. [Michael Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
+     - [#3278](https://nuget.codeplex.com/workitem/3278) -MonoDevelop에서 제대로 작동 되도록 수정 NuGet.Build 대상 파일을
+15. [Pranav Krishnamoorthy](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
+     - 병렬 처리를 늘려 복원 명령 성능을 향상합니다
 
 ## <a name="notable-features-in-the-release"></a>릴리스에서 주목할 만한 기능
 
@@ -79,7 +70,7 @@ NuGet 2.7 부터는 패키지 복원 동의 기본적으로 켜져 하므로 사
 * Visual Studio 2013 Preview
 * Visual Studio 2012
 * Visual Studio 2010
-* nuget.exe Command-Line Utility
+* nuget.exe 명령줄 유틸리티
 
 #### <a name="automatic-package-restore-in-visual-studio"></a>Visual Studio에서 자동 패키지 복원
 
@@ -105,7 +96,7 @@ NuGet 2.7 nuget.exe는 새로운 기능이 도입 되었습니다. `nuget.exe re
 
 이 새로운 복원 명령에는 솔루션 파일 또는 폴더를 인수로 사용 하 여 하나의 명령으로 솔루션에 대 한 모든 패키지를 쉽게 복원할 수 있습니다. 또한 인수에 지정 된 현재 폴더에 있는 단일 솔루션만 있을 때 포함 됩니다. 즉, 단일 솔루션 파일 (MySolution.sln)를 포함 하는 폴더에서 모든 다음 작동 합니다.
 
-1. nuget.exe restore MySolution.sln
+1. nuget.exe 복원 MySolution.sln
 1. nuget.exe 복원 작업입니다.
 1. nuget.exe 복원
 
@@ -161,7 +152,7 @@ NuGet 영향을 받는 패키지를 다시 설치 하려면 자동 작업을 수
 
 ### <a name="renaming-the-default-package-source"></a>기본 패키지 소스 이름 바꾸기
 
-NuGet에 항상 "NuGet 공식 패키지 소스 라는" nuget.org를 가리키는 기본 패키지 소스를 등록 했습니다. 해당 이름이 verbose 고 것도 지정 하지 않은 가리키는 실제로 되었습니다. 이러한 두 가지 문제를 해결 하기 위해이 패키지 소스를 단순히 "nuget.org" UI에 이름을 했습니다. 패키지 원본에 대 한 URL은 "www"를 포함 하도록 변경 수 또한 접두사가 있는 번들 ID인 식별자가 있습니다. NuGet 2.7를 사용한 후에 기존 "NuGet 공식 패키지 소스" 자동 업데이트 됩니다 "nuget.org" 이름으로를 및 "https://www.nuget.org/api/v2/" url입니다.
+NuGet에 항상 "NuGet 공식 패키지 소스 라는" nuget.org를 가리키는 기본 패키지 소스를 등록 했습니다. 해당 이름이 verbose 고 것도 지정 하지 않은 가리키는 실제로 되었습니다. 이러한 두 가지 문제를 해결 하기 위해이 패키지 소스를 단순히 "nuget.org" UI에 이름을 했습니다. 패키지 원본에 대 한 URL은 "www"를 포함 하도록 변경 수 또한 접두사가 있는 번들 ID인 식별자가 있습니다. NuGet 2.7를 사용한 후에 기존 "NuGet 공식 패키지 소스" 자동 업데이트 됩니다 "nuget.org" 이름으로를 및 "<https://www.nuget.org/api/v2/>" url입니다.
 
 ### <a name="performance-improvements"></a>성능 향상
 

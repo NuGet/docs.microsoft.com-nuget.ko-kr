@@ -1,25 +1,16 @@
 ---
-title: Package.config에서 PackageReference 형식으로 마이그레이션 | Microsoft Docs
+title: Package.config에서 PackageReference 형식으로 마이그레이션
+description: NuGet 4.0 이상 및 VS2017 및.NET Core 2.0에서 지 원하는 대로 PackageReference를 package.config 관리 형식에서 프로젝트를 마이그레이션하는 방법에 대 한 세부 정보
 author: karann-msft
 ms.author: karann
-manager: unniravindranathan
+manager: unnir
 ms.date: 03/27/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: NuGet 4.0 이상 및 VS2017 및.NET Core 2.0에서 지 원하는 대로 PackageReference를 package.config 관리 형식에서 프로젝트를 마이그레이션하는 방법에 대 한 세부 정보
-keywords: NuGet migrator 마이그레이션, 참조 패키지 파일을 PackageReference, packages.config 프로젝트 VS2017, Visual Studio 2017, NuGet 4,.NET Core 2.0
-ms.reviewer:
-- karann
-- unnir
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 10bd2fe95a6af11806a7edd7a43eaa497486fd80
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.topic: conceptual
+ms.openlocfilehash: 2b15d60d4f71fb2777e36c6a948ad72b4e2bc594
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Packages.config에서 PackageReference로 마이그레이션
 

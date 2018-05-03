@@ -1,29 +1,17 @@
 ---
-title: 서비스 인덱스, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 서비스 인덱스를 NuGet API
+description: 서비스 인덱스 NuGet HTTP API의 진입점이 고 서버 기능을 열거 합니다.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 서비스 인덱스 NuGet HTTP API의 진입점이 고 서버 기능을 열거 합니다.
-keywords: NuGet API 진입점을 NuGetA PI 끝점 검색
-ms.reviewer:
-- karann
-- unnir
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 1c1dea25067cc582a14a0dd22c2f3f7f70d40a02
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: 84e623e8480e4d17edad2ec3b2da6dcb6e53d21b
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="service-index"></a>서비스 인덱스
 
@@ -55,7 +43,7 @@ nuget.org의 서비스 인덱스에 위치한 `https://api.nuget.org/v3/index.js
 ------------- | ------ | -------- | -----
 @id           | string | 예      | 리소스에 대 한 URL
 @type         | string | 예      | 리소스 종류를 나타내는 문자열 상수입니다.
-주석       | string | 아니요       | 리소스의 사람이 읽을 수 있는 설명
+comment       | string | 아니요       | 리소스의 사람이 읽을 수 있는 설명
 
 `@id` 절대 경로 여야 하 고 수행 해야 할 하는 URL에는 HTTP 또는 HTTPS 스키마가 됩니다.
 
@@ -71,7 +59,7 @@ nuget.org의 서비스 인덱스에 위치한 `https://api.nuget.org/v3/index.js
 
 ### <a name="sample-request"></a>샘플 요청
 
-GET https://api.nuget.org/v3/index.json
+가져오기 https://api.nuget.org/v3/index.json
 
 ### <a name="sample-response"></a>샘플 응답
 

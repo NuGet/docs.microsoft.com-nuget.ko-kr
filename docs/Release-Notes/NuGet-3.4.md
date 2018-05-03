@@ -1,22 +1,16 @@
 ---
-title: "NuGet 3.4 릴리스 정보 | Microsoft Docs"
+title: NuGet 3.4 릴리스 정보
+description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 3.4에 대 한 릴리스 정보입니다.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 3.4에 대 한 릴리스 정보입니다."
-keywords: "NuGet 3.4 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 515fb888aca2a8eb138c8fea1fb5b3f5a8f4e275
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 3f2a945b628022bdcc6e69a7a4b1be6c53b65626
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-34-release-notes"></a>NuGet 3.4 릴리스 정보
 
@@ -24,9 +18,9 @@ ms.lasthandoff: 02/02/2018
 
 NuGet 3.4 2016 년 3 월 30 일의 Visual Studio 2015 업데이트 2 및 Visual Studio 15 Preview 릴리스 일환으로 릴리스 되었습니다 및 사람들에 몇 가지 개념을 사용 하 여 빌드한 되었습니다.
 
-*  크로스 플랫폼 지원
-*  성능 향상
-*  보조 UI 개선 사항
+* 크로스 플랫폼 지원
+* 성능 향상
+* 보조 UI 개선 사항
 
 다음과 같은 기능 RC에서 이전에 추가 된 및 업데이트 되었거나 3.4 릴리스에 대 한 완료 되었습니다.
 
@@ -72,4 +66,4 @@ NuGet 3.4 2016 년 3 월 30 일의 Visual Studio 2015 업데이트 2 및 Visual 
 * **해결 방법:** 이 문제를 해결 하려면 리디렉션된 서버 위치를 가리키도록 설정에서 패키지 리포지토리 URI를 구성 합니다.
 자세한 내용은 참조 [GitHub 끌어오기 요청 #387](https://github.com/NuGet/NuGet.Client/pull/387)합니다.
 
-찾을 수 있는 GitHub 문제 목록에서 문제를 추적 하려면 계속 하기: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
+찾을 수 있는 GitHub 문제 목록에서 문제 추적 계속 합니다. [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)

@@ -1,25 +1,17 @@
 ---
-title: NuGet CLI 기호 명령을 | Microsoft Docs
+title: NuGet CLI sign 명령
+description: Nuget.exe sign 명령에 대 한 참조
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe sign 명령에 대 한 참조
-keywords: nuget 기호 참조, sign 명령
-ms.reviewer:
-- karann
-- rmpablos
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 9c83e5abae0e70cdc62917861c1febfce4f792c7
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: rmpablos
+ms.openlocfilehash: 7e84d794b802cfd69c785f720280fd5c022a46f6
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sign-command-nuget-cli"></a>sign 명령 (NuGet CLI)
 
@@ -27,7 +19,7 @@ ms.lasthandoff: 03/28/2018
 
 인증서와 함께 첫 번째 인수를 일치 하는 모든 패키지에 서명 합니다. 주체 이름이 나 지문을 제공 하 여 인증서 저장소에 설치 된 인증서 또는 파일에서 인증서와 개인 키를 얻을 수 있습니다.
 
-패키지를 서명 아직 지원 되지 않습니다 모노 또는 Windows 이외의 플랫폼에서 합니다.
+아직 모노, 또는 Windows 이외의 플랫폼에서.NET Core에서는 패키지를 서명 지원 되지 않습니다.
 
 ## <a name="usage"></a>사용법
 
@@ -51,7 +43,7 @@ nuget sign <package(s)> [options]
 | ForceEnglishOutput | Nuget.exe 고정, 영어 기반 문화권을 사용 하 여 실행을 강제로 수행 합니다. |
 | HashAlgorithm | 패키지에 서명 하는 데 사용할 해시 알고리즘입니다. 기본값은 s h a 256입니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | OutputDirectory | 서명된 된 패키지를 저장할 디렉터리를 지정 합니다. 기본적으로 서명된 된 패키지는 원본 패키지를 덮어씁니다. |
 | 덮어쓰기 | 현재 서명 덮어써야 하는 경우를 나타내기 위해 스위치입니다. 기본적으로 패키지 서명을 이미 있으면 명령이 실패 합니다. |
 | Timestamper | RFC 3161 타임 스탬프 서버 URL입니다. |

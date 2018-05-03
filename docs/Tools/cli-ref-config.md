@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI config 명령 | Microsoft Docs
+title: NuGet CLI 구성 명령
+description: Nuget.exe config 명령에 대 한 참조
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe config 명령에 대 한 참조
-keywords: nuget 구성 참조, config 명령
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: e3d08f210bd56fcb8eb701fc9b241a3ab45998ec
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 414eb8386f949347772f33170de881534dc71482
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="config-command-nuget-cli"></a>구성 명령 (NuGet CLI)
 
@@ -48,7 +39,7 @@ NuGet 3.4 +에서 `<value>` צ ְ ײ [환경 변수](cli-ref-environment-variabl
 | ConfigFile | NuGet 구성 파일 수정입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | 자세한 정도 | 출력에 표시 되는 세부 정보 수준을 지정: *일반*, *quiet*, *자세한*합니다. |
 
 또한 참조 [환경 변수](cli-ref-environment-variables.md)

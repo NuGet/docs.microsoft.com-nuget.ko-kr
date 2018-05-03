@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 도움말 명령을 | Microsoft Docs
+title: NuGet CLI 도움말 명령
+description: Nuget.exe 도움말 명령에 대 한 참조
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe 도움말 명령에 대 한 참조
-keywords: nuget 도움말 참조, 도움말 명령
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 440861e53b4a9ff73a9d3e8a2a3dad7dbddc9584
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: dbfc803e24c824d30e128d6e86cfa3c43660668f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="help-or--command-nuget-cli"></a>도움말 또는? 명령 (NuGet CLI)
 
@@ -48,7 +39,7 @@ nuget ? [command] [options]
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 도움말 | 도움말 도움말 명령 자체에 대 한 정보를 표시 합니다. |
 | Markdown | 마크 다운 형태로 함께 사용할 경우 자세한 도움말을 인쇄 `-All`합니다. 그렇지 않은 경우 무시 됩니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | 자세한 정도 | 출력에 표시 되는 세부 정보 수준을 지정: *일반*, *quiet*, *자세한*합니다. |
 
 또한 참조 [환경 변수](cli-ref-environment-variables.md)

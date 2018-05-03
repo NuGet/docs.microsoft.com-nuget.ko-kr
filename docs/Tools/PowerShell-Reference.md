@@ -1,22 +1,16 @@
 ---
-title: "NuGet PowerShell 참조 | Microsoft Docs"
+title: NuGet PowerShell 참조
+description: Visual Studio에서 NuGet 패키지 관리자 콘솔에서 사용할 수 있는 PowerShell 명령에 대 한 전체 참조 합니다.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 10/02/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "Visual Studio에서 NuGet 패키지 관리자 콘솔에서 사용할 수 있는 PowerShell 명령에 대 한 전체 참조 합니다."
-keywords: "NuGet 패키지 관리자 콘솔에서 NuGet Powershell 명령 NuGet Powershell 참조"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 0cbd9b13b34bd93fea6c6684c03bca9cff5d9e5e
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 455787d3c8701f5275ace4ed0dcb605213bfbf29
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="powershell-reference"></a>PowerShell 참조
 
@@ -56,7 +50,7 @@ Get-Help <command> -full
 - ErrorAction
 - ErrorVariable
 - OutBuffer
-- OutVariable
+- Outvariable을 지원
 - PipelineVariable
 - 자세히
 - WarningAction

@@ -1,22 +1,16 @@
 ---
-title: "NuGet 2.8.3 릴리스 정보 | Microsoft Docs"
+title: NuGet 2.8.3 릴리스 정보
+description: NuGet 2.8.3 포함에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "NuGet 2.8.3 포함에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다."
-keywords: "NuGet 2.8.3 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 35ea9e24777c805942d67e872e5548d90041e15d
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 972bc3bae03d5fb033b7c7c70319cdc551327880
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-283-release-notes"></a>NuGet 2.8.3 릴리스 정보
 

@@ -1,29 +1,17 @@
 ---
-title: 카탈로그, NuGet V3 API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 카탈로그 리소스, NuGet V3 API
+description: 카탈로그는 모든 패키지를 만들고 삭제할 nuget.org에의 한 인덱스입니다.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/30/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 카탈로그는 모든 패키지를 만들고 삭제할 nuget.org에의 한 인덱스입니다.
-keywords: NuGet V3 API 카탈로그, nuget.org 트랜잭션 로그를 복제할 nuget.org, 복제 nuget.org nuget.org의 추가 전용 레코드
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 61ed502eee498f5ad0a014e3338503f2855396a5
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: 464b252ca318a5bd3487c723dbf4c7062e4698a3
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="catalog"></a>Catalog
 
@@ -177,7 +165,7 @@ nuget:version   | string  | 예      | 이 리프 관련이 패키지 버전
 catalog:commitId        | string                     | 예      | 이 카탈로그 항목에 연결 된 커밋 ID
 catalog:commitTimeStamp | string                     | 예      | 이 카탈로그 항목의 커밋 타임 스탬프
 ID                      | string                     | 예      | 카탈로그 항목의 패키지 ID
-published               | string                     | 예      | 패키지 카탈로그 항목의 게시 된 날짜
+게시               | string                     | 예      | 패키지 카탈로그 항목의 게시 된 날짜
 버전                 | string                     | 예      | 카탈로그 항목의 패키지 버전
 
 ### <a name="item-types"></a>항목 형식
@@ -207,7 +195,7 @@ published               | string                     | 예      | 패키지 카�
 authors                 | string                     | 아니요       |
 created                 | string                     | 예      | 패키지를 처음 만들 때의 타임 스탬프
 dependencyGroups        | 개체의 배열           | 아니요       | 동일한 형식으로 [패키지 메타 데이터 리소스](registration-base-url-resource.md#package-dependency-group)
-설명             | string                     | 아니요       |
+description             | string                     | 아니요       |
 iconUrl                 | string                     | 아니요       |
 isPrerelease            | boolean                    | 예      | 패키지 버전은 시험판 여부
 language                | string                     | 아니요       |
@@ -238,7 +226,7 @@ verbatimVersion         | string                     | 아니요       | 그대�
 
 #### <a name="sample-request"></a>샘플 요청
 
-GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+가져오기 https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
 
 #### <a name="sample-response"></a>샘플 응답
 
@@ -259,7 +247,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 #### <a name="sample-request"></a>샘플 요청
 
-GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
+가져오기 https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
 
 #### <a name="sample-response"></a>샘플 응답
 

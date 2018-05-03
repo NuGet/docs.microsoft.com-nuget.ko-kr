@@ -1,25 +1,16 @@
 ---
-title: NuGet 1.0 및 1.1 릴리스 정보 | Microsoft Docs
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: NuGet 1.0 및 1.1 릴리스 정보
 description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.1에 대 한 릴리스 정보입니다.
-keywords: NuGet 1.1 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: dd320df2d725e58182cd908ce621571ea018b350
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: a11248a96109c879946e7e28a50e7753b644f042
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-10-and-11-release-notes"></a>NuGet 1.0 및 1.1 릴리스 정보
 
@@ -205,7 +196,7 @@ CTP 2 이후이 릴리스 후보에서 변경한 내용을 다음과 같습니�
 * [패키지 목록 검색/필터링을 지원 해야 합니다.](http://nuget.codeplex.com/workitem/206)
 * [패키지 작성자 라이선스 URL을 제공 하는 경우 라이선스에 대 한 링크를 항상 표시](http://nuget.codeplex.com/workitem/208)
 * [패키지 제거를 사용 하 여 필요에 따른 "액세스 거부" 예외](http://nuget.codeplex.com/workitem/213)
-* [Unit Tests Failing: InvalidPackageIsExcludedFromFeedItems &amp; CreatingFeedConvertsPackagesToAtomEntries](http://nuget.codeplex.com/workitem/214)
+* [실패 하는 단위 테스트: InvalidPackageIsExcludedFromFeedItems &amp; CreatingFeedConvertsPackagesToAtomEntries](http://nuget.codeplex.com/workitem/214)
 * [특정 프레임 워크 버전을 찾을 수 없는 경우 파일의 대체 (fallback) / 기본 집합에 대 한 허용](http://nuget.codeplex.com/workitem/223)
 * [패키지 참조 추가... UI에서 패키지를 제거할 수 없습니다.](http://nuget.codeplex.com/workitem/225)
 * [추가 패키지 참조 충돌 하나 때 studio 하거나 더 많은 프로젝트 로드 됩니다.](http://nuget.codeplex.com/workitem/228)

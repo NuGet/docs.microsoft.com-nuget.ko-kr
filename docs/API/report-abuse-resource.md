@@ -1,29 +1,17 @@
 ---
-title: 보고서 남용 URL 템플릿, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 보고서 남용 URL 서식 파일을 NuGet API
+description: 보고서 남용 URL 서식 파일에는 클라이언트를 신고 링크는 해당 UI에 표시할 수 있습니다.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 보고서 남용 URL 서식 파일에는 클라이언트를 신고 링크는 해당 UI에 표시할 수 있습니다.
-keywords: NuGet API 신고, NuGet API 파일 불만, nuget.org 보고서 URL 서식 파일
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: ded861e3eaf73e45b8d4bd80b96d54bfeb38e9d6
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: 15cf0953391489d9dd9b5d609c3f4c8f66748f19
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="report-abuse-url-template"></a>보고서 남용 URL 서식 파일
 

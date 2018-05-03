@@ -1,26 +1,17 @@
 ---
-title: ID 접두사 예약 참조 | Microsoft Docs
+title: ID 접두사 예약 참조
+description: 패키지 ID 접두사 예약 기능 설명 및 만든 가이드입니다.
 author: diverdan92
 ms.author: diverdan92
-manager: unniravindranathan
+manager: unnir
 ms.date: 10/09/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 패키지 ID 접두사 예약 기능 설명 및 만든 가이드입니다.
-keywords: NuGet 패키지 ID, 접두사, 예약
-ms.reviewer:
-- ananguar
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 7b1956612bd48a1c59503418f1a4d7d9dee900f5
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: ananguar
+ms.openlocfilehash: 63f442ae25b92aacbbf5af7d9b3ea1a5dafe5fc9
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="package-id-prefix-reservation"></a>패키지 ID 접두사 예약
 
@@ -74,9 +65,9 @@ ms.lasthandoff: 03/28/2018
 
 1. 검토 수락 [접두사 ID 예약에 대 한 조건을](#id-prefix-reservation-criteria)합니다.
 
-1. 결정 사항이 추가 예약 하려는 네임 스페이스 [고급 접두사 예약 시나리오](#advanced-prefix-reservation-scenarios) 필요할 수 있습니다.
+2. 결정 사항이 추가 예약 하려는 네임 스페이스 [고급 접두사 예약 시나리오](#advanced-prefix-reservation-scenarios) 필요할 수 있습니다.
 
-1. 메일을 보내세요 [ account@nuget.org ](mailto:account@nuget.org) 소유자와 이름에 표시 [nuget.org](https://www.nuget.org/)를 요청 하는 모든 예약 된 접두사 뿐만 아니라 합니다. 여러 소유자에 접두사 하위 집합을 위임한 경우에 모든 소유자 표시 이름을 언급 하 고 접두사 하위 집합에 있는지 확인 합니다.
+3. 메일을 보내세요 [ account@nuget.org ](mailto:account@nuget.org) 소유자와 이름에 표시 [nuget.org](https://www.nuget.org/)를 요청 하는 모든 예약 된 접두사 뿐만 아니라 합니다. 여러 소유자에 접두사 하위 집합을 위임한 경우에 모든 소유자 표시 이름을 언급 하 고 접두사 하위 집합에 있는지 확인 합니다.
 
 응용 프로그램을 제출의 수락 또는 거부를 발생 시킨 조건) (으로 거부 메시지가 표시 됩니다. 소유자 확인할 추가 식별 질문 해야 합니다.
 

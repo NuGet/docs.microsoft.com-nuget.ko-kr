@@ -1,22 +1,16 @@
 ---
-title: "NuGet CLI (명령줄 인터페이스) 참조 | Microsoft Docs"
+title: NuGet CLI (명령줄 인터페이스) 참조
+description: Nuget.exe CLI에 대 한 명령줄 참조 인덱스
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/23/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe CLI에 대 한 명령줄 참조 인덱스"
-keywords: "nuget.exe 참조 인덱스, nuget.exe 명령줄 인터페이스, nuget.exe CLI, nuget 명령"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 8b1ee17702f5a54a77dc2cd663e13729a9b4a39f
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: ed91a31505ab1de9447cdbeb87c8ad08f7ba56d8
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-cli-reference"></a>NuGet CLI 참조
 
@@ -28,7 +22,7 @@ NuGet 명령줄 인터페이스 (CLI) `nuget.exe`, NuGet 설치, 생성, 게시 
 
 ## <a name="installing-nugetexe"></a>Nuget.exe를 설치합니다.
 
-[!INCLUDE[install-cli](../includes/install-cli.md)]
+[!INCLUDE [install-cli](../includes/install-cli.md)]
 
 > [!Tip]
 > NuGet CLI를 사용 하려면 패키지 관리자 콘솔 내에서 Visual Studio에서 참조 [콘솔에서 nuget.exe CLI를 사용 하 여](package-manager-console.md#using-the-nugetexe-cli-in-the-console)합니다.
@@ -51,8 +45,8 @@ NuGet 명령줄 인터페이스 (CLI) `nuget.exe`, NuGet 설치, 생성, 게시 
 | [push](cli-ref-push.md) | 게시 | 모두 | 패키지 원본에는 패키지를 게시합니다. |
 | [config](cli-ref-config.md) | 모두 | 모두 | NuGet 구성 값을 가져오거나 설정 합니다. |
 | [help or ?](cli-ref-help.md) | 모두 | 모두 | 도움말 정보 또는 명령에 대 한 도움말을 표시 합니다. |
-| [locals](cli-ref-locals.md) | 사용 | 3.3+ | 지웁니다 또는 다양 한 캐시 또는 전역 패키지 폴더를 패키지를 나열 하거나 해당 폴더를 식별 합니다. |
-| [restore](cli-ref-restore.md) | 사용 | 2.7+ | 사용 중인 패키지 참조 형식에서 참조 하는 모든 패키지를 복원 합니다. 모노를 실행할 때 PackageReference 형식을 사용 하 여 패키지를 복원 지원 되지 않습니다. |
+| [locals](cli-ref-locals.md) | 사용 | 3.3+ | 위치를 나열는 *전역 패키지*, *http 캐시*, 및 *temp* 폴더와 해당 폴더의 내용 지웁니다. |
+| [restore](cli-ref-restore.md) | 사용 | 2.7+ | 사용 중인 패키지 관리 형식에서 참조 하는 모든 패키지를 복원 합니다. 모노를 실행할 때 PackageReference 형식을 사용 하 여 패키지를 복원 지원 되지 않습니다. |
 | [setapikey](cli-ref-setapikey.md) | 게시와 소비 | 모두 | 해당 패키지 원본에 대 한 액세스 키가 필요한 경우 지정 된 패키지 소스에 대 한 API 키를 저장 합니다. |
 | [spec](cli-ref-spec.md) | 만들기 | 모두 | 생성 된 `.nuspec` 파일을 Visual Studio 프로젝트에서 파일을 생성 하는 경우 토큰을 사용 합니다. |
 

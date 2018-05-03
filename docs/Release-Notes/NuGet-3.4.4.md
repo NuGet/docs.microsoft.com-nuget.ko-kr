@@ -1,22 +1,16 @@
 ---
-title: "NuGet 3.4.4 릴리스 정보 | Microsoft Docs"
+title: NuGet 3.4.4 릴리스 정보
+description: NuGet 3.4.4 포함에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "NuGet 3.4.4 포함에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다."
-keywords: "NuGet 3.4.4 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: fabc10ae5c8e0bd43581f85c7763eb23e9483aaf
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 891d5c7ee884d31f405118739b57a169b9cd93b3
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-344-release-notes"></a>NuGet 3.4.4 릴리스 정보
 
@@ -41,6 +35,6 @@ VSIX와 nuget.exe를 다운로드할 수 있습니다 [여기](https://dist.nuge
 - HTTP 응답 시간 초과로 밀어넣기 제한 시간을 사용 하 여 [ \#599](https://github.com/NuGet/NuGet.Client/pull/599)
 - 이후 시간을 사용 하 여 패키지 파일에는 사용 되는 시간에 따라 각각 [ \#597](https://github.com/NuGet/NuGet.Client/pull/597)
 - 업데이트 `NuGet.Core.dll` 버전 XML 문제를 해결 하려면 2.12.0 [ \#594](https://github.com/NuGet/NuGet.Client/pull/594)
-- Support ./NuGet.CommandLine.XPlat -v \<verbosity\> \<mode\> [\#593](https://github.com/NuGet/NuGet.Client/pull/593)
+- ./NuGet.CommandLine.XPlat v 지원 \<자세한 정도\> \<모드\> [ \#593](https://github.com/NuGet/NuGet.Client/pull/593)
 - 오류를 표시 하지 않고 복원 `project.json` 또는 `packages.config` [ \#590](https://github.com/NuGet/NuGet.Client/pull/590)
 - 필요한 버전이 다른 경우 종속성 버전을 수정 [ \#559](https://github.com/NuGet/NuGet.Client/pull/559)

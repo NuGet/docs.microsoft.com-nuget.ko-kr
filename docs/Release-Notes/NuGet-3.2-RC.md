@@ -1,22 +1,16 @@
 ---
-title: "NuGet 3.2 RC 릴리스 정보 | Microsoft Docs"
+title: NuGet 3.2 RC 릴리스 정보
+description: NuGet 3.2 RC 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여에 대 한 릴리스 정보입니다.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "NuGet 3.2 RC 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여에 대 한 릴리스 정보입니다."
-keywords: "NuGet 3.2 RC 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: b19f62217ed79689ce067107dd64dfffe2c59291
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 0310bac6fdb3ef92176f9224ace1620a230664af
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-32-rc-release-notes"></a>NuGet 3.2 RC 릴리스 정보
 
@@ -27,7 +21,7 @@ NuGet 3.2 릴리스 후보 릴리스 되었습니다 2015 년 9 월 2 일 개선
 ## <a name="new-features"></a>새 기능
 
 * 동일한 폴더에 거주 하는 프로젝트를 서로 다른 점이 이제 `project.json` 각 프로젝트에 해당 폴더의 파일입니다.  각 프로젝트에 대 한 이름을 `project.json` 파일 `{ProjectName}.project.json` NuGet 제대로 참조 하 고 각 프로젝트에 대 한 해당 콘텐츠를 적절 하 게 사용 하 고 있습니다.  이 새로운 기능을 지원 [1102](https://github.com/NuGet/Home/issues/1102)
-* `NuGet.Config`이제-상대 경로로 globalPackagesFolder 지원 [1062](https://github.com/NuGet/Home/issues/1062)
+* `NuGet.Config` 이제-상대 경로로 globalPackagesFolder 지원 [1062](https://github.com/NuGet/Home/issues/1062)
 
 ## <a name="command-line-updates"></a>명령줄 업데이트
 
@@ -45,7 +39,7 @@ NuGet 3.2 릴리스 후보 릴리스 되었습니다 2015 년 9 월 2 일 개선
 * 제대로-에 오류 조건이 발생 하는 경우 1을 반환 하려면 NuGet 복원 명령을 수정 [1186](https://github.com/NuGet/Home/issues/1186)
 * 이제 네트워크 연결을 다시 시도 최대 HTTP 5xx 오류-시 5 회 시도 대 한 모든 200ms [1120](https://github.com/NuGet/Home/issues/1120)
 * 서버 리디렉션 응답을 처리 중 밀어넣기 명령-향상 된 [1051](https://github.com/NuGet/Home/issues/1051)
-* `nuget install -source`이제-인수로 Nuget.Config에서 URL 이나 리포지토리 이름을 지원 [1046](https://github.com/NuGet/Home/issues/1046)
+* `nuget install -source` 이제-인수로 Nuget.Config에서 URL 이나 리포지토리 이름을 지원 [1046](https://github.com/NuGet/Home/issues/1046)
 * 누락 된 패키지를 복원 하는 동안 저장소에 배치 되지 않은 경고 대신 오류로 보고 이제 [1038](https://github.com/NuGet/Home/issues/1038)
 * Unix/Linux 시나리오-\r\n multipartwebrequest 처리 수정 [776](https://github.com/NuGet/Home/issues/776)
 
@@ -122,4 +116,4 @@ Visual Studio extension NuGet GitHub에서 찾을 수 있습니다에 대 한 �
 
 ## <a name="known-issues"></a>알려진 문제
 
-찾을 수 있는 GitHub 문제 목록에서 문제를 추적 하려면 계속 하기: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
+찾을 수 있는 GitHub 문제 목록에서 문제 추적 계속 합니다. [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)

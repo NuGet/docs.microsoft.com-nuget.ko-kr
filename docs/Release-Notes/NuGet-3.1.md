@@ -1,22 +1,16 @@
 ---
-title: "NuGet 3.1 릴리스 정보 | Microsoft Docs"
+title: NuGet 3.1 릴리스 정보
+description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 3.1에 대 한 릴리스 정보입니다.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 3.1에 대 한 릴리스 정보입니다."
-keywords: "NuGet 3.1 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: a7aa43b8701b3bbef8f6ebce9a5d636ee1bc6abe
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: d14455da6f8af4db92f7105ea1b0e88eb9e71600
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-31-release-notes"></a>NuGet 3.1 릴리스 정보
 
@@ -32,7 +26,7 @@ Visual Studio 갤러리 업데이트를 사용할 수 있는, 버그 픽스와 �
 
 ### <a name="new-features"></a>새 기능
 
-* `project.json`ASP.NET 5 및 Windows UWP 지원에 대 한 지원
+* `project.json` ASP.NET 5 및 Windows UWP 지원에 대 한 지원
 * 전이적 패키지 설치
 
 설명 및 이러한 기능의 정의 설명서의 다른 곳에서 찾을 수 있습니다.
@@ -45,10 +39,10 @@ Visual Studio 2015에 대 한 다음과 같은 기능을 더 이상:
 
 Visual Studio 2015 및 사용 하는 프로젝트에 대 한 다음과 같은 기능을 더 이상는 `project.json` 사양
 
-* `install.ps1`및 `uninstall.ps1` -이러한 스크립트 패키지 설치 중에 무시 됩니다, 복원, 업데이트 및 제거
+* `install.ps1` 및 `uninstall.ps1` -이러한 스크립트 패키지 설치 중에 무시 됩니다, 복원, 업데이트 및 제거
 * 구성 변환은 무시 합니다.
 * 콘텐츠 배달, 되지만 프로젝트에 복사 되지 않습니다.
-    * 다시이 기능을 구현 하 여 토론에 따라에서 진행 되는 팀이 작업: [https://github.com/NuGet/Home/issues/627](https://github.com/NuGet/Home/issues/627)
+    * 팀이 다시이 기능을 구현 하 여 토론에 따라에서 진행 되는 작업: [https://github.com/NuGet/Home/issues/627](https://github.com/NuGet/Home/issues/627)
 
 
 ### <a name="known-issues"></a>알려진 문제
@@ -59,7 +53,7 @@ Visual Studio 2015 및 사용 하는 프로젝트에 대 한 다음과 같은 �
 
 ## <a name="nuget-command-line"></a>NuGet 명령줄
 
-NuGet 명령줄 실행 파일은 업데이트 되어 사용할 수 있도록 기록 버전의 nuget.exe 계속할 수 있도록 새로운 배포 가능한 위치로 이동 합니다.  Windows 용 nuget.exe의 3.1 베타 버전을 다운로드할 수 있습니다: [http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe](http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe)
+NuGet 명령줄 실행 파일은 업데이트 되어 사용할 수 있도록 기록 버전의 nuget.exe 계속할 수 있도록 새로운 배포 가능한 위치로 이동 합니다.  Windows 용 nuget.exe의 3.1 베타 버전을 다운로드할 수 있습니다. [http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe](http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe)
 
 새 배포 가능한 위치 뒤에 오는이 서식 파일 폴더 구조와 dist.nuget.org 호스트에 상주 합니다.
 
@@ -68,11 +62,11 @@ NuGet 명령줄 실행 파일은 업데이트 되어 사용할 수 있도록 기
 ### <a name="new-features"></a>새 기능
 
 * nuget.exe 복원 하 고 사용 하는 프로젝트에 패키지를 설치할 수는 `project.json` 파일입니다.
-* nuget.exe에 연결할 수 있고에서 NuGet v3 프로토콜을 사용: [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
+* nuget.exe에 연결 하 고에서 NuGet v3 프로토콜을 사용할 수 있습니다. [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
 
 ## <a name="known-issues"></a>알려진 문제 ##
 
 1.    팩에 대해 실행할 수 없습니다 한 `project.json` 파일- [928](https://github.com/NuGet/Home/issues/928)
 2.    모노-지원 되지 않습니다 [1059](https://github.com/NuGet/Home/issues/1059)
 3.    지역화 되지 않은- [1058](https://github.com/NuGet/Home/issues/1058), [1057](https://github.com/NuGet/Home/issues/1057)
-4.    기존 http://nuget.org/nuget.exe-와 동일 하 게 서명 되지 않은 [1073](https://github.com/NuGet/Home/issues/1073)
+4.    기존와 동일 하 게 서명 되지 않은 http://nuget.org/nuget.exe - [1073](https://github.com/NuGet/Home/issues/1073)

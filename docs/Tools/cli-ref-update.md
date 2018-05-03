@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 명령 업데이트 | Microsoft Docs
+title: NuGet CLI update 명령
+description: Nuget.exe update 명령에 대 한 참조
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe update 명령에 대 한 참조
-keywords: nuget 업데이트 참조에 업데이트 패키지 명령
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 1ea04f2fa2a753065ee4f17cbb926e37acf129e0
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: e6964d92436ce1bac9e6af85f6dae75fcf40378d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="update-command-nuget-cli"></a>업데이트 명령 (NuGet CLI)
 
@@ -52,7 +43,7 @@ nuget update <configPath> [options]
 | ID | 패키지를 업데이트 하는 Id의 목록을 지정 합니다. |
 | MSBuildPath | *(4.0 이상)*  우선 순위를 차지 명령으로 사용 하는 MSBuild의 경로 지정 `-MSBuildVersion`합니다. |
 | MSBuildVersion | *(3.2 +)*  이 명령과 함께 사용할 MSBuild의 버전을 지정 합니다. 지원 되는 값은 4, 12, 14, 15입니다. 경로에 MSBuild 선택은 기본적으로 그렇지 않은 경우 기본값이 가장 높은 설치 된 버전의 MSBuild 됩니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | 시험판 | 시험판 버전에 업데이트를 허용 합니다. 이미 설치 되어 있는 시험판 패키지를 업데이트 하는 경우에이 플래그가 필요 하지 않습니다. |
 | RepositoryPath | 패키지 설치 된 로컬 폴더를 지정 합니다. |
 | 안전 | 업데이트 하는 동일한 주 및 부 버전에서 사용할 수 있는 가장 높은 버전으로 설치 된 패키지가 설치를 지정 합니다. |

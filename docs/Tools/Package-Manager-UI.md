@@ -1,30 +1,21 @@
 ---
-title: NuGet 패키지 관리자 UI 참조 | Microsoft Docs
+title: NuGet 패키지 관리자 UI 참조
+description: NuGet 패키지를 사용 하기 위한 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하기 위한 지침입니다.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/08/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+ms.topic: conceptual
 f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-description: NuGet 패키지를 사용 하기 위한 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하기 위한 지침입니다.
-keywords: NuGet 패키지 관리자 UI에서 NuGet 패키지 관리자 Visual Studio에서 NuGet 패키지, NuGet 사용자 인터페이스를 관리 하는 Visual Studio에서 NuGet UI
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: ad36c2ab0c6e62c7fe624b35d92e852303ecfdfb
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 99bd51798460a56cb8515d46791a9e75d9e630cc
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 패키지 관리자 UI
 
@@ -59,7 +50,7 @@ Windows에서 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하면 
     ![솔루션 탐색기의 참조가](media/References.png)
 
 > [!Tip]
-    > 검색에서 시험판 버전을 포함 하 고 시험판 버전에서 사용할 수 있도록 버전의 드롭다운 목록에서 선택 된 **시험판 포함** 옵션입니다.
+> 검색에서 시험판 버전을 포함 하 고 시험판 버전에서 사용할 수 있도록 버전의 드롭다운 목록에서 선택 된 **시험판 포함** 옵션입니다.
 
 ## <a name="uninstalling-a-package"></a>패키지를 제거합니다.
 

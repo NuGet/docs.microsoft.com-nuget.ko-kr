@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 복원 명령을 | Microsoft Docs
+title: NuGet CLI restore 명령
+description: Nuget.exe 복원 명령에 대 한 참조
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe 복원 명령에 대 한 참조
-keywords: nuget 복원 참조, 패키지 명령 복원
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 64f12fdedc8fbfcee15c1dcddc445148f458c030
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: dd0a74c9ed9b879643ed24cbddacff87310dfd6b
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="restore-command-nuget-cli"></a>restore 명령 (NuGet CLI)
 
@@ -49,8 +40,8 @@ nuget restore <projectPath> [options]
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
 | MSBuildPath | *(4.0 이상)*  우선 순위를 차지 명령으로 사용 하는 MSBuild의 경로 지정 `-MSBuildVersion`합니다. |
 | MSBuildVersion | *(3.2 +)*  이 명령과 함께 사용할 MSBuild의 버전을 지정 합니다. 지원 되는 값은 4, 12, 14, 15입니다. 경로에 MSBuild 선택은 기본적으로 그렇지 않은 경우 기본값이 가장 높은 설치 된 버전의 MSBuild 됩니다. |
-| NoCache | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| 캐시 없음 | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
+| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | OutputDirectory | 패키지 설치 되는 폴더를 지정 합니다. 없는 폴더를 지정 하는 경우 현재 폴더가 사용 됩니다. 복구 하는 경우 필수는 `packages.config` 하지 않는 한 파일 `PackagesDirectory` 또는 `SolutionDirectory` 사용 됩니다.|
 | PackageSaveMode | 패키지 설치 후 저장할 파일의 형식을 지정 합니다: 중 `nuspec`, `nupkg`, 또는 `nuspec;nupkg`합니다. |
 | PackagesDirectory | `OutputDirectory`와 동일합니다. 복구 하는 경우 필수는 `packages.config` 하지 않는 한 파일 `OutputDirectory` 또는 `SolutionDirectory` 사용 됩니다. |
@@ -68,24 +59,23 @@ nuget restore <projectPath> [options]
 Restore 명령에서 다음 단계를 수행합니다.
 
 1. Restore 명령 작업 모드를 결정 합니다.
-    projectPath 파일 형식 | 동작
-    | --- | --- |
-    솔루션 (폴더) | NuGet를 찾습니다는 `.sln` 검색 되지 않으면 오류가 발생 하는 사용 하 여 파일입니다. `(SolutionDir)\.nuget` 시작 폴더도 사용 됩니다.
-    `.sln` 파일 | 솔루션;로 식별 되는 패키지를 복원 하면 오류가 발생 `-SolutionDirectory` 사용 됩니다. `$(SolutionDir)\.nuget` 시작 폴더도 사용 됩니다.
-    `packages.config` 또는 프로젝트 파일 | 해결 및 종속성 설치 파일에 나열 된 패키지를 복원 합니다.
-    다른 파일 형식 | 파일 것으로 간주 되는 `.sln` 오류 NuGet은 솔루션을 없으면 위와; 같은 파일입니다.
-    (projectPath 지정 되지 않은) | -NuGet 현재 폴더에서 솔루션 파일을 찾습니다. 하나; 패키지를 복원 하는 데 사용 단일 파일이 발견 된 경우 NuGet 여러 솔루션 발견 되 면 오류가 발생 합니다.
-    |-NuGet에 대 한 검색 솔루션 파일이 없는 경우는 `packages.config` 및이 사용 하 여 패키지를 복원 합니다.
-    |-솔루션이 없는 경우 또는 `packages.config` 파일이, NuGet 오류가 발생 합니다.
 
-1. 다음과 같은 우선 순위 (NuGet 이러한 폴더의 발견 되지 않으면 오류가 제공)를 사용 하 여 패키지 폴더를 결정 합니다.
+   | projectPath 파일 형식 | 동작 |
+   | --- | --- |
+   | 솔루션 (폴더) | NuGet를 찾습니다는 `.sln` 검색 되지 않으면 오류가 발생 하는 사용 하 여 파일입니다. `(SolutionDir)\.nuget` 시작 폴더도 사용 됩니다. |
+   | `.sln` 파일 | 솔루션;로 식별 되는 패키지를 복원 하면 오류가 발생 `-SolutionDirectory` 사용 됩니다. `$(SolutionDir)\.nuget` 시작 폴더도 사용 됩니다. |
+   | `packages.config` 또는 프로젝트 파일 | 해결 및 종속성 설치 파일에 나열 된 패키지를 복원 합니다. |
+   | 다른 파일 형식 | 파일 것으로 간주 되는 `.sln` 오류 NuGet은 솔루션을 없으면 위와; 같은 파일입니다. |
+   | (projectPath 지정 되지 않은) | <ul><li>NuGet 현재 폴더에서 솔루션 파일을 찾습니다. 하나; 패키지를 복원 하는 데 사용 단일 파일이 발견 된 경우 NuGet 여러 솔루션 발견 되 면 오류가 발생 합니다.</li><li>NuGet을 찾고 솔루션 파일이 없는 경우는 `packages.config` 및이 사용 하 여 패키지를 복원 합니다.</li><li>솔루션이 없는 경우 또는 `packages.config` 파일이, NuGet 오류가 발생 합니다.</ul> |
+
+2. 다음과 같은 우선 순위 (NuGet 이러한 폴더의 발견 되지 않으면 오류가 제공)를 사용 하 여 패키지 폴더를 결정 합니다.
 
     - 지정 된 폴더 `-PackagesDirectory`합니다.
     - `repositoryPath` 베일에서 `Nuget.Config`
     - 지정 된 폴더 `-SolutionDirectory`
     - `$(SolutionDir)\packages`
 
-1. 솔루션에 대 한 패키지를 복원할 때 NuGet는 다음을 수행 합니다.
+3. 솔루션에 대 한 패키지를 복원할 때 NuGet는 다음을 수행 합니다.
     - 솔루션 파일을 로드합니다.
     - 솔루션 수준 패키지에 나열 된 복원 `$(SolutionDir)\.nuget\packages.config` 에 `packages` 폴더입니다.
     - 에 나열 된 패키지를 복원 `$(ProjectDir)\packages.config` 에 `packages` 폴더입니다. 지정 된 각 패키지에 대해 병렬로 패키지 않으면 복원이 `-DisableParallelProcessing` 지정 됩니다.

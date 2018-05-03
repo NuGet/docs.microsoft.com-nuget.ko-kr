@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 설치 명령 | Microsoft Docs
+title: NuGet CLI 설치 명령
+description: Nuget.exe 설치 명령에 대 한 참조
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe 설치 명령에 대 한 참조
-keywords: nuget 참조 패키지 명령을 설치,
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 121d7b50767f1d466d6d0d8494f324b02d8ff6f1
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 615f2beca1eb288417f2345fcdf25e323942d300
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="install-command-nuget-cli"></a>명령 (NuGet CLI)를 설치 합니다.
 
@@ -58,8 +49,8 @@ nuget install <packageID | configFilePath> [options]
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 프레임워크 | *(4.4 +)*  대상 프레임 워크 종속성을 선택 하는 데 사용 합니다. 기본값은 'Any' 형식 지정 하지 않은 경우입니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| NoCache | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| 캐시 없음 | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
+| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | OutputDirectory | 패키지 설치 되는 폴더를 지정 합니다. 없는 폴더를 지정 하는 경우 현재 폴더가 사용 됩니다. |
 | PackageSaveMode | 패키지 설치 후 저장할 파일의 형식을 지정 합니다: 중 `nuspec`, `nupkg`, 또는 `nuspec;nupkg`합니다. |
 | 시험판 | 시험판 패키지를를 설치할 수 있습니다. 사용 하 여 패키지를 복원 하는 경우이 플래그는 필요 하지 `packages.config`합니다. |

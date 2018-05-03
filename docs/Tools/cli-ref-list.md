@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 목록 표시 명령 | Microsoft Docs
+title: NuGet CLI 목록 표시 명령
+description: Nuget.exe 목록 명령에 대 한 참조
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe 목록 명령에 대 한 참조
-keywords: nuget 목록 참조 패키지 목록 표시 명령
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 61ad02eb99d6c56968c38841498df8aa9f74159d
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: f4a44c70937e7cb49e472c53e9857e9f44d269f7
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="list-command-nuget-cli"></a>목록 표시 명령 (NuGet CLI)
 
@@ -44,7 +35,7 @@ nuget list [search terms] [options]
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
 | IncludeDelisted | *(3.2 +)*  목록에 없는 패키지를 표시 합니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | 시험판 | 목록에 시험판 패키지를 포함합니다. |
 | 소스 | 검색할 패키지 소스 목록을 지정 합니다. |
 | 자세한 정도 | 출력에 표시 되는 세부 정보 수준을 지정: *일반*, *quiet*, *자세한*합니다. |

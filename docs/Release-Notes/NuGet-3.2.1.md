@@ -1,22 +1,16 @@
 ---
-title: "3.2.1 NuGet 릴리스 정보 | Microsoft Docs"
+title: 3.2.1 NuGet 릴리스 정보
+description: 3.2.1 NuGet 포함에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "3.2.1 NuGet 포함에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다."
-keywords: "3.2.1 NuGet 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 7c9c2457c33eb3630f632c98bf0cf96703c3a548
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 039fabaaacfdffd76fa88ff8183548e97cd4719b
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-321-release-notes"></a>3.2.1 NuGet 릴리스 정보
 
@@ -41,4 +35,4 @@ ms.lasthandoff: 02/02/2018
 
 ## <a name="known-issues"></a>알려진 문제
 
-찾을 수 있는 GitHub 문제 목록에서 문제를 추적 하려면 계속 하기: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
+찾을 수 있는 GitHub 문제 목록에서 문제 추적 계속 합니다. [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)

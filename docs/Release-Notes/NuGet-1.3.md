@@ -1,22 +1,16 @@
 ---
-title: "NuGet 1.3 릴리스 정보 | Microsoft Docs"
+title: NuGet 1.3 릴리스 정보
+description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.3에 대 한 릴리스 정보입니다.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 1.3에 대 한 릴리스 정보입니다."
-keywords: "NuGet 1.3 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 59169be5b39ba4436e13e0935a0ad6efa724e08e
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: c0284fe0afb11bf6465897132cccd160674ea3e1
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-13-release-notes"></a>NuGet 1.3 릴리스 정보
 
@@ -30,7 +24,7 @@ NuGet 1.3 2011 년 4 월 25 일에 출시 되었습니다.
 
 NuGet 팀에서 협력 [SymbolSource.org](http://www.symbolsource.org/) 원본과 PDB의 패키지와 함께 게시 하는 매우 간단한 방법을 제공 합니다. 그러면 디버거에서 패키지에 대 한 소스 한 단계씩 패키지의 소비자가 있습니다. 자세한 내용은 참조 하세요 [만들기 및 게시 기호 패키지](../create-packages/symbol-packages.md) 소스와 NuGet 패키지를 게시 하는 쉬운 방법입니다. 라이브 데모는이 기능의 심층에서 NuGet의 일부로 Mix11에 통신도 볼 수 있습니다. 이 기능을 완벽 하 게 비디오의 20 분 지점부터 보여 줍니다.
 
-### <a name="open-packagepage-command"></a>`Open-PackagePage`명령
+### <a name="open-packagepage-command"></a>`Open-PackagePage` 명령
 
 이 명령을 사용 하면 쉽게 패키지 관리자 콘솔 내에서 패키지에 대 한 프로젝트 페이지에 액세스할 수 있습니다. 또한 라이선스 URL 및 패키지에 대 한 보고서 남용 페이지를 열려면 옵션을 제공 합니다.
 명령 구문은 다음과 같습니다.

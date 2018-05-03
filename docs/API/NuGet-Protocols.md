@@ -1,21 +1,17 @@
 ---
-title: "nuget.org 프로토콜 | Microsoft Docs"
+title: nuget.org 프로토콜
+description: NuGet 클라이언트와 상호 작용할 수 발전 nuget.org 프로토콜입니다.
 author: anangaur
 ms.author: anangaur
-manager: unniravindranathan
+manager: unnir
 ms.date: 10/30/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "NuGet 클라이언트와 상호 작용할 수 발전 nuget.org 프로토콜입니다."
-ms.reviewer:
-- kraigb
-- karann-msft
-ms.openlocfilehash: 488a86a36a6bc83c91f0182bf437ddb83e707e31
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.reviewer: kraigb
+ms.openlocfilehash: cc6d52617ea8b69d5b18b831ddf8a1a85dd6798f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nugetorg-protocols"></a>nuget.org 프로토콜
 
@@ -54,7 +50,7 @@ NuGet 에코 시스템에서 광범위 하 게 구현 하는 NuGet API에 대 �
 
 #### <a name="request-parameters"></a>요청 매개 변수
 
-name           | 입력     | 형식   | 필수 | 노트
+이름           | 입력     | 형식   | 필수 | 노트
 -------------- | ------ | ------ | -------- | -----
 ID             | URL    | string | 예      | 범위 확인 키를 요청한 대상 패키지 identidier
 VERSION        | URL    | string | 아니요       | 패키지 버전
@@ -77,7 +73,7 @@ X-NuGet-ApiKey | Header | string | 예      | 예를 들면 `X-NuGet-ApiKey: {US
 
 #### <a name="request-parameters"></a>요청 매개 변수
 
-name           | 입력     | 형식   | 필수 | 노트
+이름           | 입력     | 형식   | 필수 | 노트
 -------------  | ------ | ------ | -------- | -----
 ID             | URL    | string | 예      | 범위 확인 키를 요청한 대상 패키지 식별자
 VERSION        | URL    | string | 아니요       | 패키지 버전

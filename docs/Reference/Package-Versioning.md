@@ -1,26 +1,17 @@
 ---
-title: NuGet 패키지 버전 참조 | Microsoft Docs
+title: NuGet 패키지 버전 참조
+description: 버전 번호와 NuGet 패키지에 따라 달라 지는 및 종속성 설치 되는 방식과에 다른 패키지에 대 한 범위를 지정 하는 정확한 세부 정보입니다.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/23/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 버전 번호와 NuGet 패키지에 따라 달라 지는 및 종속성 설치 되는 방식과에 다른 패키지에 대 한 범위를 지정 하는 정확한 세부 정보입니다.
-keywords: 버전 관리, NuGet 패키지 종속 파일, NuGet 종속성 버전, NuGet 버전 번호, NuGet 패키지 버전, 버전 범위, 버전 사양, 정규화 된 버전 번호
-ms.reviewer:
-- anandr
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 678ad79d9106a9f592ae4f47bc93cc117496e2c9
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: anangaur
+ms.openlocfilehash: d17d964ac73075f05678b9727e90d481a30da62e
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-versioning"></a>패키지 버전 관리
 
@@ -89,14 +80,15 @@ SemVer v2.0.0의 특정 의미 체계는 이전 버전의 클라이언트에서 
 다음 문 중 하나에 해당 하는 경우 nuget.org를 패키지 SemVer v2.0.0 패키지로 정의 됩니다.
 
 - 패키지의 버전이 앞에서 정의한 대로 SemVer v2.0.0 규정을 준수 하지만, SemVer v1.0.0 하지 않습니다.
-- 패키지의 종속성 버전 범위에; 위에 정의 된 SemVer v2.0.0 규정을 준수 하지만 SemVer v1.0.0 하지 호환 되지 않는 최소 또는 최대 버전 예를 들어 *[1.0.0-alpha.1,)*합니다.
+- 패키지의 종속성 버전 범위에; 위에 정의 된 SemVer v2.0.0 규정을 준수 하지만 SemVer v1.0.0 하지 호환 되지 않는 최소 또는 최대 버전 예를 들어 *[1.0.0-alpha.1,)* 합니다.
 
 Nuget.org를 SemVer v2.0.0 관련 패키지를 업로드 하는 경우 패키지 되며 이전 버전의 클라이언트로 테스트를 수행할 수는 다음과 같은 NuGet 클라이언트에만:
 
 - NuGet 4.3.0+
 - Visual Studio 2017 버전 15.3 +
 - Visual Studio 2015 [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
-- dotnet.exe (.NET SDK 2.0.0+)
+- dotnet
+  - dotnetcore.exe (.NET SDK 2.0.0+)
 
 제 3 자 클라이언트:
 
@@ -119,7 +111,7 @@ Nuget.org를 SemVer v2.0.0 관련 패키지를 업로드 하는 경우 패키지
 | (,1.0) | x < 1.0 | 단독 최대 버전 |
 | [1.0,2.0] | 1.0 ≤ x ≤ 2.0 | 정확한 범위 (포함) |
 | (1.0,2.0) | 1.0 < x < 2.0 | 단독 정확한 범위 |
-| [1.0,2.0) | 1.0 ≤ x < 2.0 | 혼합된 포괄 및 전용 시간 최소 최대 버전 |
+| [1.0,2.0) | 1.0 ≤ < 2.0 x | 혼합된 포괄 및 전용 시간 최소 최대 버전 |
 | (1.0)    | 잘못된 | 잘못된 |
 
 PackageReference 형식을 사용 하는 경우 NuGet에서는 와일드 카드 표기법을 사용 하 여 \*, 주, 부, Patch 및 수의 시험판 접미사 부분에 대 한 합니다. 와일드 카드는 지원 되지 않습니다는 `packages.config` 형식입니다.

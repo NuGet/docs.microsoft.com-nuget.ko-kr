@@ -1,26 +1,17 @@
 ---
-title: "자동 완성, NuGet API | Microsoft Docs"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 자동 완성, NuGet API
+description: 검색 자동 완성 서비스 패키지 Id의 대화형 검색 및 버전을 지원합니다.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "검색 자동 완성 서비스 패키지 Id의 대화형 검색 및 버전을 지원합니다."
-keywords: "NuGet 자동 완성 API, NuGet 패키지 ID, 패키지 ID 부분 문자열을 검색합니다."
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: 7c984ca61799293d7832851b80cf3fefc4734288
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: d5e1936c6c5406a1a376c16b2bad5351320dfb4f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="autocomplete"></a>자동 완성
 
@@ -33,8 +24,8 @@ V3 API를 사용 하 여 패키지 ID 및 버전 자동 완성 환경을 구축 
 @type 값                          | 노트
 ------------------------------------ | -----
 SearchAutocompleteService            | 초기 릴리스
-SearchAutocompleteService/3.0.0-beta | 별칭`SearchAutocompleteService`
-SearchAutocompleteService/3.0.0-rc   | 별칭`SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-beta | 별칭 `SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-rc   | 별칭 `SearchAutocompleteService`
 
 ## <a name="base-url"></a>기준 URL
 
@@ -54,12 +45,12 @@ HTTP 메서드를 등록 리소스 지원에 있는 모든 Url `GET` 및 `HEAD`�
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-name        | 입력     | 형식    | 필수 | 노트
+이름        | 입력     | 형식    | 필수 | 노트
 ----------- | ------ | ------- | -------- | -----
 q           | URL    | string  | 아니요       | 패키지 Id와 비교할 문자열
 skip        | URL    | 정수 | 아니요       | 페이지 매김 건너뛸 결과의 수
 take        | URL    | 정수 | 아니요       | 페이지 매김 반환할 결과의 수
-시험판  | URL    | boolean | 아니요       | `true`또는 `false` 포함할지 여부를 결정 [시험판 패키지](../create-packages/prerelease-packages.md)
+시험판  | URL    | boolean | 아니요       | `true` 또는 `false` 포함할지 여부를 결정 [시험판 패키지](../create-packages/prerelease-packages.md)
 semVerLevel | URL    | string  | 아니요       | SemVer 1.0.0 버전 문자열 
 
 자동 완성 쿼리 `q` 서버 구현에 의해 정의 된 방식으로 구문 분석 됩니다. nuget.org 카멜식 대/소문자 및 기호 문자만 여 원래를 접두사 부분인 spliting에서 생성 된 ID의 패키지 ID 토큰에 대 한 쿼리를 지원 합니다.
@@ -80,14 +71,14 @@ semVerLevel | URL    | string  | 아니요       | SemVer 1.0.0 버전 문자열
 
 루트 JSON 개체에 다음 속성이 있습니다.
 
-name      | 형식             | 필수 | 노트
+이름      | 형식             | 필수 | 노트
 --------- | ---------------- | -------- | -----
-totalHits | 정수          | 예      | 총 수에 관계 없이 일치 `skip` 및`take`
+totalHits | 정수          | 예      | 총 수에 관계 없이 일치 `skip` 및 `take`
 데이터      | 문자열의 배열 | 예      | 요청에서 일치 하는 패키지 Id
 
 ### <a name="sample-request"></a>샘플 요청
 
-GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+가져오기 https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 
 ### <a name="sample-response"></a>샘플 응답
 
@@ -103,10 +94,10 @@ GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-name        | 입력     | 형식    | 필수 | 노트
+이름        | 입력     | 형식    | 필수 | 노트
 ----------- | ------ | ------- | -------- | -----
 ID          | URL    | string  | 예      | 에 대 한 버전을 인출 하는 패키지 ID
-시험판  | URL    | boolean | 아니요       | `true`또는 `false` 포함할지 여부를 결정 [시험판 패키지](../create-packages/prerelease-packages.md)
+시험판  | URL    | boolean | 아니요       | `true` 또는 `false` 포함할지 여부를 결정 [시험판 패키지](../create-packages/prerelease-packages.md)
 semVerLevel | URL    | string  | 아니요       | SemVer 2.0.0 버전 문자열 
 
 경우 `prerelease` 을 제공 하지 않으면 시험판 패키지 제외 됩니다.
@@ -119,7 +110,7 @@ semVerLevel | URL    | string  | 아니요       | SemVer 2.0.0 버전 문자열
 
 루트 JSON 개체에 다음 속성이 있습니다.
 
-name      | 형식             | 필수 | 노트
+이름      | 형식             | 필수 | 노트
 --------- | ---------------- | -------- | -----
 데이터      | 문자열의 배열 | 예      | 패키지 버전 요청에 의해 일치
 

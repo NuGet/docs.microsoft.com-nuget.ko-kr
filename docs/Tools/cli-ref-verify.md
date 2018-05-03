@@ -1,31 +1,25 @@
 ---
-title: NuGet CLI 명령을 확인 | Microsoft Docs
+title: NuGet CLI 확인 명령
+description: nuget.exe에 대 한 참조 확인 명령
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: nuget.exe에 대 한 참조 확인 명령
-keywords: nuget 참조를 확인, 확인 명령
-ms.reviewer:
-- karann
-- rmpablos
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 4423e491e0ab5dc1e13982440db42bc9b0e85c38
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: rmpablos
+ms.openlocfilehash: c2c31b71358bc50a1fb9aab8905c279cd1235b07
+ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="verify-command-nuget-cli"></a>명령 (NuGet CLI)를 확인 합니다.
 
 **적용 대상:** 소비 패키지 &bullet; **지원 되는 버전:** 4.6 이상
 
 패키지를 확인합니다.
+
+서명 된 패키지 확인 모노, 또는 Windows 이외의 플랫폼에서.NET Core에서는 아직 지원 되지 않습니다.
 
 ## <a name="usage"></a>사용법
 
@@ -44,7 +38,7 @@ nuget verify <package(s)> [options]
 | ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
 | ForceEnglishOutput | Nuget.exe 고정, 영어 기반 문화권을 사용 하 여 실행을 강제로 수행 합니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | 서명 | 패키지 서명 확인을 수행 해야 함을 지정 합니다. |
 | 자세한 정도 | 출력에 표시 되는 세부 정보 수준을 지정: *일반*, *quiet*, *자세한*합니다. |
 

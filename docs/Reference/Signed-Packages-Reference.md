@@ -1,26 +1,17 @@
 ---
-title: 패키지 참조 서명 | Microsoft Docs
+title: NuGet 패키지 참조 서명
+description: NuGet 패키지를 서명 하는 것에 대 한 요구 사항입니다.
 author: rido-min
 ms.author: rido-min
-manager: unniravindranathan
-ms.date: 03/06/2018
+manager: unnir
+ms.date: 04/24/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 패키지 기능 설명을 서명합니다.
-keywords: NuGet 패키지 서명, 서명, 인증서
-ms.reviewer:
-- ananguar
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: a2a338596f7d98ded11da6fb02bafba3521249ab
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: ananguar
+ms.openlocfilehash: 751a8ff14bdc3a647985da4f908ad1a0fd0def9a
+ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="signed-packages"></a>서명 된 패키지
 
@@ -38,6 +29,9 @@ NuGet 패키지는 변조 된 콘텐츠에 대 한 보호를 제공 하는 디�
 
 > [!Important]
 > nuget.org 현재 서명 된 패키지를 받아들이지 않습니다. 사용자 지정 피드에 게시할 패키지에 서명할 수 있습니다.
+
+> [!Important]
+> 패키지 서명에 Windows에서 nuget.exe를 사용 하는 경우에 현재 지원 됩니다. 서명 된 패키지 유효성 검사는 현재 Windows에서 nuget.exe 또는 Visual Studio를 사용 하는 경우에 지원 됩니다.
 
 ## <a name="certificate-requirements"></a>인증서 요구 사항
 

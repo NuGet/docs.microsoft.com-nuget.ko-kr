@@ -1,27 +1,18 @@
 ---
-title: NuGet 패키지 관리자 콘솔 가이드 | Microsoft Docs
+title: NuGet 패키지 관리자 콘솔 가이드
+description: 패키지 작업에 대 한 Visual Studio에서 NuGet 패키지 관리자 콘솔을 사용 하기 위한 지침입니다.
 author: kraigb
-hms.author: kraigb
-manager: ghogen
+ms.author: kraigb
+manager: douge
 ms.date: 01/23/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-description: 패키지 작업에 대 한 Visual Studio에서 NuGet 패키지 관리자 콘솔을 사용 하기 위한 지침입니다.
-keywords: NuGet 패키지 관리자 콘솔에서 NuGet 패키지를 관리 하는 NuGet powershell
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: af22a524f6b4a41a4c24077fe396846da6fb1ff8
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 64912f0dc32a492d9c23a02f45b4303c69faf340
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-manager-console"></a>패키지 관리자 콘솔
 

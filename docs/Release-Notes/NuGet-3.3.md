@@ -1,25 +1,16 @@
 ---
-title: NuGet 3.3 릴리스 정보 | Microsoft Docs
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: NuGet 3.3 릴리스 정보
 description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 3.3에 대 한 릴리스 정보입니다.
-keywords: NuGet 3.3 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: ab5e1ca550297c608017cb56dff32f4bd4bbb885
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: adf193437de237ed32da481e627552a8dba6f656
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-33-release-notes"></a>NuGet 3.3 릴리스 정보
 
@@ -48,7 +39,7 @@ NuGet 3.3에 많은 수의 사용자 인터페이스 업데이트 및 명령줄 
 
 이 버전에서 도입 되었습니다는 `add` 및 `init` 명령에 설명 된 대로 폴더 기반 저장소를 초기화 하는 [nuget.exe 참조](../tools/nuget-exe-cli-reference.md)합니다. 생성 되 고이 폴더와 유지 관리 하는 저장소는 구조 [성능을 크게 향상](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) 블로그에서에 설명 된 대로 합니다.
 
-## <a name="contentfiles"></a>ContentFiles
+## <a name="contentfiles"></a>콘텐츠 파일
 
 콘텐츠를 사용할 수 이제 `project.json` 관리 되는 새로운 프로젝트 `contentFiles` 폴더 및 `.nuspec` `contentFiles` 요소 표기법입니다.  이 콘텐츠는 프로젝트 시스템과 상호 작용에 대 한 패키지 작성자가 보다 직접 지정할 수 있습니다.  콘텐츠 파일을 구성 하는 방법에 대 한 자세한 정보는 `.nuspec` 문서에서 확인할 수 있습니다는 [.nuspec 참조](../reference/nuspec.md)합니다.
 

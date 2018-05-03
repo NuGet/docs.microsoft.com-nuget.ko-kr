@@ -1,29 +1,17 @@
 ---
-title: 개요, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: NuGet API의 개요
+description: NuGet API는 패키지를 다운로드, 메타 데이터 인출, 새로운 패키지 등 게시를 사용할 수 있는 HTTP 끝점의 집합입니다.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: NuGet API는 패키지를 다운로드, 메타 데이터 인출, 새로운 패키지 등 게시를 사용할 수 있는 HTTP 끝점의 집합입니다.
-keywords: NuGet V3 API, NuGet V2 API, NuGet JSON, NuGet 등록 API를 NuGet API 플랫 컨테이너, NuGet nupkg API, NuGet 메타 데이터 API, NuGet 검색 API, NuGet 푸시 API NuGe API를 게시, NuGet API를 삭제, NuGet unlist API, NuGet 프로토콜
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 7053a971c80a94cf035e8f149c332b36e66a9ea9
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: a638dba005c14bff4b2e668e2d6ca527a67b94a9
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-api"></a>NuGet API
 

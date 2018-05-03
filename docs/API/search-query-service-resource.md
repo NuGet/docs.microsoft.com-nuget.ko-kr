@@ -1,26 +1,17 @@
 ---
-title: "검색, NuGet API | Microsoft Docs"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 검색, NuGet API
+description: 검색 서비스에는 키워드로 패키지에 대 한 쿼리를 특정 패키지 필드에서 필터 결과를 클라이언트 수 있습니다.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "검색 서비스에는 키워드로 패키지에 대 한 쿼리를 특정 패키지 필드에서 필터 결과를 클라이언트 수 있습니다."
-keywords: "NuGet 검색 API NuGet 패키지, 쿼리 NuGet 패키지에는 API NuGet 패키지를 검색 하는 API 검색"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: 612ce0f46b654335a29bb36a64b27525994162ed
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: 76600ee916305ee01ddfb675c83c184e980c5a42
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="search"></a>검색
 
@@ -33,8 +24,8 @@ V3 API를 사용 하 여 패키지 원본에서 사용할 수 있는 패키지�
 @type 값                   | 노트
 ----------------------------- | -----
 SearchQueryService            | 초기 릴리스
-SearchQueryService/3.0.0-beta | 별칭`SearchQueryService`
-SearchQueryService/3.0.0-rc   | 별칭`SearchQueryService`
+SearchQueryService/3.0.0-beta | 별칭 `SearchQueryService`
+SearchQueryService/3.0.0-rc   | 별칭 `SearchQueryService`
 
 ## <a name="base-url"></a>기준 URL
 
@@ -54,12 +45,12 @@ HTTP 메서드를 등록 리소스 지원에 있는 모든 Url `GET` 및 `HEAD`�
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-name        | 입력     | 형식    | 필수 | 노트
+이름        | 입력     | 형식    | 필수 | 노트
 ----------- | ------ | ------- | -------- | -----
 q           | URL    | string  | 아니요       | 필터 패키지에 사용 되는 검색 단어가
 skip        | URL    | 정수 | 아니요       | 페이지 매김 건너뛸 결과의 수
 take        | URL    | 정수 | 아니요       | 페이지 매김 반환할 결과의 수
-시험판  | URL    | boolean | 아니요       | `true`또는 `false` 포함할지 여부를 결정 [시험판 패키지](../create-packages/prerelease-packages.md)
+시험판  | URL    | boolean | 아니요       | `true` 또는 `false` 포함할지 여부를 결정 [시험판 패키지](../create-packages/prerelease-packages.md)
 semVerLevel | URL    | string  | 아니요       | SemVer 1.0.0 버전 문자열 
 
 검색 쿼리 `q` 서버 구현에 의해 정의 된 방식으로 구문 분석 됩니다. nuget.org에 기본 필터링이 지원 되는 [다양 한 필드가](../consume-packages/finding-and-choosing-packages.md#search-syntax)합니다. 하지 않으면 `q` 모든 패키지를 반환할지, skip 및 take에 따른 경계 내에서 제공 됩니다. 이 통해 Visual Studio 환경에서 "찾아보기" 탭 합니다.
@@ -80,9 +71,9 @@ SemVer 1.0.0 호환 되는 버전 있는 패키지만이 쿼리 매개 변수를
 
 루트 JSON 개체에 다음 속성이 있습니다.
 
-name      | 형식             | 필수 | 노트
+이름      | 형식             | 필수 | 노트
 --------- | ---------------- | -------- | -----
-totalHits | 정수          | 예      | 총 수에 관계 없이 일치 `skip` 및`take`
+totalHits | 정수          | 예      | 총 수에 관계 없이 일치 `skip` 및 `take`
 데이터      | 개체의 배열 | 예      | 요청에 의해 일치 검색 결과
 
 ### <a name="search-result"></a>검색 결과
@@ -90,11 +81,11 @@ totalHits | 정수          | 예      | 총 수에 관계 없이 일치 `skip` 
 각 항목에는 `data` 배열이 같은 패키지 ID를 공유 하는 패키지 버전의 그룹으로 구성 하는 JSON 개체
 개체에 다음 속성이 있습니다.
 
-name           | 형식                       | 필수 | 노트
+이름           | 형식                       | 필수 | 노트
 -------------- | -------------------------- | -------- | -----
 ID             | string                     | 예      | 일치 하는 패키지의 ID
 버전        | string                     | 예      | (빌드 메타 데이터를 포함할 수 없습니다) 패키지의 전체 SemVer 2.0.0 버전 문자열
-설명    | string                     | 아니요       | 
+description    | string                     | 아니요       | 
 버전       | 개체의 배열           | 예      | 모든 일치 하는 패키지의 버전은 `prerelease` 매개 변수
 authors        | 문자열 또는 문자열의 배열 | 아니요       | 
 iconUrl        | string                     | 아니요       | 
@@ -112,7 +103,7 @@ Nuget.org, 확인 된 패키지는 예약 된 ID 접두사와 일치 하는 패�
 
 검색 결과 개체에 포함 된 메타 데이터는 최신 패키지 버전에서 가져온 것입니다. 각 항목에는 `versions` 배열이 다음 속성을 가진 JSON 개체:
 
-name      | 형식    | 필수 | 노트
+이름      | 형식    | 필수 | 노트
 --------- | ------- | -------- | -----
 @id       | string  | 예      | 연결 된 절대 URL [등록 리프](registration-base-url-resource.md#registration-leaf)
 버전   | string  | 예      | (빌드 메타 데이터를 포함할 수 없습니다) 패키지의 전체 SemVer 2.0.0 버전 문자열

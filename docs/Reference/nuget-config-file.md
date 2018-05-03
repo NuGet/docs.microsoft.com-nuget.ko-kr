@@ -1,31 +1,22 @@
 ---
-title: NuGet.Config 파일 참조 | Microsoft Docs
+title: nuget.config 파일 참조
+description: config, bindingRedirects, packageRestore, solution 및 packageSource 섹션이 포함된 NuGet.Config 파일 참조입니다.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 10/25/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: config, bindingRedirects, packageRestore, solution 및 packageSource 섹션이 포함된 NuGet.Config 파일 참조입니다.
-keywords: NuGet.Config 파일, NuGet 구성 참조, NuGet 구성 옵션
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: e2a9d4f10ac6af4e5bc7386d4f78e18c2a5752c4
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 871cd05ed010d2a31348151de6b7e225ed2dc915
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="nugetconfig-reference"></a>NuGet.Config 참조
+# <a name="nugetconfig-reference"></a>nuget.config 참조
 
 NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)에서 설명한 대로 여러 `NuGet.Config` 파일의 설정으로 제어됩니다.
 
-`NuGet.Config`는 최상위 `<configuration>` 노드를 포함하는 XML 파일이며, 이 파일에는 이 항목에서 설명하는 섹션 요소가 포함되어 있습니다. 각 섹션에는 `key` 및 `value` 특성이 있는 0개 이상의 `<add>` 요소가 포함되어 있습니다. [config 파일 예제](#example-config-file)를 참조하세요. 설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.
+`nuget.config`는 최상위 `<configuration>` 노드를 포함하는 XML 파일이며, 이 파일에는 이 항목에서 설명하는 섹션 요소가 포함되어 있습니다. 각 섹션에는 `key` 및 `value` 특성이 있는 0개 이상의 `<add>` 요소가 포함되어 있습니다. [config 파일 예제](#example-config-file)를 참조하세요. 설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.
 
 항목 내용:
 
@@ -56,8 +47,8 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 | Key | 값 |
 | --- | --- |
 | dependencyVersion(`packages.config`만) | `-DependencyVersion` 스위치가 직접 지정되지 않은 경우 패키지 설치, 복원 및 업데이트에 대한 기본 `DependencyVersion` 값입니다. 이 값은 NuGet 패키지 관리자 UI에서도 사용됩니다. 값은 `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`입니다. |
-| globalPackagesFolder (프로젝트만 PackageReference를 사용 하 여) | 기본 전역 패키지 폴더의 위치입니다. 기본값은 `%userprofile%\.nuget\packages`(Windows) 또는 `~/.nuget/packages`(Mac/Linux)입니다. 상대 경로는 프로젝트별 `Nuget.Config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 선행 하는이 설정이 무시 됩니다. |
-| repositoryPath(`packages.config`만) | 기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다. 상대 경로는 프로젝트별 `Nuget.Config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 선행 하는이 설정이 무시 됩니다. |
+| globalPackagesFolder (프로젝트만 PackageReference를 사용 하 여) | 기본 전역 패키지 폴더의 위치입니다. 기본값은 `%userprofile%\.nuget\packages`(Windows) 또는 `~/.nuget/packages`(Mac/Linux)입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 선행 하는이 설정이 무시 됩니다. |
+| repositoryPath(`packages.config`만) | 기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 선행 하는이 설정이 무시 됩니다. |
 | defaultPushSource | 작업에 대한 다른 패키지 원본이 없을 때 기본값으로 사용해야 하는 패키지 원본의 URL 또는 경로를 식별합니다. |
 | http_proxy, http_proxy.user, http_proxy.password, no_proxy | 패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다. 암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다. `no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다. 이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다. 자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요. |
 
@@ -108,7 +99,7 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 
 ## <a name="solution-section"></a>solution 섹션
 
-솔루션의 `packages` 폴더가 원본 제어에 포함되는지 여부를 제어합니다. 이 섹션은 솔루션 폴더의 `Nuget.Config` 파일에서만 작동합니다.
+솔루션의 `packages` 폴더가 원본 제어에 포함되는지 여부를 제어합니다. 이 섹션은 솔루션 폴더의 `nuget.config` 파일에서만 작동합니다.
 
 | Key | 값 |
 | --- | --- |
@@ -249,7 +240,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 
 ## <a name="using-environment-variables"></a>환경 변수 사용
 
-`NuGet.Config` 값(NuGet 3.4 이상)의 환경 변수를 사용하여 런타임에 설정을 적용할 수 있습니다.
+`nuget.config` 값(NuGet 3.4 이상)의 환경 변수를 사용하여 런타임에 설정을 적용할 수 있습니다.
 
 예를 들어 Windows의 `HOME` 환경 변수가 `c:\users\username`으로 설정되면 구성 파일의 `%HOME%\NuGetRepository` 값이 `c:\users\username\NuGetRepository`로 해석됩니다.
 
@@ -259,7 +250,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 
 ## <a name="example-config-file"></a>config 파일 예제
 
-아래는 몇 가지 설정을 보여 주는 `NuGet.Config` 파일의 예제입니다.
+아래는 몇 가지 설정을 보여 주는 `nuget.config` 파일의 예제입니다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

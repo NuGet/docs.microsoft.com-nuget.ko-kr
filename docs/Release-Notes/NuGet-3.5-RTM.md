@@ -1,22 +1,16 @@
 ---
-title: "NuGet 3.5 베타 릴리스 정보 | Microsoft Docs"
+title: NuGet 3.5 베타 릴리스 정보
+description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 3.5에 대 한 릴리스 정보입니다.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr를 포함 하 여 NuGet 3.5에 대 한 릴리스 정보입니다."
-keywords: "NuGet 3.5 릴리스 정보, 버그 수정, 알려진 문제, 추가 기능을 Dcr"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: ee78ceb2ff032c05c0f8ef9a6623b94cc56ee0a9
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: cdb540229cae0e6e952ac2a0c00c8801ccbbb28d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-35-release-notes"></a>NuGet 3.5 릴리스 정보
 
@@ -80,7 +74,7 @@ ms.lasthandoff: 02/02/2018
 
 * 프로젝트 nuget.exe 업데이트 *.csproj 호출에 없을 때 제공한 없습니다 정보가 `packages.config`  -  [#1496](https://github.com/NuGet/Home/issues/1496)
 
-* `packages.config`복원-V2 원본의 5xx 상태 코드에 다시 시도 하지 [#1217](https://github.com/NuGet/Home/issues/1217)
+* `packages.config` 복원-V2 원본의 5xx 상태 코드에 다시 시도 하지 [#1217](https://github.com/NuGet/Home/issues/1217)
 
 * 파일 src에 이중 점 `.nuspec` 작동 하지 않는- [#2947](https://github.com/NuGet/Home/issues/2947)
 
@@ -148,7 +142,7 @@ ms.lasthandoff: 02/02/2018
 
 * 단일 소스 권한 부여-에 실패 하는 경우 블록 설치 [#2034](https://github.com/NuGet/Home/issues/2034)
 
-* `.nuspec`범위는-IncludeReferencedProjects 버전-를 재정의 해야 하는 버전 [#1983](https://github.com/NuGet/Home/issues/1983)
+* `.nuspec` 범위는-IncludeReferencedProjects 버전-를 재정의 해야 하는 버전 [#1983](https://github.com/NuGet/Home/issues/1983)
 
 * 업데이트 패키지는 super-"를 수집 하려는 종속성 정보"-느린 [#1909](https://github.com/NuGet/Home/issues/1909)
 
@@ -184,7 +178,7 @@ ms.lasthandoff: 02/02/2018
 
 * 에 대 한 nuget 팩 `project.json` 요약, 작성자, 등-소유자와 같은 packOptions 태그를 무시 [#3161](https://github.com/NuGet/Home/issues/3161)
 
-* NullReferenceException via NuGet.Packaging.PhysicalPackageFile.GetStream - [#3160](https://github.com/NuGet/Home/issues/3160)
+* NullReferenceException NuGet.Packaging.PhysicalPackageFile.GetStream-통해 [#3160](https://github.com/NuGet/Home/issues/3160)
 
 * 출력에서 종속성을 무시 하는 NuGet 팩 `.nuspec` 에 대 한 `project.json`  -  [#3145](https://github.com/NuGet/Home/issues/3145)
 
@@ -226,7 +220,7 @@ ms.lasthandoff: 02/02/2018
 
 * 자격 증명 플러그 인) 종료 되었습니다 (오류-1 /-여러 소스가 포함 된 자격 증명 공급자를 사용 하는 경우 패키지 오류 다운로드 [#2885](https://github.com/NuGet/Home/issues/2885)
 
-* `project.json`nuget 복원 하면 변경-항목이 없을 경우 다시 컴파일이 [#2817](https://github.com/NuGet/Home/issues/2817)
+* `project.json` nuget 복원 하면 변경-항목이 없을 경우 다시 컴파일이 [#2817](https://github.com/NuGet/Home/issues/2817)
 
 * 기호 패키지가 현재까지 여야 설치 또는 업데이트-에서 사용할 [#2807](https://github.com/NuGet/Home/issues/2807)
 

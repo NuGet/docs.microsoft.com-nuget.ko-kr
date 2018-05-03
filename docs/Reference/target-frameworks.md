@@ -1,26 +1,17 @@
 ---
-title: NuGet 대상 프레임워크 참조 | Microsoft Docs
+title: NuGet에 대 한 대상 프레임 워크 참조
+description: NuGet 대상 프레임워크 참조는 패키지의 프레임워크 종속 구성 요소를 식별하고 격리합니다.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/11/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: NuGet 대상 프레임워크 참조는 패키지의 프레임워크 종속 구성 요소를 식별하고 격리합니다.
-keywords: NuGet 패키지 대상 지정, .NET Framework 대상, .NET Framework 버전
-ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 0a9c45ef31e27c2242edce48e2cf272e5280dcff
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: anangaur
+ms.openlocfilehash: 6b7ee3f739847777dda638d8fed083c48ed5812e
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="target-frameworks"></a>대상 프레임워크
 
@@ -41,25 +32,25 @@ NuGet은 다양한 위치에서 대상 프레임워크 참조를 사용하여 �
 
 NuGet 클라이언트는 아래 표의 프레임워크를 지원합니다. 대괄호([]) 안에 표시된 항목은 동등한 항목입니다. `dotnet`과 같은 일부 도구는 일부 파일에서 정식 TFM의 변형을 사용할 수 있습니다. 예를 들어 `dotnet pack`은 `.nuspec` 파일에서 `netcoreapp2.0` 대신 `.NETCoreApp2.0`을 사용합니다. 다양한 NuGet 클라이언트 도구에서 이러한 변형을 적절하게 처리하지만, 파일을 직접 편집할 때는 항상 정식 TFM을 사용해야 합니다.
 
-| 이름           | 약어 | TFM/TxM |
-| -------------  | ------------ | --------- |
-|.NET Framework  | net          | net11     |
-|                |              | net20     |
-|                |              | net35     |
-|                |              | net40     |
-|                |              | net403    |
-|                |              | net45      |
-|                |              | net451     |
-|                |              | net452     |
-|                |              | net46      |
-|                |              | net461     |
-|                |              | net462     |
-|Microsoft Store(Windows 스토어) | netcore      | netcore [netcore45] |
-|                |              | netcore45 [win, win8] |
-|                |              | netcore451 [win81] |
-|                |              | netcore50 |
-|.NET MicroFramework | netmf    | netmf |
-|Windows         | win          | win [win8, netcore45] |
+| 이름 | 약어 | TFM/TxM |
+| ------------- | ------------ | --------- |
+|.NET Framework | net | net11 |
+| | | net20 |
+| | | net35 |
+| | | net40 |
+| | | net403 |
+| | | net45 |
+| | | net451 |
+| | | net452 |
+| | | net46 |
+| | | net461 |
+| | | net462 |
+|Microsoft Store(Windows 스토어) | netcore | netcore [netcore45] |
+| | | netcore45 [win, win8] |
+| | | netcore451 [win81] |
+| | | netcore50 |
+|.NET MicroFramework | netmf | netmf |
+|Windows | win | win [win8, netcore45] |
 | | | win8 [netcore45, win] |
 | | | win81 [netcore451] |
 | | | win10(Windows 10 플랫폼에서 지원되지 않음) |
@@ -88,6 +79,7 @@ Tizen | tizen | tizen3 |
 | | | tizen4 |
 
 ## <a name="deprecated-frameworks"></a>사용되지 않는 프레임워크
+
 다음 프레임워크는 사용되지 않습니다. 이러한 프레임워크를 대상으로 하는 패키지는 지정된 대체 항목으로 마이그레이션되어야 합니다.
 
 | 사용되지 않는 프레임워크 | Replacement
@@ -114,12 +106,12 @@ Tizen | tizen | tizen3 |
 많은 프레임워크가 서로 관련되고 호환되지만 반드시 동등한 것은 아닙니다.
 
 | 프레임워크 | 사용 가능 |
-| --- | --- |
+| -- | --- |
 | uap(유니버설 Windows 플랫폼) | win81 |
 | | wpa81 |
 | | netcore50 |
 | win(Microsoft Store) | winrt |
-| | | winrt45 |
+| | |
 
 ## <a name="net-platform-standard"></a>.NET 플랫폼 표준
 

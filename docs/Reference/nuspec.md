@@ -1,26 +1,17 @@
 ---
-title: NuGet에 대한 .nuspec 파일 참조 | Microsoft Docs
+title: NuGet에 대 한.nuspec 파일 참조
+description: .nuspec 파일은 패키지를 빌드하고 패키지 소비자에게 정보를 제공하는 데 사용되는 패키지 메타데이터를 포함합니다.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 08/29/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: .nuspec 파일은 패키지를 빌드하고 패키지 소비자에게 정보를 제공하는 데 사용되는 패키지 메타데이터를 포함합니다.
-keywords: nuspec 참조, NuGet 패키지 메타데이터, NuGet 패키지 매니페스트, nuspec 스키마
-ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 086826b47402bb5e7066c7a10b1e2ff246fd58ea
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.reviewer: anangaur
+ms.openlocfilehash: c11b50aa1637c00f0f0e71a6e20ce5d435db402b
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -97,14 +88,14 @@ ms.lasthandoff: 04/03/2018
 | **owners** | nuget.org에서 프로필 이름을 사용하는 패키지 작성자에 대한 쉼표로 구분된 목록입니다. 이는 종종 `authors`에 있는 것과 동일한 목록이며, 패키지를 nuget.org에 업로드할 때 무시됩니다. [nuget.org에서 패키지 소유자 관리](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조하세요. |
 | **projectUrl** | nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페이지에 대한 URL입니다. |
 | **licenseUrl** | nuget.org뿐만 아니라 UI 표시에도 종종 표시되는 패키지의 라이선스에 대한 URL입니다. |
-| **iconUrl** | UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배경이 있는 64x64 이미지에 대한 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub에서 이미지를 사용 하려면 원시 파일 URL을 사용 하 여  *https://github.com/ \<username\>/\<리포지토리\>/raw/\<분기\> / \<logo.png\>*합니다. |
+| **iconUrl** | UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배경이 있는 64x64 이미지에 대한 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub에서 이미지를 사용 하려면 원시 파일 URL을 사용 하 여  <em>https://github.com/ \<username\>/\<리포지토리\>/raw/\<분기\> / \<logo.png\></em>합니다. |
 | **requireLicenseAcceptance** | 패키지를 설치하기 전에 클라이언트에서 소비자가 패키지 라이선스에 동의하도록 요구하는 메시지를 표시해야 할지 여부를 지정하는 부울 값입니다. |
 | **developmentDependency** | *(2.8 이상)* 패키지가 다른 패키지의 종속성으로 포함되지 않도록 패키지를 개발 전용 종속성으로 표시할지 여부를 지정 하는 부울 값입니다. |
 | **요약** | UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 `description`의 잘린 버전이 사용됩니다. |
 | **releaseNotes** | *(1.5 이상)* 패키지 설명 대신 Visual Studio 패키지 관리자의 **업데이트** 탭처럼 UI에서 자주 사용되는 이 패키지 릴리스의 변경 내용에 대한 설명입니다. |
 | **copyright** | *(1.5 이상)* 패키지에 대한 저작권 세부 정보입니다. |
 | **language** | 패키지에 대한 로캘 ID입니다. [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)를 참조하세요. |
-| **tags** | 패키지를 설명하고 검색 및 필터링을 통해 패키지의 검색 기능을 지원하는 태그 및 키워드에 대한 공백으로 구분된 목록입니다. |
+| **tags**  | 패키지를 설명하고 검색 및 필터링을 통해 패키지의 검색 기능을 지원하는 태그 및 키워드에 대한 공백으로 구분된 목록입니다. |
 | **serviceable** | *(3.3 이상)* NuGet 내부 전용입니다. |
 
 #### <a name="collection-elements"></a>컬렉션 요소
@@ -183,8 +174,8 @@ nuget pack MyProject.csproj
 
 | include/exclude 태그 | 영향을 받는 대상 폴더 |
 | --- | --- |
-| contentFiles | 콘텐츠  |
-| 런타임(runtime) | Runtime, Resources 및 FrameworkAssemblies  |
+| contentFiles | 콘텐츠 |
+| 런타임(runtime) | Runtime, Resources 및 FrameworkAssemblies |
 | compile | lib |
 | 빌드 | build(MSBuild props 및 targets) |
 | native | native |

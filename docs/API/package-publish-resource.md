@@ -1,26 +1,17 @@
 ---
-title: "밀어넣기 및 삭제를 NuGet API | Microsoft Docs"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 밀어넣기 및 삭제를 NuGet API
+description: 게시 서비스에는 클라이언트가 새 패키지를 게시 하 고 unlist 또는 기존 패키지를 삭제할 수 있습니다.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "게시 서비스에는 클라이언트가 새 패키지를 게시 하 고 unlist 또는 기존 패키지를 삭제할 수 있습니다."
-keywords: "NuGet API 푸시 패키지 API NuGet 패키지를 삭제, API NuGet 패키지를 NuGet API 업로드 패키지가 unlist, API NuGet 패키지를 만듭니다."
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: f8051ca57fccae77917567d8c9f2f8a120a8d884
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: 911c8238624f806b1fbb5c7938d02b6bdfbd8614
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="push-and-delete"></a>밀어넣기 및 삭제
 
@@ -55,7 +46,7 @@ nuget.org 다음 API를 사용 하 여 푸시 새 패키지를 지원 합니다.
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-name           | 입력     | 형식   | 필수 | 노트
+이름           | 입력     | 형식   | 필수 | 노트
 -------------- | ------ | ------ | -------- | -----
 X-NuGet-ApiKey | Header | string | 예      | 예를 들면 `X-NuGet-ApiKey: {USER_API_KEY}`과 같습니다.
 
@@ -87,7 +78,7 @@ nuget.org 패키지 삭제 요청으로 해석 하는 "unlist"입니다. 즉, �
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-name           | 입력     | 형식   | 필수 | 노트
+이름           | 입력     | 형식   | 필수 | 노트
 -------------- | ------ | ------ | -------- | -----
 ID             | URL    | string | 예      | 패키지의 ID를 삭제 하려면
 VERSION        | URL    | string | 예      | 삭제할 패키지의 버전
@@ -110,7 +101,7 @@ X-NuGet-ApiKey | Header | string | 예      | 예를 들면 `X-NuGet-ApiKey: {US
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-name           | 입력     | 형식   | 필수 | 노트
+이름           | 입력     | 형식   | 필수 | 노트
 -------------- | ------ | ------ | -------- | -----
 ID             | URL    | string | 예      | Relist를 패키지의 ID
 VERSION        | URL    | string | 예      | Relist 패키지의 버전

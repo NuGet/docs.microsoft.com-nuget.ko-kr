@@ -1,26 +1,17 @@
 ---
-title: "패키지 콘텐츠를 NuGet API | Microsoft Docs"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 패키지 콘텐츠를 NuGet API
+description: 패키지의 기본 주소는 패키지 자체를 가져오기 위해 간단한 인터페이스입니다.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "패키지의 기본 주소는 패키지 자체를 가져오기 위해 간단한 인터페이스입니다."
-keywords: "컨테이너, NuGet 패키지에 대 한 기본 주소, NuGet nupkg API NuGet API 패키지 버전 NuGet API NuGet 플랫 목록에 없는 패키지, 다운로드 nuspec NuGet API"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: c2e631dc0bba95ac849430d77142f27ef591f741
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: a6ac40368f30d33f35d4ca0b6cc18ce4bd6efee5
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-content"></a>패키지 내용
 
@@ -55,7 +46,7 @@ HTTP 메서드를 등록 리소스 지원에 있는 모든 Url `GET` 및 `HEAD`�
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-name     | 입력     | 형식    | 필수 | 노트
+이름     | 입력     | 형식    | 필수 | 노트
 -------- | ------ | ------- | -------- | -----
 LOWER_ID | URL    | string  | 예      | 패키지 ID, 소문자
 
@@ -67,7 +58,7 @@ LOWER_ID | URL    | string  | 예      | 패키지 ID, 소문자
 
 패키지 소스가 하나 이상의 버전을 가진 경우에 200 상태 코드가 반환 됩니다. 응답 본문은 다음과 같은 속성이 JSON 개체입니다.
 
-name     | 형식             | 필수 | 노트
+이름     | 형식             | 필수 | 노트
 -------- | ---------------- | -------- | -----
 버전 | 문자열의 배열 | 예      | 패키지 Id 제공
 
@@ -91,7 +82,7 @@ name     | 형식             | 필수 | 노트
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-name          | 입력     | 형식   | 필수 | 노트
+이름          | 입력     | 형식   | 필수 | 노트
 ------------- | ------ | ------ | -------- | -----
 LOWER_ID      | URL    | string | 예      | 패키지 ID, 소문자
 LOWER_VERSION | URL    | string | 예      | 소문자를 유지 하 고 정규화 된 패키지 버전
@@ -122,7 +113,7 @@ Newtonsoft.Json 9.0.1에 대 한.nupkg 있는 이진 스트림.
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-name          | 입력     | 형식    | 필수 | 노트
+이름          | 입력     | 형식    | 필수 | 노트
 ------------- | ------ | ------- | -------- | -----
 LOWER_ID      | URL    | string  | 예      | 패키지 ID, 소문자
 LOWER_VERSION | URL    | 정수 | 예      | 소문자를 유지 하 고 정규화 된 패키지 버전

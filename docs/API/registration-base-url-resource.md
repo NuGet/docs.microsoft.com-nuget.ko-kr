@@ -1,29 +1,17 @@
 ---
-title: 메타 데이터를 NuGet API 패키지 | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 패키지 메타 데이터를 NuGet API
+description: 패키지 등록 기준 URL을 사용 하면 패키지에 대 한 메타 데이터를 인출 합니다.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 패키지 등록 기준 URL을 사용 하면 패키지에 대 한 메타 데이터를 인출 합니다.
-keywords: NuGet API 패키지 메타 데이터, NuGet API 등록, NuGet API 목록에 없는 패키지
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: c7b32e1d2bb9250de1e0b707405a75184b2bd8b4
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: 50064e1450232e9cdedcc042a09c08860f802e76
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-metadata"></a>패키지 메타 데이터
 
@@ -150,14 +138,14 @@ packageContent | string | 예      | 패키지 콘텐츠 (.nupkg)의 URL
 @id                      | string                     | 예      | 이 개체를 생성 하는 데 사용 되는 문서에 대 한 URL
 authors                  | 문자열 또는 문자열의 배열 | 아니요       | 
 dependencyGroups         | 개체의 배열           | 아니요       | 대상 프레임 워크로 그룹화 된 패키지의 종속성
-설명              | string                     | 아니요       | 
+description              | string                     | 아니요       | 
 iconUrl                  | string                     | 아니요       | 
 ID                       | string                     | 예      | 패키지의 ID
 licenseUrl               | string                     | 아니요       | 
 나열                   | boolean                    | 아니요       | 없는 경우에 나열 된 것으로 간주 해야
 minClientVersion         | string                     | 아니요       | 
 projectUrl               | string                     | 아니요       | 
-published                | string                     | 아니요       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
+게시                | string                     | 아니요       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
 requireLicenseAcceptance | boolean                    | 아니요       | 
 요약                  | string                     | 아니요       | 
 태그                     | 문자열 또는 문자열의 배열  | 아니요       | 
@@ -240,7 +228,7 @@ URL을 등록 리프 인출에서 가져온는 `@id` 등록 인덱스 또는 등
 catalogEntry   | string  | 아니요       | 이러한 리프 생성 되는 카탈로그 항목에 대 한 URL
 나열         | boolean | 아니요       | 없는 경우에 나열 된 것으로 간주 해야
 packageContent | string  | 아니요       | 패키지 콘텐츠 (.nupkg)의 URL
-published      | string  | 아니요       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
+게시      | string  | 아니요       | 패키지를 게시 하는 경우의 ISO 8601 타임 스탬프를 포함 하는 문자열
 등록   | string  | 아니요       | 등록 인덱스에 대 한 URL
 
 > [!Note]
