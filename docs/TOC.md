@@ -77,7 +77,7 @@
 ## [packages.config를 PackageReference로 마이그레이션](reference/migrate-packages-config-to-package-reference.md)
 ## [packages.config](reference/packages-config.md)
 ## [패키지 버전 관리](reference/package-versioning.md)
-## [Nuget.Config 파일](reference/nuget-config-file.md)
+## [nuget.config 파일](reference/nuget-config-file.md)
 ## [MSBuild 대상](reference/msbuild-targets.md)
 ## [대상 프레임워크](reference/target-frameworks.md)
 ## [분석기 규칙](reference/analyzers-conventions.md)
@@ -85,6 +85,7 @@
 ## [ID 접두사 예약](reference/id-prefix-reservation.md)
 ## [NuGet 클라이언트 SDK](reference/nuget-client-sdk.md)
 ## [서명된 패키지 참조](reference/signed-packages-reference.md)
+## [nuget.org의 조직](reference/organizations-on-nuget-org.md)
 ## 확장성
 ### [Visual Studio용 NuGet 자격 증명 공급자](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe 자격 증명 공급자](reference/extensibility/nuget-exe-credential-providers.md)
