@@ -1,25 +1,16 @@
 ---
-title: NuGet 정의 및 기능 | Microsoft 문서
+title: NuGet 정의 및 기능
+description: NuGet의 정의와 기능에 대해 포괄적으로 소개합니다.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/10/2018
 ms.topic: overview
-ms.prod: nuget
-ms.technology: ''
-description: NuGet의 정의와 기능에 대해 포괄적으로 소개합니다.
-keywords: NuGet 패키지 관리자, 사용, 패키지 만들기, 패키지 호스팅, .NET 패키지, .NET Core 패키지
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 0d2094177f919d27b9a8320e60c8d1d75ec18fb6
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 7237db8f3be3d9a1d46b9e6be41bff5c06593a20
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 소개
 
