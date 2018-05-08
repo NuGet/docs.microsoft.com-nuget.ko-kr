@@ -1,25 +1,16 @@
 ---
-title: NuGet 동작 구성 | Microsoft Docs
+title: NuGet 동작 구성
+description: NuGet.Config 파일은 NuGet의 동작을 전역 및 프로젝트별로 제어하며 nuget config 명령으로 수정됩니다.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 10/25/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: NuGet.Config 파일은 NuGet의 동작을 전역 및 프로젝트별로 제어하며 nuget config 명령으로 수정됩니다.
-keywords: NuGet config 파일, NuGet 구성, NuGet 동작 설정, NuGet 설정, Nuget.Config, NuGetDefaults.Config, 기본값
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 88f10cf15e16013ac99f315e572f932fd3948f73
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.topic: conceptual
+ms.openlocfilehash: c8cc78be1bd48adc603b9447282a6c4bef7f942f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="configuring-nuget-behavior"></a>NuGet 동작 구성
 
@@ -35,7 +26,7 @@ NuGet의 동작은 프로젝트, 사용자 및 컴퓨터 수준에서 존재할 
 
 이전 버전의 NuGet에 대한 참고 사항:
 - NuGet 3.3 및 이전 버전에서는 솔루션 수준 설정에 대해 `.nuget` 폴더를 사용했습니다. NuGet 3.4 이상에서는 이 파일이 사용되지 않습니다.
-- NuGet 2.6 - 3.x의 경우, Windows의 컴퓨터 수준 구성 파일은 %ProgramData%\NuGet\Config[\\{IDE}[\\{Version}[\\{SKU}]]]\NuGet.Config에 있습니다. 여기서 *{IDE}*는 *VisualStudio*일 수 있고, *{Version}*은 *14.0*과 같은 Visual Studio 버전이고, *{SKU}*는 *Community*, *Pro* 또는 *Enterprise* 중 하나입니다. 설정을 NuGet 4.0 이상으로 마이그레이션하려면 구성 파일을 %ProgramFiles(x86)%\NuGet\Config에 복사하기만 하면 됩니다. Linux의 경우 이전의 이 위치는 /etc/opt이고, Mac의 경우 /Library/Application Support입니다.
+- NuGet 2.6 - 3.x의 경우, Windows의 컴퓨터 수준 구성 파일은 %ProgramData%\NuGet\Config[\\{IDE}[\\{Version}[\\{SKU}]]]\NuGet.Config에 있습니다. 여기서 *{IDE}* 는 *VisualStudio*일 수 있고, *{Version}* 은 *14.0*과 같은 Visual Studio 버전이고, *{SKU}* 는 *Community*, *Pro* 또는 *Enterprise* 중 하나입니다. 설정을 NuGet 4.0 이상으로 마이그레이션하려면 구성 파일을 %ProgramFiles(x86)%\NuGet\Config에 복사하기만 하면 됩니다. Linux의 경우 이전의 이 위치는 /etc/opt이고, Mac의 경우 /Library/Application Support입니다.
 
 ## <a name="changing-config-settings"></a>구성 설정 변경
 

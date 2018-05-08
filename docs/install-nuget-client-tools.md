@@ -1,31 +1,22 @@
 ---
-title: NuGet 클라이언트 도구 설치 | Microsoft Docs
+title: NuGet 클라이언트 도구 설치
+description: 클라이언트 도구, dotnet 및 nuget CLI(명령줄 인터페이스) 및 Visual Studio용 패키지 관리자 설치에 대한 지침입니다.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
-ms.date: 01/24/2018
+manager: douge
+ms.date: 04/09/2018
 ms.topic: quickstart
-ms.prod: nuget
-ms.technology: ''
-description: 클라이언트 도구, dotnet 및 nuget CLI(명령줄 인터페이스) 및 Visual Studio용 패키지 관리자 설치에 대한 지침입니다.
-keywords: dotnet.exe CLI, nuget.exe CLI, NuGet 클라이언트 도구, NuGet 패키지 관리자, NuGet 패키지 관리자 콘솔, Visual Studio용 NuGet, NuGet 베타 채널
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: e4dfe1102d1e0e2013136b0ae4975e5036e34642
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.openlocfilehash: 6681c910768bc705f5e09340e04e4d368fde5efe
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="installing-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
 
 > **패키지 설치를 원하십니까? [NuGet 패키지를 설치하는 방법](consume-packages/ways-to-install-a-package.md)을 참조하세요.**
 
-NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 [CLI(명령줄 인터페이스) 도구](#cli-tools)와 [Visual Studio의 NuGet 기능](#visual-studio)을 사용할 수 있습니다. 이 문서에서는 다양한 도구의 기능, 설치 방법 및 비교 [기능 가용성](#feature-availability)에 대해 간략하게 설명합니다.
+NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 [CLI(명령줄 인터페이스) 도구](#cli-tools)와 [Visual Studio의 NuGet 기능](#visual-studio)을 사용할 수 있습니다. 이 문서에서는 다양한 도구의 기능, 설치 방법 및 비교 [기능 가용성](#feature-availability)에 대해 간략하게 설명합니다. NuGet으로 패키지 사용을 시작하려면 [패키지 설치 및 사용(.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) 및 [패키지 설치 및 사용(Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)을 참조하세요. NuGet 패키지를 만들기 시작하려면 [NET Standard 패키지 만들기 및 게시(dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) 및 [NET Standard 패키지 만들기 및 게시(Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)를 참조하세요.
 
 | 도구&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 설명 | 다운로드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
@@ -56,7 +47,7 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 
 설치:
 
-[!INCLUDE[install-cli](includes/install-cli.md)]
+[!INCLUDE [install-cli](includes/install-cli.md)]
 
 > [!Tip]
 > Windows에서 `nuget update -self`를 사용하여 기존 nuget.exe를 최신 버전으로 업데이트합니다.

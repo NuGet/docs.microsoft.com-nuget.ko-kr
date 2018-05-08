@@ -1,25 +1,16 @@
 ---
-title: NuGet 패키지 사용에 대한 개요 및 워크플로 | Microsoft Docs
+title: NuGet 패키지 사용에 대한 개요 및 워크플로
+description: 프로젝트에서 NuGet 패키지를 사용하는 프로세스를 간략히 설명하며, 프로세스의 다른 특정 부분에 대한 링크가 포함되어 있습니다.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/22/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: 프로젝트에서 NuGet 패키지를 사용하는 프로세스를 간략히 설명하며, 프로세스의 다른 특정 부분에 대한 링크가 포함되어 있습니다.
-keywords: NuGet 패키지 사용, NuGet 사용 개요, NuGet 사용 워크플로, 패키지 사용 워크플로, 패키지 사용 개요
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: e79b09fe8131f25c6bbed650e1927425dcc5d409
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.topic: conceptual
+ms.openlocfilehash: 765b48b474aee17415f53491514bf6e9d50af010
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-consumption-workflow"></a>패키지 사용 워크플로
 

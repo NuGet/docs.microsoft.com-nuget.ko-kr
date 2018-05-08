@@ -1,25 +1,16 @@
 ---
-title: NuGet PackageReference 형식(프로젝트 파일의 패키지 참조) | Microsoft Docs
+title: NuGet PackageReference 형식(프로젝트 파일의 패키지 참조)
+description: NuGet 4.0 이상, VS2017 및 .NET Core 2.0에서 지원되는 프로젝트 파일에 있는 NuGet PackageReference에 대한 세부 정보
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/16/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: NuGet 4.0 이상, VS2017 및 .NET Core 2.0에서 지원되는 프로젝트 파일에 있는 NuGet PackageReference에 대한 세부 정보
-keywords: NuGet 패키지 종속성, 패키지 참조, 프로젝트 파일, PackageReference, packages.config, VS2017, Visual Studio 2017, NuGet 4, .NET Core 2.0
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 7844ace0565b2e70f8f68e6e61548f0f28171689
-ms.sourcegitcommit: 5b223c5814799caa6309e95792a2d338df692778
+ms.topic: conceptual
+ms.openlocfilehash: 8f277a8af7f988d6fdcfa75c43a10b3792c2ae22
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
