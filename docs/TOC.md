@@ -114,6 +114,7 @@
 ## [NuGet FAQ](policies/nuget-faq.md)
 ## [거버넌스](policies/governance.md)
 ## [에코시스템](policies/ecosystem.md)
+## [데이터 요청](policies/Data-requests.md)
 ## [분쟁 해결](policies/dispute-resolution.md)
 ## [패키지 삭제](policies/deleting-packages.md)
 # 릴리스 정보
