@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 73885256c5d5ea67140051bf63ff470991978928
-ms.sourcegitcommit: 055248d790051774c892b220eca12015babbd668
-ms.translationtype: HT
+ms.openlocfilehash: 00d763bcfdd2f3db50378a1e7774eae7a2e1fcd1
+ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -52,7 +52,7 @@ PackageReference 형식을 사용 하 여, 사용 하 여 표준.NET 프로젝�
 | 만든 이 | 만든 이 | 현재 사용자의 사용자 이름 | |
 | Owners | N/A | NuSpec에는 없음 | |
 | 제목 | 제목 | PackageId| |
-| 설명 | PackageDescription | "패키지 설명" | |
+| 설명 | 설명 | "패키지 설명" | |
 | Copyright | Copyright | 비어 있음 | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | 비어 있음 | |
@@ -60,7 +60,7 @@ PackageReference 형식을 사용 하 여, 사용 하 여 표준.NET 프로젝�
 | IconUrl | PackageIconUrl | 비어 있음 | |
 | Tags | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
 | ReleaseNotes | PackageReleaseNotes | 비어 있음 | |
-| 리포지토리/Url | RepositoryUrl | 비어 있음 | 리포지토리 URL을 복제 하거나 소스 코드를 검색 하는 데 사용 합니다. 예: *https://github.com/NuGet/NuGet.Client.git* |
+| Repository/Url | RepositoryUrl | 비어 있음 | 리포지토리 URL을 복제 하거나 소스 코드를 검색 하는 데 사용 합니다. 예: *https://github.com/NuGet/NuGet.Client.git* |
 | 저장소/유형 | RepositoryType | 비어 있음 | 리포지토리 유형입니다. 예: *git*, *tfs*합니다. |
 | 리포지토리/분기 | RepositoryBranch | 비어 있음 | 선택적 리포지토리 분기 정보입니다. *RepositoryUrl* 포함 되도록 하려면이 속성에도 지정 해야 합니다. 예: *마스터* (NuGet 4.7.0+) |
 | 리포지토리/커밋 | RepositoryCommit | 비어 있음 | 선택적 저장소 커밋 또는 패키지 소스를 나타내기 위해 변경 집합에 대해 작성 합니다. *RepositoryUrl* 포함 되도록 하려면이 속성에도 지정 해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |

@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 615f2beca1eb288417f2345fcdf25e323942d300
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
-ms.translationtype: HT
+ms.openlocfilehash: 1c6ec1181f2f619eb8a4f2d87f7910f25b98e0f4
+ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="install-command-nuget-cli"></a>install 명령(NuGet CLI)
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 04/26/2018
 
 `install` 프로젝트 파일 수정 되지 않도록 또는 `packages.config`; 비슷하지만 이런 방식에서 `restore` 한다는 점에서 것만 디스크에 패키지를 추가 하면 프로젝트의 종속성을 변경 하지 않습니다.
 
-종속성을 추가 하려면 Visual Studio에서 패키지 관리자 UI 또는 콘솔을 통해 프로젝트를 추가 하거나 수정 `packages.config` 하나를 실행 하 고 `install` 또는 `restore`합니다.
+종속성을 추가 하려면 Visual Studio에서 패키지 관리자 UI 또는 콘솔을 통해 패키지를 추가 하거나 수정 `packages.config` 하나를 실행 하 고 `install` 또는 `restore`합니다.
 
 ## <a name="usage"></a>사용법
 
@@ -49,11 +49,11 @@ nuget install <packageID | configFilePath> [options]
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 프레임워크 | *(4.4 +)*  대상 프레임 워크 종속성을 선택 하는 데 사용 합니다. 기본값은 'Any' 형식 지정 하지 않은 경우입니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| 캐시 없음 | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
-| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| NoCache | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
+| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | OutputDirectory | 패키지 설치 되는 폴더를 지정 합니다. 없는 폴더를 지정 하는 경우 현재 폴더가 사용 됩니다. |
 | PackageSaveMode | 패키지 설치 후 저장할 파일의 형식을 지정 합니다: 중 `nuspec`, `nupkg`, 또는 `nuspec;nupkg`합니다. |
-| 시험판 | 시험판 패키지를를 설치할 수 있습니다. 사용 하 여 패키지를 복원 하는 경우이 플래그는 필요 하지 `packages.config`합니다. |
+| PreRelease | 시험판 패키지를를 설치할 수 있습니다. 사용 하 여 패키지를 복원 하는 경우이 플래그는 필요 하지 `packages.config`합니다. |
 | RequireConsent | 다운로드 하 고 패키지를 설치 하기 전에 패키지를 복원 활성화 되어 있는지 확인 합니다. 자세한 내용은 참조 [패키지 복원](../consume-packages/package-restore.md)합니다. |
 | SolutionDirectory | 패키지를 복원 하도록 솔루션의 루트 폴더를 지정 합니다. |
 | 소스 | (Url)로 패키지 소스 목록의 사용 하도록 지정 합니다. 구성 파일에 제공 된 원본을 사용 하 여 생략 된 경우, 참조 [NuGet 구성 동작](../consume-packages/configuring-nuget-behavior.md)합니다. |
