@@ -10,11 +10,11 @@ ms.reviewer:
 - skofman
 - anangaur
 - kraigb
-ms.openlocfilehash: e236d685a700d0f47480336cece8edfd44c28863
-ms.sourcegitcommit: 68c8a494a11c892ac671fec3170ba7be97fb044d
+ms.openlocfilehash: c5d3cf68ac6a96a6c14eb5e652bcf72698b6a8e8
+ms.sourcegitcommit: 8f0bb8bb9cb91d27d660963ed9b0f32642f420fe
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="rate-limits"></a>속도 제한
 
@@ -46,5 +46,5 @@ NuGet.org API 남용 하지 않으려면 속도 제한 적용 합니다. 요청 
 
 | API | 제한 유형 | 제한 값 | API 사용 | 
 |:---|:---|:---|:--- |
-**PUT** `/api/v2/package` | API 키 | 100 / 분 | V2 푸시 끝점을 통해 새 NuGet 패키지 (버전)를 업로드 합니다. 
-**삭제** `/api/v2/package/{id}/{version}` | API 키 | 100 / 분 | Unlist v2 끝점을 통해 NuGet 패키지 (버전) 
+**PUT** `/api/v2/package` | API 키 | 250 / 시간 | V2 푸시 끝점을 통해 새 NuGet 패키지 (버전)를 업로드 합니다. 
+**삭제** `/api/v2/package/{id}/{version}` | API 키 | 250 / 시간 | Unlist v2 끝점을 통해 NuGet 패키지 (버전) 
