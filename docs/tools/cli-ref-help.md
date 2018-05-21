@@ -12,7 +12,7 @@ ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/26/2018
 ---
-# <a name="help-or--command-nuget-cli"></a>도움말 또는? 명령(NuGet CLI)
+# <a name="help-or--command-nuget-cli"></a>help or ? 명령(NuGet CLI)
 
 **적용 대상:** 모든 &bullet; **지원 되는 버전**: 모든
 
