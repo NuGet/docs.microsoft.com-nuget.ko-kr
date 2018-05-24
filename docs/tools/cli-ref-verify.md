@@ -7,11 +7,11 @@ manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: c2c31b71358bc50a1fb9aab8905c279cd1235b07
-ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
+ms.openlocfilehash: c80334104f7d8b2ccbf16ea2c11dc37b39408eeb
+ms.sourcegitcommit: c8485dc61469511485367d2067b97d6f74b49f6e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="verify-command-nuget-cli"></a>verify 명령(NuGet CLI)
 
@@ -24,22 +24,32 @@ ms.lasthandoff: 04/27/2018
 ## <a name="usage"></a>사용법
 
 ```cli
-nuget verify <package(s)> [options]
+nuget verify <-All|-Signatures> <package(s)> [options]
 ```
 
 여기서 `<package(s)>` 는 하나 이상의 `.nupkg` 파일입니다.
+
+## <a name="nuget-verify--all"></a>nuget 확인-모두
+
+패키지에서 확인 가능한 모든 작업을 수행 해야 함을 지정 합니다.
+
+## <a name="nuget-verify--signatures"></a>nuget 서명 확인
+
+패키지 서명 확인을 수행 해야 함을 지정 합니다.
+
+## <a name="options-for-verify--signatures"></a>"-서명 확인"에 대 한 옵션
+
+| 옵션 | 설명 |
+| --- | --- |
+| CertificateFingerprint | 로 서명 된 패키지를 서명 해야 하는 인증서 (s)의 하나 이상의 sha-256 인증서 지문을 지정 합니다. S h A-256 인증서 지문에는 인증서의 s h A-256 해시입니다. 여러 입력을 세미콜론으로 구분 된 있어야 합니다. |
 
 ## <a name="options"></a>옵션
 
 | 옵션 | 설명 |
 | --- | --- |
-| 모두 | 패키지에서 확인 가능한 모든 작업을 수행 해야 함을 지정 합니다. |
-| CertificateFingerprint | 로 서명 된 패키지를 서명 해야 하는 인증서 (s)의 하나 이상의 sha-256 인증서 지문을 지정 합니다. S h A-256 인증서 지문에는 인증서의 s h A-256 해시입니다. 여러 입력을 세미콜론으로 구분 된 있어야 합니다. |
 | ConfigFile | 적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
 | ForceEnglishOutput | Nuget.exe 고정, 영어 기반 문화권을 사용 하 여 실행을 강제로 수행 합니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
-| 서명 | 패키지 서명 확인을 수행 해야 함을 지정 합니다. |
 | 자세한 정도 | 출력에 표시 되는 세부 정보 수준을 지정: *일반*, *quiet*, *자세한*합니다. |
 
 ## <a name="examples"></a>예제
@@ -52,4 +62,7 @@ nuget verify -Signatures c:\packages\MyPackage.nupkg -CertificateFingerprint CE4
 nuget verify -Signatures MyPackage.nupkg -Verbosity quiet
 
 nuget verify -Signatures .\*.nupkg
+
+nuget verify -All .\*.nupkg
+
 ```
