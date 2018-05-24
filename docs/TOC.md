@@ -84,7 +84,7 @@
 ## [오류 및 경고](reference/errors-and-warnings.md)
 ## [ID 접두사 예약](reference/id-prefix-reservation.md)
 ## [NuGet 클라이언트 SDK](reference/nuget-client-sdk.md)
-## [서명된 패키지 참조](reference/signed-packages-reference.md)
+## [서명된 패키지](reference/signed-packages-reference.md)
 ## [nuget.org의 조직](reference/organizations-on-nuget-org.md)
 ## 확장성
 ### [Visual Studio용 NuGet 자격 증명 공급자](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
