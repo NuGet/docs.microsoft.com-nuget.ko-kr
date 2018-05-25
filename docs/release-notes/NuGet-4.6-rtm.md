@@ -6,22 +6,24 @@ ms.author: anangaur
 manager: unnir
 ms.date: 3/7/2018
 ms.topic: conceptual
-ms.openlocfilehash: d8fc374167e5c7f601c41887c4844854d0177ccb
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 11e604ad9a28ac2b22880a13ef9d8b41d8c09507
+ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="nuget-46-rtm-release-notes"></a>NuGet 4.6 RTM 릴리스 정보
 
 [Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes)는 [NuGet 4.6.0](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe)과 함께 제공됩니다.
 
 ## <a name="summary-whats-new-in-this-release"></a>요약: 이번 릴리스의 새로운 기능
-* [패키지 서명](https://docs.microsoft.com/en-us/nuget/create-packages/sign-a-package)에 대한 지원을 추가했습니다.  
-* Visual Studio 2017 및 nuget.exe는 이제 [서명된 패키지](https://docs.microsoft.com/en-us/nuget/reference/signed-packages-reference)의 패키지 설치, 복원 전에 패키지 무결성을 확인합니다.
+
+* [패키지 서명](../create-packages/sign-a-package.md)에 대한 지원을 추가했습니다.
+* Visual Studio 2017 및 nuget.exe는 이제 [서명된 패키지](../reference/signed-packages-reference.md)의 패키지 설치, 복원 전에 패키지 무결성을 확인합니다.
 * 연속 복원의 성능을 개선했습니다.
 
 ## <a name="known-issues"></a>알려진 문제
+
 ### <a name="issues-with-net-standard-20-with-net-framework--nuget"></a>.NET Framework 및 NuGet이 포함된 .NET Standard 2.0 관련 문제 
 
 .NET Standard 및 해당 도구는 .NET Framework 4.6.1을 대상으로 하는 프로젝트에서 .NET Standard 2.0 또는 이전 버전을 대상으로 하는 NuGet 패키지 및 프로젝트를 사용할 수 있도록 설계되었습니다. [이 문서](https://github.com/dotnet/standard/issues/481)에서는 해당 시나리오와 관련된 문제, 문제를 해결하기 위한 계획 및 현재의 도구 상태로 배포할 수 있는 해결 방법을 요약하고 있습니다.
@@ -29,11 +31,13 @@ ms.lasthandoff: 04/26/2018
 ## <a name="top-issues-fixed-in-this-release"></a>이번 릴리스에서 해결된 주요 문제
 
 **성능 개선**
+
 * 변경 내용이 없는 경우 자산 파일을 기록하지 않음 - [#6491](https://github.com/NuGet/Home/issues/6491)
 * 자식 프로젝트의 TFM이 부모 프로젝트와 일치하지 않는 경우 복원 시 추가 MSBuild 평가가 수행됨 - [#6311](https://github.com/NuGet/Home/issues/6311)
 * 종속성 그래프 사양 생성을 최적화하여 NoOp 복원 성능 개선 - [#6252](https://github.com/NuGet/Home/issues/6252)
 
 **버그**
+
 * 로컬 폴더로 푸시하면 nupkg가 잠김 - [#6325](https://github.com/NuGet/Home/issues/6325)
 * NuGet 플러그인 구현: 여러 문제 - [#6149](https://github.com/NuGet/Home/issues/6149)
 * UIHang - VSSolutionManager에서 MEF 초기화의 쿼리 서비스 호출 제거 - [#6110](https://github.com/NuGet/Home/issues/6110)
@@ -60,6 +64,5 @@ ms.lasthandoff: 04/26/2018
 * CentOS에서 Nuget add가 중지됨 - [#2708](https://github.com/NuGet/Home/issues/2708)
 * json.net의 경우 packagesavemode -nupkg를 사용한 복원이 실패함 - [#2706](https://github.com/NuGet/Home/issues/2706)
 * 복원 명령의 vs 출력 창에서 패키지 관리자 필터를 사용할 수 없음 - [#2704](https://github.com/NuGet/Home/issues/2704)
-
 
 [이번 릴리스에서 수정된 모든 문제 목록](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.6")

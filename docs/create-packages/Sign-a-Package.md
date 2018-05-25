@@ -7,11 +7,11 @@ manager: unnir
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: a469cbdd218a0e9c18950bb0d36faf4dbcb42a01
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 9900db1970a89de129d9074e5900e0aa048101de
+ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="signing-nuget-packages"></a>NuGet 패키지 서명
 
@@ -24,9 +24,6 @@ ms.lasthandoff: 04/26/2018
 1. nuget.exe 4.6.0 이상. [NuGet CLI 설치](../install-nuget-client-tools.md#nugetexe-cli) 방법을 참조하세요.
 
 1. [코드 서명 인증서](../reference/signed-packages-reference.md#get-a-code-signing-certificate).
-
-> [!Warning]
-> nuget.org는 현재 서명된 패키지를 받아들이지 않습니다. 사용자 지정 피드에 게시할 패키지에 서명할 수 있습니다.
 
 ## <a name="sign-a-package"></a>패키지 서명
 
