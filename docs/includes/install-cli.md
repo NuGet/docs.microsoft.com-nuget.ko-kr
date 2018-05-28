@@ -15,8 +15,6 @@ OS 배포에 따라 동작이 약간 다를 수 있습니다.
     ```bash
     # Download the latest stable `nuget.exe` to `/usr/local/bin`
     sudo curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-    # Give the file permissions to execute
-    sudo chmod 755 /usr/local/bin/nuget.exe
     ```
 
 1. 다음 스크립트를 OS에 해당하는 파일에 추가하여 별칭을 만듭니다(일반적으로 `~/.bash_aliases` 또는 `~/.bash_profile`).

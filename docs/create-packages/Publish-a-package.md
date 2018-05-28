@@ -4,18 +4,18 @@ description: NuGet 패키지를 nuget.org 또는 개인 피드에 게시하는 �
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/19/2018
+ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 539ac9485e6062a0bdc3bb86dac0f028a2de7821
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: 806a64d2d7654e4c1bca89a13d70fd9983c12703
+ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="publishing-packages"></a>패키지 게시
 
-패키지를 만들고 `.nukpg` 파일이 준비되면 공용 또는 개인용으로 다른 개발자가 사용할 수 있도록 하는 간단한 프로세스입니다.
+패키지를 만들고 `.nupkg` 파일이 준비되면 공용 또는 개인용으로 다른 개발자가 사용할 수 있도록 하는 간단한 프로세스입니다.
 
 - 공용 패키지는 이 문서에 설명된 대로 모든 개발자가 [nuget.org](https://www.nuget.org/packages/manage/upload)를 통해 전역적으로 사용할 수 있습니다(NuGet 4.1.0 이상 필요).
 - 파일 공유, 개인 NuGet 서버, [Visual Studio Team Services 패키지 관리](https://www.visualstudio.com/docs/package/nuget/publish) 또는 타사 리포지토리(myget, ProGet, Nexus Repository 및 Artifactory)를 호스트하여 개인 패키지를 팀 또는 조직에서 사용할 수 있습니다. 자세한 내용은 [패키지 개요 호스트](../hosting-packages/overview.md)를 참조하세요.
@@ -71,6 +71,13 @@ nuget.org에 패키지를 푸시하려면 [nuget.exe v4.1.0 이상](https://www.
     ```cli
     nuget push YourPackage.nupkg -Source https://api.nuget.org/v3/index.json
     ```
+
+#### <a name="publish-signed-packages"></a>서명된 패키지 게시
+
+서명된 패키지를 제출하려면 먼저 패키지 서명에 사용된 [인증서를 등록](../reference/Signed-Packages-Reference.md#register-certificate-on-nugetorg)해야 합니다. 
+
+> [!Warning]
+> nuget.org는 [서명된 패키지 요구 사항](../reference/Signed-Packages-Reference.md#signature-requirements-on-nugetorg)을 충족하지 않는 패키지를 거부합니다.
 
 ### <a name="package-validation-and-indexing"></a>패키지 유효성 검사 및 인덱싱
 

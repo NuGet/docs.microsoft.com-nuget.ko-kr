@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 09/27/2017
 ms.topic: conceptual
-ms.openlocfilehash: d1a64c61954381b7ab3a7ecc8aa5a812cfa14e8b
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 9bdcff8210c192a695a5645f28ef88087469ec52
+ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="supporting-multiple-net-framework-versions"></a>여러 .NET Framework 버전 지원
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 04/26/2018
 
 지원되는 이름의 전체 목록은 [대상 프레임워크 참조](../reference/target-frameworks.md#supported-frameworks)를 참조하세요.
 
-프레임워크에 관련되지 않는 버전의 라이브러리를 포함하거나 루트 `lib` 폴더에 배치하지 않아야 합니다. (이 기능은 `packages.config`에만 지원됩니다.) 그렇게 하면 모든 대상 프레임워크와 호환되도록 만들고 어디에나 설치할 수 있습니다. 따라서 예기치 않은 런타임 오류가 발생할 가능성이 높습니다. 루트 폴더(예: `lib\abc.dll`) 또는 하위 폴더(예: `lib\abc\abc.dll`)에 어셈블리를 추가하는 작업은 사용되지 않으며 PackagesReference 형식을 사용할 때 무시됩니다.
+프레임워크에 관련되지 않는 버전의 라이브러리를 포함하거나 루트 `lib` 폴더에 배치하지 않아야 합니다. (이 기능은 `packages.config`에만 지원됩니다.) 그렇게 하면 라이브러리를 모든 대상 프레임워크와 호환되도록 만들고 어디에나 설치할 수 있습니다. 따라서 예기치 않은 런타임 오류가 발생할 가능성이 큽니다. 루트 폴더(예: `lib\abc.dll`) 또는 하위 폴더(예: `lib\abc\abc.dll`)에 어셈블리를 추가하는 작업은 사용되지 않으며 PackagesReference 형식을 사용할 때 무시됩니다.
 
 예를 들어 다음 폴더 구조는 프레임워크에 관련된 4개 버전의 어셈블리를 지원합니다.
 

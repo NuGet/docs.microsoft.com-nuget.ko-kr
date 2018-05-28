@@ -1,20 +1,23 @@
 ---
-title: Visual Studio를 사용하여 .NET Standard NuGet 패키지 만들기 및 게시에 대한 소개 가이드
-description: Visual Studio 2017을 사용하여 .NET Standard NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
+title: Windows에서 Visual Studio를 사용하여 .NET Standard 패키지 만들기 및 게시
+description: Windows에서 Visual Studio 2017을 사용하여 .NET Standard NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/18/2018
+ms.date: 05/18/2018
 ms.topic: quickstart
-ms.openlocfilehash: c5d58aa6312eae801607ca44a81bc092a7a7c15f
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: f4e6473d307f2f71016f6926abbcdb1295abc7b5
+ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/22/2018
 ---
-# <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard"></a>빠른 시작: Visual Studio(.NET Standard)를 사용하여 NuGet 패키지 만들기 및 게시
+# <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>빠른 시작: Visual Studio(.NET Standard, Windows 전용)를 사용하여 NuGet 패키지 만들기 및 게시
 
-Visual Studio의 .NET Standard 클래스 라이브러리에서 NuGet 패키지를 만들고 CLI 도구를 사용하여 nuget.org에 게시하는 간단한 과정입니다.
+Windows에서 Visual Studio의 .NET Standard 클래스 라이브러리에서 NuGet 패키지를 만들고 CLI 도구를 사용하여 nuget.org에 게시하는 간단한 과정입니다.
+
+> [!Note]
+> 이 빠른 시작은 Windows용 Visual Studio 2017에만 적용됩니다. Mac용 Visual Studio에는 여기에 설명된 기능이 포함되어 있지 않습니다. 대신 [dotnet CLI 도구](create-and-publish-a-package-using-the-dotnet-cli.md)를 사용하세요.
 
 ## <a name="prerequisites"></a>전제 조건
 

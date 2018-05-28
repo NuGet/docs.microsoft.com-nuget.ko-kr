@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: c1e3bfd1c7e80c7deb505ef732d73c2edf3e32f7
-ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
+ms.openlocfilehash: 1657479e1a87f7022caa2fd991127b4ca702cdac
+ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="creating-nuget-packages"></a>NuGet 패키지 만들기
 
@@ -157,7 +157,7 @@ nuget locals -list global-packages
 
 ### <a name="from-a-convention-based-working-directory"></a>원본: 규칙 기반 작업 디렉터리
 
-NuGet 패키지는 `.nupkg` 확장명으로 이름이 바뀐 ZIP 파일일 뿐이므로 파일 시스템에서 원하는 폴더 구조를 만드는 것이 가장 쉽습니다. 이 경우 해당 구조에서 `.nuspec` 파일을 직접 만듭니다. 그런 다음 `nuget pack` 명령은 해당 폴더 구조의 모든 파일을 자동으로 추가합니다(동일한 구조의 개인 파일을 유지할 수 있도록 `.`으로 시작하는 폴더는 제외함).
+NuGet 패키지는 `.nupkg` 확장명으로 이름이 바뀐 ZIP 파일일 뿐이므로 로컬 파일 시스템에서 원하는 폴더 구조를 만드는 것이 가장 쉽습니다. 이 경우 해당 구조에서 `.nuspec` 파일을 직접 만듭니다. 그런 다음 `nuget pack` 명령은 해당 폴더 구조의 모든 파일을 자동으로 추가합니다(동일한 구조의 개인 파일을 유지할 수 있도록 `.`으로 시작하는 폴더는 제외함).
 
 이 방식의 장점은 이 항목의 뒷부분에서 설명한 대로 패키지에 포함하려는 파일을 매니페스트에 지정할 필요가 없다는 것입니다. 빌드 프로세스에서 패키지로 이동하는 정확한 폴더 구조를 생성하기만 하면 되고, 그렇지 않은 경우 프로젝트의 일부가 아닌 다른 파일을 쉽게 포함할 수 있습니다.
 
@@ -361,12 +361,9 @@ NuGet 3.x를 사용하면 대상이 프로젝트에 추가되지 않고 대신 `
 COM interop 어셈블리가 포함된 패키지에는 적절한 [targets 파일](#including-msbuild-props-and-targets-in-a-package)이 포함되어야 올바른 `EmbedInteropTypes` 메타데이터가 PackageReference 형식을 사용하여 프로젝트에 추가됩니다. 기본적으로 PackageReference를 사용하는 경우 `EmbedInteropTypes` 메타데이터는 모든 어셈블리에 대해 항상 false이므로 targets 파일에는 이 메타데이터가 명시적으로 추가됩니다. 충돌을 방지하기 위해 대상 이름은 고유해야 합니다. 이상적으로는 패키지 이름과 포함되는 어셈블리의 조합을 사용하여 아래 예제의 `{InteropAssemblyName}`을 해당 값으로 바꿉니다. (예제는 [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop)을 참조하세요.)
 
 ```xml
-<Target Name="EmbeddingAssemblyNameFromPackageId" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
-  <PropertyGroup>
-    <_InteropAssemblyFileName>{InteropAssemblyName}</_InteropAssemblyFileName>
-  </PropertyGroup>
+<Target Name="Embedding**AssemblyName**From**PackageId**" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
   <ItemGroup>
-    <ReferencePath Condition=" '%(FileName)' == '$(_InteropAssemblyFileName)' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
+    <ReferencePath Condition=" '%(FileName)' == '{InteropAssemblyName}' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </ReferencePath>
   </ItemGroup>
@@ -381,7 +378,7 @@ COM interop 어셈블리가 포함된 패키지에는 적절한 [targets 파일]
 
 ## <a name="running-nuget-pack-to-generate-the-nupkg-file"></a>nugkg pack을 실행하여 .nupkg 파일 생성
 
-어셈블리 또는 규칙 기반 작업 디렉터리를 사용하는 경우 `.nuspec` 파일이 포함된 `nuget pack`을 실행하고 `<manifest-name>`을 특정 파일 이름으로 바꿔 패키지를 만듭니다.
+어셈블리 또는 규칙 기반 작업 디렉터리를 사용하는 경우 `.nuspec` 파일이 포함된 `nuget pack`을 실행하고 `<project-name>`을 특정 파일 이름으로 바꿔 패키지를 만듭니다.
 
 ```cli
 nuget pack <project-name>.nuspec
