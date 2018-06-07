@@ -1,16 +1,17 @@
 ---
 title: NuGet CLI 도움말 명령
 description: Nuget.exe 도움말 명령에 대 한 참조
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: dbfc803e24c824d30e128d6e86cfa3c43660668f
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: d7112209a0a2a267343c3458ebacaf6b744786a9
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818258"
 ---
 # <a name="help-or--command-nuget-cli"></a>help or ? 명령(NuGet CLI)
 
@@ -39,7 +40,7 @@ nuget ? [command] [options]
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 도움말 | 도움말 도움말 명령 자체에 대 한 정보를 표시 합니다. |
 | Markdown | 마크 다운 형태로 함께 사용할 경우 자세한 도움말을 인쇄 `-All`합니다. 그렇지 않은 경우 무시 됩니다. |
-| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | 자세한 정도 | 출력에 표시 되는 세부 정보 수준을 지정: *일반*, *quiet*, *자세한*합니다. |
 
 또한 참조 [환경 변수](cli-ref-environment-variables.md)

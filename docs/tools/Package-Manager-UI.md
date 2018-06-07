@@ -1,9 +1,9 @@
 ---
 title: NuGet 패키지 관리자 UI 참조
 description: NuGet 패키지를 사용 하기 위한 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하기 위한 지침입니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/08/2017
 ms.topic: conceptual
 f1_keywords:
@@ -11,11 +11,12 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 1d8cb8186b9cedb29918d48539bdf45b130030c0
-ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.openlocfilehash: 307416908aff5db12fbf6f419e20acc6e0a9b241
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818843"
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 패키지 관리자 UI
 

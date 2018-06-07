@@ -1,9 +1,9 @@
 ---
 title: NuGet 오류 및 경고 참조
 description: 경고 및 다양 한 NuGet 작업 도중 NuGet에서 발생 한 오류에 대 한 참조를 완료 합니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
@@ -44,11 +44,12 @@ f1_keywords:
 - NU3008
 - NU3018
 - NU3028
-ms.openlocfilehash: 748c2746a61886617e2eefe3e6c4a2e2a5b9d4d3
-ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
+ms.openlocfilehash: 368a9554c5caf92b709f9b29e16b8a7cdb264eec
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/22/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818518"
 ---
 # <a name="errors-and-warnings"></a>오류 및 경고
 
@@ -173,7 +174,7 @@ ms.lasthandoff: 05/22/2018
 | --- | --- |
 | **문제** | 패키지 간에 종속성 제약 조건을 확인할 수 없습니다. |
 | **예제 메시지** | *NuGet.Versioning에 대 한 검색 버전 충돌 합니다. 이 문제를 해결 하려면 프로젝트에서 직접 패키지를 참조 합니다.<br/>  NuGet.Packaging 3.5.0 NuGet.Versioning (3.5.0 =)-><br/> NuGet.Configuration 4.0.0 NuGet.Versioning (4.0.0 =)->* |
-| **해결 방법** | 정확한 버전에 대 한 종속성 제약 조건 사용 하 여 패키지에는 다른 패키지 버전을 필요에 따라 증가를 허용 하지 않습니다. 필요한 정확한 버전으로 직접 (프로젝트 파일에서) 프로젝트에 대 한 참조를 추가 합니다. |
+| **해결 방법** | 정확한 버전에 대 한 종속성 제약 조건 사용 하 여 패키지에는 다른 패키지 버전을 필요에 따라 증가를 허용 하지 않습니다. 필요한 정확한 버전으로 직접 (프로젝트 파일에서) 패키지에 대 한 참조를 추가 합니다. |
 
 <a name="nu1108"></a>
 

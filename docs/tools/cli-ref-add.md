@@ -1,16 +1,17 @@
 ---
 title: NuGet CLI 명령 추가
 description: nuget.exe에 대 한 참조 추가 명령
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 4a4201a321ffe0f7fb61f4e98012a1a2d7d8fda4
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: f229ca100463c556f9c4cefc49f52724a9c4ba77
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817612"
 ---
 # <a name="add-command-nuget-cli"></a>add 명령(NuGet CLI)
 
@@ -45,7 +46,7 @@ nuget add <packagePath> -Source <sourcePath> [options]
 | Expand | 패키지의 패키지 원본에 있는 모든 파일을 추가합니다. |
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | 자세한 정도 | 출력에 표시 되는 세부 정보 수준을 지정: *일반*, *quiet*, *자세한*합니다. |
 
 또한 참조 [환경 변수](cli-ref-environment-variables.md)

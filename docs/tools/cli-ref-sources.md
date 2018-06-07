@@ -1,16 +1,17 @@
 ---
 title: NuGet CLI 명령 원본
 description: nuget.exe에 대 한 참조의 소스가 명령
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: d588ff09075ad75b76b7dd3645f3cdff29f6f093
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 7c416d92c11328ecb020154981b0ddcc5ba9c5e8
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818349"
 ---
 # <a name="sources-command-nuget-cli"></a>sources 명령(NuGet CLI)
 
@@ -36,7 +37,7 @@ nuget sources <operation> -Name <name> -Source <source>
 | ForceEnglishOutput | *(3.5 +)*  고정, 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
 | 형식 | 에 적용 됩니다는 `list` 작업 수 및 `Detailed` (기본값) 또는 `Short`합니다. |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| 비 대화형 | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | 암호 | 소스에 인증 하기 위해 암호를 지정 합니다. |
 | StorePasswordInClearText | 암호화 된 형식에 저장할 경우의 기본 동작 대신 암호화 되지 않은 텍스트에서 암호를 저장 하려면 나타냅니다. |
 | UserName | 소스를 사용 하 여 인증에 대 한 사용자 이름을 지정 합니다. |

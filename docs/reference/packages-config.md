@@ -1,16 +1,17 @@
 ---
 title: NuGet packages.config 파일 참조
 description: 일부 프로젝트 형식에서 packages.config은 프로젝트에 사용된 NuGet 패키지 목록을 유지 관리합니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/21/2018
 ms.topic: reference
-ms.openlocfilehash: e10bc1625bc4cea7b7befe18caa22d33a876489b
-ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
+ms.openlocfilehash: 2019ce5961a8237fbda855cd7d5b42948808be3a
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/22/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817839"
 ---
 # <a name="packagesconfig-reference"></a>packages.config 참조
 

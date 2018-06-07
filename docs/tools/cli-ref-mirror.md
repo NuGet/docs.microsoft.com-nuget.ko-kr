@@ -1,16 +1,17 @@
 ---
 title: NuGet CLI 미러 명령
 description: Nuget.exe 미러 명령에 대 한 참조
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 5ba13196d385abf42a5af2faa3fe6f0e80fb59d8
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 4cec854f05fcd207bb15a50ea4ebdc201fdb3ac6
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818154"
 ---
 # <a name="mirror-command-nuget-cli"></a>mirror 명령(NuGet CLI)
 
@@ -39,9 +40,9 @@ nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [op
 | --- | --- |
 | apiKey | 대상 저장소에 대 한 API 키입니다. 없음, 구성 파일에 지정 된 사용 됩니다 (`%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)). |
 | 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| 캐시 없음 | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
+| NoCache | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
 | Noop | 기록 수행 기능 하지만; 작업을 수행 하지 않습니다. 푸시 작업에 대 한 성공을 가정합니다. |
-| 시험판 | 미러링 작업에 시험판 패키지를 포함합니다. |
+| PreRelease | 미러링 작업에 시험판 패키지를 포함합니다. |
 | 소스 | 목록으로 미러링 하기 위해 패키지 소스입니다. 것에 정의 된 원본이 지정 된 경우 구성 파일 (참조 ApiKey 위의)는 사용을 지정 하지 않으면 nuget.org가 기본값으로 설정 됩니다. |
 | 시간 제한 | 서버에 밀어 넣는 초 제한 시간을 지정 합니다. 기본값은 300 초 (5 분)입니다. |
 | 버전 | 설치할 패키지의 버전입니다. 지정 하지 않으면 최신 버전이 미러 됩니다. |

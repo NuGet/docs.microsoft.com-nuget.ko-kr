@@ -1,17 +1,18 @@
 ---
 title: NuGet 패키지 버전 참조
 description: 버전 번호와 NuGet 패키지에 따라 달라 지는 및 종속성 설치 되는 방식과에 다른 패키지에 대 한 범위를 지정 하는 정확한 세부 정보입니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: d1da26b55c2c273c15c9c16891bf44abffd160a5
-ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
+ms.openlocfilehash: db529a4aa92f0f0bce0b52b21d2a01bf973d01f2
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/22/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817599"
 ---
 # <a name="package-versioning"></a>패키지 버전 관리
 
