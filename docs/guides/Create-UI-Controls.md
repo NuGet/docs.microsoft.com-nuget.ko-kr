@@ -1,16 +1,17 @@
 ---
 title: NuGet에서 UI 컨트롤을 패키지하는 방법
 description: Visual Studio 및 Blend 디자이너에 필요한 메타데이터 및 지원되는 파일을 포함하여 UWP 또는 WPF 컨트롤을 포함하는 NuGet 패키지를 만드는 방법입니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: fc6ab9e45d18807a6d69bb50ad5bac94b662a638
-ms.sourcegitcommit: 80c1a37d8794e9219e310a21a6a6885a65d24e53
+ms.openlocfilehash: ab7499c415f63319fd314f33607f74d400b5f957
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818660"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>NuGet 패키지인 UI 컨트롤 만들기
 

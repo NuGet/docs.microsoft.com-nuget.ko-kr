@@ -1,16 +1,17 @@
 ---
 title: Visual Studio 내에서 NuGet 패키지 사용에 대한 소개 가이드
 description: Visual Studio 프로젝트에서 NuGet 패키지를 설치하고 사용하는 프로세스에 대한 연습 자습서입니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: c61f8929d34bc9ff1a84ee186636543da5bcee63
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: a64a87319e9bc6dc992892783d00dc42db1b1dd8
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818856"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>빠른 시작: Visual Studio에서 패키지 설치 및 사용
 

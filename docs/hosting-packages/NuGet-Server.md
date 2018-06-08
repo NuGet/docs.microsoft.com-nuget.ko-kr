@@ -1,16 +1,17 @@
 ---
 title: NuGet.Server를 사용하여 NuGet 피드 호스트
 description: NuGet.Server를 사용하여 IIS를 실행하는 모든 서버에서 NuGet 패키지 피드를 만들고 호스트하는 방법입니다. OData 및 HTTP를 통해 패키지를 사용할 수 있습니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 55501eedf6c5fdf054a602536ee8c03e7048d5d5
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: b1ef1764b28631c3032ac23a250dedece7803ae6
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817969"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 

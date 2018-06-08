@@ -1,16 +1,17 @@
 ---
 title: 네이티브 NuGet 패키지 만들기
 description: 관리 코드 대신 C++ 프로젝트에서 사용할 C++ 코드가 포함된 네이티브 NuGet 패키지를 만드는 방법에 대한 세부 정보입니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 1fa8bf23a3fbed686b99f1c783b0ce55b373e548
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 086084bdfae5eace0b0a6aab17140a1fa48ae977
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817062"
 ---
 # <a name="creating-native-packages"></a>네이티브 패키지 만들기
 

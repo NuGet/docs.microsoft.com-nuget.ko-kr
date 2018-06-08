@@ -1,16 +1,17 @@
 ---
 title: NuGet 패키지 만들기에 대한 개요 및 워크플로
 description: NuGet 패키지를 만들고 게시하는 프로세스를 간략히 설명하며, 프로세스의 다른 특정 부분에 대한 링크가 포함되어 있습니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 07/26/2017
 ms.topic: conceptual
-ms.openlocfilehash: a9dd4439f2aa72424187eaa2d9555d5af0e7843d
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 1e2a7299be64d33bd0d697522cf5febb2022e0ee
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817016"
 ---
 # <a name="package-creation-workflow"></a>패키지 만들기 워크플로
 

@@ -1,16 +1,17 @@
 ---
 title: Visual Studio 템플릿의 NuGet 패키지
 description: Visual Studio 프로젝트 및 항목 템플릿의 일부로 NuGet 패키지를 포함하는 방법에 대한 지침입니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/03/2018
 ms.topic: conceptual
-ms.openlocfilehash: 801e107afb498d7a3353bd36d71eb7b0f0201910
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: e03d97eede3f4c91475fbb48804d0f4a08ff0750
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818804"
 ---
 # <a name="packages-in-visual-studio-templates"></a>Visual Studio 템플릿의 패키지
 

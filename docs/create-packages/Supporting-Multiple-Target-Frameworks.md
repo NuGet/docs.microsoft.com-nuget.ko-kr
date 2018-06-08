@@ -1,16 +1,17 @@
 ---
 title: NuGet 패키지의 멀티 타기팅
 description: 단일 NuGet 패키지 내에서 여러 .NET Framework 버전을 대상으로 하는 다양한 방법에 대한 설명입니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 09/27/2017
 ms.topic: conceptual
-ms.openlocfilehash: 9bdcff8210c192a695a5645f28ef88087469ec52
-ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
+ms.openlocfilehash: 429b9743ea678cd500b6f51630d03aac7812441e
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/22/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34816958"
 ---
 # <a name="supporting-multiple-net-framework-versions"></a>여러 .NET Framework 버전 지원
 

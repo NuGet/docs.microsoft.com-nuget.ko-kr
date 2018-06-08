@@ -1,18 +1,19 @@
 ---
 title: NuGet 설명서
 description: NuGet은 .NET을 포함한 Microsoft 개발 플랫폼에 대한 패키지 관리자입니다. NuGet 클라이언트 도구는 패키지를 만들고 사용하는 기능을 제공합니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
 layout: HubPage
 hide_bc: true
-ms.openlocfilehash: 534d9969c7ad73b9eaf4df64834cb46140085507
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: 8458f936caedeb761f8775e354c2848cb5b56c9a
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818479"
 ---
 <div id="main" class="v2">
 <div class="container">

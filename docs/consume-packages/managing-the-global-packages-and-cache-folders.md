@@ -1,16 +1,17 @@
 ---
 title: NuGet에서 전역 패키지, 캐시, 임시 폴더를 관리하는 방법
 description: 패키지를 설치, 복원 및 업데이트할 때 사용되는 컴퓨터에 있는 전역 패키지 설치 폴더, 패키지 캐시 및 임시 폴더를 관리하는 방법입니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: 354a8ec80e2ba20abe27746dec8c8aaae9b6c96c
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 89f70c8d22f5a6409bc3db751646a253f6ad034a
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817486"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>전역 패키지, 캐시 및 임시 폴더 관리
 
@@ -109,6 +110,6 @@ Visual Studio 2017에서 **도구 > NuGet 패키지 관리자 > 패키지 관리
 
     캐시에서 파일을 삭제할 수 있는 권한이 없습니다. 가능한 경우 폴더 권한을 변경하고 다시 시도합니다. 또는 시스템 관리자에게 문의하세요.
 
-- 오류: 지정된 경로, 파일 이름 중 하나 또는 둘 다가 너무 깁니다. 정규화된 파일 이름은 260자 미만이어야 하며 디렉터리 이름은 248자 미만이어야 합니다.
+- 오류: 지정된 경로, 파일 이름 중 하나 또는 둘 다가 너무 깁니다. 정규화된 파일 이름은 260자 미만이어야 하며 디렉터리 이름은 248자 미만이어야 합니다.*
 
     폴더 이름을 줄이고 다시 시도하세요.

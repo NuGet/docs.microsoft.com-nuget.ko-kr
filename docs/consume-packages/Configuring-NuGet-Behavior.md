@@ -1,16 +1,17 @@
 ---
 title: NuGet 동작 구성
 description: NuGet.Config 파일은 NuGet의 동작을 전역 및 프로젝트별로 제어하며 nuget config 명령으로 수정됩니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 02d9c0b20d3660d94ac4d80b7325f747675b0c12
-ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.openlocfilehash: a4a73f671bc02fa8fb0b0fa28cad26da2e520097
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817745"
 ---
 # <a name="configuring-nuget-behavior"></a>NuGet 동작 구성
 
