@@ -12,6 +12,7 @@ ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/22/2018
+ms.locfileid: "34449593"
 ---
 # <a name="signed-packages"></a><span data-ttu-id="f62de-103">서명 된 패키지</span><span class="sxs-lookup"><span data-stu-id="f62de-103">Signed packages</span></span>
 
