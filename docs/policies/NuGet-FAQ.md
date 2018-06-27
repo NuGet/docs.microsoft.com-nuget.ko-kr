@@ -1,16 +1,17 @@
 ---
 title: NuGet 질문과 대답
 description: 명령줄 및 Visual Studio에서 NuGet을 사용하고 NuGet 갤러리에서 작업하는 경우와 관련된 일반적인 질문과 대답입니다.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: bcdb4e8971ee4e742e6cf37f8b662e50a77604f0
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: e3c52f1e49a53b89d7e5c0728c02a7915db2aeb9
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817982"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -160,9 +161,9 @@ Visual Studio 자동화 개체 모델의 최상위 개체를 DTE(개발 도구 �
 
 ## <a name="managing-packages-on-nugetorg"></a>nuget.org의 패키지 관리
 
-**패키지 메타데이터를 업로드한 후에 편집할 수 있나요? 패키지 메타데이터를 변경하기 위해 nuspec을 편집하고 새 패키지를 업로드하는 것이 필요한 이유는 무엇인가요?**
+**패키지 메타데이터를 업로드한 후에 편집할 수 있나요?**
 
-NuGet은 모든 패키지에 서명이 필요 합니다. 패키지 서명의 디자인 원칙은 nuspec을 포함한 서명된 패키지 콘텐츠를 변경할 수 없다는 것입니다. 패키지 메타데이터를 편집하면 nuspec이 변경되고 기존 서명이 무효화됩니다. 패키지를 만든 후에 패키지 메타데이터를 편집할 필요가 없도록 기존 워크플로를 수정하는 것이 좋습니다.
+NuGet은 모든 패키지에 서명을 권장합니다. 패키지 서명의 디자인 원칙은 nuspec을 포함한 서명된 패키지 콘텐츠를 변경할 수 없다는 것입니다. 패키지 메타데이터를 편집하면 nuspec이 변경되고 기존 서명이 무효화됩니다. 패키지를 만든 후에 패키지 메타데이터를 편집할 필요가 없도록 기존 워크플로를 수정하는 것이 좋습니다.
 
 패키지에 대해 나열된 종속성은 패키지 자체에서 자동으로 생성되며 편집할 수 없습니다.
 
