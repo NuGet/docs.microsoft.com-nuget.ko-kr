@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 2ff83538f9f1cf3bd4ed616ec8f5f1aef3ffd9d6
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 142f82386395b8ab2ed1d57218db9bc1d2e98638
+ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818544"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37843448"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -98,6 +98,7 @@ ms.locfileid: "34818544"
 | **language** | 패키지에 대한 로캘 ID입니다. [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)를 참조하세요. |
 | **tags**  | 패키지를 설명하고 검색 및 필터링을 통해 패키지의 검색 기능을 지원하는 태그 및 키워드에 대한 공백으로 구분된 목록입니다. |
 | **serviceable** | *(3.3 이상)* NuGet 내부 전용입니다. |
+| **리포지토리** | 저장소 메타 데이터를 선택적 특성이 네 개 이루어진: *형식* 하 고 *url* *(4.0 이상)*, 및 *분기* 및  *커밋* *(4.6 이상)* 합니다. 이러한 특성을 사용 하면.nupkg 해질 수를 사용 하 여 작성 하는 것을 저장소에 매핑할 개별 지점 또는 패키지를 만든 커밋으로 설명 된 대로 합니다. |
 
 #### <a name="collection-elements"></a>컬렉션 요소
 
@@ -138,7 +139,7 @@ nuget pack MyProject.csproj
 
 | 토큰 | 값 원본 | 값
 | --- | --- | ---
-| **$id$** | 프로젝트 파일 | 프로젝트 파일에서 AssemblyName (제목) |
+| **$id$** | 프로젝트 파일 | 프로젝트 파일의 AssemblyName (제목) |
 | **$version$** | AssemblyInfo | 있는 경우 AssemblyInformationalVersion, 그렇지 않으면 AssemblyVersion |
 | **$author$** | AssemblyInfo | AssemblyCompany |
 | **$title$** | AssemblyInfo | AssemblyTitle |
@@ -540,7 +541,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 | **include** | (필수) `exclude` 특성으로 지정된 제외에 따라 포함할 파일의 위치입니다. 절대 경로가 지정되지 않으면 경로는 `.nuspec` 파일에 대한 상대 경로입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 | **exclude** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 | **buildAction** | `Content`, `None`, `Embedded Resource`, `Compile` 등과 같이 MSBuild의 콘텐츠 항목에 할당할 빌드 작업입니다. 기본값은 `Compile`입니다. |
-| **copyToOutput** | 출력 폴더를 콘텐츠 항목을 빌드 복사 (또는 게시)를 나타내는 부울입니다. 기본값은 false입니다. |
+| **copyToOutput** | 출력 폴더를 빌드에 콘텐츠 항목을 복사 (또는 게시) 여부를 나타내는 부울입니다. 기본값은 false입니다. |
 | **flatten** | 빌드 출력의 단일 폴더에 콘텐츠 항목을 복사할지(true), 아니면 패키지의 폴더 구조를 유지할지(false) 여부를 나타내는 부울 값입니다. 이 플래그는 copyToOutput 플래그가 true로 설정된 경우에만 작동합니다. 기본값은 false입니다. |
 
 패키지를 설치할 때 NuGet에서 `<contentFiles>`의 자식 요소를 위쪽에서 아래쪽으로 적용합니다. 여러 항목이 동일한 파일과 일치하면 모든 항목이 적용됩니다. 동일한 특성에 대한 충돌이 있는 경우 최상위 항목이 하위 항목을 재정의합니다.

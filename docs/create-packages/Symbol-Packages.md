@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 8d2ff4d414e496d4a57755637cbbe05f4a8408e3
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: e917895d0fa6ed6dc4bc24b72afc7fa0770f2dd0
+ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816893"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37843370"
 ---
 # <a name="creating-symbol-packages"></a>기호 패키지 만들기
 
@@ -111,9 +111,6 @@ nuget pack MyProject.csproj -Symbols
     nuget push MyPackage.symbols.nupkg
     ```
 
-   > [!Note]
-   > nuget.exe 4.5.0 이상에서 기호 패키지는 symbolsource.org로 자동으로 푸시되지 않습니다. 다음 단계에 설명된 대로 별도로 기호 패키지를 푸시해야 합니다.
-
 3. 다른 기호 리포지토리에 게시하거나 명명 규칙을 따르지 않는 기호 패키지를 푸시하려면 `-Source` 옵션을 사용합니다.
 
     ```cli
@@ -126,6 +123,9 @@ nuget pack MyProject.csproj -Symbols
     nuget push MyPackage.nupkg
     ```
 
+   > [!Note]
+   > nuget.exe 4.5.0 이상에서 기호 패키지는 symbolsource.org로 자동으로 푸시되지 않습니다. 다음 단계에 설명된 대로 별도로 기호 패키지를 푸시해야 합니다.
+   
 이 경우에 NuGet은 nuget.org에 기본 패키지를 게시한 후에 `MyPackage.symbols.nupkg`가 있으면 해당 항목을 https://nuget.smbsrc.net/(symbolsource.org의 푸시 URL)에 게시합니다.
 
 ## <a name="see-also"></a>참고 항목

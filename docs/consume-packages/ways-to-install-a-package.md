@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
-ms.openlocfilehash: 5f71ce6217071efc3d483cde4cf36c5585808167
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 0f59c3b7f1e32ae34889921c13d15074ef5c1260
+ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816932"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37843383"
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>NuGet 패키지를 설치하는 다양한 방법
 
@@ -39,7 +39,7 @@ NuGet 패키지는 다음 표의 방법 중 하나를 사용하여 다운로드 
 
    - 패키지가 캐시에 없으면 구성 파일에 나열된 소스에서 패키지를 다운로드하려고 합니다. 패키지가 다운로드되면 출력에 “GET” 및 “OK”가 나타납니다.
 
-   - 어떤 소스에서도 패키지를 가져올 수 없으면 이제 설치가 실패하고 [NU1103](../reference/errors-and-warnings.md#nu1103)과 같은 오류가 발생합니다. `nuget.exe` 명령의 오류에는 마지막으로 확인된 소스만 표시되지만 어떤 소스에서도 패키지를 사용할 수 없었음을 의미합니다.
+   - 어떤 소스에서도 패키지를 가져올 수 없으면 이제 설치가 실패하고 [NU1103](../reference/errors-and-warnings/NU1103.md)과 같은 오류가 발생합니다. `nuget.exe` 명령의 오류에는 마지막으로 확인된 소스만 표시되지만 어떤 소스에서도 패키지를 사용할 수 없었음을 의미합니다.
 
    패키지를 가져올 때 다음과 같이 NuGet 구성의 소스 순서가 적용될 수 있습니다.
 
