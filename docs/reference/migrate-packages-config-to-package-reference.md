@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 03/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1ca97e1c2dfba876aefe6b06eab10def67b8d848
-ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
+ms.openlocfilehash: 4f42403abbf07c2c48ce13c70c49f7f3c15c40e4
+ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843396"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39072368"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Packages.config를 PackageReference로 마이그레이션
 
@@ -41,7 +41,7 @@ Visual Studio 2017 버전 15.7 및 이상에서는 지원에서 프로젝트를 
 
 #### <a name="workaround"></a>해결 방법 
 
-다음 NuGet 작업 중 하나를 수행합니다. 
+다음 NuGet 작업 중 하나를 수행 합니다. 
 * 패키지 관리자 UI 열기 - `References`를 마우스 오른쪽 단추로 클릭하고 `Manage NuGet Packages...`를 선택합니다. 
 * 패키지 관리자 콘솔 열기 - `Tools > NuGet Package Manager`에서 `Package Manager Console`을 선택합니다. 
 * NuGet 복원 실행 - 솔루션 탐색기에서 솔루션 노드를 마우스 오른쪽 단추로 클릭하고 `Restore NuGet Packages`를 선택합니다. 
@@ -58,7 +58,7 @@ Visual Studio 2017 버전 15.7 및 이상에서는 지원에서 프로젝트를 
 
 1. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭 합니다 **참조** 노드 또는 `packages.config` 파일을 선택 **packages.config를 PackageReference로 마이그레이션 중...** .
 
-1. 마이 그레이터 프로젝트의 NuGet 패키지 참조를 분석 하 고 가져와서 분류 하려고 **최상위 종속성** (NuGet 패키지를 설치한 디렉터리) 및 **전이적 종속성**(최상위 패키지의 종속성으로 설치 된 패키지).
+1. 마이 그레이터 프로젝트의 NuGet 패키지 참조를 분석 하 고 가져와서 분류 하려고 **최상위 종속성** (직접 설치한 NuGet 패키지) 및 **전이적 종속성** (최상위 패키지의 종속성으로 설치 된 패키지).
 
    > [!Note]
    > PackageReference 전이적 패키지 복원을 지 및 종속성을 동적으로 확인 하 여 전이적 종속성 필요를 설치 하지 않도록 명시적으로 의미 합니다.

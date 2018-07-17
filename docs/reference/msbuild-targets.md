@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: f835deabe337236dcabe6654f1963984ab0687ca
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 0e7e0952519afdcb4b50f31d33cce2a92e3579b4
+ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818310"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39069702"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -38,7 +38,7 @@ MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `res
 
 ## <a name="pack-target"></a>pack 대상
 
-PackageReference 형식을 사용 하 여, 사용 하 여 표준.NET 프로젝트에 대 한 `msbuild /t:pack` NuGet 패키지를 만드는 데 사용할 프로젝트 파일에서 입력을 그립니다.
+PackageReference 형식을 사용 하 여.NET Standard 프로젝트에 대 한 `msbuild /t:pack` NuGet 패키지를 만드는 데 사용할 프로젝트 파일에서 입력을 가져옵니다.
 
 아래 표에서는 첫 번째 `<PropertyGroup>` 노드 내에서 프로젝트 파일에 추가할 수 있는 MSBuild 속성을 설명합니다. Visual Studio 2017 이상에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **{project_name} 편집**을 선택하여 이러한 편집 작업을 쉽게 수행할 수 있습니다. 편의상 이 표는 [`.nuspec` 파일 ](../reference/nuspec.md)에 있는 동등한 속성으로 구성되었습니다.
 
@@ -61,10 +61,10 @@ PackageReference 형식을 사용 하 여, 사용 하 여 표준.NET 프로젝�
 | IconUrl | PackageIconUrl | 비어 있음 | |
 | Tags | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
 | ReleaseNotes | PackageReleaseNotes | 비어 있음 | |
-| 리포지토리/Url | RepositoryUrl | 비어 있음 | 리포지토리 URL을 복제 하거나 소스 코드를 검색 하는 데 사용 합니다. 예: *https://github.com/NuGet/NuGet.Client.git* |
-| 저장소/유형 | RepositoryType | 비어 있음 | 리포지토리 유형입니다. 예: *git*, *tfs*합니다. |
-| 리포지토리/분기 | RepositoryBranch | 비어 있음 | 선택적 리포지토리 분기 정보입니다. *RepositoryUrl* 포함 되도록 하려면이 속성에도 지정 해야 합니다. 예: *마스터* (NuGet 4.7.0+) |
-| 리포지토리/커밋 | RepositoryCommit | 비어 있음 | 선택적 저장소 커밋 또는 패키지 소스를 나타내기 위해 변경 집합에 대해 작성 합니다. *RepositoryUrl* 포함 되도록 하려면이 속성에도 지정 해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
+| 리포지토리/Url | RepositoryUrl | 비어 있음 | 복제 또는 소스 코드를 검색 하는 데 사용 되는 리포지토리 URL입니다. 예: *https://github.com/NuGet/NuGet.Client.git* |
+| 저장소/유형 | RepositoryType | 비어 있음 | 리포지토리 유형입니다. 예: *git*하십시오 *tfs*합니다. |
+| 리포지토리/분기 | RepositoryBranch | 비어 있음 | 선택적 리포지토리에서 분기 정보입니다. *RepositoryUrl* 포함 되도록이 속성에도 지정 해야 합니다. 예: *마스터* (NuGet 4.7.0+) |
+| 저장소/커밋 | RepositoryCommit | 비어 있음 | 선택적 저장소 커밋 또는 패키지 소스를 나타내기 위해 변경 집합에 대해 구축 되었습니다. *RepositoryUrl* 포함 되도록이 속성에도 지정 해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | 요약 | 지원 안 함 | | |
 
@@ -106,7 +106,7 @@ PackageReference 형식을 사용 하 여, 사용 하 여 표준.NET 프로젝�
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-에 대 한 변경의 일부로 [NuGet 문제 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` 최종적으로 변경 됩니다 `PackageIconUri` 및 결과 패키지의 루트를 포함 하는 아이콘 파일에 상대 경로일 수 있습니다.
+에 대 한 변경의 일부로 [NuGet 문제 352](https://github.com/NuGet/Home/issues/352)를 `PackageIconUrl` 최종적으로 변경 됩니다 `PackageIconUri` 및 결과 패키지의 루트에 포함 될 아이콘 파일에 상대 경로가 될 수 있습니다.
 
 ### <a name="output-assemblies"></a>출력 어셈블리
 
@@ -192,7 +192,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 ### <a name="packing-using-a-nuspec"></a>.nuspec을 사용하여 압축
 
-사용할 수는 `.nuspec` SDK 프로젝트 파일을 가져올 있는 경우 프로젝트에 포함 시킬 파일 `NuGet.Build.Tasks.Pack.targets` 팩 작업을 실행 될 수 있도록 합니다. Nuspec 파일을 압축 하기 전에 프로젝트를 복원 해야 합니다. 프로젝트 파일의 대상 프레임 워크는와 관련이 없습니다 및 압축 된 nuspec 때 사용 되지 않습니다. 다음 세 가지 MSBuild 속성은 `.nuspec`을 사용하여 압축하는 것과 관련이 있습니다.
+사용할 수는 `.nuspec` SDK 프로젝트 파일을 가져올가 있는 경우 프로젝트를 압축 파일 `NuGet.Build.Tasks.Pack.targets` 팩 작업을 실행할 수 있도록 합니다. Nuspec 파일을 압축 하기 전에 프로젝트를 복원 해야 합니다. 프로젝트 파일의 대상 프레임 워크로 관련이 없는 고 nuspec을 압축할 때 사용 되지 않습니다. 다음 세 가지 MSBuild 속성은 `.nuspec`을 사용하여 압축하는 것과 관련이 있습니다.
 
 1. `NuspecFile`: 압축에 사용되는 `.nuspec` 파일에 대한 상대 또는 절대 경로입니다.
 1. `NuspecProperties`: 세미콜론으로 구분된 key=value 쌍의 목록입니다. MSBuild 명령줄 구문 분석이 작동하는 방식으로 인해 여러 속성을 `/p:NuspecProperties=\"key1=value1;key2=value2\"`와 같이 지정해야 합니다.  
@@ -210,9 +210,9 @@ MSBuild를 사용하여 프로젝트를 압축하는 경우 다음 명령을 사
 msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
-해당 압축 dotnet.exe를 사용 하 여 nuspec 점에 유의 하십시오 또는 msbuild는 또한 기본적으로 프로젝트를 빌드하면 까지로 합니다. 전달 하 여 방지할 수 있습니다 ```--no-build``` 속성 설정에 해당 하는 dotnet.exe ```<NoBuild>true</NoBuild> ``` 설정과 함께, 프로젝트 파일의 ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` 프로젝트 파일에서
+해당 nuspec dotnet.exe를 사용 하 여 압축을 유의 하십시오 또는 기본적으로 프로젝트를 구축 하는 데 msbuild 많아집니다. 전달 하 여이 방지할 수 있습니다 ```--no-build``` 속성을 설정의 해당 하는 dotnet.exe ```<NoBuild>true</NoBuild> ``` 설정 함께 프로젝트 파일에서 ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` 프로젝트 파일에서
 
-압축할 nuspec 파일 csproj 파일의 예는.
+Nuspec 파일을 압축할 csproj 파일의 예제는 다음과 같습니다.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -227,19 +227,19 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 </Project>
 ```
 
-### <a name="advanced-extension-points-to-create-customized-package"></a>고급 사용자 지정 된 패키지를 만들려면 확장 지점
+### <a name="advanced-extension-points-to-create-customized-package"></a>고급 사용자 지정된 패키지를 만들려면 확장 지점
 
-`pack` 대상, 내부 대상 프레임 워크의 특정 빌드를 실행 하는 두 가지 확장 지점을 제공 합니다. 대상 프레임 워크에 대 한 특정 콘텐츠 및 어셈블리를 패키지에 포함 하 여 확장 지점을 지원합니다.
+`pack` 대상 내부 대상 프레임 워크 특정 빌드에서 실행 되는 두 개의 확장 지점을 제공 합니다. 대상 프레임 워크 특정 콘텐츠 및 어셈블리는 패키지를 비롯 하 여 확장 지점을 지원합니다.
 
-- `TargetsForTfmSpecificBuildOutput` 대상: 내의 파일에 대 한 사용은 `lib` 폴더 또는 사용 하 여 지정 된 폴더 `BuildOutputTargetFolder`합니다.
-- `TargetsForTfmSpecificContentInPackage` 대상: 외부 파일에 사용 된 `BuildOutputTargetFolder`합니다.
+- `TargetsForTfmSpecificBuildOutput` 대상: 내에서 파일에 대 한 사용 합니다 `lib` 를 사용 하 여 지정 된 폴더나 폴더 `BuildOutputTargetFolder`.
+- `TargetsForTfmSpecificContentInPackage` 대상: 외부 파일에 대 한 사용을 `BuildOutputTargetFolder`입니다.
 
 #### <a name="targetsfortfmspecificbuildoutput"></a>TargetsForTfmSpecificBuildOutput
 
-사용자 지정 대상 쓰기의 값으로 지정 하는 `$(TargetsForTfmSpecificBuildOutput)` 속성입니다. 로 이동 해야 하는 모든 파일에는 `BuildOutputTargetFolder` (기본적으로 lib) 대상에 있는 p 해당 파일을 써야 `BuildOutputInPackage` 다음 두 메타 데이터 값을 설정 하 고:
+사용자 지정 대상을 작성 하 고 값으로 지정 된 `$(TargetsForTfmSpecificBuildOutput)` 속성입니다. 로 이동 해야 하는 모든 파일에 대 한는 `BuildOutputTargetFolder` (lib) 기본적으로 대상의 ItemGroup에 해당 파일을 작성 해야 `BuildOutputInPackage` 다음 두 메타 데이터 값을 설정 합니다.
 
-- `FinalOutputPath`: 파일의 절대 경로 을 지정 하지 않으면 소스 경로 평가 하는 Id 사용 됩니다.
-- `TargetPath`: (선택 사항) 파일 내에서 하위 폴더로 이동 해야 할 때 설정 `lib\<TargetFramework>` 위성 어셈블리의 각 문화권 폴더 아래에서 해당 go 같이 합니다. 기본값은 파일의 이름입니다.
+- `FinalOutputPath`파일의 절대 경로: 지정 하지 않으면 Id 원본 경로 평가에 사용 됩니다.
+- `TargetPath`: (선택 사항) 파일 내에서 하위 폴더로 이동 해야 할 때 설정 `lib\<TargetFramework>` 과 같이 위성 어셈블리는 각 문화권 폴더 아래에 있는 해당 이동 합니다. 기본값은 파일의 이름입니다.
 
 예제:
 
@@ -259,23 +259,23 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 #### <a name="targetsfortfmspecificcontentinpackage"></a>TargetsForTfmSpecificContentInPackage
 
-사용자 지정 대상 쓰기의 값으로 지정 하는 `$(TargetsForTfmSpecificContentInPackage)` 속성입니다. 패키지에 포함할 파일 대상 해야 해당 파일에 쓸 ItemGroup `TfmSpecificPackageFile` 다음과 같은 선택적 메타 데이터를 설정 합니다.
+사용자 지정 대상을 작성 하 고 값으로 지정 된 `$(TargetsForTfmSpecificContentInPackage)` 속성입니다. 패키지에 포함할 모든 파일에 대 한 대상 해야 해당 파일에 쓸 ItemGroup `TfmSpecificPackageFile` 다음과 같은 선택적 메타 데이터를 설정 합니다.
 
-- `PackagePath`: 파일 패키지의 출력 위치 해야 하는 경로입니다. NuGet 둘 이상의 파일이 동일한 패키지 경로에 추가 되 면 경고를 발생 시킵니다.
-- `BuildAction`: 빌드 동작을 파일에 할당할 경우 해당 패키지 경로에 필요는 `contentFiles` 폴더입니다. 기본값은 "None"입니다.
+- `PackagePath`: 파일은 패키지의 출력 이어야 하는 위치 경로입니다. 둘 이상의 파일에서 동일한 패키지 경로에 추가 되 면 NuGet 경고를 발생 시킵니다.
+- `BuildAction`: 빌드 작업 파일을 할당할 패키지 경로만 필요 합니다 `contentFiles` 폴더입니다. 기본값은 "None"입니다.
 
-예를 들어 다음
+예제:
 ```xml
 <PropertyGroup>
   <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
 </PropertyGroup>
 
-<Target Name=""CustomContentTarget"">
+<Target Name="CustomContentTarget">
   <ItemGroup>
-    <TfmSpecificPackageFile Include=""abc.txt"">
+    <TfmSpecificPackageFile Include="abc.txt">
       <PackagePath>mycontent/$(TargetFramework)</PackagePath>
     </TfmSpecificPackageFile>
-    <TfmSpecificPackageFile Include=""Extensions/ext.txt"" Condition=""'$(TargetFramework)' == 'net46'"">
+    <TfmSpecificPackageFile Include="Extensions/ext.txt" Condition="'$(TargetFramework)' == 'net46'">
       <PackagePath>net46content</PackagePath>
     </TfmSpecificPackageFile>  
   </ItemGroup>
@@ -293,7 +293,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 1. 패키지를 다운로드합니다.
 1. 자산, targets 및 props 파일을 작성합니다.
 
-`restore` works 대상 **만** PackageReference 형식을 사용 하 여 프로젝트에 대 한 합니다. 그렇게 **하지** 사용 하 여 프로젝트에 대 한 회사는 `packages.config` 서식을 지정 합니다; 사용 [nuget 복원](../tools/cli-ref-restore.md) 대신 합니다.
+합니다 `restore` works 대상 **만** PackageReference 형식을 사용 하 여 프로젝트에 대 한 합니다. 것 **되지** 사용 하 여 프로젝트에 대해 작동 합니다 `packages.config` 은 형식을 사용 하 여 [nuget 복원](../tools/cli-ref-restore.md) 대신 합니다.
 
 ### <a name="restore-properties"></a>restore 속성
 
@@ -333,7 +333,7 @@ restore는 `obj` 빌드 폴더에 다음 파일을 만듭니다.
 
 | 파일 | 설명 |
 |--------|--------|
-| `project.assets.json` | 모든 패키지 참조의 종속성 그래프를 포함합니다. |
+| `project.assets.json` | 패키지에 대 한 모든 참조의 종속성 그래프를 포함합니다. |
 | `{projectName}.projectFileExtension.nuget.g.props` | 패키지에 포함된 MSBuild props 파일에 대한 참조 |
 | `{projectName}.projectFileExtension.nuget.g.targets` | 패키지에 포함된 MSBuild targets 파일에 대한 참조 |
 
