@@ -58,6 +58,7 @@
 ### [update](tools/cli-ref-update.md)
 ### [verify](tools/cli-ref-verify.md)
 ### [환경 변수](tools/cli-ref-environment-variables.md)
+### [긴 경로 지원](tools/cli-ref-long-path.md)
 ## [패키지 관리자 UI](tools/package-manager-ui.md)
 ## [패키지 관리자 콘솔](tools/package-manager-console.md)
 ## [PowerShell 참조](tools/powershell-reference.md)
