@@ -8,11 +8,11 @@ ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: eb45ac1574efc79873d2d372f122a3d756e90ee5
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818557"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37963118"
 ---
 # <a name="publishing-packages"></a>패키지 게시
 
@@ -84,7 +84,7 @@ nuget.org에 패키지를 푸시하려면 [nuget.exe v4.1.0 이상](https://www.
 
 nuget.org에 푸시된 패키지는 바이러스 검사와 같은 여러 유효성 검사를 거칩니다. (nuget.org의 모든 패키지는 정기적으로 검사됩니다.)
 
-이어야 합니다. 패키지가 모든 유효성 검사를 통과하면 인덱싱되는 동안 시간이 걸릴 수 있으며 검색 결과에 표시됩니다. 인덱싱이 완료되면 패키지를 성공적으로 게시했는지 확인하는 전자 메일을 받게 됩니다. 패키지가 유효성 검사에 실패하면 패키지 세부 정보 페이지는 관련 오류를 표시하도록 업데이트되고 이를 알리는 전자 메일을 받을 수도 있습니다.
+. 패키지가 모든 유효성 검사를 통과하면 인덱싱되는 동안 시간이 걸릴 수 있으며 검색 결과에 표시됩니다. 인덱싱이 완료되면 패키지를 성공적으로 게시했는지 확인하는 전자 메일을 받게 됩니다. 패키지가 유효성 검사에 실패하면 패키지 세부 정보 페이지는 관련 오류를 표시하도록 업데이트되고 이를 알리는 전자 메일을 받을 수도 있습니다.
 
 패키지 유효성 검사 및 인덱싱은 일반적으로 15분이 걸리지 않습니다. 패키지 게시가 예상보다 오래 걸리면 [status.nuget.org](https://status.nuget.org/)를 방문하여 nuget.org에 중단이 발생했는지를 확인합니다. 모든 시스템이 모두 제대로 작동하고 패키지가 1시간 내에 성공적으로 게시되지 않은 경우 nuget.org에 로그인하고 패키지 페이지에서 지원 문의 링크를 사용하여 문의하세요.
 
