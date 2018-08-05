@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 142f82386395b8ab2ed1d57218db9bc1d2e98638
-ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
+ms.openlocfilehash: 6d190d9fdb26d76fa8e46b7d283c1857cfab26e9
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843448"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508038"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -27,7 +27,7 @@ ms.locfileid: "37843448"
 - [프레임워크 어셈블리 참조](#framework-assembly-references)
 - [어셈블리 파일 포함](#including-assembly-files)
 - [콘텐츠 파일 포함](#including-content-files)
-- [예제](#examples)
+- [예를 들어 nuspec 파일](#example-nuspec-files)
 
 ## <a name="general-form-and-schema"></a>일반 형식 및 스키마
 
@@ -58,12 +58,6 @@ ms.locfileid: "37843448"
 
 ### <a name="metadata-attributes"></a>metadata 특성
 
-`<metadata>` 요소는 다음 표에서 설명하는 특성을 지원합니다.
-
-| 특성 | 필수 | 설명 |
-| --- | --- | --- | 
-| **minClientVersion** | 아니요 | nuget.exe 및 Visual Studio 패키지 관리자에 의해 적용되는, 이 패키지를 설치할 수 있는 NuGet 클라이언트의 최소 버전을 지정합니다. 패키지가 특정 버전의 NuGet 클라이언트에 추가된 `.nuspec` 파일의 특정 기능에 종속될 때마다 이 특성이 사용됩니다. 예를 들어 `developmentDependency` 특성을 사용하는 패키지는 `minClientVersion`에 대해 "2.8"을 지정해야 합니다. 마찬가지로 `contentFiles` 요소(다음 섹션 참조)를 사용하는 패키지는 `minClientVersion`을 "3.3"으로 설정해야 합니다. 또한 2.5 이전의 NuGet 클라이언트에서는 이 플래그를 인식하지 못하기 때문에 `minClientVersion`에 포함된 내용에 관계없이 *항상* 패키지 설치를 거부합니다. |
-
 ### <a name="required-metadata-elements"></a>필수 metadata 요소
 
 다음 요소는 패키지에 대한 최소 요구 사항이지만, [선택적 metadata 요소](#optional-metadata-elements)를 추가하여 개발자가 사용하는 패키지에 대한 전반적인 환경을 향상시키는 것이 좋습니다.
@@ -79,39 +73,51 @@ ms.locfileid: "37843448"
 
 ### <a name="optional-metadata-elements"></a>선택적 metadata 요소
 
-이러한 요소는 `<metadata>` 요소 내에 나타날 수 있습니다.
+#### <a name="title"></a>제목
+사람들에게 친숙한 패키지 제목이며 보통 nuget.org 및 Visual Studio의 패키지 관리자에서 UI 표시에 사용됩니다. 지정하지 않으면 패키지 ID가 사용됩니다. 
+#### <a name="owners"></a>owners
+nuget.org에서 프로필 이름을 사용하는 패키지 작성자에 대한 쉼표로 구분된 목록입니다. 이는 종종 `authors`에 있는 것과 동일한 목록이며, 패키지를 nuget.org에 업로드할 때 무시됩니다. [nuget.org에서 패키지 소유자 관리](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조하세요. 
+#### <a name="projecturl"></a>projectUrl
+nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페이지에 대한 URL입니다. 
+#### <a name="licenseurl"></a>licenseUrl
+nuget.org뿐만 아니라 UI 표시에도 종종 표시되는 패키지의 라이선스에 대한 URL입니다.
+#### <a name="iconurl"></a>iconUrl
+UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배경이 있는 64x64 이미지에 대한 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub에서 이미지를 사용 하려면 원시 파일 URL을 사용 하 여 <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>합니다. 
 
-#### <a name="single-elements"></a>단일 요소
-
-| 요소 | 설명 |
-| --- | --- |
-| **title** | 사람들에게 친숙한 패키지 제목이며 보통 nuget.org 및 Visual Studio의 패키지 관리자에서 UI 표시에 사용됩니다. 지정하지 않으면 패키지 ID가 사용됩니다. |
-| **owners** | nuget.org에서 프로필 이름을 사용하는 패키지 작성자에 대한 쉼표로 구분된 목록입니다. 이는 종종 `authors`에 있는 것과 동일한 목록이며, 패키지를 nuget.org에 업로드할 때 무시됩니다. [nuget.org에서 패키지 소유자 관리](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조하세요. |
-| **projectUrl** | nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페이지에 대한 URL입니다. |
-| **licenseUrl** | nuget.org뿐만 아니라 UI 표시에도 종종 표시되는 패키지의 라이선스에 대한 URL입니다. |
-| **iconUrl** | UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배경이 있는 64x64 이미지에 대한 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub에서 이미지를 사용 하려면 원시 파일 URL을 사용 하 여 <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>합니다. |
-| **requireLicenseAcceptance** | 패키지를 설치하기 전에 클라이언트에서 소비자가 패키지 라이선스에 동의하도록 요구하는 메시지를 표시해야 할지 여부를 지정하는 부울 값입니다. |
-| **developmentDependency** | *(2.8 이상)* 패키지가 다른 패키지의 종속성으로 포함되지 않도록 패키지를 개발 전용 종속성으로 표시할지 여부를 지정 하는 부울 값입니다. |
-| **요약** | UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 `description`의 잘린 버전이 사용됩니다. |
-| **releaseNotes** | *(1.5 이상)* 패키지 설명 대신 Visual Studio 패키지 관리자의 **업데이트** 탭처럼 UI에서 자주 사용되는 이 패키지 릴리스의 변경 내용에 대한 설명입니다. |
-| **copyright** | *(1.5 이상)* 패키지에 대한 저작권 세부 정보입니다. |
-| **language** | 패키지에 대한 로캘 ID입니다. [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)를 참조하세요. |
-| **tags**  | 패키지를 설명하고 검색 및 필터링을 통해 패키지의 검색 기능을 지원하는 태그 및 키워드에 대한 공백으로 구분된 목록입니다. |
-| **serviceable** | *(3.3 이상)* NuGet 내부 전용입니다. |
-| **리포지토리** | 저장소 메타 데이터를 선택적 특성이 네 개 이루어진: *형식* 하 고 *url* *(4.0 이상)*, 및 *분기* 및  *커밋* *(4.6 이상)* 합니다. 이러한 특성을 사용 하면.nupkg 해질 수를 사용 하 여 작성 하는 것을 저장소에 매핑할 개별 지점 또는 패키지를 만든 커밋으로 설명 된 대로 합니다. |
+#### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
+패키지를 설치하기 전에 클라이언트에서 소비자가 패키지 라이선스에 동의하도록 요구하는 메시지를 표시해야 할지 여부를 지정하는 부울 값입니다.
+#### <a name="developmentdependency"></a>developmentDependency
+*(2.8 이상)* 패키지가 다른 패키지의 종속성으로 포함되지 않도록 패키지를 개발 전용 종속성으로 표시할지 여부를 지정 하는 부울 값입니다.
+#### <a name="summary"></a>요약
+UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 `description`의 잘린 버전이 사용됩니다.
+#### <a name="releasenotes"></a>releaseNotes
+*(1.5 이상)* 패키지 설명 대신 Visual Studio 패키지 관리자의 **업데이트** 탭처럼 UI에서 자주 사용되는 이 패키지 릴리스의 변경 내용에 대한 설명입니다.
+#### <a name="copyright"></a>저작권
+*(1.5 이상)* 패키지에 대한 저작권 세부 정보입니다.
+#### <a name="language"></a>language
+패키지에 대한 로캘 ID입니다. [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)를 참조하세요.
+#### <a name="tags"></a>태그
+패키지를 설명하고 검색 및 필터링을 통해 패키지의 검색 기능을 지원하는 태그 및 키워드에 대한 공백으로 구분된 목록입니다. 
+#### <a name="serviceable"></a>서비스할 수 
+*(3.3 이상)* NuGet 내부 전용입니다.
+#### <a name="repository"></a>리포지토리
+저장소 메타 데이터를 선택적 특성이 네 개 이루어진: *형식* 하 고 *url* *(4.0 이상)*, 및 *분기* 및  *커밋* *(4.6 이상)* 합니다. 이러한 특성을 사용 하면.nupkg 해질 수를 사용 하 여 작성 하는 것을 저장소에 매핑할 개별 지점 또는 패키지를 만든 커밋으로 설명 된 대로 합니다. 버전 제어 소프트웨어에서 직접 호출할 수 있는 공개적으로 사용 가능한 url 이어야 합니다. 이 컴퓨터에 대 한 것으로 html 페이지 여야 합니다. 프로젝트 페이지 링크를 사용 하 여는 `projectUrl` 필드를 대신 합니다. |
+#### <a name="minclientversion"></a>minClientVersion
+nuget.exe 및 Visual Studio 패키지 관리자에 의해 적용되는, 이 패키지를 설치할 수 있는 NuGet 클라이언트의 최소 버전을 지정합니다. 패키지가 특정 버전의 NuGet 클라이언트에 추가된 `.nuspec` 파일의 특정 기능에 종속될 때마다 이 특성이 사용됩니다. 예를 들어 `developmentDependency` 특성을 사용하는 패키지는 `minClientVersion`에 대해 "2.8"을 지정해야 합니다. 마찬가지로 `contentFiles` 요소(다음 섹션 참조)를 사용하는 패키지는 `minClientVersion`을 "3.3"으로 설정해야 합니다. 또한 2.5 이전의 NuGet 클라이언트에서는 이 플래그를 인식하지 못하기 때문에 `minClientVersion`에 포함된 내용에 관계없이 *항상* 패키지 설치를 거부합니다.
 
 #### <a name="collection-elements"></a>컬렉션 요소
 
-| 요소 | 설명 |
-| --- | --- |
-**packageTypes** | *(3.5 이상)* 기존 종속 패키지가 아닌 경우 패키지의 유형을 지정하는 0개 이상의 `<packageType>` 요소 컬렉션입니다. 각 packageType에는 *name* 및 *version* 특성이 있습니다. [패키지 유형 설정](../create-packages/creating-a-package.md#setting-a-package-type)을 참조하세요. |
-| **dependencies** | 패키지에 대한 종속성을 지정하는 0개 이상의 `<dependency>` 요소 컬렉션입니다. 각 종속성에는 *id*, *version*, *include*(3.x 이상) 및 *exclude*(3.x 이상) 특성이 있습니다. 아래의 [종속성](#dependencies)을 참조하세요. |
-| **frameworkAssemblies** | *(1.2 이상)* 이 패키지에 필요한 .NET Framework 어셈블리 참조를 식별하는 0개 이상의 `<frameworkAssembly>` 요소 컬렉션이며, 패키지를 사용하는 프로젝트에 참조가 추가되도록 합니다. 각 frameworkAssembly에는 *assemblyName* 및 *targetFramework* 특성이 있습니다. 아래의 [프레임워크 어셈블리 참조 GAC 지정](#specifying-framework-assembly-references-gac)을 참조하세요. |
-| **references** | *(1.5 이상)* 프로젝트 참조로 추가된 패키지의 `lib` 폴더에 있는 어셈블리를 명명하는 0개 이상의 `<reference>` 요소 컬렉션입니다. 각 참조에는 *file* 특성이 있습니다. 또한 `<references>`에는 *targetFramework* 특성이 있는 `<group>` 요소도 포함될 수 있으며, 그런 다음 `<reference>` 요소가 포함됩니다. 생략하면 `lib`의 모든 참조가 포함됩니다. 아래의 [명시적 어셈블리 참조 지정](#specifying-explicit-assembly-references)을 참조하세요. |
-| **contentFiles** | *(3.3 이상)* 사용하는 프로젝트에 포함할 콘텐츠 파일을 식별하는 `<files>` 요소 컬렉션입니다. 이러한 파일은 프로젝트 시스템 내에서 사용되는 방법을 설명하는 일단의 특성으로 지정됩니다. 아래의 [패키지에 포함할 파일 지정](#specifying-files-to-include-in-the-package)을 참조하세요. |
-
-### <a name="files-element"></a>Files 요소
-
+#### <a name="packagetypes"></a>PackageTypes
+*(3.5 이상)* 기존 종속 패키지가 아닌 경우 패키지의 유형을 지정하는 0개 이상의 `<packageType>` 요소 컬렉션입니다. 각 packageType에는 *name* 및 *version* 특성이 있습니다. [패키지 유형 설정](../create-packages/creating-a-package.md#setting-a-package-type)을 참조하세요.
+#### <a name="dependencies"></a>종속성
+패키지에 대한 종속성을 지정하는 0개 이상의 `<dependency>` 요소 컬렉션입니다. 각 종속성에는 *id*, *version*, *include*(3.x 이상) 및 *exclude*(3.x 이상) 특성이 있습니다. 아래의 [종속성](#dependencies-element)을 참조하세요.
+#### <a name="frameworkassemblies"></a>frameworkAssemblies
+*(1.2 이상)* 이 패키지에 필요한 .NET Framework 어셈블리 참조를 식별하는 0개 이상의 `<frameworkAssembly>` 요소 컬렉션이며, 패키지를 사용하는 프로젝트에 참조가 추가되도록 합니다. 각 frameworkAssembly에는 *assemblyName* 및 *targetFramework* 특성이 있습니다. 아래의 [프레임워크 어셈블리 참조 GAC 지정](#specifying-framework-assembly-references-gac)을 참조하세요. |
+#### <a name="references"></a>참조
+*(1.5 이상)* 프로젝트 참조로 추가된 패키지의 `lib` 폴더에 있는 어셈블리를 명명하는 0개 이상의 `<reference>` 요소 컬렉션입니다. 각 참조에는 *file* 특성이 있습니다. 또한 `<references>`에는 *targetFramework* 특성이 있는 `<group>` 요소도 포함될 수 있으며, 그런 다음 `<reference>` 요소가 포함됩니다. 생략하면 `lib`의 모든 참조가 포함됩니다. 아래의 [명시적 어셈블리 참조 지정](#specifying-explicit-assembly-references)을 참조하세요.
+#### <a name="contentfiles"></a>contentFiles
+*(3.3 이상)* 사용하는 프로젝트에 포함할 콘텐츠 파일을 식별하는 `<files>` 요소 컬렉션입니다. 이러한 파일은 프로젝트 시스템 내에서 사용되는 방법을 설명하는 일단의 특성으로 지정됩니다. 아래의 [패키지에 포함할 파일 지정](#specifying-files-to-include-in-the-package)을 참조하세요.
+#### <a name="files"></a>파일 
 `<package>` 노드는 패키지에 포함할 어셈블리 및 콘텐츠 파일을 지정하기 위해 `<files>` 노드를 `<metadata>`에 대한 형제로 포함하고 a 또는 `<contentFiles>` 자식을 `<metadata>` 아래에 포함할 수 있습니다. 자세한 내용은 이 항목의 뒷부분에 있는 [어셈블리 파일 포함](#including-assembly-files) 및 [콘텐츠 파일 포함](#including-content-files)을 참조하세요.
 
 ## <a name="replacement-tokens"></a>대체 토큰
@@ -163,7 +169,7 @@ nuget pack MyProject.csproj
 </files>
 ```
 
-## <a name="dependencies"></a>종속성
+## <a name="dependencies-element"></a>종속성 요소
 
 `<metadata>` 내의 `<dependencies>` 요소에는 최상위 패키지가 종속되는 다른 패키지를 식별하는 임의 개수의 `<dependency>` 요소가 포함됩니다. 각 `<dependency>`에 대한 특성은 다음과 같습니다.
 
@@ -594,7 +600,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 </contentFiles>
 ```
 
-## <a name="example-nuspec-files"></a>.nuspec 파일 예제
+## <a name="example-nuspec-files"></a>예를 들어 nuspec 파일
 
 **dependencies 또는 files를 지정하지 않은 간단한 `.nuspec`**
 
