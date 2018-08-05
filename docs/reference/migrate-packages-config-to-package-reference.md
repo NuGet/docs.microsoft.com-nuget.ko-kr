@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 03/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4f42403abbf07c2c48ce13c70c49f7f3c15c40e4
-ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
+ms.openlocfilehash: b05192038bff071ca7a5b8f2e0f735696d09bef6
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39072368"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508272"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Packages.config를 PackageReference로 마이그레이션
 

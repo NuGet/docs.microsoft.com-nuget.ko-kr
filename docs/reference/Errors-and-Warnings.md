@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: a787d036f7682b54adb30140152655fe165ee161
-ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
+ms.openlocfilehash: 73de86a4eed1a06979a86a0969b95f011de741fa
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39069663"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508142"
 ---
 # <a name="errors-and-warnings"></a>오류 및 경고
 
@@ -29,6 +29,7 @@ NuGet 4.3.0 오류 및 경고가이 항목에 설명 된 대로 번호가 매겨
 | 호환성 오류 | [NU1201](./errors-and-warnings/NU1201.md), [NU1202](./errors-and-warnings/NU1202.md), [NU1203](./errors-and-warnings/NU1203.md), [NU1401](./errors-and-warnings/NU1401.md) |
 | NuGet 내부 오류 | [NU1000](./errors-and-warnings/NU1000.md) |
 | 서명 된 패키지 오류 (예: 생성 및 확인) | [NU3000](./errors-and-warnings/NU3000.md)하십시오 [NU3001](./errors-and-warnings/NU3001.md)하십시오 [NU3004](./errors-and-warnings/NU3004.md), [NU3008](./errors-and-warnings/NU3008.md) |
+| 팩 오류 | [NU5000](./errors-and-warnings/NU5000.md), [NU5002](./errors-and-warnings/NU5002.md)를 [NU5003](./errors-and-warnings/NU5003.md)를 [NU5004](./errors-and-warnings/NU5004.md)를 [NU5008](./errors-and-warnings/NU5008.md)를 [NU5009](./errors-and-warnings/NU5009.md)를 [NU5010](./errors-and-warnings/NU5010.md), [NU5011](./errors-and-warnings/NU5011.md)를 [NU5012](./errors-and-warnings/NU5012.md)합니다 [NU5013](./errors-and-warnings/NU5013.md)를 [NU5014](./errors-and-warnings/NU5014.md), [NU5015](./errors-and-warnings/NU5015.md), [NU5016](./errors-and-warnings/NU5016.md)합니다 [NU5017](./errors-and-warnings/NU5017.md)를 [NU5018](./errors-and-warnings/NU5018.md)를 [NU5019](./errors-and-warnings/NU5019.md), [NU5026](./errors-and-warnings/NU5026.md)
 
 **경고**
 
@@ -41,3 +42,4 @@ NuGet 4.3.0 오류 및 경고가이 항목에 설명 된 대로 번호가 매겨
 | 경고를 피드 합니다. | [NU1801](./errors-and-warnings/NU1801.md) |
 | NuGet 내부 경고 | [NU1500](./errors-and-warnings/NU1500.md) |
 | 서명 된 패키지 경고 (생성 및 확인) | [NU3002](./errors-and-warnings/NU3002.md)하십시오 [NU3018](./errors-and-warnings/NU3018.md), [NU3028](./errors-and-warnings/NU3028.md) |
+| 팩 경고 | [NU5100](./errors-and-warnings/NU5100.md)하십시오 [NU5101](./errors-and-warnings/NU5101.md)하십시오 [NU5115](./errors-and-warnings/NU5115.md), [NU5500](./errors-and-warnings/NU5500.md)
