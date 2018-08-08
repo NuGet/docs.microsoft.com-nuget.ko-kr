@@ -126,7 +126,7 @@ nuget pack MyProject.csproj -Symbols
    > [!Note]
    > nuget.exe 4.5.0 이상에서 기호 패키지는 symbolsource.org로 자동으로 푸시되지 않습니다. 다음 단계에 설명된 대로 별도로 기호 패키지를 푸시해야 합니다.
    
-이 경우에 NuGet은 nuget.org에 기본 패키지를 게시한 후에 `MyPackage.symbols.nupkg`가 있으면 해당 항목을 https://nuget.smbsrc.net/(symbolsource.org의 푸시 URL)에 게시합니다.
+이 경우에 NuGet은 nuget.org에 기본 패키지를 게시한 후에 `MyPackage.symbols.nupkg`가 있으면 해당 항목을 https://nuget.smbsrc.net/ (symbolsource.org의 푸시 URL)에 게시합니다.
 
 ## <a name="see-also"></a>참고 항목
 
