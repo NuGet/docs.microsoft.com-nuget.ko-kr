@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 9900db1970a89de129d9074e5900e0aa048101de
-ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
+ms.openlocfilehash: 8bbbc785a50e49530bbbd4e88bbd71a8a7bfe911
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/22/2018
-ms.locfileid: "34449606"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508181"
 ---
 # <a name="signing-nuget-packages"></a>NuGet 패키지 서명
 
@@ -44,7 +44,7 @@ nuget sign MyPackage.nupkg -CertificateSubjectName <MyCertSubjectName> -Timestam
 - 타임스탬프 서버가 인증서 요구 사항을 충족하지 않습니다.
 
 > [!Note]
-> 서명 인증서가 만료된 경우 서명된 패키지에 서명이 유효하다는 것을 확인해 주는 타임스탬프가 포함되어 있어야 합니다. 타임스탬프 없이 서명할 경우 서명 작업 시 [경고 NU3002](../reference/Errors-and-Warnings.md#nu3002)가 발생합니다.
+> 서명 인증서가 만료된 경우 서명된 패키지에 서명이 유효하다는 것을 확인해 주는 타임스탬프가 포함되어 있어야 합니다. 타임스탬프 없이 서명할 경우 서명 작업 시 [경고 NU3002](../reference/errors-and-warnings/NU3002.md)가 발생합니다.
 
 ## <a name="verify-a-signed-package"></a>서명된 패키지 확인
 
@@ -56,7 +56,7 @@ nuget verify -signature MyPackage.nupkg
 
 ## <a name="install-a-signed-package"></a>서명된 패키지 설치
 
-서명된 패키지는 특별한 조치 없이 설치할 수 있지만 패키지가 서명된 이후에 내용이 수정된 경우 설치가 차단되고 [오류 NU3008](../reference/Errors-and-Warnings.md#nu3008)이 발생합니다.
+서명된 패키지는 특별한 조치 없이 설치할 수 있지만 패키지가 서명된 이후에 내용이 수정된 경우 설치가 차단되고 [오류 NU3008](../reference/errors-and-warnings/NU3008.md)이 발생합니다.
 
 > [!Warning]
 > 신뢰할 수 없는 인증서로 서명된 패키지는 서명되지 않은 것으로 간주되고, 다른 서명되지 않은 패키지처럼 경고나 오류 없이 설치됩니다.

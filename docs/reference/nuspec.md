@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 6d190d9fdb26d76fa8e46b7d283c1857cfab26e9
-ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
+ms.openlocfilehash: 110d1aa29fc7238f1a82c1a81ec6431dfe437420
+ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39508038"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40020455"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -56,20 +56,18 @@ ms.locfileid: "39508038"
 
 ![nuspec.xsd가 열려 있는 Visual Studio 스키마 탐색기](media/SchemaExplorer.png)
 
-### <a name="metadata-attributes"></a>metadata 특성
-
 ### <a name="required-metadata-elements"></a>필수 metadata 요소
 
-다음 요소는 패키지에 대한 최소 요구 사항이지만, [선택적 metadata 요소](#optional-metadata-elements)를 추가하여 개발자가 사용하는 패키지에 대한 전반적인 환경을 향상시키는 것이 좋습니다.
+다음 요소는 패키지에 대한 최소 요구 사항이지만, [선택적 metadata 요소](#optional-metadata-elements)를 추가하여 개발자가 사용하는 패키지에 대한 전반적인 환경을 향상시키는 것이 좋습니다. 
 
 이러한 요소는 `<metadata>` 요소 내에 나타나야 합니다.
 
-| 요소 | 설명 |
-| --- | --- |
-| **ID** | 대/소문자를 구분하지 않는 패키지 식별자이며, nuget.org 또는 패키지가 상주하는 모든 갤러리에서 고유해야 합니다. ID는 URL에 유효하지 않은 공백 또는 문자를 포함할 수 없고, 일반적으로 .NET 네임스페이스 규칙을 따릅니다. 지침은 [고유한 패키지 식별자 선택](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)을 참조하세요. |
-| **version** | *major.minor.patch* 패턴을 따르는 패키지의 버전입니다. 버전 번호는 [패키지 버전 관리](../reference/package-versioning.md#pre-release-versions)에서 설명한 대로 시험판 접미사를 포함할 수 있습니다. |
-| **description** | UI 표시를 위한 패키지에 대한 자세한 설명입니다. |
-| **authors** | nuget.org에서 프로필 이름과 일치하는, 쉼표로 구분된 패키지 작성자 목록입니다. 이러한 목록은 nuget.org의 NuGet 갤러리에 표시되고 동일한 작성자가 패키지를 상호 참조하는 데 사용됩니다. |
+#### <a name="id"></a>ID 
+대/소문자를 구분하지 않는 패키지 식별자이며, nuget.org 또는 패키지가 상주하는 모든 갤러리에서 고유해야 합니다. ID는 URL에 유효하지 않은 공백 또는 문자를 포함할 수 없고, 일반적으로 .NET 네임스페이스 규칙을 따릅니다. 지침은 [고유한 패키지 식별자 선택](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)을 참조하세요. # # # 버전을 따르는 패키지의 버전을 *major.minor.patch* 패턴입니다. 버전 번호는 [패키지 버전 관리](../reference/package-versioning.md#pre-release-versions)에서 설명한 대로 시험판 접미사를 포함할 수 있습니다. 
+#### <a name="description"></a>설명
+UI 표시를 위한 패키지에 대한 자세한 설명입니다. 
+#### <a name="authors"></a>authors
+nuget.org에서 프로필 이름과 일치하는, 쉼표로 구분된 패키지 작성자 목록입니다. 이러한 목록은 nuget.org의 NuGet 갤러리에 표시되고 동일한 작성자가 패키지를 상호 참조하는 데 사용됩니다. 
 
 ### <a name="optional-metadata-elements"></a>선택적 metadata 요소
 
@@ -101,7 +99,8 @@ UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 
 #### <a name="serviceable"></a>서비스할 수 
 *(3.3 이상)* NuGet 내부 전용입니다.
 #### <a name="repository"></a>리포지토리
-저장소 메타 데이터를 선택적 특성이 네 개 이루어진: *형식* 하 고 *url* *(4.0 이상)*, 및 *분기* 및  *커밋* *(4.6 이상)* 합니다. 이러한 특성을 사용 하면.nupkg 해질 수를 사용 하 여 작성 하는 것을 저장소에 매핑할 개별 지점 또는 패키지를 만든 커밋으로 설명 된 대로 합니다. 버전 제어 소프트웨어에서 직접 호출할 수 있는 공개적으로 사용 가능한 url 이어야 합니다. 이 컴퓨터에 대 한 것으로 html 페이지 여야 합니다. 프로젝트 페이지 링크를 사용 하 여는 `projectUrl` 필드를 대신 합니다. |
+저장소 메타 데이터를 선택적 특성이 네 개 이루어진: *형식* 하 고 *url* *(4.0 이상)*, 및 *분기* 및 *커밋* *(4.6 이상)* 합니다. 이러한 특성을 사용 하면.nupkg 해질 수를 사용 하 여 작성 하는 것을 저장소에 매핑할 개별 지점 또는 패키지를 만든 커밋으로 설명 된 대로 합니다. 버전 제어 소프트웨어에서 직접 호출할 수 있는 공개적으로 사용 가능한 url 이어야 합니다. 이 컴퓨터에 대 한 것으로 html 페이지 여야 합니다. 프로젝트 페이지 링크를 사용 하 여는 `projectUrl` 필드를 대신 합니다. |
+
 #### <a name="minclientversion"></a>minClientVersion
 nuget.exe 및 Visual Studio 패키지 관리자에 의해 적용되는, 이 패키지를 설치할 수 있는 NuGet 클라이언트의 최소 버전을 지정합니다. 패키지가 특정 버전의 NuGet 클라이언트에 추가된 `.nuspec` 파일의 특정 기능에 종속될 때마다 이 특성이 사용됩니다. 예를 들어 `developmentDependency` 특성을 사용하는 패키지는 `minClientVersion`에 대해 "2.8"을 지정해야 합니다. 마찬가지로 `contentFiles` 요소(다음 섹션 참조)를 사용하는 패키지는 `minClientVersion`을 "3.3"으로 설정해야 합니다. 또한 2.5 이전의 NuGet 클라이언트에서는 이 플래그를 인식하지 못하기 때문에 `minClientVersion`에 포함된 내용에 관계없이 *항상* 패키지 설치를 거부합니다.
 
