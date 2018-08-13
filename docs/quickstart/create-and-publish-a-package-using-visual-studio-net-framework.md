@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: ffa2128b577673e980f4115f37f8685858c36250
-ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
+ms.openlocfilehash: c537ee97b79648428df2c1b52894f536f5626a9e
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37963161"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508259"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>빠른 시작: Visual Studio(.NET Framework, Windows)를 사용하여 패키지 만들기 및 게시
 
@@ -114,7 +114,7 @@ DLL이 생성되고 프로젝트 속성이 설정되면 이제 `nuget spec` 명�
 
 ## <a name="edit-the-manifest"></a>매니페스트 편집
 
-1. `.nuspec` 파일의 기본값을 사용하여 패키지를 만들려고 하면 NuGet에서 오류를 표시하므로 계속하기 전에 다음 필드를 편집해야 합니다. 이를 사용하는 방법에 대한 자세한 내용은 [.nuspec 파일 참조 - 단일 요소](../reference/nuspec.md#single-elements)를 참조하세요.
+1. `.nuspec` 파일의 기본값을 사용하여 패키지를 만들려고 하면 NuGet에서 오류를 표시하므로 계속하기 전에 다음 필드를 편집해야 합니다. 이를 사용하는 방법에 대한 자세한 내용은 [.nuspec 파일 참조 - 선택적 메타데이터 요소](../reference/nuspec.md#optional-metadata-elements)를 참조하세요.
 
     - licenseUrl
     - projectUrl
