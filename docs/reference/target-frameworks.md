@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 87000ce95ffeef36d9f792e9e8fdad6878488773
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: c9267945b8055b536cf35911c36a066981ef67b6
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818323"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42793317"
 ---
 # <a name="target-frameworks"></a>대상 프레임워크
 
@@ -46,6 +46,9 @@ NuGet 클라이언트는 아래 표의 프레임워크를 지원합니다. 대�
 | | | net46 |
 | | | net461 |
 | | | net462 |
+| | | net47 |
+| | | net471 |
+| | | net472 |
 |Microsoft Store(Windows 스토어) | netcore | netcore [netcore45] |
 | | | netcore45 [win, win8] |
 | | | netcore451 [win81] |
@@ -76,6 +79,7 @@ Windows Phone(UWP) | | wpa81 |
 .NET Core 앱 | netcoreapp | netcoreapp1.0 |
 | | | netcoreapp1.1 |
 | | | netcoreapp2.0 |
+| | | netcoreapp2.1 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
@@ -125,7 +129,7 @@ Tizen | tizen | tizen3 |
 ## <a name="portable-class-libraries"></a>이식 가능한 클래스 라이브러리
 
 > [!Warning]
-> **PCL은 권장되지 않습니다**. PCL이 지원되지만 패키지 작성자는 netstandard를 대신 지원해야 합니다. .NET 플랫폼 표준을 PCLs 발전 하 고 같은 정적 라이브러리에 연결 되지 않은 단일 모니커를 사용 하 여 플랫폼 간에 이식 나타냅니다 *휴대용-a + b + c* 모니커 합니다.
+> **PCL은 권장되지 않습니다**. PCL이 지원되지만 패키지 작성자는 netstandard를 대신 지원해야 합니다. .NET 플랫폼 표준 Pcl 발전와 같은 정적 라이브러리에 연결 되지 않은 단일 모니커를 사용 하 여 플랫폼 간에 이진 이식성을 나타냅니다 *이식 가능한-a + b + c* 모니커 합니다.
 
 여러 자식 대상 프레임워크를 참조하는 대상 프레임워크를 정의하려면 `portable` 키워드를 사용하여 참조된 프레임워크 목록의 접두사로 지정합니다. 이러한 프레임워크에서 의도하지 않은 부작용이 발생할 수 있으므로 직접 컴파일되지 않은 추가 프레임워크를 인위적으로 포함하지 않습니다.
 

@@ -7,12 +7,12 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: fe843a121e2f1aae376f3e30a7b911792057688f
-ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
+ms.openlocfilehash: 0cb40a640a0bab63a63b3b690a34f1f8cbf7fcb8
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40020533"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42793227"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -21,6 +21,8 @@ NuGet API는 패키지를 다운로드, 메타 데이터 인출, 새 패키지�
 이 API는 데.NET CLI, nuget.exe를 Visual Studio에서 NuGet 클라이언트에서와 같이 NuGet 작업을 수행 [ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore), Visual Studio ui에서 검색 하 고 [ `nuget.exe push` ](../tools/cli-ref-push.md)합니다.
 
 Nuget.org에는 추가 요구 사항이 다른 패키지 소스에 의해 적용 되지 않은 경우에 따라 note 합니다. 이러한 차이 문서화 합니다 [nuget.org 프로토콜](nuget-protocols.md)합니다.
+
+단순 열거형 및 사용 가능한 nuget.exe 버전 다운로드 합니다 [tools.json](tools-json.md) 끝점입니다.
 
 ## <a name="service-index"></a>서비스 인덱스
 
