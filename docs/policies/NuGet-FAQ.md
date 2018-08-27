@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: e3c52f1e49a53b89d7e5c0728c02a7915db2aeb9
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 3fe59ef03632053182b034052e93a5f2e6f444bd
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817982"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42792951"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -210,7 +210,7 @@ NuGet은 HTTP를 사용하여 패키지를 다운로드하므로, 큰 패키지�
 - 사용자의 지리적 지역
 - 운영 체제 버전
 - 컴퓨터 구성(CPU, 네트워크, 하드 드라이브)
-- 컴퓨터에서 프록시 또는 방화벽을 사용하는지 여부
+- 머신이 프록시 또는 방화벽을 사용하는지 여부
 - 컴퓨터에 설치된 .NET 버전
 - 사용 중인 플랫폼 간 도구(예: .NET CLI 또는 DNU)의 버전
 
