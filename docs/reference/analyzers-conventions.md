@@ -6,16 +6,16 @@ ms.author: karann
 manager: unnir
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: dc5896631fa3b15dcc1b84b054cb532d56193f36
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 9e833447820c0fb13cf558a45921554e82e2b2df
+ms.sourcegitcommit: ddc2b07a788d4a92b9df193c9bbd43db945b14d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818388"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43119164"
 ---
 # <a name="analyzer-nuget-formats"></a>NuGet 분석기 형식
 
-.NET 컴파일러 플랫폼 (라고도 "Roslyn") 만들 수 [분석기](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix) 검사 하는 코드의 의미 및 구문 트리를 기록할 때. 개발자는 이를 통해 특정 API 또는 라이브러리의 사용을 안내하는 데 도움이 되는 도구와 같은 도메인 특정 분석 도구를 만들 수 있습니다. 자세한 내용은 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub Wiki에서 찾을 수 있습니다. 또한 MSDN Magazine의 [Roslyn을 사용하여 API에 대한 라이브 코드 분석기 작성](https://msdn.microsoft.com/magazine/dn879356.aspx) 문서도 참조하세요.
+.NET 컴파일러 플랫폼 (라고도 "Roslyn")을 만드는 데 사용할 수 [분석기](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix) 검사 하는 구문 트리 및 의미 체계 코드를 작성 되는 합니다. 개발자는 이를 통해 특정 API 또는 라이브러리의 사용을 안내하는 데 도움이 되는 도구와 같은 도메인 특정 분석 도구를 만들 수 있습니다. 자세한 내용은 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub Wiki에서 찾을 수 있습니다. 또한 MSDN Magazine의 [Roslyn을 사용하여 API에 대한 라이브 코드 분석기 작성](https://msdn.microsoft.com/magazine/dn879356.aspx) 문서도 참조하세요.
 
 분석기 자체는 일반적으로 문제의 API 또는 라이브러리를 구현하는 NuGet 패키지의 일부로 패키지되어 배포됩니다.
 
@@ -44,7 +44,7 @@ ms.locfileid: "34818388"
 
 `analyzers` 폴더의 사용은 경로의 지정자에서 빌드 시간 대신 개발 호스트 종속성을 설명한다는 점을 제외하고는 [대상 프레임워크](../create-packages/supporting-multiple-target-frameworks.md)에 사용되는 것과 비슷합니다. 일반적인 형식은 다음과 같습니다.
 
-    $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}}/{analyzer_name}.dll
+    $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
 
 - **framework_name**: 포함된 DLL에서 실행해야 하는 .NET Framework의 *선택적* API 노출 영역입니다. Roslyn은 분석기를 실행할 수 있는 유일한 호스트이므로 `dotnet`은 현재 유효한 값입니다. 대상을 지정하지 않으면 DLL이 *모든* 대상에 적용된다고 가정합니다.
 - **supported_language**: DLL이 적용되는 언어로서 `cs`(C#), `vb`(Visual Basic) 및 `fs`(F#) 중 하나입니다. 언어는 해당 언어를 사용하는 프로젝트에만 분석기가 로드되어야 함을 나타냅니다. 언어를 지정하지 않으면 DLL이 분석기를 지원하는 *모든* 언어에 적용된다고 가정합니다.
