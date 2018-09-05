@@ -3,57 +3,56 @@ title: nuget.config 파일 참조
 description: config, bindingRedirects, packageRestore, solution 및 packageSource 섹션이 포함된 NuGet.Config 파일 참조입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: 3d6741b2d724b967e76ba65547e84adcd461a521
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 504a48224051265164f9ab183e63fa5e7f5867e6
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818402"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546917"
 ---
-# <a name="nugetconfig-reference"></a><span data-ttu-id="52ece-103">nuget.config 참조</span><span class="sxs-lookup"><span data-stu-id="52ece-103">nuget.config reference</span></span>
+# <a name="nugetconfig-reference"></a><span data-ttu-id="c98f2-103">nuget.config 참조</span><span class="sxs-lookup"><span data-stu-id="c98f2-103">nuget.config reference</span></span>
 
-<span data-ttu-id="52ece-104">NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)에서 설명한 대로 여러 `NuGet.Config` 파일의 설정으로 제어됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-104">NuGet behavior is controlled by settings in different `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).</span></span>
+<span data-ttu-id="c98f2-104">NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)에서 설명한 대로 여러 `NuGet.Config` 파일의 설정으로 제어됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-104">NuGet behavior is controlled by settings in different `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).</span></span>
 
-<span data-ttu-id="52ece-105">`nuget.config`는 최상위 `<configuration>` 노드를 포함하는 XML 파일이며, 이 파일에는 이 항목에서 설명하는 섹션 요소가 포함되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-105">`nuget.config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic.</span></span> <span data-ttu-id="52ece-106">각 섹션에는 `key` 및 `value` 특성이 있는 0개 이상의 `<add>` 요소가 포함되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-106">Each section contains zero or more `<add>` elements with `key` and `value` attributes.</span></span> <span data-ttu-id="52ece-107">[config 파일 예제](#example-config-file)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="52ece-107">See the [examples config file](#example-config-file).</span></span> <span data-ttu-id="52ece-108">설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-108">Setting names are case-insensitive, and values can use [environment variables](#using-environment-variables).</span></span>
+<span data-ttu-id="c98f2-105">`nuget.config`는 최상위 `<configuration>` 노드를 포함하는 XML 파일이며, 이 파일에는 이 항목에서 설명하는 섹션 요소가 포함되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-105">`nuget.config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic.</span></span> <span data-ttu-id="c98f2-106">각 섹션에는 `key` 및 `value` 특성이 있는 0개 이상의 `<add>` 요소가 포함되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-106">Each section contains zero or more `<add>` elements with `key` and `value` attributes.</span></span> <span data-ttu-id="c98f2-107">[config 파일 예제](#example-config-file)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="c98f2-107">See the [examples config file](#example-config-file).</span></span> <span data-ttu-id="c98f2-108">설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-108">Setting names are case-insensitive, and values can use [environment variables](#using-environment-variables).</span></span>
 
-<span data-ttu-id="52ece-109">항목 내용:</span><span class="sxs-lookup"><span data-stu-id="52ece-109">In this topic:</span></span>
+<span data-ttu-id="c98f2-109">항목 내용:</span><span class="sxs-lookup"><span data-stu-id="c98f2-109">In this topic:</span></span>
 
-- [<span data-ttu-id="52ece-110">config 섹션</span><span class="sxs-lookup"><span data-stu-id="52ece-110">config section</span></span>](#config-section)
-- [<span data-ttu-id="52ece-111">bindingRedirects 섹션</span><span class="sxs-lookup"><span data-stu-id="52ece-111">bindingRedirects section</span></span>](#bindingredirects-section)
-- [<span data-ttu-id="52ece-112">packageRestore 섹션</span><span class="sxs-lookup"><span data-stu-id="52ece-112">packageRestore section</span></span>](#packagerestore-section)
-- [<span data-ttu-id="52ece-113">solution 섹션</span><span class="sxs-lookup"><span data-stu-id="52ece-113">solution section</span></span>](#solution-section)
-- <span data-ttu-id="52ece-114">[패키지 원본 섹션](#package-source-sections):</span><span class="sxs-lookup"><span data-stu-id="52ece-114">[Package source sections](#package-source-sections):</span></span>
-  - [<span data-ttu-id="52ece-115">packageSources</span><span class="sxs-lookup"><span data-stu-id="52ece-115">packageSources</span></span>](#packagesources)
-  - [<span data-ttu-id="52ece-116">packageSourceCredentials</span><span class="sxs-lookup"><span data-stu-id="52ece-116">packageSourceCredentials</span></span>](#packagesourcecredentials)
-  - [<span data-ttu-id="52ece-117">apikeys</span><span class="sxs-lookup"><span data-stu-id="52ece-117">apikeys</span></span>](#apikeys)
-  - [<span data-ttu-id="52ece-118">disabledPackageSources</span><span class="sxs-lookup"><span data-stu-id="52ece-118">disabledPackageSources</span></span>](#disabledpackagesources)
-  - [<span data-ttu-id="52ece-119">activePackageSource</span><span class="sxs-lookup"><span data-stu-id="52ece-119">activePackageSource</span></span>](#activepackagesource)
-- [<span data-ttu-id="52ece-120">환경 변수 사용</span><span class="sxs-lookup"><span data-stu-id="52ece-120">Using environment variables</span></span>](#using-environment-variables)
-- [<span data-ttu-id="52ece-121">config 파일 예제</span><span class="sxs-lookup"><span data-stu-id="52ece-121">Example config file</span></span>](#example-config-file)
+- [<span data-ttu-id="c98f2-110">config 섹션</span><span class="sxs-lookup"><span data-stu-id="c98f2-110">config section</span></span>](#config-section)
+- [<span data-ttu-id="c98f2-111">bindingRedirects 섹션</span><span class="sxs-lookup"><span data-stu-id="c98f2-111">bindingRedirects section</span></span>](#bindingredirects-section)
+- [<span data-ttu-id="c98f2-112">packageRestore 섹션</span><span class="sxs-lookup"><span data-stu-id="c98f2-112">packageRestore section</span></span>](#packagerestore-section)
+- [<span data-ttu-id="c98f2-113">solution 섹션</span><span class="sxs-lookup"><span data-stu-id="c98f2-113">solution section</span></span>](#solution-section)
+- <span data-ttu-id="c98f2-114">[패키지 원본 섹션](#package-source-sections):</span><span class="sxs-lookup"><span data-stu-id="c98f2-114">[Package source sections](#package-source-sections):</span></span>
+  - [<span data-ttu-id="c98f2-115">packageSources</span><span class="sxs-lookup"><span data-stu-id="c98f2-115">packageSources</span></span>](#packagesources)
+  - [<span data-ttu-id="c98f2-116">packageSourceCredentials</span><span class="sxs-lookup"><span data-stu-id="c98f2-116">packageSourceCredentials</span></span>](#packagesourcecredentials)
+  - [<span data-ttu-id="c98f2-117">apikeys</span><span class="sxs-lookup"><span data-stu-id="c98f2-117">apikeys</span></span>](#apikeys)
+  - [<span data-ttu-id="c98f2-118">disabledPackageSources</span><span class="sxs-lookup"><span data-stu-id="c98f2-118">disabledPackageSources</span></span>](#disabledpackagesources)
+  - [<span data-ttu-id="c98f2-119">activePackageSource</span><span class="sxs-lookup"><span data-stu-id="c98f2-119">activePackageSource</span></span>](#activepackagesource)
+- [<span data-ttu-id="c98f2-120">환경 변수 사용</span><span class="sxs-lookup"><span data-stu-id="c98f2-120">Using environment variables</span></span>](#using-environment-variables)
+- [<span data-ttu-id="c98f2-121">config 파일 예제</span><span class="sxs-lookup"><span data-stu-id="c98f2-121">Example config file</span></span>](#example-config-file)
 
 <a name="dependencyVersion"></a>
 <a name="globalPackagesFolder"></a>
 <a name="repositoryPath"></a>
 <a name="proxy-settings"></a>
 
-## <a name="config-section"></a><span data-ttu-id="52ece-122">config 섹션</span><span class="sxs-lookup"><span data-stu-id="52ece-122">config section</span></span>
+## <a name="config-section"></a><span data-ttu-id="c98f2-122">config 섹션</span><span class="sxs-lookup"><span data-stu-id="c98f2-122">config section</span></span>
 
-<span data-ttu-id="52ece-123">[`nuget config` 명령](../tools/cli-ref-config.md)을 사용하여 설정할 수 있는 기타 구성 설정을 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-123">Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/cli-ref-config.md).</span></span>
+<span data-ttu-id="c98f2-123">[`nuget config` 명령](../tools/cli-ref-config.md)을 사용하여 설정할 수 있는 기타 구성 설정을 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-123">Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/cli-ref-config.md).</span></span>
 
-<span data-ttu-id="52ece-124">`dependencyVersion` 및 `repositoryPath` 사용 하 여 프로젝트에만 적용 `packages.config`합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-124">`dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`.</span></span> <span data-ttu-id="52ece-125">`globalPackagesFolder` PackageReference 형식을 사용 하 여 프로젝트에만 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-125">`globalPackagesFolder` applies only to projects using the PackageReference format.</span></span>
+<span data-ttu-id="c98f2-124">`dependencyVersion` 및 `repositoryPath` 사용 하 여 프로젝트에만 적용 `packages.config`합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-124">`dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`.</span></span> <span data-ttu-id="c98f2-125">`globalPackagesFolder` PackageReference 형식을 사용 하 여 프로젝트에만 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-125">`globalPackagesFolder` applies only to projects using the PackageReference format.</span></span>
 
-| <span data-ttu-id="52ece-126">Key</span><span class="sxs-lookup"><span data-stu-id="52ece-126">Key</span></span> | <span data-ttu-id="52ece-127">값</span><span class="sxs-lookup"><span data-stu-id="52ece-127">Value</span></span> |
+| <span data-ttu-id="c98f2-126">Key</span><span class="sxs-lookup"><span data-stu-id="c98f2-126">Key</span></span> | <span data-ttu-id="c98f2-127">값</span><span class="sxs-lookup"><span data-stu-id="c98f2-127">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="52ece-128">dependencyVersion(`packages.config`만)</span><span class="sxs-lookup"><span data-stu-id="52ece-128">dependencyVersion (`packages.config` only)</span></span> | <span data-ttu-id="52ece-129">`-DependencyVersion` 스위치가 직접 지정되지 않은 경우 패키지 설치, 복원 및 업데이트에 대한 기본 `DependencyVersion` 값입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-129">The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly.</span></span> <span data-ttu-id="52ece-130">이 값은 NuGet 패키지 관리자 UI에서도 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-130">This value is also used by the NuGet Package Manager UI.</span></span> <span data-ttu-id="52ece-131">값은 `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-131">Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`.</span></span> |
-| <span data-ttu-id="52ece-132">globalPackagesFolder (프로젝트만 PackageReference를 사용 하 여)</span><span class="sxs-lookup"><span data-stu-id="52ece-132">globalPackagesFolder (projects using PackageReference only)</span></span> | <span data-ttu-id="52ece-133">기본 전역 패키지 폴더의 위치입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-133">The location of the default global packages folder.</span></span> <span data-ttu-id="52ece-134">기본값은 `%userprofile%\.nuget\packages`(Windows) 또는 `~/.nuget/packages`(Mac/Linux)입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-134">The default is `%userprofile%\.nuget\packages` (Windows) or `~/.nuget/packages` (Mac/Linux).</span></span> <span data-ttu-id="52ece-135">상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-135">A relative path can be used in project-specific `nuget.config` files.</span></span> <span data-ttu-id="52ece-136">NUGET_PACKAGES 환경 변수로 선행 하는이 설정이 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-136">This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence.</span></span> |
-| <span data-ttu-id="52ece-137">repositoryPath(`packages.config`만)</span><span class="sxs-lookup"><span data-stu-id="52ece-137">repositoryPath (`packages.config` only)</span></span> | <span data-ttu-id="52ece-138">기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-138">The location in which to install NuGet packages instead of the default `$(Solutiondir)/packages` folder.</span></span> <span data-ttu-id="52ece-139">상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-139">A relative path can be used in project-specific `nuget.config` files.</span></span> <span data-ttu-id="52ece-140">NUGET_PACKAGES 환경 변수로 선행 하는이 설정이 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-140">This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence.</span></span> |
-| <span data-ttu-id="52ece-141">defaultPushSource</span><span class="sxs-lookup"><span data-stu-id="52ece-141">defaultPushSource</span></span> | <span data-ttu-id="52ece-142">작업에 대한 다른 패키지 원본이 없을 때 기본값으로 사용해야 하는 패키지 원본의 URL 또는 경로를 식별합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-142">Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.</span></span> |
-| <span data-ttu-id="52ece-143">http_proxy, http_proxy.user, http_proxy.password, no_proxy</span><span class="sxs-lookup"><span data-stu-id="52ece-143">http_proxy http_proxy.user http_proxy.password no_proxy</span></span> | <span data-ttu-id="52ece-144">패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-144">Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`.</span></span> <span data-ttu-id="52ece-145">암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-145">Passwords are encrypted and cannot be added manually.</span></span> <span data-ttu-id="52ece-146">`no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-146">For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server.</span></span> <span data-ttu-id="52ece-147">이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-147">You can alternately use the http_proxy and no_proxy environment variables for those values.</span></span> <span data-ttu-id="52ece-148">자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="52ece-148">For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).</span></span> |
+| <span data-ttu-id="c98f2-128">dependencyVersion(`packages.config`만)</span><span class="sxs-lookup"><span data-stu-id="c98f2-128">dependencyVersion (`packages.config` only)</span></span> | <span data-ttu-id="c98f2-129">`-DependencyVersion` 스위치가 직접 지정되지 않은 경우 패키지 설치, 복원 및 업데이트에 대한 기본 `DependencyVersion` 값입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-129">The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly.</span></span> <span data-ttu-id="c98f2-130">이 값은 NuGet 패키지 관리자 UI에서도 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-130">This value is also used by the NuGet Package Manager UI.</span></span> <span data-ttu-id="c98f2-131">값은 `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-131">Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`.</span></span> |
+| <span data-ttu-id="c98f2-132">globalPackagesFolder (프로젝트만 PackageReference를 사용 하 여)</span><span class="sxs-lookup"><span data-stu-id="c98f2-132">globalPackagesFolder (projects using PackageReference only)</span></span> | <span data-ttu-id="c98f2-133">기본 전역 패키지 폴더의 위치입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-133">The location of the default global packages folder.</span></span> <span data-ttu-id="c98f2-134">기본값은 `%userprofile%\.nuget\packages`(Windows) 또는 `~/.nuget/packages`(Mac/Linux)입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-134">The default is `%userprofile%\.nuget\packages` (Windows) or `~/.nuget/packages` (Mac/Linux).</span></span> <span data-ttu-id="c98f2-135">상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-135">A relative path can be used in project-specific `nuget.config` files.</span></span> <span data-ttu-id="c98f2-136">NUGET_PACKAGES 환경 변수로 우선 순위를 사용 하는이 설정이 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-136">This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence.</span></span> |
+| <span data-ttu-id="c98f2-137">repositoryPath(`packages.config`만)</span><span class="sxs-lookup"><span data-stu-id="c98f2-137">repositoryPath (`packages.config` only)</span></span> | <span data-ttu-id="c98f2-138">기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-138">The location in which to install NuGet packages instead of the default `$(Solutiondir)/packages` folder.</span></span> <span data-ttu-id="c98f2-139">상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-139">A relative path can be used in project-specific `nuget.config` files.</span></span> <span data-ttu-id="c98f2-140">NUGET_PACKAGES 환경 변수로 우선 순위를 사용 하는이 설정이 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-140">This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence.</span></span> |
+| <span data-ttu-id="c98f2-141">defaultPushSource</span><span class="sxs-lookup"><span data-stu-id="c98f2-141">defaultPushSource</span></span> | <span data-ttu-id="c98f2-142">작업에 대한 다른 패키지 원본이 없을 때 기본값으로 사용해야 하는 패키지 원본의 URL 또는 경로를 식별합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-142">Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.</span></span> |
+| <span data-ttu-id="c98f2-143">http_proxy, http_proxy.user, http_proxy.password, no_proxy</span><span class="sxs-lookup"><span data-stu-id="c98f2-143">http_proxy http_proxy.user http_proxy.password no_proxy</span></span> | <span data-ttu-id="c98f2-144">패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-144">Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`.</span></span> <span data-ttu-id="c98f2-145">암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-145">Passwords are encrypted and cannot be added manually.</span></span> <span data-ttu-id="c98f2-146">`no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-146">For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server.</span></span> <span data-ttu-id="c98f2-147">이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-147">You can alternately use the http_proxy and no_proxy environment variables for those values.</span></span> <span data-ttu-id="c98f2-148">자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="c98f2-148">For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).</span></span> |
 
-<span data-ttu-id="52ece-149">**예제**:</span><span class="sxs-lookup"><span data-stu-id="52ece-149">**Example**:</span></span>
+<span data-ttu-id="c98f2-149">**예제**:</span><span class="sxs-lookup"><span data-stu-id="c98f2-149">**Example**:</span></span>
 
 ```xml
 <config>
@@ -64,15 +63,15 @@ ms.locfileid: "34818402"
 </config>
 ```
 
-## <a name="bindingredirects-section"></a><span data-ttu-id="52ece-150">bindingRedirects 섹션</span><span class="sxs-lookup"><span data-stu-id="52ece-150">bindingRedirects section</span></span>
+## <a name="bindingredirects-section"></a><span data-ttu-id="c98f2-150">bindingRedirects 섹션</span><span class="sxs-lookup"><span data-stu-id="c98f2-150">bindingRedirects section</span></span>
 
-<span data-ttu-id="52ece-151">패키지가 설치될 때 NuGet에서 자동 바인딩 리디렉션을 수행할지 여부를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-151">Configures whether NuGet does automatic binding redirects when a package is installed.</span></span>
+<span data-ttu-id="c98f2-151">패키지가 설치될 때 NuGet에서 자동 바인딩 리디렉션을 수행할지 여부를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-151">Configures whether NuGet does automatic binding redirects when a package is installed.</span></span>
 
-| <span data-ttu-id="52ece-152">Key</span><span class="sxs-lookup"><span data-stu-id="52ece-152">Key</span></span> | <span data-ttu-id="52ece-153">값</span><span class="sxs-lookup"><span data-stu-id="52ece-153">Value</span></span> |
+| <span data-ttu-id="c98f2-152">Key</span><span class="sxs-lookup"><span data-stu-id="c98f2-152">Key</span></span> | <span data-ttu-id="c98f2-153">값</span><span class="sxs-lookup"><span data-stu-id="c98f2-153">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="52ece-154">skip</span><span class="sxs-lookup"><span data-stu-id="52ece-154">skip</span></span> | <span data-ttu-id="52ece-155">자동 바인딩 리디렉션을 건너뛸지 여부를 나타내는 부울입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-155">A Boolean indicating whether to skip automatic binding redirects.</span></span> <span data-ttu-id="52ece-156">기본값은 false입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-156">The default is false.</span></span> |
+| <span data-ttu-id="c98f2-154">skip</span><span class="sxs-lookup"><span data-stu-id="c98f2-154">skip</span></span> | <span data-ttu-id="c98f2-155">자동 바인딩 리디렉션을 건너뛸지 여부를 나타내는 부울입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-155">A Boolean indicating whether to skip automatic binding redirects.</span></span> <span data-ttu-id="c98f2-156">기본값은 false입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-156">The default is false.</span></span> |
 
-<span data-ttu-id="52ece-157">**예제**:</span><span class="sxs-lookup"><span data-stu-id="52ece-157">**Example**:</span></span>
+<span data-ttu-id="c98f2-157">**예제**:</span><span class="sxs-lookup"><span data-stu-id="c98f2-157">**Example**:</span></span>
 
 ```xml
 <bindingRedirects>
@@ -80,16 +79,16 @@ ms.locfileid: "34818402"
 </bindingRedirects>
 ```
 
-## <a name="packagerestore-section"></a><span data-ttu-id="52ece-158">packageRestore 섹션</span><span class="sxs-lookup"><span data-stu-id="52ece-158">packageRestore section</span></span>
+## <a name="packagerestore-section"></a><span data-ttu-id="c98f2-158">packageRestore 섹션</span><span class="sxs-lookup"><span data-stu-id="c98f2-158">packageRestore section</span></span>
 
-<span data-ttu-id="52ece-159">빌드하는 동안의 패키지 복원을 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-159">Controls package restore during builds.</span></span>
+<span data-ttu-id="c98f2-159">빌드하는 동안의 패키지 복원을 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-159">Controls package restore during builds.</span></span>
 
-| <span data-ttu-id="52ece-160">Key</span><span class="sxs-lookup"><span data-stu-id="52ece-160">Key</span></span> | <span data-ttu-id="52ece-161">값</span><span class="sxs-lookup"><span data-stu-id="52ece-161">Value</span></span> |
+| <span data-ttu-id="c98f2-160">Key</span><span class="sxs-lookup"><span data-stu-id="c98f2-160">Key</span></span> | <span data-ttu-id="c98f2-161">값</span><span class="sxs-lookup"><span data-stu-id="c98f2-161">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="52ece-162">사용</span><span class="sxs-lookup"><span data-stu-id="52ece-162">enabled</span></span> | <span data-ttu-id="52ece-163">NuGet에서 자동 복원을 수행할 수 있는지 여부를 나타내는 부울입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-163">A Boolean indicating whether NuGet can perform automatic restore.</span></span> <span data-ttu-id="52ece-164">config 파일에서 이 키를 설정하는 대신 `EnableNuGetPackageRestore` 환경 변수를 `True` 값으로 설정할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-164">You can also set the `EnableNuGetPackageRestore` environment variable with a value of `True` instead of setting this key in the config file.</span></span> |
-| <span data-ttu-id="52ece-165">자동</span><span class="sxs-lookup"><span data-stu-id="52ece-165">automatic</span></span> | <span data-ttu-id="52ece-166">NuGet에서 빌드하는 동안 누락된 패키지를 확인해야 하는지 여부를 나타내는 부울입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-166">A Boolean indicating whether NuGet should check for missing packages during a build.</span></span> |
+| <span data-ttu-id="c98f2-162">사용</span><span class="sxs-lookup"><span data-stu-id="c98f2-162">enabled</span></span> | <span data-ttu-id="c98f2-163">NuGet에서 자동 복원을 수행할 수 있는지 여부를 나타내는 부울입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-163">A Boolean indicating whether NuGet can perform automatic restore.</span></span> <span data-ttu-id="c98f2-164">config 파일에서 이 키를 설정하는 대신 `EnableNuGetPackageRestore` 환경 변수를 `True` 값으로 설정할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-164">You can also set the `EnableNuGetPackageRestore` environment variable with a value of `True` instead of setting this key in the config file.</span></span> |
+| <span data-ttu-id="c98f2-165">자동</span><span class="sxs-lookup"><span data-stu-id="c98f2-165">automatic</span></span> | <span data-ttu-id="c98f2-166">NuGet에서 빌드하는 동안 누락된 패키지를 확인해야 하는지 여부를 나타내는 부울입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-166">A Boolean indicating whether NuGet should check for missing packages during a build.</span></span> |
 
-<span data-ttu-id="52ece-167">**예제**:</span><span class="sxs-lookup"><span data-stu-id="52ece-167">**Example**:</span></span>
+<span data-ttu-id="c98f2-167">**예제**:</span><span class="sxs-lookup"><span data-stu-id="c98f2-167">**Example**:</span></span>
 
 ```xml
 <packageRestore>
@@ -98,15 +97,15 @@ ms.locfileid: "34818402"
 </packageRestore>
 ```
 
-## <a name="solution-section"></a><span data-ttu-id="52ece-168">solution 섹션</span><span class="sxs-lookup"><span data-stu-id="52ece-168">solution section</span></span>
+## <a name="solution-section"></a><span data-ttu-id="c98f2-168">solution 섹션</span><span class="sxs-lookup"><span data-stu-id="c98f2-168">solution section</span></span>
 
-<span data-ttu-id="52ece-169">솔루션의 `packages` 폴더가 원본 제어에 포함되는지 여부를 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-169">Controls whether the `packages` folder of a solution is included in source control.</span></span> <span data-ttu-id="52ece-170">이 섹션은 솔루션 폴더의 `nuget.config` 파일에서만 작동합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-170">This section works only in `nuget.config` files in a solution folder.</span></span>
+<span data-ttu-id="c98f2-169">솔루션의 `packages` 폴더가 원본 제어에 포함되는지 여부를 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-169">Controls whether the `packages` folder of a solution is included in source control.</span></span> <span data-ttu-id="c98f2-170">이 섹션은 솔루션 폴더의 `nuget.config` 파일에서만 작동합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-170">This section works only in `nuget.config` files in a solution folder.</span></span>
 
-| <span data-ttu-id="52ece-171">Key</span><span class="sxs-lookup"><span data-stu-id="52ece-171">Key</span></span> | <span data-ttu-id="52ece-172">값</span><span class="sxs-lookup"><span data-stu-id="52ece-172">Value</span></span> |
+| <span data-ttu-id="c98f2-171">Key</span><span class="sxs-lookup"><span data-stu-id="c98f2-171">Key</span></span> | <span data-ttu-id="c98f2-172">값</span><span class="sxs-lookup"><span data-stu-id="c98f2-172">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="52ece-173">disableSourceControlIntegration</span><span class="sxs-lookup"><span data-stu-id="52ece-173">disableSourceControlIntegration</span></span> | <span data-ttu-id="52ece-174">원본 제어로 작업할 때 패키지 폴더를 무시할지 여부를 나타내는 부울입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-174">A Boolean indicating whether to ignore the packages folder when working with source control.</span></span> <span data-ttu-id="52ece-175">기본값은 false입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-175">The default value is false.</span></span> |
+| <span data-ttu-id="c98f2-173">disableSourceControlIntegration</span><span class="sxs-lookup"><span data-stu-id="c98f2-173">disableSourceControlIntegration</span></span> | <span data-ttu-id="c98f2-174">원본 제어로 작업할 때 패키지 폴더를 무시할지 여부를 나타내는 부울입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-174">A Boolean indicating whether to ignore the packages folder when working with source control.</span></span> <span data-ttu-id="c98f2-175">기본값은 false입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-175">The default value is false.</span></span> |
 
-<span data-ttu-id="52ece-176">**예제**:</span><span class="sxs-lookup"><span data-stu-id="52ece-176">**Example**:</span></span>
+<span data-ttu-id="c98f2-176">**예제**:</span><span class="sxs-lookup"><span data-stu-id="c98f2-176">**Example**:</span></span>
 
 ```xml
 <solution>
@@ -114,23 +113,23 @@ ms.locfileid: "34818402"
 </solution>
 ```
 
-## <a name="package-source-sections"></a><span data-ttu-id="52ece-177">패키지 원본 섹션</span><span class="sxs-lookup"><span data-stu-id="52ece-177">Package source sections</span></span>
+## <a name="package-source-sections"></a><span data-ttu-id="c98f2-177">패키지 원본 섹션</span><span class="sxs-lookup"><span data-stu-id="c98f2-177">Package source sections</span></span>
 
-<span data-ttu-id="52ece-178">`packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource` 및 `disabledPackageSources` 모두가 함께 작동하여 NuGet에서 설치, 복원 및 업데이트 작업 중에 패키지 리포지토리와 함께 작동하는 방식을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-178">The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.</span></span>
+<span data-ttu-id="c98f2-178">`packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource` 및 `disabledPackageSources` 모두가 함께 작동하여 NuGet에서 설치, 복원 및 업데이트 작업 중에 패키지 리포지토리와 함께 작동하는 방식을 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-178">The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.</span></span>
 
-<span data-ttu-id="52ece-179">[`nuget setapikey` 명령](../tools/cli-ref-setapikey.md)을 사용하여 관리되는 `apikeys`를 제외하고는 일반적으로 [`nuget sources` 명령](../tools/cli-ref-sources.md)이 이러한 설정을 관리하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-179">The [`nuget sources` command](../tools/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).</span></span>
+<span data-ttu-id="c98f2-179">[`nuget setapikey` 명령](../tools/cli-ref-setapikey.md)을 사용하여 관리되는 `apikeys`를 제외하고는 일반적으로 [`nuget sources` 명령](../tools/cli-ref-sources.md)이 이러한 설정을 관리하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-179">The [`nuget sources` command](../tools/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).</span></span>
 
-<span data-ttu-id="52ece-180">nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-180">Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.</span></span>
+<span data-ttu-id="c98f2-180">nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-180">Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.</span></span>
 
-### <a name="packagesources"></a><span data-ttu-id="52ece-181">packageSources</span><span class="sxs-lookup"><span data-stu-id="52ece-181">packageSources</span></span>
+### <a name="packagesources"></a><span data-ttu-id="c98f2-181">packageSources</span><span class="sxs-lookup"><span data-stu-id="c98f2-181">packageSources</span></span>
 
-<span data-ttu-id="52ece-182">알려진 모든 패키지 원본을 나열합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-182">Lists all known package sources.</span></span> <span data-ttu-id="52ece-183">복원 작업 중 및 PackageReference 형식을 사용 하 여 모든 프로젝트와 순서는 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-183">The order is ignored during restore operations and with any project using the PackageReference format.</span></span> <span data-ttu-id="52ece-184">NuGet 설치 원본 순서를 적용 및 업데이트 작업을 사용 하 여 프로젝트와 함께 `packages.config`합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-184">NuGet respects the order of sources for install and update operations with projects using `packages.config`.</span></span>
+<span data-ttu-id="c98f2-182">알려진 모든 패키지 원본을 나열합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-182">Lists all known package sources.</span></span> <span data-ttu-id="c98f2-183">PackageReference 형식을 사용 하 여 모든 프로젝트와 복원 작업 중에 순서는 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-183">The order is ignored during restore operations and with any project using the PackageReference format.</span></span> <span data-ttu-id="c98f2-184">NuGet 소스 순서가 설치에 대 한 준수 및 업데이트 작업을 사용 하 여 프로젝트를 사용 하 여 `packages.config`입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-184">NuGet respects the order of sources for install and update operations with projects using `packages.config`.</span></span>
 
-| <span data-ttu-id="52ece-185">Key</span><span class="sxs-lookup"><span data-stu-id="52ece-185">Key</span></span> | <span data-ttu-id="52ece-186">값</span><span class="sxs-lookup"><span data-stu-id="52ece-186">Value</span></span> |
+| <span data-ttu-id="c98f2-185">Key</span><span class="sxs-lookup"><span data-stu-id="c98f2-185">Key</span></span> | <span data-ttu-id="c98f2-186">값</span><span class="sxs-lookup"><span data-stu-id="c98f2-186">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="52ece-187">(패키지 원본에 할당할 이름)</span><span class="sxs-lookup"><span data-stu-id="52ece-187">(name to assign to the package source)</span></span> | <span data-ttu-id="52ece-188">패키지 원본의 경로 또는 URL입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-188">The path or URL of the package source.</span></span> |
+| <span data-ttu-id="c98f2-187">(패키지 원본에 할당할 이름)</span><span class="sxs-lookup"><span data-stu-id="c98f2-187">(name to assign to the package source)</span></span> | <span data-ttu-id="c98f2-188">패키지 원본의 경로 또는 URL입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-188">The path or URL of the package source.</span></span> |
 
-<span data-ttu-id="52ece-189">**예제**:</span><span class="sxs-lookup"><span data-stu-id="52ece-189">**Example**:</span></span>
+<span data-ttu-id="c98f2-189">**예제**:</span><span class="sxs-lookup"><span data-stu-id="c98f2-189">**Example**:</span></span>
 
 ```xml
 <packageSources>
@@ -140,19 +139,19 @@ ms.locfileid: "34818402"
 </packageSources>
 ```
 
-### <a name="packagesourcecredentials"></a><span data-ttu-id="52ece-190">packageSourceCredentials</span><span class="sxs-lookup"><span data-stu-id="52ece-190">packageSourceCredentials</span></span>
+### <a name="packagesourcecredentials"></a><span data-ttu-id="c98f2-190">packageSourceCredentials</span><span class="sxs-lookup"><span data-stu-id="c98f2-190">packageSourceCredentials</span></span>
 
-<span data-ttu-id="52ece-191">원본에 대한 사용자 이름과 암호를 저장하며, 일반적으로 `nuget sources`와 함께 `-username` 및 `-password` 스위치로 지정됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-191">Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`.</span></span> <span data-ttu-id="52ece-192">또한 `-storepasswordincleartext` 옵션을 사용하지 않는 한 암호는 기본적으로 암호화됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-192">Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.</span></span>
+<span data-ttu-id="c98f2-191">원본에 대한 사용자 이름과 암호를 저장하며, 일반적으로 `nuget sources`와 함께 `-username` 및 `-password` 스위치로 지정됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-191">Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`.</span></span> <span data-ttu-id="c98f2-192">또한 `-storepasswordincleartext` 옵션을 사용하지 않는 한 암호는 기본적으로 암호화됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-192">Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.</span></span>
 
-| <span data-ttu-id="52ece-193">Key</span><span class="sxs-lookup"><span data-stu-id="52ece-193">Key</span></span> | <span data-ttu-id="52ece-194">값</span><span class="sxs-lookup"><span data-stu-id="52ece-194">Value</span></span> |
+| <span data-ttu-id="c98f2-193">Key</span><span class="sxs-lookup"><span data-stu-id="c98f2-193">Key</span></span> | <span data-ttu-id="c98f2-194">값</span><span class="sxs-lookup"><span data-stu-id="c98f2-194">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="52ece-195">사용자 이름</span><span class="sxs-lookup"><span data-stu-id="52ece-195">username</span></span> | <span data-ttu-id="52ece-196">일반 텍스트 형식의 원본에 대한 사용자 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-196">The user name for the source in plain text.</span></span> |
-| <span data-ttu-id="52ece-197">암호</span><span class="sxs-lookup"><span data-stu-id="52ece-197">password</span></span> | <span data-ttu-id="52ece-198">원본에 대한 암호화된 암호입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-198">The encrypted password for the source.</span></span> |
-| <span data-ttu-id="52ece-199">cleartextpassword</span><span class="sxs-lookup"><span data-stu-id="52ece-199">cleartextpassword</span></span> | <span data-ttu-id="52ece-200">원본에 대한 암호화되지 않은 암호입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-200">The unencrypted password for the source.</span></span> |
+| <span data-ttu-id="c98f2-195">사용자 이름</span><span class="sxs-lookup"><span data-stu-id="c98f2-195">username</span></span> | <span data-ttu-id="c98f2-196">일반 텍스트 형식의 원본에 대한 사용자 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-196">The user name for the source in plain text.</span></span> |
+| <span data-ttu-id="c98f2-197">암호</span><span class="sxs-lookup"><span data-stu-id="c98f2-197">password</span></span> | <span data-ttu-id="c98f2-198">원본에 대한 암호화된 암호입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-198">The encrypted password for the source.</span></span> |
+| <span data-ttu-id="c98f2-199">cleartextpassword</span><span class="sxs-lookup"><span data-stu-id="c98f2-199">cleartextpassword</span></span> | <span data-ttu-id="c98f2-200">원본에 대한 암호화되지 않은 암호입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-200">The unencrypted password for the source.</span></span> |
 
-<span data-ttu-id="52ece-201">**예제:**</span><span class="sxs-lookup"><span data-stu-id="52ece-201">**Example:**</span></span>
+<span data-ttu-id="c98f2-201">**예제:**</span><span class="sxs-lookup"><span data-stu-id="c98f2-201">**Example:**</span></span>
 
-<span data-ttu-id="52ece-202">config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 원본 이름 각각에 대한 자식 노드가 포함됩니다(이름에 포함된 공백은 `_x0020_`로 바뀜).</span><span class="sxs-lookup"><span data-stu-id="52ece-202">In the config file, the `<packageSourceCredentials>` element contains child nodes for each applicable source name (spaces in the name are replaced with `_x0020_`).</span></span> <span data-ttu-id="52ece-203">즉 "Contoso" 및 "Test Source"라는 원본의 경우 암호화된 암호를 사용하면 config 파일에는 다음이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-203">That is, for sources named "Contoso" and "Test Source", the config file contains the following when using encrypted passwords:</span></span>
+<span data-ttu-id="c98f2-202">config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 원본 이름 각각에 대한 자식 노드가 포함됩니다(이름에 포함된 공백은 `_x0020_`로 바뀜).</span><span class="sxs-lookup"><span data-stu-id="c98f2-202">In the config file, the `<packageSourceCredentials>` element contains child nodes for each applicable source name (spaces in the name are replaced with `_x0020_`).</span></span> <span data-ttu-id="c98f2-203">즉 "Contoso" 및 "Test Source"라는 원본의 경우 암호화된 암호를 사용하면 config 파일에는 다음이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-203">That is, for sources named "Contoso" and "Test Source", the config file contains the following when using encrypted passwords:</span></span>
 
 ```xml
 <packageSourceCredentials>
@@ -167,7 +166,7 @@ ms.locfileid: "34818402"
 </packageSourceCredentials>
 ```
 
-<span data-ttu-id="52ece-204">암호화되지 않은 암호를 사용하는 경우:</span><span class="sxs-lookup"><span data-stu-id="52ece-204">When using unencrypted passwords:</span></span>
+<span data-ttu-id="c98f2-204">암호화되지 않은 암호를 사용하는 경우:</span><span class="sxs-lookup"><span data-stu-id="c98f2-204">When using unencrypted passwords:</span></span>
 
 ```xml
 <packageSourceCredentials>
@@ -182,15 +181,15 @@ ms.locfileid: "34818402"
 </packageSourceCredentials>
 ```
 
-### <a name="apikeys"></a><span data-ttu-id="52ece-205">apikeys</span><span class="sxs-lookup"><span data-stu-id="52ece-205">apikeys</span></span>
+### <a name="apikeys"></a><span data-ttu-id="c98f2-205">apikeys</span><span class="sxs-lookup"><span data-stu-id="c98f2-205">apikeys</span></span>
 
-<span data-ttu-id="52ece-206">[`nuget setapikey` 명령](../tools/cli-ref-setapikey.md)으로 설정된 대로 API 키 인증을 사용하는 원본에 대한 키를 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-206">Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).</span></span>
+<span data-ttu-id="c98f2-206">[`nuget setapikey` 명령](../tools/cli-ref-setapikey.md)으로 설정된 대로 API 키 인증을 사용하는 원본에 대한 키를 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-206">Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).</span></span>
 
-| <span data-ttu-id="52ece-207">Key</span><span class="sxs-lookup"><span data-stu-id="52ece-207">Key</span></span> | <span data-ttu-id="52ece-208">값</span><span class="sxs-lookup"><span data-stu-id="52ece-208">Value</span></span> |
+| <span data-ttu-id="c98f2-207">Key</span><span class="sxs-lookup"><span data-stu-id="c98f2-207">Key</span></span> | <span data-ttu-id="c98f2-208">값</span><span class="sxs-lookup"><span data-stu-id="c98f2-208">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="52ece-209">(원본 URL)</span><span class="sxs-lookup"><span data-stu-id="52ece-209">(source URL)</span></span> | <span data-ttu-id="52ece-210">암호화된 API 키입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-210">The encrypted API key.</span></span> |
+| <span data-ttu-id="c98f2-209">(원본 URL)</span><span class="sxs-lookup"><span data-stu-id="c98f2-209">(source URL)</span></span> | <span data-ttu-id="c98f2-210">암호화된 API 키입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-210">The encrypted API key.</span></span> |
 
-<span data-ttu-id="52ece-211">**예제**:</span><span class="sxs-lookup"><span data-stu-id="52ece-211">**Example**:</span></span>
+<span data-ttu-id="c98f2-211">**예제**:</span><span class="sxs-lookup"><span data-stu-id="c98f2-211">**Example**:</span></span>
 
 ```xml
 <apikeys>
@@ -198,15 +197,15 @@ ms.locfileid: "34818402"
 </apikeys>
 ```
 
-### <a name="disabledpackagesources"></a><span data-ttu-id="52ece-212">disabledPackageSources</span><span class="sxs-lookup"><span data-stu-id="52ece-212">disabledPackageSources</span></span>
+### <a name="disabledpackagesources"></a><span data-ttu-id="c98f2-212">disabledPackageSources</span><span class="sxs-lookup"><span data-stu-id="c98f2-212">disabledPackageSources</span></span>
 
-<span data-ttu-id="52ece-213">현재 사용할 수 없는 원본을 식별합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-213">Identified currently disabled sources.</span></span> <span data-ttu-id="52ece-214">비어 있을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-214">May be empty.</span></span>
+<span data-ttu-id="c98f2-213">현재 사용할 수 없는 원본을 식별합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-213">Identified currently disabled sources.</span></span> <span data-ttu-id="c98f2-214">비어 있을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-214">May be empty.</span></span>
 
-| <span data-ttu-id="52ece-215">Key</span><span class="sxs-lookup"><span data-stu-id="52ece-215">Key</span></span> | <span data-ttu-id="52ece-216">값</span><span class="sxs-lookup"><span data-stu-id="52ece-216">Value</span></span> |
+| <span data-ttu-id="c98f2-215">Key</span><span class="sxs-lookup"><span data-stu-id="c98f2-215">Key</span></span> | <span data-ttu-id="c98f2-216">값</span><span class="sxs-lookup"><span data-stu-id="c98f2-216">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="52ece-217">(원본 이름)</span><span class="sxs-lookup"><span data-stu-id="52ece-217">(name of source)</span></span> | <span data-ttu-id="52ece-218">원본을 사용할 수 없는지 여부를 나타내는 부울입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-218">A Boolean indicating whether the source is disabled.</span></span> |
+| <span data-ttu-id="c98f2-217">(원본 이름)</span><span class="sxs-lookup"><span data-stu-id="c98f2-217">(name of source)</span></span> | <span data-ttu-id="c98f2-218">원본을 사용할 수 없는지 여부를 나타내는 부울입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-218">A Boolean indicating whether the source is disabled.</span></span> |
 
-<span data-ttu-id="52ece-219">**예제:**</span><span class="sxs-lookup"><span data-stu-id="52ece-219">**Example:**</span></span>
+<span data-ttu-id="c98f2-219">**예제:**</span><span class="sxs-lookup"><span data-stu-id="c98f2-219">**Example:**</span></span>
 
 ```xml
 <disabledPackageSources>
@@ -217,17 +216,17 @@ ms.locfileid: "34818402"
 <disabledPackageSources />
 ```
 
-### <a name="activepackagesource"></a><span data-ttu-id="52ece-220">activePackageSource</span><span class="sxs-lookup"><span data-stu-id="52ece-220">activePackageSource</span></span>
+### <a name="activepackagesource"></a><span data-ttu-id="c98f2-220">activePackageSource</span><span class="sxs-lookup"><span data-stu-id="c98f2-220">activePackageSource</span></span>
 
-<span data-ttu-id="52ece-221">*(2.x만, 3.x 이상에서는 사용되지 않음)*</span><span class="sxs-lookup"><span data-stu-id="52ece-221">*(2.x only; deprecated in 3.x+)*</span></span>
+<span data-ttu-id="c98f2-221">*(2.x만, 3.x 이상에서는 사용되지 않음)*</span><span class="sxs-lookup"><span data-stu-id="c98f2-221">*(2.x only; deprecated in 3.x+)*</span></span>
 
-<span data-ttu-id="52ece-222">현재 활성 중인 원본을 식별하거나 모든 원본의 집계를 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-222">Identifies to the currently active source or indicates the aggregate of all sources.</span></span>
+<span data-ttu-id="c98f2-222">현재 활성 중인 원본을 식별하거나 모든 원본의 집계를 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-222">Identifies to the currently active source or indicates the aggregate of all sources.</span></span>
 
-| <span data-ttu-id="52ece-223">Key</span><span class="sxs-lookup"><span data-stu-id="52ece-223">Key</span></span> | <span data-ttu-id="52ece-224">값</span><span class="sxs-lookup"><span data-stu-id="52ece-224">Value</span></span> |
+| <span data-ttu-id="c98f2-223">Key</span><span class="sxs-lookup"><span data-stu-id="c98f2-223">Key</span></span> | <span data-ttu-id="c98f2-224">값</span><span class="sxs-lookup"><span data-stu-id="c98f2-224">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="52ece-225">(원본 이름) 또는 `All`</span><span class="sxs-lookup"><span data-stu-id="52ece-225">(name of source) or `All`</span></span> | <span data-ttu-id="52ece-226">키가 원본의 이름이면 값은 원본 경로 또는 URL입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-226">If key is the name of a source, the value is the source path or URL.</span></span> <span data-ttu-id="52ece-227">`All`이면 값은 `(Aggregate source)`여야 하며, 그렇지 않으면 사용할 수 없는 모든 패키지 원본이 결합됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-227">If `All`, value should be `(Aggregate source)` to combine all package sources that are not otherwise disabled.</span></span> |
+| <span data-ttu-id="c98f2-225">(원본 이름) 또는 `All`</span><span class="sxs-lookup"><span data-stu-id="c98f2-225">(name of source) or `All`</span></span> | <span data-ttu-id="c98f2-226">키가 원본의 이름이면 값은 원본 경로 또는 URL입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-226">If key is the name of a source, the value is the source path or URL.</span></span> <span data-ttu-id="c98f2-227">`All`이면 값은 `(Aggregate source)`여야 하며, 그렇지 않으면 사용할 수 없는 모든 패키지 원본이 결합됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-227">If `All`, value should be `(Aggregate source)` to combine all package sources that are not otherwise disabled.</span></span> |
 
-<span data-ttu-id="52ece-228">**예제**:</span><span class="sxs-lookup"><span data-stu-id="52ece-228">**Example**:</span></span>
+<span data-ttu-id="c98f2-228">**예제**:</span><span class="sxs-lookup"><span data-stu-id="c98f2-228">**Example**:</span></span>
 
 ```xml
 <activePackageSource>
@@ -239,19 +238,19 @@ ms.locfileid: "34818402"
 </activePackageSource>
 ```
 
-## <a name="using-environment-variables"></a><span data-ttu-id="52ece-229">환경 변수 사용</span><span class="sxs-lookup"><span data-stu-id="52ece-229">Using environment variables</span></span>
+## <a name="using-environment-variables"></a><span data-ttu-id="c98f2-229">환경 변수 사용</span><span class="sxs-lookup"><span data-stu-id="c98f2-229">Using environment variables</span></span>
 
-<span data-ttu-id="52ece-230">`nuget.config` 값(NuGet 3.4 이상)의 환경 변수를 사용하여 런타임에 설정을 적용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-230">You can use environment variables in `nuget.config` values (NuGet 3.4+) to apply settings at run time.</span></span>
+<span data-ttu-id="c98f2-230">`nuget.config` 값(NuGet 3.4 이상)의 환경 변수를 사용하여 런타임에 설정을 적용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-230">You can use environment variables in `nuget.config` values (NuGet 3.4+) to apply settings at run time.</span></span>
 
-<span data-ttu-id="52ece-231">예를 들어 Windows의 `HOME` 환경 변수가 `c:\users\username`으로 설정되면 구성 파일의 `%HOME%\NuGetRepository` 값이 `c:\users\username\NuGetRepository`로 해석됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-231">For example, if the `HOME` environment variable on Windows is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file resolves to `c:\users\username\NuGetRepository`.</span></span>
+<span data-ttu-id="c98f2-231">예를 들어 Windows의 `HOME` 환경 변수가 `c:\users\username`으로 설정되면 구성 파일의 `%HOME%\NuGetRepository` 값이 `c:\users\username\NuGetRepository`로 해석됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-231">For example, if the `HOME` environment variable on Windows is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file resolves to `c:\users\username\NuGetRepository`.</span></span>
 
-<span data-ttu-id="52ece-232">마찬가지로, Mac/Linux의 `HOME`이 `/home/myStuff`로 설정되면 구성 파일의 `%HOME%/NuGetRepository`가 `/home/myStuff/NuGetRepository`로 해석됩니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-232">Similarly, if `HOME` on Mac/Linux is set to `/home/myStuff`, then `%HOME%/NuGetRepository` in the configuration file resolves to `/home/myStuff/NuGetRepository`.</span></span>
+<span data-ttu-id="c98f2-232">마찬가지로, Mac/Linux의 `HOME`이 `/home/myStuff`로 설정되면 구성 파일의 `%HOME%/NuGetRepository`가 `/home/myStuff/NuGetRepository`로 해석됩니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-232">Similarly, if `HOME` on Mac/Linux is set to `/home/myStuff`, then `%HOME%/NuGetRepository` in the configuration file resolves to `/home/myStuff/NuGetRepository`.</span></span>
 
-<span data-ttu-id="52ece-233">환경 변수가 없으면 NuGet에서 구성 파일의 리터럴 값을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-233">If an environment variable is not found, NuGet uses the literal value from the configuration file.</span></span>
+<span data-ttu-id="c98f2-233">환경 변수가 없으면 NuGet에서 구성 파일의 리터럴 값을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-233">If an environment variable is not found, NuGet uses the literal value from the configuration file.</span></span>
 
-## <a name="example-config-file"></a><span data-ttu-id="52ece-234">config 파일 예제</span><span class="sxs-lookup"><span data-stu-id="52ece-234">Example config file</span></span>
+## <a name="example-config-file"></a><span data-ttu-id="c98f2-234">config 파일 예제</span><span class="sxs-lookup"><span data-stu-id="c98f2-234">Example config file</span></span>
 
-<span data-ttu-id="52ece-235">아래는 몇 가지 설정을 보여 주는 `nuget.config` 파일의 예제입니다.</span><span class="sxs-lookup"><span data-stu-id="52ece-235">Below is an example `nuget.config` file that illustrates a number of settings:</span></span>
+<span data-ttu-id="c98f2-235">아래는 몇 가지 설정을 보여 주는 `nuget.config` 파일의 예제입니다.</span><span class="sxs-lookup"><span data-stu-id="c98f2-235">Below is an example `nuget.config` file that illustrates a number of settings:</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
