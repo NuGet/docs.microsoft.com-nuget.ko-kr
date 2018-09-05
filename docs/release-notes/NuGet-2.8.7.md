@@ -1,21 +1,20 @@
 ---
-title: NuGet 2.8.7 릴리스 정보
+title: 2.8.7 NuGet 릴리스 정보
 description: NuGet 2.8.7 포함에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: b61a57242fe05d82b48dc80603aeffda562ada2c
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 0b3a9520bb2e1b898e51644169d55d3c2fb8220d
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31820305"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549990"
 ---
-# <a name="nuget-287-release-notes"></a>NuGet 2.8.7 릴리스 정보
+# <a name="nuget-287-release-notes"></a>2.8.7 NuGet 릴리스 정보
 
-[NuGet 2.8.6 릴리스 정보](../release-notes/nuget-2.8.6.md) | [NuGet 2.9 RC 릴리스 정보](../release-notes/nuget-2.9-RC.md)
+[2.8.6 NuGet 릴리스 정보](../release-notes/nuget-2.8.6.md) | [NuGet 2.9 RC 릴리스 정보](../release-notes/nuget-2.9-RC.md)
 
-NuGet 2.8.7 릴리스된 패치라고는 2015 년 7 월 27 일 업데이트는 2.8.6 VSIX 수정 프로그램 Powershell 정책 구현에 영향을 받는 버그에 특정 합니다.
+NuGet 2.8.7 릴리스된 2.8.6 패치로 2015 년 7 월 27 일에 업데이트 VSIX 영향 Powershell 정책을 구현 하는 버그에 특정 문제가 해결 됩니다.
 [https://github.com/NuGet/Home/issues/974](https://github.com/NuGet/Home/issues/974)

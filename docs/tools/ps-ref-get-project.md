@@ -1,23 +1,22 @@
 ---
-title: NuGet Get 프로젝트 PowerShell 참조
+title: NuGet Get-프로젝트 PowerShell 참조
 description: Visual Studio에서 NuGet 패키지 관리자 콘솔에서 GetProject PowerShell 명령에 대 한 참조입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: afdf9f762bbd34531f9d9093238a2fed27e3f4d3
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 849261711fafcadbab38bf6fe99340c4b79e1e21
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817758"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550439"
 ---
 # <a name="get-project-package-manager-console-in-visual-studio"></a>Get-Project (Visual Studio의 패키지 관리자 콘솔)
 
-*내 에서만 사용할 수는 [NuGet 패키지 관리자 콘솔](package-manager-console.md) Windows에서 Visual Studio에서 합니다.*
+*내 에서만 사용 가능 합니다 [NuGet 패키지 관리자 콘솔](package-manager-console.md) Windows의 Visual Studio에서 합니다.*
 
-기본 또는 지정 된 프로젝트에 대 한 정보를 표시합니다. `Get-Project` 특히 프로젝트에 대 한 Visual Studio DTE (개발 도구 환경) 개체에 참조를 반환합니다.
+기본 또는 지정 된 프로젝트에 대 한 정보를 표시합니다. `Get-Project` 특히 프로젝트에 대 한 Visual Studio DTE (Development Tools Environment) 개체 참조를 반환합니다.
 
 ## <a name="syntax"></a>구문
 
@@ -29,14 +28,14 @@ Get-Project [[-Name] <string>] [-All] [<CommonParameters>]
 
 | 매개 변수 | 설명 |
 | --- | --- |
-| name | 패키지 관리자 콘솔에서 선택 된 기본 프로젝트 기본값으로 표시 하려면 프로젝트를 지정 합니다. -Name 스위치는 선택 사항 자체입니다. |
-| 모두 | 솔루션;의 모든 프로젝트에 대 한 정보를 표시합니다. 프로젝트의 순서는 결정적입니다. |
+| 이름 | 패키지 관리자 콘솔에서 선택 된 기본 프로젝트가 기본적으로 표시할 프로젝트를 지정 합니다. -Name 자체 선택적 스위치입니다. |
+| 모두 | 모든 프로젝트를 솔루션에 대 한 정보를 표시 프로젝트의 순서가 결정적입니다. |
 
-매개 변수가 파이프라인 입력 또는 와일드 카드 문자를 입력할 수 있습니다.
+이러한 매개 변수 중 파이프라인 입력 하거나 와일드 카드 문자 허용 합니다.
 
 ## <a name="common-parameters"></a>일반 매개 변수
 
-`Get-Project` 다음과 같은 지원 [일반적인 PowerShell 매개 변수](http://go.microsoft.com/fwlink/?LinkID=113216): 디버그, 오류 시 수행할 동작, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, 및 WarningVariable 합니다.
+`Get-Project` 다음을 지원 합니다 [일반적인 PowerShell 매개 변수](http://go.microsoft.com/fwlink/?LinkID=113216): 디버그, 오류 동작, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, 자세한 정보 표시, WarningAction, WarningVariable.
 
 ## <a name="examples"></a>예제
 

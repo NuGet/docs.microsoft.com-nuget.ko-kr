@@ -3,16 +3,15 @@ title: 보고서 남용 URL 템플릿을 NuGet API
 description: 보고서 남용 URL 템플릿은 클라이언트를 UI에 신고 링크를 표시할 수 있습니다.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: b1fd65b12590a6c5eeb23d946eec6ca4a1c661bc
-ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
+ms.openlocfilehash: d0ff41b08eeba5a6e4bc7c44722b6bc57f502047
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40020442"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549341"
 ---
 # <a name="report-abuse-url-template"></a>보고서 남용 URL 템플릿
 
@@ -45,7 +44,7 @@ ReportAbuseUriTemplate/3.0.0-rc   | 별칭 `ReportAbuseUriTemplate/3.0.0-beta`
 
 ### <a name="url-placeholders"></a>URL 자리 표시자
 
-name        | 형식    | 필수 | 노트
+이름        | 형식    | 필수 | 노트
 ----------- | ------- | -------- | -----
 `{id}`      | string  | 아니요       | 패키지 ID에 대해 신고
 `{version}` | string  | 아니요       | 패키지 버전에 대해 신고를

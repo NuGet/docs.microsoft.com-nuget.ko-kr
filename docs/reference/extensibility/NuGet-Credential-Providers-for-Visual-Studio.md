@@ -3,15 +3,14 @@ title: Visual Studio 용 NuGet 자격 증명 공급자
 description: NuGet 자격 증명 공급자는 Visual Studio 확장에서 IVsCredentialProvider 인터페이스를 구현 하 여 피드를 사용 하 여 인증 합니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: e8d8ae22300b55b93badb65864163d959105dca2
-ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
+ms.openlocfilehash: abe009fee5863c55a188f4d7c71ed0924dd067ff
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42793905"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547956"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>NuGet 자격 증명 공급자를 사용 하 여 Visual Studio에서 피드를 인증합니다.
 

@@ -3,15 +3,14 @@ title: NuGet 교차 플랫폼 인증 플러그 인
 description: NuGet은 NuGet.exe "," dotnet.exe "," msbuild.exe "및" Visual Studio에 대 한 인증 플러그 인 플랫폼 간
 author: nkolev92
 ms.author: nikolev
-manager: rrelyea
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: 02db20e72f67463fffc45f3cba891ae670d67067
-ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
+ms.openlocfilehash: 1258ca4b30cb674c3832f12262940729438dd5b0
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42794196"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546636"
 ---
 # <a name="nuget-cross-platform-authentication-plugin"></a>NuGet 교차 플랫폼 인증 플러그 인
 

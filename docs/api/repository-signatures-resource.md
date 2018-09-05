@@ -1,27 +1,19 @@
 ---
 title: 리포지토리 서명, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
-manager: skofman
+author: joelverhagen
+ms.author: jver
 ms.date: 3/2/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
 description: 리포지토리 서명을 리소스 클라이언트 기능을 서명 하는 리포지토리의 기쁘게 패키지 소스를 수 있습니다.
-keywords: NuGet API 리포지토리 서명, 서명 인증서, nuget.org nuget.org 패키지 서명
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 32dd2ee19261488a2b1b92724095a11ced69ae68
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 50f309b99d4bf59e14f3e29b6b0421d8c3e8aa5a
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42793327"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547983"
 ---
 # <a name="repository-signatures"></a>리포지토리 서명
 
@@ -67,7 +59,7 @@ RepositorySignatures/4.7.0 | 초기 릴리스
 
 저장소 서명 인덱스는 다음 속성을 가진 개체를 포함 하는 JSON 문서:
 
-name                | 형식             | 필수
+이름                | 형식             | 필수
 ------------------- | ---------------- | --------
 allRepositorySigned | boolean          | 예
 signingCertificates | 개체의 배열 | 예
@@ -76,7 +68,7 @@ signingCertificates | 개체의 배열 | 예
 
 서명 인증서를 하나 이상 있어야 합니다 `signingCertificates` 배열을 `allRepositorySigned` 부울 설정 되어 true로 합니다. 배열이 비어 있는 경우 및 `allRepositorySigned` 로 설정 된 true 이면 모든 패키지 소스에서 고려해 야 잘못 된 경우에 클라이언트 정책을 여전히 패키지의 사용을 허용 하지만 합니다. 이 배열의 각 요소에는 다음 속성을 사용 하 여 JSON 개체입니다.
 
-name         | 형식   | 필수 | 노트
+이름         | 형식   | 필수 | 노트
 ------------ | ------ | -------- | -----
 contentUrl   | string | 예      | DER로 인코딩된 공용 인증서에 절대 URL
 지문 | object | 예      |
@@ -92,7 +84,7 @@ notAfter     | string | 예      | 인증서의 유효 기간의 끝 타임 스�
 
 `fingerprints` 개체에는 다음 속성이 있습니다.
 
-name                   | 형식   | 필수 | 노트
+이름                   | 형식   | 필수 | 노트
 ---------------------- | ------ | -------- | -----
 2.16.840.1.101.3.4.2.1 | string | 예      | SHA-256 지문
 

@@ -3,15 +3,14 @@ title: PackageReference 형식을 package.config에서 마이그레이션
 description: NuGet 4.0 이상, VS2017 및.NET Core 2.0에서 지원 되는 PackageReference로 package.config 관리 형식에서 프로젝트를 마이그레이션하는 방법에 대 한 세부 정보
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: b05192038bff071ca7a5b8f2e0f735696d09bef6
-ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
+ms.openlocfilehash: 05a82e48c7083a19c50a05fa1df74ebfff8030d1
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39508272"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546688"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Packages.config를 PackageReference로 마이그레이션
 
@@ -41,7 +40,7 @@ Visual Studio 2017 버전 15.7 및 이상에서는 지원에서 프로젝트를 
 
 #### <a name="workaround"></a>해결 방법 
 
-다음 NuGet 작업 중 하나를 수행 합니다. 
+다음 NuGet 작업 중 하나를 수행합니다. 
 * 패키지 관리자 UI 열기 - `References`를 마우스 오른쪽 단추로 클릭하고 `Manage NuGet Packages...`를 선택합니다. 
 * 패키지 관리자 콘솔 열기 - `Tools > NuGet Package Manager`에서 `Package Manager Console`을 선택합니다. 
 * NuGet 복원 실행 - 솔루션 탐색기에서 솔루션 노드를 마우스 오른쪽 단추로 클릭하고 `Restore NuGet Packages`를 선택합니다. 

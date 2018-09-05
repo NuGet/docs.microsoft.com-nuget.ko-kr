@@ -3,15 +3,14 @@ title: nuget.config 파일 참조
 description: config, bindingRedirects, packageRestore, solution 및 packageSource 섹션이 포함된 NuGet.Config 파일 참조입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: 3d6741b2d724b967e76ba65547e84adcd461a521
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 504a48224051265164f9ab183e63fa5e7f5867e6
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818402"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546917"
 ---
 # <a name="nugetconfig-reference"></a>nuget.config 참조
 
@@ -48,8 +47,8 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 | Key | 값 |
 | --- | --- |
 | dependencyVersion(`packages.config`만) | `-DependencyVersion` 스위치가 직접 지정되지 않은 경우 패키지 설치, 복원 및 업데이트에 대한 기본 `DependencyVersion` 값입니다. 이 값은 NuGet 패키지 관리자 UI에서도 사용됩니다. 값은 `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`입니다. |
-| globalPackagesFolder (프로젝트만 PackageReference를 사용 하 여) | 기본 전역 패키지 폴더의 위치입니다. 기본값은 `%userprofile%\.nuget\packages`(Windows) 또는 `~/.nuget/packages`(Mac/Linux)입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 선행 하는이 설정이 무시 됩니다. |
-| repositoryPath(`packages.config`만) | 기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 선행 하는이 설정이 무시 됩니다. |
+| globalPackagesFolder (프로젝트만 PackageReference를 사용 하 여) | 기본 전역 패키지 폴더의 위치입니다. 기본값은 `%userprofile%\.nuget\packages`(Windows) 또는 `~/.nuget/packages`(Mac/Linux)입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 우선 순위를 사용 하는이 설정이 무시 됩니다. |
+| repositoryPath(`packages.config`만) | 기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 우선 순위를 사용 하는이 설정이 무시 됩니다. |
 | defaultPushSource | 작업에 대한 다른 패키지 원본이 없을 때 기본값으로 사용해야 하는 패키지 원본의 URL 또는 경로를 식별합니다. |
 | http_proxy, http_proxy.user, http_proxy.password, no_proxy | 패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다. 암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다. `no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다. 이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다. 자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요. |
 
@@ -124,7 +123,7 @@ nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다
 
 ### <a name="packagesources"></a>packageSources
 
-알려진 모든 패키지 원본을 나열합니다. 복원 작업 중 및 PackageReference 형식을 사용 하 여 모든 프로젝트와 순서는 무시 됩니다. NuGet 설치 원본 순서를 적용 및 업데이트 작업을 사용 하 여 프로젝트와 함께 `packages.config`합니다.
+알려진 모든 패키지 원본을 나열합니다. PackageReference 형식을 사용 하 여 모든 프로젝트와 복원 작업 중에 순서는 무시 됩니다. NuGet 소스 순서가 설치에 대 한 준수 및 업데이트 작업을 사용 하 여 프로젝트를 사용 하 여 `packages.config`입니다.
 
 | Key | 값 |
 | --- | --- |

@@ -3,16 +3,15 @@ title: NuGet에 대 한.nuspec 파일 참조
 description: .nuspec 파일은 패키지를 빌드하고 패키지 소비자에게 정보를 제공하는 데 사용되는 패키지 메타데이터를 포함합니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 922243050dd32a960d5348f9bb3125d0f6a226fb
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: ddb22d819a1a4e41a2019705789a11de6cad1d79
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42793318"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548444"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 

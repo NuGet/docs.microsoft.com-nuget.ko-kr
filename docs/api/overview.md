@@ -3,16 +3,15 @@ title: NuGet API 개요
 description: NuGet API는 패키지를 다운로드, 메타 데이터를 가져오는 등 새 패키지를 게시 하는 HTTP 끝점의 집합.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 0cb40a640a0bab63a63b3b690a34f1f8cbf7fcb8
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 770173d6b84048cf42a5da46cbc474d8cf604a08
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42793227"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547505"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -103,7 +102,7 @@ Delete | 삭제 하거나 리소스 목록에서 제거 합니다.
 
 ## <a name="http-request-headers"></a>HTTP 요청 헤더
 
-name                     | 설명
+이름                     | 설명
 ------------------------ | -----------
 X-NuGet-ApiKey           | 푸시 및 삭제에 대 한 필요한 참조 [ `PackagePublish` 리소스](package-publish-resource.md)
 X-NuGet-Client-Version   | **사용 되지 않는** 바뀝니다 `X-NuGet-Protocol-Version`

@@ -3,15 +3,14 @@ title: NuGet 클라이언트 SDK
 description: API가 진화 하 고 아직 문서화 하지도 예제 Dave Glick 블로그에서 사용할 수 있습니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: f814b0c0e7fac719e4221a8d8e945de703348aba
-ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
+ms.openlocfilehash: 8e612d9f86bcffc99870c5541aa6091e678db512
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39508064"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547091"
 ---
 # <a name="nuget-client-sdk"></a>NuGet 클라이언트 SDK
 
