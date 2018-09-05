@@ -3,15 +3,14 @@ title: 릴리스 정보
 description: NuGet 릴리스 정보의 인덱스 및 모든 버전에서 알려진 문제입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: e960218d4594599d017ffbe1ec262fda43ba0283
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: d91890e1cebfa527dac63a06989dbfd9b3f32dbe
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818492"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550888"
 ---
 # <a name="release-notes"></a>릴리스 정보
 

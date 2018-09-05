@@ -3,21 +3,20 @@ title: NuGet packages.config 파일 참조
 description: 일부 프로젝트 형식에서 packages.config은 프로젝트에 사용된 NuGet 패키지 목록을 유지 관리합니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/21/2018
 ms.topic: reference
-ms.openlocfilehash: 2019ce5961a8237fbda855cd7d5b42948808be3a
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 18566671b611899b28fcc8542cf53935f5ee2dfd
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817839"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43551772"
 ---
 # <a name="packagesconfig-reference"></a>packages.config 참조
 
 `packages.config` 파일은 프로젝트에서 참조하는 패키지 목록을 유지하기 위해 일부 프로젝트 형식에서 사용합니다. 이를 통해 해당하는 모든 패키지 없이 빌드 서버와 같은 다른 컴퓨터에 NuGet 때 프로젝트를 전송할 때 쉽게 프로젝트의 종속성을 복원할 수 있습니다.
 
-을 사용 하는 경우 `packages.config` 일반적으로 프로젝트 루트에 배치 됩니다. 첫 번째 NuGet 작업을 실행 하지만 같은 모든 명령을 실행 하기 전에 수동으로 만들 수도 있습니다 때 자동으로 만들어집니다 `nuget restore`합니다.
+를 사용 하는 경우 `packages.config` 대개 프로젝트 루트에 배치 됩니다. 첫 번째 NuGet 작업을 실행 하지만 같은 모든 명령을 실행 하기 전에 수동으로 만들 수도 있습니다 경우 자동으로 만들어지는 `nuget restore`합니다.
 
 사용 하는 프로젝트 [PackageReference](../consume-packages/Package-References-in-Project-Files.md) 사용 하지 않는 `packages.config`합니다.
 

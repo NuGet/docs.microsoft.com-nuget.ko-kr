@@ -1,21 +1,20 @@
 ---
 title: 3.1.1 NuGet 릴리스 정보
-description: 3.1.1 NuGet 포함에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다.
+description: NuGet 3.1.1 포함에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 2ad5ed0da91f52ec4a5072a4001bd2e3e3679a5d
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: c0e822b6045ba0467fc9c88b661b8f88cfb8aa16
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31819218"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550306"
 ---
 # <a name="nuget-311-release-notes"></a>3.1.1 NuGet 릴리스 정보
 
 [NuGet 3.1 릴리스 정보](../release-notes/nuget-3.1.md) | [NuGet 3.2 RC 릴리스 정보](../release-notes/nuget-3.2-RC.md)
 
-3.1.1 NuGet 릴리스된 패치라고는 2015 년 7 월 27 일 수정 프로그램 Powershell 정책 구현에 영향을 받는 버그에 특정 3.1 VSIX를 업데이트 합니다.
+NuGet 3.1.1 릴리스된 패치로 2015 년 7 월 27 일에 영향을 Powershell 정책을 구현 하는 버그에 특정 문제가 해결 3.1 VSIX에 업데이트 합니다.
 [https://github.com/NuGet/Home/issues/974](https://github.com/NuGet/Home/issues/974)

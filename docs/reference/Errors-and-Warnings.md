@@ -3,16 +3,15 @@ title: NuGet 오류 및 경고 참조
 description: 경고 및 다양 한 NuGet 작업 중 NuGet에서 발급 한 오류에 대 한 참조를 완료 합니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: df6ed51e182829ecef441f3a0b467f034e92415b
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 54ab55a4751dead7fc0a3413cc78b435b2815b94
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42793324"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550742"
 ---
 # <a name="errors-and-warnings"></a>오류 및 경고
 
