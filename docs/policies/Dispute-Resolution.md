@@ -3,15 +3,14 @@ title: NuGet 패키지 이름 분쟁 해결
 description: 브랜딩과 관련된 NuGet 패키지 게시자, 상표 및 기타 충돌 상황 간에 분쟁을 해결하기 위한 프로세스입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: f7749dec0726162f122db91397e9581cfad23890
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: a2f1fed578f1635296892ab925219f0f27883c02
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817547"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550374"
 ---
 # <a name="resolving-disputes-over-nuget-package-names"></a>NuGet 패키지 이름 분쟁 해결
 

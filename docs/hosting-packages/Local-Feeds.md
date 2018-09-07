@@ -3,15 +3,14 @@ title: 로컬 NuGet 피드 설정
 description: 로컬 네트워크에서 폴더를 사용하여 NuGet 패키지에 로컬 피드를 만드는 방법
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/06/2017
 ms.topic: conceptual
-ms.openlocfilehash: 5d86657bdf26452d027593b953168e28694acf82
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 91c072c8895ab4267c64fd04deae010ae5af4d37
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818687"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43545454"
 ---
 # <a name="local-feeds"></a>로컬 피드
 

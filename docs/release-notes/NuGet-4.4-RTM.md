@@ -3,16 +3,15 @@ title: NuGet 4.4 RTM 릴리스 정보
 description: NuGet 4.3 RTM에 대한 릴리스 정보(알려진 문제, 버그 수정, 추가된 기능 및 DCR 포함).
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 3e969274e69de03ca9851d31a627919dcc46bb7d
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 9ea11ad5476b02940b171fdc69ac0bf56598418d
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31821670"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548416"
 ---
 # <a name="nuget-44-rtm-release-notes"></a>NuGet 4.4 RTM 릴리스 정보
 

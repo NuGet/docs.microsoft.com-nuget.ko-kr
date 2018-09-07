@@ -3,15 +3,14 @@ title: Visual Studio에서 NuGet 패키지 복원 문제 해결
 description: Visual Studio의 일반적인 NuGet 복원 오류 및 해당 오류를 해결하는 방법의 설명입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8e817b8e95c53d27120bf56db52b45b69a5ff973
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 11acb90b45af73137faac1ec6bc403b109e6e808
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816974"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549602"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>패키지 복원 오류 문제 해결
 

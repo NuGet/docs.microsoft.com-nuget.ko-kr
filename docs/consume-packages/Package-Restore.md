@@ -3,15 +3,14 @@ title: NuGet 패키지 복원
 description: 복원을 사용하지 않도록 설정하고 버전을 제한하는 방법을 포함하여 NuGet에서 프로젝트가 종속된 패키지를 복원하는 방법을 간략히 설명합니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 34da7f5800671f03df6728e0b948c560f73fd13c
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: b95c4462a214a78452f9dbe35936620636c4f60b
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817049"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548774"
 ---
 # <a name="package-restore"></a>패키지 복원
 

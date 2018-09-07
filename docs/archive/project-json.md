@@ -3,15 +3,14 @@ title: NuGet에 대한 project.json 파일 참조
 description: 일부 프로젝트 형식에서 project.json은 프로젝트에 사용된 NuGet 패키지 목록을 유지 관리합니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 07/27/2017
 ms.topic: reference
-ms.openlocfilehash: e558bdb969d4c70f85a3c89a426f1c7b11525402
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: e4d8b5b9ab4605516827ead8939f278d110c7a48
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817127"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547786"
 ---
 # <a name="projectjson-reference"></a>project.json 참조
 

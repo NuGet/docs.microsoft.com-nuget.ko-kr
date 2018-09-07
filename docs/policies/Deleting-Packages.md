@@ -3,15 +3,14 @@ title: nuget.org에서 NuGet 패키지 삭제
 description: nuget.org에서 패키지를 제외하는 정책; 패키지가 다른 정책을 위반하는 경우를 제외하고 영구 삭제가 지원되지 않습니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 84a27c16968fa55ff1929db1adf98b8242a64fcf
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 901eb09711a6e32740c70829028da66b782870a0
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816994"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548130"
 ---
 # <a name="deleting-packages"></a>패키지 삭제
 

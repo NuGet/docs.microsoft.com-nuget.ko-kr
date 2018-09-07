@@ -3,15 +3,14 @@ title: NuGet 4.0 RC 릴리스 정보
 description: NuGet 4.0 RTM에 대한 릴리스 정보(알려진 문제, 버그 수정, 추가된 기능 및 DCR 포함)
 author: anangaur
 ms.author: anangaur
-manager: unnir
 ms.date: 03/03/2017
 ms.topic: conceptual
-ms.openlocfilehash: f1c5408f75966068e8fa11e63118426bbf562047
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: c27d0aa2e5c9af9cb15d2f487b93e93aca666214
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32045089"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547763"
 ---
 # <a name="nuget-40-rtm-release-notes"></a>NuGet 4.0 RTM 릴리스 정보
 

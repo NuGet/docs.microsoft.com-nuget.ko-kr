@@ -3,15 +3,14 @@ title: NuGet 패키지 다시 설치 및 업데이트
 description: Visual Studio에서 손상된 패키지 참조와 같이 패키지를 다시 설치하고 업데이트해야 하는 경우에 대해 자세히 설명합니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: 86765b56c994c96635feb8e706ff794001a1c1dc
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: c58cf38bab45793bef820e2c52914a91d745ec77
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818297"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43551785"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>패키지를 다시 설치하고 업데이트하는 방법
 

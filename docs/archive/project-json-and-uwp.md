@@ -3,15 +3,14 @@ title: UWP 프로젝트가 있는 NuGet project.json 파일
 description: project.json 파일을 사용하여 UWP(유니버설 Windows 플랫폼) 프로젝트에서 NuGet 종속성을 추적하는 방법을 설명합니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 07/17/2017
 ms.topic: conceptual
-ms.openlocfilehash: bd66f0afd6380a18118847d1da02285f5f3ded5d
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: ac3c137dd0ba50571737093eef11c8ab0ef932b2
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818729"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548666"
 ---
 # <a name="projectjson-and-uwp"></a>project.json 및 UWP
 

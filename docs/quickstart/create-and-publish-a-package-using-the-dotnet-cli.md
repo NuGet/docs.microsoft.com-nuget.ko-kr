@@ -3,15 +3,14 @@ title: dotnet CLI를 사용하여 NuGet 패키지 만들기 및 게시
 description: .NET Core CLI, dotnet을 사용하여 NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 0f71da0be27369712f718a7ab80d952a467aff2a
-ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
+ms.openlocfilehash: 02aa7bb9d27352bbecfc718ef5bd6ee33501018d
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39069676"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548431"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>빠른 시작: 패키지 만들기 및 게시(dotnet CLI)
 

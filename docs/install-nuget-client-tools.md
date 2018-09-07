@@ -3,15 +3,14 @@ title: NuGet 클라이언트 도구 설치
 description: 클라이언트 도구, dotnet 및 nuget CLI(명령줄 인터페이스) 및 Visual Studio용 패키지 관리자 설치에 대한 지침입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 04/09/2018
 ms.topic: quickstart
-ms.openlocfilehash: f136295cd46dd11a153b5f9c25a685a5a8dbd45a
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: b3be75a5af85bd3048c8b0eb71d90238b9349e09
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818123"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549724"
 ---
 # <a name="installing-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
 

@@ -3,15 +3,14 @@ title: Visual Studio의 NuGet API
 description: NuGet이 Visual Studio에서 Managed Extensibility Framework를 통해 내보내는 API에 대한 인터페이스 참조입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/09/2017
 ms.topic: reference
-ms.openlocfilehash: a47e2bb002b16172bf3d08134df5347ae4e4d272
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: c2a6675472070b49c9c5b723b9d24a1fa59c2971
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818775"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546212"
 ---
 # <a name="nuget-api-in-visual-studio"></a>Visual Studio의 NuGet API
 

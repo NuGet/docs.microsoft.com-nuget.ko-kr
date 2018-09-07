@@ -3,15 +3,14 @@ title: 지역화된 NuGet 패키지를 만드는 방법
 description: 단일 패키지에서 모든 어셈블리를 포함하거나 별도 어셈블리를 게시하여 지역화된 NuGet 패키지를 만드는 두 가지 방법에 대한 자세한 내용입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1088f174c6a1ec21f876ccc3d79c9b40eee4758f
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: b1c2511c1fbafc7f52029c23521fa55671b0b5c5
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817794"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546897"
 ---
 # <a name="creating-localized-nuget-packages"></a>지역화된 NuGet 패키지 만들기
 

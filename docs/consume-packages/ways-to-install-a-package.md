@@ -3,15 +3,14 @@ title: NuGet 패키지를 설치하는 방법
 description: 디스크 및 적용 가능한 프로젝트 파일에서 수행되는 작업을 포함하여 NuGet 패키지를 프로젝트에 설치하는 프로세스를 설명합니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
-ms.openlocfilehash: 0f59c3b7f1e32ae34889921c13d15074ef5c1260
-ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
+ms.openlocfilehash: 3cb3d5f97e9fb7ce292ddc5a95b61c13f64a17e7
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843383"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547668"
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>NuGet 패키지를 설치하는 다양한 방법
 

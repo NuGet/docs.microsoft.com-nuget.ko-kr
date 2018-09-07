@@ -3,15 +3,14 @@ title: dotnet CLI를 통한 NuGet 패키지 사용에 대한 소개 가이드
 description: .NET Core 프로젝트에서 NuGet 패키지를 설치하고 사용하는 프로세스에 대한 연습 자습서입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 2fac013de5457f26bbbaeff37209316daedcdbb0
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: bb24ccbfdd4a6a94cf7116f16b0862871e176e50
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816945"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549278"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>빠른 시작: dotnet CLI를 사용하여 패키지 설치 및 사용
 

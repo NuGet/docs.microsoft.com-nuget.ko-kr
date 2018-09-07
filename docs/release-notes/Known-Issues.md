@@ -3,15 +3,14 @@ title: 알려진 문제
 description: 인증, 패키지 설치 및 도구를 포함하여 알려진 NuGet 관련 문제입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 1f170f377a3394694e953a794f2c814388656c21
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: fc338ba3810a125f638a937cf14456bf519a24a8
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31822021"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548476"
 ---
 # <a name="known-issues-with-nuget"></a>알려진 NuGet 문제
 

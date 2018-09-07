@@ -3,15 +3,14 @@ title: NuGet 질문과 대답
 description: 명령줄 및 Visual Studio에서 NuGet을 사용하고 NuGet 갤러리에서 작업하는 경우와 관련된 일반적인 질문과 대답입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3fe59ef03632053182b034052e93a5f2e6f444bd
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 8c63abc9971623e0732ae8d973fafcd04c5d9f48
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42792951"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548806"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 

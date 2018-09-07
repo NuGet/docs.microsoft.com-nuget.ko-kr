@@ -3,15 +3,14 @@ title: NuGet 프로젝트 거버넌스
 description: 대리인, 참가자 및 사용자에 대한 역할과 책임을 포함한 NuGet 거버넌스 모델입니다.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 658901a86b42d6451e41c2c26906a6b6f444faf6
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 2aaaf41b3fc4ef3621333e5099780b5d7ef393bc
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818064"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549452"
 ---
 # <a name="nuget-governance"></a>NuGet 거버넌스
 
