@@ -28,7 +28,7 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 [CLI(명�
 
 ## <a name="cli-tools"></a>CLI 도구
 
-두 NuGet CLI 도구는 `dotnet.exe` 및 `nuget.exe`입니다. 비교를 보려면 [기능 가용성](#feature-availability)을 참조하세요.
+두 가지 NuGet CLI 도구는 `dotnet.exe` 및 `nuget.exe`입니다. 이 둘을 비교하려면 [기능 가용성](#feature-availability)을 참조하세요.
 
 ### <a name="dotnetexe-cli"></a>dotnet.exe CLI
 
@@ -37,7 +37,7 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 [CLI(명�
 설치:
 
 - 개발자 컴퓨터에서 [.NET Core SDK](https://aka.ms/dotnetcoregs)를 설치합니다.
-- 빌드 서버의 경우 [지속적인 통합에 .NET Core SDK 및 도구 사용](/dotnet/core/tools/using-ci-with-cli)에 대한 지침을 따르세요.
+- 빌드 서버의 경우 [.NET Core SDK 및 도구를 지속적 통합(CI)에 사용하는 방법에 대한 치침](/dotnet/core/tools/using-ci-with-cli)을 따르세요.
 
 자세한 내용은 [.NET Core 명령줄 인터페이스 도구](/dotnet/core/tools/index?tabs=netcore2x#tabpanel_fXL5YCOYDa_netcore2x)를 참조하세요.
 
@@ -53,7 +53,7 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 > Windows에서 `nuget update -self`를 사용하여 기존 nuget.exe를 최신 버전으로 업데이트합니다.
 
 > [!Note]
-> 최신 권장 NuGet CLI는 항상 `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`에서 사용할 수 있습니다. 이전 지속적인 통합 시스템과 호환되도록 이전 URL `https://nuget.org/nuget.exe`는 현재 [사용되지 않는 2.8.6 CLI 도구](https://github.com/NuGet/NuGetGallery/issues/5381)를 제공합니다.
+> 최신 권장 NuGet CLI는 항상 `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`에서 사용할 수 있습니다. 이전의 지속적인 통합(CI) 시스템과 호환되도록 이전 URL `https://nuget.org/nuget.exe`에서 현재 [사용되지 않는 2.8.6 CLI 도구](https://github.com/NuGet/NuGetGallery/issues/5381)를 제공합니다.
 
 ## <a name="visual-studio"></a>Visual Studio
 
@@ -63,12 +63,12 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 
 - Windows의 Visual Studio: **NuGet 패키지 관리자**는 Visual Studio 2012 이상 버전에 포함됩니다. 패키지 관리자는 대부분의 NuGet 작업을 실행할 수 있는 [패키지 관리자 UI](tools/package-manager-ui.md) 및 [패키지 관리자 콘솔](tools/package-manager-console.md)을 제공합니다.
   - Visual Studio 2017 설치 관리자에는 .NET을 사용하는 모든 워크로드가 있는 NuGet 패키지 관리자가 포함되어 있습니다. 별도로 설치하거나 패키지 관리자가 설치되어 있는지 확인하려면 Visual Studio 2017 설치 관리자를 실행하고 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** 아래에서 옵션을 확인합니다.
-  - 패키지 관리자 UI 및 콘솔은 Windows의 Visual Studio에 고유합니다. 현재 Mac용 Visual Studio에서는 사용할 수 없습니다.
+  - 패키지 관리자 UI 및 콘솔은 Windows의 Visual Studio에만 있습니다. 현재 Mac용 Visual Studio에서는 사용할 수 없습니다.
   - Visual Studio에는 `nuget.exe` CLI가 자동으로 포함되지 않습니다. 이 CLI는 이전에 설명한 대로 별도로 설치해야 합니다.
   - 패키지 관리자 콘솔 명령은 Windows의 Visual Studio 내에서만 작동하며 다른 PowerShell 환경에서는 작동하지 않습니다.
   - Visual Studio 2010 이하의 경우 “Visual Studio용 NuGet 패키지 관리자” 확장을 설치합니다.
   - Visual Studio 2013 및 2015용 NuGet 확장은 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)에서 다운로드할 수도 있습니다.
-  - 예정된 NuGet 기능을 미리 보려면 안정적인 Visual Studio 릴리스와 함께 작동하는 [Visual Studio 2017 미리 보기](https://www.visualstudio.com/vs/preview/)를 설치합니다. 미리 보기에 대한 문제를 보고하거나 아이디어를 공유하려면 [NuGet GitHub 리포지토리](https://github.com/Nuget/Home/issues)에서 문제를 엽니다.
+  - 예정된 NuGet 기능을 미리 보려면 Visual Studio Stable 릴리스와 함께 작동하는 [Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/)를 설치합니다. Preview에 대한 문제를 보고하거나 아이디어를 공유하려면 [NuGet GitHub 리포지토리](https://github.com/Nuget/Home/issues)에서 이슈를 제기합니다.
 
 ## <a name="feature-availability"></a>기능 가용성
 
@@ -107,4 +107,4 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 - [패키지 만들기](create-packages/creating-a-package.md)
 - [패키지 게시](create-packages/publish-a-package.md)
 
-Windows에서 작업하는 개발자는 NuGet 패키지를 시각적으로 탐색, 생성 및 편집할 수 있는 오픈 소스 독립 실행형 도구인 [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)를 탐색할 수도 있습니다. 예를 들어 패키지를 다시 빌드할 필요 없이 패키지 구조를 실험적으로 변경하는 것이 매우 유용합니다.
+Windows에서 작업하는 개발자는 NuGet 패키지를 시각적으로 탐색, 생성 및 편집할 수 있는 오픈 소스 독립 실행형 도구인 [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)를 탐색할 수도 있습니다. 예를 들어 패키지를 다시 빌드할 필요 없이 패키지 구조를 실험적으로 변경하고자 할 때 매우 유용합니다.
