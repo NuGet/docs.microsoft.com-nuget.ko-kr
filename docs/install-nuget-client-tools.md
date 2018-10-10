@@ -37,7 +37,7 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 [CLI(명�
 설치:
 
 - 개발자 컴퓨터에서 [.NET Core SDK](https://aka.ms/dotnetcoregs)를 설치합니다.
-- 빌드 서버의 경우 [.NET Core SDK 및 도구를 지속적 통합(CI)에 사용하는 방법에 대한 치침](/dotnet/core/tools/using-ci-with-cli)을 따르세요.
+- 빌드 서버의 경우 [지속적인 통합에 .NET Core SDK 및 도구 사용](/dotnet/core/tools/using-ci-with-cli)에 대한 지침을 따르세요.
 
 자세한 내용은 [.NET Core 명령줄 인터페이스 도구](/dotnet/core/tools/index?tabs=netcore2x#tabpanel_fXL5YCOYDa_netcore2x)를 참조하세요.
 
