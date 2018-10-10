@@ -10,7 +10,7 @@ OS 배포에 따라 동작이 약간 다를 수 있습니다.
 
 1. [Mono 4.4.2 이상](http://www.mono-project.com/docs/getting-started/install/)을 설치합니다.
 
-1. 쉘 프롬프트에서 다음 명령을 실행합니다.
+1. 셸 프롬프트에서 다음 명령을 실행합니다.
 
     ```bash
     # Download the latest stable `nuget.exe` to `/usr/local/bin`
@@ -24,4 +24,4 @@ OS 배포에 따라 동작이 약간 다를 수 있습니다.
     alias nuget="mono /usr/local/bin/nuget.exe"
     ```
 
-1. 쉘을 다시 로드합니다.  매개 변수 없이 `nuget`을 입력하여 설치를 테스트합니다. NuGet CLI 도움말이 표시됩니다.
+1. 셸을 다시 로드합니다. 매개 변수 없이 `nuget`을 입력하여 설치를 테스트합니다. NuGet CLI 도움말이 표시됩니다.
