@@ -34,7 +34,6 @@ nuget ? [command] [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| Api 키 | 대상 리포지토리에 대한 API 키입니다. 없는 경우 구성 파일에 지정된 값이 사용됩니다. |
 | 구성 파일 | 수정할 NuGet 구성 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
 | 강제로 영어로 출력 | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
 | 도움말 | 명령어에 대한 도움말을 표시합니다. |
