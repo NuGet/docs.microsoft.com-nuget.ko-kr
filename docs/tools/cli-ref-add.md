@@ -16,7 +16,7 @@ ms.locfileid: "43545836"
 
 **적용 대상**: 게시 패키지 &bullet; **지원 되는 버전**: 3.3 이상
 
-비 HTTP 패키지 원본 (폴더 또는 UNC 경로)에 패키지 ID와 버전 번호에 대 한 폴더가 만들어지고 여기서 계층형 레이아웃으로 지정 된 패키지를 추가 합니다. 예를 들어:
+특정한 패키지를 폴더나 UNC 경로와 같은 비 HTTP 패키지 소스에 패키지 이름과 버전 번호로 된 폴더 내부에 계층 레이아웃으로 추가합니다.  예를 들어:
 
     \\myserver\packages
       └─<packageID>
@@ -25,9 +25,9 @@ ms.locfileid: "43545836"
           ├─<packageID>.<version>.nupkg.sha512
           └─<packageID>.nuspec
 
-복원 하거나 패키지 원본에 대 한 업데이트를 계층형 레이아웃 훨씬 더 나은 성능을 제공 합니다.
+해당 패키지에 대한 복원이나 업데이트를 할 때, 위와 같은 계층 레이아웃은 더 나은 성능을 제공합니다.
 
-대상 패키지 원본에는 패키지의 모든 파일을 확장 하려면 사용 된 `-Expand` 전환 합니다. 일반적으로 이렇게 추가 하위 폴더와 같은 대상에 나타나는 `tools` 고 `lib`입니다.
+원하는 패키지 소스 폴더 내부의 모든 파일을 확장하려면 `-Expand`를 사용하여 전환합니다. 일반적으로 `tools` 와 `lib`이라는 추가적인 하위폴더가 목적지 폴더 내부에 보일 수 있습니다.
 
 ## <a name="usage"></a>사용법
 
@@ -35,18 +35,18 @@ ms.locfileid: "43545836"
 nuget add <packagePath> -Source <sourcePath> [options]
 ```
 
-여기서 `<packagePath>` 에 추가 하려면 패키지에 경로 이름 및 `<sourcePath>` 패키지를 추가할 폴더 기반 패키지 원본을 지정 합니다. HTTP 소스는 지원 되지 않습니다.
+여기서 `<packagePath>`는 추가하고자 하는 패키지의 위치를, `<sourcePath>`는 추가할 패키지 소스의 위치를 의미합니다. HTTP 소스는 지원되지 않습니다.
 
 ## <a name="options"></a>옵션
 
 | 옵션 | 설명 |
 | --- | --- |
-| ConfigFile | NuGet 구성 파일을 적용 합니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
-| Expand | 패키지의 패키지 원본에 있는 모든 파일을 추가합니다. |
-| ForceEnglishOutput | *(3.5 이상)*  고정 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
-| 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
-| 자세한 정도 | 출력에 표시 되는 세부 정보의 양을 지정: *정상적인*, *quiet*, *자세한*합니다. |
+| 설정 파일 | 적용할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
+| 확장 | 패키지의 패키지 원본에 있는 모든 파일을 추가합니다. |
+| 강제로 영어로 출력 | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
+| 도움말 | 명령어에 대한 도움말을 표시합니다. |
+| NonInteractive | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
+| 자세한 정도 | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
 
 또한 참조 [환경 변수](cli-ref-environment-variables.md)
 
