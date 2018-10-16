@@ -16,7 +16,7 @@ ms.locfileid: "43546480"
 
 **모든 버전에서 모두 지원됩니다.**
 
-NuGet 구성 값을 불러오거나 설정할 수 있습니다. 추가 사용법에 대한 정보는 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)를 통해 확인할 수 있습니다. 사용할 수 있는 키 값에 대한 자세한 내용은 [NuGet 구성 파일 참조](../reference/nuget-config-file.md)를 볼 수 있습니다.
+NuGet 구성 값을 불러오거나 설정할 수 있습니다. 추가 사용법에 대한 정보는 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)을 통해 확인할 수 있습니다. 사용할 수 있는 키 값에 대한 자세한 내용은 [NuGet 구성 파일 참조](../reference/nuget-config-file.md)를 볼 수 있습니다.
 
 ## <a name="usage"></a>사용법
 
@@ -27,9 +27,9 @@ nuget config -AsPath <name> [options]
 
 여기서 `<name>`과 `<value>`는 구성 파일에서 설정할 키-값 쌍을 지정합니다. 필요에 따라 쌍을 지정할 수 있습니다. 값을 제거하려면 이름과 `=`로 해당 키에 빈 값을 지정해주시면 됩니다.
 
-허용되는 키 이름에 대해서는 [NuGet 구성 파일 참조](../reference/nuget-config-file.md)를 볼 수 있습니다.
+허용되는 키 이름은 [NuGet 구성 파일 참조](../reference/nuget-config-file.md)에서 확인할 수 있습니다.
 
-NuGet 3.4 이상에서는 `<value>` 는 [환경 변수](cli-ref-environment-variables.md)를 사용할 수 있습니다.
+NuGet 3.4 이상에서 '<value>`는 [환경 변수](cli-ref-environment-variables.md)를 사용할 수 있습니다.
 
 ## <a name="options"></a>옵션
 
@@ -37,7 +37,7 @@ NuGet 3.4 이상에서는 `<value>` 는 [환경 변수](cli-ref-environment-vari
 | --- | --- |
 | AsPath | 구성 파일의 경로를 반환합니다. `-Set`이 사용될 때 옵션은 무시됩니다. |
 | ConfigFile | 수정할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
-| 강제로 영어로 출력 | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
+| ForceEnglishOutput | *(3.5 이상)* 현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
 | 도움말 | 명령어에 대한 도움말을 표시합니다. |
 | NonInteractive | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
 | 자세한 정도 | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
