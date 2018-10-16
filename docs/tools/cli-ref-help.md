@@ -34,14 +34,14 @@ nuget ? [command] [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| 구성 파일 | 수정할 NuGet 구성 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
-| 강제로 영어로 출력 | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
-| 도움말 | 명령어에 대한 도움말을 표시합니다. |
-| 마크다운 | `-All` 인수를 사용하는 경우 상세한 도움말을 마크다운 형식으로 출력합니다. 이외의 경우 이 옵션은 무시됩니다. |
-| 대화형 모드 사용하지 않기 | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
-| 로그 출력 레벨 | 출력에 표시 되는 세부 정보의 양을 지정: *정상적인*, *quiet*, *자세한*합니다. |
-
-또한 [환경 변수](cli-ref-environment-variables.md)에 대한 정보를 참고할 수 있습니다.
+| 모두 | 사용 가능한 명령 모두;에 대 한 자세한 도움말을 인쇄 특정 명령을 지정 하는 경우 무시 됩니다. |
+| ConfigFile | NuGet 구성 파일을 적용 합니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
+| ForceEnglishOutput | *(3.5 이상)*  고정 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
+| 도움말 | 도움말 도움말 명령 자체에 대 한 정보를 표시 합니다. |
+| Markdown | 마크 다운 형식으로 사용 하는 경우 자세한 도움말을 인쇄 `-All`합니다. 그렇지 않으면 무시 됩니다. |
+| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| 자세한 정도 | 출력에 표시 되는 세부 정보의 양을 지정: *정상적인*, *quiet*, *자세한*합니다. |
+또한 참조 [환경 변수](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>예제
 
