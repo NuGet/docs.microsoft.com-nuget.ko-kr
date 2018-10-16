@@ -41,7 +41,6 @@ nuget ? [command] [options]
 | Markdown | 마크 다운 형식으로 사용 하는 경우 자세한 도움말을 인쇄 `-All`합니다. 그렇지 않으면 무시 됩니다. |
 | NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
 | 자세한 정도 | 출력에 표시 되는 세부 정보의 양을 지정: *정상적인*, *quiet*, *자세한*합니다. |
-
 또한 참조 [환경 변수](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>예제
