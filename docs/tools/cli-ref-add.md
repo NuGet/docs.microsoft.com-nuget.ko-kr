@@ -41,9 +41,9 @@ nuget add <packagePath> -Source <sourcePath> [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| 설정 파일 | 적용할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
-| 확장 | 패키지의 패키지 원본에 있는 모든 파일을 추가합니다. |
-| 강제로 영어로 출력 | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
+| ConfigFile | 적용할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
+| Expand | 패키지의 원본에 있는 모든 파일을 추가합니다. |
+| ForceEnglishOutput | *(3.5 이상)* 현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
 | 도움말 | 명령어에 대한 도움말을 표시합니다. |
 | NonInteractive | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
 | 자세한 정도 | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
