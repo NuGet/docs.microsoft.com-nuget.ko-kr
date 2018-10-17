@@ -14,7 +14,7 @@ ms.locfileid: "43548512"
 ---
 # <a name="delete-command-nuget-cli"></a>delete 명령 (NuGet CLI)
 
-**적용 대상:** 게시 패키지 &bullet; **지원 되는 버전:** 모든
+**모든 버전에서 모두 지원됩니다.**
 
 패키지 소스 또는 패키지 목록에서 삭제합니다. Nuget.org에서 delete 명령어는 [패키지 목록에서 삭제](../policies/deleting-packages.md)의 의미를 갖습니다.
 

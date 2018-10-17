@@ -14,7 +14,7 @@ ms.locfileid: "43546480"
 ---
 # <a name="config-command-nuget-cli"></a>구성 명령 (NuGet CLI)
 
-**적용 대상:** 모든 &bullet; **지원 되는 버전**: 모두
+****모든 버전에서 모두 지원됩니다.**
 
 NuGet 구성 값을 불러오거나 설정할 수 있습니다. 추가 사용법에 대한 정보는 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)을 통해 확인할 수 있습니다. 사용할 수 있는 키 값에 대한 자세한 내용은 [NuGet 구성 파일 참조](../reference/nuget-config-file.md)를 볼 수 있습니다.
 

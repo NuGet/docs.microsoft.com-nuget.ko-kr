@@ -24,7 +24,7 @@ nuget.exe를 통해 많은 작업이나, 사용자, 컴퓨터 전체에 영향�
 | no_proxy | 프록시를 사용하지 않고 도메인을 구성하는 방법입니다. | 여러 도메인을 쉼표(,)로 구분하여 사용할 수 있습니다. |
 | EnableNuGetPackageRestore | 패키지 복원에 필요한 경우 NuGet이 암시적으로 동의하는지에 대한 플래그입니다. | *true* 또는 *1*이 동의하는 플래그로 간주되고, 다른 모든 값은 동의하지 않음으로 간주됩니다. |
 | NUGET_EXE_NO_PROMPT | exe의 자격 증명 프롬프트가 뜨지 않도록 막습니다. | Null과 빈 문자열만 제외하고 다른 값은 모두 참으로 간주합니다. |
-| FORCE_NUGET_EXE_INTERACTIVE | 대화형 모드를 사용할지에 대한 전역 환경 변수입니다. | Null과 빈 문자열만 제외하고 다른 값은 모두 참으로 간주합니다. |
+| FORCE_NUGET_EXE_INTERACTIVE | 대화형 모드를 사용할지에 대한 전역 환경 변수입니다. | Null 또는 빈 문자열을 제외하고 다른 값은 모두 참으로 간주합니다. |
 | NUGET_PACKAGES | [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)에 정의된 *전역 패키지* 폴더에 대한 경로를 지정합니다. | 절대 경로로 지정합니다. |
 | NUGET_FALLBACK_PACKAGES | 대체(fallback) 전역 패키지 폴더입니다. | 여러 절대 경로를 세미콜론(;)으로 구분하여 사용할 수 있습니다. |
 | NUGET_HTTP_CACHE_PATH | [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)에 정의된 *http 캐시에* 대한 경로를 지정합니다. | 절대 경로로 지정합니다. |
