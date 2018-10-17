@@ -16,7 +16,7 @@ ms.locfileid: "43545836"
 
 **적용 대상**: 게시 패키지 &bullet; **지원 되는 버전**: 3.3 이상
 
-특정한 패키지를 폴더나 UNC 경로와 같은 비 HTTP 패키지 소스에 패키지 이름과 버전 번호로 된 폴더 내부에 계층 레이아웃으로 추가합니다.  예를 들어:
+특정한 패키지를 폴더나 UNC 경로와 같은 비 HTTP 패키지 소스에 패키지 이름과 버전 번호로 된 폴더 내부에 계층 레이아웃으로 추가합니다. 예를 들어:
 
     \\myserver\packages
       └─<packageID>
@@ -43,7 +43,7 @@ nuget add <packagePath> -Source <sourcePath> [options]
 | --- | --- |
 | ConfigFile | 적용할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
 | Expand | 패키지의 원본에 있는 모든 파일을 추가합니다. |
-| ForceEnglishOutput | *(3.5 이상)* 현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
+| ForceEnglishOutput | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
 | 도움말 | 명령어에 대한 도움말을 표시합니다. |
 | NonInteractive | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
 | 자세한 정도 | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
