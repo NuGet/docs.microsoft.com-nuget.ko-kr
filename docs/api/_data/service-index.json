@@ -1,0 +1,29 @@
+{
+  "version": "3.0.0",
+  "resources": [
+    {
+      "@id": "https://api.nuget.org/v3-flatcontainer/",
+      "@type": "PackageBaseAddress/3.0.0",
+      "comment": "URL의 Azure storage 형식 https://api.nuget.org/v3-flatcontainer/ {id 아래}에서.NET Core에 대 한 NuGet 패키지 등록 정보는 저장 된 기본 / {id 아래}. {0} 버전 아래}.nupkg"
+    },
+    {
+      "@id": "https://www.nuget.org/api/v2/package",
+      "@type": "PackagePublish/2.0.0"
+    },
+    {
+      "@id": "https://api-v2v3search-0.nuget.org/query",
+      "@type": "SearchQueryService/3.0.0-rc",
+      "comment": "RC 클라이언트에서 사용 되는 (기본) NuGet 검색 서비스의 끝점을 쿼리"
+    },
+    {
+      "@id": "https://api-v2v3search-0.nuget.org/autocomplete",
+      "@type": "SearchAutocompleteService/3.0.0-rc",
+      "comment": "RC 클라이언트에서 사용 되는 NuGet 검색 서비스 (기본)의 자동 완성 끝점"
+    },
+    {
+      "@id": "https://api.nuget.org/v3/registration2/",
+      "@type": "RegistrationsBaseUrl/3.0.0-rc",
+      "comment": "기본 URL의 Azure storage NuGet 패키지 등록 정보를 저장할 RC 클라이언트에서 사용 합니다. 기본 URL이는 SemVer 2.0.0 패키지를 포함 하지 않습니다."
+    }
+  ]
+}
