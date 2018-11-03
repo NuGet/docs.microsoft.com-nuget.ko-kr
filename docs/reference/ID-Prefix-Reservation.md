@@ -6,12 +6,12 @@ ms.author: diverdan92
 ms.date: 10/09/2017
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 0711f3ee00b4a387d676ca43c98a9467effed90a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 32f83bede42f7643a9a4fed593643eefea0453c1
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546592"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981004"
 ---
 # <a name="package-id-prefix-reservation"></a>패키지 ID 접두사 예약
 
@@ -65,7 +65,7 @@ ms.locfileid: "43546592"
 
 1. 승인 검토 [ID 접두사 예약에 대 한 조건을](#id-prefix-reservation-criteria)합니다.
 
-2. 외에도 예약 하려는 네임 스페이스를 확인할 [고급 접두사 예약 시나리오](#advanced-prefix-reservation-scenarios) 필요할 수 있습니다.
+2. 외에도 예약 하려는 접두사를 확인할 [고급 접두사 예약 시나리오](#advanced-prefix-reservation-scenarios) 필요할 수 있습니다.
 
 3. 에 게 메일 보내기 [ account@nuget.org ](mailto:account@nuget.org) 소유자를 사용 하 여 이름에 표시할 [nuget.org](https://www.nuget.org/)를 요청 하는 모든 예약 된 접두사와 합니다. 여러 소유자에 게 접두사 하위 집합을 위임할 경우 모든 소유자 표시 이름을 언급 하 고 접두사 하위 집합에 있는지 확인 합니다.
 

@@ -31,7 +31,6 @@
 ## 안내선
 ### [UWP 패키지 만들기](guides/create-uwp-packages.md)
 ### [NuGet 패키지인 UI 컨트롤 만들기](guides/create-UI-controls.md)
-### [Visual Studio 2015를 사용하여 NET Standard/NET Framework 패키지 만들기](guides/create-net-standard-packages-vs2015.md)
 ### [Visual Studio 2015를 사용하여 Xamarin용 패키지 만들기](guides/create-packages-for-xamarin.md)
 # 패키지 호스트
 ## [개요](hosting-packages/overview.md)

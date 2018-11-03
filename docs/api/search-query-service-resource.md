@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: f04c6a62fc3b5056ad82930447b8ba46a8797fd2
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: cfcb52ba7689f1b392c782b4ad42ba820a76c8bf
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548093"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981134"
 ---
 # <a name="search"></a>검색
 
@@ -99,7 +99,7 @@ projectUrl     | string                     | 아니요       |
 totalDownloads | 정수                    | 아니요       | 이 값에는 다운로드의 합으로 유추할 수는 `versions` 배열
 확인       | boolean                    | 아니요       | 패키지 인지 여부를 나타내는 JSON 부울 [확인](../reference/id-prefix-reservation.md)
 
-Nuget.org에서 확인 된 패키지는 예약된 된 ID 접두사를 일치 하는 패키지 ID를 포함 하며 예약된 된 네임 스페이스의 소유자 중 한 명이 소유한 하나. 자세한 내용은 참조는 [ID 접두사 예약에 대 한 설명서](../reference/id-prefix-reservation.md)합니다.
+Nuget.org에서 확인 된 패키지는 예약된 된 ID 접두사를 일치 하는 패키지 ID를 포함 하며 예약 된 접두사의 소유자 중 한 명이 소유한 하나. 자세한 내용은 참조는 [ID 접두사 예약에 대 한 설명서](../reference/id-prefix-reservation.md)합니다.
 
 검색 결과 개체에 포함 된 메타 데이터를 최신 패키지 버전에서 수행 됩니다. 각 항목에는 `versions` 배열이 다음 속성을 사용 하 여 JSON 개체:
 

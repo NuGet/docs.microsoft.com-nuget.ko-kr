@@ -10,12 +10,12 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 651bbe63ec95fcedb8e9504022d08d6ba7f9219e
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 1de6ddeca6295c621a90409807af198bc3c7a068
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551759"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981186"
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 패키지 관리자 UI
 
@@ -70,7 +70,11 @@ Windows의 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하면 쉽
 
     ![패키지를 업데이트 하는 중](media/UpdatePackages.png)
 
-1. <a name="implicit_reference"></a>일부 패키지는 **업데이트** 단추가 비활성화 되 고 있는지 "암시적으로 참조 하는 SDK" 라는 메시지가 나타납니다 (또는 "AutoReferenced"). 메시지는 Microsoft.NETCore.App 등 Microsoft.NETStandard.Library, 패키지를 더 큰 프레임 워크 또는 SDK의 일부 이며 독립적으로 업데이트 되지 않아야 나타냅니다. (이러한 패키지는 내부적으로 표시 `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) 패키지를 업데이트 하려면 패키지 이름 포함 하는 SDK 유추는 자신이 속한, SDK를 업데이트 합니다. 예를 들어,.NET Core SDK의 일부인 Microsoft.NETCore.App 같은 패키지, 따라서.NET Core SDK 설치를 업데이트 해야 합니다.
+1. <a name="implicit_reference"></a>일부 패키지는 **업데이트** 단추가 비활성화 되 고 있는지 "암시적으로 참조 하는 SDK" 라는 메시지가 나타납니다 (또는 "AutoReferenced"). 이 메시지는 패키지를 더 큰 프레임 워크 또는 SDK의 일부 이며 독립적으로 업데이트 되지 않아야 나타냅니다. (이러한 패키지는 내부적으로 표시 `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) 예를 들어 `Microsoft.NETCore.App` .NET Core SDK의 일부인 아니며 패키지 버전의 응용 프로그램에서 사용 하는 런타임 프레임 워크 버전과 동일 합니다. 해야 [.NET Core 설치를 업데이트](https://aka.ms/dotnet-download) 새 버전의 ASP.NET Core 및.NET Core 런타임을 가져오려고 합니다. [.NET Core 메타 패키지 및 버전 관리에 대 한 자세한 내용은이 문서를 참조 하세요.](/dotnet/core/packages)합니다. 이 일반적으로 사용 되는 패키지에 적용 됩니다.
+    * Microsoft.AspNetCore.All
+    * Microsoft.AspNetCore.App
+    * Microsoft.NETCore.App
+    * NETStandard.Library
 
     ![참조 또는 AutoReferenced로 암시적으로 표시 되는 예제 패키지](media/PackageManagerUIAutoReferenced.png)
 

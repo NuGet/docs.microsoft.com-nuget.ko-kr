@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: ddb22d819a1a4e41a2019705789a11de6cad1d79
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5fe8b35125d9171a37afb337ed08d06445e5f890
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548444"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981160"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -86,7 +86,7 @@ UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배�
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 패키지를 설치하기 전에 클라이언트에서 소비자가 패키지 라이선스에 동의하도록 요구하는 메시지를 표시해야 할지 여부를 지정하는 부울 값입니다.
 #### <a name="developmentdependency"></a>developmentDependency
-*(2.8 이상)* 패키지가 다른 패키지의 종속성으로 포함되지 않도록 패키지를 개발 전용 종속성으로 표시할지 여부를 지정 하는 부울 값입니다.
+*(2.8 이상)* 패키지가 다른 패키지의 종속성으로 포함되지 않도록 패키지를 개발 전용 종속성으로 표시할지 여부를 지정 하는 부울 값입니다. PackageReference (NuGet 4.8 이상)를 사용 하 여이 플래그 컴파일 타임 자산을 컴파일에서 제외 됩니다 것를 의미 하기도 합니다. 참조 [PackageReference DevelopmentDependency 지원](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
 #### <a name="summary"></a>요약
 UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 `description`의 잘린 버전이 사용됩니다.
 #### <a name="releasenotes"></a>releaseNotes
@@ -118,7 +118,7 @@ nuget.exe 및 Visual Studio 패키지 관리자에 의해 적용되는, 이 패�
 #### <a name="contentfiles"></a>contentFiles
 *(3.3 이상)* 사용하는 프로젝트에 포함할 콘텐츠 파일을 식별하는 `<files>` 요소 컬렉션입니다. 이러한 파일은 프로젝트 시스템 내에서 사용되는 방법을 설명하는 일단의 특성으로 지정됩니다. 아래의 [패키지에 포함할 파일 지정](#specifying-files-to-include-in-the-package)을 참조하세요.
 #### <a name="files"></a>파일 
-`<package>` 노드는 패키지에 포함할 어셈블리 및 콘텐츠 파일을 지정하기 위해 `<files>` 노드를 `<metadata>`에 대한 형제로 포함하고 a 또는 `<contentFiles>` 자식을 `<metadata>` 아래에 포함할 수 있습니다. 자세한 내용은 이 항목의 뒷부분에 있는 [어셈블리 파일 포함](#including-assembly-files) 및 [콘텐츠 파일 포함](#including-content-files)을 참조하세요.
+`<package>` 노드가 포함 될 수 있습니다를 `<files>` 노드에 대 한 형제로 `<metadata>`, 및 `<contentFiles>` 아래에 자식을 `<metadata>`패키지에 포함할 어셈블리 및 콘텐츠 파일을 지정 합니다. 자세한 내용은 이 항목의 뒷부분에 있는 [어셈블리 파일 포함](#including-assembly-files) 및 [콘텐츠 파일 포함](#including-content-files)을 참조하세요.
 
 ## <a name="replacement-tokens"></a>대체 토큰
 

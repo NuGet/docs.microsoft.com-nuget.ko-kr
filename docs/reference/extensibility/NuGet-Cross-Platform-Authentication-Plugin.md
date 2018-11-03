@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1258ca4b30cb674c3832f12262940729438dd5b0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d80339eb81ade1cf2c323a604cc4fac06dcb1012
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546636"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981056"
 ---
 # <a name="nuget-cross-platform-authentication-plugin"></a>NuGet 교차 플랫폼 인증 플러그 인
 
@@ -36,7 +36,7 @@ MSBuild.exe는 기본적으로 비 대화형 MSBuild.exe 인증 메커니즘은 
 
 ## <a name="creating-a-cross-platform-authentication-plugin"></a>플랫폼 간 인증 플러그 인 만들기
 
-샘플 구현에서 찾을 수 있습니다 [MSCredProvider 플러그 인](https://github.com/Microsoft/mscredprovider)합니다.
+샘플 구현에서 찾을 수 있습니다 [Microsoft 자격 증명 공급자 플러그 인](https://github.com/Microsoft/artifacts-credprovider)합니다.
 
 것 플러그 인 NuGet 클라이언트 도구에서 제시한 보안 요구 사항을 준수 하는지 매우 중요 합니다.
 인증 하는 플러그 인을 되도록 플러그 인에 대 한 버전이 필요한 최소 *2.0.0*합니다.
