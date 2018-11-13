@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: reference
-ms.openlocfilehash: c2a6675472070b49c9c5b723b9d24a1fa59c2971
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: f1a11eb63c07a5d737a9474870f5653f6f7d850a
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546212"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50980978"
 ---
 # <a name="nuget-api-in-visual-studio"></a>Visual Studio의 NuGet API
 
@@ -24,8 +24,8 @@ NuGet 3.3 이상에서는 NuGet에서 `NuGet.VisualStudio.dll` 어셈블리의 `
 - [`IVsPackageInstallerProjectEvents`](#ivspackageinstallerprojectevents-interface): 패키지를 설치하거나 제거하는 일괄 처리 이벤트
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): 현재 솔루션에 설치된 패키지를 검색하고. 지정된 패키지가 프로젝트에 설치되어 있는지 확인하는 메서드
 - [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): NuGet 패키지에 대한 다른 패키지 관리자 제안을 제공하는 메서드
-- [`IVsPackageMetadata`](#ivspackagemetadata-interface); 설치된 패키지에 대한 정보를 검색하는 메서드
-- [`IVsPackageProjectMetadata`](#ivspackageprojectmetadata-interface); NuGet 작업이 실행되는 프로젝트에 대한 정보를 검색하는 메서드
+- [`IVsPackageMetadata`](#ivspackagemetadata-interface): 설치된 패키지에 대한 정보를 검색하는 메서드
+- [`IVsPackageProjectMetadata`](#ivspackageprojectmetadata-interface): NuGet 작업이 실행되는 프로젝트에 대한 정보를 검색하는 메서드
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): 프로젝트에 설치된 패키지를 복원하는 메서드
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): NuGet 패키지 원본 목록을 검색하는 메서드
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): 프로젝트에서 NuGet 패키지를 제거하는 메서드

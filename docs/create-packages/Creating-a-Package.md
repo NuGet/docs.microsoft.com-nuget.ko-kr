@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 37c2208f0942b12428dba9d664f25e7e4f3c0b72
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 1bc67927ddc463dcc3a0abe80fe20e625e188e63
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547376"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981173"
 ---
 # <a name="creating-nuget-packages"></a>NuGet 패키지 만들기
 
@@ -170,8 +170,9 @@ NuGet 패키지는 `.nupkg` 확장명으로 이름이 바뀐 ZIP 파일일 뿐�
 | 폴더 | 설명 | 패키지 설치 시의 작업 |
 | --- | --- | --- |
 | (루트) | readme.txt에 대한 위치 | 패키지를 설치할 때 Visual Studio에서 패키지 루트에 readme.txt 파일을 표시합니다. |
-| lib/{tfm} | 지정된 TFM(대상 프레임워크 모니커)에 대한 어셈블리(`.dll`), 문서(`.xml`) 및 기호(`.pdb`) 파일 | 어셈블리는 참조로 추가되고, `.xml` 및 `.pdb`는 프로젝트 폴더에 복사됩니다. 프레임워크 대상 특정의 하위 폴더를 만들려면 [여러 대상 프레임워크 지원](supporting-multiple-target-frameworks.md)을 참조하세요. |
-| runtimes | 아키텍처 특정 어셈블리(`.dll`), 기호(`.pdb`) 및 네이티브 리소스(`.pri`) 파일 | 어셈블리는 참조로 추가되고, 다른 파일은 프로젝트 폴더에 복사됩니다. [여러 대상 프레임워크 지원](supporting-multiple-target-frameworks.md)을 참조하세요. |
+| lib/{tfm} | 지정된 TFM(대상 프레임워크 모니커)에 대한 어셈블리(`.dll`), 문서(`.xml`) 및 기호(`.pdb`) 파일 | 어셈블리는 컴파일 및 런타임에 대한 참조로 추가됩니다. `.xml` 및 `.pdb`는 프로젝트 폴더에 복사됩니다. 프레임워크 대상 특정의 하위 폴더를 만들려면 [여러 대상 프레임워크 지원](supporting-multiple-target-frameworks.md)을 참조하세요. |
+| ref/{tfm} | 지정된 TFM(대상 프레임워크 모니커)에 대한 어셈블리(`.dll`) 및 기호(`.pdb`) 파일 | 어셈블리는 컴파일 시간에 대한 참조로만 추가됩니다. 따라서 프로젝트 bin 폴더에 아무것도 복사되지 않습니다. |
+| runtimes | 아키텍처 특정 어셈블리(`.dll`), 기호(`.pdb`) 및 네이티브 리소스(`.pri`) 파일 | 어셈블리는 런타임에 대한 참조로만 추가되고, 다른 파일은 프로젝트 폴더에 복사됩니다. 해당 컴파일 시간 어셈블리를 제공하려면 항상 `/ref/{tfm}` 폴더 아래에 해당하는 (TFM) `AnyCPU` 특정 어셈블리가 있어야 합니다. [여러 대상 프레임워크 지원](supporting-multiple-target-frameworks.md)을 참조하세요. |
 | 내용 | 임의 파일 | 콘텐츠가 프로젝트 루트에 복사됩니다. **content** 폴더를 궁극적으로 패키지를 사용하는 대상 응용 프로그램의 루트로 간주합니다. 패키지에서 응용 프로그램의 */images* 폴더에 이미지를 추가하도록 하려면 패키지의 *content/images* 폴더에 배치합니다. |
 | 빌드 | MSBuild `.targets` 및 `.props` 파일 | 프로젝트 파일 또는 `project.lock.json`(NuGet 3.x 이상)에 자동으로 삽입됩니다. |
 | 도구 | 패키지 관리자 콘솔에서 액세스할 수 있는 Powershell 스크립트 및 프로그램 | `tools` 폴더는 패키지 관리자 콘솔에 대한 `PATH` 환경 변수에만 추가 됩니다(특히 프로젝트를 빌드할 때는 MSBuild에 설정한 대로 `PATH`에 *추가되지 않음*). |

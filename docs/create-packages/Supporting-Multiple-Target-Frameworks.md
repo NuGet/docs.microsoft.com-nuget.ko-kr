@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/27/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0b22d48b9151b903a5307beafa5ccef14e5fecf3
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c59839240935e2a6c590dea3adf623313f79f02f
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551708"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981147"
 ---
 # <a name="supporting-multiple-net-framework-versions"></a>여러 .NET Framework 버전 지원
 
@@ -65,7 +65,13 @@ ms.locfileid: "43551708"
             \native
             \lib\uap10.0
 
+이러한 어셈블리는 런타임에만 사용할 수 있으므로 해당 컴파일 시간 어셈블리도 제공하려면 `AnyCPU` 어셈블리를 `/ref{tfm}` 폴더에 포함합니다. 
+
+NuGet은 항상 하나의 폴더에서 이러한 컴파일 또는 런타임 자산을 선택하므로, `/ref`의 호환 가능한 자산이 있는 경우 컴파일 시간 어셈블리를 추가하기 위해 `/lib`가 무시됩니다. 마찬가지로 `/runtime`의 일부 호환 가능한 자산이 있는 경우에도 런타임을 위해 `/lib`가 무시됩니다.
+
 `.nuspec` 매니페스트에서 이러한 파일을 참조하는 예제는 [UWP 패키지 만들기](../guides/create-uwp-packages.md)를 참조하세요.
+
+또한 [Packing a Windows store app component with NuGet](https://blogs.msdn.microsoft.com/mim/2013/09/02/packaging-a-windows-store-apps-component-with-nuget-part-2)(NuGet으로 Windows 스토어 앱 구성 요소 압축)을 참조하세요.
 
 ## <a name="matching-assembly-versions-and-the-target-framework-in-a-project"></a>프로젝트에서 어셈블리 버전 및 대상 프레임워크 일치
 

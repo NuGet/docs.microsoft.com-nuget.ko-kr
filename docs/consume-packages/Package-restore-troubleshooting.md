@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 11acb90b45af73137faac1ec6bc403b109e6e808
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: dacc95c557af016f535bc1b758473d7062f2ad3f
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549602"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981017"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>패키지 복원 오류 문제 해결
 
@@ -44,7 +44,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 이 오류는 하나 이상의 NuGet 패키지에 대한 참조를 포함하는 프로젝트를 빌드하려고 시도할 때 해당 패키지가 컴퓨터 또는 프로젝트에 현재 설치되지 않은 경우에 발생합니다.
 
-- PackageReference 관리 형식을 사용할 경우 이 오류는 [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md)(글로벌 패키지 및 캐시 폴더 관리)에 설명된 대로 패키지가 *global-packages* 폴더에 설치되지 않았음을 나타냅니다.
+- PackageReference 관리 형식을 사용할 경우 이 오류는 [전역 패키지 및 캐시 폴더 관리](managing-the-global-packages-and-cache-folders.md)에 설명된 대로 패키지가 *global-packages* 폴더에 설치되지 않았음을 나타냅니다.
 - `packages.config`를 사용할 경우 이 오류는 패키지가 솔루션 루트의 `packages` 폴더에 설치되어 있지 않음을 의미합니다.
 
 이러한 상황은 일반적으로 소스 제어 또는 다른 다운로드에서 프로젝트의 소스 코드를 가져올 때 발생합니다. 패키지는 nuget.org 같은 패키지 피드에서 복원할 수 있으므로 일반적으로 소스 제어 또는 다운로드에는 패키지가 없습니다([패키지 및 소스 제어](Packages-and-Source-Control.md) 참조). 그렇지 않고 이를 포함할 경우 리포지토리가 블로트되거나 불필요하게 큰 .zip 파일이 생성됩니다.

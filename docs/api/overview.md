@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 770173d6b84048cf42a5da46cbc474d8cf604a08
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 7bb5e83b29d1d7e4bf06accfccb73db3aa9ee025
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547505"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580339"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -49,16 +49,17 @@ NuGet V3 API V2 API의 후속 작업을 설정 하는 공식 NuGet 클라이언�
 
 합니다 **서비스 인덱스** 다양 한 리소스에 설명 합니다. 지원 되는 리소스의 현재 집합은 다음과 같습니다.
 
-리소스 이름                                                          | 필수 | 설명
----------------------------------------------------------------------- | -------- | -----------
+리소스 이름                                                           | 필수 | 설명
+----------------------------------------------------------------------  | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | 예      | 푸시 및 삭제 (또는 나열 취소) 패키지 있습니다.
 [`SearchQueryService`](search-query-service-resource.md)               | 예      | 필터 및 키워드는 패키지에 대 한 검색 합니다.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | 예      | 패키지 메타 데이터를 가져옵니다.
 [`PackageBaseAddress`](package-base-address-resource.md)               | 예      | 패키지 콘텐츠를 (.nupkg)를 가져옵니다.
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | 아니요       | 부분 문자열에서 패키지 Id 및 버전을 검색 합니다.
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | 아니요       | "신고" 웹 페이지 액세스에 대 한 URL을 생성 합니다.
-[`RepositorySignatures`](repository-signatures-resource.md)            | 아니요       | 리포지토리 서명에 사용 되는 인증서를 가져옵니다.
-[`Catalog`](catalog-resource.md)                                       | 아니요       | 모든 패키지 이벤트의 전체 레코드입니다.
+[`RepositorySignatures`](repository-signatures-resource.md)             | 아니요      | 리포지토리 서명에 사용 되는 인증서를 가져옵니다.
+[`Catalog`](catalog-resource.md)                                         | 아니요      | 모든 패키지 이벤트의 전체 레코드입니다.
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | 아니요      | 기호 패키지를 푸시하십시오.
 
 일반적으로 API 리소스에 의해 반환 되는 모든 이진이 아닌 데이터는 JSON을 사용 하 여 serialize 됩니다. 서비스 인덱스의 각 리소스에서 반환 되는 응답 스키마는 해당 리소스에 대해 개별적으로 정의 됩니다. 각 리소스에 대 한 자세한 내용은 위에 나열 된 항목을 참조 하세요.
 

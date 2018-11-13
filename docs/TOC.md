@@ -24,8 +24,8 @@
 ## [소스 및 구성 파일 변환](create-packages/source-and-config-file-transformations.md)
 ## [지역화된 패키지 만들기](create-packages/creating-localized-packages.md)
 ## [시험판 패키지](create-packages/prerelease-packages.md)
-## [네이티브 패키지](create-packages/native-packages.md)
-## [기호 패키지](create-packages/symbol-packages.md)
+## [네이티브 패키지 만들기](create-packages/native-packages.md)
+## [기호 패키지 만들기](create-packages/symbol-packages-snupkg.md)
 ## [패키지 서명](create-packages/sign-a-package.md)
 ## [패키지 게시](create-packages/publish-a-package.md)
 ## 안내선
@@ -198,6 +198,7 @@
 ## [방법: API를 사용하는 모든 패키지에 대한 쿼리](guides/api/query-for-all-published-packages.md)
 ## [서비스 인덱스](api/service-index.md)
 ## [푸시 및 삭제](api/package-publish-resource.md)
+## [기호 패키지 푸시](api/symbol-package-publish-resource.md)
 ## [검색](api/search-query-service-resource.md)
 ## [자동 완성](api/search-autocomplete-service-resource.md)
 ## [패키지 메타데이터](api/registration-base-url-resource.md)
