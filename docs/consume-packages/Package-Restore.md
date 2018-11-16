@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: b95c4462a214a78452f9dbe35936620636c4f60b
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: da69181aebe3bebcea6acd6e15fde6b77dd33452
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548774"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580300"
 ---
 # <a name="package-restore"></a>패키지 복원
 
@@ -62,9 +62,9 @@ ms.locfileid: "43548774"
         </packageRestore>
     </configuration>
     ```
-    <br/>
-    > [!Note]
-    >  Visual Studio를 시작하거나 빌드를 시작하기 전에 **EnableNuGetPackageRestore**이라는 환경 변수를 TRUE 또는 FALSE 값으로 설정하여 `packageRestore/enabled` 설정을 전역으로 재정의할 수 있습니다.
+
+> [!Note]
+>  Visual Studio를 시작하거나 빌드를 시작하기 전에 **EnableNuGetPackageRestore**이라는 환경 변수를 TRUE 또는 FALSE 값으로 설정하여 `packageRestore/enabled` 설정을 전역으로 재정의할 수 있습니다.
 
 - **Visual Studio에서 빌드 시 누락된 패키지를 자동으로 확인**: `NuGet.Config` 파일(Windows의 경우 `%AppData%\NuGet\NuGet.Config`, Mac/Linux의 경우 `~/.nuget/NuGet/NuGet.Config`)의 `packageRestore/automatic` 설정을 아래와 같이 변경하여 자동 복원을 제어합니다. 이 옵션을 설정하면 Visual Studio에서 빌드를 실행할 경우 누락된 모든 패키지가 자동으로 복원됩니다. 이 옵션은 MSBuild를 사용하여 명령줄에서 실행되는 빌드에 영향을 주지 않습니다.
 
