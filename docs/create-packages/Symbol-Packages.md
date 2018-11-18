@@ -6,14 +6,18 @@ ms.author: karann
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: ad1cf08437b4802d981f8c1a96ab9dc75425a2f0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 3321cba9082eb35b53ba693e246db18e5d8e187b
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550617"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580261"
 ---
-# <a name="creating-symbol-packages"></a>기호 패키지 만들기
+# <a name="creating-symbol-packages-legacy"></a>기호 패키지(레거시) 만들기
+
+> [!Important]
+> 기호 패키지에 대한 새 권장 형식은 .snupkg입니다. [기호 패키지(.snupkg) 만들기](Symbol-Packages-snupkg.md)를 참조하세요. </br>
+> .symbols.nupkg는 여전히 지원되지만 호환성 문제에서만 지원됩니다.
 
 NuGet에서는 nuget.org 또는 기타 소스에 대한 패키지를 빌드하는 것 외에도 연관된 기호 패키지를 만들고 SymbolSource 리포지토리에 게시하도록 지원합니다.
 

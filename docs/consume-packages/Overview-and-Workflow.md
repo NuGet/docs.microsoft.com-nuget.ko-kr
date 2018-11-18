@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: a5807a6895a76a7d6660d218b29e1d3a2802ca28
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5f52b00e0c45882fb7a4bd1c1a80022192f3be6b
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545050"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580248"
 ---
 # <a name="package-consumption-workflow"></a>패키지 사용 워크플로
 
@@ -18,7 +18,7 @@ nuget.org와 조직에서 설정할 수 있는 개인 패키지 갤러리 사이
 
 ![패키지 원본으로 이동, 패키지 찾기, 프로젝트에 설치, using 문 및 패키지 API 호출 추가를 수행하는 흐름](media/Overview-01-GeneralFlow.png)
 
-\*  _Visual Studio 및 dotnet.exe에만 해당합니다. nuget install 명령은 프로젝트 파일 또는 packages.config를 수정하지 않습니다. 이러한 항목은 수동으로 관리해야 합니다._
+\* _Visual Studio 및 `dotnet.exe` 전용. `nuget install` 명령은 프로젝트 파일 또는 `packages.config` 파일을 수정하지 않습니다. 이러한 항목은 수동으로 관리해야 합니다._
 
 자세한 내용은 [패키지 찾기 및 선택](../consume-packages/finding-and-choosing-packages.md) 및 [NuGet 패키지를 설치하는 다양한 방법](ways-to-install-a-package.md)을 참조하세요.
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8c63abc9971623e0732ae8d973fafcd04c5d9f48
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c136a3dffac38a68b80f730de1e4c3a3a9c8bd5d
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548806"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580365"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -166,7 +166,7 @@ NuGet은 모든 패키지에 서명을 권장합니다. 패키지 서명의 디�
 
 패키지에 대해 나열된 종속성은 패키지 자체에서 자동으로 생성되며 편집할 수 없습니다.
 
-또한 [staging.nuget.org](http://staging.nuget.org)에 패키지를 업로드하는 것은 공용 갤러리에서 패키지를 사용하지 않고도 패키지를 테스트하고 유효성을 검사할 수 있는 좋은 방법입니다.
+또한 [int.nugettest.org](https://int.nugettest.org)에 패키지를 업로드하는 것은 공용 갤러리에서 패키지를 사용하지 않고도 패키지를 테스트하고 유효성을 검사할 수 있는 좋은 방법입니다.
 
 **나중에 게시되는 패키지의 이름을 예약할 수 있나요?**
 
@@ -182,9 +182,9 @@ NuGet 커뮤니티에서 패키지 소유자와 다른 소프트웨어 소유자
 
 **내 테스트 패키지를 nuget.org에 업로드하는 것이 좋을까요?**
 
-테스트를 위해 [staging.nuget.org](http://staging.nuget.org) 또는 대체 공용 NuGet 서버(예: [myget.org](https://myget.org) 또는 [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/))를 사용할 수 있습니다.
+테스트를 위해 [int.nugettest.org](https://int.nugettest.org) 또는 대체 공용 NuGet 서버(예: [myget.org](https://myget.org) 또는 [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/))를 사용할 수 있습니다.
 
-staging.nuget.org에 업로드된 패키지는 유지되지 않을 수 있습니다. [Goodbye preview](http://blog.nuget.org/20130419/goodbye-preview.html)를 참조하세요.
+int.nugettest.org에 업로드된 패키지는 유지되지 않을 수 있습니다.
 
 **nuget.org에 업로드할 수 있는 패키지의 최대 크기는 무엇인가요?**
 

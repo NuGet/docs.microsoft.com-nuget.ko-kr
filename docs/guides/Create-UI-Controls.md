@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: dd36987e020c2daa02bb875aa9dbd69c85bba4d3
-ms.sourcegitcommit: 1bd72dca2f85b4267b9924236f1d23dd7b0ed733
+ms.openlocfilehash: dfbd6a3e6d59dfcea6394891703ea66bce5e8e92
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49951748"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580276"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>NuGet 패키지인 UI 컨트롤 만들기
 
@@ -89,7 +89,11 @@ Visual Studio 및 Blend의 자산 창에 있는 XAML 디자이너의 도구 상�
 
 도구 상자/자산 창에서 사용자 지정 아이콘을 표시하려면 이미지를 프로젝트 또는 "Namespace.ControlName.extension"이라는 해당 `design.dll` 프로젝트에 추가하고 빌드 작업을 "포함 리소스"로 설정합니다. 또한 연결된 `AssemblyInfo.cs`가 ProvideMetadata 특성(`[assembly: ProvideMetadata(typeof(RegisterMetadata))]`)을 지정하는지 확인해야 합니다. 이 [샘플](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20)을 참조합니다.
 
-지원되는 형식은 `.png`, `.jpg`, `.jpeg`, `.gif` 및 `.bmp`입니다. 권장된 이미지 크기는 64x64픽셀입니다.
+지원되는 형식은 `.png`, `.jpg`, `.jpeg`, `.gif` 및 `.bmp`입니다. 권장 형식은 16픽셀 x 16픽셀의 BMP24입니다.
+
+![도구 상자 아이콘 샘플](https://raw.githubusercontent.com/NuGet/docs.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
+
+분홍색 배경은 런타임에 바뀝니다. 아이콘은 Visual Studio 테마를 변경하고 배경색이 예상되면 다시 그려집니다. 자세한 내용은 [Visual Studio용 이미지 및 아이콘](https://docs.microsoft.com/en-us/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)을 참조하세요.
 
 아래 예제에서 프로젝트에는 "ManagedPackage.MyCustomControl.png"라는 이미지 파일이 있습니다.
 

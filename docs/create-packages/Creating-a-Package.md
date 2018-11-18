@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 1bc67927ddc463dcc3a0abe80fe20e625e188e63
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: 1221631b22eed7d2d8e58bd08ff120d91231d49b
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981173"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580400"
 ---
 # <a name="creating-nuget-packages"></a>NuGet 패키지 만들기
 
@@ -157,7 +157,7 @@ nuget locals -list global-packages
 
 ### <a name="from-a-convention-based-working-directory"></a>원본: 규칙 기반 작업 디렉터리
 
-NuGet 패키지는 `.nupkg` 확장명으로 이름이 바뀐 ZIP 파일일 뿐이므로 로컬 파일 시스템에서 원하는 폴더 구조를 만드는 것이 가장 쉽습니다. 이 경우 해당 구조에서 `.nuspec` 파일을 직접 만듭니다. 그런 다음 `nuget pack` 명령은 해당 폴더 구조의 모든 파일을 자동으로 추가합니다(동일한 구조의 개인 파일을 유지할 수 있도록 `.`으로 시작하는 폴더는 제외함).
+NuGet 패키지는 `.nupkg` 확장명으로 이름이 바뀐 ZIP 파일일 뿐이므로 로컬 파일 시스템에서 원하는 폴더 구조를 만든 다음, 해당 구조에서 `.nuspec` 파일을 직접 만드는 것이 가장 쉽습니다. 그런 다음, `nuget pack` 명령은 해당 폴더 구조의 모든 파일을 자동으로 추가합니다(동일한 구조의 개인 파일을 유지할 수 있도록 `.`로 시작하는 폴더는 제외함).
 
 이 방식의 장점은 이 항목의 뒷부분에서 설명한 대로 패키지에 포함하려는 파일을 매니페스트에 지정할 필요가 없다는 것입니다. 빌드 프로세스에서 패키지로 이동하는 정확한 폴더 구조를 생성하기만 하면 되고, 그렇지 않은 경우 프로젝트의 일부가 아닌 다른 파일을 쉽게 포함할 수 있습니다.
 
@@ -177,7 +177,7 @@ NuGet 패키지는 `.nupkg` 확장명으로 이름이 바뀐 ZIP 파일일 뿐�
 | 빌드 | MSBuild `.targets` 및 `.props` 파일 | 프로젝트 파일 또는 `project.lock.json`(NuGet 3.x 이상)에 자동으로 삽입됩니다. |
 | 도구 | 패키지 관리자 콘솔에서 액세스할 수 있는 Powershell 스크립트 및 프로그램 | `tools` 폴더는 패키지 관리자 콘솔에 대한 `PATH` 환경 변수에만 추가 됩니다(특히 프로젝트를 빌드할 때는 MSBuild에 설정한 대로 `PATH`에 *추가되지 않음*). |
 
-폴더 구조에는 임의 개수의 대상 프레임워크에 대해 임의 개수의 어셈블리가 포함될 수 있으므로, 이 방법은 여러 프레임워크를 지원하는 패키지를 만들 때 필요합니다. 
+폴더 구조에는 임의 개수의 대상 프레임워크에 대해 임의 개수의 어셈블리가 포함될 수 있으므로, 이 방법은 여러 프레임워크를 지원하는 패키지를 만들 때 필요합니다.
 
 어떤 경우이든 원하는 폴더 구조를 배치한 후에는 해당 폴더에서 다음 명령을 실행하여 `.nuspec` 파일을 만듭니다.
 
@@ -321,7 +321,7 @@ NuGet 3.5 이상을 사용하면 의도한 용도를 나타내기 위해 패키�
 
 경우에 따라 패키지를 사용하는 프로젝트에 사용자 지정 빌드 대상 또는 속성(예: 빌드하는 동안 사용자 지정 도구 또는 프로세스 실행)을 추가할 수 있습니다. 이렇게 하려면 프로젝트의 `\build` 폴더 내에 `<package_id>.targets` 또는 `<package_id>.props`(예: `Contoso.Utility.UsefulStuff.targets`) 형식의 파일을 배치합니다.
 
-루트 `\build` 폴더의 파일은 모든 대상 프레임워크에 적합한 파일로 간주됩니다. 프레임워크 특정 파일을 제공하려면 먼저 다음과 같이 적절한 하위 폴더에 배치합니다.
+루트 `\build` 폴더의 파일은 모든 대상 프레임워크에 적합한 파일로 간주됩니다. 프레임워크별 파일을 제공하려면 먼저 다음과 같이 적절한 하위 폴더 내에 배치합니다.
 
     \build
         \netstandard1.4
