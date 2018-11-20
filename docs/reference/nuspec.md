@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 48f56ec5f042f6e78e38a202f0879c6949e7ee11
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: e8d4ed1f3fe4394d084a5847200901b23a1b7b39
+ms.sourcegitcommit: c825eb7e222d4a551431643f5b5617ae868ebe0a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580399"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51944082"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -79,7 +79,49 @@ nuget.org에서 프로필 이름을 사용하는 패키지 작성자에 대한 �
 #### <a name="projecturl"></a>projectUrl
 nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페이지에 대한 URL입니다. 
 #### <a name="licenseurl"></a>licenseUrl
+> [!Important]
+> licenseUrl은 더 이상 사용 되지 않습니다. 라이선스를 대신 사용 합니다.
+
 nuget.org뿐만 아니라 UI 표시에도 종종 표시되는 패키지의 라이선스에 대한 URL입니다.
+#### <a name="license"></a>라이선스
+SPDX 라이선스 식 또는 종종 nuget.org 뿐만 아니라 UI 표시에 표시 되는 패키지 내 라이선스 파일의 경로입니다. MIT BSD-2-절 등 일반적인 라이선스에 따라 패키지를 라이선스 하는 경우 연결된 SPDX 라이선스 식별자를 사용 합니다.<br>`<license type="expression">MIT</license>`
+
+전체 목록은 다음과 같습니다 [SPDX 라이선스 식별자](https://spdx.org/licenses/)합니다. OSI만을 허용 하는 NuGet.org 또는 승인 FSF 라이선스를 사용 하는 경우 라이선스 유형 식입니다.
+
+패키지에서 여러 일반적인 라이선스 사용이 허가 되는 복합 라이선스를 사용 하 여 지정할 수 있습니다 합니다 [SPDX 식 구문은 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)합니다.<br>`<license type="expression">BSD-2-Clause OR MIT</license>`
+
+SPDX 식별자 할당 되지 않은 라이선스를 사용 하는 경우 사용자 지정 라이선스는 라이선스는 텍스트를 사용 하 여 파일을 패키징할 수 있습니다. 예를 들어:
+```xml
+<package>
+  <metadata>
+    ...
+    <license type="file">LICENSE.txt</license>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="licenses\LICENSE.txt" target="" />
+    ...
+  </files>
+</package>
+```
+NuGet의 라이선스 식의 정확한 구문은 아래에 설명 [ABNF](https://tools.ietf.org/html/rfc5234)합니다.
+```cli
+license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
+
+license-exception-id  = <short form license exception identifier from https://spdx.org/spdx-specification-21-web-version#h.ruv3yl8g6czd>
+
+simple-expression = license-id / license-id”+”
+
+compound-expression =  1*1(simple-expression /
+                simple-expression "WITH" license-exception-id /
+                compound-expression "AND" compound-expression /
+                compound-expression "OR" compound-expression ) /                
+                "(" compound-expression ")" )
+
+license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
+```
+
 #### <a name="iconurl"></a>iconUrl
 UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배경이 있는 64x64 이미지에 대한 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub에서 이미지를 사용 하려면 원시 파일 URL을 사용 하 여 <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>합니다. 
 
@@ -614,7 +656,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
         <description>Sample exists only to show a sample .nuspec file.</description>
         <language>en-US</language>
         <projectUrl>http://xunit.codeplex.com/</projectUrl>
-        <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
+        <license type="expression">MIT</license>
     </metadata>
 </package>
 ```
