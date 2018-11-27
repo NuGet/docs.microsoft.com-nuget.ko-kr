@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: 504a48224051265164f9ab183e63fa5e7f5867e6
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c294e4c188db2e90e6bcb62b60f71ed5529977fe
+ms.sourcegitcommit: a1846edf70ddb2505d58e536e08e952d870931b0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546917"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52303521"
 ---
 # <a name="nugetconfig-reference"></a>nuget.config 참조
 
 NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)에서 설명한 대로 여러 `NuGet.Config` 파일의 설정으로 제어됩니다.
 
-`nuget.config`는 최상위 `<configuration>` 노드를 포함하는 XML 파일이며, 이 파일에는 이 항목에서 설명하는 섹션 요소가 포함되어 있습니다. 각 섹션에는 `key` 및 `value` 특성이 있는 0개 이상의 `<add>` 요소가 포함되어 있습니다. [config 파일 예제](#example-config-file)를 참조하세요. 설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.
+`nuget.config`는 최상위 `<configuration>` 노드를 포함하는 XML 파일이며, 이 파일에는 이 항목에서 설명하는 섹션 요소가 포함되어 있습니다. 각 섹션에는 0 개 이상의 항목이 포함 됩니다. [config 파일 예제](#example-config-file)를 참조하세요. 설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.
 
 항목 내용:
 
@@ -30,6 +30,7 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
   - [apikeys](#apikeys)
   - [disabledPackageSources](#disabledpackagesources)
   - [activePackageSource](#activepackagesource)
+- [trustedSigners 섹션](#trustedsigners-section)
 - [환경 변수 사용](#using-environment-variables)
 - [config 파일 예제](#example-config-file)
 
@@ -51,6 +52,7 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 | repositoryPath(`packages.config`만) | 기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. NUGET_PACKAGES 환경 변수로 우선 순위를 사용 하는이 설정이 무시 됩니다. |
 | defaultPushSource | 작업에 대한 다른 패키지 원본이 없을 때 기본값으로 사용해야 하는 패키지 원본의 URL 또는 경로를 식별합니다. |
 | http_proxy, http_proxy.user, http_proxy.password, no_proxy | 패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다. 암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다. `no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다. 이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다. 자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요. |
+| signatureValidationMode | 패키지 설치에 대 한 패키지 서명을 확인 하 고 복원 하는 데 사용 하는 유효성 검사 모드를 지정 합니다. 값은 `accept`, `require`합니다. 기본값은 `accept`입니다.
 
 **예제**:
 
@@ -60,6 +62,7 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
     <add key="globalPackagesFolder" value="c:\packages" />
     <add key="repositoryPath" value="c:\installed_packages" />
     <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
+    <add key="signatureValidationMode" value="require" />
 </config>
 ```
 
@@ -115,9 +118,9 @@ NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-beha
 
 ## <a name="package-source-sections"></a>패키지 원본 섹션
 
-`packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource` 및 `disabledPackageSources` 모두가 함께 작동하여 NuGet에서 설치, 복원 및 업데이트 작업 중에 패키지 리포지토리와 함께 작동하는 방식을 구성합니다.
+합니다 `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`를 `disabledPackageSources` 및 `trustedSigners` 함께 설치, 복원 및 업데이트 작업 중 NuGet 패키지 리포지토리와 함께 작동 하는 방법을 구성 하는 모든 작업입니다.
 
-[`nuget setapikey` 명령](../tools/cli-ref-setapikey.md)을 사용하여 관리되는 `apikeys`를 제외하고는 일반적으로 [`nuget sources` 명령](../tools/cli-ref-sources.md)이 이러한 설정을 관리하는 데 사용됩니다.
+합니다 [ `nuget sources` 명령](../tools/cli-ref-sources.md) 는 일반적으로 이러한 설정을 제외 하 고 관리 하는 데 사용 됩니다 `apikeys` 사용 하 여 관리 되는 합니다 [ `nuget setapikey` 명령](../tools/cli-ref-setapikey.md), 및 `trustedSigners` 관리 되는 사용 하 여 [ `nuget trusted-signers` 명령](../tools/cli-ref-trusted-signers.md)입니다.
 
 nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다.
 
@@ -237,6 +240,35 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
     <add key="All" value="(Aggregate source)" />
 </activePackageSource>
 ```
+## <a name="trustedsigners-section"></a>trustedSigners 섹션
+
+저장소를 설치 하거나 복원 하는 동안 패키지를 허용 하는 데 사용 되는 서명자를 신뢰할 수 있습니다. 사용자 설정 하는 경우이 목록은 비워 둘 수 없습니다 `signatureValidationMode` 에 `require`입니다. 
+
+이 섹션을 사용 하 여 업데이트할 수는 [ `nuget trusted-signers` 명령](../tools/cli-ref-trusted-signers.md)입니다.
+
+**스키마**:
+
+신뢰할 수 있는 서명자가 컬렉션인 `certificate` 지정 된 서명자를 식별 하는 모든 인증서를 등록 하는 항목입니다. 신뢰할 수 있는 서명자가 될 수 있습니다는 `Author` 또는 `Repository`합니다.
+
+신뢰할 수 있는 *리포지토리* 도 지정 합니다 `serviceIndex` 리포지토리에 대 한 (유효한에 있는 `https` uri)는 세미콜론으로 구분 된 목록에 지정할 수 있습니다 및 `owners` 신뢰할 수 있는 누가 더욱 제한 하려면 해당 특정 리포지토리입니다.
+
+인증서 지문에 사용 되는 지원 되는 해시 알고리즘은 `SHA256`하십시오 `SHA384` 및 `SHA512`합니다.
+
+경우는 `certificate` 지정 `allowUntrustedRoot` 으로 `true` 서명 확인의 일부로 인증서 체인을 빌드하는 동안 지정 된 인증서 체인을 신뢰할 수 없는 루트에 허용 됩니다.
+
+**예제**:
+
+```xml
+<trustedSigners>
+    <author name="microsoft">
+        <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+    </author>
+    <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
+        <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+        <owners>microsoft;aspnet;nuget</owners>
+    </repository>
+</trustedSigners>
+```
 
 ## <a name="using-environment-variables"></a>환경 변수 사용
 
@@ -313,5 +345,19 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
     <apikeys>
         <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
     </apikeys>
+
+    <!--
+        Used to specify trusted signers to allow during signature verification.
+        See: nuget.exe help trusted-signers
+    -->
+    <trustedSigners>
+        <author name="microsoft">
+            <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+        </author>
+        <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
+            <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+            <owners>microsoft;aspnet;nuget</owners>
+        </repository>
+    </trustedSigners>
 </configuration>
 ```
