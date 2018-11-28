@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: d4c13200494ed3c6fa897ce0083a52c13688b44b
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: fd5188c92f8154391359b8da5c8a32f4d5d6f2c0
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547395"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453587"
 ---
 # <a name="catalog"></a>Catalog
 
@@ -213,7 +213,7 @@ requireLicenseAgreement | boolean                    | 아니요       | 가정 
 제목                   | string                     | 아니요       |
 verbatimVersion         | string                     | 아니요       | 버전 문자열은 원래.nuspec 있습니다
 
-패키지 `version` 속성은 전체 정규화 된 버전 문자열입니다. 즉,이 SemVer 2.0.0 빌드 데이터를 여기 포함 될 수 있습니다.
+패키지 `version` 속성이 정규화 한 후 전체 버전 문자열입니다. 즉,이 SemVer 2.0.0 빌드 데이터를 여기 포함 될 수 있습니다.
 
 `created` 패키지는 일반적으로 짧은 시간 카탈로그 항목의 커밋 타임 스탬프 이전의 패키지 원본에 먼저 수신 된 경우 타임 스탬프입니다.
 

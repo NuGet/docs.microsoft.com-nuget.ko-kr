@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 826316bdbce881836836f2a667cfa5297996d14f
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: b5bd8bd30ad134f36433b8e4721ce131425a1483
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580313"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453366"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 명령(NuGet CLI)
 
 **적용 대상:** 패키지 만들기 &bullet; **지원 되는 버전:** 2.7 이상
 
-지정한 NuGet 패키지를 만들어 `.nuspec` 또는 프로젝트 파일입니다. 합니다 `dotnet pack` 명령 (참조 [dotnet 명령](dotnet-Commands.md)) 및 `msbuild /t:pack` (참조 [MSBuild 대상](../reference/msbuild-targets.md)) 대체 항목으로 사용할 수 있습니다.
+지정한 NuGet 패키지를 만들어 `.nuspec` 또는 프로젝트 파일입니다. 합니다 `dotnet pack` 명령 (참조 [dotnet 명령](dotnet-Commands.md)) 및 `msbuild -t:pack` (참조 [MSBuild 대상](../reference/msbuild-targets.md)) 대체 항목으로 사용할 수 있습니다.
 
 > [!Important]
 > Mono에서 프로젝트 파일에서 패키지를 만들 수 없습니다. 로컬이 아닌 경로 조정 해야 합니다 `.nuspec` Unix 스타일 경로로 파일로 nuget.exe 자체 Windows 경로 이름으로 변환 하지 않습니다.
@@ -49,7 +49,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 | OutputDirectory | 생성된 된 패키지 저장 되는 폴더를 지정 합니다. 폴더는 지정 하지 않으면 현재 폴더가 사용 됩니다. |
 | 속성 | 뒤에 있어야 마지막 명령줄에서 다른 옵션입니다. 프로젝트 파일의 값을 재정의 하는 속성의 목록을 지정 합니다. 참조 [일반적인 MSBuild 프로젝트 속성](/visualstudio/msbuild/common-msbuild-project-properties) 속성 이름에 대 한 합니다. 속성 인수 여기은 토큰의 목록 = 값 쌍을 세미콜론으로 구분 된 여기서 각 `$token$` 에 `.nuspec` 파일을 지정된 된 값으로 바뀝니다. 값은 따옴표로 묶인 문자열일 수 있습니다. "구성" 속성에 대 한 기본값은 "Debug" note 합니다. 릴리스 구성으로 변경 하려면 사용 `-Properties Configuration=Release`합니다. |
 | 접미사 | *(3.4.4+)*  빌드 또는 기타 시험판 버전 식별자를 추가 하기 위해 일반적으로 사용 되는 내부적으로 생성 된 버전 번호에 접미사를 추가 합니다. 예를 들어,를 사용 하 여 `-suffix nightly` 버전 번호 like를 사용 하 여 패키지를 만들기는 `1.2.3-nightly`합니다. 접미사는 경고, 오류 및 다른 버전의 NuGet 및 NuGet 패키지 관리자를 사용 하 여 호환성 문제를 방지 하려면 문자로 시작 해야 합니다. |
-| 기호 | 소스 및 기호 패키지에 포함 되도록 지정 합니다. 와 함께 사용할 경우는 `.nuspec` 파일인이 일반 NuGet 패키지 파일을 만들고 해당 기호 패키지가 있습니다. 기본적으로 만듭니다는 [레거시 기호 패키지](../create-packages/Symbol-Packages.md)합니다. 새 권장 되는 기호 패키지 형식은.snupkg 합니다. 참조 [기호 패키지 (.snupkg) 만들기](../create-packages/Symbol-Packages-snupkg.md)합니다. |
+| 기호 | 소스 및 기호 패키지에 포함 되도록 지정 합니다. 와 함께 사용할 경우는 `.nuspec` 파일인이 일반 NuGet 패키지 파일을 만들고 해당 기호 패키지가 있습니다. 기본적으로 만듭니다는 [레거시 기호 패키지](../create-packages/Symbol-Packages.md)합니다. 기호 패키지에 대한 새 권장 형식은 .snupkg입니다. [기호 패키지(.snupkg) 만들기](../create-packages/Symbol-Packages-snupkg.md)를 참조하세요. |
 | 도구 | 프로젝트의 출력 파일에 배치 해야 함을 지정 합니다 `tool` 폴더입니다. |
 | 자세한 정도 | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
 | 버전 | 버전 번호를 재정의 합니다 `.nuspec` 파일입니다. |

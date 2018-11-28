@@ -5,12 +5,12 @@ author: zhili1208
 ms.author: lzhi
 ms.date: 07/12/2018
 ms.topic: reference
-ms.openlocfilehash: 7cd387e3eb05d149da9a88cc1c76dc08588d04b5
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 42b5b7d863d22d7aad99a65700ca11bcc2861db1
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547828"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453496"
 ---
 # <a name="long-path-support-nuget-cli"></a>긴 경로 지원 (NuGet CLI)
 
@@ -39,6 +39,6 @@ ms.locfileid: "43547828"
 > 긴 경로 지원 하기 위해 다른 NuGet 도구를 사용 하도록 설정
 >
 > -   Dotnet CLI 버전 또는 운영 체제에 관계 없이 긴 경로 지원합니다.
-> -   Visual Studio 또는 msbuild /t: restore가 긴 경로 아직 지원 하지 않습니다.
+> -   Visual Studio 또는 msbuild-t: 복원 긴 경로 아직 지원 하지 않습니다.
 > -   NuGet 라이브러리를 사용 하 여 복원 및 다른 명령을 실행 하는 소프트웨어는 지원 긴 경로 동일한 시스템에서 NuGet.exe에서 작동 하는 설정 하는 경우 창에 longPathAware 매니페스트 하 고 UseLegacyPathHandling App.Config통해false로구성[ 자세한 내용은 참조 하세요.](https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/)
 

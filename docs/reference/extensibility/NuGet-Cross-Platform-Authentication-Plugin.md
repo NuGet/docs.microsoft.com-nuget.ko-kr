@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: d80339eb81ade1cf2c323a604cc4fac06dcb1012
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: b76fab1028ec9a4172d2390083fbf9adb4290a6c
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981056"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453509"
 ---
 # <a name="nuget-cross-platform-authentication-plugin"></a>NuGet 교차 플랫폼 인증 플러그 인
 
@@ -32,7 +32,7 @@ Dotnet.exe에 인증 메커니즘은 장치 흐름입니다. 때 복원 하거�
 ## <a name="authentication-in-msbuild"></a>MSBuild에서 인증
 
 MSBuild.exe는 기본적으로 비 대화형 MSBuild.exe 인증 메커니즘은 장치 흐름 dotnet.exe 마찬가지로입니다.
-일시 중지 하 고 인증에 대 한 대기에 대 한 복원을 허용 하려면 복원 호출 `msbuild /t:restore /p:NuGetInteractive="true"`합니다.
+일시 중지 하 고 인증에 대 한 대기에 대 한 복원을 허용 하려면 복원 호출 `msbuild -t:restore -p:NuGetInteractive="true"`합니다.
 
 ## <a name="creating-a-cross-platform-authentication-plugin"></a>플랫폼 간 인증 플러그 인 만들기
 
