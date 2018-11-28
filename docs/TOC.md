@@ -28,7 +28,7 @@
 ## [기호 패키지 만들기](create-packages/symbol-packages-snupkg.md)
 ## [패키지 서명](create-packages/sign-a-package.md)
 ## [패키지 게시](create-packages/publish-a-package.md)
-## 안내선
+## 가이드
 ### [UWP 패키지 만들기](guides/create-uwp-packages.md)
 ### [NuGet 패키지인 UI 컨트롤 만들기](guides/create-UI-controls.md)
 ### [Visual Studio 2015를 사용하여 Xamarin용 패키지 만들기](guides/create-packages-for-xamarin.md)
@@ -225,6 +225,7 @@
 ## [패키지 삭제](policies/deleting-packages.md)
 # 릴리스 정보
 ## [알려진 문제](release-notes/known-issues.md)
+## [NuGet 4.9 RTM](release-notes/NuGet-4.9-RTM.md)
 ## [NuGet 4.8 RTM](release-notes/NuGet-4.8-RTM.md)
 ## [NuGet 4.7 RTM](release-notes/NuGet-4.7-RTM.md)
 ## [NuGet 4.6 RTM](release-notes/NuGet-4.6-RTM.md)
