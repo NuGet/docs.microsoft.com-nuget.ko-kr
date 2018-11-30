@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 7b30fce4a2d9ad0bd7bc2b97f69b8d5d25101b72
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 15268ae33d56042a765420e5076dac49db6cce04
+ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545228"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52671177"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>빠른 시작: Visual Studio에서 패키지 설치 및 사용
 
@@ -64,7 +64,7 @@ NuGet 패키지는 패키지가 프로젝트와 동일한 대상 프레임워크
 
     ![Newtonsoft.Json 패키지 찾기](media/QS_Use-08-Console1.png)
 
-1. `Install-Package Newtonsoft.json` 명령을 입력합니다([Install-Package](../tools/ps-ref-install-package.md) 참조). 콘솔 창은 명령에 대한 출력을 표시합니다. 일반적으로 오류는 패키지가 프로젝트의 대상 프레임워크와 호환되지 않음을 나타냅니다.
+1. `Install-Package Newtonsoft.Json` 명령을 입력합니다([Install-Package](../tools/ps-ref-install-package.md) 참조). 콘솔 창은 명령에 대한 출력을 표시합니다. 일반적으로 오류는 패키지가 프로젝트의 대상 프레임워크와 호환되지 않음을 나타냅니다.
 
 ## <a name="use-the-newtonsoftjson-api-in-the-app"></a>앱에서 Newtonsoft.Json API 사용
 
@@ -107,7 +107,7 @@ NuGet 패키지는 패키지가 프로젝트와 동일한 대상 프레임워크
 1. Newtonsoft.Json 패키지를 프로젝트에 추가했더라도 코드 파일 맨 위에 `using` 문이 필요한 경우 `JsonConvert` 아래에 빨간색 물결선이 나타납니다.
 
     ```cs
-    using Newtonsoft.json;
+    using Newtonsoft.Json;
     ```
 
 1. F5 키를 누르거나 **디버그 > 디버깅 시작**을 선택하여 앱을 빌드하고 실행합니다.

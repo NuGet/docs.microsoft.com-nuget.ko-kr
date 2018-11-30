@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/26/2017
 ms.topic: conceptual
-ms.openlocfilehash: f911e24da76880410f8dfaa2891b609c7beb4a61
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6b41b23df115c45e830404afcf9defa23615bd7c
+ms.sourcegitcommit: ce97dded7715f217ec44f6c8368ab0df19c38342
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547891"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52615758"
 ---
 # <a name="package-creation-workflow"></a>패키지 만들기 워크플로
 
@@ -36,7 +36,7 @@ ms.locfileid: "43547891"
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)에서는 여러 언어 리소스가 있는 패키지를 구성하는 방법과 별도의 지역화된 위성 패키지를 사용하는 방법에 대해 설명합니다.
 - [시험판 패키지](../create-packages/prerelease-packages.md)는 알파, 베타 및 RC 패키지를 관심 있는 고객에게 공개하는 방법을 보여줍니다.
 - [원본 및 구성 파일 변환](../create-packages/source-and-config-file-transformations.md)은 프로젝트에 추가된 파일에서 단방향 토큰 대체를 수행하는 방법과 패키지가 제거될 때 취소되는 설정으로 `web.config` 및 `app.config`를 수정하는 방법에 대해 설명합니다.
-- [기호 패키지](../create-packages/symbol-packages.md)는 사용자가 코드를 단계별로 실행하면서 디버그할 수 있도록 라이브러리에 대한 기호를 제공하기 위한 지침을 제공합니다.
+- [기호 패키지](../create-packages/symbol-packages-snupkg.md)는 사용자가 코드를 단계별로 실행하면서 디버그할 수 있도록 라이브러리에 대한 기호를 제공하기 위한 지침을 제공합니다.
 - [패키지 버전 관리](../reference/package-versioning.md)에서는 종속성을 허용하는 정확한 버전(패키지에서 사용하는 다른 패키지)을 식별하는 방법에 대해 설명합니다.
 - [네이티브 패키지](../create-packages/native-packages.md)는 C++ 소비자용 패키지를 만드는 프로세스를 설명합니다.
 - [패키지 서명](../create-packages/sign-a-package.md)에서는 패키지에 디지털 서명을 추가하는 프로세스를 설명합니다.
