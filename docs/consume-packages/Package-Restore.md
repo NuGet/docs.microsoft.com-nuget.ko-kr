@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: da69181aebe3bebcea6acd6e15fde6b77dd33452
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 9acb87a5f5731fb33c91a1ae9b106c6df492ddcd
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580300"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453535"
 ---
 # <a name="package-restore"></a>패키지 복원
 
@@ -39,7 +39,7 @@ ms.locfileid: "51580300"
 
 - **NuGet CLI**: 프로젝트 파일 또는 `packages.config`에 나열된 패키지를 복원하는 [nuget restore](../tools/cli-ref-restore.md) 명령을 사용합니다. 솔루션 파일을 지정할 수도 있습니다.
 
-- **MSBuild**: 프로젝트 파일(PackageReference만)에 나열된 패키지를 복원하는 [msbuild /t:restore](../reference/msbuild-targets.md#restore-target) 명령을 사용합니다. Visual Studio 2017에 포함된 NuGet 4.x 이상 및 MSBuild 15.1 이상에서만 사용할 수 있습니다. `nuget restore` 및 `dotnet restore`는 모두 해당 프로젝트에 대해 이 명령을 사용합니다.
+- **MSBuild**는 프로젝트 파일(PackageReference만)에 나열된 패키지를 복원하는 [msbuild /t:restore](../reference/msbuild-targets.md#restore-target) 명령을 사용합니다. Visual Studio 2017에 포함된 NuGet 4.x 이상 및 MSBuild 15.1 이상에서만 사용할 수 있습니다. `nuget restore` 및 `dotnet restore`는 모두 해당 프로젝트에 대해 이 명령을 사용합니다.
 
 - **Visual Studio Team Services**: Team Services에 대한 빌드 정의를 만들 때 빌드 작업 전에 [NuGet 복원](/vsts/build-release/tasks/package/nuget#restore-nuget-packages) 또는 [.NET Core 복원](/vsts/build-release/tasks/build/dotnet-core#restore-nuget-packages) 작업을 정의에 포함합니다. 이 작업은 여러 빌드 템플릿에 기본적으로 포함되어 있습니다.
 

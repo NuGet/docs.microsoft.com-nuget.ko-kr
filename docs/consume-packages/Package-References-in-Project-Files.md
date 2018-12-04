@@ -5,22 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 71ab5bb464d1513df89ab53e119d9768e880e4e5
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: d4f0177183ee3edf595c4ce10d1f26cbaca5755d
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981030"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453574"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
-`PackageReference` 노드를 사용하는 패키지 참조는 별도의 `packages.config` 파일이 아닌 프로젝트 파일 내에서 직접 NuGet 종속성을 관리합니다. PackageReference를 사용하면 NuGet의 다른 측면이 영향을 받지 않습니다. 예를 들어 `NuGet.
-
-
-
-
-
-fig` 파일의 설정(패키지 소스 포함)은 [NuGet 동작 구성](configuring-nuget-behavior.md)에 설명된 대로 계속 적용됩니다.
+`PackageReference` 노드를 사용하는 패키지 참조는 별도의 `packages.config` 파일이 아닌 프로젝트 파일 내에서 직접 NuGet 종속성을 관리합니다. PackageReference를 사용하면 NuGet의 다른 측면이 영향을 받지 않습니다. 예를 들어 `NuGet.config` 파일의 설정(패키지 소스 포함)은 [NuGet 동작 구성](configuring-nuget-behavior.md)에 설명된 대로 계속 적용됩니다.
 
 또한 PackageReference를 사용하면 MSBuild 조건을 사용하여 대상 프레임워크, 구성, 플랫폼 또는 기타 그룹화당 패키지 참조를 선택할 수 있습니다. 종속성과 콘텐츠 흐름을 세밀하게 제어할 수도 있습니다. (자세한 내용은 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.)
 
@@ -163,7 +157,7 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 ## <a name="locking-dependencies"></a>종속성 잠금
 ‘이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9 미리 보기 5** 이상에서 사용할 수 있습니다.’
 
-NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 집합이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다. 입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다. 그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다. 예:
+NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 세트이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다. 입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다. 그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다. 예:
 
 * `<PackageReference Include="My.Sample.Lib" Version="4.*"/>` 같은 부동 버전을 사용하는 경우. 여기서 의도는 패키지의 모든 복원에서 최신 버전으로 이동하는 것이지만, 사용자가 그래프를 특정 최신 버전으로 잠그고 명시적 제스처에 따라 이후 버전(사용 가능한 경우)으로 이동하는 경우가 있습니다.
 * PackageReference 버전 요구 사항과 일치하는 패키지의 최신 버전이 게시됩니다. 예: 
@@ -204,7 +198,7 @@ dotnet.exe의 경우 다음을 실행합니다.
 
 msbuild.exe의 경우 다음을 실행합니다.
 ```
-> msbuild.exe /t:restore /p:RestoreLockedMode=true
+> msbuild.exe -t:restore -p:RestoreLockedMode=true
 ```
 
 프로젝트 파일에서 이 조건부 MSBuild 속성을 설정할 수도 있습니다.
@@ -238,6 +232,6 @@ ProjectA
 | 옵션 | MSBuild 해당 옵션 | 
 |:---  |:--- |
 | `--use-lock-file` | 프로젝트의 잠금 파일 사용을 부트스트랩합니다. 또는 프로젝트 파일에서 `RestorePackagesWithLockFile` 속성을 설정할 수 있습니다. | 
-| `--locked-mode` | 복원에 잠금 모드를 사용하도록 설정합니다. 이는 erepeatable 빌드를 가져오려는 CI/CD 시나리오에서 유용합니다. `RestoreLockedMode` MSBuild 속성을 `true`로 설정할 수도 있습니다. |  
+| `--locked-mode` | 복원에 잠금 모드를 사용하도록 설정합니다. 이는 반복 가능한 빌드를 가져오려는 CI/CD 시나리오에서 유용합니다. `RestoreLockedMode` MSBuild 속성을 `true`로 설정할 수도 있습니다. |  
 | `--force-evaluate` | 이 옵션은 프로젝트에 정의된 부동 버전의 패키지에 유용합니다. 기본적으로 NuGet 복원은 `--force-evaluate` 옵션으로 복원을 실행하지 않는 한 각 복원에서 패키지 버전을 자동으로 업데이트하지 않습니다. |
 | `--lock-file-path` | 프로젝트의 사용자 지정 잠금 파일 위치를 정의합니다. MSBuild 속성 `NuGetLockFilePath`을 설정할 수도 있습니다. 기본적으로 NuGet은 루트 디렉터리에서 `packages.lock.json`을 지원합니다. 같은 디렉터리에 여러 프로젝트가 있는 경우 NuGet은 프로젝트별 잠금 파일 `packages.<project_name>.lock.json`을 지원합니다. |

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 04/09/2018
 ms.topic: quickstart
-ms.openlocfilehash: b3be75a5af85bd3048c8b0eb71d90238b9349e09
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 9e8aa2250c6fc2843f74a925c56f953be5d48221
+ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549724"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52671138"
 ---
 # <a name="installing-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
 
@@ -28,7 +28,7 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 [CLI(명�
 
 ## <a name="cli-tools"></a>CLI 도구
 
-두 가지 NuGet CLI 도구는 `dotnet.exe` 및 `nuget.exe`입니다. 이 둘을 비교하려면 [기능 가용성](#feature-availability)을 참조하세요.
+두 NuGet CLI 도구는 `dotnet.exe` 및 `nuget.exe`입니다. 비교를 보려면 [기능 가용성](#feature-availability)을 참조하세요.
 
 ### <a name="dotnetexe-cli"></a>dotnet.exe CLI
 
@@ -75,27 +75,25 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 | 기능 | dotnet CLI | nuget CLI(Windows) | nuget CLI(Mono) | Visual Studio(Windows) | Visual Studio for Mac |
 | --- | --- | --- | --- | --- | --- |
 | 패키지 검색 |  | &#10004; | &#10004; | &#10004; | &#10004; |
-| 패키지 설치/제거 | &#10004;(1) | &#10004;(2) | &#10004; | &#10004; | &#10004; |
+| 패키지 설치/제거 | &#10004; | &#10004;(1) | &#10004; | &#10004; | &#10004; |
 | 패키지 업데이트 | &#10004; | &#10004; | | &#10004; | &#10004; |
-| 패키지 복원 | &#10004; | &#10004; | &#10004;(3) | &#10004; | &#10004; |
+| 패키지 복원 | &#10004; | &#10004; | &#10004;(2) | &#10004; | &#10004; |
 | 패키지 피드(소스) 관리 | | &#10004; | &#10004; | &#10004; | &#10004; |
-| 피드에서 패키지 관리 | &#10004;(1) | &#10004; | &#10004; | | |
+| 피드에서 패키지 관리 | &#10004; | &#10004; | &#10004; | | |
 | 피드에 대한 API 키 설정 | | &#10004; | &#10004; | | |
-| 패키지 만들기(4) | &#10004; | &#10004; | &#10004;(5) | &#10004; | |
-| 패키지 게시 | &#10004;(1) | &#10004; | &#10004; | &#10004; |  |
+| 패키지 만들기(3) | &#10004; | &#10004; | &#10004;(4) | &#10004; | |
+| 패키지 게시 | &#10004; | &#10004; | &#10004; | &#10004; |  |
 | 패키지 복제 |  | &#10004; | &#10004; | | |
 | *global-package* 및 캐시 폴더 관리 | &#10004; | &#10004; | &#10004; | | |
 | NuGet 구성 관리 | | &#10004; | &#10004; | | |
 
-(1) nuget.org의 패키지만
+(1) 프로젝트 파일에 영향을 주지 않습니다. 대신 `dotnet.exe`를 사용합니다.
 
-(2) 프로젝트 파일에 영향을 주지 않습니다. 대신 `dotnet.exe`를 사용합니다.
+(2) 솔루션(`.sln`) 파일이 아닌 `packages.config` 파일에서만 작동합니다.
 
-(3) 솔루션(`.sln`) 파일이 아닌 `packages.config` 파일에서만 작동합니다.
+(3) Visual Studio UI 도구에 표시되지 않는 다양한 고급 패키지 기능은 CLI를 통해 사용할 수 있습니다.
 
-(4) Visual Studio UI 도구에 표시되지 않는 다양한 고급 패키지 기능은 CLI를 통해 사용할 수 있습니다.
-
-(5) `.nuspec` 파일에서 작동하지만 프로젝트 파일에서 작동하지 않습니다.
+(4) `.nuspec` 파일에서 작동하지만 프로젝트 파일에서 작동하지 않습니다.
 
 ### <a name="related-topics"></a>관련 항목
 
@@ -107,4 +105,4 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 - [패키지 만들기](create-packages/creating-a-package.md)
 - [패키지 게시](create-packages/publish-a-package.md)
 
-Windows에서 작업하는 개발자는 NuGet 패키지를 시각적으로 탐색, 생성 및 편집할 수 있는 오픈 소스 독립 실행형 도구인 [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)를 탐색할 수도 있습니다. 예를 들어 패키지를 다시 빌드할 필요 없이 패키지 구조를 실험적으로 변경하고자 할 때 매우 유용합니다.
+Windows에서 작업하는 개발자는 NuGet 패키지를 시각적으로 탐색, 생성 및 편집할 수 있는 오픈 소스 독립 실행형 도구인 [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)를 탐색할 수도 있습니다. 예를 들어 패키지를 다시 빌드할 필요 없이 패키지 구조를 실험적으로 변경하는 것이 매우 유용합니다.

@@ -16,12 +16,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: a72b59a391ed25e9617ba3ba3656301a2ed90ddc
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 48ca4b62e722988b3dfe69306565d7f159805962
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580436"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453457"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -41,12 +41,12 @@ nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
-msbuild /t:pack MyPackage.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
+msbuild -t:pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
 ```
 
-`.snupkgs`는 기본적으로 생성되지 않습니다. dotnet.exe의 경우 `-Symbols`와 함께 `SymbolsPackageFormat` 속성을 전달하고, dotnet.exe의 경우 `--include-symbols` 또는 msbuild의 경우 `/p:IncludeSymbols`를 전달해야 합니다.
+`.snupkgs`는 기본적으로 생성되지 않습니다. dotnet.exe의 경우 `-Symbols`와 함께 `SymbolPackageFormat` 속성을 전달하고, dotnet.exe의 경우 `--include-symbols` 또는 msbuild의 경우 `-p:IncludeSymbols`를 전달해야 합니다.
 
-SymbolsPackageFormat 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. SymbolsPackageFormat을 지정하지 않으면 기본적으로 `symbols.nupkg`이며 레거시 기호 패키지가 생성됩니다.
+SymbolPackageFormat 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. SymbolPackageFormat을 지정하지 않으면 기본적으로 `symbols.nupkg`이며 레거시 기호 패키지가 생성됩니다.
 
 > [!Note]
 > 레거시 형식 `.symbols.nupkg`는 여전히 호환성 문제에서만 지원됩니다([레거시 기호 패키지](Symbol-Packages.md) 참조). NuGet.org 기호 서버는 새 기호 패키지 형식(`.snupkg`)만 허용합니다.
@@ -71,7 +71,7 @@ SymbolsPackageFormat 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두
     nuget push MyPackage.nupkg
     ```
 
-이 경우 NuGet은 먼저 `MyPackage.nupkg`를 nuget.org에 게시하고 다음에 `MyPackage.snupkg`가 게시됩니다.
+NuGet은 두 패키지를 nuget.org에 게시합니다. `MyPackage.nupkg`가 먼저 게시되고 `MyPackage.snupkg`가 그다음으로 게시됩니다.
 
 ## <a name="nugetorg-symbol-server"></a>NuGet.org 기호 서버
 

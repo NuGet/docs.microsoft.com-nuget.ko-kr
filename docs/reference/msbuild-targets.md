@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7b3fc72ddd3ad6c9185c2bd0f2563df59e77f1c8
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: a9427d87f69a2e942a9802fbdae5193eead1c724
+ms.sourcegitcommit: af58d59669674c3bc0a230d5764e37020a9a3f1e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453548"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52831022"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -192,9 +192,9 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 ### <a name="packing-a-license-expression-or-a-license-file"></a>라이선스 식 또는 라이선스 파일을 압축합니다.
 
 라이선스 식 사용 PackageLicenseExpression 속성을 사용 해야 합니다. 
-[라이선스 식 샘플](#https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample)합니다.
+[라이선스 식 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample)합니다.
 
-라이선스 파일을 압축할 때 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로 지정 해야 합니다. 또한 파일 패키지에 포함 되어 있는지 확인 해야 합니다. 예:
+라이선스 파일을 압축할 때 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로 지정 해야 합니다. 또한 파일 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들어 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -205,7 +205,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
     <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
 </ItemGroup>
 ```
-[라이선스 수명 샘플](#https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample)합니다.
+[라이선스 파일 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample)합니다.
 
 ### <a name="istool"></a>IsTool
 

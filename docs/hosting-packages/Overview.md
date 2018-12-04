@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 80f9354e149129fff043b470d833f348df15c0a7
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 4741d780afa4fbe11001aed49a9f72bf608d96d9
+ms.sourcegitcommit: a1846edf70ddb2505d58e536e08e952d870931b0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545493"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52303566"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>사용자 고유의 NuGet 피드 호스팅
 
@@ -32,6 +32,7 @@ NuGet은 이러한 모든 용도에서 다음과 같은 방법으로 개인 패�
 - [NuGet 서버(오픈 소스)](http://nuget-server.net), Inedo의 NuGet 서버와 비슷한 오픈 소스 구현
 - [LiGet](https://github.com/ai-traders/liget), Docker의 kestrel에서 실행되는 NuGet V2 서버의 오픈 소스 구현
 - [BaGet](https://github.com/loic-sharma/BaGet), ASP.NET Core에 빌드된 NuGet V3 서버의 오픈 소스 구현
+- [Sleet](https://github.com/emgarten/sleet), 오픈 소스 NuGet V3 정적 피드 생성기
 - JFrog의 [Artifactory](https://www.jfrog.com/artifactory/)
 - Sonatype의 [Nexus](http://www.sonatype.org/nexus/)
 - JetBrains의 [TeamCity](https://www.jetbrains.com/teamcity/)
