@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: c36db9486ad787f19430c75fc38a2e9dd8ba6e37
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 486bf4032e156168f9b2fef57ccdae0c372b2eff
+ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550423"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52977513"
 ---
 # <a name="signed-packages"></a>서명 된 패키지
 
@@ -32,47 +32,13 @@ NuGet 패키지는 변조 된 콘텐츠에 대 한 보호를 제공 하는 디�
 
 코드 서명 인증서에 유효한 인증서의 특수 형식에 필요한 패키지를 서명 합니다 `id-kp-codeSigning` 용도 [[RFC 5280 섹션 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]. 또한 인증서에는 RSA 공개 키 길이가 2048 비트 이상 있어야 합니다.
 
-## <a name="get-a-code-signing-certificate"></a>코드 서명 인증서를 가져오려면
-
-와 같은 공용 인증 기관의 유효한 인증서를 구할 수 있습니다.
-
-- [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3)
-- [DigiCert](https://www.digicert.com/code-signing/)
-- [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate)
-- [전역 기호](https://www.globalsign.com/en/code-signing-certificate/)
-- [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)
-- [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 
-
-전체 목록은 Windows에서 신뢰할 수 있는 인증 기관에서 가져올 수 있습니다 [ http://aka.ms/trustcertpartners ](http://aka.ms/trustcertpartners)합니다.
-
-## <a name="create-a-test-certificate"></a>테스트 인증서 만들기
-
-테스트 목적으로 자체 발급 된 인증서를 사용할 수 있습니다. 자체 발급 된 인증서를 만들려면 사용 합니다 [New-selfsignedcertificate PowerShell 명령을](/powershell/module/pkiclient/new-selfsignedcertificate.md)합니다.
-
-```ps
-New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
-                          -FriendlyName "NuGetTestDeveloper" `
-                          -Type CodeSigning `
-                          -KeyUsage DigitalSignature `
-                          -KeyLength 2048 `
-                          -KeyAlgorithm RSA `
-                          -HashAlgorithm SHA256 `
-                          -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
-                          -CertStoreLocation "Cert:\CurrentUser\My" 
-```
-
-이 명령은 현재 사용자의 개인 인증서 저장소에서 사용할 수 있는 테스트 인증서를 만듭니다. 실행 하 여 인증서 저장소를 열면 `certmgr.msc` 새로 만든된 인증서를 확인 합니다.
-
-> [!Warning]
-> nuget.org에 패키지를 사용할 수 없습니다 자체 발급 된 인증서를 사용 하 여 서명 합니다.
-
 ## <a name="timestamp-requirements"></a>타임 스탬프 요구 사항
 
 서명 된 패키지는 패키지 서명 인증서의 유효 기간이 초과 서명 유효성을 확인할 RFC 3161 타임 스탬프를 포함 해야 합니다. 타임 스탬프를 로그인에 사용 된 인증서에 대해 유효 해야 합니다 `id-kp-timeStamping` 용도 [[RFC 5280 섹션 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]. 또한 인증서에는 RSA 공개 키 길이가 2048 비트 이상 있어야 합니다.
 
 추가 기술 세부 정보에서 확인할 수 있습니다 합니다 [패키지 서명을 기술 사양은](https://github.com/NuGet/Home/wiki/Package-Signatures-Technical-Details) (GitHub).
 
-## <a name="signature-requirements-on-nugetorg"></a>Nuget.org에서 서명 요구 사항
+## <a name="signature-requirements-on-nugetorg"></a>NuGet.org에서 서명 요구 사항
 
 nuget.org에는 서명 된 패키지를 적용 하기 위한 추가 요구 사항이 있습니다.
 
@@ -86,32 +52,9 @@ nuget.org에는 서명 된 패키지를 적용 하기 위한 추가 요구 사�
     - 인증서 서명 작성자 코드 서명에 적합 해야 합니다.
     - 타임 스탬프 인증서 타임 스탬프에 대 한 유효 해야 합니다.
   - 서명할 때 취소할 수 있어야 합니다. (이 아닐 수도 제출 시 knowable 있으므로 nuget.org 해지 상태를 주기적으로 다시).
+  
+  
+## <a name="related-articles"></a>관련 문서
 
-## <a name="register-certificate-on-nugetorg"></a>Nuget.org에서 인증서 등록
-
-서명된 된 패키지를 제출 하려면 먼저 nuget.org를 사용 하 여 인증서를 등록 해야 합니다. 해야 하는 대로 인증서를 `.cer` 이진 DER 형식에서 파일입니다. 인증서 내보내기 마법사를 사용 하 여 기존 인증서를 DER 이진 형식으로 내보낼 수 있습니다.
-
-![인증서 내보내기 마법사](media/CertificateExportWizard.png)
-
-고급 사용자를 사용 하 여 인증서를 내보낼 수 있습니다 합니다 [인증서 내보내기 PowerShell 명령을](/powershell/module/pkiclient/export-certificate.md)합니다.
-
-Nuget.org를 사용 하 여 인증서를 등록 하려면로 이동 `Certificates` 섹션에서 `Account settings` 페이지 (또는 조직의 설정 페이지)를 선택 하 고 `Register new certificate`입니다.
-
-![등록 된 인증서](media/registered-certs.png)
-
-> [!Tip]
-> 한 명의 사용자가 여러 사용자가 여러 인증서와 동일한 인증서를 등록할 수 있습니다을 제출할 수 있습니다.
-
-사용자는 인증서를 등록, 모든 향후 패키지 제출을 **해야** 인증서 중 하나를 사용 하 여 서명 합니다.
-
-사용자 계정에서 등록 된 인증서를 제거할 수도 있습니다. 인증서 제거 되 면 해당 인증서로 서명 된 패키지 제출에 실패 합니다. 기존 패키지에는 다음 영향을 받지 않습니다.
-
-## <a name="configure-package-signing-requirements"></a>패키지 서명 요구 사항을 구성 합니다.
-
-패키지의 유일한 소유자 인 경우 필요한 서명자를 수 있습니다. 즉, 패키지를 로그인 하 여 nuget.org에 제출 하는 등록 된 인증서를 사용할 수 있습니다.
-
-패키지에 여러 소유자에 게 기본적으로 있는 경우 "임의" 소유자의 인증서 패키지 서명에 사용할 수 있습니다. 패키지의 공동 소유자로 자신을 사용 하 여 "Any" 또는 다른 공동 소유자 필요한 서명자를 재정의할 수 있습니다. 소유자로, 등록 된 모든 인증서가 없는 경우, 서명 되지 않은 패키지 허용 됩니다. 
-
-마찬가지로, 한 명의 소유자의 등록 된 인증서에 있는 패키지 및 다른 소유자에 대 한 "Any" 옵션을 선택 하는 기본 등록 된 모든 인증서에 없는 경우 다음 nuget.org 허용 서명된 된 패키지 소유자 중 하나로 등록 서명을 사용 하 여 또는 부호 없는 (없으므로 소유자 중 한 명이 등록 된 모든 인증서)를 패키지 합니다.
-
-![패키지 서명자를 구성 합니다.](media/configure-package-signers.png)
+- [NuGet 패키지 서명](../create-packages/Sign-a-Package.md)
+- [서명 된 패키지를 설치합니다.](../consume-packages/installing-signed-packages.md)
