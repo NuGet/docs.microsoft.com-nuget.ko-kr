@@ -10,6 +10,7 @@
 ## [개요 및 워크플로](consume-packages/overview-and-workflow.md)
 ## [패키지 찾기 및 선택](consume-packages/finding-and-choosing-packages.md)
 ## [패키지 설치](consume-packages/ways-to-install-a-package.md)
+###[서명된 패키지](consume-packages/installing-signed-packages.md)
 ## [패키지 복원](consume-packages/package-restore.md)
 ### [문제 해결](consume-packages/package-restore-troubleshooting.md)
 ## [패키지 다시 설치 및 업데이트](consume-packages/reinstalling-and-updating-packages.md)
