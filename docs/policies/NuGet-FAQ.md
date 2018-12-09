@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: c136a3dffac38a68b80f730de1e4c3a3a9c8bd5d
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 93a22b423b193874c4c69c37ff9c6d9b4489a48d
+ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580365"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52977578"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -39,7 +39,7 @@ UI 및 명령줄 도구에 관한 모든 정보는 [설치 가이드](../install
 - Windows에서 Visual Studio는 [패키지 관리자 UI](../tools/package-manager-ui.md)와 [패키지 관리자 콘솔](../tools/package-manager-console.md)을 지원합니다.
 - Mac용 Visual Studio에는 [프로젝트에 NuGet 패키지 포함](/visualstudio/mac/nuget-walkthrough)에서 설명한 대로 NuGet 기능이 기본적으로 제공됩니다.
 - Visual Studio Code(모든 플랫폼)에는 직접적인 NuGet 통합이 없습니다. [NuGet CLI](../tools/nuget-exe-cli-reference.md) 또는 [dotnet CLI](../tools/dotnet-commands.md)를 사용하세요.
-- Visual Studio Team Services는 [NuGet 패키지를 복원하는 빌드 단계](/vsts/build-release/tasks/package/nuget)를 제공합니다. 또한 [Team Services에서 전용 NuGet 패키지 피드를 호스팅](https://www.visualstudio.com/docs/package/nuget/publish)할 수도 있습니다.
+- Azure DevOps는 [NuGet 패키지를 복원하는 빌드 단계](/vsts/build-release/tasks/package/nuget)를 제공합니다. 또한 [Azure DevOps에서 전용 NuGet 패키지 피드를 호스팅](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish)할 수도 있습니다.
 
 **설치된 NuGet 도구의 정확한 버전을 확인하려면 어떻게 할까요?**
 
@@ -182,7 +182,7 @@ NuGet 커뮤니티에서 패키지 소유자와 다른 소프트웨어 소유자
 
 **내 테스트 패키지를 nuget.org에 업로드하는 것이 좋을까요?**
 
-테스트를 위해 [int.nugettest.org](https://int.nugettest.org) 또는 대체 공용 NuGet 서버(예: [myget.org](https://myget.org) 또는 [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/))를 사용할 수 있습니다.
+테스트를 위해 [int.nugettest.org](https://int.nugettest.org) 또는 대체 공용 NuGet 서버(예: [myget.org](https://myget.org) 또는 [Azure DevOps](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/))를 사용할 수 있습니다.
 
 int.nugettest.org에 업로드된 패키지는 유지되지 않을 수 있습니다.
 

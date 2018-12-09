@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/12/2018
 ms.topic: overview
-ms.openlocfilehash: 3cb3d5f97e9fb7ce292ddc5a95b61c13f64a17e7
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 955cbdb6766152fd793ed3604cf599987e9805e0
+ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547668"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52977552"
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>NuGet 패키지를 설치하는 다양한 방법
 
@@ -64,6 +64,7 @@ NuGet 패키지는 다음 표의 방법 중 하나를 사용하여 다운로드 
 
 ## <a name="related-articles"></a>관련 문서
 
+- [서명된 패키지 설치](installing-signed-packages.md)
 - [패키지 사용 개요 및 워크플로](../consume-packages/overview-and-workflow.md)
 - [패키지 찾기 및 선택](../consume-packages/finding-and-choosing-packages.md)
 - [Managing the NuGet cache and global-packages folders](managing-the-global-packages-and-cache-folders.md)(NuGet 캐시 및 global-packages 폴더 관리)
