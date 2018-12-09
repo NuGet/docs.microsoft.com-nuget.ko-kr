@@ -6,60 +6,100 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: c598461831323ecfcc5da3877df71bd8d69557f6
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: e8955f9d46bab235c8755d5654814a4291d542d6
+ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551980"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52977565"
 ---
-# <a name="signing-nuget-packages"></a><span data-ttu-id="69af2-103">NuGet 패키지 서명</span><span class="sxs-lookup"><span data-stu-id="69af2-103">Signing NuGet Packages</span></span>
+# <a name="signing-nuget-packages"></a><span data-ttu-id="c6c75-103">NuGet 패키지 서명</span><span class="sxs-lookup"><span data-stu-id="c6c75-103">Signing NuGet Packages</span></span>
 
-<span data-ttu-id="69af2-104">패키지 서명은 패키지가 생성된 후 수정되지 않았는지 확인하는 프로세스입니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-104">Signing a package is a process that makes sure the package has not been modified since its creation.</span></span>
+<span data-ttu-id="c6c75-104">서명된 패키지는 콘텐츠 손상을 방지해 주는 콘텐츠 무결성 확인 검사를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-104">Signed packages allows for content integrity verification checks which provides protection against content tampering.</span></span> <span data-ttu-id="c6c75-105">또한 패키지 서명은 패키지의 실제 원본에 대한 단일 기준 데이터(Single Source of Truth) 역할을 하고 소비자의 패키지 신뢰성을 강화합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-105">The package signature also serves as the single source of truth about the actual origin of the package and bolsters package authenticity for the consumer.</span></span> <span data-ttu-id="c6c75-106">이 가이드에서는 이미 [패키지를 만들었다고](creating-a-package.md) 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-106">This guide assumes you have already [created a package](creating-a-package.md).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="69af2-105">전제 조건</span><span class="sxs-lookup"><span data-stu-id="69af2-105">Prerequisites</span></span>
+## <a name="get-a-code-signing-certificate"></a><span data-ttu-id="c6c75-107">코드 서명 인증서 가져오기</span><span class="sxs-lookup"><span data-stu-id="c6c75-107">Get a code signing certificate</span></span>
 
-1. <span data-ttu-id="69af2-106">서명할 패키지(`.nupkg` 파일)입니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-106">The package (a `.nupkg` file) to sign.</span></span> <span data-ttu-id="69af2-107">[패키지 만들기](creating-a-package.md)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="69af2-107">See [Creating a package](creating-a-package.md).</span></span>
+<span data-ttu-id="c6c75-108">유효한 인증서는 [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 등의 공용 인증서 기관에서 얻을 수 있으며, Windows에서 신뢰할 수 있는 인증 기관의 전체 목록은 [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners)에서 확인할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-108">Valid certificates may be obtained from a public certificate authority such as [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml), etc. The complete list of certification authorities trusted by Windows can be obtained from [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners).</span></span>
 
-1. <span data-ttu-id="69af2-108">nuget.exe 4.6.0 이상.</span><span class="sxs-lookup"><span data-stu-id="69af2-108">nuget.exe 4.6.0 or later.</span></span> <span data-ttu-id="69af2-109">[NuGet CLI 설치](../install-nuget-client-tools.md#nugetexe-cli) 방법을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="69af2-109">See how to [Install NuGet CLI](../install-nuget-client-tools.md#nugetexe-cli).</span></span>
+<span data-ttu-id="c6c75-109">테스트 목적으로 자체 발급된 인증서를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-109">You can use self-issued certificates for testing purposes.</span></span> <span data-ttu-id="c6c75-110">그러나 자체 발급된 인증서를 사용하여 서명된 패키지는 NuGet.org에서 수락되지 않습니다. [테스트 인증서 만들기](#create-a-test-certificate)에 대해 자세히 알아보세요.</span><span class="sxs-lookup"><span data-stu-id="c6c75-110">However, packages signed using self-issued certificates are not accepted by NuGet.org. Learn more about [creating a test certificate](#create-a-test-certificate)</span></span>
 
-1. <span data-ttu-id="69af2-110">[코드 서명 인증서](../reference/signed-packages-reference.md#get-a-code-signing-certificate).</span><span class="sxs-lookup"><span data-stu-id="69af2-110">[A code signing certificate](../reference/signed-packages-reference.md#get-a-code-signing-certificate).</span></span>
+## <a name="export-the-certificate-file"></a><span data-ttu-id="c6c75-111">인증서 파일 가져오기</span><span class="sxs-lookup"><span data-stu-id="c6c75-111">Export the certificate file</span></span>
 
-## <a name="sign-a-package"></a><span data-ttu-id="69af2-111">패키지 서명</span><span class="sxs-lookup"><span data-stu-id="69af2-111">Sign a package</span></span>
+* <span data-ttu-id="c6c75-112">인증서 내보내기 마법사를 사용하여 기존 인증서를 이진 DER 형식으로 내보낼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-112">You can export an existing certificate to a binary DER format by using the Certificate Export Wizard.</span></span>
 
-<span data-ttu-id="69af2-112">패키지에 서명하려면 [nuget 기호](../tools/cli-ref-sign.md)를 사용하세요.</span><span class="sxs-lookup"><span data-stu-id="69af2-112">To sign a package, use [nuget sign](../tools/cli-ref-sign.md):</span></span>
+  ![인증서 내보내기 마법사](../reference/media/CertificateExportWizard.png)
 
-```cli
-nuget sign MyPackage.nupkg -CertificateSubjectName <MyCertSubjectName> -Timestamper <TimestampServiceURL>
-```
+* <span data-ttu-id="c6c75-114">또한 [Export-Certificate PowerShell 명령](/powershell/module/pkiclient/export-certificate.md)을 사용하여 인증서를 내보낼 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-114">You can also export the certificate using the [Export-Certificate PowerShell command](/powershell/module/pkiclient/export-certificate.md).</span></span>
 
-<span data-ttu-id="69af2-113">명령 참조에서 설명한 것처럼 인증서 저장소에 있는 인증서나 파일의 인증서를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-113">As described in the command reference, you can use a certificate available in the certificate store or use a certificate from a file.</span></span>
+## <a name="sign-the-package"></a><span data-ttu-id="c6c75-115">패키지 서명</span><span class="sxs-lookup"><span data-stu-id="c6c75-115">Sign the package</span></span>
 
-### <a name="common-problems-when-signing-a-package"></a><span data-ttu-id="69af2-114">패키지에 서명 시 발생하는 일반적인 문제</span><span class="sxs-lookup"><span data-stu-id="69af2-114">Common problems when signing a package</span></span>
+> [!note]
+> <span data-ttu-id="c6c75-116">nuget.exe 4.6.0 이상 필요</span><span class="sxs-lookup"><span data-stu-id="c6c75-116">Requires nuget.exe 4.6.0 or later</span></span>
 
-- <span data-ttu-id="69af2-115">인증서가 코드 서명에 적합하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-115">The certificate is not valid for code signing.</span></span> <span data-ttu-id="69af2-116">지정된 인증서에 적절한 확장 키 사용(EKU 1.3.6.1.5.5.7.3.3)이 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-116">You must ensure the certificate specified has the appropriate extended key usage (EKU 1.3.6.1.5.5.7.3.3).</span></span>
-- <span data-ttu-id="69af2-117">인증서가 RSA SHA-256 서명 알고리즘 또는 공개 키 2048비트 이상과 같은 기본 요구 사항을 충족하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-117">The certificate does not satisfy the basic requirements such as the RSA SHA-256 signature algorithm or a public key 2048 bits or greater.</span></span>
-- <span data-ttu-id="69af2-118">인증서가 만료 또는 해지되었습니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-118">The certificate has expired or has been revoked.</span></span>
-- <span data-ttu-id="69af2-119">타임스탬프 서버가 인증서 요구 사항을 충족하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-119">The timestamp server does not satisfy the certificate requirements.</span></span>
-
-> [!Note]
-> <span data-ttu-id="69af2-120">서명 인증서가 만료된 경우 서명된 패키지에 서명이 유효하다는 것을 확인해 주는 타임스탬프가 포함되어 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-120">Signed packages should include a timestamp to make sure the signature remains valid when the signing certificate has expired.</span></span> <span data-ttu-id="69af2-121">타임스탬프 없이 서명할 경우 서명 작업 시 [경고 NU3002](../reference/errors-and-warnings/NU3002.md)가 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-121">The sign operation produce a [warning NU3002](../reference/errors-and-warnings/NU3002.md) when signing without a timestamp.</span></span>
-
-## <a name="verify-a-signed-package"></a><span data-ttu-id="69af2-122">서명된 패키지 확인</span><span class="sxs-lookup"><span data-stu-id="69af2-122">Verify a signed package</span></span>
-
-<span data-ttu-id="69af2-123">특정 패키지의 서명 정보를 확인하려면 [nuget verify](../tools/cli-ref-verify.md)를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-123">Use [nuget verify](../tools/cli-ref-verify.md) to see the signature details of a given package:</span></span>
+<span data-ttu-id="c6c75-117">[nuget sign](../tools/cli-ref-sign.md)을 사용하여 패키지에 서명:</span><span class="sxs-lookup"><span data-stu-id="c6c75-117">Sign the package using [nuget sign](../tools/cli-ref-sign.md):</span></span>
 
 ```cli
-nuget verify -signature MyPackage.nupkg
+nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
 ```
 
-## <a name="install-a-signed-package"></a><span data-ttu-id="69af2-124">서명된 패키지 설치</span><span class="sxs-lookup"><span data-stu-id="69af2-124">Install a signed package</span></span>
+* <span data-ttu-id="c6c75-118">인증서 저장소에 있는 인증서나 파일의 인증서를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-118">You can use a certificate available in the certificate store or use a certificate from a file.</span></span> <span data-ttu-id="c6c75-119">[nuget sign](../tools/cli-ref-sign.md)에 대한 CLI 참조를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="c6c75-119">See CLI reference for [nuget sign](../tools/cli-ref-sign.md).</span></span>
+* <span data-ttu-id="c6c75-120">서명 인증서가 만료된 경우 서명된 패키지에 서명이 유효하다는 것을 확인해 주는 타임스탬프가 포함되어 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-120">Signed packages should include a timestamp to make sure the signature remains valid when the signing certificate has expired.</span></span> <span data-ttu-id="c6c75-121">그렇지 않으면 서명 작업에서 [경고](../reference/errors-and-warnings/NU3002.md)가 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-121">Else the sign operation will produce a [warning](../reference/errors-and-warnings/NU3002.md).</span></span>
+* <span data-ttu-id="c6c75-122">[nuget verify](../tools/cli-ref-verify.md)를 사용하여 특정 패키지의 서명 정보를 확인할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-122">You can see the signature details of a given package using [nuget verify](../tools/cli-ref-verify.md).</span></span>
 
-<span data-ttu-id="69af2-125">서명된 패키지는 특별한 조치 없이 설치할 수 있지만 패키지가 서명된 이후에 내용이 수정된 경우 설치가 차단되고 [오류 NU3008](../reference/errors-and-warnings/NU3008.md)이 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-125">Signed packages don't require any specific action to be installed; however, if the content has been modified since it was signed, the installation is blocked and produces an [error NU3008](../reference/errors-and-warnings/NU3008.md).</span></span>
+## <a name="register-the-certificate-on-nugetorg"></a><span data-ttu-id="c6c75-123">NuGet.org에서 인증서 등록</span><span class="sxs-lookup"><span data-stu-id="c6c75-123">Register the certificate on NuGet.org</span></span>
+
+<span data-ttu-id="c6c75-124">서명된 패키지를 게시하려면 먼저 NuGet.org를 사용하여 인증서를 등록해야 합니다. 이진 DER 형식의 `.cer` 파일로 인증서가 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-124">To publish a signed package, you must first register the certificate with NuGet.org. You need the certificate as a `.cer` file in a binary DER format.</span></span>
+
+1. <span data-ttu-id="c6c75-125">NuGet.org레 [로그인](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-125">[Sign in](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) to NuGet.org.</span></span>
+1. <span data-ttu-id="c6c75-126">`Account settings`(또는 조직 계정으로 인증서를 등록하려는 경우 `Manage Organization` **>** `Edit Organziation`)으로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-126">Go to `Account settings` (or `Manage Organization` **>** `Edit Organziation` if you would like to register the certificate with an Organization account).</span></span>
+1. <span data-ttu-id="c6c75-127">`Certificates` 섹션을 확장하고 `Register new`을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-127">Expand the `Certificates` section and select `Register new`.</span></span>
+1. <span data-ttu-id="c6c75-128">이전에 내보낸 인증서 파일을 찾아서 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-128">Browse and select the certficate file that was exported earlier.</span></span>
+  <span data-ttu-id="c6c75-129">![등록된 인증서](../reference/media/registered-certs.png)</span><span class="sxs-lookup"><span data-stu-id="c6c75-129">![Registered Certificates](../reference/media/registered-certs.png)</span></span>
+
+<span data-ttu-id="c6c75-130">**참고:**</span><span class="sxs-lookup"><span data-stu-id="c6c75-130">**Note**</span></span>
+* <span data-ttu-id="c6c75-131">한 명의 사용자가 여러 인증서를 제출하고 여러 사용자가 동일한 인증서를 등록할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-131">One user can submit multiple certificates and the same certificate can be registered by multiple users.</span></span>
+* <span data-ttu-id="c6c75-132">한 명의 사용자에게 하나의 인증서가 등록되면 이후 모든 패키지 제출 시 이러한 인증서 중 하나로 **반드시** 서명해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-132">Once a user has a certificate registered, all future package submissions **must** be signed with one of the certificates.</span></span> <span data-ttu-id="c6c75-133">[NuGet.org에서 패키지에 대한 서명 요구 사항 관리](#manage-signing-requirements-for-your-package-on-nugetorg)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="c6c75-133">See [Manage signing requirements for your package on NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg)</span></span>
+* <span data-ttu-id="c6c75-134">사용자는 계정에서 등록된 인증서를 제거할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-134">Users can also remove a registered certificate from the account.</span></span> <span data-ttu-id="c6c75-135">인증서가 제거되면 해당 인증서로 서명한 새 패키지는 제출에 실패합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-135">Once a certificate is removed, new packages signed with that certificate will fail at submission.</span></span> <span data-ttu-id="c6c75-136">기존 패키지는 영향을 받지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-136">Existing packages aren't affected.</span></span>
+
+## <a name="publish-the-package"></a><span data-ttu-id="c6c75-137">패키지 게시</span><span class="sxs-lookup"><span data-stu-id="c6c75-137">Publish the package</span></span>
+
+<span data-ttu-id="c6c75-138">이제 NuGet.org에 패키지를 게시할 준비가 되었습니다. [패키지 게시](Publish-a-package.md)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="c6c75-138">You are now ready to publish the package to NuGet.org. See [Publishing packages](Publish-a-package.md).</span></span>
+
+## <a name="create-a-test-certificate"></a><span data-ttu-id="c6c75-139">테스트 인증서 만들기</span><span class="sxs-lookup"><span data-stu-id="c6c75-139">Create a test certificate</span></span>
+
+<span data-ttu-id="c6c75-140">테스트 목적으로 자체 발급된 인증서를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-140">You can use self-issued certificates for testing purposes.</span></span> <span data-ttu-id="c6c75-141">자체 발급된 인증서를 만들려면 [New-SelfSignedCertificate PowerShell 명령](/powershell/module/pkiclient/new-selfsignedcertificate.md)을 사용하세요.</span><span class="sxs-lookup"><span data-stu-id="c6c75-141">To create a self-issued certificate, use the [New-SelfSignedCertificate PowerShell command](/powershell/module/pkiclient/new-selfsignedcertificate.md).</span></span>
+
+```ps
+New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
+                          -FriendlyName "NuGetTestDeveloper" `
+                          -Type CodeSigning `
+                          -KeyUsage DigitalSignature `
+                          -KeyLength 2048 `
+                          -KeyAlgorithm RSA `
+                          -HashAlgorithm SHA256 `
+                          -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
+                          -CertStoreLocation "Cert:\CurrentUser\My" 
+```
+
+<span data-ttu-id="c6c75-142">이 명령은 현재 사용자의 개인 인증서 저장소에서 사용할 수 있는 테스트 인증서를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-142">This command creates a testing certificate available in the current user's personal certificate store.</span></span> <span data-ttu-id="c6c75-143">`certmgr.msc`를 실행하여 인증서 저장소를 열어 새로 만든 인증서를 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-143">You can open the certificate store by running `certmgr.msc` to see the newly created certificate.</span></span>
 
 > [!Warning]
-> <span data-ttu-id="69af2-126">신뢰할 수 없는 인증서로 서명된 패키지는 서명되지 않은 것으로 간주되고, 다른 서명되지 않은 패키지처럼 경고나 오류 없이 설치됩니다.</span><span class="sxs-lookup"><span data-stu-id="69af2-126">Packages signed with untrusted certificates are considered as unsigned and are installed without any warnings or errors like any other unsigned package.</span></span>
+> <span data-ttu-id="c6c75-144">NuGet.org는 자체 발급된 인증서로 서명된 패키지를 수락하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-144">NuGet.org does not accept packages signed with self-issued certificates.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="69af2-127">참고 항목</span><span class="sxs-lookup"><span data-stu-id="69af2-127">See also</span></span>
+## <a name="manage-signing-requirements-for-your-package-on-nugetorg"></a><span data-ttu-id="c6c75-145">NuGet.org에서 패키지에 대한 서명 요구 사항 관리</span><span class="sxs-lookup"><span data-stu-id="c6c75-145">Manage signing requirements for your package on NuGet.org</span></span>
+1. <span data-ttu-id="c6c75-146">NuGet.org로 [로그인](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)합니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-146">[Sign in](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) to NuGet.org.</span></span>
 
-[<span data-ttu-id="69af2-128">서명된 패키지 참조</span><span class="sxs-lookup"><span data-stu-id="69af2-128">Signed Packages Reference</span></span>](../reference/Signed-Packages-Reference.md)
+1. <span data-ttu-id="c6c75-147">`Manage Packages` 
+   ![패키지 서명자 구성](../reference/media/configure-package-signers.png)으로 이동</span><span class="sxs-lookup"><span data-stu-id="c6c75-147">Go to `Manage Packages` 
+![Configure package signers](../reference/media/configure-package-signers.png)</span></span>
+
+* <span data-ttu-id="c6c75-148">사용자가 패키지의 유일한 소유자인 경우 필수 서명자입니다. 즉, 등록된 인증서 중 어느 것이나 사용하여 패키지를 서명한 후 NuGet.org로 게시할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-148">If you are the sole owner of a package, you are the required signer i.e. you can use any of the registered certificates to sign and publish your packages to NuGet.org.</span></span>
+
+* <span data-ttu-id="c6c75-149">패키지에 여러 소유자가 있는 경우 기본적으로 “임의” 소유자의 인증서를 사용하여 패키지를 서명할 수 있습니다.,</span><span class="sxs-lookup"><span data-stu-id="c6c75-149">If a package has multiple owners, by default, "Any" owner's certificates can be used to sign the package.</span></span> <span data-ttu-id="c6c75-150">패키지의 공동 소유자인 경우 본인 또는 임의의 다른 공동 소유자가 필수 사용자가 되도록 “임의”를 재정의할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-150">As a co-owner of the package, you can override "Any" with yourself or any other co-owner to be the required signer.</span></span> <span data-ttu-id="c6c75-151">등록된 인증서가 없는 소유자를 만들면 서명되지 않은 패키지가 허용됩니다.</span><span class="sxs-lookup"><span data-stu-id="c6c75-151">If you make an owner  who does not have any certificate registered, then unsigned packages will be allowed.</span></span> 
+
+* <span data-ttu-id="c6c75-152">마찬가지로, 한 명의 소유자에게는 등록된 인증서가 있고 다른 소유자에게는 등록된 인증서가 없는 경우 패키지에 기본 “임의” 옵션을 선택하면 NuGet.org는 소유자 중 한 명이 등록한 서명으로 서명된 패키지 또는 서명되지 않은 패키지를 수락합니다(소유자 중 한 명에게 등록된 인증서가 없으므로).</span><span class="sxs-lookup"><span data-stu-id="c6c75-152">Similarly, if the default "Any" option is selected for a package where one owner has a certificate registered and another owner does not have any certificate registered, then NuGet.org accepts either a signed package with a signature registered by one of its owners or an unsigned package (because one of the owners does not have any certificate registered).</span></span>
+
+## <a name="related-articles"></a><span data-ttu-id="c6c75-153">관련 문서</span><span class="sxs-lookup"><span data-stu-id="c6c75-153">Related articles</span></span>
+
+- [<span data-ttu-id="c6c75-154">서명된 패키지 설치</span><span class="sxs-lookup"><span data-stu-id="c6c75-154">Installing signed packages</span></span>](../consume-packages/installing-signed-packages.md)
+- [<span data-ttu-id="c6c75-155">서명된 패키지 참조</span><span class="sxs-lookup"><span data-stu-id="c6c75-155">Signed Packages Reference</span></span>](../reference/Signed-Packages-Reference.md)
