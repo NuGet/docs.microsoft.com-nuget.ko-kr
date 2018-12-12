@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 7bb5e83b29d1d7e4bf06accfccb73db3aa9ee025
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: bb47c72768b0698d8e712c8261321ff38bba2764
+ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580339"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53248431"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -55,13 +55,15 @@ NuGet V3 API V2 API의 후속 작업을 설정 하는 공식 NuGet 클라이언�
 [`SearchQueryService`](search-query-service-resource.md)               | 예      | 필터 및 키워드는 패키지에 대 한 검색 합니다.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | 예      | 패키지 메타 데이터를 가져옵니다.
 [`PackageBaseAddress`](package-base-address-resource.md)               | 예      | 패키지 콘텐츠를 (.nupkg)를 가져옵니다.
-[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | 아니요       | 부분 문자열에서 패키지 Id 및 버전을 검색 합니다.
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | 아니요       | "신고" 웹 페이지 액세스에 대 한 URL을 생성 합니다.
-[`RepositorySignatures`](repository-signatures-resource.md)             | 아니요      | 리포지토리 서명에 사용 되는 인증서를 가져옵니다.
-[`Catalog`](catalog-resource.md)                                         | 아니요      | 모든 패키지 이벤트의 전체 레코드입니다.
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | 아니요      | 기호 패키지를 푸시하십시오.
+[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | no       | 부분 문자열에서 패키지 Id 및 버전을 검색 합니다.
+[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | no       | "신고" 웹 페이지 액세스에 대 한 URL을 생성 합니다.
+[`RepositorySignatures`](repository-signatures-resource.md)             | no      | 리포지토리 서명에 사용 되는 인증서를 가져옵니다.
+[`Catalog`](catalog-resource.md)                                         | no      | 모든 패키지 이벤트의 전체 레코드입니다.
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | no      | 기호 패키지를 푸시하십시오.
 
 일반적으로 API 리소스에 의해 반환 되는 모든 이진이 아닌 데이터는 JSON을 사용 하 여 serialize 됩니다. 서비스 인덱스의 각 리소스에서 반환 되는 응답 스키마는 해당 리소스에 대해 개별적으로 정의 됩니다. 각 리소스에 대 한 자세한 내용은 위에 나열 된 항목을 참조 하세요.
+
+나중에 프로토콜 진화 함에 따라 JSON 응답을 새 속성을 추가할 수 있습니다. 미래 경쟁력을 클라이언트에 대 한 응답 스키마는 최종적 이며 추가 데이터를 포함할 수 없습니다는 구현을 가정 하지 않아야 합니다. 구현을 인식 하지 못하는 모든 속성을 무시 해야 합니다.
 
 > [!Note]
 > 원본 구현 하지 않는 경우 `SearchAutocompleteService` 모든 자동 완성 동작을 정상적으로 해제 합니다. 때 `ReportAbuseUriTemplate` 구현 되지 않은 공식 NuGet 클라이언트 대체 되므로 nuget.org의 보고 악성 URL 신고 (에서 추적 [NuGet/Home #4924](https://github.com/NuGet/Home/issues/4924)). 다른 클라이언트는 악성 URL 신고 사용자에 게 표시 하지 않으려면에 간단히 선택할 수 있습니다.
