@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: d4f0177183ee3edf595c4ce10d1f26cbaca5755d
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: e4df15be1f29e2c611876aaa49e16ac7d1823938
+ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453574"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53248457"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -155,7 +155,7 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 ```
 
 ## <a name="locking-dependencies"></a>종속성 잠금
-‘이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9 미리 보기 5** 이상에서 사용할 수 있습니다.’
+이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다.
 
 NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 세트이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다. 입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다. 그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다. 예:
 
@@ -213,7 +213,7 @@ msbuild.exe의 경우 다음을 실행합니다.
 잠김 모드가 `true`인 경우 잠금 파일에 나열된 정확한 패키지가 복원되거나, 잠금 파일이 생성된 후 프로젝트의 정의된 패키지 종속성을 업데이트한 경우 복원에 실패합니다.
 
 ### <a name="make-lock-file-part-of-your-source-repository"></a>소스 리포지토리의 잠금 파일 파트 만들기
-응용 프로그램, 실행 파일을 빌드하는 동안 원하는 프로젝트가 종속성 체인의 끝에 있으면 NuGet이 복원 중에 사용할 수 있도록 소스 코드 리포지토리에 잠금 파일을 체크 인합니다.
+애플리케이션, 실행 파일을 빌드하는 동안 원하는 프로젝트가 종속성 체인의 시작 부분에 있으면 NuGet이 복원 중에 사용할 수 있도록 소스 코드 리포지토리에 잠금 파일을 체크 인합니다.
 
 그러나 프로젝트가 사용자가 제공하지 않는 라이브러리 프로젝트이거나 다른 프로젝트가 사용하는 공통 코드 프로젝트인 경우에는 잠금 파일을 소스 코드의 일부로 체크 인하면 **안 됩니다**. 잠금 파일을 보존해도 문제가 되지 않지만, 공통 코드 프로젝트의 잠긴 패키지 종속성은 이 공통 코드 프로젝트를 사용하는 프로젝트의 복원/빌드 중에 잠금 파일에 나열된 대로 사용되지 않을 수 있습니다.
 
