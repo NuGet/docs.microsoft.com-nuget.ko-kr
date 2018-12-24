@@ -14,7 +14,7 @@ ms.locfileid: "43546423"
 ---
 # <a name="create-uwp-packages"></a>UWP 패키지 만들기
 
-[UWP(유니버설 Windows 플랫폼)](https://developer.microsoft.com/windows)은 Windows 10을 실행하는 모든 장치에 공통된 응용 프로그램 플랫폼을 제공합니다. 이 모델 내에서 UWP 응용 프로그램은 모든 장치에 공통적인 WinRT API 및 응용 프로그램이 실행되는 장치 제품군에만 적용되는 API(Win32 및 .NET 포함)를 모두 호출할 수 있습니다.
+[UWP(유니버설 Windows 플랫폼)](https://developer.microsoft.com/windows)은 Windows 10을 실행하는 모든 장치에 공통된 응용 프로그램 플랫폼을 제공합니다. 이 모델 내에서 UWP 응용 프로그램은 모든 디바이스에 공통적인 WinRT API 및 응용 프로그램이 실행되는 디바이스 제품군에만 적용되는 API(Win32 및 .NET 포함)를 모두 호출할 수 있습니다.
 
 이 연습에서는 관리 및 네이티브 프로젝트에서 모두 사용할 수 있는 네이티브 UWP 구성 요소(XAML 컨트롤 포함)를 사용하여 NuGet 패키지를 만듭니다.
 
