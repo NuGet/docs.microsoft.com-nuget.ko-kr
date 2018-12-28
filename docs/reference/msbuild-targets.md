@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: a9427d87f69a2e942a9802fbdae5193eead1c724
-ms.sourcegitcommit: af58d59669674c3bc0a230d5764e37020a9a3f1e
+ms.openlocfilehash: 878fb582a31667c84f3ae306b554718de72eca7a
+ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52831022"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53645674"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -60,12 +60,12 @@ PackageReference 형식을 사용 하 여.NET Standard 프로젝트에 대 한 `
 | LicenseUrl | PackageLicenseUrl | 비어 있음 | `licenseUrl` PackageLicenseExpression 또는 PackageLicenseFile 속성을 사용 하 여 계속 |
 | ProjectUrl | PackageProjectUrl | 비어 있음 | |
 | IconUrl | PackageIconUrl | 비어 있음 | |
-| Tags | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
+| 태그 | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
 | ReleaseNotes | PackageReleaseNotes | 비어 있음 | |
 | 리포지토리/Url | RepositoryUrl | 비어 있음 | 복제 또는 소스 코드를 검색 하는 데 사용 되는 리포지토리 URL입니다. 예: *https://github.com/NuGet/NuGet.Client.git* |
 | 저장소/유형 | RepositoryType | 비어 있음 | 리포지토리 유형입니다. 예: *git*하십시오 *tfs*합니다. |
 | 리포지토리/분기 | RepositoryBranch | 비어 있음 | 선택적 리포지토리에서 분기 정보입니다. *RepositoryUrl* 포함 되도록이 속성에도 지정 해야 합니다. 예: *마스터* (NuGet 4.7.0+) |
-| 저장소/커밋 | RepositoryCommit | 비어 있음 | 선택적 저장소 커밋 또는 패키지 소스를 나타내기 위해 변경 집합에 대해 구축 되었습니다. *RepositoryUrl* 포함 되도록이 속성에도 지정 해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
+| 저장소/커밋 | RepositoryCommit | 비어 있음 | 선택적 저장소 커밋 또는 패키지 소스를 나타내기 위해 변경 집합에 대해 구축 되었습니다. *RepositoryUrl* 포함 되도록이 속성에도 지정 해야 합니다. 예제: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | 요약 | 지원 안 함 | | |
 
@@ -117,8 +117,8 @@ PackageReference 형식을 사용 하 여.NET Standard 프로젝트에 대 한 `
 
 프로젝트 파일 또는 명령줄에서 출력 어셈블리의 위치를 제어하는 데 사용할 수 있는 두 가지 MSBuild 속성이 있습니다.
 
-- `IncludeBuildOutput`: 빌드 출력 어셈블리를 패키지에 포함할지 여부를 결정하는 부울입니다.
-- `BuildOutputTargetFolder`: 출력 어셈블리를 배치할 폴더를 지정합니다. 출력 어셈블리(및 기타 출력 파일)는 해당 프레임워크 폴더에 복사됩니다.
+- `IncludeBuildOutput`: 빌드 출력 어셈블리를 패키지에 포함시킬지 여부를 결정 하는 부울입니다.
+- `BuildOutputTargetFolder`: 출력 어셈블리를 배치할 폴더를 지정 합니다. 출력 어셈블리(및 기타 출력 파일)는 해당 프레임워크 폴더에 복사됩니다.
 
 ### <a name="package-references"></a>패키지 참조
 
@@ -194,7 +194,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 라이선스 식 사용 PackageLicenseExpression 속성을 사용 해야 합니다. 
 [라이선스 식 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample)합니다.
 
-라이선스 파일을 압축할 때 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로 지정 해야 합니다. 또한 파일 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들어 다음과 같습니다.
+라이선스 파일을 압축할 때 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로 지정 해야 합니다. 또한 파일 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들면 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -202,7 +202,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 </PropertyGroup>
 
 <ItemGroup>
-    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
 [라이선스 파일 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample)합니다.
@@ -217,7 +217,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 1. `NuspecFile`: 압축에 사용되는 `.nuspec` 파일에 대한 상대 또는 절대 경로입니다.
 1. `NuspecProperties`: 세미콜론으로 구분된 key=value 쌍의 목록입니다. MSBuild 명령줄 구문 분석이 작동하는 방식으로 인해 여러 속성을 `-p:NuspecProperties=\"key1=value1;key2=value2\"`와 같이 지정해야 합니다.  
-1. `NuspecBasePath`: `.nuspec` 파일에 대한 기본 경로입니다.
+1. `NuspecBasePath`: 에 대 한 기본 경로 `.nuspec` 파일입니다.
 
 `dotnet.exe`를 사용하여 프로젝트를 압축하는 경우 다음 명령을 사용합니다.
 
@@ -259,8 +259,8 @@ Nuspec 파일을 압축할 csproj 파일의 예제는 다음과 같습니다.
 
 사용자 지정 대상을 작성 하 고 값으로 지정 된 `$(TargetsForTfmSpecificBuildOutput)` 속성입니다. 로 이동 해야 하는 모든 파일에 대 한는 `BuildOutputTargetFolder` (lib) 기본적으로 대상의 ItemGroup에 해당 파일을 작성 해야 `BuildOutputInPackage` 다음 두 메타 데이터 값을 설정 합니다.
 
-- `FinalOutputPath`파일의 절대 경로: 지정 하지 않으면 Id 원본 경로 평가에 사용 됩니다.
-- `TargetPath`: (선택 사항) 파일 내에서 하위 폴더로 이동 해야 할 때 설정 `lib\<TargetFramework>` 과 같이 위성 어셈블리는 각 문화권 폴더 아래에 있는 해당 이동 합니다. 기본값은 파일의 이름입니다.
+- `FinalOutputPath`: 파일의 절대 경로 지정 하지 않으면 Id 원본 경로 평가에 사용 됩니다.
+- `TargetPath`:  (선택 사항) 파일 내에서 하위 폴더로 이동 해야 할 때 설정 `lib\<TargetFramework>` 과 같이 위성 어셈블리는 각 문화권 폴더 아래에 있는 해당 이동 합니다. 기본값은 파일의 이름입니다.
 
 예제:
 
@@ -283,7 +283,7 @@ Nuspec 파일을 압축할 csproj 파일의 예제는 다음과 같습니다.
 사용자 지정 대상을 작성 하 고 값으로 지정 된 `$(TargetsForTfmSpecificContentInPackage)` 속성입니다. 패키지에 포함할 모든 파일에 대 한 대상 해야 해당 파일에 쓸 ItemGroup `TfmSpecificPackageFile` 다음과 같은 선택적 메타 데이터를 설정 합니다.
 
 - `PackagePath`: 파일은 패키지의 출력 이어야 하는 위치 경로입니다. 둘 이상의 파일에서 동일한 패키지 경로에 추가 되 면 NuGet 경고를 발생 시킵니다.
-- `BuildAction`: 빌드 작업 파일을 할당할 패키지 경로만 필요 합니다 `contentFiles` 폴더입니다. 기본값은 "None"입니다.
+- `BuildAction`: 파일에 할당할 빌드 작업을 패키지 경로만 필요 합니다 `contentFiles` 폴더입니다. 기본값은 "None"입니다.
 
 예제:
 ```xml
