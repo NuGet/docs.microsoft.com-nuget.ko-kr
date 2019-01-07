@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: a47a3a56e1c290c9a2f228ce1d0313cbdf0c4c34
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d6925df63daf3096455a8205d6aeb07b4475f715
+ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549208"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53645635"
 ---
 # <a name="building-pre-release-packages"></a>시험판 패키지 빌드
 
@@ -44,7 +44,7 @@ ms.locfileid: "43549208"
 
 기본적으로 NuGet은 패키지에서 작업할 때 시험판 버전을 포함하지 않지만 다음과 같이 이 동작을 변경할 수 있습니다.
 
-- **Visual Studio의 패키지 관리자 UI**: **NuGet 패키지 관리** UI에서 **시험판 포함** 확인란을 확인합니다.
+- **패키지 관리자 UI(Visual Studio)**: **NuGet 패키지 관리** UI에서 **시험판 포함** 확인란을 선택합니다.
 
     ![Visual Studio의 시험판 포함 확인란](media/Prerelease_02-CheckPrerelease.png)
 
@@ -60,15 +60,15 @@ ms.locfileid: "43549208"
 
 이 규칙에서 각 버전에는 다음과 같은 의미를 포함한 세 부분인 `Major.Minor.Patch`가 있습니다.
 
-- `Major`: 주요 변경 사항
+- `Major`: 호환성이 손상되는 변경
 - `Minor`: 이전 버전과 호환되는 새로운 기능
 - `Patch`: 이전 버전과 호환되는 버그 수정에만 해당
 
-시험판 버전은 패치 번호 뒤에 하이픈과 문자열을 추가하여 표시됩니다. 기술적으로 설명하자면 하이픈 뒤의 *모든* 문자열을 사용할 수 없으며 NuGet은 패키지를 시험판으로 처리합니다. 그런 다음 NuGet은 해당 UI에 전체 버전 번호를 표시하여 소비자가 스스로 의미를 해석하도록 합니다.
+시험판 버전은 패치 번호 뒤에 하이픈과 문자열을 추가하여 표시됩니다. 엄밀히 말하면 하이픈 뒤에 ‘아무 문자열이나’ 사용할 수 있으며 NuGet은 패키지를 시험판으로 처리합니다. 그런 다음 NuGet은 해당 UI에 전체 버전 번호를 표시하여 소비자가 스스로 의미를 해석하도록 합니다.
 
 이 점을 고려하여 일반적으로 다음과 같이 인식된 명명 규칙을 따르는 것이 좋습니다.
 
-- `-alpha`: 일반적으로 개발 중 및 실험에 사용되는 알파 버전
+- `-alpha`: 일반적으로 개발 중 및 실험에 사용되는 알파 릴리스
 - `-beta`: 일반적으로 다음에 계획된 릴리스에 대한 기능 완료인 베타 릴리스이지만 알려진 버그를 포함할 수 있습니다.
 - `-rc`: 일반적으로 심각한 버그가 발생하지 않는 한 잠재적으로 최종적(안정적)인 릴리스인 릴리스 후보입니다.
 
