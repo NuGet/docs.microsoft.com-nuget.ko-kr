@@ -5,32 +5,32 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3da1056f64b76f27afa662d879ef9f85868e2a07
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 7dcb2e430ad80815f716f5567b511ff08acfe31b
+ms.sourcegitcommit: a9babe261f67da0f714d168d04ea54a66628974b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453779"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53735138"
 ---
 # <a name="nuget-49-release-notes"></a>NuGet 4.9 릴리스 정보
 
-[Visual Studio 2017 15.9.0 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes)는 NuGet 4.9.0 기능과 함께 제공됩니다.
+NuGet 배포 차량:
 
-
-동일한 기능의 명령줄 버전도 사용 가능합니다.
-* NuGet.exe 4.9.x - [nuget.org/downloads](https://nuget.org/downloads)
-* dotnet.exe - [.NET Core SDK 2.1.500](https://www.microsoft.com/net/download/visual-studio-sdks)
-
+| NuGet 버전 | Visual Studio 버전에서 사용 가능| .NET SDK에서 사용 가능|
+|:---|:---|:---|
+| **4.9.0** | Visual Studio 2017 버전 15.9.0 | 2.1.500, 2.2.100 |
+| **4.9.1** | N/A | N/A |
+| [**4.9.2**](https://nuget.org/downloads) |[Visual Studio 2017 버전 15.9.4](https://visualstudio.microsoft.com/downloads/) | [2.1.502, 2.2.101](https://www.microsoft.com/net/download/visual-studio-sdks) |
 
 ## <a name="summary-whats-new-in-490"></a>요약: 4.9.0의 새로운 기능
 
-* 서명: ClientPolicies를 사용하여 NuGet.Config에 나열된 신뢰할 수 있는 작성자 및 리포지토리 사용 요구 - [#6961](https://github.com/NuGet/Home/issues/6961)
+* 서명: ClientPolicies를 사용하여 NuGet.Config에 나열된 신뢰할 수 있는 작성자 및 리포지토리 사용 요구 - [#6961](https://github.com/NuGet/Home/issues/6961), [블로그 게시물](https://blog.nuget.org/20181205/Lock-down-your-dependencies-using-configurable-trust-policies.html)
 
-* “.snupkg” 파일을 만들어 팩에 기호 포함 -- 기호 서버에 대해 snupkg 파일을 수락하는 nuget 프로토콜을 해석하기 위해 푸시 향상 - [#6878](https://github.com/NuGet/Home/issues/6878)
+* “.snupkg” 파일을 만들어 팩에 기호 포함 -- 기호 서버에 대해 snupkg 파일을 수락하는 nuget 프로토콜을 해석하기 위해 푸시 향상 - [#6878](https://github.com/NuGet/Home/issues/6878), [블로그 게시물](https://blog.nuget.org/20181116/Improved-debugging-experience-with-the-NuGet-org-symbol-server-and-snupkg.html)
 
 * NuGet 자격 증명 플러그 인 V2 - [#6642](https://github.com/NuGet/Home/issues/6642)
 
-* 자체 포함된 NuGet 패키지 - 라이선스 - [#4628](https://github.com/NuGet/Home/issues/4628)
+* 자체 포함 NuGet 패키지 - 라이선스 - [#4628](https://github.com/NuGet/Home/issues/4628), [공지](https://github.com/NuGet/Announcements/issues/32)
 
 * PackageReference의 옵트인 “GeneratePathProperty” 메타데이터를 사용하여 “Foo.Bar\1.0” 디렉터리에 패키지별 MSBuild 속성 생성 - [#6949](https://github.com/NuGet/Home/issues/6949)
 
@@ -72,7 +72,7 @@ ms.locfileid: "52453779"
 
 * nuget 팩의 nuspec 버전 태그를 잘못 사용하면 도움이 되지 않는 오류 메시지가 표시됨 - [#2714](https://github.com/NuGet/Home/issues/2714)
 
-* DCR - 서명:  NuGet 프로토콜 지원: RepositorySignatures/4.9.0 리소스 - [#7421](https://github.com/NuGet/Home/issues/7421)
+* DCR - 서명: NuGet 프로토콜 지원: RepositorySignatures/4.9.0 리소스 - [#7421](https://github.com/NuGet/Home/issues/7421)
 
 * DCR - 패키지 추출 중 이제 .nupkg.metadata 파일이 생성됨 - “content-hash” 포함 - [#7283](https://github.com/NuGet/Home/issues/7283)
 
@@ -94,15 +94,19 @@ ms.locfileid: "52453779"
 
 [이 릴리스 4.9.1에서 수정된 모든 문제 목록](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.1")
 
+## <a name="summary-whats-new-in-492"></a>요약: 4.9.2의 새로운 기능
+
+### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
+
+* 원본 이름에 공백이 포함되면 VS/dotnet.exe/nuget.exe/msbuild.exe 복원에서 자격 증명을 사용하지 않음 - [#7517](https://github.com/NuGet/Home/issues/7517)
+
+* LicenseAcceptanceWindow 및 LicenseFileWindow 접근성 문제 - [#7452](https://github.com/NuGet/Home/issues/7452)
+
+* DateTimeConverter에서 DateTime.Parse의 FormatException 수정 - [#7539](https://github.com/NuGet/Home/issues/7539)
+
+[이 릴리스 4.9.2에서 수정된 모든 문제 목록](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
+
 ## <a name="known-issues"></a>알려진 문제
-
-### <a name="dotnetexenugetexe-doesnt-use-credentials-when-source-name-contains-a-whitespace---7517httpsgithubcomnugethomeissues7517"></a>소스 이름에 공백이 포함되면 dotnet.exe/nuget.exe가 자격 증명을 사용하지 않음 - [#7517](https://github.com/NuGet/Home/issues/7517)
-
-#### <a name="issue"></a>문제
-소스 이름에 공백이 있으면 nuget.exe가 `The ' ' character, hexadecimal value 0x20, cannot be included in a name.` 같은 오류를 throw함
-
-#### <a name="workaround"></a>해결 방법
-소스 이름에 공백이 포함되지 않도록 변경합니다.
 
 ### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget 푸시 --interactive로 인해 Mac에서 오류가 발생합니다. - [#7519](https://github.com/NuGet/Home/issues/7519)
 
@@ -111,14 +115,6 @@ ms.locfileid: "52453779"
 
 #### <a name="workaround"></a>해결 방법
 `dotnet restore --interactive` 같은 대화형 옵션을 사용하여 다른 dotnet 명령을 실행하고 인증합니다. 인증은 자격 증명 공급자에 의해 캐시될 수 있습니다. 그런 다음, `dotnet nuget push`를 실행합니다.
-
-### <a name="licenseacceptancewindow-and-licensefilewindow-accessibility-issues---7452httpsgithubcomnugethomeissues7452"></a>LicenseAcceptanceWindow 및 LicenseFileWindow 접근성 문제 - [#7452](https://github.com/NuGet/Home/issues/7452)
-
-#### <a name="issue"></a>문제
-화면 읽기 프로그램 및 JAWS를 사용한 내레이션 및 키보드 탐색과 관련해서 라이선스 동의 창 및 라이선스 파일 창에 접근성 문제가 있습니다.
-
-#### <a name="workaround"></a>해결 방법
-해결 방법이 없습니다.
 
 ### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>.NET Core SDK로 설치된 FallbackFolders의 패키지는 사용자 지정 설치되며 서명 유효성 검사에 실패합니다. - [#7414](https://github.com/NuGet/Home/issues/7414)
 
