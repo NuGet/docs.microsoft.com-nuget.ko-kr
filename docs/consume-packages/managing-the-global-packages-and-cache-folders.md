@@ -26,7 +26,7 @@ ms.locfileid: "43548015"
 > [!Note]
 > NuGet 3.5 이전에서는 `%localappdata%\NuGet\Cache`에 있는 *http-cache* 대신 *packages-cache*를 사용합니다.
 
-NuGet은 캐시 및 *global-packages* 폴더를 사용하여 일반적으로 컴퓨터에 있는 이미 있는 패키지 다운로드를 방지하여 설치, 업데이트 및 복원 작업의 성능을 개선합니다. PackageReference를 사용하는 경우 *global-packages* 폴더는 다운로드한 패키지를 프로젝트 폴더 내에 보관하는 것도 막아 이러한 패키지가 소스 제어에 실수로 추가될 수 있는 문제를 방지하고 NuGet이 컴퓨터 저장소에 미치는 전반적인 영향도 줄입니다.
+NuGet은 캐시 및 *global-packages* 폴더를 사용하여 일반적으로 컴퓨터에 있는 이미 있는 패키지 다운로드를 방지하여 설치, 업데이트 및 복원 작업의 성능을 개선합니다. PackageReference를 사용하는 경우 *global-packages* 폴더는 다운로드한 패키지를 프로젝트 폴더 내에 보관하는 것도 막아 이러한 패키지가 소스 제어에 실수로 추가될 수 있는 문제를 방지하고 NuGet이 컴퓨터 스토리지에 미치는 전반적인 영향도 줄입니다.
 
 패키지를 검색하라는 요청을 받으면 NuGet은 먼저 *global-packages* 폴더를 찾습니다. 정확한 버전의 패키지가 없는 경우 NuGet은 모든 비 HTTP 패키지 소스를 확인합니다. 그래도 패키지를 못 찾으면 NuGet은 `dotnet.exe` 명령에 `--no-cache` 또는 `nuget.exe` 명령에 `-NoCache`를 지정하지 않은 경우 *http-cache*에서 패키지를 찾습니다. 패키지가 캐시에 없거나 캐시가 사용되지 않는 경우에는 NuGet은 HTTP를 통해 패키지를 검색합니다.
 
