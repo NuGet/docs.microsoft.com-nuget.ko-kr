@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 478b74f98caafdc7c6b69423b9f9d72890c8d7cb
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 1dcfb87690b728280b494d4434f9c1d7ee7a7e74
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545259"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324723"
 ---
 # <a name="service-index"></a>서비스 인덱스
 
@@ -59,7 +59,7 @@ nuget.org의 서비스 인덱스에 위치한 `https://api.nuget.org/v3/index.js
 
 ### <a name="sample-request"></a>샘플 요청
 
-가져오기 https://api.nuget.org/v3/index.json
+    GET https://api.nuget.org/v3/index.json
 
 ### <a name="sample-response"></a>샘플 응답
 

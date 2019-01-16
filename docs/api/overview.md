@@ -6,18 +6,18 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: bb47c72768b0698d8e712c8261321ff38bba2764
-ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
+ms.openlocfilehash: 39b710c483ce4b3f2da30df6bb5b6842f9ee1fca
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53248431"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324840"
 ---
 # <a name="nuget-api"></a>NuGet API
 
 NuGet API는 패키지를 다운로드, 메타 데이터 인출, 새 패키지를 게시 및 공식 NuGet 클라이언트에서 사용할 수 있는 다른 대부분의 작업을 수행 하는 HTTP 끝점의 집합.
 
-이 API는 데.NET CLI, nuget.exe를 Visual Studio에서 NuGet 클라이언트에서와 같이 NuGet 작업을 수행 [ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore), Visual Studio ui에서 검색 하 고 [ `nuget.exe push` ](../tools/cli-ref-push.md)합니다.
+이 API는 데.NET CLI, nuget.exe를 Visual Studio에서 NuGet 클라이언트에서와 같이 NuGet 작업을 수행 [ `dotnet restore` ](/dotnet/core/tools/dotnet-restore?tabs=netcore2x), Visual Studio ui에서 검색 하 고 [ `nuget.exe push` ](../tools/cli-ref-push.md)합니다.
 
 Nuget.org에는 추가 요구 사항이 다른 패키지 소스에 의해 적용 되지 않은 경우에 따라 note 합니다. 이러한 차이 문서화 합니다 [nuget.org 프로토콜](nuget-protocols.md)합니다.
 
@@ -35,7 +35,7 @@ API를 지 원하는 클라이언트는 해당 패키지 원본에 연결 하는
 
 ## <a name="versioning"></a>버전 관리
 
-API에는 NuGet의 HTTP 프로토콜의 버전 3입니다. 이 프로토콜은 경우에 따라 "V3 API입니다." 라고 이러한 참조 문서는이 버전의 프로토콜 "API입니다."으로 단순히 참조
+API에는 NuGet의 HTTP 프로토콜의 버전 3입니다. 이 프로토콜은 "V3 API를" 라고도 합니다. 이러한 참조 문서는이 버전의 프로토콜 "API입니다."으로 단순히 참조
 
 서비스 인덱스 스키마 버전으로 표시 됩니다는 `version` 서비스 인덱스의 속성입니다. API 버전 문자열의 주 버전 번호에 규정 `3`합니다. 줄 바꿈하지 않는 서비스 인덱스 스키마를 변경 되는 버전 문자열의 부 버전을 늘릴 수 있습니다.
 
@@ -43,7 +43,7 @@ API에는 NuGet의 HTTP 프로토콜의 버전 3입니다. 이 프로토콜은 �
 
 NuGet V3 API V2 API의 후속 작업을 설정 하는 공식 NuGet 클라이언트의 2.x 버전에서 구현 하는 OData 기반 프로토콜 된이 있기 때문에 같이 명명 됩니다. V3 API를 처음 3.0 공식 NuGet 클라이언트 버전에서 지원 되었습니다 및 여전히 주요 프로토콜 최신 버전에서 지원 됩니다 4.0 NuGet 클라이언트에 있습니다. 
 
-주요 변경 아님 프로토콜 변경한 API에 첫 번째 릴리스 이후입니다.
+주요 변경 아님 프로토콜 변경한 API에 처음 릴리스 되었기 때문입니다.
 
 ## <a name="resources-and-schema"></a>리소스 및 스키마
 
@@ -55,11 +55,11 @@ NuGet V3 API V2 API의 후속 작업을 설정 하는 공식 NuGet 클라이언�
 [`SearchQueryService`](search-query-service-resource.md)               | 예      | 필터 및 키워드는 패키지에 대 한 검색 합니다.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | 예      | 패키지 메타 데이터를 가져옵니다.
 [`PackageBaseAddress`](package-base-address-resource.md)               | 예      | 패키지 콘텐츠를 (.nupkg)를 가져옵니다.
-[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | no       | 부분 문자열에서 패키지 Id 및 버전을 검색 합니다.
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | no       | "신고" 웹 페이지 액세스에 대 한 URL을 생성 합니다.
-[`RepositorySignatures`](repository-signatures-resource.md)             | no      | 리포지토리 서명에 사용 되는 인증서를 가져옵니다.
-[`Catalog`](catalog-resource.md)                                         | no      | 모든 패키지 이벤트의 전체 레코드입니다.
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | no      | 기호 패키지를 푸시하십시오.
+[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | 아니요       | 부분 문자열에서 패키지 Id 및 버전을 검색 합니다.
+[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | 아니요       | "신고" 웹 페이지 액세스에 대 한 URL을 생성 합니다.
+[`RepositorySignatures`](repository-signatures-resource.md)             | 아니요      | 리포지토리 서명에 사용 되는 인증서를 가져옵니다.
+[`Catalog`](catalog-resource.md)                                         | 아니요      | 모든 패키지 이벤트의 전체 레코드입니다.
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | 아니요      | 기호 패키지를 푸시하십시오.
 
 일반적으로 API 리소스에 의해 반환 되는 모든 이진이 아닌 데이터는 JSON을 사용 하 여 serialize 됩니다. 서비스 인덱스의 각 리소스에서 반환 되는 응답 스키마는 해당 리소스에 대해 개별적으로 정의 됩니다. 각 리소스에 대 한 자세한 내용은 위에 나열 된 항목을 참조 하세요.
 

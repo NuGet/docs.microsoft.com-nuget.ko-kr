@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8e612d9f86bcffc99870c5541aa6091e678db512
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 97ed3ec7d41d2847c0521af69373a1871eb585dd
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547091"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324684"
 ---
 # <a name="nuget-client-sdk"></a>NuGet 클라이언트 SDK
 
@@ -29,10 +29,14 @@ ms.locfileid: "43547091"
 
 Dave Glick, 2016을 게시 하 여 다음 블로그 시리즈의 예제 및 API의 일부에 대 한 설명서를 찾을 수 있습니다.
 
-- [탐색 NuGet v3 라이브러리, 1 부: 소개 및 개념](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
-- [NuGet v3 라이브러리, 2 부를 탐색 합니다: 패키지에 대 한 검색](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
-- [3 부 NuGet v3 라이브러리 탐색: 패키지 설치](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
+- [NuGet v3 라이브러리, 1 부를 탐색 합니다. 소개 및 개념](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
+- [NuGet v3 라이브러리, 2 부를 탐색 합니다. 패키지에 대 한 검색](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
+- [NuGet v3 라이브러리, 3 부를 탐색 합니다. 패키지 설치](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
 
 > [!Note]
 > 직후 작성 된 다음 블로그 게시물을 **3.4.3** 클라이언트 SDK 패키지 새로 릴리스된 NuGet의 버전입니다.
 > 최신 버전의 패키지를 블로그 게시물의 정보를 사용 하 여 호환 되지 않을 수 있습니다.
+
+Martin Björkström NuGet 클라이언트 SDK를 사용 하 여 NuGet 패키지를 설치 하는 것에 대 한 다른 접근 방법이 도입 되었습니다 그 위치 Dave Glick 블로그 시리즈를 후속 블로그 게시물을 수행 했습니다.
+
+- [NuGet v3 라이브러리를 다시 방문](https://martinbjorkstrom.com/posts/2018-09-19-revisiting-nuget-client-libraries)

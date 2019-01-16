@@ -6,29 +6,29 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 047ede14c7935844cb4f6d0315772c2a1190e5b8
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 0c76ea43e871009223cc4328449e21e5d02129bb
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547261"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324879"
 ---
 # <a name="target-frameworks"></a>대상 프레임워크
 
 NuGet은 다양한 위치에서 대상 프레임워크 참조를 사용하여 패키지의 프레임워크 종속 구성 요소를 구체적으로 식별하고 격리합니다.
 
-- [.nuspec 매니페스트](../reference/nuspec.md): 패키지는 프로젝트의 대상 프레임워크에 따라 프로젝트에 포함될 고유한 패키지를 나타낼 수 있습니다.
-- [.nupkg 폴더 이름](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): 패키지의 `lib` 폴더 내에 있는 폴더는 대상 프레임워크에 따라 이름을 지정할 수 있으며, 각 폴더에는 해당 프레임워크에 적합한 DLL 및 다른 콘텐츠가 포함됩니다.
-- [packages.config](../reference/packages-config.md): 종속성의 `targetframework` 특성은 설치할 패키지의 변형을 지정합니다.
+- [.nuspec 매니페스트](../reference/nuspec.md): 패키지를 프로젝트의 대상 프레임 워크에 따라 프로젝트에 포함 될 고유한 패키지를 나타낼 수 있습니다.
+- [.nupkg 폴더 이름](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): 패키지의 내 `lib` 폴더는 Dll 및 프레임 워크에 적합 한 다른 콘텐츠가 포함 된 각 대상 프레임 워크에 따라 이름을 지정할 수 있습니다.
+- [packages.config](../reference/packages-config.md): `targetframework` 종속성 특성 설치할 패키지의 변형을 지정 합니다.
 
 > [!Note]
 > 아래 표를 계산하는 NuGet 클라이언트 소스 코드는 다음 위치에 있습니다.
-> - 지원되는 프레임워크 이름: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> - 프레임워크 우선 순위 및 매핑: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> - 지원 되는 프레임 워크 이름: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> - 프레임 워크 우선 순위 및 매핑: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 ## <a name="supported-frameworks"></a>지원되는 프레임워크
 
-프레임워크는 일반적으로 짧은 대상 프레임워크 모니커 또는 TFM에서 참조됩니다. .NET Standard에서 이 프레임워크는 *TxM*으로 일반화되어 여러 프레임워크에 대한 단일 참조를 허용합니다.
+프레임워크는 일반적으로 짧은 대상 프레임워크 모니커 또는 TFM에서 참조됩니다. .NET Standard에서이으로 일반화 되어 *TxM* 여러 프레임 워크에 대 한 단일 참조를 허용 하도록 합니다.
 
 NuGet 클라이언트는 아래 표의 프레임워크를 지원합니다. 대괄호([]) 안에 표시된 항목은 동등한 항목입니다. `dotnet`과 같은 일부 도구는 일부 파일에서 정식 TFM의 변형을 사용할 수 있습니다. 예를 들어 `dotnet pack`은 `.nuspec` 파일에서 `netcoreapp2.0` 대신 `.NETCoreApp2.0`을 사용합니다. 다양한 NuGet 클라이언트 도구에서 이러한 변형을 적절하게 처리하지만, 파일을 직접 편집할 때는 항상 정식 TFM을 사용해야 합니다.
 
@@ -65,7 +65,7 @@ Windows Phone(SL) | wp | wp [wp7] |
 | | | wp8 |
 | | | wp81 |
 Windows Phone(UWP) | | wpa81 |
-유니버설 Windows 플랫폼 | uap | uap [uap10.0] |
+UWP | uap | uap [uap10.0] |
 | | | uap10.0 |
 .NET Standard | netstandard | netstandard1.0 |
 | | | netstandard1.1 |

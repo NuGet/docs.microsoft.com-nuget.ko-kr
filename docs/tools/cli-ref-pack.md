@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: b5bd8bd30ad134f36433b8e4721ce131425a1483
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: d39ec8caf94caa767b6c502cc475e278aa718b95
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453366"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324788"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 명령(NuGet CLI)
 
-**적용 대상:** 패키지 만들기 &bullet; **지원 되는 버전:** 2.7 이상
+**적용 대상:** 패키지 만들기 &bullet; **지원 되는 버전:** 2.7+
 
 지정한 NuGet 패키지를 만들어 `.nuspec` 또는 프로젝트 파일입니다. 합니다 `dotnet pack` 명령 (참조 [dotnet 명령](dotnet-Commands.md)) 및 `msbuild -t:pack` (참조 [MSBuild 대상](../reference/msbuild-targets.md)) 대체 항목으로 사용할 수 있습니다.
 
@@ -89,7 +89,7 @@ nuget pack foo.csproj -Properties Configuration=Release
 nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="1.0.5"
 
 # Create a package from project foo.csproj, using MSBuild version 12 to build the project
-nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5
+nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5"
 
 # Create a package from project foo.nuspec and the corresponding symbol package using the new recommended format .snupkg
 nuget pack foo.nuspec -Symbols -SymbolPackageFormat snupkg

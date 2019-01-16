@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 878fb582a31667c84f3ae306b554718de72eca7a
-ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
+ms.openlocfilehash: 8132595cbfaf553736fbcc81aada283a44d6cdbf
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53645674"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324853"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -72,6 +72,7 @@ PackageReference 형식을 사용 하 여.NET Standard 프로젝트에 대 한 `
 ### <a name="pack-target-inputs"></a>pack 대상 입력
 
 - IsPackable
+- SuppressDependenciesWhenPacking
 - PackageVersion
 - PackageId
 - 만든 이
@@ -106,6 +107,10 @@ PackageReference 형식을 사용 하 여.NET Standard 프로젝트에 대 한 `
 - NuspecProperties
 
 ## <a name="pack-scenarios"></a>pack 시나리오
+
+### <a name="suppress-dependencies"></a>종속성 표시 안 함
+
+생성 된 NuGet 패키지에서 종속성 패키지를 표시 하지 않으려면 설정할 `SuppressDependenciesWhenPacking` 에 `true` 그러면 생성 된 nupkg 파일에서 모든 종속성을 건너뜁니다.
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
@@ -194,7 +199,15 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 라이선스 식 사용 PackageLicenseExpression 속성을 사용 해야 합니다. 
 [라이선스 식 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample)합니다.
 
-라이선스 파일을 압축할 때 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로 지정 해야 합니다. 또한 파일 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들면 다음과 같습니다.
+```xml
+<PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+</PropertyGroup>
+```
+
+[라이선스 식 및 NuGet.org에서 허용 되는 라이선스에 대 한 자세한 정보를 알아보려면](nuspec.md#license)합니다.
+
+라이선스 파일을 압축할 때 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로 지정 해야 합니다. 또한 파일 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들어:
 
 ```xml
 <PropertyGroup>

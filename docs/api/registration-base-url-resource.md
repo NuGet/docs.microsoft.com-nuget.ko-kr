@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: ba47d6fdeeaa4ee9de83ef4dd990707bd4928063
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 19a1f48164f65f1ff805e036e55abb110247aa72
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453561"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324866"
 ---
 # <a name="package-metadata"></a>패키지 메타 데이터
 
@@ -141,7 +141,8 @@ dependencyGroups         | 개체의 배열           | 아니요       | 대상
 설명              | string                     | 아니요       | 
 iconUrl                  | string                     | 아니요       | 
 ID                       | string                     | 예      | 패키지의 ID
-licenseUrl               | string                     | 아니요       | 
+licenseUrl               | string                     | 아니요       |
+licenseExpression        | string                     | 아니요       | 
 나열                   | boolean                    | 아니요       | 없는 경우에 나열 된 것으로 간주 해야
 minClientVersion         | string                     | 아니요       | 
 projectUrl               | string                     | 아니요       | 
@@ -155,6 +156,8 @@ requireLicenseAcceptance | boolean                    | 아니요       |
 패키지 `version` 속성이 정규화 한 후 전체 버전 문자열입니다. 즉,이 SemVer 2.0.0 빌드 데이터를 여기 포함 될 수 있습니다.
 
 `dependencyGroups` 속성은 대상 프레임 워크 별로 그룹화 된 패키지의 종속성을 나타내는 개체의 배열입니다. 패키지에 종속성이 없는 경우는 `dependencyGroups` 속성이 없으면 빈 배열 또는 `dependencies` 모든 그룹의 속성이 비어 있거나 없습니다.
+
+값을 `licenseExpression` 속성을 준수 [NuGet 라이선스 식 구문](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license)합니다.
 
 #### <a name="package-dependency-group"></a>패키지 종속성 그룹
 

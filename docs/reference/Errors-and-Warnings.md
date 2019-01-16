@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 3dd50c1f39ddba24b2814624fe290e20fbd1a146
-ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
+ms.openlocfilehash: f224f16f91bbe8a6580098ad655e5e42e112f178
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671151"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324749"
 ---
 # <a name="errors-and-warnings"></a>오류 및 경고
 
@@ -24,19 +24,19 @@ NuGet 4.3.0 오류 및 경고가이 항목에 설명 된 대로 번호가 매겨
 | 그룹화 | 오류 번호 |
 | --- | --- |
 | 잘못 된 입력된 오류 | [NU1001](./errors-and-warnings/NU1001.md), [NU1002](./errors-and-warnings/NU1002.md), [NU1003](./errors-and-warnings/NU1003.md) |
-| 누락 된 패키지 및 프로젝트 오류 | [NU1100](./errors-and-warnings/NU1100.md), [NU1101](./errors-and-warnings/NU1101.md)를 [NU1102](./errors-and-warnings/NU1102.md)를 [NU1103](./errors-and-warnings/NU1103.md)를 [NU1104](./errors-and-warnings/NU1104.md)를 [NU1105](./errors-and-warnings/NU1105.md)를 [NU1106](./errors-and-warnings/NU1106.md)하십시오 [NU1107](./errors-and-warnings/NU1107.md), [NU1108](./errors-and-warnings/NU1108.md) |
+| 누락 된 패키지 및 프로젝트 오류 | [NU1100](./errors-and-warnings/NU1100.md), [NU1101](./errors-and-warnings/NU1101.md), [NU1102](./errors-and-warnings/NU1102.md), [NU1103](./errors-and-warnings/NU1103.md), [NU1104](./errors-and-warnings/NU1104.md), [NU1105](./errors-and-warnings/NU1105.md), [NU1106](./errors-and-warnings/NU1106.md), [NU1107](./errors-and-warnings/NU1107.md), [NU1108](./errors-and-warnings/NU1108.md) |
 | 호환성 오류 | [NU1201](./errors-and-warnings/NU1201.md), [NU1202](./errors-and-warnings/NU1202.md), [NU1203](./errors-and-warnings/NU1203.md), [NU1401](./errors-and-warnings/NU1401.md) |
 | NuGet 내부 오류 | [NU1000](./errors-and-warnings/NU1000.md) |
-| 서명 된 패키지 오류 (예: 생성 및 확인) | [NU3001](./errors-and-warnings/NU3001.md), [NU3004](./errors-and-warnings/NU3004.md)를 [NU3005](./errors-and-warnings/NU3005.md)를 [NU3008](./errors-and-warnings/NU3008.md)를 [NU3012](./errors-and-warnings/NU3012.md)를 [NU3028](./errors-and-warnings/NU3028.md)를 [NU3034](./errors-and-warnings/NU3034.md)|
-| 팩 오류 | [NU5000](./errors-and-warnings/NU5000.md), [NU5001](./errors-and-warnings/NU5001.md)를 [NU5002](./errors-and-warnings/NU5002.md)를 [NU5003](./errors-and-warnings/NU5003.md)를 [NU5004](./errors-and-warnings/NU5004.md)를 [NU5005](./errors-and-warnings/NU5005.md)를 [NU5007](./errors-and-warnings/NU5007.md), [NU5008](./errors-and-warnings/NU5008.md)를 [NU5009](./errors-and-warnings/NU5009.md)합니다 [NU5010](./errors-and-warnings/NU5010.md)를 [NU5011](./errors-and-warnings/NU5011.md), [NU5012](./errors-and-warnings/NU5012.md), [NU5013](./errors-and-warnings/NU5013.md)를 [NU5014](./errors-and-warnings/NU5014.md)를 [NU5015](./errors-and-warnings/NU5015.md)를 [NU5016](./errors-and-warnings/NU5016.md)를 [NU5017](./errors-and-warnings/NU5017.md), [ NU5018](./errors-and-warnings/NU5018.md), [NU5019](./errors-and-warnings/NU5019.md)합니다 [NU5020](./errors-and-warnings/NU5020.md)를 [NU5021](./errors-and-warnings/NU5021.md)를 [NU5022](./errors-and-warnings/NU5022.md), [NU5023](./errors-and-warnings/NU5023.md), [NU5024](./errors-and-warnings/NU5024.md)합니다 [NU5025](./errors-and-warnings/NU5025.md)를 [NU5026](./errors-and-warnings/NU5026.md)를 [NU5027](./errors-and-warnings/NU5027.md), [NU5028](./errors-and-warnings/NU5028.md), [NU5029](./errors-and-warnings/NU5029.md)
-| 라이선스 특정 팩 오류 | [NU5030](./errors-and-warnings/NU5030.md), [NU5031](./errors-and-warnings/NU5031.md)합니다 [NU5032](./errors-and-warnings/NU5032.md)를 [NU5033](./errors-and-warnings/NU5033.md)를 [NU5034](./errors-and-warnings/NU5034.md), [NU5035](./errors-and-warnings/NU5035.md)
+| 서명 된 패키지 오류 (예: 생성 및 확인) | [NU3001](./errors-and-warnings/NU3001.md), [NU3004](./errors-and-warnings/NU3004.md), [NU3005](./errors-and-warnings/NU3005.md), [NU3008](./errors-and-warnings/NU3008.md), [NU3012](./errors-and-warnings/NU3012.md), [NU3028](./errors-and-warnings/NU3028.md), [NU3034](./errors-and-warnings/NU3034.md)|
+| 팩 오류 | [NU5000](./errors-and-warnings/NU5000.md), [NU5001](./errors-and-warnings/NU5001.md)를 [NU5002](./errors-and-warnings/NU5002.md)를 [NU5003](./errors-and-warnings/NU5003.md)를 [NU5004](./errors-and-warnings/NU5004.md)를 [NU5005](./errors-and-warnings/NU5005.md)를 [NU5007](./errors-and-warnings/NU5007.md), [NU5008](./errors-and-warnings/NU5008.md)를 [NU5009](./errors-and-warnings/NU5009.md)합니다 [NU5010](./errors-and-warnings/NU5010.md)를 [NU5011](./errors-and-warnings/NU5011.md), [NU5012](./errors-and-warnings/NU5012.md), [NU5013](./errors-and-warnings/NU5013.md)를 [NU5014](./errors-and-warnings/NU5014.md)를 [NU5015](./errors-and-warnings/NU5015.md)를 [NU5016](./errors-and-warnings/NU5016.md)를 [NU5017](./errors-and-warnings/NU5017.md), [ NU5018](./errors-and-warnings/NU5018.md), [NU5019](./errors-and-warnings/NU5019.md)합니다 [NU5020](./errors-and-warnings/NU5020.md)를 [NU5021](./errors-and-warnings/NU5021.md)를 [NU5022](./errors-and-warnings/NU5022.md), [NU5023](./errors-and-warnings/NU5023.md), [NU5024](./errors-and-warnings/NU5024.md)합니다 [NU5025](./errors-and-warnings/NU5025.md)를 [NU5026](./errors-and-warnings/NU5026.md)를 [NU5027](./errors-and-warnings/NU5027.md), [NU5028](./errors-and-warnings/NU5028.md)하십시오 [NU5029](./errors-and-warnings/NU5029.md), [NU5036](./errors-and-warnings/NU5036.md)
+| 라이선스 특정 팩 오류 | [NU5030](./errors-and-warnings/NU5030.md), [NU5031](./errors-and-warnings/NU5031.md), [NU5032](./errors-and-warnings/NU5032.md), [NU5033](./errors-and-warnings/NU5033.md), [NU5034](./errors-and-warnings/NU5034.md), [NU5035](./errors-and-warnings/NU5035.md)
 
 ## <a name="warnings"></a>경고
 
 | 그룹화 | 경고 번호 |
 | --- | --- |
 | 잘못 된 입력된 경고 | [NU1501](./errors-and-warnings/NU1501.md), [NU1502](./errors-and-warnings/NU1502.md), [NU1503](./errors-and-warnings/NU1503.md) |
-| 예기치 않은 패키지 버전 경고 | [NU1601](./errors-and-warnings/NU1601.md), [NU1602](./errors-and-warnings/NU1602.md)를 [NU1603](./errors-and-warnings/NU1603.md)를 [NU1604](./errors-and-warnings/NU1604.md)를 [NU1605](./errors-and-warnings/NU1605.md)를 [NU1606](./errors-and-warnings/NU1108.md)를 [NU1607](./errors-and-warnings/NU1107.md) |
+| 예기치 않은 패키지 버전 경고 | [NU1601](./errors-and-warnings/NU1601.md), [NU1602](./errors-and-warnings/NU1602.md), [NU1603](./errors-and-warnings/NU1603.md), [NU1604](./errors-and-warnings/NU1604.md), [NU1605](./errors-and-warnings/NU1605.md), [NU1606](./errors-and-warnings/NU1108.md), [NU1607](./errors-and-warnings/NU1107.md) |
 | 확인자 충돌 경고 | [NU1608](./errors-and-warnings/NU1608.md) |
 | 패키지 대체 경고 | [NU1701](./errors-and-warnings/NU1701.md) |
 | 경고를 피드 합니다. | [NU1801](./errors-and-warnings/NU1801.md) |

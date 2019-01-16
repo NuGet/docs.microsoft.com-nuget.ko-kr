@@ -6,16 +6,16 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: ffd0cf5d50a2deed16e1722b32e43047bc81df2f
-ms.sourcegitcommit: a1846edf70ddb2505d58e536e08e952d870931b0
+ms.openlocfilehash: ee4ffaa7e250cdbf313476fd794a8d87c80b69f9
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52303689"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324710"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a>신뢰할 수 있는 서명자 명령 (NuGet CLI)
 
-**적용 대상:** 소비 패키지 &bullet; **지원 되는 버전:** 4.9 이상
+**적용 대상:** 소비 패키지 &bullet; **지원 되는 버전:** 4.9.1+
 
 NuGet 구성에 신뢰할 수 있는 서명자를 가져오거나 설정 합니다. 추가 사용법에 대한 정보는 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)을 통해 확인할 수 있습니다. Nuget.config 스키마에서 참조 하는 등을 표시 하는 방법에 대 한 내용은 합니다 [NuGet 구성 파일 참조](../reference/nuget-config-file.md)합니다.
 
@@ -53,7 +53,7 @@ Registered trusted signers:
         
 ```
 
-## <a name="nuget-trusted-signers-add-options"></a>[옵션]을 추가 하는 nuget 신뢰할 수 있는 서명자
+## <a name="nuget-trusted-signers-add-options"></a>nuget trusted-signers add [options]
 
 구성에 지정 된 이름의 신뢰할 수 있는 서명자를 추가합니다. 이 옵션은 신뢰할 수 있는 작성자 또는 리포지토리를 추가 하려면 다른 제스처입니다.
 
@@ -80,7 +80,7 @@ nuget trusted-signers add <package(s)> -Name <name> [options]
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_참고_:이 옵션에는 신뢰할 수 있는 리포지토리만 추가 됩니다. 
+_참고_: 이 옵션에서 신뢰할 수 있는 리포지토리를 추가 합니다. 
 
 | 옵션 | 설명 |
 | --- | --- |
@@ -94,7 +94,7 @@ _참고_:이 옵션에는 신뢰할 수 있는 리포지토리만 추가 됩니�
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_참고_: 인증서 항목에는 서명자 추가할 지정 된 이름의 신뢰할 수 있는 서명자가 이미 있는 경우. 그렇지 않으면 신뢰할 수 있는 작성자 만들어집니다 인증서 항목을 사용 하 여에서 인증서 정보를 제공 합니다.
+_참고_: 지정 된 이름의 신뢰할 수 있는 서명자가 이미 있는 경우 인증서 항목은 서명자에 추가 됩니다. 그렇지 않으면 신뢰할 수 있는 작성자 만들어집니다 인증서 항목을 사용 하 여에서 인증서 정보를 제공 합니다.
 
 | 옵션 | 설명 |
 | --- | --- |
@@ -106,11 +106,11 @@ _참고_: 인증서 항목에는 서명자 추가할 지정 된 이름의 신뢰
 
 지정 된 이름과 일치 하는 모든 신뢰할 수 있는 서명자를 제거 합니다.
 
-## <a name="nuget-trusted-signers-sync--name-name"></a>nuget 신뢰할 수 있는 서명자 동기화-이름 <name>
+## <a name="nuget-trusted-signers-sync--name-name"></a>nuget trusted-signers sync -Name <name>
 
 최신 목록을 업데이트 하려면 현재 신뢰할 수 있는 저장소에 사용 되는 인증서 요청을 신뢰할 수 있는 서명자의 기존 인증서 목록입니다.
 
-_참고_:이 제스처는 현재 인증서 목록을 삭제 하 고 리포지토리에서 최신 목록을 바꿉니다.
+_참고_: 이 제스처는 인증서의 현재 목록을 삭제 하 고 리포지토리에서 최신 목록을 바꿉니다.
 
 ## <a name="options"></a>옵션
 
