@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: e8d4ed1f3fe4394d084a5847200901b23a1b7b39
-ms.sourcegitcommit: c825eb7e222d4a551431643f5b5617ae868ebe0a
+ms.openlocfilehash: 009be99a1c6623a00b4bdbe6db3164ca70782212
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51944082"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324905"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -84,11 +84,11 @@ nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페�
 
 nuget.org뿐만 아니라 UI 표시에도 종종 표시되는 패키지의 라이선스에 대한 URL입니다.
 #### <a name="license"></a>라이선스
-SPDX 라이선스 식 또는 종종 nuget.org 뿐만 아니라 UI 표시에 표시 되는 패키지 내 라이선스 파일의 경로입니다. MIT BSD-2-절 등 일반적인 라이선스에 따라 패키지를 라이선스 하는 경우 연결된 SPDX 라이선스 식별자를 사용 합니다.<br>`<license type="expression">MIT</license>`
+SPDX 라이선스 식 또는 종종 nuget.org 뿐만 아니라 UI 표시에 표시 되는 패키지 내 라이선스 파일의 경로입니다. MIT BSD-2-절 등 일반적인 라이선스에 따라 패키지를 라이선스 하는 경우 연결된 SPDX 라이선스 식별자를 사용 합니다.<br> `<license type="expression">MIT</license>`
 
 전체 목록은 다음과 같습니다 [SPDX 라이선스 식별자](https://spdx.org/licenses/)합니다. OSI만을 허용 하는 NuGet.org 또는 승인 FSF 라이선스를 사용 하는 경우 라이선스 유형 식입니다.
 
-패키지에서 여러 일반적인 라이선스 사용이 허가 되는 복합 라이선스를 사용 하 여 지정할 수 있습니다 합니다 [SPDX 식 구문은 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)합니다.<br>`<license type="expression">BSD-2-Clause OR MIT</license>`
+패키지에서 여러 일반적인 라이선스 사용이 허가 되는 복합 라이선스를 사용 하 여 지정할 수 있습니다 합니다 [SPDX 식 구문은 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)합니다.<br> `<license type="expression">BSD-2-Clause OR MIT</license>`
 
 SPDX 식별자 할당 되지 않은 라이선스를 사용 하는 경우 사용자 지정 라이선스는 라이선스는 텍스트를 사용 하 여 파일을 패키징할 수 있습니다. 예를 들어:
 ```xml
@@ -105,6 +105,9 @@ SPDX 식별자 할당 되지 않은 라이선스를 사용 하는 경우 사용�
   </files>
 </package>
 ```
+
+MSBuild 해당 살펴보세요 [라이선스 식 또는 라이선스 파일을 압축](msbuild-targets.md#packing-a-license-expression-or-a-license-file)합니다.
+
 NuGet의 라이선스 식의 정확한 구문은 아래에 설명 [ABNF](https://tools.ietf.org/html/rfc5234)합니다.
 ```cli
 license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
@@ -149,7 +152,7 @@ nuget.exe 및 Visual Studio 패키지 관리자에 의해 적용되는, 이 패�
 
 #### <a name="collection-elements"></a>컬렉션 요소
 
-#### <a name="packagetypes"></a>PackageTypes
+#### <a name="packagetypes"></a>packageTypes
 *(3.5 이상)* 기존 종속 패키지가 아닌 경우 패키지의 유형을 지정하는 0개 이상의 `<packageType>` 요소 컬렉션입니다. 각 packageType에는 *name* 및 *version* 특성이 있습니다. [패키지 유형 설정](../create-packages/creating-a-package.md#setting-a-package-type)을 참조하세요.
 #### <a name="dependencies"></a>종속성
 패키지에 대한 종속성을 지정하는 0개 이상의 `<dependency>` 요소 컬렉션입니다. 각 종속성에는 *id*, *version*, *include*(3.x 이상) 및 *exclude*(3.x 이상) 특성이 있습니다. 아래의 [종속성](#dependencies-element)을 참조하세요.
@@ -250,7 +253,7 @@ nuget pack MyProject.csproj
 </dependencies>
 ```
 
-참고: `nuget spec`을 사용하여 프로젝트에서 `.nuspec`을 만드는 경우 해당 프로젝트에 있는 종속성이 결과 `.nuspec` 파일에 자동으로 포함됩니다.
+참고: 만들 때를 `.nuspec` 사용 하 여 프로젝트 `nuget spec`, 해당 프로젝트에 존재 하는 종속성이 자동으로 결과에 포함 됩니다 `.nuspec` 파일입니다.
 
 ### <a name="dependency-groups"></a>종속성 그룹
 
