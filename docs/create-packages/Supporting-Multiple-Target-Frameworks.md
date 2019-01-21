@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/27/2017
 ms.topic: conceptual
-ms.openlocfilehash: c59839240935e2a6c590dea3adf623313f79f02f
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: a755438c1f63d33271f636cb663cc5b51a5aecbc
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981147"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324814"
 ---
 # <a name="supporting-multiple-net-framework-versions"></a>여러 .NET Framework 버전 지원
 
@@ -125,7 +125,7 @@ NuGet은 패키지의 단일 라이브러리 폴더에서 어셈블리를 복사
 
 이식 가능한 클래스 라이브러리를 대상으로 하는 라이브러리를 패키지할 때 특히 PCL의 하위 집합만 대상으로 하는 경우 폴더 이름 및 `.nuspec` 파일에서 사용해야 하는 NuGet 대상을 결정하는 작업이 까다로울 수 있습니다. 다음 외부 리소스는 이런 기능에 도움이 됩니다.
 
-- [.NET의 프레임워크 프로필](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)(stephenclearly.com)
+- [.NET의 프레임워크 프로필](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)(stephencleary.com)
 - [이식 가능한 클래스 라이브러리 프로필](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview)(plnkr.co): PCL 프로필 및 동등한 해당 NuGet 대상을 열거하는 표
 - [이식 가능한 클래스 라이브러리 프로필 도구](https://github.com/StephenCleary/PortableLibraryProfiles)(github.com): 시스템에서 사용할 수 있는 PCL 프로필을 결정하는 명령줄 도구
 

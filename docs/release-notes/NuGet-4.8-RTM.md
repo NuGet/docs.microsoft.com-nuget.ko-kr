@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 641304059c90e360fae4d0956d7b922e34bc6501
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: cf15c4f6a2e3e9f6ce7b6acb2304648041043685
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981121"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324827"
 ---
 # <a name="nuget-48-rtm-release-notes"></a>NuGet 4.8 RTM 릴리스 정보
 
@@ -62,7 +62,7 @@ ms.locfileid: "50981121"
 
 ### <a name="bugs"></a>버그
 #### <a name="signing"></a>서명
-* 서명: 오프라인 환경에서 서명된 패키지 설치 [#7008](https://github.com/NuGet/Home/issues/7008) -4.8.1에서 수정됨
+* 서명: 오프라인 환경에서 서명된 패키지 설치 [#7008](https://github.com/NuGet/Home/issues/7008) - 4.8.1에서 수정됨
 * 서명: 잘못된 URL 확인 [#7174](https://github.com/NuGet/Home/issues/7174)
 * 서명: 패키지가 연대 서명된 리포지토리인 경우 RepositorySignatureVerifier에서 패키지 무결성 확인 [#6926](https://github.com/NuGet/Home/issues/6926)
 * “패키지 무결성 검사에 실패했습니다.” 메시지(및 오류 코드)에 패키지 ID가 있어야 합니다. [#6944](https://github.com/NuGet/Home/issues/6944)
@@ -72,7 +72,7 @@ ms.locfileid: "50981121"
 * 연대 서명에 타임스탬프를 추가할 때 서명자 정보를 업데이트하는 동안 메모리가 잘못되었습니다. [#6840](https://github.com/NuGet/Home/issues/6840)
 * 서명: CTL 예외 제거 [#6794](https://github.com/NuGet/Home/issues/6794)
 * 서명: contentUrl은 HTTPS여야 합니다. [#6777](https://github.com/NuGet/Home/issues/6777)
-* 서명: SignedPackageVerifierSettings.VSClientDefaultPolicy가 사용되지 않습니다. [#6601](https://github.com/NuGet/Home/issues/6601)
+* 서명:  SignedPackageVerifierSettings.VSClientDefaultPolicy가 사용되지 않습니다. [#6601](https://github.com/NuGet/Home/issues/6601)
 
 
 #### <a name="pack"></a>압축
