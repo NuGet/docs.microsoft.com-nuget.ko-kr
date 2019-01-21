@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c5b0a8efeaadbfb0cbebf72e818683c1ec9a5077
+ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54403179"
+---
 # [NuGet이란?](what-is-nuget.md)
 # [NuGet 클라이언트 도구 설치](install-nuget-client-tools.md)
 # 빠른 시작
@@ -239,7 +247,6 @@
 ## [프로젝트 시스템 지원](visual-studio-extensibility/project-system-support.md)
 ## [Visual Studio 템플릿](visual-studio-extensibility/visual-studio-templates.md)
 # 정책
-## [NuGet FAQ](policies/nuget-faq.md)
 ## [거버넌스](policies/governance.md)
 ## [에코시스템](policies/ecosystem.md)
 ## [데이터 요청](policies/Data-requests.md)
@@ -305,3 +312,4 @@
 ## [NuGet 1.3](release-notes/NuGet-1.3.md)
 ## [NuGet 1.2](release-notes/NuGet-1.2.md)
 ## [NuGet 1.1](release-notes/NuGet-1.1.md)
+# [FAQ](faqs/nuget-faq.md)
