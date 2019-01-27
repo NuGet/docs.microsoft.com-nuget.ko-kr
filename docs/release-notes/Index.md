@@ -5,16 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 589e28346b227db50c78ac11c5ac110ed101b013
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: a9b497fd8e5e74f66f9fdf0ef882cd57befcafe6
+ms.sourcegitcommit: 0cb4c9853cde3647291062eadee2298dd273311e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453408"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55084927"
 ---
 # <a name="release-notes"></a>릴리스 정보
 
 [알려진 문제](../release-notes/known-issues.md)
+
+[NuGet 5.0 미리 보기](../release-notes/NuGet-5.0-preview.md)
 
 [NuGet 4.9 RTM](../release-notes/NuGet-4.9-RTM.md)
 
