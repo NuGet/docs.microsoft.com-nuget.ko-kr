@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: cdbe13df04bb27091b684a4ae27b0e751da1098f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a561a49f2e733929e32584adf7b6849ea535c440
+ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549036"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55046258"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet에서 패키지 종속성을 확인하는 방법
 
@@ -36,7 +36,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 #### <a name="lowest-applicable-version"></a>적용 가능한 가장 낮은 버전
 
-적용 가능한 가장 낮은 버전 규칙은 패키지의 종속성으로 정의된 대로 가장 낮은 버전의 패키지를 복원합니다. [유동적인 버전](#floating-versions)으로 선언되지 않은 경우 응용 프로그램 또는 클래스 라이브러리에 대한 종속성에도 적용됩니다.
+적용 가능한 가장 낮은 버전 규칙은 패키지의 종속성으로 정의된 대로 가장 낮은 버전의 패키지를 복원합니다. [유동적인 버전](#floating-versions)으로 선언되지 않은 경우 애플리케이션 또는 클래스 라이브러리에 대한 종속성에도 적용됩니다.
 
 예를 들어 다음 그림에서 1.0-beta는 1.0보다 낮은 것으로 간주되므로 NuGet은 1.0 버전을 선택합니다.
 
@@ -46,7 +46,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 ![피드에서 사용 가능한 버전 중 다음으로 가장 낮은 버전 선택](media/projectJson-dependency-2.png)
 
-응용 프로그램이 피드에서 사용할 수 없는 정확한 버전 번호(예: 1.2)를 지정하면, 패키지를 설치하거나 복원할 때 오류로 인해 NuGet이 실패합니다.
+애플리케이션이 피드에서 사용할 수 없는 정확한 버전 번호(예: 1.2)를 지정하면, 패키지를 설치하거나 복원할 때 오류로 인해 NuGet이 실패합니다.
 
 ![정확한 패키지 버전을 사용할 수 없는 경우 NuGet에서 오류 생성](media/projectJson-dependency-3.png)
 
@@ -54,7 +54,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 #### <a name="floating-wildcard-versions"></a>유동적인(와일드카드) 버전
 
-유동 또는 와일드카드 종속성 버전은 \* 와일드카드로 지정됩니다(예: 6.0.\*). 이 버전 사양에는 "최신 6.0.x 버전 사용"이 나와 있습니다. 4.\*는 "최신 4.x 버전 사용"을 의미합니다. 와일드카드를 사용하면 소비 응용 프로그램(또는 패키지)을 변경하지 않고도 종속성 패키지가 계속 진화할 수 있습니다.
+유동 또는 와일드카드 종속성 버전은 \* 와일드카드로 지정됩니다(예: 6.0.\*). 이 버전 사양에는 "최신 6.0.x 버전 사용"이 나와 있습니다. 4.\*는 "최신 4.x 버전 사용"을 의미합니다. 와일드카드를 사용하면 소비 애플리케이션(또는 패키지)을 변경하지 않고도 종속성 패키지가 계속 진화할 수 있습니다.
 
 와일드카드를 사용하면 NuGet에서 버전 패턴과 일치하는 패키지의 가장 높은 버전을 확인합니다. 예를 들어 6.0.\*는 6.0으로 시작하는 패키지의 버전 중 가장 높은 버전을 가져옵니다.
 
@@ -68,11 +68,11 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 #### <a name="nearest-wins"></a>가장 가까운 성공
 
-응용 프로그램에 대한 패키지 그래프에 동일한 패키지의 다른 버전이 포함된 경우 NuGet은 그래프에서 응용 프로그램과 가장 가까운 패키지를 선택하고 다른 모든 패키지는 무시합니다. 이 동작을 통해 응용 프로그램에서 종속성 그래프의 특정 패키지 버전을 재정의할 수 있습니다.
+애플리케이션에 대한 패키지 그래프에 동일한 패키지의 다른 버전이 포함된 경우 NuGet은 그래프에서 애플리케이션과 가장 가까운 패키지를 선택하고 다른 모든 패키지는 무시합니다. 이 동작을 통해 애플리케이션에서 종속성 그래프의 특정 패키지 버전을 재정의할 수 있습니다.
 
-아래 예에서 응용 프로그램은 버전 제약 조건이 2.0 이상인 B 패키지에 직접 종속됩니다. 또한 이 응용 프로그램은 B 패키지에 종속된 A 패키지에도 종속되지만 1.0 이상인 제약 조건을 갖습니다. B 패키지 2.0에 대한 종속성이 그래프의 응용 프로그램에 더 가깝기 때문에 해당 버전이 사용됩니다.
+아래 예에서 애플리케이션은 버전 제약 조건이 2.0 이상인 B 패키지에 직접 종속됩니다. 또한 이 애플리케이션은 B 패키지에 종속된 A 패키지에도 종속되지만 1.0 이상인 제약 조건을 갖습니다. B 패키지 2.0에 대한 종속성이 그래프의 애플리케이션에 더 가깝기 때문에 해당 버전이 사용됩니다.
 
-![가장 가까운 성공 규칙을 사용하는 응용 프로그램](media/projectJson-dependency-5.png)
+![가장 가까운 성공 규칙을 사용하는 애플리케이션](media/projectJson-dependency-5.png)
 
 >[!Warning]
 > 가장 가까운 성공 규칙으로 인해 패키지 버전의 다운그레이드가 발생할 수 있으므로 그래프에서 다른 종속성이 손상될 수 있습니다. 따라서 이 규칙은 사용자에게 경고하는 경고와 함께 적용됩니다.
@@ -85,7 +85,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 #### <a name="cousin-dependencies"></a>사촌 종속성
 
-응용 프로그램이 그래프의 동일한 거리에서 서로 다른 패키지 버전을 참조하는 경우 NuGet은 모든 버전 요구 사항(예: [적용 가능한 가장 낮은 버전](#lowest-applicable-version) 및 [유동적인 버전](#floating-versions) 규칙)을 충족하는 가장 낮은 버전을 사용합니다. 예를 들어 아래 이미지에서 B 패키지의 2.0 버전은 1.0 이상의 다른 제약 조건을 충족하므로 사용됩니다.
+애플리케이션이 그래프의 동일한 거리에서 서로 다른 패키지 버전을 참조하는 경우 NuGet은 모든 버전 요구 사항(예: [적용 가능한 가장 낮은 버전](#lowest-applicable-version) 및 [유동적인 버전](#floating-versions) 규칙)을 충족하는 가장 낮은 버전을 사용합니다. 예를 들어 아래 이미지에서 B 패키지의 2.0 버전은 1.0 이상의 다른 제약 조건을 충족하므로 사용됩니다.
 
 ![모든 제약 조건을 충족하는 하위 버전을 사용하여 사촌 종속성 확인](media/projectJson-dependency-7.png)
 
@@ -93,7 +93,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 ![정확한 버전 요구 사항으로 인해 확인할 수 없는 종속성](media/projectJson-dependency-8.png)
 
-이러한 상황에서는 [가장 가까운 성공](#nearest-wins) 규칙이 적용되도록 최상위 소비자(응용 프로그램 또는 패키지)가 B 패키지에 자체의 직접적인 종속성을 추가해야 합니다.
+이러한 상황에서는 [가장 가까운 성공](#nearest-wins) 규칙이 적용되도록 최상위 소비자(애플리케이션 또는 패키지)가 B 패키지에 자체의 직접적인 종속성을 추가해야 합니다.
 
 ## <a name="dependency-resolution-with-packagesconfig"></a>packages.config를 사용하여 종속성 확인
 
@@ -117,10 +117,10 @@ PackageReference 형식을 사용하는 경우 종속성에서 최상위 프로�
 
 이 문제를 해결하려면, 원하는 `C.dll`을 직접 참조하거나 올바른 패키지를 참조하는 다른 패키지를 사용한 다음, 해당 자산을 모두 제외하는 C 패키지에 대한 종속성을 추가해야 합니다. 이렇게 하려면 사용 중인 패키지 관리 형식에 따라 다음과 같이 수행합니다.
 
-- [PackageReference](../consume-packages/package-references-in-project-files.md): 종속성에 `Exclude="All"`을 추가합니다.
+- [PackageReference](../consume-packages/package-references-in-project-files.md): 종속성에 `ExcludeAssets="All"`을 추가합니다.
 
     ```xml
-    <PackageReference Include="PackageC" Version="1.0.0" Exclude="All" />
+    <PackageReference Include="PackageC" Version="1.0.0" ExcludeAssets="All" />
     ```
 
 - `packages.config`: 원하는 `C.dll` 버전만 참조하도록 `.csproj` 파일에서 PackageC에 대한 참조를 제거합니다.
