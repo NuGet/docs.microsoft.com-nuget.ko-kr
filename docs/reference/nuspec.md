@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 009be99a1c6623a00b4bdbe6db3164ca70782212
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: fec6dd0fb97b565b364a7ffcb192d2eb99187e83
+ms.sourcegitcommit: b15fdd101aec13ea5fe9dd12845051d648034abd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324905"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55480142"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -84,13 +84,13 @@ nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페�
 
 nuget.org뿐만 아니라 UI 표시에도 종종 표시되는 패키지의 라이선스에 대한 URL입니다.
 #### <a name="license"></a>라이선스
-SPDX 라이선스 식 또는 종종 nuget.org 뿐만 아니라 UI 표시에 표시 되는 패키지 내 라이선스 파일의 경로입니다. MIT BSD-2-절 등 일반적인 라이선스에 따라 패키지를 라이선스 하는 경우 연결된 SPDX 라이선스 식별자를 사용 합니다.<br> `<license type="expression">MIT</license>`
+SPDX 라이선스 식 또는 종종 nuget.org 뿐만 아니라 UI 표시에 표시 되는 패키지 내 라이선스 파일의 경로입니다. MIT BSD-2-절 등 일반적인 라이선스에 따라 패키지를 라이선스 하는 경우 연결된 SPDX 라이선스 식별자를 사용 합니다.<br>예를 들면 다음과 같습니다: `<license type="expression">MIT</license>`
 
 전체 목록은 다음과 같습니다 [SPDX 라이선스 식별자](https://spdx.org/licenses/)합니다. OSI만을 허용 하는 NuGet.org 또는 승인 FSF 라이선스를 사용 하는 경우 라이선스 유형 식입니다.
 
-패키지에서 여러 일반적인 라이선스 사용이 허가 되는 복합 라이선스를 사용 하 여 지정할 수 있습니다 합니다 [SPDX 식 구문은 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)합니다.<br> `<license type="expression">BSD-2-Clause OR MIT</license>`
+패키지에서 여러 일반적인 라이선스 사용이 허가 되는 복합 라이선스를 사용 하 여 지정할 수 있습니다 합니다 [SPDX 식 구문은 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)합니다.<br>예를 들면 다음과 같습니다: `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-SPDX 식별자 할당 되지 않은 라이선스를 사용 하는 경우 사용자 지정 라이선스는 라이선스는 텍스트를 사용 하 여 파일을 패키징할 수 있습니다. 예를 들어:
+SPDX 식별자 할당 되지 않은 라이선스를 사용 하는 경우 사용자 지정 라이선스는 파일을 패키징할 수 있습니다 (만 `.txt.` 또는 `.md`) 라이선스는 텍스트를 사용 하 여 합니다. 예를 들어:
 ```xml
 <package>
   <metadata>
