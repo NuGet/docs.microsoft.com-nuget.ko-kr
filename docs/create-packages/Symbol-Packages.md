@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 3321cba9082eb35b53ba693e246db18e5d8e187b
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 56125516345b2255998c1f734db60b58b9a92a06
+ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580261"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55046330"
 ---
 # <a name="creating-symbol-packages-legacy"></a>기호 패키지(레거시) 만들기
 
@@ -100,7 +100,7 @@ nuget pack MyProject.csproj -Symbols
 ## <a name="publishing-a-symbol-package"></a>기호 패키지 게시
 
 > [!Important]
-> nuget.org에 패키지를 푸시하려면 [nuget.exe v4.1.0 이상](https://www.nuget.org/downloads)을 사용해야 합니다. 여기서는 필수 [NuGet 프로토콜](../api/nuget-protocols.md)을 구현합니다.
+> nuget.org에 패키지를 푸시하려면 필수 [NuGet 프로토콜](../api/nuget-protocols.md)을 구현하는 [nuget.exe v4.9.1 이상](https://www.nuget.org/downloads)을 사용해야 합니다.
 
 1. 편의상 먼저 NuGet이 포함된 API 키를 저장합니다([패키지 게시](../create-packages/publish-a-package.md) 참조). 그러면 사용자가 패키지 소유자인지 확인하기 위해 symbolsource.org는 nuget.org를 사용하여 확인하기 때문에 nuget.org 및 symbolsource.org 모두에 적용됩니다.
 

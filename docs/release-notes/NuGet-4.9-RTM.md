@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7dcb2e430ad80815f716f5567b511ff08acfe31b
-ms.sourcegitcommit: a9babe261f67da0f714d168d04ea54a66628974b
+ms.openlocfilehash: 99578c5ed7e88b7269872bf88c465bbda462870a
+ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53735138"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55045110"
 ---
 # <a name="nuget-49-release-notes"></a>NuGet 4.9 릴리스 정보
 
@@ -18,9 +18,11 @@ NuGet 배포 차량:
 
 | NuGet 버전 | Visual Studio 버전에서 사용 가능| .NET SDK에서 사용 가능|
 |:---|:---|:---|
-| **4.9.0** | Visual Studio 2017 버전 15.9.0 | 2.1.500, 2.2.100 |
-| **4.9.1** | N/A | N/A |
+| [**4.9.0**](https://nuget.org/downloads) | [Visual Studio 2017 버전 15.9.0](https://visualstudio.microsoft.com/downloads/) | [2.1.500, 2.2.100](https://www.microsoft.com/net/download/visual-studio-sdks) |
+| [**4.9.1**](https://nuget.org/downloads) | N/A | N/A |
 | [**4.9.2**](https://nuget.org/downloads) |[Visual Studio 2017 버전 15.9.4](https://visualstudio.microsoft.com/downloads/) | [2.1.502, 2.2.101](https://www.microsoft.com/net/download/visual-studio-sdks) |
+| [**4.9.3**](https://nuget.org/downloads) |[Visual Studio 2017 버전 15.9.6](https://visualstudio.microsoft.com/downloads/) | N/A |
+
 
 ## <a name="summary-whats-new-in-490"></a>요약: 4.9.0의 새로운 기능
 
@@ -32,9 +34,11 @@ NuGet 배포 차량:
 
 * 자체 포함 NuGet 패키지 - 라이선스 - [#4628](https://github.com/NuGet/Home/issues/4628), [공지](https://github.com/NuGet/Announcements/issues/32)
 
-* PackageReference의 옵트인 “GeneratePathProperty” 메타데이터를 사용하여 “Foo.Bar\1.0” 디렉터리에 패키지별 MSBuild 속성 생성 - [#6949](https://github.com/NuGet/Home/issues/6949)
+* PackageReference의 옵트인 “GeneratePathProperty” 메타데이터를 사용하여 “Foo.Bar\1.0\" 디렉터리에 패키지별 MSBuild 속성 생성 - [#6949](https://github.com/NuGet/Home/issues/6949)
 
 * NuGet 작업에서 고객 성공 개선 - [#7108](https://github.com/NuGet/Home/issues/7108)
+
+* 잠금 파일을 사용한 반복 가능한 패키지 복원 사용 - [#5602](https://github.com/NuGet/Home/issues/5602), [공지](https://github.com/NuGet/Announcements/issues/28), [블로그 게시물](https://blog.nuget.org/20181217/Enable-repeatable-package-restores-using-a-lock-file.html)
 
 ### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
 
@@ -106,6 +110,35 @@ NuGet 배포 차량:
 
 [이 릴리스 4.9.2에서 수정된 모든 문제 목록](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
 
+## <a name="summary-whats-new-in-493"></a>요약: 4.9.3의 새로운 기능
+
+### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
+#### <a name="repeatable-package-restores-using-a-lock-file-issues"></a>“잠금 파일을 사용한 반복 가능한 패키지 복원” 문제
+
+* 이전에 캐시된 패키지의 해시가 잘못 계산되어 잠긴 모드가 작동하지 않음 - [#7682](https://github.com/NuGet/Home/issues/7682)
+
+* 복원이 `packages.lock.json` 파일에 정의된 것과 다른 버전으로 확인됨 - [#7667](https://github.com/NuGet/Home/issues/7667)
+
+* ProjectReferences가 관련된 경우 ‘--locked-mode / RestoreLockedMode’로 인해 의사 복원 실패 발생 - [#7646](https://github.com/NuGet/Home/issues/7646)
+
+* MSBuild SDK 확인자에서 packages.lock.json을 사용할 때 복원에 실패하는 SDK 패키지용 SHA의 유효성을 검사하려고 함 - [#7599](https://github.com/NuGet/Home/issues/7599)
+
+#### <a name="lock-down-your-dependencies-using-configurable-trust-policies-issues"></a>“구성 가능한 트러스트 정책을 사용하여 종속성 잠금” 문제
+* 서명된 패키지가 지원되지 않는 동안에는 dotnet.exe에서 신뢰할 수 있는 서명자를 평가하지 않아야 함 - [#7574](https://github.com/NuGet/Home/issues/7574)
+
+* 구성 파일의 trustedSigners 순서가 신뢰 평가에 영향을 줌 - [#7572](https://github.com/NuGet/Home/issues/7572)
+
+* ISettings를 구현할 수 없음[트러스트 정책 기능을 지원하도록 설정 API 리팩터링으로 인해 발생] - [#7614](https://github.com/NuGet/Home/issues/7614)
+
+#### <a name="improved-debugging-experience-issues"></a>“향상된 디버깅 환경” 문제
+
+* .NET Core 전역 도구용 기호 패키지를 게시할 수 없음 - [#7632](https://github.com/NuGet/Home/issues/7632)
+
+#### <a name="self-contained-nuget-packages---license-issues"></a>“자체 포함된 NuGet 패키지 - 라이선스” 문제
+
+* 포함된 라이선스 파일을 사용할 때 기호 .snupkg 패키지를 빌드하는 중 오류 발생 - [#7591](https://github.com/NuGet/Home/issues/7591)
+
+[이 릴리스 4.9.3에서 수정된 모든 문제 목록](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.3")
 ## <a name="known-issues"></a>알려진 문제
 
 ### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget 푸시 --interactive로 인해 Mac에서 오류가 발생합니다. - [#7519](https://github.com/NuGet/Home/issues/7519)
