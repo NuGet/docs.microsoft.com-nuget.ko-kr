@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: dbdd171321c2560adc06feccbd60fc4e84dcf0a3
-ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
+ms.openlocfilehash: 290055a306306e944695d3a6ac970819882ee0c6
+ms.sourcegitcommit: 046717af2eba9ff6f619a0533844dee56a600d1c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54403229"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55648272"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -235,10 +235,17 @@ NuGet은 HTTP를 사용하여 패키지를 다운로드하므로, 큰 패키지�
 
 실패하면 [StackOverflow 게시물에서 언급한 팁](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall)을 사용해 보세요.
 
-**nuget.org에 대한 API 엔드포인트는 무엇인가요?**
+## <a name="what-is-the-api-endpoint-for-nugetorg"></a>nuget.org에 대한 API 엔드포인트는 무엇인가요?
 
-- V3: `https://api.nuget.org/v3/index.json`
-- V2: `https://www.nuget.org/api/v2/` (V2 API는 더 이상 사용되지 않으며 NuGet 4 이상에서 작동하지 않습니다.)
+NuGet 클라이언트에서 nuget.org를 패키지 리포지토리로 사용하려면 다음과 같은 V3 API 엔드포인트를 사용해야 합니다. 
+
+**`https://api.nuget.org/v3/index.json`**
+
+이전 버전의 클라이언트는 v2 프로토콜을 사용하여 nuget.org에 연결할 수 있습니다. 그러나 NuGet 클라이언트 3.0 이상에는 v2 프로토콜을 사용하는 느리고 신뢰할 수 없는 서비스가 포함됩니다.
+
+`https://www.nuget.org/api/v2/`(사용되지 않음) **참고:** "www."는 중요합니다.
+
+또한 *NuGet.exe 목록*은 v2 프로토콜에서만 작동합니다.
 
 ## <a name="nugetorg-account-management"></a>nuget.org 계정 관리
 
