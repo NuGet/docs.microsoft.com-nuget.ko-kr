@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: d39ec8caf94caa767b6c502cc475e278aa718b95
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 9db24b2dd6ced0869ac84b25f9796ded5df10f86
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324788"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145646"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 명령(NuGet CLI)
 
@@ -43,7 +43,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 | IncludeReferencedProjects | 종속성 또는 패키지의 일부로 작성된 된 패키지에서 참조 된 프로젝트를 포함 해야 함을 나타냅니다. 참조 된 프로젝트에 해당 하는 경우 `.nuspec` 파일 이름이 같은 프로젝트와 해당 참조 된 프로젝트를 종속성으로 추가 됩니다. 그렇지 않으면 참조 된 프로젝트는 패키지의 일부로 추가 됩니다. |
 | MinClientVersion | 설정 된 *minClientVersion* 만든된 패키지에 대 한 특성입니다. 이 값은 기존 값을 재정의 *minClientVersion* 특성 (있는 경우)에 `.nuspec` 파일입니다. |
 | MSBuildPath | *(4.0 이상)*  보다 우선함 명령으로 사용 하는 MSBuild의 경로 지정 `-MSBuildVersion`합니다. |
-| MSBuildVersion | *(3.2 이상)*  이 명령을 사용 하 여 사용할 MSBuild의 버전을 지정 합니다. 지원 되는 값에는 4, 12, 14, 15 됩니다. 경로에 MSBuild 선택은 기본적으로 그렇지 않은 경우 기본값은 MSBuild의 설치 된 가장 높은 버전으로 합니다. |
+| MSBuildVersion | *(3.2 이상)*  이 명령을 사용 하 여 사용할 MSBuild의 버전을 지정 합니다. 지원 되는 값은 4, 12, 14, 15.1, 15.3, 15.4에서 15.5, 15.6, 15.7, 15.8, 15.9. 경로에 MSBuild 선택은 기본적으로 그렇지 않은 경우 기본값은 MSBuild의 설치 된 가장 높은 버전으로 합니다. |
 | NoDefaultExcludes | NuGet의 기본 예외 방지 패키지 파일 및 파일 및 폴더와 같은 점부터 `.svn` 고 `.gitignore`입니다. |
 | NoPackageAnalysis | 패키지를 빌드한 후 팩에서 패키지 분석을 실행하지 않아야 함을 지정합니다. |
 | OutputDirectory | 생성된 된 패키지 저장 되는 폴더를 지정 합니다. 폴더는 지정 하지 않으면 현재 폴더가 사용 됩니다. |

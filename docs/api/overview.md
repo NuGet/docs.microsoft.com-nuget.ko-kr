@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 39b710c483ce4b3f2da30df6bb5b6842f9ee1fca
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 5d0d60cbcf6516d24efeb04f8262902da69d92d1
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324840"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145659"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -49,17 +49,17 @@ NuGet V3 API V2 API의 후속 작업을 설정 하는 공식 NuGet 클라이언�
 
 합니다 **서비스 인덱스** 다양 한 리소스에 설명 합니다. 지원 되는 리소스의 현재 집합은 다음과 같습니다.
 
-리소스 이름                                                           | 필수 | 설명
-----------------------------------------------------------------------  | -------- | -----------
+리소스 이름                                                          | 필수 | 설명
+---------------------------------------------------------------------- | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | 예      | 푸시 및 삭제 (또는 나열 취소) 패키지 있습니다.
 [`SearchQueryService`](search-query-service-resource.md)               | 예      | 필터 및 키워드는 패키지에 대 한 검색 합니다.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | 예      | 패키지 메타 데이터를 가져옵니다.
 [`PackageBaseAddress`](package-base-address-resource.md)               | 예      | 패키지 콘텐츠를 (.nupkg)를 가져옵니다.
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | 아니요       | 부분 문자열에서 패키지 Id 및 버전을 검색 합니다.
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | 아니요       | "신고" 웹 페이지 액세스에 대 한 URL을 생성 합니다.
-[`RepositorySignatures`](repository-signatures-resource.md)             | 아니요      | 리포지토리 서명에 사용 되는 인증서를 가져옵니다.
-[`Catalog`](catalog-resource.md)                                         | 아니요      | 모든 패키지 이벤트의 전체 레코드입니다.
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | 아니요      | 기호 패키지를 푸시하십시오.
+[`RepositorySignatures`](repository-signatures-resource.md)            | 아니요       | 리포지토리 서명에 사용 되는 인증서를 가져옵니다.
+[`Catalog`](catalog-resource.md)                                       | 아니요       | 모든 패키지 이벤트의 전체 레코드입니다.
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)           | 아니요       | 기호 패키지를 푸시하십시오.
 
 일반적으로 API 리소스에 의해 반환 되는 모든 이진이 아닌 데이터는 JSON을 사용 하 여 serialize 됩니다. 서비스 인덱스의 각 리소스에서 반환 되는 응답 스키마는 해당 리소스에 대해 개별적으로 정의 됩니다. 각 리소스에 대 한 자세한 내용은 위에 나열 된 항목을 참조 하세요.
 
@@ -67,6 +67,19 @@ NuGet V3 API V2 API의 후속 작업을 설정 하는 공식 NuGet 클라이언�
 
 > [!Note]
 > 원본 구현 하지 않는 경우 `SearchAutocompleteService` 모든 자동 완성 동작을 정상적으로 해제 합니다. 때 `ReportAbuseUriTemplate` 구현 되지 않은 공식 NuGet 클라이언트 대체 되므로 nuget.org의 보고 악성 URL 신고 (에서 추적 [NuGet/Home #4924](https://github.com/NuGet/Home/issues/4924)). 다른 클라이언트는 악성 URL 신고 사용자에 게 표시 하지 않으려면에 간단히 선택할 수 있습니다.
+
+### <a name="undocumented-resources-on-nugetorg"></a>Nuget.org의 문서화 되지 않은 리소스
+
+Nuget.org에서 V3 서비스 인덱스에는 위에 설명 하지 않은 몇 가지 리소스가 있습니다. 리소스를 문서화 하지에 대 한 몇 가지 이유가 있습니다.
+
+첫째, nuget.org의 구현 정보로 사용 되는 리소스 설명 하지 않습니다. `SearchGalleryQueryService` 이 범주에 속합니다. [NuGetGallery](https://github.com/NuGet/NuGetGallery) 일부 V2를 위임 하려면이 리소스를 사용 하 여 데이터베이스를 사용 하는 대신 검색 인덱스에 대 한 (OData) 쿼리 합니다. 이 리소스는 확장성을 이유로 도입 되었으며 외부 용이 아닙니다.
+
+둘째, 되지 공식 클라이언트의 RTM 버전에서 제공 되는 리소스 설명 하지 않습니다.
+`PackageDisplayMetadataUriTemplate` 및 `PackageVersionDisplayMetadataUriTemplate` 이 범주에 속합니다.
+
+리소스를 밀접 하 게 설명 하지 성질이, V2 프로토콜와 함께 직접 아닙니다 의도적으로 문서화 합니다. `LegacyGallery` 리소스는이 범주에 속합니다. 이 리소스는 해당 V2 소스 URL을 가리키도록 V3 서비스 인덱스를 허용 합니다. 이 리소스를 지원 합니다 `nuget.exe list`합니다.
+
+리소스는 여기서 설명 하지 않습니다 하는 경우 했습니다 *강력한* 에서도 종속성을 사용 하지 않는 것이 좋습니다. 제거 하거나 예기치 않은 방법으로 구현 손상 될 수 있는 이러한 문서화 되지 않은 리소스의 동작을 변경할 수 있습니다.
 
 ## <a name="timestamps"></a>타임스탬프
 

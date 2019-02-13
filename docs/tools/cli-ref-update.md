@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: fc34550b3669d83466318645987cfd3078bc3c18
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: ded9b571324d810c2f0e1a46ea76375a28940406
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545102"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145607"
 ---
 # <a name="update-command-nuget-cli"></a>update 명령(NuGet CLI)
 
@@ -36,23 +36,23 @@ nuget update <configPath> [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| ConfigFile | NuGet 구성 파일을 적용 합니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
+| ConfigFile | 수정할 NuGet 구성 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
 | FileConflictAction | 덮어쓰거나 프로젝트에서 참조 하는 기존 파일을 무시 하 라는 메시지가 표시 되는 경우 수행할 동작을 지정 합니다. 값은 *덮어쓰기, none 무시*합니다. |
-| ForceEnglishOutput | *(3.5 이상)*  고정 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
-| 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
+| ForceEnglishOutput | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
+| 도움말 | 명령어에 대한 도움말을 표시합니다. |
 | ID | 패키지를 업데이트 하는 Id의 목록을 지정 합니다. |
 | MSBuildPath | *(4.0 이상)*  보다 우선함 명령으로 사용 하는 MSBuild의 경로 지정 `-MSBuildVersion`합니다. |
-| MSBuildVersion | *(3.2 이상)*  이 명령을 사용 하 여 사용할 MSBuild의 버전을 지정 합니다. 지원 되는 값에는 4, 12, 14, 15 됩니다. 경로에 MSBuild 선택은 기본적으로 그렇지 않은 경우 기본값은 MSBuild의 설치 된 가장 높은 버전으로 합니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| MSBuildVersion | *(3.2 이상)*  이 명령을 사용 하 여 사용할 MSBuild의 버전을 지정 합니다. 지원 되는 값은 4, 12, 14, 15.1, 15.3, 15.4에서 15.5, 15.6, 15.7, 15.8, 15.9. 경로에 MSBuild 선택은 기본적으로 그렇지 않은 경우 기본값은 MSBuild의 설치 된 가장 높은 버전으로 합니다. |
+| NonInteractive | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
 | PreRelease | 시험판 버전으로 업데이트를 허용 합니다. 이미 설치 되어 있는 시험판 패키지를 업데이트 하는 경우이 플래그는 필요 하지 않습니다. |
 | RepositoryPath | 패키지 설치 되어 있는 로컬 폴더를 지정 합니다. |
 | 안전 하 게 보호 | 만 업데이트 하는 동일한 주 및 부 버전에서 사용할 수 있는 가장 높은 버전을 사용 하 여 설치 된 패키지를 설치할 때 지정 합니다. |
 | 자체 | Nuget.exe를 최신 버전; 업데이트 다른 모든 인수는 무시 됩니다. |
 | 소스 | 업데이트에 사용할 (Url)로 패키지 소스 목록을 지정 합니다. 생략 하면 사용 하 여 구성 파일에서 제공 하는 소스를 참조 하십시오 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)합니다. |
-| 자세한 정도 | 출력에 표시 되는 세부 정보의 양을 지정: *정상적인*, *quiet*, *자세한*합니다. |
+| 자세한 정도 | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
 | 버전 | 하나의 패키지 ID를 사용 하면 업데이트할 패키지의 버전을 지정 합니다. |
 
-또한 참조 [환경 변수](cli-ref-environment-variables.md)
+또한 [환경 변수](cli-ref-environment-variables.md)에 대한 정보를 참조할 수 있습니다.
 
 ## <a name="examples"></a>예제
 
