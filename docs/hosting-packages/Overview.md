@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 4741d780afa4fbe11001aed49a9f72bf608d96d9
-ms.sourcegitcommit: a1846edf70ddb2505d58e536e08e952d870931b0
+ms.openlocfilehash: 45d8a6557ee02998f3d12b128ee2dc4fd6ae48bb
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52303566"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145594"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>사용자 고유의 NuGet 피드 호스팅
 
@@ -25,7 +25,7 @@ NuGet은 이러한 모든 용도에서 다음과 같은 방법으로 개인 패�
 
 다음을 포함하여 원격 개인 피드를 지원하는 제품을 호스팅하는 다른 여러 NuGet이 있습니다.
 
-- [Visual Studio Team Services 패키지 관리](https://www.visualstudio.com/docs/package/nuget/publish)는 Team Foundation Server 2017 이상에서 사용할 수 있습니다.
+- [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish): Team Foundation Server 2017 이상에서도 사용할 수 있습니다.
 - [MyGet](http://myget.org)
 - Inedo의 [ProGet](http://inedo.com/proget)
 - [NuGet 서버](http://nugetserver.net/), Inedo의 커뮤니티 프로젝트

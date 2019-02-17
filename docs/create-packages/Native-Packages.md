@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: f054a1cae7328d3e910d11ac1bfc5f98505e5879
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: e0ec5323f7be53bef6637ad69540a66abbf22711
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546535"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145581"
 ---
 # <a name="creating-native-packages"></a>네이티브 패키지 만들기
 
-네이티브 패키지에는 관리 코드 대신 C++ 프로젝트 내에서 사용할 수 있도록 하는 네이티브 C++ 코드가 포함됩니다. (사용 섹션에서 [네이티브 C++ 패키지](../consume-packages/finding-and-choosing-packages.md#native-c-packages)를 참조하세요.)
+네이티브 패키지에는 관리형 어셈블리 대신 C++(또는 유사한) 프로젝트 내에서 사용할 수 있도록 하는 네이티브 이진 파일이 포함됩니다. (사용 섹션에서 [네이티브 C++ 패키지](../consume-packages/finding-and-choosing-packages.md#native-c-packages)를 참조하세요.)
 
 C++ 프로젝트에서 사용할 수 있으려면 패키지는 `native` 프레임워크를 대상으로 지정해야 합니다. NuGet이 모든 C++ 프로젝트를 동일하게 처리하므로 현재 이 프레임워크와 연결된 버전 번호가 없습니다.
 

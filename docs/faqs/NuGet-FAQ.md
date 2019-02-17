@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 290055a306306e944695d3a6ac970819882ee0c6
-ms.sourcegitcommit: 046717af2eba9ff6f619a0533844dee56a600d1c
+ms.openlocfilehash: f15639c883241c328b5fc0a4bf5617540b52b7ee
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55648272"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145685"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -241,11 +241,9 @@ NuGet 클라이언트에서 nuget.org를 패키지 리포지토리로 사용하�
 
 **`https://api.nuget.org/v3/index.json`**
 
-이전 버전의 클라이언트는 v2 프로토콜을 사용하여 nuget.org에 연결할 수 있습니다. 그러나 NuGet 클라이언트 3.0 이상에는 v2 프로토콜을 사용하는 느리고 신뢰할 수 없는 서비스가 포함됩니다.
+이전 버전의 클라이언트는 V2 프로토콜을 사용하여 nuget.org에 연결할 수 있습니다. 그러나 NuGet 클라이언트 3.0 이상에는 V2 프로토콜을 사용하는 느리고 신뢰할 수 없는 서비스가 포함됩니다.
 
-`https://www.nuget.org/api/v2/`(사용되지 않음) **참고:** "www."는 중요합니다.
-
-또한 *NuGet.exe 목록*은 v2 프로토콜에서만 작동합니다.
+`https://www.nuget.org/api/v2`(사용되지 않음) **참고:** 최고의 안정성을 위해 "www."를 사용합니다.
 
 ## <a name="nugetorg-account-management"></a>nuget.org 계정 관리
 
