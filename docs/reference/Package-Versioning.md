@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: b980c1084fe8e31573053a4dcf38bbfa6146e6de
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6407cd2ea5e5e7a9c9e2be679764a8a0d5dd9260
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549775"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852470"
 ---
 # <a name="package-versioning"></a>패키지 버전 관리
 
@@ -29,12 +29,12 @@ ms.locfileid: "43549775"
 
 특정 버전 번호는 형태로 *Major.Minor.Patch [-접미사]* 여기서 구성 요소는 다음과 같은 의미가,:
 
-- *주요*: 주요 변경 내용
-- *사소한*: 이전 버전과 호환 되는 새로운 기능
-- *패치*: 이전 버전과 호환 버그 수정
+- *주요*: 호환성이 손상되는 변경
+- *사소한*: 이전 버전과 호환되는 새로운 기능
+- *패치*: 이전 버전과 호환되는 버그 수정에만 해당
 - *-접미사* (선택 사항): 시험판 버전을 나타내는 문자열 뒤에 하이픈 (다음 합니다 [유의 적 버전 또는 SemVer 1.0 규칙](http://semver.org/spec/v1.0.0.html)).
 
-**예제:**
+**예:**
 
     1.0.1
     6.11.1231
@@ -50,7 +50,7 @@ ms.locfileid: "43549775"
 
 즉, 패키지 개발자는 일반적으로 인식 된 명명 규칙을 따릅니다.
 
-- `-alpha`합니다: 일반적으로 작업 중인 및 실험에 사용 알파 릴리스 합니다.
+- `-alpha`: 알파 버전에서는 일반적으로 작업 중인 및 실험에 사용 합니다.
 - `-beta`: 일반적으로 다음에 계획된 릴리스에 대한 기능 완료인 베타 릴리스이지만 알려진 버그를 포함할 수 있습니다.
 - `-rc`: 일반적으로 심각한 버그가 발생하지 않는 한 잠재적으로 최종적(안정적)인 릴리스인 릴리스 후보입니다.
 
@@ -84,7 +84,7 @@ Nuget.org의 패키지는 다음 문 중 하나에 해당 하는 경우 SemVer v
 
 SemVer v2.0.0 특정 패키지를 nuget.org에 업로드 하는 경우에 패키지를 이전 버전의 클라이언트에 표시 되지 않도록 되어 다음 NuGet 클라이언트 에서만 사용할 수 있습니다.
 
-- NuGet 4.3.0
+- NuGet 4.3.0+
 - Visual Studio 2017 버전 15.3 이상
 - Visual Studio 2015 [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
 - dotnet
@@ -109,9 +109,9 @@ SemVer v2.0.0 특정 패키지를 nuget.org에 업로드 하는 경우에 패키
 | [1.0] | x == 1.0 | 정확한 버전 일치 |
 | (,1.0] | x ≤ 1.0 | 최대 버전 포함 |
 | (,1.0) | x < 1.0 | 단독 최대 버전 |
-| [1.0,2.0] | 1.0 ≤ ≤ 2.0 | 정확한 범위 포함 |
+| [1.0,2.0] | 1.0 ≤ x ≤ 2.0 | 정확한 범위 포함 |
 | (1.0,2.0) | 1.0 < x < 2.0 | 정확한 범위, 배타적 |
-| [1.0,2.0) | 1.0 ≤ < 2.0 x | 혼합된 포괄 최소값과 단독 최대 버전 |
+| [1.0,2.0) | 1.0 ≤ x < 2.0 | 혼합된 포괄 최소값과 단독 최대 버전 |
 | (1.0)    | 잘못된 | 잘못된 |
 
 PackageReference 형식을 사용 하는 경우 NuGet에서는 와일드 카드 표기법을 사용 하 여 \*, 주, 부, 패치 및 시험판 접미사 부분 개수에 대 한 합니다. 와일드 카드는 지원 되지 않습니다는 `packages.config` 형식입니다.
@@ -187,9 +187,6 @@ PackageReference 형식을 사용 하는 경우 NuGet에서는 와일드 카드 
 ```xml
 <!-- Accepts any version 6.1 and above. -->
 <dependency id="ExamplePackage" version="6.1" />
-
-<!-- Accepts any 6.x.y version. -->
-<dependency id="ExamplePackage" version="6.*" />
 
 <!-- Accepts any version above, but not including 4.1.3. Could be
      used to guarantee a dependency with a specific bug fix. -->

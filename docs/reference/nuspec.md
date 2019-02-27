@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: fec6dd0fb97b565b364a7ffcb192d2eb99187e83
-ms.sourcegitcommit: b15fdd101aec13ea5fe9dd12845051d648034abd
+ms.openlocfilehash: a8be66f5871df260581b6baca8eb7959279d66cd
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55480142"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852587"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -84,9 +84,9 @@ nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페�
 
 nuget.org뿐만 아니라 UI 표시에도 종종 표시되는 패키지의 라이선스에 대한 URL입니다.
 #### <a name="license"></a>라이선스
-SPDX 라이선스 식 또는 종종 nuget.org 뿐만 아니라 UI 표시에 표시 되는 패키지 내 라이선스 파일의 경로입니다. MIT BSD-2-절 등 일반적인 라이선스에 따라 패키지를 라이선스 하는 경우 연결된 SPDX 라이선스 식별자를 사용 합니다.<br>예를 들면 다음과 같습니다: `<license type="expression">MIT</license>`
+SPDX 라이선스 식 또는 패키지에 포함된 라이선스 파일의 경로로, 보통 UI 디스플레이와 nuget.org에 표시됩니다. MIT BSD-2-절 등 일반적인 라이선스에 따라 패키지를 라이선스 하는 경우 연결된 SPDX 라이선스 식별자를 사용 합니다.<br>예를 들면 다음과 같습니다: `<license type="expression">MIT</license>`
 
-전체 목록은 다음과 같습니다 [SPDX 라이선스 식별자](https://spdx.org/licenses/)합니다. OSI만을 허용 하는 NuGet.org 또는 승인 FSF 라이선스를 사용 하는 경우 라이선스 유형 식입니다.
+[SPDX 라이선스 식별자](https://spdx.org/licenses/)에서 전체 식별자 목록을 확인할 수 있습니다. 라이선스 형식 식을 사용하는 경우, NuGet.org에서는 OSI 또는 FSF 승인된 라이선스만 허용합니다.
 
 패키지에서 여러 일반적인 라이선스 사용이 허가 되는 복합 라이선스를 사용 하 여 지정할 수 있습니다 합니다 [SPDX 식 구문은 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)합니다.<br>예를 들면 다음과 같습니다: `<license type="expression">BSD-2-Clause OR MIT</license>`
 
@@ -192,7 +192,7 @@ nuget pack MyProject.csproj
 | --- | --- | ---
 | **$id$** | 프로젝트 파일 | 프로젝트 파일의 AssemblyName (제목) |
 | **$version$** | AssemblyInfo | 있는 경우 AssemblyInformationalVersion, 그렇지 않으면 AssemblyVersion |
-| **$authors $** | AssemblyInfo | AssemblyCompany |
+| **$author$** | AssemblyInfo | AssemblyCompany |
 | **$title$** | AssemblyInfo | AssemblyTitle |
 | **$description$** | AssemblyInfo | AssemblyDescription |
 | **$copyright$** | AssemblyInfo | AssemblyCopyright |
@@ -366,7 +366,7 @@ nuget pack MyProject.csproj
 > [!Important]
 > 패키지가 프로젝트에 설치되면 어셈블리 참조가 지역화된 위성 어셈블리로 간주되므로 NuGet은 `.resources.dll`이라는 DLL을 *제외한* 패키지의 DLL에 해당 어셈블리 참조를 자동으로 추가합니다. 이러한 이유로 다른 경우에 필수 패키지 코드가 포함되는 파일에는 `.resources.dll`을 사용하지 마세요.
 
-이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들어:
+이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들면,
 
 ```xml
 <files>
@@ -607,7 +607,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 - `TxM`은 NuGet에서 지원하는 모든 법적 대상 프레임워크 모니커입니다([대상 프레임워크](../reference/target-frameworks.md) 참조).
 - 모든 폴더 구조는 이 구문의 끝에 추가될 수 있습니다.
 
-예를 들어:
+예를 들면,
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml

@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 08/16/2018
 ms.topic: conceptual
 ms.reviewer: kraigb
-ms.openlocfilehash: 6184fe8e987e0637cb912999f2e3fa3a3dc9b4ba
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 003139abac7808dbdaef4aa66119e09772db2b4f
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546937"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852535"
 ---
 # <a name="toolsjson-for-discovering-nugetexe-versions"></a>tools.json nuget.exe 버전 검색
 
@@ -47,12 +47,12 @@ nuget.exe | 개체의 배열 | 예
 -------- | ------ | -------- | -----
 버전  | string | 예      | SemVer 2.0.0 문자열
 url      | string | 예      | 이 버전의 nuget.exe 다운로드 하는 것에 대 한 절대 URL
-단계    | string | 예      | 열거형 문자열
-업로드 | string | 예      | 버전을 사용할 수 있었던 경우의 대략적인 타임 스탬프를
+stage(단계)    | string | 예      | 열거형 문자열
+업로드 | string | 예      | 버전을 사용할 수 있었던 경우의 대략적인 ISO 8601 타임 스탬프를
 
-배열의 항목 내림차순, SemVer 2.0.0 순서로 정렬 됩니다. 이 확인 하려면 최신 버전을 찾고 클라이언트의 부담을 줄일 것입니다. 
+배열의 항목 내림차순, SemVer 2.0.0 순서로 정렬 됩니다. 이러한 변환이 가장 높은 버전 번호를 클라이언트의 부담을 줄일 수 것입니다. 그러나 시간 순서 대로 정렬에서 된 목록이 정렬 되지 않으면이 의미가 있습니다. 예를 들어, 낮은 주 버전은 더 높은 주 버전 이후 날짜에 서비스를 제공 하는 경우이 서비스 버전 목록 위쪽에 표시 되지 않습니다. 출시 된 최신 버전을 원하는 경우 *타임 스탬프*, 단순히로 배열의 정렬를 `uploaded` 문자열. 이므로이 방법을 사용 합니다 `uploaded` 타임 스탬프에는 [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) 사전순으로 정렬 (즉, 간단한 문자열 정렬)을 사용 하 여 시간 순으로 정렬 될 수 있는 형식으로 합니다.
 
-`stage` 속성 어떻게 vettect 도구의이 버전은 나타냅니다. 
+`stage` 속성 하는 방법을 점검이 버전의 도구 인지 나타냅니다. 
 
 단계              | 의미
 ------------------ | ------
@@ -60,7 +60,7 @@ EarlyAccessPreview | 에 표시 되지 않습니다 합니다 [웹 페이지 다
 Released           | 다운로드 사이트에서 사용 가능 하지만 아직 광범위 소비에 대 한 권장
 ReleasedAndBlessed | 다운로드 사이트에서 사용할 수 있는 사용에 대 한 것이 좋습니다.
 
-최신 것에 대 한 한 가지 간단한 방법은 권장 버전이 있는 목록의 첫 번째 버전을 사용 하는 `stage` 의 값 `ReleasedAndBlessed`합니다.
+최신 것에 대 한 한 가지 간단한 방법은 권장 버전이 있는 목록의 첫 번째 버전을 사용 하는 `stage` 의 값 `ReleasedAndBlessed`합니다. 이 버전은 SemVer 2.0.0 순서로 정렬 되므로 작동 합니다.
 
 합니다 `NuGet.CommandLine` nuget.org에서 패키지는 일반적으로 사용 하 여 업데이트만 `ReleasedAndBlessed` 버전입니다.
 
