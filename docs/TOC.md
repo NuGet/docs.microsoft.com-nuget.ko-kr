@@ -87,6 +87,7 @@
 ## [NuGet 클라이언트 SDK](reference/nuget-client-sdk.md)
 ## [서명된 패키지](reference/signed-packages-reference.md)
 ## [NuGet.org의 조직](reference/organizations-on-nuget-org.md)
+## [licenses.nuget.org](reference/licenses.nuget.org.md)
 ## [오류 및 경고](reference/Errors-and-Warnings.md)
 ### [NU1000](reference/errors-and-warnings/NU1000.md)
 ### [NU1001](reference/errors-and-warnings/NU1001.md)
