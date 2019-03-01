@@ -16,14 +16,16 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 1fbb243a7b3518307a393b5f371feae1edb7623a
-ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
+ms.openlocfilehash: 43f346dc64ebbc59d02b9c7875b04205d8c5d83a
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53645661"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852444"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
+
+기호 패키지를 사용하면 NuGet 패키지의 디버깅 환경을 향상시킬 수 있습니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -31,22 +33,28 @@ ms.locfileid: "53645661"
 
 ## <a name="creating-a-symbol-package"></a>기호 패키지 만들기
 
-snupkg 기호 패키지는 .nuspec 파일 또는.csproj 파일에서 만들 수 있습니다. NuGet.exe 및 dotnet.exe는 둘 다 지원됩니다. nuget.exe pack 명령에서 ```-Symbols -SymbolPackageFormat snupkg``` 옵션을 사용하면 .nupkg 파일에 .snupkg 파일이 추가로 생성됩니다.
+dotnet.exe, NuGet.exe 또는 MSBuild를 사용하여 snupkg 기호 패키지를 만들 수 있습니다. NuGet.exe를 사용하는 경우 다음 명령을 사용하여 .nupkg 파일 외에도 .snupkg 파일을 만들 수 있습니다.
 
-.snupkg 파일을 만드는 명령 예제
 ```
-dotnet pack MyPackage.csproj --include-symbols -p:SymbolPackageFormat=snupkg
-
 nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
-
-msbuild -t:pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
 ```
 
-`.snupkgs`는 기본적으로 생성되지 않습니다. dotnet.exe의 경우 `-Symbols`와 함께 `SymbolPackageFormat` 속성을 전달하고, dotnet.exe의 경우 `--include-symbols` 또는 msbuild의 경우 `-p:IncludeSymbols`를 전달해야 합니다.
+dotnet.exe 또는 MSBuild를 사용하는 경우 다음 단계에 따라 .nupkg 파일 외에도 .snupkg 파일을 만듭니다.
 
-SymbolPackageFormat 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. SymbolPackageFormat을 지정하지 않으면 기본적으로 `symbols.nupkg`이며 레거시 기호 패키지가 생성됩니다.
+1. .csproj 파일에 다음 속성을 추가합니다.
+
+    ```xml
+    <PropertyGroup>
+      <IncludeSymbols>true</IncludeSymbols>
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    ```
+
+1. `dotnet pack MyPackage.csproj` 또는 `msbuild -t:pack MyPackage.csproj`로 프로젝트를 압축합니다.
+
+`SymbolPackageFormat` 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. `SymbolPackageFormat` 속성을 지정하지 않으면 기본값은 `symbols.nupkg`이며 레거시 기호 패키지가 생성됩니다.
 
 > [!Note]
 > 레거시 형식 `.symbols.nupkg`는 여전히 호환성 문제에서만 지원됩니다([레거시 기호 패키지](Symbol-Packages.md) 참조). NuGet.org 기호 서버는 새 기호 패키지 형식(`.snupkg`)만 허용합니다.

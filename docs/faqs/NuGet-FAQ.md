@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: f15639c883241c328b5fc0a4bf5617540b52b7ee
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: 03223e949eeeadd7eaa6e392297ba79d28eed2f2
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145685"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852548"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -166,7 +166,7 @@ NuGet은 모든 패키지에 서명을 권장합니다. 패키지 서명의 디�
 
 패키지에 대해 나열된 종속성은 패키지 자체에서 자동으로 생성되며 편집할 수 없습니다.
 
-또한 [int.nugettest.org](https://int.nugettest.org)에 패키지를 업로드하는 것은 공용 갤러리에서 패키지를 사용하지 않고도 패키지를 테스트하고 유효성을 검사할 수 있는 좋은 방법입니다.
+또한 [int.nugettest.org](https://int.nugettest.org)에 패키지를 업로드하는 것은 공용 갤러리에서 패키지를 사용하지 않고도 패키지를 테스트하고 유효성을 검사할 수 있는 좋은 방법입니다. API 엔드포인트: https://apiint.nugettest.org/v3/index.json
 
 **나중에 게시되는 패키지의 이름을 예약할 수 있나요?**
 
@@ -305,7 +305,7 @@ Microsoft 계정 로그인을 `MyNuGetAccount1` 사용자 이름을 사용한 nu
 
 [로그인 페이지](https://www.nuget.org/users/account/LogOn?returnUrl=%2F# "로그인 페이지")에서 두 번째 Microsoft 계정으로 로그인합니다. 그러면 현재 두 번째 Microsoft 계정과 연결된 nuget.org 계정에 로그인할 수 있습니다. 그런 다음, 업로드된 패키지를 확인하고 이 계정에서 계정 관리를 수행할 수 있습니다.
 
-**이 두 번째 nuget.org 계정에 대해 신경쓰지 않고, 첫 번째 nuget.org 계정에 대한 내 로그인을 두 번째 Microsoft 계정으로 변경하려고 합니다. 어떻게 해야 합니까?**
+**이 두 번째 nuget.org 계정에 대해 신경쓰지 않고, 첫 번째 nuget.org 계정에 대한 내 로그인을 두 번째 Microsoft 계정으로 변경하려고 합니다. 어떻게 해야 하나요?**
 
 두 번째 nuget.org 계정에 대해 신경쓰지 않으면서 `account2@outlook.com` 이메일과 연결된 Microsoft 계정을 다시 사용하려는 경우. 
 

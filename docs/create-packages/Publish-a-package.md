@@ -6,21 +6,21 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: bd36ae311da1ec824726c5d73670b1232a3f89e0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: bd19bc402ff9d66d7e2baa4f326d75f0ed444f30
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549588"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852574"
 ---
 # <a name="publishing-packages"></a>패키지 게시
 
 패키지를 만들고 `.nupkg` 파일이 준비되면 공용 또는 개인용으로 다른 개발자가 사용할 수 있도록 하는 간단한 프로세스입니다.
 
 - 공용 패키지는 이 문서에 설명된 대로 모든 개발자가 [nuget.org](https://www.nuget.org/packages/manage/upload)를 통해 전역적으로 사용할 수 있습니다(NuGet 4.1.0 이상 필요).
-- 파일 공유, 개인 NuGet 서버, [Visual Studio Team Services 패키지 관리](https://www.visualstudio.com/docs/package/nuget/publish) 또는 타사 리포지토리(myget, ProGet, Nexus Repository 및 Artifactory)를 호스트하여 개인 패키지를 팀 또는 조직에서 사용할 수 있습니다. 자세한 내용은 [패키지 개요 호스트](../hosting-packages/overview.md)를 참조하세요.
+- 개인 패키지는 파일 공유, 개인 NuGet 서버, [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 또는 타사 리포지토리(myget, ProGet, Nexus Repository 및 Artifactory)를 호스트하여 팀 또는 조직에서만 사용할 수 있습니다. 자세한 내용은 [패키지 개요 호스트](../hosting-packages/overview.md)를 참조하세요.
 
-이 항목에서는 nuget.org에 대한 게시를 다룹니다. Visual Studio Team Services에 게시하는 방법은 [패키지 관리](https://www.visualstudio.com/docs/package/nuget/publish)를 참조하세요.
+이 문서에서는 nuget.org에 대한 게시를 다룹니다. Azure Artifacts에 게시하는 방법은 [패키지 관리](https://www.visualstudio.com/docs/package/nuget/publish)를 참조하세요.
 
 ## <a name="publish-to-nugetorg"></a>nuget.org에 게시
 
@@ -28,7 +28,7 @@ nuget.org의 경우 계정을 Microsoft 계정으로 로그인해야 하며, 이
 
 ![NuGet 로그인 위치](media/publish_NuGetSignIn.png)
 
-다음으로 다음 섹션에 설명된 대로 nuget.org 웹 포털을 통해 패키지를 업로드하거나, 명령줄(`nuget.exe` 4.1.0 이상 필요)에서 nuget.org에 푸시하거나, Visual Studio Team Services를 통해 CI/CD 프로세스의 일부로 게시할 수 있습니다.
+다음으로, 다음 섹션에 설명된 대로 nuget.org 웹 포털을 통해 패키지를 업로드하거나, 명령줄(`nuget.exe` 4.1.0 이상 필요)에서 nuget.org에 푸시하거나, Azure DevOps Services를 통해 CI/CD 프로세스의 일부로 게시할 수 있습니다.
 
 ### <a name="web-portal-use-the-upload-package-tab-on-nugetorg"></a>웹 포털: nuget.org에 패키지 업로드 탭 사용
 
@@ -93,9 +93,9 @@ nuget.org에 푸시된 패키지는 바이러스 검사와 같은 여러 유효�
 
 ![패키지가 아직 게시되지 않았다는 메시지](media/publish_NotYetIndexed.png)
 
-### <a name="visual-studio-team-services-cicd"></a>Visual Studio Team Services(CI/CD)
+### <a name="azure-devops-services-cicd"></a>Azure DevOps Services(CI/CD)
 
-지속적인 통합 및 배포 프로세스의 일부로 Visual Studio Team Services를 사용하여 nuget.org에 패키지를 푸시하는 경우 NuGet 작업에서 `nuget.exe` 4.1 이상을 사용해야 합니다. 자세한 내용은 [빌드에서 최신 NuGet을 사용하는 방법](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/)(Microsoft DevOps 블로그)에서 찾을 수 있습니다.
+지속적인 통합 및 배포 프로세스의 일부로 Azure DevOps를 사용하여 nuget.org에 패키지를 푸시하는 경우 NuGet 작업에서 `nuget.exe` 4.1 이상을 사용해야 합니다. 자세한 내용은 [빌드에서 최신 NuGet을 사용하는 방법](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/)(Microsoft DevOps 블로그)에서 찾을 수 있습니다.
 
 ## <a name="managing-package-owners-on-nugetorg"></a>nuget.org에서 패키지 소유자 관리
 
