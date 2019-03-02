@@ -5,26 +5,26 @@ author: anangaur
 ms.author: anangaur
 ms.date: 1/25/2019
 ms.topic: conceptual
-ms.openlocfilehash: 57b66b347ac47a3d05907a4bb237002de8981ecc
-ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
+ms.openlocfilehash: 4b05dcb9a2960c1e3231e81d4b4c122d3a518753
+ms.sourcegitcommit: 571644118e3c5a2fd818891d305b4b8de8ef21de
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57196202"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57225890"
 ---
 # <a name="nuget-50-preview-release-notes"></a>NuGet 5.0 미리 보기 릴리스 정보
 
 ## <a name="nuget-50-preview-releases"></a>NuGet 5.0 미리 보기 릴리스
 
-* 2010 년 2 월 27 일- [NuGet 5.0 Preview 4](#summary-whats-new-in-50-preview-4)
-* 2019 년 2 월 13- [NuGet 5.0 미리 보기 3](#summary-whats-new-in-50-preview-3)
-* 2019 년 1 월 23- [NuGet 5.0 미리 보기 2](#summary-whats-new-in-50-preview-2)
+* 2019 년 2 월 27- [NuGet 5.0 Preview 4](#whats-new-in-nuget-50-preview-4)
+* 2019 년 2 월 13- [NuGet 5.0 미리 보기 3](#whats-new-in-nuget-50-preview-3)
+* 2019 년 1 월 23- [NuGet 5.0 미리 보기 2](#whats-new-in-nuget-50-preview-2)
 
-## <a name="summary-whats-new-in-nuget-50-preview-4"></a>요약: NuGet 5.0 Preview 4의에서 새로운 기능
+## <a name="whats-new-in-nuget-50-preview-4"></a>NuGet 5.0 Preview 4의에서 새로운 기능
 
 ### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
 
-**버그:**
+**버그**
 
 * NuGet.VisualStudio.IVsPackageInstaller-없는 패키지를 사용 하 여 프로젝트에 대 한 호출 참조 항상 사용 하 여 packages.config를 PackageReference-기본값은 설정 하는 경우에 [#7005](https://github.com/NuGet/Home/issues/7005)
 
@@ -48,7 +48,7 @@ ms.locfileid: "57196202"
 
 * 사용자 특정 msbuild 버전-요청 하지 않은 경우 msbuild 검색에 대 한 경로 선호 [#7786](https://github.com/NuGet/Home/issues/7786)
 
-**DCRs:**
+**DCRs**
 
 * 원본당 NuGet.Config-를 통해 http 요청 수를 제한 [#4538](https://github.com/NuGet/Home/issues/4538)
 
@@ -61,11 +61,11 @@ ms.locfileid: "57196202"
 * NuGet.* 패키지-netstandard2.0 지원을 추가할 [#6516](https://github.com/NuGet/Home/issues/6516)
 
 
-## <a name="summary-whats-new-in-nuget-50-preview-3"></a>요약: NuGet 5.0 미리 보기 3의에서 새로운 기능
+## <a name="whats-new-in-nuget-50-preview-3"></a>NuGet 5.0 미리 보기 3의에서 새로운 기능
 
 ### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제 
 
-**버그:**
+**버그**
 
 * nuget.exe /? 올바른 msbuild 버전을 나열 해야 [#7794](https://github.com/NuGet/Home/issues/7794)
 
@@ -81,18 +81,18 @@ ms.locfileid: "57196202"
 
 * msbuild /t: restore가 최소 자세한 정도-최소화 해야 [#4695](https://github.com/NuGet/Home/issues/4695)
 
-**DCRs:**
+**DCRs**
 
 * 빌드 자산 전이적 동작을 정의 하는 패키지 작성자 허용 [#6091](https://github.com/NuGet/Home/issues/6091)
 
 * 프로젝트를 솔루션의 일부가 아닌 또는 로드 되지 않지만 이전에 복원한-경우에 성공 하도록 VS에서 복원을 사용 하도록 설정 [#5820](https://github.com/NuGet/Home/issues/5820)
 
 
-## <a name="summary-whats-new-in-50-preview-2"></a>요약: 5.0 미리 보기 2의에서 새로운 기능
+## <a name="whats-new-in-nuget-50-preview-2"></a>NuGet 5.0 미리 보기 2의에서 새로운 기능
 
 ### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
 
-**버그:**
+**버그**
 
 * VS 16.0의 NuGet UI에 읽을 수 없는 탭 색-문제로 [#7735](https://github.com/NuGet/Home/issues/7735)
 
@@ -134,7 +134,7 @@ ms.locfileid: "57196202"
 
 * 사용할 수 없는 컴퓨터 와이드 피드-인해 dotnet restore가 실패 [#5410](https://github.com/NuGet/Home/issues/5410)
 
-**DCRs:**
+**DCRs**
 
 * .NET 4.7.2 (TFM 변경)-를 통해 할 NuGet 5.0 어셈블리 [#7510](https://github.com/NuGet/Home/issues/7510)
 

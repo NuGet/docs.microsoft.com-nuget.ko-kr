@@ -6,12 +6,12 @@ ms.author: diverdan92
 ms.date: 10/09/2017
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 32f83bede42f7643a9a4fed593643eefea0453c1
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: e8b902c89427333afb7a27ee9de0eeb99a92f391
+ms.sourcegitcommit: 571644118e3c5a2fd818891d305b4b8de8ef21de
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981004"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57225877"
 ---
 # <a name="package-id-prefix-reservation"></a>패키지 ID 접두사 예약
 
@@ -31,7 +31,7 @@ ms.locfileid: "50981004"
 
 1. 패키지를 전송할 때마다 [nuget.org](https://www.nuget.org/) 예약된 ID 접두사와 일치 하는 ID를 사용 하 여 패키지 ID 접두사 예약 소유자에서 시작 하지 않으면 거부 됩니다.
 
-1. Visual Studio 2017 버전 15.4 이상에 예약 된 ID 접두사와 일치 하 고 소유자 ID 접두사 예약에서 발생 하는 모든 패키지에서 시각적 표시기를 갖습니다 [nuget.org](https://www.nuget.org/) 에서 패키지를 나타내는 예약된 ID 접두사입니다. 새 패키지 제출 뿐만 아니라 기존 패키지의 소유자에 대 한 마찬가지입니다. **참고:** 표시기 Visual Studio에서 패키지 원본을 단일 피드를 선택 하는 경우에 나타납니다.
+1. Visual Studio 2017 버전 15.4 이상에 예약 된 ID 접두사와 일치 하 고 소유자 ID 접두사 예약에서 발생 하는 모든 패키지에서 시각적 표시기를 갖습니다 [nuget.org](https://www.nuget.org/) 에서 패키지를 나타내는 예약된 ID 접두사입니다. 새 패키지 제출 뿐만 아니라 기존 패키지의 소유자에 대 한 마찬가지입니다. **참고:** Visual Studio에서 표시기는 단일 피드 패키지 원본으로 선택한 경우에 나타납니다.
 
 1. 예약된 ID 접두사와 일치 하는 모든 기존 패키지 하지만 됩니다 *하지* 예약된 된 소유자가 소유 하 고 접두사는 그대로 유지 됩니다 (비공개, 되지 것입니다 하지만 됩니다 하지 시각적 표시기). 또한 이러한 패키지의 소유자 패키지에 새 버전을 제출 하는 일을 할 수 있습니다.
 
@@ -84,6 +84,8 @@ ID 접두사 예약에 대 한 모든 응용 프로그램을 검토할 때 합�
 1. 것 *되지* 모호성 및 커뮤니티에 대 한 혼동을 일으킬 패키지 ID 접두사 예약?
 
 1. 패키지 ID 접두사 명확 하 고 일관 된 (특히 패키지 작성자)와 일치 하는 패키지를 식별 하는 속성이?
+
+1. 패키지 라이선스가 있는 (사용 하는 [라이선스](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license) 메타 데이터 요소 및 사용이 중단 되는 licenseUrl 하지)?
 
 ## <a name="third-party-feed-provider-scenarios"></a>타사 공급자 시나리오를 피드 합니다.
 
