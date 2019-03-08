@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 901eb09711a6e32740c70829028da66b782870a0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 833f4a67bc75c5d650e85180b52ecd8f69218f15
+ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548130"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57196189"
 ---
 # <a name="deleting-packages"></a>패키지 삭제
 
@@ -23,7 +23,7 @@ nuget.org에서는 패키지를 *제외*하도록 지원하지 않습니다. 이
 
 ## <a name="exceptions"></a>예외
 
-저작권 침해 및 잠재적으로 위험한 콘텐츠와 같은 예외적인 상황에 NuGet 팀에서 패키지를 수동으로 삭제할 수 있습니다. [NuGet 갤러리](http://www.nuget.org)를 통해 지원 요청을 제출하여 프로세스를 시작합니다.
+저작권 침해 및 잠재적으로 위험한 콘텐츠와 같은 예외적인 상황에 NuGet 팀에서 패키지를 수동으로 삭제할 수 있습니다. NuGet.org 패키지 세부 정보 페이지의 "신고하기" 단추를 사용하여 패키지를 보고할 수 있습니다. 패키지 소유자인 경우 NuGet.org 계정에 로그인하여 NuGet.org 패키지 세부 정보 페이지의 "지원 문의" 단추를 사용하여 NuGet 지원팀에 문의하세요.
 
 ## <a name="prohibited-use"></a>사용 금지
 

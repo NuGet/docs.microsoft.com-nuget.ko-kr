@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 03223e949eeeadd7eaa6e392297ba79d28eed2f2
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 1c838116f9737b01ea3f9ca17f5d5002f6548044
+ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852548"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57196215"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -158,7 +158,7 @@ Visual Studio 자동화 개체 모델의 최상위 개체를 DTE(개발 도구 �
 
 패키지에서 사용 조건을 지정하지 않은 경우 nuget.org 패키지 페이지의 **연락처 소유자** 링크를 사용하여 패키지 소유자에게 직접 문의해 보세요. Microsoft는 타사 패키지 공급자로부터 사용자에게 지적 재산권을 부여하지 않으며 타사에서 제공한 정보에 대해 책임을 지지 않습니다.
 
-## <a name="managing-packages-on-nugetorg"></a>nuget.org의 패키지 관리
+## <a name="managing-packages-on-nugetorg"></a>NuGet.org의 패키지 관리
 
 **패키지 메타데이터를 업로드한 후에 편집할 수 있나요?**
 
@@ -167,6 +167,10 @@ NuGet은 모든 패키지에 서명을 권장합니다. 패키지 서명의 디�
 패키지에 대해 나열된 종속성은 패키지 자체에서 자동으로 생성되며 편집할 수 없습니다.
 
 또한 [int.nugettest.org](https://int.nugettest.org)에 패키지를 업로드하는 것은 공용 갤러리에서 패키지를 사용하지 않고도 패키지를 테스트하고 유효성을 검사할 수 있는 좋은 방법입니다. API 엔드포인트: https://apiint.nugettest.org/v3/index.json
+
+**NuGet.org에 게시된 패키지를 삭제할 수 있나요?**
+
+일반적으로 NuGet.org에 게시된 패키지 삭제를 지원하지 않습니다. [패키지 삭제에 대한 정책](../policies/deleting-packages)에 대해 자세히 알아보세요.
 
 **나중에 게시되는 패키지의 이름을 예약할 수 있나요?**
 
