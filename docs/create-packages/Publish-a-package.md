@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: bd19bc402ff9d66d7e2baa4f326d75f0ed444f30
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 6d183100a8319b517347567f34d276e94eb4e15d
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852574"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432545"
 ---
 # <a name="publishing-packages"></a>패키지 게시
 
@@ -74,7 +74,7 @@ nuget.org에 패키지를 푸시하려면 [nuget.exe v4.1.0 이상](https://www.
 
 #### <a name="publish-signed-packages"></a>서명된 패키지 게시
 
-서명된 패키지를 제출하려면 먼저 패키지 서명에 사용된 [인증서를 등록](../reference/Signed-Packages-Reference.md#register-certificate-on-nugetorg)해야 합니다. 
+서명된 패키지를 제출하려면 먼저 패키지 서명에 사용된 [인증서를 등록](../create-packages/Sign-a-Package.md#register-the-certificate-on-nugetorg)해야 합니다. 
 
 > [!Warning]
 > nuget.org는 [서명된 패키지 요구 사항](../reference/Signed-Packages-Reference.md#signature-requirements-on-nugetorg)을 충족하지 않는 패키지를 거부합니다.
@@ -83,7 +83,7 @@ nuget.org에 패키지를 푸시하려면 [nuget.exe v4.1.0 이상](https://www.
 
 nuget.org에 푸시된 패키지는 바이러스 검사와 같은 여러 유효성 검사를 거칩니다. (nuget.org의 모든 패키지는 정기적으로 검사됩니다.)
 
-. 패키지가 모든 유효성 검사를 통과하면 인덱싱되는 동안 시간이 걸릴 수 있으며 검색 결과에 표시됩니다. 인덱싱이 완료되면 패키지를 성공적으로 게시했는지 확인하는 전자 메일을 받게 됩니다. 패키지가 유효성 검사에 실패하면 패키지 세부 정보 페이지는 관련 오류를 표시하도록 업데이트되고 이를 알리는 전자 메일을 받을 수도 있습니다.
+패키지가 모든 유효성 검사를 통과하면 인덱싱되는 동안 시간이 걸릴 수 있으며 검색 결과에 표시됩니다. 인덱싱이 완료되면 패키지를 성공적으로 게시했는지 확인하는 전자 메일을 받게 됩니다. 패키지가 유효성 검사에 실패하면 패키지 세부 정보 페이지는 관련 오류를 표시하도록 업데이트되고 이를 알리는 전자 메일을 받을 수도 있습니다.
 
 패키지 유효성 검사 및 인덱싱은 일반적으로 15분이 걸리지 않습니다. 패키지 게시가 예상보다 오래 걸리면 [status.nuget.org](https://status.nuget.org/)를 방문하여 nuget.org에 중단이 발생했는지를 확인합니다. 모든 시스템이 모두 제대로 작동하고 패키지가 1시간 내에 성공적으로 게시되지 않은 경우 nuget.org에 로그인하고 패키지 페이지에서 지원 문의 링크를 사용하여 문의하세요.
 
