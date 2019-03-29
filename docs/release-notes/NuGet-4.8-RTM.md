@@ -5,14 +5,14 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: cf15c4f6a2e3e9f6ce7b6acb2304648041043685
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: f85042b8fe1511934d6a3ac7de34da92c575f6e0
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324827"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432520"
 ---
-# <a name="nuget-48-rtm-release-notes"></a>NuGet 4.8 RTM 릴리스 정보
+# <a name="nuget-48-release-notes"></a>NuGet 4.8 릴리스 정보
 
 [Visual Studio 2017 15.8 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes)는 NuGet 4.8 기능과 함께 제공됩니다.
 
@@ -22,11 +22,15 @@ ms.locfileid: "54324827"
 * DotNet.exe - [.NET Core SDK 2.1.400](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 
-## <a name="summary-whats-new-in-this-release"></a>요약: 이번 릴리스의 새로운 기능
+## <a name="summary-whats-new-in-480"></a>요약: 4.8.0의 새로운 기능
 * NuGet.exe는 Windows 10에서 longfilenames를 지원합니다. [#6937](https://github.com/NuGet/Home/issues/6937)
 * 인증 플러그인이 이제 플랫폼 간을 포함하여 MsBuild, DotNet.exe, NuGet.exe 및 Visual Studio에서 작동합니다. 인증 플러그인을 처음 생성하는 것은 MsBuild, DotNet.exe에서 지원되지 않습니다. 참고: VS 2017 15.9 Preview 빌드에는 VSTS 인증 플러그 인이 포함되어 있습니다. [#6486](https://github.com/NuGet/Home/issues/6486)
 * MsBuild의 SDK 확인자는 이제 NuGet의 일부로 빌드되고 VS용 NuGet 도구로 설치됩니다. 이렇게 하면 버전이 동기화되지 않습니다. [#6799](https://github.com/NuGet/Home/issues/6799)
 * PackageReference는 이제 DevelopmentDependency 메타데이터를 지원합니다. [#4125](https://github.com/NuGet/Home/issues/4125)
+
+## <a name="summary-whats-new-in-482"></a>요약: 4.8.2의 새로운 기능
+
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="known-issues"></a>알려진 문제
 ### <a name="installing-signed-packages-on-a-ci-machine-or-in-an-offline-environment-takes-longer-than-usual"></a>CI 머신 또는 오프라인 환경에 서명된 패키지를 설치하는 데 평소보다 오래 걸립니다.

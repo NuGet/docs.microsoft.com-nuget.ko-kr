@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: aa9bf87504477506dbb1e9ac10d5c1d5841c224f
-ms.sourcegitcommit: 885973352d31808e3ddbb45da6d6e54d1e4fca9d
+ms.openlocfilehash: e0dea74fe179c0dce4996f3e498185bb3a491856
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56224946"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432493"
 ---
 # <a name="nuget-49-release-notes"></a>NuGet 4.9 릴리스 정보
 
@@ -139,6 +139,12 @@ NuGet 배포 차량:
 * 포함된 라이선스 파일을 사용할 때 기호 .snupkg 패키지를 빌드하는 중 오류 발생 - [#7591](https://github.com/NuGet/Home/issues/7591)
 
 [이 릴리스 4.9.3에서 수정된 모든 문제 목록](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.3")
+
+## <a name="summary-whats-new-in-494"></a>요약: 4.9.4의 새로운 기능
+
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+
 ## <a name="known-issues"></a>알려진 문제
 
 ### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget 푸시 --interactive로 인해 Mac에서 오류가 발생합니다. - [#7519](https://github.com/NuGet/Home/issues/7519)

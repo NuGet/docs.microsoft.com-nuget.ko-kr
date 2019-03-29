@@ -5,22 +5,30 @@ author: anangaur
 ms.author: anangaur
 ms.date: 3/7/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3c71d05144aa2b92b916d4ebf319c5a4e321581f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: eacd29d4c9340a0f015fcdf6c5b9dd41bf781419
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549846"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432558"
 ---
-# <a name="nuget-46-rtm-release-notes"></a>NuGet 4.6 RTM 릴리스 정보
+# <a name="nuget-46-release-notes"></a>NuGet 4.6 릴리스 정보
 
 [Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes)는 [NuGet 4.6.0](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe)과 함께 제공됩니다.
 
-## <a name="summary-whats-new-in-this-release"></a>요약: 이번 릴리스의 새로운 기능
+## <a name="summary-whats-new-in-460"></a>요약: 4.6.0의 새로운 기능
 
 * [패키지 서명](../create-packages/sign-a-package.md)에 대한 지원을 추가했습니다.
 * Visual Studio 2017 및 nuget.exe는 이제 [서명된 패키지](../reference/signed-packages-reference.md)의 패키지 설치, 복원 전에 패키지 무결성을 확인합니다.
 * 연속 복원의 성능을 개선했습니다.
+
+## <a name="summary-whats-new-in-463"></a>요약: 4.6.3의 새로운 기능
+
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-464"></a>요약: 4.6.4의 새로운 기능
+
+* 보안 수정: NUPKG 내부에 있는 파일에는 NUPKG 디렉터리 위의 상대 경로가 포함될 수 있습니다. [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>알려진 문제
 

@@ -5,16 +5,26 @@ author: anangaur
 ms.author: anangaur
 ms.date: 12/4/2017
 ms.topic: conceptual
-ms.openlocfilehash: 01ecd8c7de1a0f713766e3c413d889038522bac7
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 321aedb471bc6f86e9c03878093b199267e31195
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548298"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432506"
 ---
-# <a name="nuget-45-rtm-release-notes"></a>NuGet 4.5 RTM 릴리스 정보
+# <a name="nuget-45-release-notes"></a>NuGet 4.5 릴리스 정보
 
 [Visual Studio 2017 15.5 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes)는 [NuGet 4.5 RTM](https://dist.nuget.org/win-x86-commandline/v4.5.0/nuget.exe)과 함께 제공됩니다.
+
+## <a name="summary-whats-new-in-450"></a>요약: 4.5.0의 새로운 기능
+
+## <a name="summary-whats-new-in-452"></a>요약: 4.5.2의 새로운 기능
+
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-453"></a>요약: 4.5.3의 새로운 기능
+
+* 보안 수정: NUPKG 내부에 있는 파일에는 NUPKG 디렉터리 위의 상대 경로가 포함될 수 있습니다. [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>알려진 문제
 
@@ -62,7 +72,7 @@ NuGet 4.4 RTM에서 수정된 문제는 [NuGet 4.4 RTM 릴리스 정보](../rele
 
 ### <a name="bugs"></a>버그
 
-- 15.5p1에서 [재귀]: Portable0.0은 건너뜁니다. - [#6105](https://github.com/NuGet/Home/issues/6105)
+- 15.5p1의 [회귀]: Portable0.0은 건너뜁니다. - [#6105](https://github.com/NuGet/Home/issues/6105)
 - 복원 후 패키지의 자산이 누락되었습니다. - [#5995](https://github.com/NuGet/Home/issues/5995)
 - 공백이 포함된 URI를 사용하는 경우 플러그 인 자격 증명 공급자가 작동하지 않습니다. - [#5982](https://github.com/NuGet/Home/issues/5982)
 - 패키지를 복원하지 못하면 최소 세부 정보 표시를 ON으로 설정해도 출력에 오류가 출력됩니다. - [#5658](https://github.com/NuGet/Home/issues/5658)

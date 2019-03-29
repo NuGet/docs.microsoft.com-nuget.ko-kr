@@ -6,16 +6,23 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 4bee32995884f4c003ebb963d2fd5b2d04363bab
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 72d707cb9bacd8abbac873ee10b2fd00f233d3cc
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551626"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432480"
 ---
-# <a name="nuget-43-rtm-release-notes"></a>NuGet 4.3 RTM 릴리스 정보
+# <a name="nuget-43-release-notes"></a>NuGet 4.3 릴리스 정보
 
 [Visual Studio 2017 15.3 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes)는 .NET Standard 2.0/.NET Core 2.0과 같은 새로운 시나리오에 대한 지원을 추가하고, 많은 품질 수정을 포함하며, 성능을 향상시키는 NuGet 4.3 RTM과 함께 제공됩니다. 또한 이 릴리스에는 유의적 버전 2.0.0 지원, NuGet 경고/오류의 MSBuild 통합 등과 같이 향상된 몇 가지 기능도 제공됩니다.
+
+## <a name="summary-whats-new-in-430"></a>요약: 4.3.0의 새로운 기능
+
+## <a name="summary-whats-new-in-431"></a>요약: 4.3.1의 새로운 기능
+
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 보안 수정: NUPKG 내부에 있는 파일에는 NUPKG 디렉터리 위의 상대 경로가 포함될 수 있습니다. [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>알려진 문제
 
@@ -71,11 +78,11 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 - NuGet 복원 성능 향상 - 명령줄 복원 및 VS에 대해 더 효율적인 NoOp을 구현했습니다. - [#5080](https://github.com/NuGet/Home/issues/5080)
 
-- .NET Core 2.0: VS/Dotnet CLI는 기존 NuGet 기능(FallBack 폴더)을 사용하여 시작해야 합니다. - [#4939](https://github.com/NuGet/Home/issues/4939)
+- NET Core 2.0: VS/Dotnet CLI는 기존 NuGet 기능(대체 폴더)을 사용하여 시작해야 합니다. - [#4939](https://github.com/NuGet/Home/issues/4939)
 
-- .NET Core 2.0: 사용자가 특정 복원 경고를 무시(또는 오류로 상승)하도록 설정할 수 있습니다. - [#4898](https://github.com/NuGet/Home/issues/4898)
+- NET Core 2.0: 사용자가 특정 복원 경고를 무시(또는 오류로 상승)하도록 설정할 수 있습니다. - [#4898](https://github.com/NuGet/Home/issues/4898)
 
-- .NET Core 2.0: CLI 지역화된 어셈블리 - [#4896](https://github.com/NuGet/Home/issues/4896)
+- NET Core 2.0: CLI 지역화된 어셈블리 - [#4896](https://github.com/NuGet/Home/issues/4896)
 
 - .NET Core 2.0: 모든 경고/오류(PackageTargetFallback 포함)를 자산 파일에 등록할 수 있습니다. - [#4895](https://github.com/NuGet/Home/issues/4895)
 

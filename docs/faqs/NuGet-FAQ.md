@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1c838116f9737b01ea3f9ca17f5d5002f6548044
-ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
+ms.openlocfilehash: 3b6257287c1f8c6345765e0a081bac11b34e05cb
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57196215"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432584"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -347,7 +347,7 @@ nuget.org에서 계정을 만드는 경우 해당 계정과 연결된 통신 이
 
 [로그인 지원](#which-microsoft-account-is-linked-to-my-nugetorg-account)을 사용하려는데 nuget.org 계정과 연결된 Microsoft 계정에 액세스할 수 없는 경우 nuget.org 계정에 새 Microsoft 계정을 연결하려면 다음 단계를 따르세요.
 1. **요구 사항**: 기존의 모든 nuget.org 계정과 연결되지 않은 Microsoft 계정에 액세스해야 합니다. 없는 경우 계정을 [만들](https://signup.live.com) 수 있습니다.
-2. 암호 로그인이 있는 경우 [암호 로그인 복구 단계](#how-to-recover-nugetorg-password-login)를 따라 이 단계를 건너 뜁니다.
+2. nuget.org 계정의 사용자 이름 및 암호를 잊은 경우 [암호 로그인을 복구하는 단계](#how-to-recover-nugetorg-password-login)를 수행하세요.
 3. 사용자 이름/암호 로그인을 사용하여 [nuget.org에 로그인](https://www.nuget.org/users/account/LogOnNuGetAccount)합니다.
 4. 로그인하면 아래와 같은 팝업 대화 상자가 표시됩니다. 이 대화 상자는 암호 중지 대화 상자입니다.
 5. **참고**: 지정된 Microsoft 계정으로 로그인하라는 지침을 무시하세요. 이제 기타 모든 Microsoft 로그인에 nuget.org 계정을 연결할 수 있습니다.

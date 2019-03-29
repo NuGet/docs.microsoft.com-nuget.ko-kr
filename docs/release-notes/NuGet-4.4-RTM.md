@@ -6,16 +6,26 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 9ea11ad5476b02940b171fdc69ac0bf56598418d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 3be24a86cc92c4e6d07fcae1dc625a150f28d7b4
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548416"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432571"
 ---
-# <a name="nuget-44-rtm-release-notes"></a>NuGet 4.4 RTM 릴리스 정보
+# <a name="nuget-44-release-notes"></a>NuGet 4.4 릴리스 정보
 
 [Visual Studio 2017 15.4 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes)는 NuGet 4.4 RTM과 함께 제공됩니다.
+
+## <a name="summary-whats-new-in-440"></a>요약: 4.4.0의 새로운 기능
+
+## <a name="summary-whats-new-in-442"></a>요약: 4.4.2의 새로운 기능
+
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-443"></a>요약: 4.4.3의 새로운 기능
+
+* 보안 수정: NUPKG 내부에 있는 파일에는 NUPKG 디렉터리 위의 상대 경로가 포함될 수 있습니다. [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>알려진 문제
 
@@ -165,15 +175,15 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 - [경고 및 오류] NoWarn이 P2P 참조를 통해 과도하게 이동하지 않습니다. - [#5501](https://github.com/NuGet/Home/issues/5501)
 
-- 경량 솔루션 로드: PM UI, PMC 및 IV용 공통 핵심 기능 - [#5057](https://github.com/NuGet/Home/issues/5057)
+- 경량 솔루션 로드: PM UI, PMC 및 IV에 대한 공통 핵심 - - [#5057](https://github.com/NuGet/Home/issues/5057)
 
-- 경량 솔루션 로드: PMC 지원 - [#5053](https://github.com/NuGet/Home/issues/5053)
+- 경량 솔루션 로드: 지원 - PMC - [#5053](https://github.com/NuGet/Home/issues/5053)
 
 - Visual Studio에서 트리거하는 사전 복원 MSBuild 대상에 대한 지원을 추가합니다. - [#4781](https://github.com/NuGet/Home/issues/4781)
 
 - BeforeTargets를 사용하여 참조할 수 있는 공용 대상을 NuGet.targets에 추가합니다. - [#4634](https://github.com/NuGet/Home/issues/4634)
 
-- pack 대상에서 빌드 작업으로 contentFiles를 올바르게 만들 수 없습니다. - [#4166](https://github.com/NuGet/Home/issues/4166)
+- 팩 대상은 빌드 작업으로 contentFiles를 올바르게 만들 수 없습니다. - [#4166](https://github.com/NuGet/Home/issues/4166)
 
 - RestoreOperationLogger.Do에서 스레드 풀 스레드를 차단합니다. - [#5663](https://github.com/NuGet/Home/issues/5663)
 
