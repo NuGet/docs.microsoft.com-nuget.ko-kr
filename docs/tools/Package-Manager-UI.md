@@ -10,12 +10,12 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 1de6ddeca6295c621a90409807af198bc3c7a068
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: 422faf99e58e058d86db774a8f3c1c576b3dc393
+ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981186"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58637625"
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 패키지 관리자 UI
 
@@ -127,7 +127,7 @@ Visual Studio는 패키지를 가져올 소스를 변경 하려면 원본 선택
 1. 패키지 소스를 변경 하려면 선택, 편집에 **이름** 및 **원본** 입력란과 선택 **업데이트**합니다.
 1. 패키지 소스를 해제 하려면 목록에서 이름 왼쪽에 상자를 취소 합니다.
 1. 패키지 소스를 제거 하려면 선택 하 고 다음을 선택 합니다 **X** 단추입니다.
-1. 사용 하 여 및 아래쪽 화살표 단추를 패키지 원본의 우선 순위를 변경 합니다. Visual Studio 프로젝트에 대 한 패키지를 복원 하는 경우 우선 순위 순서로 이러한 소스를 검색 합니다. 자세한 내용은 [패키지 복원](../consume-packages/package-restore.md)합니다.
+1. 사용 하 고 아래쪽 화살표 단추 패키지 원본의 우선 순위 변경 되지 않습니다. Visual Studio는 먼저 요청에 응답 하도록 소스가에서 패키지를 사용 하 여 패키지 소스의 순서를 무시 합니다. 자세한 내용은 [패키지 복원](../consume-packages/package-restore.md)합니다.
 
 > [!Tip]
 > 패키지 소스를 삭제 한 후 다시 나타나면, 컴퓨터 수준 또는 사용자 수준에 나타날 수 있습니다 `NuGet.Config` 파일입니다. 참조 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md) 이러한 파일의 위치에 대해 다음 원본을 제거 파일을 수동으로 편집 하거나 사용 하 여 합니다 [nuget 명령 원본](../tools/nuget-exe-CLI-reference.md)합니다.

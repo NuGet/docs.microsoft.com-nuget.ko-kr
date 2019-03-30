@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 5d0d60cbcf6516d24efeb04f8262902da69d92d1
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: bb15b4decef104f1aefe37fd18f3358181a848af
+ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145659"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58637664"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -49,17 +49,18 @@ NuGet V3 API V2 API의 후속 작업을 설정 하는 공식 NuGet 클라이언�
 
 합니다 **서비스 인덱스** 다양 한 리소스에 설명 합니다. 지원 되는 리소스의 현재 집합은 다음과 같습니다.
 
-리소스 이름                                                          | 필수 | 설명
----------------------------------------------------------------------- | -------- | -----------
-[`PackagePublish`](package-publish-resource.md)                        | 예      | 푸시 및 삭제 (또는 나열 취소) 패키지 있습니다.
-[`SearchQueryService`](search-query-service-resource.md)               | 예      | 필터 및 키워드는 패키지에 대 한 검색 합니다.
-[`RegistrationsBaseUrl`](registration-base-url-resource.md)            | 예      | 패키지 메타 데이터를 가져옵니다.
-[`PackageBaseAddress`](package-base-address-resource.md)               | 예      | 패키지 콘텐츠를 (.nupkg)를 가져옵니다.
-[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | 아니요       | 부분 문자열에서 패키지 Id 및 버전을 검색 합니다.
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | 아니요       | "신고" 웹 페이지 액세스에 대 한 URL을 생성 합니다.
-[`RepositorySignatures`](repository-signatures-resource.md)            | 아니요       | 리포지토리 서명에 사용 되는 인증서를 가져옵니다.
-[`Catalog`](catalog-resource.md)                                       | 아니요       | 모든 패키지 이벤트의 전체 레코드입니다.
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)           | 아니요       | 기호 패키지를 푸시하십시오.
+리소스 이름                                                        | 필수 | 설명
+-------------------------------------------------------------------- | -------- | -----------
+[카탈로그](catalog-resource.md)                                       | 아니요       | 모든 패키지 이벤트의 전체 레코드입니다.
+[PackageBaseAddress](package-base-address-resource.md)               | 예      | 패키지 콘텐츠를 (.nupkg)를 가져옵니다.
+[PackageDetailsUriTemplate](package-details-template-resource.md)    | 아니요       | 패키지 세부 정보 웹 페이지 액세스에 대 한 URL을 생성 합니다.
+[PackagePublish](package-publish-resource.md)                        | 예      | 푸시 및 삭제 (또는 나열 취소) 패키지 있습니다.
+[RegistrationsBaseUrl](registration-base-url-resource.md)            | 예      | 패키지 메타 데이터를 가져옵니다.
+[ReportAbuseUriTemplate](report-abuse-resource.md)                   | 아니요       | 보고서 남용 웹 페이지 액세스에 대 한 URL을 생성 합니다.
+[RepositorySignatures](repository-signatures-resource.md)            | 아니요       | 리포지토리 서명에 사용 되는 인증서를 가져옵니다.
+[SearchAutocompleteService](search-autocomplete-service-resource.md) | 아니요       | 부분 문자열에서 패키지 Id 및 버전을 검색 합니다.
+[SearchQueryService](search-query-service-resource.md)               | 예      | 필터 및 키워드는 패키지에 대 한 검색 합니다.
+[SymbolPackagePublish](symbol-package-publish-resource.md)           | 아니요       | 기호 패키지를 푸시하십시오.
 
 일반적으로 API 리소스에 의해 반환 되는 모든 이진이 아닌 데이터는 JSON을 사용 하 여 serialize 됩니다. 서비스 인덱스의 각 리소스에서 반환 되는 응답 스키마는 해당 리소스에 대해 개별적으로 정의 됩니다. 각 리소스에 대 한 자세한 내용은 위에 나열 된 항목을 참조 하세요.
 
@@ -123,7 +124,9 @@ Delete | 삭제 하거나 리소스 목록에서 제거 합니다.
 X-NuGet-ApiKey           | 푸시 및 삭제에 대 한 필요한 참조 [ `PackagePublish` 리소스](package-publish-resource.md)
 X-NuGet-Client-Version   | **사용 되지 않는** 바뀝니다 `X-NuGet-Protocol-Version`
 X-NuGet-Protocol-Version | Nuget.org에 대해서만 특정 경우에 필요한 참조 [nuget.org 프로토콜](NuGet-Protocols.md)
-X-NuGet-Session-Id       | *선택적*합니다. NuGet 클라이언트 v4.7 + 동일한 NuGet 클라이언트 세션의 일부인 HTTP 요청을 식별 합니다. 에 대 한 `PackageReference` 복원 작업 있습니다가 단일 세션 id가, 자동 완성와 같은 다른 시나리오에 대 한 및 `packages.config` 복원 여러 다른 세션 id의 코드는 포함 하는 방법으로 인해 있을 수 있습니다.
+X-NuGet-Session-Id       | *선택적*합니다. NuGet 클라이언트 v4.7 + 동일한 NuGet 클라이언트 세션의 일부인 HTTP 요청을 식별 합니다.
+
+합니다 `X-NuGet-Session-Id` 에 단일 복원에 관련 된 모든 작업에 대해 단일 값이 `PackageReference`합니다. 자동 완성 등의 다른 시나리오에 대 한 및 `packages.config` 코드는 포함 하는 방법으로 인해 ID 복원 여러 다른 세션 있을 수 있습니다.
 
 ## <a name="authentication"></a>인증
 

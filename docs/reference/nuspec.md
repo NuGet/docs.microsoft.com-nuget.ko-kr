@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: a8be66f5871df260581b6baca8eb7959279d66cd
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 21678cc36fd9bf1ed49143bee3f35208640fc8a7
+ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852587"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58637651"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -90,7 +90,7 @@ SPDX 라이선스 식 또는 패키지에 포함된 라이선스 파일의 경�
 
 패키지에서 여러 일반적인 라이선스 사용이 허가 되는 복합 라이선스를 사용 하 여 지정할 수 있습니다 합니다 [SPDX 식 구문은 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)합니다.<br>예를 들면 다음과 같습니다: `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-SPDX 식별자 할당 되지 않은 라이선스를 사용 하는 경우 사용자 지정 라이선스는 파일을 패키징할 수 있습니다 (만 `.txt.` 또는 `.md`) 라이선스는 텍스트를 사용 하 여 합니다. 예를 들어:
+SPDX 식별자 할당 되지 않은 라이선스를 사용 하는 경우 사용자 지정 라이선스는 파일을 패키징할 수 있습니다 (만 `.txt` 또는 `.md`) 라이선스는 텍스트를 사용 하 여 합니다. 예를 들어:
 ```xml
 <package>
   <metadata>
@@ -228,7 +228,7 @@ nuget pack MyProject.csproj
 | include/exclude 태그 | 영향을 받는 대상 폴더 |
 | --- | --- |
 | contentFiles | 콘텐츠 |
-| 런타임(runtime) | Runtime, Resources 및 FrameworkAssemblies |
+| 런타임 | Runtime, Resources 및 FrameworkAssemblies |
 | compile | lib |
 | 빌드 | build(MSBuild props 및 targets) |
 | native | native |
@@ -366,7 +366,7 @@ nuget pack MyProject.csproj
 > [!Important]
 > 패키지가 프로젝트에 설치되면 어셈블리 참조가 지역화된 위성 어셈블리로 간주되므로 NuGet은 `.resources.dll`이라는 DLL을 *제외한* 패키지의 DLL에 해당 어셈블리 참조를 자동으로 추가합니다. 이러한 이유로 다른 경우에 필수 패키지 코드가 포함되는 파일에는 `.resources.dll`을 사용하지 마세요.
 
-이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들면,
+이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들어:
 
 ```xml
 <files>
@@ -607,7 +607,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 - `TxM`은 NuGet에서 지원하는 모든 법적 대상 프레임워크 모니커입니다([대상 프레임워크](../reference/target-frameworks.md) 참조).
 - 모든 폴더 구조는 이 구문의 끝에 추가될 수 있습니다.
 
-예를 들면,
+예를 들어:
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml
