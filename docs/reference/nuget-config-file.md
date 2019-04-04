@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: c294e4c188db2e90e6bcb62b60f71ed5529977fe
-ms.sourcegitcommit: a1846edf70ddb2505d58e536e08e952d870931b0
+ms.openlocfilehash: d7c943c1f13edf782dabe4afee9d19a1a42bd42a
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52303521"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911090"
 ---
 # <a name="nugetconfig-reference"></a>nuget.config 참조
 
 NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)에서 설명한 대로 여러 `NuGet.Config` 파일의 설정으로 제어됩니다.
 
-`nuget.config`는 최상위 `<configuration>` 노드를 포함하는 XML 파일이며, 이 파일에는 이 항목에서 설명하는 섹션 요소가 포함되어 있습니다. 각 섹션에는 0 개 이상의 항목이 포함 됩니다. [config 파일 예제](#example-config-file)를 참조하세요. 설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.
+`nuget.config` XML 파일이 포함 된 최상위 `<configuration>` 노드는 다음이 항목에서 설명 하는 섹션 요소가 포함 되어 있습니다. 각 섹션에는 0 개 이상의 항목이 포함 됩니다. [config 파일 예제](#example-config-file)를 참조하세요. 설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.
 
 항목 내용:
 
@@ -221,7 +221,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 
 ### <a name="activepackagesource"></a>activePackageSource
 
-*(2.x만, 3.x 이상에서는 사용되지 않음)*
+*(2.x만, 3.x 이상에서는 사용 되지 않음된)*
 
 현재 활성 중인 원본을 식별하거나 모든 원본의 집계를 나타냅니다.
 

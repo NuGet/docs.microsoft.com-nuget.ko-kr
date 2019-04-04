@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 2d2b20c1ea439ec0a3225cf983d9a4d2eedb0333
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: fdc3ad8aa239a42d8a4c169a757715e856bdcb41
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324762"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911051"
 ---
 # <a name="autocomplete"></a>자동 완성
 
@@ -114,7 +114,7 @@ semVerLevel | URL    | string  | 아니요       | SemVer 2.0.0 버전 문자열
 --------- | ---------------- | -------- | -----
 데이터      | 문자열의 배열 | 예      | 요청에서 일치 하는 패키지 버전
 
-패키지 버전을 `data` 배열 SemVer 2.0.0 빌드 메타 데이터를 포함할 수 있습니다 (예: `1.0.0+metadata`) 하는 경우는 `semVerLevel=2.0.0` 쿼리 문자열에 제공 된.
+패키지 버전을 `data` 배열 SemVer 2.0.0 빌드 메타 데이터를 포함할 수 있습니다 (예: `1.0.0+metadata`) 하는 경우는 `semVerLevel=2.0.0` 쿼리 문자열에 제공 됩니다.
 
 ### <a name="sample-request"></a>샘플 요청
 

@@ -5,19 +5,19 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 97ed3ec7d41d2847c0521af69373a1871eb585dd
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 8f96bf289e8121fd25262fb95c2f36dfc89045c5
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324684"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911038"
 ---
 # <a name="nuget-client-sdk"></a>NuGet 클라이언트 SDK
 
 > [!Note]
 > 혼동 해서는 합니다 [NuGet *웹* API](https://docs.microsoft.com/en-us/nuget/api/overview)
 
-*NuGet 클라이언트 SDK* 중심으로 하는.NET 라이브러리 그룹을 가리키는 [NuGet.Client](https://www.nuget.org/packages/NuGet.Client)를 [Nuget.Packaging](https://www.nuget.org/packages/NuGet.Packaging), 및 [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). 이러한 패키지는 이전 바꿉니다 [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) 라이브러리입니다.
+합니다 *NuGet 클라이언트 SDK* 중심으로 하는.NET 라이브러리 그룹을 가리키는 [NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands)를 [Nuget.Packaging](https://www.nuget.org/packages/NuGet.Packaging), 및 [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). 이러한 패키지는 이전 바꿉니다 [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) 라이브러리입니다.
 
 곧 설명 되어 있습니다 노출 영역을 안정적으로 노력 합니다.
 
