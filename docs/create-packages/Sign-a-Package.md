@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: e8955f9d46bab235c8755d5654814a4291d542d6
-ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
+ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
+ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52977565"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921574"
 ---
 # <a name="signing-nuget-packages"></a>NuGet 패키지 서명
 
@@ -29,7 +29,7 @@ ms.locfileid: "52977565"
 
   ![인증서 내보내기 마법사](../reference/media/CertificateExportWizard.png)
 
-* 또한 [Export-Certificate PowerShell 명령](/powershell/module/pkiclient/export-certificate.md)을 사용하여 인증서를 내보낼 수도 있습니다.
+* 또한 [Export-Certificate PowerShell 명령](/powershell/module/pkiclient/export-certificate)을 사용하여 인증서를 내보낼 수도 있습니다.
 
 ## <a name="sign-the-package"></a>패키지 서명
 
@@ -39,8 +39,11 @@ ms.locfileid: "52977565"
 [nuget sign](../tools/cli-ref-sign.md)을 사용하여 패키지에 서명:
 
 ```cli
-nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
+nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
 ```
+
+> [!Tip]
+> 인증서 공급 기업은 위에서 표시된 `Timestamper` 선택적 인수에 사용할 수 있는 타임스탬프 서버 URL을 제공하는 경우가 많습니다. 공급 기업의 설명서 및/또는 해당 서비스 URL에 대한 지원으로 문의하세요.
 
 * 인증서 저장소에 있는 인증서나 파일의 인증서를 사용할 수 있습니다. [nuget sign](../tools/cli-ref-sign.md)에 대한 CLI 참조를 참조하세요.
 * 서명 인증서가 만료된 경우 서명된 패키지에 서명이 유효하다는 것을 확인해 주는 타임스탬프가 포함되어 있어야 합니다. 그렇지 않으면 서명 작업에서 [경고](../reference/errors-and-warnings/NU3002.md)가 발생합니다.
@@ -56,7 +59,7 @@ nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestam
 1. 이전에 내보낸 인증서 파일을 찾아서 선택합니다.
   ![등록된 인증서](../reference/media/registered-certs.png)
 
-**참고:**
+**참고**
 * 한 명의 사용자가 여러 인증서를 제출하고 여러 사용자가 동일한 인증서를 등록할 수 있습니다.
 * 한 명의 사용자에게 하나의 인증서가 등록되면 이후 모든 패키지 제출 시 이러한 인증서 중 하나로 **반드시** 서명해야 합니다. [NuGet.org에서 패키지에 대한 서명 요구 사항 관리](#manage-signing-requirements-for-your-package-on-nugetorg)를 참조하세요.
 * 사용자는 계정에서 등록된 인증서를 제거할 수도 있습니다. 인증서가 제거되면 해당 인증서로 서명한 새 패키지는 제출에 실패합니다. 기존 패키지는 영향을 받지 않습니다.
@@ -67,7 +70,7 @@ nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestam
 
 ## <a name="create-a-test-certificate"></a>테스트 인증서 만들기
 
-테스트 목적으로 자체 발급된 인증서를 사용할 수 있습니다. 자체 발급된 인증서를 만들려면 [New-SelfSignedCertificate PowerShell 명령](/powershell/module/pkiclient/new-selfsignedcertificate.md)을 사용하세요.
+테스트 목적으로 자체 발급된 인증서를 사용할 수 있습니다. 자체 발급된 인증서를 만들려면 [New-SelfSignedCertificate PowerShell 명령](/powershell/module/pkiclient/new-selfsignedcertificate)을 사용하세요.
 
 ```ps
 New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
@@ -90,7 +93,7 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 1. NuGet.org로 [로그인](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)합니다.
 
 1. `Manage Packages` 
-   ![패키지 서명자 구성](../reference/media/configure-package-signers.png)으로 이동
+   ![패키지 서명자 구성](../reference/media/configure-package-signers.png)으로 이동합니다.
 
 * 사용자가 패키지의 유일한 소유자인 경우 필수 서명자입니다. 즉, 등록된 인증서 중 어느 것이나 사용하여 패키지를 서명한 후 NuGet.org로 게시할 수 있습니다.
 
