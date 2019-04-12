@@ -8,12 +8,12 @@ description: 리포지토리 서명을 리소스 클라이언트 기능을 서�
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 81d32a7011268e45136e00cdb7345a95070aae06
-ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
+ms.openlocfilehash: ea318446c41a0d85d3fbf959dd38c929a0d0e9a1
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53248444"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59509024"
 ---
 # <a name="repository-signatures"></a>리포지토리 서명
 
@@ -28,7 +28,8 @@ ms.locfileid: "53248444"
 @type 값                | 노트
 -------------------------- | -----
 RepositorySignatures/4.7.0 | 초기 릴리스
-RepositorySignatures/4.9.0 | 사용 하도록 설정 수 있습니다. `allRepositorySigned`
+RepositorySignatures/4.9.0 | NuGet v4.9 + 클라이언트 지원
+RepositorySignatures/5.0.0 | 사용 하도록 설정 하면 허용 `allRepositorySigned`합니다. NuGet v5.0 + 클라이언트 지원
 
 ## <a name="base-url"></a>기준 URL
 
@@ -59,13 +60,13 @@ RepositorySignatures/4.9.0 | 사용 하도록 설정 수 있습니다. `allRepos
 
 이름                | 형식             | 필수 | 노트
 ------------------- | ---------------- | -------- | -----
-allRepositorySigned | boolean          | 예      | 해야 `false` 4.7.0에서 리소스
+allRepositorySigned | boolean          | 예      | 해야 `false` 4.7.0 및 4.9.0 리소스
 signingCertificates | 개체의 배열 | 예      | 
 
 `allRepositorySigned` 패키지 원본 리포지토리 서명이 있는 일부 패키지가 있으면 부울 false로 설정 됩니다. 원본에서 언급 한 서명 인증서 중 하나에서 생성 된 리포지토리 서명이 있어야 부울에서 사용 가능한 모든 패키지를 true로 설정 된 경우 `signingCertificates`합니다.
 
 > [!Warning]
-> `allRepositorySigned` 부울는 4.7.0에 false 이어야 리소스입니다. NuGet v4.7 및 v4.8 클라이언트가 있는 원본에서 패키지를 설치할 수 없습니다 `allRepositorySigned` true로 설정 합니다.
+> `allRepositorySigned` 부울 4.7.0 및 4.9.0 리소스에 false 여야 합니다. NuGet v4.7, v4.8, 및 v4.9 클라이언트가 있는 원본에서 패키지를 설치할 수 없습니다 `allRepositorySigned` true로 설정 합니다.
 
 서명 인증서를 하나 이상 있어야 합니다 `signingCertificates` 배열을 `allRepositorySigned` 부울 설정 되어 true로 합니다. 배열이 비어 있는 경우 및 `allRepositorySigned` 로 설정 된 true 이면 모든 패키지 소스에서 고려해 야 잘못 된 경우에 클라이언트 정책을 여전히 패키지의 사용을 허용 하지만 합니다. 이 배열의 각 요소에는 다음 속성을 사용 하 여 JSON 개체입니다.
 
