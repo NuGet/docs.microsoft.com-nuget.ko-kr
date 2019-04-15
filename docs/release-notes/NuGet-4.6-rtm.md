@@ -46,7 +46,7 @@ ms.locfileid: "58432558"
 
 **버그**
 
-* 로컬 폴더로 푸시하면 nupkg가 잠김 - [#6325](https://github.com/NuGet/Home/issues/6325)
+* 로컬 폴더로 푸시 하면 nupkg가 잠김 - [#6325](https://github.com/NuGet/Home/issues/6325)
 * NuGet 플러그인 구현: 여러 문제 - [#6149](https://github.com/NuGet/Home/issues/6149)
 * UIHang - VSSolutionManager에서 MEF 초기화의 쿼리 서비스 호출 제거 - [#6110](https://github.com/NuGet/Home/issues/6110)
 * 취소된 패키지 다운로드 작업의 오류 보고 예외 - [#6096](https://github.com/NuGet/Home/issues/6096)
@@ -56,7 +56,7 @@ ms.locfileid: "58432558"
 * 4.3 재발 해결 - 콘텐츠 파일에서 자리 표시자 $product$ 및 $AssemblyGuid$가 변환을 통해 대체되지 않음 - [#5880](https://github.com/NuGet/Home/issues/5880)
 * 여러 소스를 사용하는 dotnet restore가 충돌함 - [#5817](https://github.com/NuGet/Home/issues/5817)
 * 팩이 프로젝트 버전을 다시 계산해야 git 버전 관리가 가능함 - [#4790](https://github.com/NuGet/Home/issues/4790)
-* 비호환 패키지를 설치할 때 이해하기 어려운 오류 개선 - [#4555](https://github.com/NuGet/Home/issues/4555)
+* 호환도지 않는 패키지를 설치할 때 이해하기 어려운 오류 개선 - [#4555](https://github.com/NuGet/Home/issues/4555)
 * TemplateWizard에서 패키지를 PackageReference로 설치하는 옵션이 필요함 - [#4549](https://github.com/NuGet/Home/issues/4549)
 * 개발자 명령 프롬프트 외부에서 MSBuild.exe를 실행할 때 패키지에서 제공한 props 파일이 무시됨 - [#4530](https://github.com/NuGet/Home/issues/4530)
 * 프로젝트에 적용할 수 없는 .NET Standard 라이브러리를 참조할 때 나쁨 오류 메시지 해결 - [#4423](https://github.com/NuGet/Home/issues/4423)
