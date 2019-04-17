@@ -38,9 +38,9 @@ NuGet 3.4 이상에서 `<value>`는 [환경 변수](cli-ref-environment-variable
 | AsPath | 구성 파일의 경로를 반환합니다. `-Set`이 사용될 때 옵션은 무시됩니다. |
 | ConfigFile | 수정할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
 | ForceEnglishOutput | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
-| 도움말 | 명령어에 대한 도움말을 표시합니다. |
+| Help | 명령어에 대한 도움말을 표시합니다. |
 | NonInteractive | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
-| 자세한 정도 | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
+| Verbosity | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
 
 또한 [환경 변수](cli-ref-environment-variables.md)에 대한 정보를 참조할 수 있습니다.
 
