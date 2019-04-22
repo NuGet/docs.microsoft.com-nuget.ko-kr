@@ -10,7 +10,7 @@ ms.openlocfilehash: ebb1dd929042a1fcd269d0ac50154ae6b8234be2
 ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59509103"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
@@ -84,13 +84,11 @@ nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페�
 
 nuget.org뿐만 아니라 UI 표시에도 종종 표시되는 패키지의 라이선스에 대한 URL입니다.
 #### <a name="license"></a>라이선스
-SPDX 라이선스 식 또는 패키지에 포함된 라이선스 파일의 경로로, 보통 UI 디스플레이와 nuget.org에 표시됩니다. MIT BSD-2-절 등 일반적인 라이선스에 따라 패키지를 라이선스 하는 경우 연결된 SPDX 라이선스 식별자를 사용 합니다.<br>예를 들어:
-`<license type="expression">MIT</license>`
+SPDX 라이선스 식 또는 패키지에 포함된 라이선스 파일의 경로로, 보통 UI 디스플레이와 nuget.org에 표시됩니다. MIT BSD-2-절 등 일반적인 라이선스에 따라 패키지를 라이선스 하는 경우 연결된 SPDX 라이선스 식별자를 사용 합니다.<br>예를 들면 다음과 같습니다: `<license type="expression">MIT</license>`
 
 [SPDX 라이선스 식별자](https://spdx.org/licenses/)에서 전체 식별자 목록을 확인할 수 있습니다. 라이선스 형식 식을 사용하는 경우, NuGet.org에서는 OSI 또는 FSF 승인된 라이선스만 허용합니다.
 
-패키지에서 여러 일반적인 라이선스 사용이 허가 되는 복합 라이선스를 사용 하 여 지정할 수 있습니다 합니다 [SPDX 식 구문은 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)합니다.<br>예를 들어:
-`<license type="expression">BSD-2-Clause OR MIT</license>`
+패키지에서 여러 일반적인 라이선스 사용이 허가 되는 복합 라이선스를 사용 하 여 지정할 수 있습니다 합니다 [SPDX 식 구문은 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)합니다.<br>예를 들면 다음과 같습니다: `<license type="expression">BSD-2-Clause OR MIT</license>`
 
 SPDX 식별자 할당 되지 않은 라이선스를 사용 하는 경우 사용자 지정 라이선스는 파일을 패키징할 수 있습니다 (만 `.txt` 또는 `.md`) 라이선스는 텍스트를 사용 하 여 합니다. 예를 들어:
 ```xml
@@ -161,7 +159,7 @@ nuget.exe 및 Visual Studio 패키지 관리자에 의해 적용되는, 이 패�
 #### <a name="frameworkassemblies"></a>frameworkAssemblies
 *(1.2 이상)* 이 패키지에 필요한 .NET Framework 어셈블리 참조를 식별하는 0개 이상의 `<frameworkAssembly>` 요소 컬렉션이며, 패키지를 사용하는 프로젝트에 참조가 추가되도록 합니다. 각 frameworkAssembly에는 *assemblyName* 및 *targetFramework* 특성이 있습니다. 아래의 [프레임워크 어셈블리 참조 GAC 지정](#specifying-framework-assembly-references-gac)을 참조하세요. |
 #### <a name="references"></a>참조
-*(1.5 이상)* 프로젝트 참조로 추가된 패키지의 `lib` 폴더에 있는 어셈블리를 명명하는 0개 이상의 `<reference>` 요소 컬렉션입니다. 각 참조에는 *file* 특성이 있습니다. `<references>` 포함할 수도 있습니다는 `<group>` 요소를 *targetFramework* 그런 다음이 포함 된 특성 `<reference>` 요소입니다. 생략하면 `lib`의 모든 참조가 포함됩니다. 아래의 [명시적 어셈블리 참조 지정](#specifying-explicit-assembly-references)을 참조하세요.
+*(1.5 이상)* 프로젝트 참조로 추가된 패키지의 `lib` 폴더에 있는 어셈블리를 명명하는 0개 이상의 `<reference>` 요소 컬렉션입니다. 각 참조에는 *file* 특성이 있습니다. 또한 `<references>`에는 *targetFramework* 특성이 있는 `<group>` 요소도 포함될 수 있으며, 그런 다음 `<reference>` 요소가 포함됩니다. 생략하면 `lib`의 모든 참조가 포함됩니다. 아래의 [명시적 어셈블리 참조 지정](#specifying-explicit-assembly-references)을 참조하세요.
 #### <a name="contentfiles"></a>contentFiles
 *(3.3 이상)* 사용하는 프로젝트에 포함할 콘텐츠 파일을 식별하는 `<files>` 요소 컬렉션입니다. 이러한 파일은 프로젝트 시스템 내에서 사용되는 방법을 설명하는 일단의 특성으로 지정됩니다. 아래의 [패키지에 포함할 파일 지정](#specifying-files-to-include-in-the-package)을 참조하세요.
 #### <a name="files"></a>파일 
@@ -192,13 +190,13 @@ nuget pack MyProject.csproj
 
 | 토큰 | 값 원본 | 값
 | --- | --- | ---
-| **$id $** | 프로젝트 파일 | 프로젝트 파일의 AssemblyName (제목) |
-| **$version $** | AssemblyInfo | 있는 경우 AssemblyInformationalVersion, 그렇지 않으면 AssemblyVersion |
-| **$author $** | AssemblyInfo | AssemblyCompany |
-| **$title $** | AssemblyInfo | AssemblyTitle |
-| **$ $description $** | AssemblyInfo | AssemblyDescription |
-| **$copyright $** | AssemblyInfo | AssemblyCopyright |
-| **$configuration $** | 어셈블리 DLL | 어셈블리를 빌드하는 데 사용되는 구성이며, 기본값은 Debug입니다. Release 구성을 사용하여 패키지를 만들려면 항상 명령줄에서 `-properties Configuration=Release`를 사용합니다. |
+| **$id$** | 프로젝트 파일 | 프로젝트 파일의 AssemblyName (제목) |
+| **$version$** | AssemblyInfo | 있는 경우 AssemblyInformationalVersion, 그렇지 않으면 AssemblyVersion |
+| **$author$** | AssemblyInfo | AssemblyCompany |
+| **$title$** | AssemblyInfo | AssemblyTitle |
+| **$description$** | AssemblyInfo | AssemblyDescription |
+| **$copyright$** | AssemblyInfo | AssemblyCopyright |
+| **$configuration$** | 어셈블리 DLL | 어셈블리를 빌드하는 데 사용되는 구성이며, 기본값은 Debug입니다. Release 구성을 사용하여 패키지를 만들려면 항상 명령줄에서 `-properties Configuration=Release`를 사용합니다. |
 
 또한 토큰은 [어셈블리 파일](#including-assembly-files) 및 [콘텐츠 파일](#including-content-files)을 포함할 때 경로를 확인하는 데 사용할 수도 있습니다. 토큰의 이름은 MSBuild 속성과 동일하므로 현재 빌드 구성에 따라 포함할 파일을 선택할 수 있습니다. 예를 들어 `.nuspec` 파일에서 다음 토큰을 사용하는 경우가 있습니다.
 
@@ -388,7 +386,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 | --- | --- |
 | **src** | `exclude` 특성으로 지정된 제외에 따라 포함할 파일의 위치입니다. 절대 경로가 지정되지 않으면 경로는 `.nuspec` 파일에 대한 상대 경로입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 | **target** | 원본 파일이 있는 패키지 내의 폴더에 대한 상대 경로이며, `lib`, `content`, `build` 또는 `tools`로 시작해야 합니다. [규칙 기반 작업 디렉터리에서 .nuspec 만들기](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)를 참조하세요. |
-| **Exclude** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
+| **exclude** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 
 ### <a name="examples"></a>예제
 
@@ -403,7 +401,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
     Packaged result:
         lib\library.dll
 
-**특정 대상 프레임 워크를 단일 어셈블리**
+**특정 대상 프레임워크에 대한 단일 어셈블리**
 
     Source file:
         library.dll
@@ -414,7 +412,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
     Packaged result:
         lib\net40\library.dll
 
-**와일드 카드를 사용 하는 Dll 집합**
+**와일드카드를 사용하는 DLL 집합**
 
     Source files:
         bin\release\libraryA.dll
@@ -427,7 +425,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
         lib\libraryA.dll
         lib\libraryB.dll
 
-**다양 한 프레임 워크에 대 한 Dll**
+**여러 프레임워크에 대한 DLL**
 
     Source files:
         lib\net40\library.dll
@@ -485,7 +483,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
         content\css\mobile\style1.css
         content\css\mobile\style2.css
 
-**디렉터리 구조를 사용 하 여 콘텐츠 파일**
+**디렉터리 구조가 포함된 콘텐츠 파일**
 
     Source files:
         css\mobile\style.css
@@ -500,7 +498,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
         content\css\mobile\wp7\style.css
         content\css\browser\style.css
 
-**대상 프레임 워크를 특정 콘텐츠 파일**
+**특정 대상 프레임워크에 대한 콘텐츠 파일**
 
     Source file:
         css\cool\style.css
@@ -511,7 +509,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
     Packaged result:
         content\style.css
 
-**이름에 점이 있는 폴더에 복사 하는 콘텐츠 파일**
+**이름에 점이 있는 폴더에 복사되는 콘텐츠 파일**
 
 이 경우 NuGet은 `target`과 `src`의 확장명이 일치하지 않는지 확인하여 `target`의 이름 중 해당 부분을 폴더로 처리합니다.
 
@@ -537,7 +535,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
     Packaged result:
         flags\installed
 
-**전체 경로 전체 대상이 포함 된 콘텐츠 파일**
+**전체 경로와 전체 대상이 포함된 콘텐츠 파일**
 
 이 경우 원본과 대상의 파일 확장명이 일치하므로 NuGet은 대상이 폴더가 아니라 파일 이름이라고 가정합니다.
 
@@ -581,7 +579,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 
 ### <a name="using-the-contentfiles-element-for-content-files"></a>콘텐츠 파일에 대한 contentFiles 요소 사용
 
-*NuGet 4.0 이상 (PackageReference 사용)*
+*NuGet 4.0 이상(PackageReference 사용)*
 
 기본적으로 패키지는 `contentFiles` 폴더(아래 참조) 및 기본 특성을 사용하여 해당 폴더의 모든 파일이 포함되는 `nuget pack`에 콘텐츠 파일을 배치합니다. 이 경우 `.nuspec`에 `contentFiles` 노드를 포함할 필요가 없습니다.
 
@@ -592,10 +590,10 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 | 특성 | 설명 |
 | --- | --- |
 | **include** | (필수) `exclude` 특성으로 지정된 제외에 따라 포함할 파일의 위치입니다. 절대 경로가 지정되지 않으면 경로는 `.nuspec` 파일에 대한 상대 경로입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
-| **Exclude** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
+| **exclude** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 | **buildAction** | `Content`, `None`, `Embedded Resource`, `Compile` 등과 같이 MSBuild의 콘텐츠 항목에 할당할 빌드 작업입니다. 기본값은 `Compile`입니다. |
 | **copyToOutput** | 출력 폴더를 빌드에 콘텐츠 항목을 복사 (또는 게시) 여부를 나타내는 부울입니다. 기본값은 false입니다. |
-| **평면화(flatten)** | 빌드 출력의 단일 폴더에 콘텐츠 항목을 복사할지(true), 아니면 패키지의 폴더 구조를 유지할지(false) 여부를 나타내는 부울 값입니다. 이 플래그는 copyToOutput 플래그가 true로 설정된 경우에만 작동합니다. 기본값은 false입니다. |
+| **flatten** | 빌드 출력의 단일 폴더에 콘텐츠 항목을 복사할지(true), 아니면 패키지의 폴더 구조를 유지할지(false) 여부를 나타내는 부울 값입니다. 이 플래그는 copyToOutput 플래그가 true로 설정된 경우에만 작동합니다. 기본값은 false입니다. |
 
 패키지를 설치할 때 NuGet에서 `<contentFiles>`의 자식 요소를 위쪽에서 아래쪽으로 적용합니다. 여러 항목이 동일한 파일과 일치하면 모든 항목이 적용됩니다. 동일한 특성에 대한 충돌이 있는 경우 최상위 항목이 하위 항목을 재정의합니다.
 
@@ -605,8 +603,8 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 
     /contentFiles/{codeLanguage}/{TxM}/{any?}
 
-- `codeLanguages` 않을 `cs`, `vb`, `fs`, `any`, 또는 해당 하는 소문자를 지정 `$(ProjectLanguage)`
-- `TxM` NuGet을 지 원하는 모든 법적 대상 프레임 워크 모니커 (참조 [대상 프레임 워크](../reference/target-frameworks.md)).
+- `codeLanguages`는 `cs`, `vb`, `fs`, `any` 또는 지정된 `$(ProjectLanguage)`에 해당하는 소문자일 수 있습니다.
+- `TxM`은 NuGet에서 지원하는 모든 법적 대상 프레임워크 모니커입니다([대상 프레임워크](../reference/target-frameworks.md) 참조).
 - 모든 폴더 구조는 이 구문의 끝에 추가될 수 있습니다.
 
 예를 들어:
@@ -649,7 +647,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 
 ## <a name="example-nuspec-files"></a>예를 들어 nuspec 파일
 
-**간단한 `.nuspec` dependencies 또는 files를 지정 하지 않은**
+**dependencies 또는 files를 지정하지 않은 간단한 `.nuspec`**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -666,7 +664,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 </package>
 ```
 
-**`.nuspec` 종속성**
+**dependencies가 있는 `.nuspec`**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -683,7 +681,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 </package>
 ```
 
-**`.nuspec` 파일**
+**files가 있는 `.nuspec`**
 
 ```xml
 <?xml version="1.0"?>
@@ -701,7 +699,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 </package>
 ```
 
-**`.nuspec` 프레임 워크 어셈블리가 있는**
+**프레임워크 어셈블리가 있는 `.nuspec`**
 
 ```xml
 <?xml version="1.0"?>
@@ -728,6 +726,6 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 이 예제에서는 특정 프로젝트 대상에 대해 다음이 설치됩니다.
 
 - .NET4 -> `System.Web`, `System.Net`
-- . NET4 클라이언트 프로필-> `System.Net`
+- .NET4 클라이언트 프로필 -> `System.Net`
 - Silverlight 3 -> `System.Json`
 - WindowsPhone -> `Microsoft.Devices.Sensors`

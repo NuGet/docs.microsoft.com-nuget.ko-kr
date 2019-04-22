@@ -7,10 +7,10 @@ ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
-ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58921574"
 ---
 # <a name="signing-nuget-packages"></a>NuGet 패키지 서명
@@ -59,7 +59,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 1. 이전에 내보낸 인증서 파일을 찾아서 선택합니다.
   ![등록된 인증서](../reference/media/registered-certs.png)
 
-**참고**
+**참고:**
 * 한 명의 사용자가 여러 인증서를 제출하고 여러 사용자가 동일한 인증서를 등록할 수 있습니다.
 * 한 명의 사용자에게 하나의 인증서가 등록되면 이후 모든 패키지 제출 시 이러한 인증서 중 하나로 **반드시** 서명해야 합니다. [NuGet.org에서 패키지에 대한 서명 요구 사항 관리](#manage-signing-requirements-for-your-package-on-nugetorg)를 참조하세요.
 * 사용자는 계정에서 등록된 인증서를 제거할 수도 있습니다. 인증서가 제거되면 해당 인증서로 서명한 새 패키지는 제출에 실패합니다. 기존 패키지는 영향을 받지 않습니다.
@@ -93,7 +93,7 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 1. NuGet.org로 [로그인](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)합니다.
 
 1. `Manage Packages` 
-   ![패키지 서명자 구성](../reference/media/configure-package-signers.png)으로 이동합니다.
+   ![패키지 서명자 구성](../reference/media/configure-package-signers.png)으로 이동
 
 * 사용자가 패키지의 유일한 소유자인 경우 필수 서명자입니다. 즉, 등록된 인증서 중 어느 것이나 사용하여 패키지를 서명한 후 NuGet.org로 게시할 수 있습니다.
 

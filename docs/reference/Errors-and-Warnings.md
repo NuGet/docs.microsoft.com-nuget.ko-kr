@@ -10,7 +10,7 @@ ms.openlocfilehash: 4d9ef92c006a0d3051a73ec8ebbb0f72bb2b2355
 ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59509089"
 ---
 # <a name="errors-and-warnings"></a>오류 및 경고

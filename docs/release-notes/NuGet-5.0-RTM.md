@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 04/02/2019
 ms.topic: conceptual
 ms.openlocfilehash: 5e48ff19ea5c4908d7eb0a3cb19a31b738e348eb
-ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58921587"
 ---
 # <a name="nuget-50-release-notes"></a>NuGet 5.0 릴리스 정보
@@ -29,7 +29,7 @@ NuGet 배포 차량:
 * 복원에 대 한 지원을 [솔루션을 필터링](https://docs.microsoft.com/en-us/visualstudio/ide/filtered-solutions?view=vs-2019) 에서 Visual Studio 2019- [#5820](https://github.com/NuGet/Home/issues/5820)
 * `BuildTransitive` 폴더에 패키지를 호스트 프로젝트에 대상/props를 전이적으로 적용할 수 있도록 [#6091](https://github.com/NuGet/Home/issues/6091)
 * NuGet Iv api-PackageReference 시나리오에 대 한 지원 향상 [#7005](https://github.com/NuGet/Home/issues/7005), [#7493](https://github.com/NuGet/Home/issues/7493)
-* `nuget.exe pack project.json` has been deprecated - [#7928](https://github.com/NuGet/Home/issues/7928)
+* `nuget.exe pack project.json` 사용 되지 않습니다- [#7928](https://github.com/NuGet/Home/issues/7928)
 * Gen 1 자격 증명 공급자 플러그 인으로 대체 되었습니다 [Gen 2](https://aka.ms/nuget-cross-platform-authentication-plugin) 되며 곧 사용 되지 않음- [#7819](https://github.com/NuGet/Home/issues/7819)
 
 ## <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
@@ -118,7 +118,7 @@ NuGet 배포 차량:
 
 * 사용할 수 없는 컴퓨터 와이드 피드-인해 dotnet restore가 실패 [#5410](https://github.com/NuGet/Home/issues/5410)
 
-**DCR**
+**DCRs**
 
 * "Dotnet 팩 project.json"-향후 제거의 경고 [#7928](https://github.com/NuGet/Home/issues/7928)
  
