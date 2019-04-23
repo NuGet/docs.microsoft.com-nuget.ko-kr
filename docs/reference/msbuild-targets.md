@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8132595cbfaf553736fbcc81aada283a44d6cdbf
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 1e89aeb46f2538d46c013561a51a41702b2472d8
+ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324853"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59932101"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -322,7 +322,7 @@ Nuspec 파일을 압축할 csproj 파일의 예제는 다음과 같습니다.
 
 1. 모든 프로젝트 간 참조를 읽습니다.
 1. 프로젝트 속성을 읽어 중간 폴더 및 대상 프레임워크를 찾습니다.
-1. msbuild 데이터를 NuGet.Build.Tasks.dll에 전달합니다.
+1. MSBuild 데이터를 NuGet.Build.Tasks.dll에 전달
 1. restore를 실행합니다.
 1. 패키지를 다운로드합니다.
 1. 자산, targets 및 props 파일을 작성합니다.
@@ -341,9 +341,14 @@ Nuspec 파일을 압축할 csproj 파일의 예제는 다음과 같습니다.
 | RestoreConfigFile | 적용할 `Nuget.Config` 파일에 대한 경로입니다. |
 | RestoreNoCache | True 이면 캐시 된 패키지를 사용 하 여 방지할 수 있습니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
 | RestoreIgnoreFailedSources | true이면 실패했거나 누락된 패키지 원본을 무시합니다. |
+| RestoreFallbackFolders | 대체 (fallback) 폴더는 폴더는 사용자 패키지를 동일한 방식으로 사용 합니다. |
+| RestoreAdditionalProjectSources | 복원할 때 사용할 추가적인 소스입니다. |
+| RestoreAdditionalProjectFallbackFolders | 복원 중에 사용할 대체 (fallback) 폴더를 추가 합니다. |
+| RestoreAdditionalProjectFallbackFoldersExcludes | 에 지정 된 대체 (fallback) 폴더를 제외 합니다. `RestoreAdditionalProjectFallbackFolders` |
 | RestoreTaskAssemblyFile | `NuGet.Build.Tasks.dll`에 대한 경로입니다. |
 | RestoreGraphProjectInput | 세미콜론으로 구분된 복원할 프로젝트의 목록이며, 절대 경로가 포함되어야 합니다. |
-| RestoreOutputPath | 출력 폴더이며, 기본값은 `obj` 폴더입니다. |
+| RestoreUseSkipNonexistentTargets  | 프로젝트를 사용 하 여 수집 여부를 결정 하는 MSBuild를 통해 수집 되는 경우는 `SkipNonexistentTargets` 최적화 합니다. 설정하지 않으면 기본값은 `true`으로 합니다. 결과 프로젝트의 대상으로 가져올 수 없는 경우는 페일 패스트 동작입니다. |
+| MSBuildProjectExtensionsPath | 출력 폴더를 기본값으로 `BaseIntermediateOutputPath` 하며 `obj` 폴더입니다. |
 
 #### <a name="examples"></a>예제
 
@@ -370,6 +375,23 @@ restore는 `obj` 빌드 폴더에 다음 파일을 만듭니다.
 | `project.assets.json` | 패키지에 대 한 모든 참조의 종속성 그래프를 포함합니다. |
 | `{projectName}.projectFileExtension.nuget.g.props` | 패키지에 포함된 MSBuild props 파일에 대한 참조 |
 | `{projectName}.projectFileExtension.nuget.g.targets` | 패키지에 포함된 MSBuild targets 파일에 대한 참조 |
+
+### <a name="restoring-and-building-with-one-msbuild-command"></a>복원 및 MSBuild 명령을 사용 하 여 구축
+
+때문에 NuGet MSBuild targets 및 props을 종료 하는 패키지를 복원 하려면 복원 및 빌드 평가 다른 전역 속성을 사용 하 여 실행 됩니다.
+이 다음 되어 예측 하기 어렵고 종종 잘못 된 동작을 의미 합니다.
+
+```cli
+msbuild -t:restore,build
+```
+
+ 대신 권장이 됩니다.
+
+```cli
+msbuild -t:build -restore
+```
+
+동일한 논리를 유사한 다른 대상에 적용 됩니다 `build`합니다.
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 
