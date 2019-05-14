@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 150fc61e51fe10622fe6b369b60dfc61a9ac916f
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.openlocfilehash: 696f51905198defdbfd475ba7d010ac3e27ac557
+ms.sourcegitcommit: 3fc93f7a64be040699fe12125977dd25a7948470
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432454"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64877936"
 ---
 # <a name="building-pre-release-packages"></a>시험판 패키지 빌드
 
@@ -22,7 +22,7 @@ ms.locfileid: "58432454"
 
 소프트웨어 릴리스 주기를 지원하기 위해 NuGet 1.6 이상을 사용하면 시험판 패키지의 배포에 허용됩니다. 여기서 버전 번호에는 `-alpha`, `-beta` 또는 `-rc`와 같은 유의적 버전 접미사가 포함됩니다. 자세한 내용은 [패키지 버전 관리](../reference/package-versioning.md#pre-release-versions)를 참조하세요.
 
-두 가지 방법으로 이러한 버전을 지정할 수 있습니다.
+세 가지 방법으로 이러한 버전을 지정할 수 있습니다.
 
 - `.nuspec` 파일: `version` 요소에 의미 체계 버전 접미사의 포함:
 
@@ -30,7 +30,15 @@ ms.locfileid: "58432454"
     <version>1.0.1-alpha</version>
     ```
 
-- 어셈블리 특성: Visual Studio 프로젝트에서 패키지를 빌드할 때(`.csproj` 또는 `.vbproj`) `AssemblyInformationalVersionAttribute`를 사용하여 버전을 지정합니다.
+- `.csproj` 파일: `PackageVersion` 요소에 의미 체계 버전 접미사의 포함:
+
+    ```xml
+    <PropertyGroup>
+        <PackageVersion>1.0.1-alpha</PackageVersion>
+    </PropertyGroup>
+    ```
+
+- 어셈블리 특성: `AssemblyInformationalVersionAttribute`를 사용하여 버전 지정:
 
     ```cs
     [assembly: AssemblyInformationalVersion("1.0.1-beta")]
