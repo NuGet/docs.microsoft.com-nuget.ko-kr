@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: ac1bf2b65ab6ec4e8cf864810181fc661236262a
-ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
+ms.openlocfilehash: 9f26f75a70a996cad158fd125e86d98e10c3dac1
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59931984"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610632"
 ---
 # <a name="nuget-cli-environment-variables"></a>NuGet CLI 환경 변수
 
@@ -33,7 +33,7 @@ NuGet CLI는 프로젝트 파일을 읽으려면 MSBuild를 사용 합니다. �
 | NUGET_HTTP_CACHE_PATH | [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)에 정의된 *http 캐시에* 대한 경로를 지정합니다. | 절대 경로로 지정합니다. |
 | NUGET_PERSIST_DG | Dg (MSBuild에서 수집된 데이터) 파일을 유지할 것인지 결정하는 플래그입니다. | *false*가 기본값이고 *true* 또는 *false*로 지정할 수 있습니다. NUGET_PERSIST_DG_PATH 설정되지 않은 경우 임시 디렉터리(환경 변수에서 지정한 임시 디렉터리 내부의 NuGetScratch 폴더)에 저장됩니다. |
 | NUGET_PERSIST_DG_PATH | Dg 파일을 저장할 경로입니다. | 이 옵션은 절대 경로로 지정해야 하며 *NUGET_PERSIST_DG* 값이 true일 때만 사용됩니다. |
-| NUGET_RESTORE_MSBUILD_ARGS | 추가 MSBuild 인수를 설정합니다. | |
+| NUGET_RESTORE_MSBUILD_ARGS | 추가 MSBuild 인수를 설정합니다. | Msbuild.exe에 전달 됩니다 하는 방법에 동일한 인수를 전달 합니다. 값 모음으로 명령줄에서 Foo 프로젝트 속성을 설정 하는 예로 들 수 /p:Foo 표시줄 = |
 | NUGET_RESTORE_MSBUILD_VERBOSITY | MSBuild 로그의 출력 레벨을 설정합니다. | 기본값은 *quiet* ("/ v: q")이고, 가능한 값은 *q [uiet]*, *m [inimal]*, *n [ormal]*, *d [etailed]* 및 *diag [nostic]* 입니다. |
 | NUGET_SHOW_STACK | 사용자에게 스택 추적을 비롯한 예외 전체를 보여줄지 결정합니다. | *false*가 기본이며 *true*나 *false*로 지정할 수 있습니다. |
 | NUGET_XMLDOC_MODE | 어셈블리 XML 설명서 파일 압축 풀기 처리 방법을 결정합니다. | 지원되는 모드는 XML 파일을 추출하지 않는 *건너뛰기*, XML 문서 파일을 zip 형식으로 압축하여 저장하는 *압축* 또는 XML 문서 파일을 일반적인 파일로 취급하는 *none* 입니다. |

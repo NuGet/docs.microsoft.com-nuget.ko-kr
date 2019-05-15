@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 04/02/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5e48ff19ea5c4908d7eb0a3cb19a31b738e348eb
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: 7e719a3bb5069c461820c6f884487af1eb04bf86
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58921587"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610664"
 ---
 # <a name="nuget-50-release-notes"></a>NuGet 5.0 릴리스 정보
 
@@ -19,6 +19,7 @@ NuGet 배포 차량:
 | NuGet 버전 | Visual Studio 버전에서 사용 가능| .NET SDK에서 사용 가능|
 |:---|:---|:---|
 | [**5.0.0**](https://nuget.org/downloads) | [Visual Studio 2019 버전 16.0](https://visualstudio.microsoft.com/downloads/) | [2.1.602](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.202](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
+| [**5.0.2**](https://nuget.org/downloads) | [Visual Studio 2019 16.0.4 버전](https://visualstudio.microsoft.com/downloads/) | [2.1.60X](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.20X](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
 
 <sup>1</sup>.NET Core 워크 로드를 사용 하 여 Visual Studio 2019와 함께 설치 
 
@@ -153,6 +154,13 @@ NuGet 배포 차량:
 * Packagereference (일치 하는 Packages.Config 기능)-EmbedInteropTypes 사용 [#2365](https://github.com/NuGet/Home/issues/2365)
 
 **[이 릴리스-5.0 RTM에서에서 수정 된 모든 문제 목록](https://github.com/NuGet/Home/milestone/84?closed=1)**
+
+## <a name="summary-whats-new-in-502"></a>요약: 5.0.2의 새로운 기능
+
+* 보안 (dotnet.exe 또는 mono.exe를 통해 실행 된 경우)-올바른 권한으로 obj 폴더를 만들어야 [#7908](https://github.com/NuGet/Home/issues/7908)
+
+* 사용자 지정 nuget.config를 사용 하 여 mono/MacOS에서 nuget.exe restore가 실패 하 고 `PackageSignatureValidity: False` [#8011](https://github.com/NuGet/Home/issues/8011)
+
 
 ## <a name="known-issues"></a>알려진 문제
 
