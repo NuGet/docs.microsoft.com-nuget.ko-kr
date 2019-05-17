@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: c23b464ca39fd8d872f21846a7d6d34edf9dce93
-ms.sourcegitcommit: 1bd72dca2f85b4267b9924236f1d23dd7b0ed733
+ms.openlocfilehash: db968189e892723c8fd080cb01a7222696c9d3f3
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50088923"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610571"
 ---
 # <a name="configuring-nuget-behavior"></a>NuGet 동작 구성
 
@@ -186,17 +186,17 @@ NuGet은 이러한 파일에서 설정을 찾으면 다음과 같이 적용합�
 
 그런 다음 NuGet은 호출된 위치에 따라 다음과 같이 설정을 로드하고 적용합니다.
 
-- **disk_drive_1/users에서 호출됨**: disk_drive_1에 있는 유일한 파일이기 때문에 사용자 수준 구성 파일(A)에 나열된 기본 리포지토리만 사용됩니다.
+- **Disk_drive_1/users에서 호출됨**: disk_drive_1에 있는 유일한 파일이기 때문에 사용자 수준 구성 파일(A)에 나열된 기본 리포지토리만 사용됩니다.
 
-- **disk_drive_2/ or disk_drive_/tmp에서 호출됨**: 사용자 수준 파일(A)이 먼저 로드된 다음, NuGet에서 disk_drive_2의 루트로 이동하여 파일(B)을 찾습니다. 또한 NuGet은 /tmp에 있는 구성 파일을 찾지만 하나도 찾을 수가 없습니다. 따라서 nuget.org의 기본 리포지토리가 사용되고, 패키지 복원을 사용하도록 설정되고, 패키지가 disk_drive_2/tmp로 확장됩니다.
+- **disk_drive_2/ 또는 disk_drive_/tmp에서 호출됨**: 사용자 수준 파일(A)이 먼저 로드된 다음, NuGet에서 disk_drive_2의 루트로 이동하여 파일(B)을 찾습니다. 또한 NuGet은 /tmp에 있는 구성 파일을 찾지만 하나도 찾을 수가 없습니다. 따라서 nuget.org의 기본 리포지토리가 사용되고, 패키지 복원을 사용하도록 설정되고, 패키지가 disk_drive_2/tmp로 확장됩니다.
 
-- **disk_drive_2/Project1 또는 disk_drive_2/Project1/Source에서 호출됨**: 사용자 수준 파일(A)이 먼저 로드된 다음, NuGet에서 disk_drive_2의 루트에서 (B), (C) 파일을 차례로 로드합니다. (C)의 설정은 (B) 및 (A)의 설정을 재정의하므로 패키지가 설치되는 `repositoryPath`는 *disk_drive_2/tmp* 대신 disk_drive_2/Project1/External/Packages입니다. 또한 (C)에서 `<packageSources>`를 지우므로 `https://MyPrivateRepo/ES/nuget`만 남아 있는 nuget.org는 더 이상 원본으로 사용할 수 없습니다.
+- **disk_drive_2/Project1 또는 disk_drive_2/Project1/Source에서 호출됨**: 사용자 수준 파일 (A)이 먼저 로드된 다음, disk_drive_2의 루트에서 NuGet 로드 파일 (B)가 로드되고, 이후 파일 (C)가 로드됩니다. (C)의 설정은 (B) 및 (A)의 설정을 재정의하므로 패키지가 설치되는 `repositoryPath`는 *disk_drive_2/tmp* 대신 disk_drive_2/Project1/External/Packages입니다. 또한 (C)에서 `<packageSources>`를 지우므로 `https://MyPrivateRepo/ES/nuget`만 남아 있는 nuget.org는 더 이상 원본으로 사용할 수 없습니다.
 
-- **disk_drive_2/Project2 또는 disk_drive_2/Project2/Source에서 호출됨**: 사용자 수준 파일(A)이 먼저 로드된 다음, 파일(B) 및 파일(D)이 차례로 로드됩니다. `packageSources`를 지우지 않으므로 `nuget.org`와 `https://MyPrivateRepo/DQ/nuget`은 모두 원본으로 사용할 수 있습니다. 패키지는 (B)에서 지정한 대로 disk_drive_2/mp로 확장됩니다.
+- **Disk_drive_2/project2 또는 disk_drive_2 Project2/Source에서 호출됨**: 사용자 수준 파일(A)이 먼저 로드된 다음 파일 (B) 및 (D)가 로드됩니다. `packageSources`를 지우지 않으므로 `nuget.org`와 `https://MyPrivateRepo/DQ/nuget`은 모두 원본으로 사용할 수 있습니다. 패키지는 (B)에서 지정한 대로 disk_drive_2/mp로 확장됩니다.
 
 ## <a name="nuget-defaults-file"></a>NuGet 기본 파일
 
-패키지가 설치되고 업데이트되는 패키지 원본을 지정하고 `nuget push`를 사용하여 패키지를 게시하기 위한 기본 대상을 제어하기 위해 `NuGetDefaults.Config` 파일이 존재합니다. 관리자는 개발자와 빌드 컴퓨터에 일관된 `NuGetDefaults.Config` 파일을 편리하게(예: 그룹 정책 사용) 배포할 수 있으므로, 조직의 모든 사용자가 nuget.org가 아닌 올바른 패키지 원본을 사용하도록 할 수 있습니다.
+패키지가 설치되고 업데이트되는 패키지 원본을 지정하고 `nuget push`를 사용하여 패키지를 게시하기 위한 기본 대상을 제어하기 위해 `NuGetDefaults.Config` 파일이 존재합니다. 관리자는 개발자와 빌드 컴퓨터에 일관된 `NuGetDefaults.Config` 파일을 편리하게(예: 그룹 정책 사용) 배포할 수 있으므로, 조직의 모든 사용자가 nuget.org가 아닌 올바른 패키지 소스를 사용하도록 할 수 있습니다.
 
 > [!Important]
 > `NuGetDefaults.Config` 파일은 개발자의 NuGet 구성에서 패키지 원본이 제거되지 않도록 합니다. 즉 개발자가 이미 NuGet을 사용하고 있고 이에 따라 등록된 nuget.org 패키지 원본이 있는 경우 `NuGetDefaults.Config` 파일을 만든 후에도 패키지 원본이 제거되지 않습니다.
@@ -220,7 +220,7 @@ NuGet은 이러한 파일에서 설정을 찾으면 다음과 같이 적용합�
 
 - `defaultPushSource`: `nuget push` 작업에 대한 기본 대상을 지정하여 nuget.org의 기본 제공된 기본값을 재정의합니다. 개발자는 특별히 `nuget push -Source`를 사용하여 nuget.org에 게시해야 하므로, 관리자가 이 설정을 배포하여 실수로 내부 패키지를 공용 nuget.org에 게시하지 않도록 방지할 수 있습니다.
 
-### <a name="example-nugetdefaultsconfig-and-application"></a>예제 NuGetDefaults.Config 및 응용 프로그램
+### <a name="example-nugetdefaultsconfig-and-application"></a>예제 NuGetDefaults.Config 및 애플리케이션
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

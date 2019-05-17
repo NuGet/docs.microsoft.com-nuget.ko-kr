@@ -16,12 +16,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 43f346dc64ebbc59d02b9c7875b04205d8c5d83a
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 18d54e28d77f2bdcfea70ff9ae9def05278cb26c
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852444"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610560"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -54,10 +54,10 @@ dotnet.exe 또는 MSBuild를 사용하는 경우 다음 단계에 따라 .nupkg 
 
 1. `dotnet pack MyPackage.csproj` 또는 `msbuild -t:pack MyPackage.csproj`로 프로젝트를 압축합니다.
 
-`SymbolPackageFormat` 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. `SymbolPackageFormat` 속성을 지정하지 않으면 기본값은 `symbols.nupkg`이며 레거시 기호 패키지가 생성됩니다.
+[`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) 속성을 지정하지 않으면 레거시 기호 패키지가 생성됩니다.
 
 > [!Note]
-> 레거시 형식 `.symbols.nupkg`는 여전히 호환성 문제에서만 지원됩니다([레거시 기호 패키지](Symbol-Packages.md) 참조). NuGet.org 기호 서버는 새 기호 패키지 형식(`.snupkg`)만 허용합니다.
+> 레거시 형식 `.symbols.nupkg`는 여전히 호환성 문제에서만 지원됩니다([레거시 기호 패키지](Symbol-Packages.md) 참조). NuGet.org의 기호 서버는 새 기호 패키지 형식(`.snupkg`)만 허용합니다.
 
 ## <a name="publishing-a-symbol-package"></a>기호 패키지 게시
 
@@ -80,6 +80,9 @@ dotnet.exe 또는 MSBuild를 사용하는 경우 다음 단계에 따라 .nupkg 
     ```
 
 NuGet은 두 패키지를 nuget.org에 게시합니다. `MyPackage.nupkg`가 먼저 게시되고 `MyPackage.snupkg`가 그다음으로 게시됩니다.
+
+> [!Note]
+> 기호 패키지가 게시되지 않은 경우 NuGet.org 소스를 `https://api.nuget.org/v3/index.json`(으)로 구성했는지 확인합니다. 기호 패키지 게시는 [NuGet V3 API](../api/overview.md#versioning)에서만 지원됩니다.
 
 ## <a name="nugetorg-symbol-server"></a>NuGet.org 기호 서버
 
