@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 4a9460944e2c232e2a72195434a491d26eee3559
-ms.sourcegitcommit: 3fc93f7a64be040699fe12125977dd25a7948470
+ms.openlocfilehash: bce04864224a66019a52cdfff8355f68dc424204
+ms.sourcegitcommit: 69b5eb1494a1745a4b1a7f320a91255d5d8356a9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64877953"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974997"
 ---
 # <a name="push-command-nuget-cli"></a>push 명령은 (NuGet CLI)
 
@@ -43,6 +43,7 @@ nuget push <packagePath> [options]
 | NonInteractive | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
 | NoSymbols | *(3.5 이상)*  기호 패키지가 있으면 해당 푸시되 지 않습니다 기호 서버에 있습니다. |
 | Source | 서버 URL을 지정합니다. NuGet은 UNC 또는 로컬 폴더 소스를 식별 하 고 간단히 HTTP를 사용 하 여 푸시하는 대신에 있는 파일을 복사 합니다.  또한 NuGet 3.4.2부터이 않는 필수 매개 변수를 `NuGet.Config` 파일 지정을 *DefaultPushSource* 값 (참조 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)). |
+| SkipDuplicate | 패키지 및 버전이 이미 있는 경우 해당 건너뛰고 있는 경우 푸시에서 다음 패키지를 사용 하 여 계속 합니다. |
 | SymbolSource | *(3.5 이상)*  기호 서버 URL을 지정 합니다. 즉 nuget.org에 푸시할 때 nuget.smbsrc.net는 |
 | SymbolApiKey | *(3.5 이상)*  에 지정 된 URL에 대 한 API 키를 지정 `-SymbolSource`합니다. |
 | 제한 시간 | 서버에 푸시하기 위한 초 제한 시간을 지정 합니다. 기본값은 300 초 (5 분). |
@@ -68,4 +69,7 @@ nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source https://api.nu
 nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
 nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://customsource/
+
+:: In the example below -SkipDuplicate will skip pushing the package if package "Foo" version "5.0.2" already exists on NuGet.org
+nuget push Foo.5.0.2.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://api.nuget.org/v3/index.json -SkipDuplicate
 ```

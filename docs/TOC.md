@@ -260,6 +260,7 @@
 ## [패키지 삭제](policies/deleting-packages.md)
 # 릴리스 정보
 ## [알려진 문제](release-notes/known-issues.md)
+## [NuGet 5.1 RTM](release-notes/NuGet-5.1-RTM.md)
 ## [NuGet 5.0 RTM](release-notes/NuGet-5.0-RTM.md)
 ## NuGet 4.x
 ### [NuGet 4.9 RTM](release-notes/NuGet-4.9-RTM.md)
