@@ -6,16 +6,16 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: fd5188c92f8154391359b8da5c8a32f4d5d6f2c0
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 4884de71151ee1ae3c0a78b803c9222f9c1d86ec
+ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453587"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266349"
 ---
 # <a name="catalog"></a>Catalog
 
-합니다 **카탈로그** 만들기 및 삭제와 같은 패키지 원본에 대 한 모든 패키지 작업을 기록 하는 리소스입니다. 카탈로그 리소스에는 `Catalog` 에 입력 합니다 [서비스 인덱스](service-index.md)합니다.
+합니다 **카탈로그** 만들기 및 삭제와 같은 패키지 원본에 대 한 모든 패키지 작업을 기록 하는 리소스입니다. 카탈로그 리소스에는 `Catalog` 에 입력 합니다 [서비스 인덱스](service-index.md)합니다. 이 리소스를 사용할 수 있습니다 [패키지를 게시 하는 모든 쿼리](../guides/api/query-for-all-published-packages.md)합니다.
 
 > [!Note]
 > 카탈로그 공식 NuGet 클라이언트에서 사용 되지 않으므로, 일부 패키지 소스는 카탈로그를 구현 합니다.
@@ -115,7 +115,7 @@ commitId        | string           | 예      | 이 페이지에서 최신 커�
 commitTimeStamp | string           | 예      | 이 페이지에서 최신 커밋의 타임 스탬프
 count           | 정수          | 예      | 페이지의 항목 수
 항목           | 개체의 배열 | 예      | 이 페이지에서 카탈로그 항목
-부모          | string           | 예      | 카탈로그 인덱스에 대 한 URL
+부모(parent)          | string           | 예      | 카탈로그 인덱스에 대 한 URL
 
 각 요소는 `items` 배열이 카탈로그 항목에 대 한 일부 최소한의 세부 정보를 사용 하 여 개체입니다. 이러한 항목 개체는 카탈로그 항목의 데이터를 모두 포함 되지 않습니다. 페이지의 항목의 순서 `items` 배열에 정의 되어 있지 않습니다. 클라이언트가 사용 하 여 메모리에 항목을 주문할 수 있습니다. 해당 `commitTimeStamp` 속성입니다.
 
@@ -226,7 +226,7 @@ verbatimVersion         | string                     | 아니요       | 버전 
 
 #### <a name="sample-request"></a>샘플 요청
 
-가져오기 https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
 
 #### <a name="sample-response"></a>샘플 응답
 
@@ -247,7 +247,7 @@ verbatimVersion         | string                     | 아니요       | 버전 
 
 #### <a name="sample-request"></a>샘플 요청
 
-가져오기 https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
+GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
 
 #### <a name="sample-response"></a>샘플 응답
 
