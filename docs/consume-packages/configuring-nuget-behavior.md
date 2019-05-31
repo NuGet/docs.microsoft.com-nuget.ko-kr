@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: db968189e892723c8fd080cb01a7222696c9d3f3
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 963d1d59ea7e65e3d75bc7105b8864e3e4045938
+ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610571"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266346"
 ---
 # <a name="configuring-nuget-behavior"></a>NuGet 동작 구성
 
@@ -20,7 +20,7 @@ NuGet의 동작은 프로젝트, 사용자 및 컴퓨터 수준에서 존재할 
 
 | 범위 | NuGet.Config 파일 위치 | 설명 |
 | --- | --- | --- |
-| 프로젝트 | 현재 폴더(프로젝트 폴더) 또는 드라이브 루트까지의 모든 폴더| 프로젝트 폴더의 설정은 해당 프로젝트에만 적용됩니다. 여러 프로젝트 하위 폴더가 있는 부모 폴더의 설정은 해당 하위 폴더의 모든 프로젝트에 적용됩니다. |
+| 솔루션 | 현재 폴더(솔루션 폴더) 또는 드라이브 루트까지의 모든 폴더.| 솔루션 폴더에서는 하위 폴더의 모든 프로젝트에 설정이 적용됩니다. 구성 파일이 프로젝트 폴더에 있는 경우에는 해당 프로젝트에 영향을 주지 않습니다. |
 | 사용자 | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.config/NuGet/NuGet.Config` 또는 `~/.nuget/NuGet/NuGet.Config`(OS 배포에 따라 다름) | 설정은 모든 작업에 적용되지만, 프로젝트 수준 설정에 따라 재정의됩니다. |
 | 컴퓨터 | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. `$XDG_DATA_HOME`이 null이거나 비어 있으면 `~/.local/share` 또는 `/usr/local/share`가 사용됨(OS 배포에 따라 다름)  | 설정은 컴퓨터의 모든 작업에 적용되지만, 사용자 또는 프로젝트 수준 설정에 따라 재정의됩니다. |
 
