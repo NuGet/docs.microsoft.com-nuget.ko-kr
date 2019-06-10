@@ -3,15 +3,15 @@ title: NuGet에 대 한.nuspec 파일 참조
 description: .nuspec 파일은 패키지를 빌드하고 패키지 소비자에게 정보를 제공하는 데 사용되는 패키지 메타데이터를 포함합니다.
 author: karann-msft
 ms.author: karann
-ms.date: 08/29/2017
+ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: ebb1dd929042a1fcd269d0ac50154ae6b8234be2
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: 6c545ddeddb0c5909f57e879912eaeed744e42d5
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59509103"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812932"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -27,6 +27,16 @@ ms.locfileid: "59509103"
 - [어셈블리 파일 포함](#including-assembly-files)
 - [콘텐츠 파일 포함](#including-content-files)
 - [예를 들어 nuspec 파일](#example-nuspec-files)
+
+## <a name="project-type-compatibility"></a>프로젝트 형식 호환성
+
+- 사용 하 여 `.nuspec` 사용 하 여 `nuget.exe pack` 방식이 아닌 SDK에 대 한 사용 하는 프로젝트 `packages.config`합니다.
+
+- A `.nuspec` 파일은 SDK 스타일 프로젝트에 대 한 패키지를 만들 필요가 없습니다 (.NET Core 및.NET Standard는 사용 하는 프로젝트를 [SDK 특성](/dotnet/core/tools/csproj#additions)). (유의 한 `.nuspec` 패키지를 만들 때 생성 됩니다.)
+
+   사용 하 여 패키지를 만드는 경우 `dotnet.exe pack` 또는 `msbuild pack target`, 하는 것이 좋습니다 있습니다 [모든 속성을 포함](../reference/msbuild-targets.md#pack-target) 에 일반적으로는 `.nuspec` 프로젝트 파일에서 파일을 대신 합니다. 그러나 대신 하도록 선택할 수 있습니다 [사용을 `.nuspec` 파일을 사용 하 여 pack `dotnet.exe` 또는 `msbuild pack target` ](../reference/msbuild-targets.md#packing-using-a-nuspec)합니다.
+
+- 프로젝트에서 마이그레이션에 대 한 `packages.config` 하 [PackageReference](../consume-packages/package-references-in-project-files.md), `.nuspec` 파일 패키지를 만들 필요가 없습니다. 대신 [msbuild 팩](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)합니다.
 
 ## <a name="general-form-and-schema"></a>일반 형식 및 스키마
 
@@ -145,7 +155,7 @@ UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 
 #### <a name="serviceable"></a>서비스할 수 
 *(3.3 이상)* NuGet 내부 전용입니다.
 #### <a name="repository"></a>리포지토리
-저장소 메타 데이터를 선택적 특성이 네 개 이루어진: *형식* 하 고 *url* *(4.0 이상)*, 및 *분기* 및  *커밋* *(4.6 이상)* 합니다. 이러한 특성을 사용 하면.nupkg 해질 수를 사용 하 여 작성 하는 것을 저장소에 매핑할 개별 지점 또는 패키지를 만든 커밋으로 설명 된 대로 합니다. 버전 제어 소프트웨어에서 직접 호출할 수 있는 공개적으로 사용 가능한 url 이어야 합니다. 이 컴퓨터에 대 한 것으로 html 페이지 여야 합니다. 프로젝트 페이지 링크를 사용 하 여는 `projectUrl` 필드를 대신 합니다.
+저장소 메타 데이터를 선택적 특성이 네 개 이루어진: *형식* 하 고 *url* *(4.0 이상)* , 및 *분기* 및  *커밋* *(4.6 이상)* 합니다. 이러한 특성을 사용 하면.nupkg 해질 수를 사용 하 여 작성 하는 것을 저장소에 매핑할 개별 지점 또는 패키지를 만든 커밋으로 설명 된 대로 합니다. 버전 제어 소프트웨어에서 직접 호출할 수 있는 공개적으로 사용 가능한 url 이어야 합니다. 이 컴퓨터에 대 한 것으로 html 페이지 여야 합니다. 프로젝트 페이지 링크를 사용 하 여는 `projectUrl` 필드를 대신 합니다.
 
 #### <a name="minclientversion"></a>minClientVersion
 nuget.exe 및 Visual Studio 패키지 관리자에 의해 적용되는, 이 패키지를 설치할 수 있는 NuGet 클라이언트의 최소 버전을 지정합니다. 패키지가 특정 버전의 NuGet 클라이언트에 추가된 `.nuspec` 파일의 특정 기능에 종속될 때마다 이 특성이 사용됩니다. 예를 들어 `developmentDependency` 특성을 사용하는 패키지는 `minClientVersion`에 대해 "2.8"을 지정해야 합니다. 마찬가지로 `contentFiles` 요소(다음 섹션 참조)를 사용하는 패키지는 `minClientVersion`을 "3.3"으로 설정해야 합니다. 또한 2.5 이전의 NuGet 클라이언트에서는 이 플래그를 인식하지 못하기 때문에 `minClientVersion`에 포함된 내용에 관계없이 *항상* 패키지 설치를 거부합니다.
@@ -626,23 +636,29 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 #### <a name="example-contentfiles-section"></a>contentFiles 섹션 예제
 
 ```xml
-<contentFiles>
-    <!-- Embed image resources -->
-    <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
-    <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        ...
+        <contentFiles>
+            <!-- Embed image resources -->
+            <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
+            <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
 
-    <!-- Embed all image resources under contentFiles/cs/ -->
-    <files include="cs/**/*.png" buildAction="EmbeddedResource" />
+            <!-- Embed all image resources under contentFiles/cs/ -->
+            <files include="cs/**/*.png" buildAction="EmbeddedResource" />
 
-    <!-- Copy config.xml to the root of the output folder -->
-    <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
+            <!-- Copy config.xml to the root of the output folder -->
+            <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
 
-    <!-- Copy run.cmd to the output folder and keep the directory structure -->
-    <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
+            <!-- Copy run.cmd to the output folder and keep the directory structure -->
+            <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
 
-    <!-- Include everything in the scripts folder except exe files -->
-    <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
-</contentFiles>
+            <!-- Include everything in the scripts folder except exe files -->
+            <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
+        </contentFiles>
+        </metadata>
+</package>
 ```
 
 ## <a name="example-nuspec-files"></a>예를 들어 nuspec 파일

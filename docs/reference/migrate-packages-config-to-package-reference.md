@@ -3,14 +3,14 @@ title: PackageReference 형식을 package.config에서 마이그레이션
 description: NuGet 4.0 이상, VS2017 및.NET Core 2.0에서 지원 되는 PackageReference로 package.config 관리 형식에서 프로젝트를 마이그레이션하는 방법에 대 한 세부 정보
 author: karann-msft
 ms.author: karann
-ms.date: 03/27/2018
+ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 05a82e48c7083a19c50a05fa1df74ebfff8030d1
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 09d132aeaf00d2a1d095b9638b455cc23de91f2c
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546688"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812882"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Packages.config를 PackageReference로 마이그레이션
 
@@ -18,16 +18,16 @@ Visual Studio 2017 버전 15.7 및 이상에서는 지원에서 프로젝트를 
 
 ## <a name="benefits-of-using-packagereference"></a>PackageReference를 사용할 때의 이점
 
-* **한 곳에서 모든 프로젝트 종속성을 관리**: 프로젝트 간 참조 및 어셈블리 참조와 마찬가지로 NuGet 패키지 참조 (사용 하는 `PackageReference` 노드) 별도 사용 하지 않고 프로젝트 파일 내에서 직접 관리 되는 packages.config 파일입니다.
-* **최상위 종속성 깔끔하게 보기**: PackageReference, packages.config 달리 프로젝트에 직접 설치 하는 NuGet 패키지만 나열 합니다. 결과적으로, 하위 수준 종속성을 사용 하 여 NuGet 패키지 관리자 UI 및 프로젝트 파일 복잡 되지 않습니다.
-* **성능 향상**: 패키지에서 유지 관리는 PackageReference를 사용 하는 경우는 *전역 패키지* 폴더 (에 설명 된 대로 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md) 대신는 `packages` 솔루션 내에서 폴더입니다. 결과적으로 PackageReference는 더 빠르게 수행 하 고 더 적은 디스크 공간만 사용 합니다.
-* **세부적으로 종속성과 콘텐츠 흐름 제어**: MSBuild의 기존 기능을 사용 하면 [NuGet 패키지를 조건부로 참조할](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition) 대상 프레임 워크 당 패키지 참조 선택 및 구성 플랫폼 또는 다른 피벗 합니다.
-* **PackageReference 활성 개발 중입니다**: 참조 [PackageReference github 문제](https://aka.ms/nuget-pr-improvements)합니다. packages.config는 더 이상 활성 개발 중입니다.
+* **한 곳에서 모든 프로젝트 종속성을 관리**: 프로젝트 간 참조 및 어셈블리 참조와 마찬가지로 NuGet 패키지 참조 (사용 하 여는 `PackageReference` 노드) 별도 packages.config 파일을 사용 하는 것이 아니라 프로젝트 파일 내에서 직접 관리 됩니다.
+* **최상위 종속성 깔끔하게 보기**: 달리 packages.config를 PackageReference 프로젝트에 직접 설치 하는 NuGet 패키지만 나열 합니다. 결과적으로, 하위 수준 종속성을 사용 하 여 NuGet 패키지 관리자 UI 및 프로젝트 파일 복잡 되지 않습니다.
+* **성능 향상**: PackageReference를 사용 하 여 패키지에서 유지 됩니다 합니다 *전역 패키지* 폴더 (에 설명 된 대로 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md) 대신는 `packages` 내의 폴더를 솔루션입니다. 결과적으로 PackageReference는 더 빠르게 수행 하 고 더 적은 디스크 공간만 사용 합니다.
+* **세부적으로 종속성과 콘텐츠 흐름 제어**: MSBuild의 기존 기능을 사용 하면 [NuGet 패키지를 조건부로 참조할](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition) 대상 프레임 워크, 구성, 플랫폼 또는 다른 피벗 당 패키지 참조를 선택 합니다.
+* **PackageReference는 활성 개발 중**: 참조 [PackageReference github 문제](https://aka.ms/nuget-pr-improvements)합니다. packages.config는 더 이상 활성 개발 중입니다.
 
 ### <a name="limitations"></a>제한 사항
 
 * NuGet PackageReference Visual Studio 2015에서 사용할 수 있으며 이전 아닙니다. Visual Studio 2017 에서만에서 마이그레이션된 프로젝트를 열 수 있습니다.
-* 마이그레이션에 c + + 및 ASP.NET 프로젝트에 대 한 현재 사용할 수 없는 경우
+* 마이그레이션에 대 한 현재 제공 되지 않습니다. C++ 및 ASP.NET 프로젝트입니다.
 * 일부 패키지를 PackageReference를 사용 하 여 완벽 하 게 호환 수 있습니다. 자세한 내용은 [패키지 호환성 문제](#package-compatibility-issues)합니다.
 
 ### <a name="known-issues"></a>알려진 문제
@@ -87,6 +87,10 @@ Visual Studio 2017 버전 15.7 및 이상에서는 지원에서 프로젝트를 
    ```ps
    update-package -reinstall
    ```
+
+## <a name="create-a-package-after-migration"></a>마이그레이션 후 패키지 만들기
+
+마이그레이션이 완료 되 면에 대 한 참조를 추가 하는 것이 좋습니다는 [nuget.build.tasks.pack](https://www.nuget.org/packages/nuget.build.tasks.pack) nuget 패키지를 사용 하 여 선택한 [msbuild 팩](../reference/msbuild-targets.md#pack-target) 패키지를 만듭니다. 일부 시나리오에서 사용할 수 있지만 `dotnet.exe pack` 대신 `msbuild pack`, 권장 되지 않습니다.
 
 ## <a name="package-compatibility-issues"></a>패키지 호환성 문제
 
