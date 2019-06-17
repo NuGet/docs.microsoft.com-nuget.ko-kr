@@ -3,14 +3,14 @@ title: Windows에서 Visual Studio를 사용하여 .NET Standard 패키지 만�
 description: Windows에서 Visual Studio 2017을 사용하여 .NET Standard NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
 author: karann-msft
 ms.author: karann
-ms.date: 05/18/2018
+ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: faea00372bd387aee1502e388ad1ea88de07b95d
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: d30e89473b5f00895136b75a90d8d95b7645a100
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453522"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812986"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>빠른 시작: Visual Studio(.NET Standard, Windows 전용)를 사용하여 NuGet 패키지 만들기 및 게시
 
@@ -23,9 +23,11 @@ Windows에서 Visual Studio의 .NET Standard 클래스 라이브러리에서 NuG
 
 1. .Net 관련 워크로드를 사용하여 [visualstudio.com](https://www.visualstudio.com/)에서 모든 버전의 Visual Studio 2017을 설치합니다. .NET 워크로드가 설치될 때 Visual Studio 2017이 NuGet 기능을 자동으로 포함합니다.
 
-1. `nuget.exe` CLI를 설치하려면 [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)에서 다운로드하고, 해당 `.exe` 파일을 적합한 폴더에 저장하고, 해당 폴더를 PATH 환경 변수에 추가합니다.
+1. CLI 도구 중 하나를 설치합니다.
 
-    또는 [.NET Core SDK](https://www.microsoft.com/net/download/)를 설치한 경우에는 `dotnet` CLI를 사용할 수 있습니다.
+   * `dotnet` CLI의 경우 [.NET Core SDK](https://www.microsoft.com/net/download/)를 설치합니다. Dotnet CLI는 SDK 스타일 형식(SDK 특성)을 사용하는 .NET Standard 프로젝트에 필요합니다.
+
+   * `nuget.exe` CLI의 경우 [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)에서 다운로드하고, `.exe` 파일을 적합한 폴더에 저장하고, 해당 폴더를 PATH 환경 변수에 추가합니다. Nuget.exe CLI는 SDK 스타일이 아닌 형식으로 .NET Standard 라이브러리에 사용됩니다.
 
 1. 아직 없는 경우 [nuget.org에 체험 계정을 등록](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)합니다. 새 계정을 만들면 확인 전자 메일을 보냅니다. 패키지를 업로드하려면 먼저 계정을 확인해야 합니다.
 
@@ -37,7 +39,7 @@ Windows에서 Visual Studio의 .NET Standard 클래스 라이브러리에서 NuG
 
 1. 결과 프로젝트 파일을 마우스 오른쪽 단추로 클릭하고, **빌드**를 선택하여 프로젝트가 제대로 만들어졌는지 확인합니다. DLL은 Debug(또는 해당 구성을 대신 빌드하는 경우 Release) 폴더 내에 있습니다.
 
-물론 실제 NuGet 패키지 내에서 다른 사람들이 응용 프로그램을 빌드할 수 있는 많은 유용한 기능을 구현할 것입니다. 그러나 이 연습에서는 템플릿의 클래스 라이브러리가 패키지를 만드는 데 충분하므로 추가 코드를 작성하지 않습니다. 그러나 계속 패키지에 대한 함수형 코드를 원하는 경우 다음을 사용하세요.
+물론 실제 NuGet 패키지 내에서 다른 사람들이 애플리케이션을 빌드할 수 있는 많은 유용한 기능을 구현할 것입니다. 그러나 이 연습에서는 템플릿의 클래스 라이브러리가 패키지를 만드는 데 충분하므로 추가 코드를 작성하지 않습니다. 그러나 계속 패키지에 대한 함수형 코드를 원하는 경우 다음을 사용하세요.
 
 ```cs
 namespace AppLogger
@@ -112,7 +114,13 @@ msbuild -t:pack -p:Configuration=Release
 
 [!INCLUDE [publish-api-key](includes/publish-api-key.md)]
 
-### <a name="publish-with-nuget-push"></a>nuget push로 게시
+### <a name="publish-with-dotnet-nuget-push-dotnet-cli"></a>dotnet nuget push로 게시(dotnet CLI)
+
+`nuget.exe`를 사용하는 대신 다음 단계를 사용할 수 있습니다.
+
+[!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
+
+### <a name="publish-with-nuget-push-nugetexe-cli"></a>nuget push로 게시(nuget.exe CLI)
 
 `dotnet.exe`를 사용하는 대신 다음 단계를 사용할 수 있습니다.
 
@@ -134,12 +142,6 @@ msbuild -t:pack -p:Configuration=Release
     ```
 
 [nuget push](../tools/cli-ref-push.md)를 참조하세요.
-
-### <a name="publish-with-dotnet-nuget-push"></a>dotnet nuget push로 게시
-
-`nuget.exe`를 사용하는 대신 다음 단계를 사용할 수 있습니다.
-
-[!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
 ### <a name="publish-errors"></a>게시 오류
 

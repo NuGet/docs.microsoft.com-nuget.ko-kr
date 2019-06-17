@@ -3,25 +3,31 @@ title: NuGet 패키지를 만드는 방법
 description: 파일 및 버전 관리와 같은 주요 결정 사항을 포함하여 NuGet 패키지를 디자인하고 만드는 과정을 자세히 안내합니다.
 author: karann-msft
 ms.author: karann
-ms.date: 12/12/2017
+ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: f0d9667b752caf7831278ac3fd63cfd67f7d34a4
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 5e362673acfab4b31c8a2e02a521afd8b19d2754
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610579"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812913"
 ---
 # <a name="creating-nuget-packages"></a>NuGet 패키지 만들기
 
-패키지의 기능 또는 포함된 코드에 관계없이 `nuget.exe`를 사용하여 해당 기능을 임의 수의 다른 개발자와 공유하고 사용할 수 있는 구성 요소로 패키지할 수 있습니다. `nuget.exe`를 설치하려면 [NuGet CLI 설치](../install-nuget-client-tools.md#nugetexe-cli)를 참조하세요. Visual Studio에는 `nuget.exe`가 자동으로 포함되지 않습니다.
+패키지의 기능 또는 포함된 코드와 관계없이 CLI 도구인 `nuget.exe` 또는 `dotnet.exe`를 사용하여 해당 기능을 임의 수의 다른 개발자와 공유하고 사용할 수 있는 구성 요소로 패키지할 수 있습니다. NuGet CLI 도구를 설치하려면 [NuGet 클라이언트 도구 설치](../install-nuget-client-tools.md)를 참조하세요. Visual Studio에는 CLI 도구가 자동으로 포함되지 않습니다.
+
+- SDK 스타일 형식([SDK 특성](/dotnet/core/tools/csproj#additions))을 사용하는 .NET Core 및 .NET Standard 프로젝트와 또 다른 SDK 스타일 프로젝트의 경우, NuGet은 프로젝트 파일의 정보를 직접 사용하여 패키지를 만듭니다. 자세한 내용은 [Visual Studio 2017을 사용하여 .NET Standard 패키지 만들기](../quickstart/create-and-publish-a-package-using-visual-studio.md) 및 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.
+
+- SDK 스타일이 아닌 프로젝트의 경우에는 이 문서에 설명된 단계에 따라 패키지를 만듭니다.
+
+- `packages.config`에서 [PackageReference](../consume-packages/package-references-in-project-files.md)로 마이그레이션된 프로젝트의 경우에는 [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)를 사용합니다.
 
 엄밀히 말해, NuGet 패키지는 `.nupkg` 확장명으로 이름이 변경되고 내용이 특정 규칙과 일치하는 ZIP 파일입니다. 규칙을 충족하는 패키지를 만드는 자세한 프로세스에 대해 설명합니다. 집중적인 연습에 대해서는 [빠른 시작: 패키지 만들기 및 게시](../quickstart/create-and-publish-a-package.md)를 참조하세요.
 
 패키징은 패키지로 전달하려는 컴파일된 코드(어셈블리), 기호 및/또는 기타 파일로 시작됩니다([개요 및 워크플로](overview-and-workflow.md) 참조). 이 프로세스는 프로젝트 파일의 정보에서 끌어오기를 사용하여 컴파일된 어셈블리 및 패키지를 동기화된 상태로 유지할 수 있지만, 패키지에 포함된 파일을 컴파일하거나 생성하는 프로세스와는 관련이 없습니다.
 
 > [!Note]
-> 이 항목은 Visual Studio 2017 및 NuGet 4.0 이상을 사용하는 .NET Core 프로젝트 이외의 프로젝트 형식에 적용됩니다. 이러한 .NET Core 프로젝트에서 NuGet은 프로젝트 파일의 정보를 직접 사용합니다. 자세한 내용은 [Visual Studio 2017을 사용하여 .NET Standard 패키지 만들기](../guides/create-net-standard-packages-vs2017.md) 및 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.
+> 이 항목은 SDK 스타일이 아닌 프로젝트 즉, 일반적으로 Visual Studio 2017 및 NuGet 4.0+를 사용하는 .NET Core 및 .NET Standard 프로젝트가 아닌 프로젝트에 적용됩니다.
 
 ## <a name="deciding-which-assemblies-to-package"></a>패키지할 어셈블리 결정
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 506a093ff4d62c10c896246f746e6765f64f33f4
-ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
+ms.openlocfilehash: 556683e5a24c57a6c32d8b4e368bfdccd4d19b48
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54403166"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812866"
 ---
 # <a name="package-consumption-workflow"></a>패키지 사용 워크플로
 
@@ -22,7 +22,7 @@ nuget.org와 조직에서 설정할 수 있는 개인 패키지 갤러리 사이
 
 자세한 내용은 [패키지 찾기 및 선택](../consume-packages/finding-and-choosing-packages.md) 및 [NuGet 패키지를 설치하는 다양한 방법](ways-to-install-a-package.md)을 참조하세요.
 
-NuGet은 설치된 각 패키지의 ID와 버전 번호를 기억하여 프로젝트 형식과 NuGet 버전에 따라 [`packages.config`](../reference/packages-config.md) 또는 프로젝트 파일([PackageReference](../consume-packages/package-references-in-project-files.md) 사용)에 기록합니다. NuGet 4.0 이상에서는 Visual Studio에서 [패키지 관리자 UI 옵션](../tools/package-manager-ui.md)을 통해 구성할 수는 있지만 PackageReference를 사용하는 것이 좋습니다. 어떤 경우이든 언제든지 적절한 파일을 확인하여 프로젝트에 대한 전체 종속성 목록을 볼 수 있습니다.
+NuGet은 설치된 각 패키지의 ID와 버전 번호를 기억하여 프로젝트 형식과 NuGet 버전에 따라 프로젝트 파일([PackageReference](../consume-packages/package-references-in-project-files.md)) 또는 [`packages.config`](../reference/packages-config.md)에 기록합니다. NuGet 4.0 이상에서는 Visual Studio에서 [패키지 관리자 UI 옵션](../tools/package-manager-ui.md)을 통해 구성할 수는 있지만 PackageReference를 사용하는 것이 좋습니다. 어떤 경우이든 언제든지 적절한 파일을 확인하여 프로젝트에 대한 전체 종속성 목록을 볼 수 있습니다.
 
 > [!Tip]
 > 소프트웨어에서 사용하려는 각 패키지의 라이선스를 항상 확인하는 것이 좋습니다. nuget.org에서는 각 패키지의 설명 페이지 오른쪽에 **라이선스 정보** 링크가 있습니다. 패키지에서 사용 조건을 지정하지 않은 경우 패키지 페이지의 **연락처 소유자** 링크를 사용하여 패키지 소유자에게 직접 문의해 보세요. Microsoft는 타사 패키지 공급자로부터 사용자에게 지적 재산권을 부여하지 않으며 타사에서 제공한 정보에 대해 책임을 지지 않습니다.

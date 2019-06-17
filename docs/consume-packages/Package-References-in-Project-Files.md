@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: e4df15be1f29e2c611876aaa49e16ac7d1823938
-ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
+ms.openlocfilehash: c2dfce8de6b28aaee99e3d5ab75cd28950a8cb0f
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53248457"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812844"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -18,7 +18,11 @@ ms.locfileid: "53248457"
 
 또한 PackageReference를 사용하면 MSBuild 조건을 사용하여 대상 프레임워크, 구성, 플랫폼 또는 기타 그룹화당 패키지 참조를 선택할 수 있습니다. 종속성과 콘텐츠 흐름을 세밀하게 제어할 수도 있습니다. (자세한 내용은 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.)
 
-기본적으로 PackageReference는 Windows 10 빌드 15063(크리에이터스 업데이트) 이상을 대상으로 하는 .NET Core 프로젝트, .NET Standard 프로젝트 및 UWP 프로젝트에 사용됩니다(C++ UWP 프로젝트는 제외). .NET Framework 프로젝트는 PackageReference를 지원하지만 현재 기본값은 `packages.config`입니다. PackageReference를 사용하려면 종속성을 `packages.config`에서 프로젝트 파일로 마이그레이션한 후 packages.config를 제거하세요.
+## <a name="project-type-support"></a>프로젝트 형식 지원
+
+기본적으로 PackageReference는 Windows 10 빌드 15063(크리에이터스 업데이트) 이상을 대상으로 하는 .NET Core 프로젝트, .NET Standard 프로젝트 및 UWP 프로젝트에 사용됩니다(C++ UWP 프로젝트는 제외). .NET Framework 프로젝트는 PackageReference를 지원하지만 현재 기본값은 `packages.config`입니다. PackageReference를 사용하려면 종속성을 `packages.config`에서 프로젝트 파일로 [마이그레이션](../reference/migrate-packages-config-to-package-reference.md)한 후 packages.config를 제거하세요.
+
+전체 .NET Framework를 대상으로 하는 ASP.NET 앱은 PackageReference에 대한 [제한적 지원](https://github.com/NuGet/Home/issues/5877)만 포함합니다. C++ 및 JavaScript 프로젝트 형식은 지원되지 않습니다.
 
 ## <a name="adding-a-packagereference"></a>PackageReference 추가
 
@@ -99,7 +103,7 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 | 값 | 설명 |
 | --- | ---
 | compile | `lib` 폴더의 콘텐츠이며 프로젝트에서 폴더 내의 어셈블리를 컴파일할 수 있는지 여부 제어 |
-| 런타임(runtime) | `lib` 및 `runtimes` 폴더의 콘텐츠이며 이러한 어셈블리가 빌드 출력 디렉터리에 복사되는지 여부 제어 |
+| 런타임 | `lib` 및 `runtimes` 폴더의 콘텐츠이며 이러한 어셈블리가 빌드 출력 디렉터리에 복사되는지 여부 제어 |
 | contentFiles | `contentfiles` 폴더의 콘텐츠 |
 | 빌드 | `build` 폴더의 prop 및 대상 |
 | 분석기 | .NET 분석기 |
@@ -155,7 +159,7 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 ```
 
 ## <a name="locking-dependencies"></a>종속성 잠금
-이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다.
+이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다. 
 
 NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 세트이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다. 입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다. 그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다. 예:
 

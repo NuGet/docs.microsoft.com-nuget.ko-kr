@@ -3,14 +3,14 @@ title: NuGet 정의 및 기능
 description: NuGet의 정의와 기능에 대해 포괄적으로 소개합니다.
 author: karann-msft
 ms.author: karann
-ms.date: 01/10/2018
+ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: 87f7494ea97a4fa65be04b2692d7b894938c3fe5
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: 4ab87f072bdace9dd18cecc4100de52b3547136d
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59509128"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813005"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 소개
 
@@ -45,11 +45,11 @@ NuGet은 호스팅 지원 외에도 작성자와 소비자 모두가 사용하�
 
 | 도구 | 플랫폼 | 적용 가능한 시나리오 | 설명 |
 | --- | --- | --- | --- |
-| [nuget.exe CLI](tools/nuget-exe-cli-reference.md) | 모두 | 만들기, 사용 | 모든 NuGet 기능을 제공합니다. 일부 명령은 패키지 작성자에게만 적용되고, 일부는 소비자에게만 적용되고, 다른 일부는 둘 다에 적용됩니다. 예를 들어 패키지 작성자는 `nuget pack` 명령을 사용하여 다양한 어셈블리 및 관련 파일에서 패키지를 만들고, 패키지 소비자는 `nuget install`을 사용하여 프로젝트 폴더에 패키지를 포함하고, 모든 사용자는 `nuget config`를 사용하여 NuGet 구성 변수를 설정합니다. 플랫폼 제약 없는 도구인 NuGet CLI는 Visual Studio 프로젝트와 상호 작용하지 않습니다. |
-| [dotnet CLI](tools/dotnet-Commands.md) | 모두 | 만들기, 사용 | .NET Core 도구 체인 내에서 특정 NuGet CLI 기능을 직접 제공합니다. NuGet CLI와 같이 dotnet CLI는 Visual Studio 프로젝트와 상호 작용하지 않습니다. |
+| [dotnet CLI](tools/dotnet-Commands.md) | 모두 | 만들기, 사용 | .NET Core 및 .NET Standard 라이브러리와 .NET Framework를 대상으로 하는 SDK 스타일 프로젝트를 위한 CLI 도구입니다([SDK 특성](/dotnet/core/tools/csproj#additions) 참조). .NET Core 도구 체인 내에서 특정 NuGet CLI 기능을 직접 제공합니다. NuGet CLI와 같이 dotnet CLI는 Visual Studio 프로젝트와 상호 작용하지 않습니다. |
+| [nuget.exe CLI](tools/nuget-exe-cli-reference.md) | 모두 | 만들기, 사용 | .NET Framework 라이브러리와 .NET Standard 라이브러리를 대상으로 하는 SDK 스타일이 아닌 프로젝트를 위한 CLI 도구입니다. 모든 NuGet 기능을 제공합니다. 일부 명령은 패키지 작성자에게만 적용되고, 일부는 소비자에게만 적용되고, 다른 일부는 둘 다에 적용됩니다. 예를 들어 패키지 작성자는 `nuget pack` 명령을 사용하여 다양한 어셈블리 및 관련 파일에서 패키지를 만들고, 패키지 소비자는 `nuget install`을 사용하여 프로젝트 폴더에 패키지를 포함하고, 모든 사용자는 `nuget config`를 사용하여 NuGet 구성 변수를 설정합니다. 플랫폼 제약 없는 도구인 NuGet CLI는 Visual Studio 프로젝트와 상호 작용하지 않습니다. |
 | [패키지 관리자 콘솔](tools/package-manager-console.md) | Windows의 Visual Studio | 사용 | Visual Studio 프로젝트에서 패키지를 설치하고 관리하기 위한 [PowerShell 명령](tools/Powershell-Reference.md)을 제공합니다. |
 | [패키지 관리자 UI](tools/package-manager-ui.md) | Windows의 Visual Studio | 사용 | Visual Studio 프로젝트에서 패키지를 설치하고 관리하기 위한 사용하기 쉬운 UI를 제공합니다. |
-| [NuGet UI 관리](/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | 사용 | Mac용 Visual Studio 프로젝트에서 패키지를 설치하고 관리하기 위한 사용하기 쉬운 UI를 제공합니다. |
+| [NuGet UI 관리](/visualstudio/mac/nuget-walkthrough) | Mac용 Visual Studio | 사용 | Mac용 Visual Studio 프로젝트에서 패키지를 설치하고 관리하기 위한 사용하기 쉬운 UI를 제공합니다. |
 | [MSBuild](reference/msbuild-targets.md) | Windows | 만들기, 사용 | MSBuild 도구 체인을 통해 프로젝트에서 사용되는 패키지를 직접 만들고 복원할 수 있는 기능을 제공합니다. |
 
 여기서 볼 수 있듯이 사용하는 NuGet 도구는 패키지를 만드는지, 사용하는지 또는 게시하는지 여부뿐 아니라 작업 중인 플랫폼에 따라 크게 달라집니다. 또한 패키지 작성자는 일반적으로 다른 NuGet 패키지에 있는 기능을 기반으로 하므로 소비자이기도 합니다. 물론 이러한 패키지는 다른 패키지에도 종속될 수 있습니다.
@@ -82,9 +82,9 @@ NuGet은 나중에 언제든지 참조 목록만 사용하여 공용 및/또는 
 
 그런 다음 개발자가 염려하는 NuGet의 주 역할은 분명히 프로젝트를 대신하여 참조 목록을 유지 관리하고, 참조된 패키지를 효율적으로 복원(및 업데이트)할 수 있는 방법을 제공하는 것입니다. 이 목록은 두 가지 *패키지 관리 형식* 중 하나로 유지 관리됩니다(호출 시).
 
-- [`packages.config`](reference/packages-config.md): *(NuGet 1.0 이상)* 설치된 다른 패키지의 종속성을 포함하여 프로젝트의 모든 종속성에 대한 단순 목록을 유지 관리하는 XML 파일입니다. 설치되거나 복원된 패키지는 `packages` 폴더에 저장됩니다.
-
 - [PackageReference](consume-packages/package-references-in-project-files.md)(또는 “프로젝트 파일의 패키지 참조”) | *(NuGet 4.0+)* 프로젝트 파일 내에서 프로젝트의 최상위 종속성에 대한 목록을 직접 유지 관리하므로 별도의 파일이 필요하지 않습니다. 연결된 파일 `obj/project.assets.json`이 동적으로 생성되어 프로젝트가 모든 하위 수준 종속성과 함께 사용하는 패키지의 전체 종속성 그래프를 관리합니다. PackageReference는 .NET Core 프로젝트에서 항상 사용됩니다.
+
+- [`packages.config`](reference/packages-config.md): *(NuGet 1.0 이상)* 설치된 다른 패키지의 종속성을 포함하여 프로젝트의 모든 종속성에 대한 단순 목록을 유지 관리하는 XML 파일입니다. 설치되거나 복원된 패키지는 `packages` 폴더에 저장됩니다.
 
 특정 프로젝트에서 사용되는 패키지 관리 형식은 프로젝트 형식과 NuGet 및/또는 Visual Studio의 사용 가능한 버전에 따라 다릅니다. 사용되는 형식을 확인하려면 첫 번째 패키지를 설치한 후 프로젝트 루트에서 `packages.config`를 찾기만 하면 됩니다. 해당 파일이 없으면 프로젝트 파일에서 직접 \<PackageReference\> 요소를 찾습니다.
 

@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/21/2017
 ms.topic: tutorial
-ms.openlocfilehash: 16e19be0356bc1d2734ade5cd593ca3ef05bbe5a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a4c609b3390748099d85a73f7d168ebe4de2676a
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546423"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812960"
 ---
 # <a name="create-uwp-packages"></a>UWP 패키지 만들기
 
-[UWP(유니버설 Windows 플랫폼)](https://developer.microsoft.com/windows)은 Windows 10을 실행하는 모든 장치에 공통된 응용 프로그램 플랫폼을 제공합니다. 이 모델 내에서 UWP 응용 프로그램은 모든 디바이스에 공통적인 WinRT API 및 응용 프로그램이 실행되는 디바이스 제품군에만 적용되는 API(Win32 및 .NET 포함)를 모두 호출할 수 있습니다.
+[UWP(유니버설 Windows 플랫폼)](https://developer.microsoft.com/windows)은 Windows 10을 실행하는 모든 디바이스에 공통된 응용 프로그램 플랫폼을 제공합니다. 이 모델 내에서 UWP 응용 프로그램은 모든 디바이스에 공통적인 WinRT API 및 응용 프로그램이 실행되는 디바이스 제품군에만 적용되는 API(Win32 및 .NET 포함)를 모두 호출할 수 있습니다.
 
 이 연습에서는 관리 및 네이티브 프로젝트에서 모두 사용할 수 있는 네이티브 UWP 구성 요소(XAML 컨트롤 포함)를 사용하여 NuGet 패키지를 만듭니다.
 
@@ -138,6 +138,9 @@ Windows 런타임 구성 요소에는 공개적으로 사용할 수 있는 모�
         <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
         <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
 
+        <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm64\native"/>
+        <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm64\native"/>
+
         <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
         <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
 
@@ -150,7 +153,7 @@ Windows 런타임 구성 요소에는 공개적으로 사용할 수 있는 모�
 
 ### <a name="adding-targets"></a>.targets 추가
 
-다음으로 NuGet 패키지를 사용할 수 있는 C++ 및 JavaScript 프로젝트에는 필요한 어셈블리 및 winmd 파일을 식별하는 .targets 파일이 필요합니다. (C# 및 Visual Basic 프로젝트는 이 작업을 자동으로 수행합니다.) 이 파일은 아래 텍스트를 `ImageEnhancer.targets`에 복사하여 만들고 `.nuspec` 파일과 동일한 폴더에 저장합니다. _참고_:이 `.targets` 파일은 패키지 ID와 같은 이름이어야 합니다(예: `.nupspec` 파일의 `<Id>` 요소).
+다음으로 NuGet 패키지를 사용할 수 있는 C++ 및 JavaScript 프로젝트에는 필요한 어셈블리 및 winmd 파일을 식별하는 .targets 파일이 필요합니다. (C# 및 Visual Basic 프로젝트는 이 작업을 자동으로 수행합니다.) 이 파일은 아래 텍스트를 `ImageEnhancer.targets`에 복사하여 만들고 `.nuspec` 파일과 동일한 폴더에 저장합니다. _참고_: 이 `.targets` 파일은 패키지 ID와 같은 이름이어야 합니다(예: `.nupspec` 파일의 `<Id>` 요소).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -216,6 +219,8 @@ Windows 런타임 구성 요소에는 공개적으로 사용할 수 있는 모�
     <!-- DLLs and resources -->
     <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
     <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
+    <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm64\native"/>
+    <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm64\native"/>     
     <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
     <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
     <file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>

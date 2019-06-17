@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 15268ae33d56042a765420e5076dac49db6cce04
-ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
+ms.openlocfilehash: 8cfb7bd31c37847d83ffe31f11ba61eadc717eb8
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671177"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812903"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>빠른 시작: Visual Studio에서 패키지 설치 및 사용
 
@@ -19,7 +19,7 @@ NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 �
 패키지가 설치되면 `using <namespace>`를 사용하여 코드에서 패키지를 참조합니다. 여기서 \<네임스페이스\>는 사용 중인 패키지에 특정됩니다. 일단 참조를 만들면 해당 API를 통해 패키지를 호출할 수 있습니다.
 
 > [!Tip]
-> **nuget.org 시작**: nuget.org 검색은 일반적으로 .NET 개발자가 고유의 응용 프로그램에서 다시 사용할 수 있는 구성 요소를 찾는 방법입니다. nuget.org를 직접 검색하거나 이 문서에 표시된 대로 Visual Studio 내에서 패키지를 설치할 수 있습니다.
+> **nuget.org 시작**: nuget.org 검색은 일반적으로 .NET 개발자가 고유의 애플리케이션에서 다시 사용할 수 있는 구성 요소를 찾는 방법입니다. nuget.org를 직접 검색하거나 이 문서에 표시된 대로 Visual Studio 내에서 패키지를 설치할 수 있습니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -27,6 +27,8 @@ NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 �
 - Visual Studio 2015 업데이트 3(유니버설 Windows 앱용 도구 포함).
 
 [visualstudio.com](https://www.visualstudio.com/)에서 추가 비용 없이 2017 Community 버전을 설치하거나 Professional 또는 Enterprise 버전을 사용할 수 있습니다.
+
+Mac용 Visual Studio를 사용하는 경우 [프로젝트에 NuGet 패키지 포함](/visualstudio/mac/nuget-walkthrough)을 참조하세요.
 
 ## <a name="create-a-project"></a>프로젝트 만들기
 
