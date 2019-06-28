@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 740defc34077793b81fb35db73a2eee393ae3bac
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 2f0f93e0cee78ea03cbd53194cdc2a10871fd7e1
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547156"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426761"
 ---
 # <a name="package-content"></a>패키지 콘텐츠
 
@@ -114,10 +114,10 @@ Newtonsoft.Json 9.0.1에 대 한.nupkg 있는 이진 스트림.
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-이름          | 입력     | 형식    | 필수 | 노트
-------------- | ------ | ------- | -------- | -----
-LOWER_ID      | URL    | string  | 예      | 소문자의 패키지 ID
-LOWER_VERSION | URL    | 정수 | 예      | 패키지 버전을 표준화 하 고 소문자를 유지
+이름          | 입력     | 형식   | 필수 | 노트
+------------- | ------ | ------ | -------- | -----
+LOWER_ID      | URL    | string | 예      | 소문자의 패키지 ID
+LOWER_VERSION | URL    | string | 예      | 패키지 버전을 표준화 하 고 소문자를 유지
 
 둘 다 `LOWER_ID` 고 `LOWER_VERSION` 구현한 규칙을 사용 하 여 소문자를 유지 됩니다. NET의 [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) 메서드.
 

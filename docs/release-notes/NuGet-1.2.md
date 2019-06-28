@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: b47f73c1c225540226d3780e17053427b8ea4a8a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5d10d6bf27614980a144c30c3af6f9892a109061
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545689"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426184"
 ---
 # <a name="nuget-12-release-notes"></a>NuGet 1.2 릴리스 정보
 
@@ -54,7 +54,7 @@ NuGet 1.2는 2011 년 3 월 30 일에 출시 되었습니다.
 
 ### <a name="nugetexe-now-is-able-to-store-api-key-credentials"></a>nuget.exe는 이제 API 키 자격 증명을 저장할 수는
 
-Nuget.exe 명령줄 도구를 사용 하는 경우 API 키를 저장할 SetApiKey 명령을 이제 사용할 수 있습니다. 이런 방식으로 패키지를 푸시할 때마다 지정할 필요가 없습니다. Nuget.exe를 사용 하 여 API 키를 저장 하는 대 한 자세한 내용은 [패키지를 게시에 대 한 설명서를 읽을](../create-packages/publish-a-package.md)합니다.
+Nuget.exe 명령줄 도구를 사용 하는 경우 API 키를 저장할 SetApiKey 명령을 이제 사용할 수 있습니다. 이런 방식으로 패키지를 푸시할 때마다 지정할 필요가 없습니다. Nuget.exe를 사용 하 여 API 키를 저장 하는 대 한 자세한 내용은 [패키지를 게시에 대 한 설명서를 읽을](../nuget-org/publish-a-package.md)합니다.
 
 ### <a name="package-explorer"></a>패키지 탐색기
 패키지 탐색기 NuGet 1.2를 지원 하도록 업데이트 되었습니다. 자세한 내용은 체크 아웃 합니다 [패키지 탐색기 릴리스](http://nuget.codeplex.com/wikipage?title=New%20features%20in%20NuGet%20Package%20Explorer%201.0)합니다.
@@ -65,6 +65,6 @@ Nuget.exe 명령줄 도구를 사용 하는 경우 API 키를 저장할 SetApiKe
 
 ## <a name="known-issues"></a>알려진 문제
 
-* **1.2 패키지 비 호환성**: 최신 버전의 명령줄 도구를 사용 하 여 빌드한 패키지, nuget.exe (> 1.2) 이전 버전의 NuGet VS 추가 기능 (예: 1.1)를 사용 하 여 작동 하지 것입니다. 호환 되지 않는 스키마에 대 한 것을 알리는 오류 메시지가 발생할 있습니다 실행 하는 경우이 오류가 발생 합니다. NuGet을 최신 버전으로 업데이트 하세요.
-* **NuGet.Server 비 호환성**: 최신 버전의 NuGet.Server 사용 하 여 해당 프로젝트를 업데이트 해야는 내부 NuGet NuGet.Server 프로젝트를 사용 하 여 피드를 호스팅하는 경우.
+* **1.2 패키지 비 호환성**: 최신 버전의 명령줄 도구를 사용 하 여 빌드한 패키지 nuget.exe (> 1.2) 이전 버전의 NuGet VS 추가 기능 (예: 1.1)를 사용 하 여 작동 하지 않습니다. 호환 되지 않는 스키마에 대 한 것을 알리는 오류 메시지가 발생할 있습니다 실행 하는 경우이 오류가 발생 합니다. NuGet을 최신 버전으로 업데이트 하세요.
+* **NuGet.Server 비 호환성**: 내부 NuGet NuGet.Server 프로젝트를 사용 하 여 피드를 호스팅하는 경우에 최신 버전의 NuGet.Server 사용 하 여 해당 프로젝트를 업데이트 해야 합니다.
 * **서명 불일치 오류**: 불일치 서명 하는 방법에 대 한 메시지를 사용 하 여 업그레이드 하는 동안 오류가 발생할 경우 NuGet를 먼저 제거한 다음 설치 해야 합니다. 에 포함 된이 우리의 [알려진 문제 페이지](../release-notes/known-issues.md) 자세한 세부 정보를 제공 하는 합니다. 문제만 Visual Studio 2010 SP1을 실행 하는 영향을 줍니다 및 버전이 올바르게 서명 된 NuGet 1.0 설치 합니다. 이 버전만 사용할 수 있었던 CodePlex 웹 사이트에서 짧은 기간 동안 되므로이 문제는 너무 많은 사람들이 영향을 하지 않아야 합니다.

@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: ad66d8e0ffda13aaef744104c213863b0e111e0e
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6e81055796e20186c5769d2ec39849e6c551ff87
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547523"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426717"
 ---
 # <a name="push-and-delete"></a>푸시 및 삭제
 
@@ -72,7 +72,7 @@ API 키는 사용자가 패키지 원본에서 받은 및 클라이언트를 구
 
 ## <a name="delete-a-package"></a>패키지 삭제
 
-nuget.org에서 패키지 삭제 요청으로 해석 "나열" 발생 합니다. 즉, 패키지는 패키지의 기존 소비자에 대 한 계속 사용할 수 있지만 패키지 또는 웹 인터페이스에서 검색 결과에서 더 이상 표시 합니다. 이 연습에 대 한 자세한 내용은 참조는 [패키지 삭제](../policies/deleting-packages.md) 정책입니다. 다른 서버 구현은 하드 삭제이 신호를 해석 하거나 일시 삭제 하거나 나열을 취소 하는 무료입니다. 예를 들어 [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) (만 이전 V2 API를 지 원하는 서버 구현)이이 요청을 처리 하는 나열 취소 또는 구성 옵션에 따라 하드 삭제를 지원 합니다.
+nuget.org에서 패키지 삭제 요청으로 해석 "나열" 발생 합니다. 즉, 패키지는 패키지의 기존 소비자에 대 한 계속 사용할 수 있지만 패키지 또는 웹 인터페이스에서 검색 결과에서 더 이상 표시 합니다. 이 연습에 대 한 자세한 내용은 참조는 [패키지 삭제](../nuget-org/policies/deleting-packages.md) 정책입니다. 다른 서버 구현은 하드 삭제이 신호를 해석 하거나 일시 삭제 하거나 나열을 취소 하는 무료입니다. 예를 들어 [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) (만 이전 V2 API를 지 원하는 서버 구현)이이 요청을 처리 하는 나열 취소 또는 구성 옵션에 따라 하드 삭제를 지원 합니다.
 
     DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 

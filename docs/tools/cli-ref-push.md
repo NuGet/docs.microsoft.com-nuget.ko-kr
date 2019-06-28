@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: bce04864224a66019a52cdfff8355f68dc424204
-ms.sourcegitcommit: 69b5eb1494a1745a4b1a7f320a91255d5d8356a9
+ms.openlocfilehash: b4f73e2b816d8a93e123d6de83ad0a15fbb24d18
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974997"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425924"
 ---
 # <a name="push-command-nuget-cli"></a>push 명령은 (NuGet CLI)
 
@@ -21,7 +21,7 @@ ms.locfileid: "65974997"
 
 패키지 원본에 패키지를 푸시하고 게시 합니다.
 
-NuGet의 기본 구성을 로드 하 여 가져올 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), 모든 로드 한 다음 `Nuget.Config` 하거나 `.nuget\Nuget.Config` 드라이브의 루트에서 시작 하 고 현재 디렉터리에서 끝나는 파일 (참조 [구성 NuGet 동작](../consume-packages/configuring-nuget-behavior.md))
+NuGet의 기본 구성을 로드 하 여 가져올 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), 모든 로드 한 다음 `Nuget.Config` 하거나 `.nuget\Nuget.Config` 드라이브의 루트에서 시작 하 고 현재 디렉터리에서 끝나는 파일 (참조 [일반적인 NuGet 구성을](../consume-packages/configuring-nuget-behavior.md))
 
 ## <a name="usage"></a>사용법
 
@@ -43,7 +43,7 @@ nuget push <packagePath> [options]
 | NonInteractive | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
 | NoSymbols | *(3.5 이상)*  기호 패키지가 있으면 해당 푸시되 지 않습니다 기호 서버에 있습니다. |
 | Source | 서버 URL을 지정합니다. NuGet은 UNC 또는 로컬 폴더 소스를 식별 하 고 간단히 HTTP를 사용 하 여 푸시하는 대신에 있는 파일을 복사 합니다.  또한 NuGet 3.4.2부터이 않는 필수 매개 변수를 `NuGet.Config` 파일 지정을 *DefaultPushSource* 값 (참조 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)). |
-| SkipDuplicate | 패키지 및 버전이 이미 있는 경우 해당 건너뛰고 있는 경우 푸시에서 다음 패키지를 사용 하 여 계속 합니다. |
+| SkipDuplicate | *(5.1 이상)*  패키지 및 버전이 이미 있는 경우를 생략 하 고 있으면 푸시에서 다음 패키지를 사용 하 여 계속 합니다. |
 | SymbolSource | *(3.5 이상)*  기호 서버 URL을 지정 합니다. 즉 nuget.org에 푸시할 때 nuget.smbsrc.net는 |
 | SymbolApiKey | *(3.5 이상)*  에 지정 된 URL에 대 한 API 키를 지정 `-SymbolSource`합니다. |
 | 제한 시간 | 서버에 푸시하기 위한 초 제한 시간을 지정 합니다. 기본값은 300 초 (5 분). |

@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 6c545ddeddb0c5909f57e879912eaeed744e42d5
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: e4c57c0580fe9018703291c08d60e559f95183dc
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812932"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426199"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -85,7 +85,7 @@ nuget.org에서 프로필 이름과 일치하는, 쉼표로 구분된 패키지 
 #### <a name="title"></a>제목
 사람들에게 친숙한 패키지 제목이며 보통 nuget.org 및 Visual Studio의 패키지 관리자에서 UI 표시에 사용됩니다. 지정하지 않으면 패키지 ID가 사용됩니다. 
 #### <a name="owners"></a>owners
-nuget.org에서 프로필 이름을 사용하는 패키지 작성자에 대한 쉼표로 구분된 목록입니다. 이는 종종 `authors`에 있는 것과 동일한 목록이며, 패키지를 nuget.org에 업로드할 때 무시됩니다. [nuget.org에서 패키지 소유자 관리](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조하세요. 
+nuget.org에서 프로필 이름을 사용하는 패키지 작성자에 대한 쉼표로 구분된 목록입니다. 이는 종종 `authors`에 있는 것과 동일한 목록이며, 패키지를 nuget.org에 업로드할 때 무시됩니다. [nuget.org에서 패키지 소유자 관리](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조하세요. 
 #### <a name="projecturl"></a>projectUrl
 nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페이지에 대한 URL입니다. 
 #### <a name="licenseurl"></a>licenseUrl
@@ -300,7 +300,7 @@ nuget pack MyProject.csproj
 
 ## <a name="explicit-assembly-references"></a>명시적 어셈블리 참조
 
-`<references>` 요소는 패키지를 사용할 때 대상 프로젝트에서 참조해야 하는 어셈블리를 명시적으로 지정합니다. 이 요소가 있으면 NuGet은 나열된 어셈블리에 대한 참조만 추가합니다. 패키지의 `lib` 폴더에 있는 다른 어셈블리에 대한 참조는 추가하지 않습니다.
+합니다 `<references>` 요소를 사용 하 여 프로젝트를 사용해 `packages.config` 를 명시적으로 패키지를 사용 하 여 대상 프로젝트 참조 해야 하는 어셈블리를 지정 합니다. 명시적 참조는 일반적으로 디자인 타임 전용 어셈블리에만 사용됩니다. 자세한 내용은 페이지를 참조 하세요 [프로젝트에서 참조 되는 어셈블리를 선택 하면](../create-packages/select-assemblies-referenced-by-projects.md) 자세한 합니다.
 
 예를 들어 다음 `<references>` 요소는 패키지에 추가 어셈블리가 있는 경우에도 `xunit.dll` 및 `xunit.extensions.dll`에 대한 참조만 추가하도록 NuGet에 지시합니다.
 
@@ -310,10 +310,6 @@ nuget pack MyProject.csproj
     <reference file="xunit.extensions.dll" />
 </references>
 ```
-
-명시적 참조는 일반적으로 디자인 타임 전용 어셈블리에만 사용됩니다. 예를 들어 [코드 계약](/dotnet/framework/debug-trace-profile/code-contracts)을 사용하는 경우 계약 어셈블리는 확장하는 런타임 어셈블리 옆에 있어야 Visual Studio에서 찾을 수 있습니다. 그러나 계약 어셈블리는 프로젝트에서 참조하거나 프로젝트의 `bin` 폴더에 복사할 필요가 없습니다.
-
-마찬가지로 명시적 참조는 런타임 어셈블리 옆에 있는 도구 어셈블리가 필요하지만 프로젝트 참조로 포함될 필요가 없는 XUnit과 같은 단위 테스트 프레임워크에 사용할 수 있습니다.
 
 ### <a name="reference-groups"></a>참조 그룹
 

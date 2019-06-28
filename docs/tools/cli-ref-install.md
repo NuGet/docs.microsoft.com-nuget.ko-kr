@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 8261cdb83af72d9d9379124f4c446c7cd2a50299
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 8088c6dcb7d453650950c219e1cc4dd047a64417
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549138"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425990"
 ---
 # <a name="install-command-nuget-cli"></a>install 명령(NuGet CLI)
 
@@ -21,7 +21,7 @@ ms.locfileid: "43549138"
 > [!Tip]
 > 프로젝트의 컨텍스트 외부 직접 패키지를 다운로드 하려면에 패키지의 페이지를 방문 [nuget.org](https://www.nuget.org) 선택 합니다 **다운로드** 링크.
 
-전역 구성 파일에 없는 소스를 지정 하는 경우 나열한 `%appdata%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), 사용 됩니다. 참조 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md) 추가 세부 정보에 대 한 합니다.
+전역 구성 파일에 없는 소스를 지정 하는 경우 나열한 `%appdata%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), 사용 됩니다. 참조 [일반적인 NuGet 구성](../consume-packages/configuring-nuget-behavior.md) 추가 세부 정보에 대 한 합니다.
 
 없는 특정 패키지를 지정 하는 경우 `install` 프로젝트의 나열 된 모든 패키지를 설치 `packages.config` 파일을 유사 하므로 [ `restore` ](cli-ref-restore.md)합니다.
 
@@ -41,26 +41,26 @@ nuget install <packageID | configFilePath> [options]
 
 | 옵션 | 설명 |
 | --- | --- |
-| ConfigFile | NuGet 구성 파일을 적용 합니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.|
+| ConfigFile | 적용할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
 | DependencyVersion | *(4.4 이상)*  다음 중 하나일 수 있습니다를 사용 하려면 종속성 패키지의 버전:<br/><ul><li>*가장 낮은* (기본값): 가장 낮은 버전</li><li>*HighestPatch*: 가장 낮은 주요, 가장 낮은 부 최고 패치 버전</li><li>*HighestMinor*: 가장 낮은 주 버전, 가장 높은 보조, 최고의 패치</li><li>*가장 높은*: 가장 높은 버전</li></ul> |
 | DisableParallelProcessing | 병렬로 여러 패키지를 설치 하는 사용 하지 않도록 설정 합니다. |
 | ExcludeVersion | 패키지 이름과 버전 번호가 없습니다 사용 하 여 폴더에 패키지를 설치 합니다. |
 | FallbackSource | *(3.2 이상)*  패키지 주 서버에 없는 경우 대체도 사용할 패키지 원본의 목록 또는 기본 소스입니다. |
-| ForceEnglishOutput | *(3.5 이상)*  고정 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
+| ForceEnglishOutput | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
 | 프레임워크 | *(4.4 이상)*  대상 프레임 워크 종속성을 선택 하는 데 사용 합니다. 기본값은 'Any' 지정 되지 않은 경우입니다. |
-| 도움말 | 도움말의 명령에 대 한 정보를 표시 합니다. |
+| Help | 명령어에 대한 도움말을 표시합니다. |
 | NoCache | 캐시 된 패키지를 사용 하 여 NuGet을 방지 합니다. 참조 [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)합니다. |
-| NonInteractive | 사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다. |
+| NonInteractive | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
 | OutputDirectory | 패키지 설치 되는 폴더를 지정 합니다. 폴더는 지정 하지 않으면 현재 폴더가 사용 됩니다. |
 | PackageSaveMode | 패키지를 설치한 후 파일의 형식을 지정 합니다: 중 하나 `nuspec`, `nupkg`, 또는 `nuspec;nupkg`합니다. |
 | PreRelease | 시험판 패키지를를 설치할 수 있습니다. 사용 하 여 패키지를 복원 하는 경우이 플래그는 필요 하지 `packages.config`합니다. |
 | RequireConsent | 다운로드 하 고 패키지를 설치 하기 전에 패키지 복원 활성화 되어 있는지 확인 합니다. 자세한 내용은 참조 하세요 [패키지 복원](../consume-packages/package-restore.md)합니다. |
 | SolutionDirectory | 패키지를 복원 하는 솔루션의 루트 폴더를 지정 합니다. |
-| 소스 | 사용 하도록 (Url)로 패키지 소스 목록을 지정 합니다. 생략 하면 사용 하 여 구성 파일에서 제공 하는 소스를 참조 하십시오 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)합니다. |
-| 자세한 정도 | 출력에 표시 되는 세부 정보의 양을 지정: *정상적인*, *quiet*, *자세한*합니다. |
+| Source | 사용 하도록 (Url)로 패키지 소스 목록을 지정 합니다. 생략 하면 사용 하 여 구성 파일에서 제공 하는 소스를 참조 하십시오 [일반적인 NuGet 구성](../consume-packages/configuring-nuget-behavior.md)합니다. |
+| Verbosity | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
 | 버전 | 설치 패키지의 버전을 지정 합니다. |
 
-또한 참조 [환경 변수](cli-ref-environment-variables.md)
+또한 [환경 변수](cli-ref-environment-variables.md)에 대한 정보를 참조할 수 있습니다.
 
 ## <a name="examples"></a>예제
 

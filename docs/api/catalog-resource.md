@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 4884de71151ee1ae3c0a78b803c9222f9c1d86ec
-ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
+ms.openlocfilehash: 34c205e7dac60c7abfb6323b4dc45bf4f074d46a
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266349"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426782"
 ---
 # <a name="catalog"></a>Catalog
 
@@ -236,8 +236,8 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 카탈로그 항목 형식 사용 하 여 `PackageDelete` 나타내는 카탈로그 클라이언트에 패키지를 패키지 소스에서 삭제 되었습니다 (예: 복원) 패키지의 작업에 대해 사용할 수 없는 정보의 최소 집합을 포함 합니다.
 
-> [!Note]
-> 삭제할 패키지 및 동일한 패키지 ID 및 버전에는 나중에 다시 게시를 사용 하 여는 것이 가능 합니다. Nuget.org의 패키지 ID 및 버전을 특정 패키지 콘텐츠 의미는 공식 클라이언트의 가정을 중단으로 매우 드문 경우입니다. Nuget.org의 패키지 삭제에 대 한 자세한 내용은 참조 하세요. [정책](../policies/deleting-packages.md)합니다.
+> [!NOTE]
+> 삭제할 패키지 및 동일한 패키지 ID 및 버전에는 나중에 다시 게시를 사용 하 여는 것이 가능 합니다. Nuget.org의 패키지 ID 및 버전을 특정 패키지 콘텐츠 의미는 공식 클라이언트의 가정을 중단으로 매우 드문 경우입니다. Nuget.org의 패키지 삭제에 대 한 자세한 내용은 참조 하세요. [정책](../nuget-org/policies/deleting-packages.md)합니다.
 
 패키지 카탈로그 항목 삭제는 것 외에도 추가 속성 없이 [모든 카탈로그 리프에 포함 된](#catalog-leaf)합니다.
 

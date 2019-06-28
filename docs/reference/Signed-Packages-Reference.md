@@ -6,21 +6,21 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 486bf4032e156168f9b2fef57ccdae0c372b2eff
-ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
+ms.openlocfilehash: 952256a24246543ecd4c37285cd001622aa2bc46
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52977513"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426171"
 ---
-# <a name="signed-packages"></a>서명 된 패키지
+# <a name="signed-packages"></a>서명된 패키지
 
 *NuGet 4.6.0+ 및 Visual Studio 2017 버전 15.6 이상*
 
 NuGet 패키지는 변조 된 콘텐츠에 대 한 보호를 제공 하는 디지털 서명을 포함 될 수 있습니다. 이 서명은 신뢰성 증명 패키지의 실제 원본에 추가 하는 X.509 인증서에서 생성 됩니다.
 
 서명 된 패키지는 가장 강력한 종단 간 유효성 검사를 제공 합니다. 두 가지 유형의 NuGet 서명 가지
-- **서명 작성**합니다. 작성자 서명 보장 작성자에서 든 관계 없이 패키지를 서명 후 수정 되지 않은 패키지 리포지토리 또는 패키지에 전달 되는 메서드를 전송 하는 합니다. 또한 작성자 서명 된 패키지 서명 인증서를 미리 등록 되어 있어야 하기 때문에 nuget.org 게시 파이프라인에 추가 인증 메커니즘을 제공 합니다. 자세한 내용은 [인증서 등록](#register-certificate-on-nugetorg)합니다.
+- **서명 작성**합니다. 작성자 서명 보장 작성자에서 든 관계 없이 패키지를 서명 후 수정 되지 않은 패키지 리포지토리 또는 패키지에 전달 되는 메서드를 전송 하는 합니다. 또한 작성자 서명 된 패키지 서명 인증서를 미리 등록 되어 있어야 하기 때문에 nuget.org 게시 파이프라인에 추가 인증 메커니즘을 제공 합니다. 자세한 내용은 [인증서 등록](#signature-requirements-on-nugetorg)합니다.
 - **리포지토리 서명**합니다. 저장소에 대 한 무결성 보장을 서명은 **모든** 패키지만 있었던 원래 저장소와 다른 위치에서 가져온 경우에 작성자 부호가 있거나 없는 되었든 관계 없이 리포지토리에서 패키지 서명.   
 
 작성자 서명 된 패키지를 만드는 방법에 대 한 세부 정보를 참조 하세요 [패키지 서명](../create-packages/Sign-a-package.md) 하며 [nuget 서명 명령](../tools/cli-ref-sign.md)입니다.
@@ -57,4 +57,4 @@ nuget.org에는 서명 된 패키지를 적용 하기 위한 추가 요구 사�
 ## <a name="related-articles"></a>관련 문서
 
 - [NuGet 패키지 서명](../create-packages/Sign-a-Package.md)
-- [서명 된 패키지를 설치합니다.](../consume-packages/installing-signed-packages.md)
+- [패키지 트러스트 관리](../consume-packages/installing-signed-packages.md)

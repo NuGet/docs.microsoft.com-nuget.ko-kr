@@ -1,24 +1,26 @@
 ---
-title: NuGet 패키지 관리자 콘솔 가이드
+title: 설치 하 고 PowerShell을 사용 하 여 Visual Studio에서 NuGet 패키지 관리
 description: Visual Studio에서 NuGet 패키지 관리자 콘솔을 사용 하 여 패키지를 사용 하 여 작업에 대 한 지침입니다.
 author: karann-msft
 ms.author: karann
-ms.date: 01/23/2018
+ms.date: 06/24/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 88979c67ea7f073f2ea5a02c445186642f77f210
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 11ec25598d3110ba84dec5044642e205e13346af
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546880"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426212"
 ---
-# <a name="package-manager-console"></a>패키지 관리자 콘솔
+# <a name="install-and-manage-packages-using-powershell-in-visual-studio"></a>설치 하 고 PowerShell을 사용 하 여 Visual Studio에서 패키지를 관리 합니다.
 
-NuGet 패키지 관리자 콘솔은 Windows 2012 이상 버전의 Visual Studio에 빌드됩니다. (포함 되지 않은 Visual Studio Code 또는 Mac 용 Visual Studio를 사용 하 여.)
+NuGet 패키지 관리자 콘솔에서 사용할 수 있습니다 [NuGet PowerShell 명령을](../tools/powershell-reference.md) 를 찾으려면 설치, 제거 및 NuGet 패키지를 업데이트 합니다. 콘솔을 사용 하는 패키지 관리자 UI 작업을 수행 하는 방법을 제공 하지 않는 경우에 필요 합니다. 사용 하도록 `nuget.exe` 콘솔에서 CLI 명령 참조 [콘솔에서 nuget.exe CLI를 사용 하 여](#using-the-nugetexe-cli-in-the-console)입니다.
 
-콘솔에서 사용할 수 있습니다 [NuGet PowerShell 명령을](../tools/powershell-reference.md) 를 찾으려면 설치, 제거 및 NuGet 패키지를 업데이트 합니다. 콘솔을 사용 하는 패키지 관리자 UI 작업을 수행 하는 방법을 제공 하지 않는 경우에 필요 합니다. 사용 하도록 `nuget.exe` 콘솔에서 명령을 참조 [콘솔에서 nuget.exe CLI를 사용 하 여](#using-the-nugetexe-cli-in-the-console)입니다.
+콘솔은 Windows에서 Visual Studio에 빌드됩니다. Visual Studio Code 또는 Mac 용 Visual Studio를 사용 하 여 포함 되지 않습니다.
+
+## <a name="find-and-install-a-package"></a>찾기 및 패키지를 설치 합니다.
 
 예를 들어, 찾기 및 패키지를 설치 하는 간단한 세 단계로 수행 됩니다.
 
@@ -74,7 +76,7 @@ Install-Package Elmah -ProjectName UtilitiesLib
 
 참조 [Install-package](../tools/ps-ref-install-package.md)합니다.
 
-에 설명 된 대로 동일한 단계를 수행 하는 콘솔에 패키지를 설치 [패키지를 설치 하는 경우](../consume-packages/ways-to-install-a-package.md#what-happens-when-a-package-is-installed), 다음 내용을 추가 하 여:
+에 설명 된 대로 동일한 단계를 수행 하는 콘솔에 패키지를 설치 [패키지를 설치 하는 경우](../concepts/package-installation-process.md), 다음 내용을 추가 하 여:
 
 - 콘솔을 암시 된 계약을 사용 하 여 해당 창에서 해당 사용 약관을 표시합니다. 약관에 동의 하지 않는 경우 패키지를 즉시 제거 해야 합니다.
 - 또한 패키지에 대 한 참조를 프로젝트 파일에 추가 되 고 나타나는 **솔루션 탐색기** 아래의 합니다 **참조** 직접 프로젝트 파일의 변경 내용을 보려면 프로젝트를 저장 해야 하는 노드를 합니다.
@@ -139,7 +141,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 ## <a name="availability-of-the-console"></a>콘솔의 가용성
 
-Visual Studio 2017에서 NuGet 및 NuGet 패키지 관리자를 자동으로 설치 됩니다 하나를 선택 합니다. NET 관련 워크 로드. 설치할 수 있습니다도 개별적으로 확인 하 여 합니다 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** Visual Studio 2017 설치 관리자의 옵션입니다.
+Visual Studio 2017부터, NuGet 및 NuGet 패키지 관리자를 자동으로 설치 됩니다 하나를 선택 합니다. NET 관련 워크 로드. 설치할 수 있습니다도 개별적으로 확인 하 여 합니다 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** Visual Studio 설치 관리자에서 옵션입니다.
 
 Visual Studio 2015 및 이전 버전의 NuGet 패키지 관리자를 누락 하는 경우 확인 하는 또한 **도구 > 확장 및 업데이트 하는 중...**  및 NuGet 패키지 관리자 확장명을 검색 합니다. Visual Studio에 확장 설치 관리자를 사용할 수 없습니다 경우에서 직접 확장을 다운로드할 수 있습니다 [ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html)합니다.
 

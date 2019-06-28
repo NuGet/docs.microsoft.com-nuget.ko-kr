@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 376b69186ad22d4d94a1df51146b833a1f6f9bd9
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c0497c7b99a2de6bee37d6d0ead8b055578e60b7
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546480"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426071"
 ---
 # <a name="config-command-nuget-cli"></a>구성 명령 (NuGet CLI)
 
 ****모든 버전에서 모두 지원됩니다.**
 
-NuGet 구성 값을 불러오거나 설정할 수 있습니다. 추가 사용법에 대한 정보는 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)을 통해 확인할 수 있습니다. 사용할 수 있는 키 값에 대한 자세한 내용은 [NuGet 구성 파일 참조](../reference/nuget-config-file.md)를 볼 수 있습니다.
+NuGet 구성 값을 불러오거나 설정할 수 있습니다. 추가 사용량에 대 한 참조 [일반적인 NuGet 구성](../consume-packages/configuring-nuget-behavior.md)합니다. 사용할 수 있는 키 값에 대한 자세한 내용은 [NuGet 구성 파일 참조](../reference/nuget-config-file.md)를 볼 수 있습니다.
 
 ## <a name="usage"></a>사용법
 

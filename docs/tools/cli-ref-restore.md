@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 9964186dcbfedfbf2415a57102f8f019a1eef23a
-ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
+ms.openlocfilehash: 3d7a4188de4fb6f812ca19e7f9e302a5a133c58b
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59931997"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425966"
 ---
 # <a name="restore-command-nuget-cli"></a>restore 명령 (NuGet CLI)
 
@@ -50,7 +50,7 @@ nuget restore <projectPath> [options]
 | RequireConsent | 다운로드 하 고 패키지를 설치 하기 전에 패키지 복원 활성화 되어 있는지 확인 합니다. 자세한 내용은 참조 하세요 [패키지 복원](../consume-packages/package-restore.md)합니다. |
 | SolutionDirectory | 솔루션 폴더를 지정합니다. 솔루션의 패키지를 복원 하는 경우 유효 하지 않습니다. 사용 하 여 복원 하는 경우 필수는 `packages.config` 파일 `PackagesDirectory` 또는 `OutputDirectory` 사용 됩니다. |
 | Source | 복원에 사용할 (Url)로 패키지 소스 목록을 지정 합니다. 생략 하면 사용 하 여 구성 파일에서 제공 하는 소스를 참조 하십시오 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)합니다. |
-| Verbosity |>-출력에 표시 되는 정보의 크기를 지정 하는 중: *일반*, *quiet*, *자세한*합니다. |
+| Verbosity | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
 
 또한 [환경 변수](cli-ref-environment-variables.md)에 대한 정보를 참조할 수 있습니다.
 

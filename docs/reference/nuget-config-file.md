@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: d7c943c1f13edf782dabe4afee9d19a1a42bd42a
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: 2eceb6e94a353cb29b83aea114c6cea2acbac266
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58911090"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426156"
 ---
 # <a name="nugetconfig-reference"></a>nuget.config 참조
 
-NuGet 동작은 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)에서 설명한 대로 여러 `NuGet.Config` 파일의 설정으로 제어됩니다.
+NuGet 동작은 다른 설정에 의해 제어 됩니다 `NuGet.Config` 파일에 설명 된 대로 [일반적인 NuGet 구성](../consume-packages/configuring-nuget-behavior.md)합니다.
 
 `nuget.config`는 최상위 `<configuration>` 노드를 포함하는 XML 파일이며, 이 파일에는 이 항목에서 설명하는 섹션 요소가 포함되어 있습니다. 각 섹션에는 0 개 이상의 항목이 포함 됩니다. [config 파일 예제](#example-config-file)를 참조하세요. 설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.
 
@@ -149,7 +149,7 @@ nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다
 | Key | 값 |
 | --- | --- |
 | 사용자 이름 | 일반 텍스트 형식의 원본에 대한 사용자 이름입니다. |
-| 암호 | 원본에 대한 암호화된 암호입니다. |
+| password | 원본에 대한 암호화된 암호입니다. |
 | cleartextpassword | 원본에 대한 암호화되지 않은 암호입니다. |
 
 **예제:**

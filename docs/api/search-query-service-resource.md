@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: cfcb52ba7689f1b392c782b4ad42ba820a76c8bf
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: d462b289c39c2dd1418304dabcad47d0d4217f82
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981134"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426741"
 ---
 # <a name="search"></a>검색
 
@@ -97,7 +97,7 @@ projectUrl     | string                     | 아니요       |
 태그           | 문자열 또는 문자열 배열 | 아니요       | 
 제목          | string                     | 아니요       | 
 totalDownloads | 정수                    | 아니요       | 이 값에는 다운로드의 합으로 유추할 수는 `versions` 배열
-확인       | boolean                    | 아니요       | 패키지 인지 여부를 나타내는 JSON 부울 [확인](../reference/id-prefix-reservation.md)
+확인       | boolean                    | 아니요       | 패키지 인지 여부를 나타내는 JSON 부울 [확인](../nuget-org/id-prefix-reservation.md)
 
 Nuget.org에서 확인 된 패키지는 예약된 된 ID 접두사를 일치 하는 패키지 ID를 포함 하며 예약 된 접두사의 소유자 중 한 명이 소유한 하나. 자세한 내용은 참조는 [ID 접두사 예약에 대 한 설명서](../reference/id-prefix-reservation.md)합니다.
 

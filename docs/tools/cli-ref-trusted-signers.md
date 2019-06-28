@@ -6,18 +6,18 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: ee4ffaa7e250cdbf313476fd794a8d87c80b69f9
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: c22c7f0a6b6878bec4f8396e02e2d97998170455
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324710"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425977"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a>신뢰할 수 있는 서명자 명령 (NuGet CLI)
 
 **적용 대상:** 소비 패키지 &bullet; **지원 되는 버전:** 4.9.1+
 
-NuGet 구성에 신뢰할 수 있는 서명자를 가져오거나 설정 합니다. 추가 사용법에 대한 정보는 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)을 통해 확인할 수 있습니다. Nuget.config 스키마에서 참조 하는 등을 표시 하는 방법에 대 한 내용은 합니다 [NuGet 구성 파일 참조](../reference/nuget-config-file.md)합니다.
+NuGet 구성에 신뢰할 수 있는 서명자를 가져오거나 설정 합니다. 추가 사용량에 대 한 참조 [일반적인 NuGet 구성](../consume-packages/configuring-nuget-behavior.md)합니다. Nuget.config 스키마에서 참조 하는 등을 표시 하는 방법에 대 한 내용은 합니다 [NuGet 구성 파일 참조](../reference/nuget-config-file.md)합니다.
 
 ## <a name="usage"></a>사용법
 
@@ -116,10 +116,10 @@ _참고_: 이 제스처는 인증서의 현재 목록을 삭제 하 고 리포�
 
 | 옵션 | 설명 |
 | --- | --- |
-| ConfigFile | 수정할 NuGet 구성 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
+| ConfigFile | 적용할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
 | ForceEnglishOutput | 고정 영어 기반 문화권을 사용 하 여 실행할 nuget.exe를 강제로 수행 합니다. |
-| 도움말 | 명령어에 대한 도움말을 표시합니다. |
-| 자세한 정도 | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
+| Help | 명령어에 대한 도움말을 표시합니다. |
+| Verbosity | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
 
 ## <a name="examples"></a>예제
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: reference
-ms.openlocfilehash: 2743dde63487124c706f2b1521ef2c6c3b28339d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a257dbbd9d56b5989e050ed4096d096cd1036184
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548080"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426020"
 ---
 # <a name="nuget-cli-reference"></a>NuGet CLI 참조
 
@@ -19,6 +19,8 @@ NuGet 명령줄 인터페이스 (CLI) `nuget.exe`, 설치, 만들기, 게시 및
 모든 명령을 사용 하려면 명령 창 또는 bash 셸을 열고 실행 `nuget` 뒤에 명령 및 적절 한 옵션을 같은 `nuget help pack` (도움말을 보려면 pack 명령에서).
 
 이 설명서는 최신 버전의 NuGet CLI를 반영합니다. 사용 중인 모든 지정 된 버전에 대 한 정확한 세부 정보에 대 한 실행 `nuget help` 원하는 명령에 대 한 합니다.
+
+함께 기본 명령을 사용 하는 방법을 알아보려면 합니다 `nuget.exe` CLI 참조 [설치 nuget.exe CLI를 사용 하 여 패키지를 사용 하 여](../consume-packages/install-use-packages-nuget-cli.md)입니다.
 
 ## <a name="installing-nugetexe"></a>Nuget.exe를 설치합니다.
 
@@ -43,7 +45,7 @@ NuGet 명령줄 인터페이스 (CLI) `nuget.exe`, 설치, 만들기, 게시 및
 | --- | --- | --- | --- |
 | [pack](cli-ref-pack.md) | 만들기 | 2.7+ | NuGet 패키지를 만들어는 `.nuspec` 또는 프로젝트 파일입니다. Mono에서 실행 하는 경우 프로젝트 파일에서 패키지를 만드는 지원 되지 않습니다. |
 | [push](cli-ref-push.md) | 게시 | 모두 | 패키지 원본에 패키지를 게시합니다. |
-| [config](cli-ref-config.md) | 모두 | 모두 | NuGet 구성 값을 가져오거나 설정 합니다. |
+| [config](cli-ref-config.md) | 모두 | 모두 | NuGet 구성 값을 불러오거나 설정할 수 있습니다. |
 | [help or ?](cli-ref-help.md) | 모두 | 모두 | 도움말 정보 또는 명령에 대 한 도움말을 표시 합니다. |
 | [locals](cli-ref-locals.md) | 사용 | 3.3+ | 위치를 나열 합니다 *전역 패키지*를 *http 캐시*, 및 *temp* 폴더 및 해당 폴더의 내용 지웁니다. |
 | [restore](cli-ref-restore.md) | 사용 | 2.7+ | 사용 중인 패키지 관리 형식에서 참조 하는 모든 패키지를 복원 합니다. Mono에서 실행 하는 경우 PackageReference 형식을 사용 하 여 패키지 복원 지원 되지 않습니다. |
@@ -57,7 +59,7 @@ NuGet 명령줄 인터페이스 (CLI) `nuget.exe`, 설치, 만들기, 게시 및
 | [init](cli-ref-init.md) | 만들기 | 3.3+ | 계층형 레이아웃을 사용 하 여 패키지 원본 폴더에서 패키지를 추가 합니다. |
 | [install](cli-ref-install.md) | 사용 | 모두 | 현재 패키지 설치 프로젝트 하지만 프로젝트를 수정 하거나 파일을 참조할지 않습니다. |
 | [list](cli-ref-list.md) | 아마도 게시 사용 | 모두 | 지정된 된 원본에서 패키지를 표시합니다. |
-| [mirror](cli-ref-mirror.md) | 게시 | 3.2 이상에서 사용 되지 않음 | 패키지 및 대상 리포지토리를 원본에서 해당 종속성을 미러링합니다. |
+| [mirror](cli-ref-mirror.md) | 게시 | 3\.2 이상에서 사용 되지 않음 | 패키지 및 대상 리포지토리를 원본에서 해당 종속성을 미러링합니다. |
 | [sources](cli-ref-sources.md) | 소비, 게시 | 모두 | 구성 파일에서 패키지 소스를 관리합니다. |
 | [update](cli-ref-update.md) | 사용 | 모두 | 사용 가능한 최신 버전을 프로젝트의 패키지를 업데이트합니다. Mono에서 실행 하는 경우 지원 되지 않습니다. |
 

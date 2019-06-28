@@ -1,5 +1,5 @@
 ---
-title: NuGet 패키지 관리자 UI 참조
+title: 설치 하 고 Visual Studio에서 NuGet 패키지 관리
 description: Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하 여 NuGet 패키지 사용에 대 한 지침입니다.
 author: karann-msft
 ms.author: karann
@@ -10,30 +10,21 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 422faf99e58e058d86db774a8f3c1c576b3dc393
-ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
+ms.openlocfilehash: 97e5de3f07199cd3c6a645749c8f2f1603ca630e
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58637625"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426246"
 ---
-# <a name="nuget-package-manager-ui"></a>NuGet 패키지 관리자 UI
+# <a name="install-and-manage-packages-in-visual-studio"></a>설치 하 고 Visual Studio에서 패키지 관리
 
 Windows의 Visual Studio에서 NuGet 패키지 관리자 UI를 사용 하면 쉽게 설치, 제거 및 프로젝트 및 솔루션의 NuGet 패키지를 업데이트할 수 있습니다. Mac 용 Visual Studio의 환경에 대해서 [NuGet 패키지 포함 프로젝트에서](/visualstudio/mac/nuget-walkthrough)합니다. 패키지 관리자 UI를 Visual Studio Code를 사용 하 여 포함 되지 않습니다.
 
-항목 내용:
-
-- [찾기 및 설치 패키지 (찾아보기 탭)](#finding-and-installing-a-package)
-- [(설치 됨 탭) 패키지를 제거합니다.](#uninstalling-a-package)
-- [(설치 및 업데이트 탭) 패키지를 업데이트 하는 중](#updating-a-package) (포함 된 ["SDK에서 참조 된 암시적 으로" 또는 "AutoReferenced" 메시지](#implicit_reference))
-- [솔루션에 대 한 패키지 관리](#managing-packages-for-the-solution) (동시에 여러 프로젝트가 포함 된 작업).
-- [패키지 소스](#package-sources)
-- [패키지 관리자 옵션 제어](#package-manager-options-control)
-
-> [!Note]
+> [!NOTE]
 > Visual Studio 2015에서 NuGet 패키지 관리자를 누락 하는 경우 확인 **도구 > 확장 및 업데이트 하는 중...**  검색 된 *NuGet 패키지 관리자* 확장 합니다. Visual Studio에 확장 설치 관리자를 사용할 수 없습니다 경우에서 직접 확장을 다운로드할 [ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html)합니다.
 >
-> Visual Studio 2017에서 NuGet 및 NuGet 패키지 관리자를 자동으로 사용 하 여 설치 됩니다. NET 관련 워크 로드입니다. 선택 하 여 개별적으로 설치 합니다 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** Visual Studio 2017 설치 관리자의 옵션입니다.
+> Visual Studio 2017부터 NuGet 및 NuGet 패키지 관리자를 자동으로 설치 된. NET 관련 워크 로드입니다. 선택 하 여 개별적으로 설치 합니다 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** Visual Studio 설치 관리자에서 옵션입니다.
 
 ## <a name="finding-and-installing-a-package"></a>찾기 및 패키지를 설치 합니다.
 
@@ -130,7 +121,7 @@ Visual Studio는 패키지를 가져올 소스를 변경 하려면 원본 선택
 1. 사용 하 고 아래쪽 화살표 단추 패키지 원본의 우선 순위 변경 되지 않습니다. Visual Studio는 먼저 요청에 응답 하도록 소스가에서 패키지를 사용 하 여 패키지 소스의 순서를 무시 합니다. 자세한 내용은 [패키지 복원](../consume-packages/package-restore.md)합니다.
 
 > [!Tip]
-> 패키지 소스를 삭제 한 후 다시 나타나면, 컴퓨터 수준 또는 사용자 수준에 나타날 수 있습니다 `NuGet.Config` 파일입니다. 참조 [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md) 이러한 파일의 위치에 대해 다음 원본을 제거 파일을 수동으로 편집 하거나 사용 하 여 합니다 [nuget 명령 원본](../tools/nuget-exe-CLI-reference.md)합니다.
+> 패키지 소스를 삭제 한 후 다시 나타나면, 컴퓨터 수준 또는 사용자 수준에 나타날 수 있습니다 `NuGet.Config` 파일입니다. 참조 [일반적인 NuGet 구성](../consume-packages/configuring-nuget-behavior.md) 이러한 파일의 위치에 대해 다음 원본을 제거 파일을 수동으로 편집 하거나 사용 하 여 합니다 [nuget 명령 원본](../tools/nuget-exe-CLI-reference.md)합니다.
 
 ## <a name="package-manager-options-control"></a>패키지 관리자 옵션 제어
 
