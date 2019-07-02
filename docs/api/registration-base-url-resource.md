@@ -6,14 +6,14 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 19a1f48164f65f1ff805e036e55abb110247aa72
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 0b35e2bbdde63f7f7a5298bd035c180389cd345d
+ms.sourcegitcommit: 2a9d149bc6f5ff76b0b657324820bd0429cddeef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324866"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496514"
 ---
-# <a name="package-metadata"></a>패키지 메타 데이터
+# <a name="package-metadata"></a>패키지 메타데이터
 
 NuGet V3 API를 사용 하 여 패키지 원본에 대해 사용 가능한 패키지에 대 한 메타 데이터를 인출 하는 것이 가능 합니다. 사용 하 여이 메타 데이터를 인출할 수 있습니다 합니다 `RegistrationsBaseUrl` 에서 리소스를 찾을 합니다 [서비스 인덱스](service-index.md)합니다.
 
@@ -103,7 +103,7 @@ count | 정수          | 예      | 인덱스의 등록 페이지 수
 count  | 정수          | 예      | 등록 수가 페이지 유지
 항목  | 개체의 배열 | 아니요       | 등록 리프 및 연결 메타 데이터의 배열
 낮은  | string           | 예      | (포괄) 페이지에서 가장 낮은 SemVer 2.0.0 버전이
-부모 | string           | 아니요       | 등록 인덱스에 대 한 URL
+부모(parent) | string           | 아니요       | 등록 인덱스에 대 한 URL
 위  | string           | 예      | (포괄) 페이지에서 가장 높은 SemVer 2.0.0 버전이
 
 합니다 `lower` 고 `upper` page 개체의 범위는 특정 페이지 버전에 대 한 메타 데이터가 필요한 경우에 유용 합니다.
@@ -138,6 +138,7 @@ packageContent | string | 예      | 패키지 콘텐츠 (.nupkg) URL
 @id                      | string                     | 예      | 이 개체를 생성 하는 데 사용 되는 문서 URL
 authors                  | 문자열 또는 문자열 배열 | 아니요       | 
 dependencyGroups         | 개체의 배열           | 아니요       | 대상 프레임 워크 별로 그룹화 된 패키지의 종속성
+사용 중단              | object                     | 아니요       | 패키지에 연결 된 사용 중단
 설명              | string                     | 아니요       | 
 iconUrl                  | string                     | 아니요       | 
 ID                       | string                     | 예      | 패키지의 ID
@@ -184,6 +185,26 @@ range        | object | 아니요       | 허용 되 [버전 범위](../referenc
 
 경우는 `range` 속성은 제외 되거나 빈 문자열인 경우 클라이언트의 버전 범위는 기본값은 `(, )`합니다. 즉, 종속성의 모든 버전이 허용 됩니다.
 
+#### <a name="package-deprecation"></a>패키지 사용 중단
+
+각 패키지 사용 중단에 다음 속성이 있습니다.
+
+이름             | 형식             | 필수 | 노트
+---------------- | ---------------- | -------- | -----
+이유          | 문자열의 배열 | 예      | 패키지 된 사용 되지 않는 이유
+message          | string           | 아니요       | 이 사용 중단에 대 한 추가 세부 정보
+alternatePackage | object           | 아니요       | 대신 사용 해야 하는 패키지 종속성
+
+`reasons` 속성 하나 이상의 문자열 이어야 하며 문자열을 다음 테이블에서 포함 해야 합니다.
+
+이유       | 설명             
+------------ | -----------
+레거시       | 패키지는 더 이상 유지 관리
+CriticalBugs | 패키지 사용에 적합 하 게 하는 버그가
+기타        | 이 목록에 없는 이유로 인해 패키지는 사용 되지 않습니다.
+
+경우는 `reasons` 알려진된 집합에서 되지 않는 문자열을 포함 하는 속성을 무시 해야 합니다. 문자열은 대/소문자 이므로 `legacy` 있어야 동일 하 게 취급 `Legacy`합니다. 문자열을 임의의 순서로 정렬 수 있도록에 배열에서 정렬 제한이 없습니다. 또한 알려진된 집합에서 없는 문자열만 포함 하는 속성을이 처리 해야 하는지만 "기타" 문자열을 포함 하는 경우에 따라 합니다.
+
 ### <a name="sample-request"></a>샘플 요청
 
     GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
@@ -206,7 +227,7 @@ range        | object | 아니요       | 허용 되 [버전 범위](../referenc
 count  | 정수          | 예      | 등록 수가 페이지 유지
 항목  | 개체의 배열 | 예      | 등록 리프 및 연결 메타 데이터의 배열
 낮은  | string           | 예      | (포괄) 페이지에서 가장 낮은 SemVer 2.0.0 버전이
-부모 | string           | 예      | 등록 인덱스에 대 한 URL
+부모(parent) | string           | 예      | 등록 인덱스에 대 한 URL
 위  | string           | 예      | (포괄) 페이지에서 가장 높은 SemVer 2.0.0 버전이
 
 등록 리프 개체의 모양을 등록 인덱스 동일 [위에](#registration-leaf-object-in-a-page)합니다.

@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 34c205e7dac60c7abfb6323b4dc45bf4f074d46a
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 8e4fb376e471a207333d241aeb414da7d5c3571e
+ms.sourcegitcommit: 2a9d149bc6f5ff76b0b657324820bd0429cddeef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426782"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496529"
 ---
 # <a name="catalog"></a>Catalog
 
@@ -194,7 +194,8 @@ ID                      | string                     | 예      | 카탈로그 �
 ----------------------- | -------------------------- | -------- | -----
 authors                 | string                     | 아니요       |
 created                 | string                     | 아니요       | 패키지를 처음 만들 때의 타임 스탬프입니다. 대체 (fallback) 속성: `published`합니다.
-dependencyGroups        | 개체의 배열           | 아니요       | 동일한 형식으로 [패키지 메타 데이터 리소스](registration-base-url-resource.md#package-dependency-group)
+dependencyGroups        | 개체의 배열           | 아니요       | 종속성 패키지의 대상 프레임 워크에서 그룹화 ([패키지 메타 데이터 리소스와 동일한 형식을](registration-base-url-resource.md#package-dependency-group))
+사용 중단             | object                     | 아니요       | 패키지에 연결 된 사용 중단 ([패키지 메타 데이터 리소스와 동일한 형식을](registration-base-url-resource.md#package-deprecation))
 설명             | string                     | 아니요       |
 iconUrl                 | string                     | 아니요       |
 isPrerelease            | boolean                    | 아니요       | 시험판 패키지 버전 인지 여부입니다. 검색할 수 `version`입니다.
