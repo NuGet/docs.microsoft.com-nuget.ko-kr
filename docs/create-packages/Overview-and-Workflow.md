@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/26/2017
 ms.topic: conceptual
-ms.openlocfilehash: 6b41b23df115c45e830404afcf9defa23615bd7c
-ms.sourcegitcommit: ce97dded7715f217ec44f6c8368ab0df19c38342
+ms.openlocfilehash: a285650034c99026e34fcda398ca7ced4855e40a
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52615758"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425725"
 ---
 # <a name="package-creation-workflow"></a>패키지 만들기 워크플로
 
@@ -41,6 +41,6 @@ ms.locfileid: "52615758"
 - [네이티브 패키지](../create-packages/native-packages.md)는 C++ 소비자용 패키지를 만드는 프로세스를 설명합니다.
 - [패키지 서명](../create-packages/sign-a-package.md)에서는 패키지에 디지털 서명을 추가하는 프로세스를 설명합니다.
 
-다음으로 nuget.org에 패키지를 게시할 준비가 되면 [패키지 게시](../create-packages/publish-a-package.md)의 간단한 프로세스를 수행합니다.
+다음으로 nuget.org에 패키지를 게시할 준비가 되면 [패키지 게시](../nuget-org/publish-a-package.md)의 간단한 프로세스를 수행합니다.
 
 nuget.org 대신 개인 피드를 사용하려면 [패키지 호스팅 개요](../hosting-packages/overview.md)를 참조하세요.

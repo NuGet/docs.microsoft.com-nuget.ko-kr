@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: tutorial
-ms.openlocfilehash: c43f4e80d456214ca354e136db6419a95fc797a0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d737b70febd1e18aa8a39cc73a9a9cf333f758c6
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551910"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426835"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 Xamarin용 패키지 만들기
 
@@ -18,7 +18,7 @@ Xamarin용 패키지에는 런타임 운영 체제에 따라 iOS, Android 및 Wi
 
 이 연습에서는 Visual Studio 2015를 사용하여 iOS, Android 및 Windows의 모바일 프로젝트에 사용할 수 있는 플랫폼 간 NuGet 패키지를 만듭니다.
 
-1. [필수 조건](#prerequisites)
+1. [필수 구성 요소](#prerequisites)
 1. [프로젝트 구조 및 추상화 코드 만들기](#create-the-project-structure-and-abstraction-code)
 1. [플랫폼 특정 코드 작성](#write-your-platform-specific-code)
 1. [.nuspec 파일 만들기 및 업데이트](#create-and-update-the-nuspec-file)
@@ -260,7 +260,7 @@ nuget pack LoggingLibrary.nuspec
 > [!Tip]
 > `.nupkg` 파일은 확장명이 다른 ZIP 파일일 뿐입니다. `.nupkg`를 `.zip`으로 변경하여 패키지 내용을 검사할 수도 있지만 패키지를 nuget.org에 업로드하려면 먼저 확장명을 복원해야 합니다.
 
-다른 개발자가 패키지를 사용할 수 있게 하려면 [패키지 게시](../create-packages/publish-a-package.md)의 지침을 따르세요.
+다른 개발자가 패키지를 사용할 수 있게 하려면 [패키지 게시](../nuget-org/publish-a-package.md)의 지침을 따르세요.
 
 ## <a name="related-topics"></a>관련 항목
 

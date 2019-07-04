@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: abdd06642ccc652527a1a005eda2689ce97df74c
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58921574"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426818"
 ---
 # <a name="signing-nuget-packages"></a>NuGet 패키지 서명
 
@@ -66,7 +66,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 
 ## <a name="publish-the-package"></a>패키지 게시
 
-이제 NuGet.org에 패키지를 게시할 준비가 되었습니다. [패키지 게시](Publish-a-package.md)를 참조하세요.
+이제 NuGet.org에 패키지를 게시할 준비가 되었습니다. [패키지 게시](../nuget-org/Publish-a-package.md)를 참조하세요.
 
 ## <a name="create-a-test-certificate"></a>테스트 인증서 만들기
 
@@ -103,5 +103,5 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 
 ## <a name="related-articles"></a>관련 문서
 
-- [서명된 패키지 설치](../consume-packages/installing-signed-packages.md)
+- [패키지 트러스트 영역 관리](../consume-packages/installing-signed-packages.md)
 - [서명된 패키지 참조](../reference/Signed-Packages-Reference.md)

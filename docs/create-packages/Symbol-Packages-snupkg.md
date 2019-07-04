@@ -16,12 +16,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 18d54e28d77f2bdcfea70ff9ae9def05278cb26c
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 0d82cf8614b88247bc3a3ba3019c11bf1b5e2593
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610560"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426797"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -61,7 +61,7 @@ dotnet.exe 또는 MSBuild를 사용하는 경우 다음 단계에 따라 .nupkg 
 
 ## <a name="publishing-a-symbol-package"></a>기호 패키지 게시
 
-1. 편의상 먼저 NuGet과 함께 API 키를 저장합니다([패키지 게시](../create-packages/publish-a-package.md) 참조).
+1. 편의상 먼저 NuGet과 함께 API 키를 저장합니다([패키지 게시](../nuget-org/publish-a-package.md) 참조).
 
     ```cli
     nuget SetApiKey Your-API-Key
