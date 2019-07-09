@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 4b593cc215ad68629e5a93d1f17c90e53c0b4f4f
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 1060d98278fed89ac63ee17c1896ae8bdce72a9e
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324632"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426161"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>빠른 시작: dotnet CLI를 사용하여 패키지 설치 및 사용
 
@@ -103,7 +103,7 @@ NuGet 패키지는 일종의 .NET 프로젝트에 설치할 수 있습니다. �
 
 ## <a name="related-articles"></a>관련 문서
 
+- [dotnet CLI를 사용하여 패키지 설치 및 사용](../consume-packages/install-use-packages-dotnet-cli.md)
 - [패키지 사용 개요 및 워크플로](../consume-packages/overview-and-workflow.md)
 - [패키지 찾기 및 선택](../consume-packages/finding-and-choosing-packages.md)
-- [패키지 설치 방법](../consume-packages/ways-to-install-a-package.md)
-- [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)
+- [일반적인 NuGet 구성](../consume-packages/configuring-nuget-behavior.md)

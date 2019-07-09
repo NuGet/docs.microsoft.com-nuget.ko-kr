@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: 4ab87f072bdace9dd18cecc4100de52b3547136d
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: 087bb043ba4b388b9de6d94cd838915a2e7247f4
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813005"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426137"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 소개
 
 모든 최신 개발 플랫폼에 필수적인 도구는 개발자가 유용한 코드를 작성, 공유 및 사용할 수 있는 메커니즘입니다. 대부분 이러한 코드는 이러한 패키지를 사용하는 프로젝트에 필요한 다른 내용과 함께 컴파일된 코드를 포함하는(DLL로) “패키지”로 제공됩니다.
 
-.NET(.NET Core 포함)의 경우 코드를 공유하는 Microsoft 지원 메커니즘은 **NuGet**이며, 이는 .NET용 패키지를 만들고 호스트하고 사용하는 방법을 정의하고 각 역할에 대한 도구를 제공합니다.
+.NET(.NET Core 포함)의 경우 코드를 공유하는 Microsoft 지원 메커니즘은 **NuGet**입니다. 이는 .NET용 패키지를 만들고 호스트하고 사용하는 방법을 정의하고 각 역할에 대한 [도구를 제공](install-nuget-client-tools.md)합니다.
 
 간단히 말해, NuGet 패키지는 컴파일된 코드(DLL), 해당 코드와 관련된 다른 파일 및 패키지의 버전 번호와 같은 정보를 포함한 설명적 매니페스트가 포함된 `.nupkg` 확장명의 단일 ZIP 파일입니다. 공유할 코드를 가진 개발자는 패키지 파일을 만들어 공용 또는 전용 호스트에 게시합니다. 패키지 소비자는 적합한 호스트에서 이러한 패키지를 받고, 프로젝트에 추가한 다음, 프로젝트 코드에서 패키지 기능을 호출합니다. 그런 다음 NuGet 자체에서 모든 중간 세부 정보를 처리합니다.
 
@@ -45,8 +45,8 @@ NuGet은 호스팅 지원 외에도 작성자와 소비자 모두가 사용하�
 
 | 도구 | 플랫폼 | 적용 가능한 시나리오 | 설명 |
 | --- | --- | --- | --- |
-| [dotnet CLI](tools/dotnet-Commands.md) | 모두 | 만들기, 사용 | .NET Core 및 .NET Standard 라이브러리와 .NET Framework를 대상으로 하는 SDK 스타일 프로젝트를 위한 CLI 도구입니다([SDK 특성](/dotnet/core/tools/csproj#additions) 참조). .NET Core 도구 체인 내에서 특정 NuGet CLI 기능을 직접 제공합니다. NuGet CLI와 같이 dotnet CLI는 Visual Studio 프로젝트와 상호 작용하지 않습니다. |
-| [nuget.exe CLI](tools/nuget-exe-cli-reference.md) | 모두 | 만들기, 사용 | .NET Framework 라이브러리와 .NET Standard 라이브러리를 대상으로 하는 SDK 스타일이 아닌 프로젝트를 위한 CLI 도구입니다. 모든 NuGet 기능을 제공합니다. 일부 명령은 패키지 작성자에게만 적용되고, 일부는 소비자에게만 적용되고, 다른 일부는 둘 다에 적용됩니다. 예를 들어 패키지 작성자는 `nuget pack` 명령을 사용하여 다양한 어셈블리 및 관련 파일에서 패키지를 만들고, 패키지 소비자는 `nuget install`을 사용하여 프로젝트 폴더에 패키지를 포함하고, 모든 사용자는 `nuget config`를 사용하여 NuGet 구성 변수를 설정합니다. 플랫폼 제약 없는 도구인 NuGet CLI는 Visual Studio 프로젝트와 상호 작용하지 않습니다. |
+| [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md) | 모두 | 만들기, 사용 | .NET Core 및 .NET Standard 라이브러리와 .NET Framework를 대상으로 하는 SDK 스타일 프로젝트를 위한 CLI 도구입니다([SDK 특성](/dotnet/core/tools/csproj#additions) 참조). .NET Core 도구 체인 내에서 특정 NuGet CLI 기능을 직접 제공합니다. NuGet CLI와 같이 dotnet CLI는 Visual Studio 프로젝트와 상호 작용하지 않습니다. |
+| [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md) | 모두 | 만들기, 사용 | .NET Framework 라이브러리와 .NET Standard 라이브러리를 대상으로 하는 SDK 스타일이 아닌 프로젝트를 위한 CLI 도구입니다. 모든 NuGet 기능을 제공합니다. 일부 명령은 패키지 작성자에게만 적용되고, 일부는 소비자에게만 적용되고, 다른 일부는 둘 다에 적용됩니다. 예를 들어 패키지 작성자는 `nuget pack` 명령을 사용하여 다양한 어셈블리 및 관련 파일에서 패키지를 만들고, 패키지 소비자는 `nuget install`을 사용하여 프로젝트 폴더에 패키지를 포함하고, 모든 사용자는 `nuget config`를 사용하여 NuGet 구성 변수를 설정합니다. 플랫폼 제약 없는 도구인 NuGet CLI는 Visual Studio 프로젝트와 상호 작용하지 않습니다. |
 | [패키지 관리자 콘솔](tools/package-manager-console.md) | Windows의 Visual Studio | 사용 | Visual Studio 프로젝트에서 패키지를 설치하고 관리하기 위한 [PowerShell 명령](tools/Powershell-Reference.md)을 제공합니다. |
 | [패키지 관리자 UI](tools/package-manager-ui.md) | Windows의 Visual Studio | 사용 | Visual Studio 프로젝트에서 패키지를 설치하고 관리하기 위한 사용하기 쉬운 UI를 제공합니다. |
 | [NuGet UI 관리](/visualstudio/mac/nuget-walkthrough) | Mac용 Visual Studio | 사용 | Mac용 Visual Studio 프로젝트에서 패키지를 설치하고 관리하기 위한 사용하기 쉬운 UI를 제공합니다. |

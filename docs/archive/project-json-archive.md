@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: aa5cd1a2f3e3a6707a9d68204306db85651b0a18
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d43f002b740b669de13f5872844ac0df97fc8fdc
+ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545202"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467791"
 ---
 # <a name="projectjson-archive"></a>project.json 보관 파일
 
 `project.json` 관리 형식은 NuGet 3.x와 함께 도입되었으며 특정 프로젝트 유형에 사용됩니다. 이 참조 형식은 종속성이 프로젝트 파일에 직접 나열되는 PackageReference 형식이 도입되면서 더 이상 사용되지 않습니다.
 
-다음 항목도 참조하세요.
+또한 다음을 참조하세요.
 
 - [project.json 스키마](project-json.md)
 - [project.json이 패키지 작성자에 미치는 영향](project-json-impact.md)
@@ -38,7 +38,7 @@ ms.locfileid: "43545202"
 
 ## <a name="constraining-package-versions-with-restore"></a>복원을 사용하여 패키지 버전 제한
 
-*원래 [패키지 복원](../consume-packages/package-restore.md#constraining-package-versions-with-restore)에 포함됩니다.*
+*원래 [패키지 복원](../consume-packages/package-restore.md#constrain-package-versions-with-restore)에 포함됩니다.*
 
 - `project.json`: 종속성의 버전 번호를 사용하여 버전 범위를 직접 지정합니다. 예:
 

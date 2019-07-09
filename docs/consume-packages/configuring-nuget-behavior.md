@@ -1,18 +1,18 @@
 ---
-title: NuGet 동작 구성
+title: 일반적인 NuGet 구성
 description: NuGet.Config 파일은 NuGet의 동작을 전역 및 프로젝트별로 제어하며 nuget config 명령으로 수정됩니다.
 author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 963d1d59ea7e65e3d75bc7105b8864e3e4045938
-ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
+ms.openlocfilehash: 57b7f29b533a8e6d7db2710c7e42a239f50199a1
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266346"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426663"
 ---
-# <a name="configuring-nuget-behavior"></a>NuGet 동작 구성
+# <a name="common-nuget-configurations"></a>일반적인 NuGet 구성
 
 NuGet의 동작은 프로젝트, 사용자 및 컴퓨터 수준에서 존재할 수 있는 하나 이상의 `NuGet.Config`(XML) 파일에 누적된 설정으로 구동됩니다. 특히 전역 `NuGetDefaults.Config` 파일은 패키지 원본도 구성합니다. 설정은 CLI, 패키지 관리자 콘솔 및 패키지 관리자 UI에서 실행되는 모든 명령에 적용됩니다.
 

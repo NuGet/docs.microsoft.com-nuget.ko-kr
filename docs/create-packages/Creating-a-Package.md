@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5e362673acfab4b31c8a2e02a521afd8b19d2754
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: e3a40a521a3b16d9757ef1bbf2511a1537d8bddb
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812913"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425812"
 ---
 # <a name="creating-nuget-packages"></a>NuGet 패키지 만들기
 
 패키지의 기능 또는 포함된 코드와 관계없이 CLI 도구인 `nuget.exe` 또는 `dotnet.exe`를 사용하여 해당 기능을 임의 수의 다른 개발자와 공유하고 사용할 수 있는 구성 요소로 패키지할 수 있습니다. NuGet CLI 도구를 설치하려면 [NuGet 클라이언트 도구 설치](../install-nuget-client-tools.md)를 참조하세요. Visual Studio에는 CLI 도구가 자동으로 포함되지 않습니다.
 
-- SDK 스타일 형식([SDK 특성](/dotnet/core/tools/csproj#additions))을 사용하는 .NET Core 및 .NET Standard 프로젝트와 또 다른 SDK 스타일 프로젝트의 경우, NuGet은 프로젝트 파일의 정보를 직접 사용하여 패키지를 만듭니다. 자세한 내용은 [Visual Studio 2017을 사용하여 .NET Standard 패키지 만들기](../quickstart/create-and-publish-a-package-using-visual-studio.md) 및 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.
+- SDK 스타일 형식([SDK 특성](/dotnet/core/tools/csproj#additions))을 사용하는 .NET Core 및 .NET Standard 프로젝트와 또 다른 SDK 스타일 프로젝트의 경우, NuGet은 프로젝트 파일의 정보를 직접 사용하여 패키지를 만듭니다. 자세한 내용은 [Visual Studio를 사용하여 .NET Standard 패키지 만들기](../quickstart/create-and-publish-a-package-using-visual-studio.md) 및 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.
 
 - SDK 스타일이 아닌 프로젝트의 경우에는 이 문서에 설명된 단계에 따라 패키지를 만듭니다.
 
@@ -27,7 +27,7 @@ ms.locfileid: "66812913"
 패키징은 패키지로 전달하려는 컴파일된 코드(어셈블리), 기호 및/또는 기타 파일로 시작됩니다([개요 및 워크플로](overview-and-workflow.md) 참조). 이 프로세스는 프로젝트 파일의 정보에서 끌어오기를 사용하여 컴파일된 어셈블리 및 패키지를 동기화된 상태로 유지할 수 있지만, 패키지에 포함된 파일을 컴파일하거나 생성하는 프로세스와는 관련이 없습니다.
 
 > [!Note]
-> 이 항목은 SDK 스타일이 아닌 프로젝트 즉, 일반적으로 Visual Studio 2017 및 NuGet 4.0+를 사용하는 .NET Core 및 .NET Standard 프로젝트가 아닌 프로젝트에 적용됩니다.
+> 이 항목은 SDK 스타일이 아닌 프로젝트 즉, 일반적으로 Visual Studio 2017 이상 버전 및 NuGet 4.0+를 사용하는 .NET Core 및 .NET Standard 프로젝트가 아닌 프로젝트에 적용됩니다.
 
 ## <a name="deciding-which-assemblies-to-package"></a>패키지할 어셈블리 결정
 
@@ -408,7 +408,7 @@ nuget pack <project-name>.csproj
 
 NuGet은 매니페스트의 자리 표시자 값을 변경하지 않은 경우와 같이 수정이 필요한 오류가 `.nuspec` 파일에 있는지 여부를 나타냅니다.
 
-`nuget pack`이 성공하면 [패키지 게시](../create-packages/publish-a-package.md)에서 설명한 대로 적합한 갤러리에 게시할 수 있는 `.nupkg` 파일이 있습니다.
+`nuget pack`이 성공하면 [패키지 게시](../nuget-org/publish-a-package.md)에서 설명한 대로 적합한 갤러리에 게시할 수 있는 `.nupkg` 파일이 있습니다.
 
 > [!Tip]
 > 패키지를 만든 후 검사하는 유용한 방법은 [패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) 도구에서 해당 패키지를 여는 것입니다. 이렇게 하면 패키지의 내용과 해당 매니페스트를 보여 주는 그래픽 뷰가 제공됩니다. 또한 결과 `.nupkg` 파일의 이름을 `.zip` 파일로 바꾸고 그 내용을 직접 탐색할 수도 있습니다.
@@ -445,7 +445,7 @@ NuGet은 매니페스트의 자리 표시자 값을 변경하지 않은 경우�
 
 일반적으로 패키지를 게시하기 전에 프로젝트에 패키지를 설치하는 프로세스를 테스트하려고 합니다. 테스트를 통해 모든 파일이 프로젝트의 올바른 위치에 있는지 반드시 확인합니다.
 
-일반적인 [패키지 설치 단계](../consume-packages/ways-to-install-a-package.md)를 사용하여 Visual Studio 또는 명령줄에서 수동으로 설치를 테스트할 수 있습니다.
+일반적인 [패키지 설치 단계](../consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package)를 사용하여 Visual Studio 또는 명령줄에서 수동으로 설치를 테스트할 수 있습니다.
 
 자동 테스트의 경우 기본 프로세스는 다음과 같습니다.
 
@@ -456,7 +456,7 @@ NuGet은 매니페스트의 자리 표시자 값을 변경하지 않은 경우�
 
 ## <a name="next-steps"></a>다음 단계
 
-패키지(`.nupkg` 파일)를 만들었으면 [패키지 게시](../create-packages/publish-a-package.md)에서 설명한 대로 원하는 갤러리에 게시할 수 있습니다.
+패키지(`.nupkg` 파일)를 만들었으면 [패키지 게시](../nuget-org/publish-a-package.md)에서 설명한 대로 원하는 갤러리에 게시할 수 있습니다.
 
 다음 항목에서 설명한 대로 패키지의 기능을 확장하거나 그렇지 않고 다른 시나리오를 지원할 수도 있습니다.
 

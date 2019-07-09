@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: c547ae1d46079d040d7c3aa4c7678e70cd199dce
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 4b365488c8dd0e081449552b06451e7b40b5223b
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548015"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426623"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>전역 패키지, 캐시 및 임시 폴더 관리
 
@@ -30,7 +30,7 @@ NuGet은 캐시 및 *global-packages* 폴더를 사용하여 일반적으로 컴
 
 패키지를 검색하라는 요청을 받으면 NuGet은 먼저 *global-packages* 폴더를 찾습니다. 정확한 버전의 패키지가 없는 경우 NuGet은 모든 비 HTTP 패키지 소스를 확인합니다. 그래도 패키지를 못 찾으면 NuGet은 `dotnet.exe` 명령에 `--no-cache` 또는 `nuget.exe` 명령에 `-NoCache`를 지정하지 않은 경우 *http-cache*에서 패키지를 찾습니다. 패키지가 캐시에 없거나 캐시가 사용되지 않는 경우에는 NuGet은 HTTP를 통해 패키지를 검색합니다.
 
-자세한 내용은 [패키지를 설치하면 어떻게 되나요?](ways-to-install-a-package.md#what-happens-when-a-package-is-installed)를 참조하세요.
+자세한 내용은 [패키지를 설치하면 어떻게 되나요?](../concepts/package-installation-process.md)를 참조하세요.
 
 ## <a name="viewing-folder-locations"></a>폴더 위치 보기
 
@@ -100,7 +100,7 @@ nuget locals all -clear
 
 현재 Visual Studio에서 열려 있는 프로젝트에서 사용되는 모든 패키지는 *global-packages* 폴더에서 지워지지 않습니다.
 
-Visual Studio 2017에서 **도구 > NuGet 패키지 관리자 > 패키지 관리자 설정** 메뉴 명령을 사용한 다음, **모든 NuGet 캐시 지우기**를 선택합니다. 캐시 관리는 현재 패키지 관리자 콘솔을 통해 사용할 수 없습니다. Visual Studio 2015에서 CLI 명령을 대신 사용합니다.
+Visual Studio 2017부터 **도구 > NuGet 패키지 관리자 > 패키지 관리자 설정** 메뉴 명령을 사용한 다음, **모든 NuGet 캐시 지우기**를 선택합니다. 캐시 관리는 현재 패키지 관리자 콘솔을 통해 사용할 수 없습니다. Visual Studio 2015에서 CLI 명령을 대신 사용합니다.
 
 ![캐시를 지우기 위한 NuGet 옵션 명령](media/options-clear-caches.png)
 
@@ -108,11 +108,11 @@ Visual Studio 2017에서 **도구 > NuGet 패키지 관리자 > 패키지 관리
 
 `nuget locals` 또는 `dotnet nuget locals`를 사용하는 경우 다음과 같은 오류가 발생할 수 있습니다.
 
-- ‘오류: <package> 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 이 파일에 액세스할 수 없습니다’ 또는 ‘로컬 리소스 지우기 실패: 하나 이상의 파일을 삭제할 수 없습니다’
+- *오류: 이 프로세스는 <package>다른 프로세스에서 사용 중* 또는 *로컬 리소스 지우기 실패: 하나 이상의 파일을 삭제할 수 없음*으로 인해 파일에 액세스할 수 없습니다.
 
     폴더에 있는 하나 이상의 파일이 다른 프로세스에서 사용 중입니다. 예를 들어 *global-packages* 폴더의 패키지를 참조하는 Visual Studio 프로젝트가 열려 있습니다. 해당 프로세스를 닫고 다시 시도합니다.
 
-- *오류: <path> 경로에 대한 액세스가 거부되었습니다’ 또는 ‘디렉터리가 비어 있지 않습니다’*
+- *오류: <path> 경로에 대한 액세스가 거부되었습니다* 또는 *디렉터리가 비어 있지 않습니다*.
 
     캐시에서 파일을 삭제할 수 있는 권한이 없습니다. 가능한 경우 폴더 권한을 변경하고 다시 시도합니다. 또는 시스템 관리자에게 문의하세요.
 

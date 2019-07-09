@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: dfbd6a3e6d59dfcea6394891703ea66bce5e8e92
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 522dbbb2a39eb1cb6f0d23f39a48158b07c9076d
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580276"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426849"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>NuGet 패키지인 UI 컨트롤 만들기
 
-Visual Studio 2017에서 NuGet 패키지에서 제공하는 UWP 및 WPF 컨트롤에 추가된 기능을 활용할 수 있습니다. 이 가이드는 [ExtensionSDKasNuGetPackage 샘플](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)을 사용하여 UWP 컨트롤의 컨텍스트에서 이러한 기능을 설명합니다. 달리 언급하지 않는 한 WPF 컨트롤에도 동일한 내용이 적용됩니다.
+Visual Studio 2017부터 NuGet 패키지에서 제공하는 UWP 및 WPF 컨트롤에 추가된 기능을 활용할 수 있습니다. 이 가이드는 [ExtensionSDKasNuGetPackage 샘플](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)을 사용하여 UWP 컨트롤의 컨텍스트에서 이러한 기능을 설명합니다. 달리 언급하지 않는 한 WPF 컨트롤에도 동일한 내용이 적용됩니다.
 
 ## <a name="prerequisites"></a>전제 조건
 

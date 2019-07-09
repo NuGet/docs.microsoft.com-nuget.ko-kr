@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 45d8a6557ee02998f3d12b128ee2dc4fd6ae48bb
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: f05c3a7a51bdc0760097422004cfc4339bf9ee2c
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145594"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426601"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>사용자 고유의 NuGet 피드 호스팅
 
@@ -28,6 +28,7 @@ NuGet은 이러한 모든 용도에서 다음과 같은 방법으로 개인 패�
 - [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish): Team Foundation Server 2017 이상에서도 사용할 수 있습니다.
 - [MyGet](http://myget.org)
 - Inedo의 [ProGet](http://inedo.com/proget)
+- [GitHub 패키지 레지스트리](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [NuGet 서버](http://nugetserver.net/), Inedo의 커뮤니티 프로젝트
 - [NuGet 서버(오픈 소스)](http://nuget-server.net), Inedo의 NuGet 서버와 비슷한 오픈 소스 구현
 - [LiGet](https://github.com/ai-traders/liget), Docker의 kestrel에서 실행되는 NuGet V2 서버의 오픈 소스 구현

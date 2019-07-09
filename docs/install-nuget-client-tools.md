@@ -3,24 +3,24 @@ title: NuGet 클라이언트 도구 설치
 description: 클라이언트 도구, dotnet 및 nuget CLI(명령줄 인터페이스) 및 Visual Studio용 패키지 관리자 설치에 대한 지침입니다.
 author: karann-msft
 ms.author: karann
-ms.date: 05/24/2019
+ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: 4336377ee90f2187234c0f637620c5fac1f05fb1
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: 6e3011493b7b89bc43cd9a267aea7fd32d668cec
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812848"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426567"
 ---
-# <a name="installing-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
+# <a name="install-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
 
-> **패키지 설치를 원하십니까? [NuGet 패키지를 설치하는 방법](consume-packages/ways-to-install-a-package.md)을 참조하세요.**
+> **패키지 설치를 원하십니까? [NuGet 패키지를 설치하는 방법](consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package)을 참조하세요.**
 
 NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 CLI(명령줄 인터페이스) 도구와 Visual Studio의 NuGet 기능을 사용할 수 있습니다. 이 문서에서는 다양한 도구의 기능, 설치 방법 및 비교 [기능 가용성](#feature-availability)에 대해 간략하게 설명합니다. NuGet으로 패키지 사용을 시작하려면 [패키지 설치 및 사용(.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) 및 [패키지 설치 및 사용(Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)을 참조하세요. NuGet 패키지를 만들기 시작하려면 [NET Standard 패키지 만들기 및 게시(dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) 및 [NET Standard 패키지 만들기 및 게시(Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)를 참조하세요.
 
 | 도구&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 설명 | 다운로드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
-| [dotnet.exe](#dotnetexe-cli) | .NET Core 및 .NET Standard 라이브러리와 .NET Framework를 대상으로 하는 SDK 스타일 프로젝트를 위한 CLI 도구입니다([SDK 특성](/dotnet/core/tools/csproj#additions) 참조). .NET Core SDK에 포함되며 모든 플랫폼에서 핵심 NuGet 기능을 제공합니다. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
+| [dotnet.exe](#dotnetexe-cli) | .NET Core 및 .NET Standard 라이브러리와 .NET Framework를 대상으로 하는 것과 같은 SDK 스타일 프로젝트를 위한 CLI 도구입니다([SDK 특성](/dotnet/core/tools/csproj#additions) 참조). .NET Core SDK에 포함되며 모든 플랫폼에서 핵심 NuGet 기능을 제공합니다. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
 | [nuget.exe](#nugetexe-cli) | .NET Framework 라이브러리와 .NET Standard 라이브러리를 대상으로 하는 SDK 스타일이 아닌 프로젝트를 위한 CLI 도구입니다. Windows에서 모든 NuGet 기능을 제공하며 Mono로 실행 중일 경우 Mac 및 Linux에서 대부분의 기능을 제공합니다. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | Windows에서 패키지 관리자 UI 및 패키지 관리자 콘솔을 통해 NuGet 기능을 제공합니다(.NET 관련 워크로드와 함께 포함). Mac에서는 UI를 통해 특정 기능을 제공합니다. Visual Studio Code에서 NuGet 기능은 확장을 통해 제공됩니다. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
@@ -31,7 +31,7 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 CLI(명�
 두 NuGet CLI 도구는 `dotnet.exe` 및 `nuget.exe`입니다. 이 둘을 비교하려면 [기능 가용성](#feature-availability)을 참조하세요.
 
 * .NET Core 또는 .NET Standard를 대상으로 하려면 dotnet CLI를 사용합니다. dotnet CLI는 [SDK 특성](/dotnet/core/tools/csproj#additions)을 사용하는 SDK 스타일 프로젝트 형식에 필요합니다.
-* 프로젝트에서 .NET Framework를 대상으로 하려면 `nuget.exe CLI`를 사용합니다.
+* .NET Framework(SDK 스타일이 아닌 프로젝트에만 해당)를 대상으로 하려면 `nuget.exe CLI`를 사용합니다. 프로젝트가 `packages.config`로 마이그레이션된 경우 dotnet CLI를 사용합니다.
 
 ### <a name="dotnetexe-cli"></a>dotnet.exe CLI
 
@@ -42,11 +42,11 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 CLI(명�
 - 개발자 컴퓨터에서 [.NET Core SDK](https://aka.ms/dotnetcoregs)를 설치합니다.
 - 빌드 서버의 경우 [지속적인 통합에 .NET Core SDK 및 도구 사용](/dotnet/core/tools/using-ci-with-cli)에 대한 지침을 따르세요.
 
-자세한 내용은 [.NET Core 명령줄 인터페이스 도구](/dotnet/core/tools/index?tabs=netcore2x#tabpanel_fXL5YCOYDa_netcore2x)를 참조하세요.
+dotnet CLI에서 기본 명령을 사용하는 방법에 대한 자세한 내용은 [dotnet CLI를 사용하여 패키지 설치 및 사용](consume-packages/install-use-packages-dotnet-cli.md)을 참조하세요.
 
 ### <a name="nugetexe-cli"></a>nuget.exe CLI
 
-NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령줄 유틸리티입니다. 약간의 제한이 있지만 [Mono](http://www.mono-project.com/docs/getting-started/install/)를 사용하여 Mac OSX 및 Linux에서 실행할 수도 있습니다. `dotnet`과 달리 `nuget.exe` CLI는 프로젝트 파일에 영향을 주지 않으며 패키지를 설치할 때 `packages.config`를 업데이트하지 않습니다.
+`nuget.exe` CLI인 `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령줄 유틸리티입니다. 약간의 제한이 있지만 [Mono](http://www.mono-project.com/docs/getting-started/install/)를 사용하여 Mac OSX 및 Linux에서 실행할 수도 있습니다.
 
 설치:
 
@@ -54,6 +54,8 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 
 > [!Tip]
 > Windows에서 `nuget update -self`를 사용하여 기존 nuget.exe를 최신 버전으로 업데이트합니다.
+
+`nuget.exe` CLI에서 기본 명령을 사용하는 방법에 대한 자세한 내용은 [nuget.exe CLI를 사용하여 패키지 설치 및 사용](consume-packages/install-use-packages-nuget-cli.md)을 참조하세요.
 
 > [!Note]
 > 최신 권장 NuGet CLI는 항상 `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`에서 사용할 수 있습니다. 이전의 지속적인 통합(CI) 시스템과 호환되도록 이전 URL `https://nuget.org/nuget.exe`에서 현재 [사용되지 않는 2.8.6 CLI 도구](https://github.com/NuGet/NuGetGallery/issues/5381)를 제공합니다.
@@ -64,8 +66,8 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 
 - Mac용 Visual Studio: 특정 NuGet 기능이 직접 기본 제공됩니다. 연습은 [프로젝트에 NuGet 패키지 포함](/visualstudio/mac/nuget-walkthrough)을 참조하세요. 기타 기능의 경우 `dotnet.exe` 또는 `nuget.exe` CLI 도구를 사용합니다.
 
-- Windows의 Visual Studio: **NuGet 패키지 관리자**는 Visual Studio 2012 이상 버전에 포함됩니다. 패키지 관리자는 대부분의 NuGet 작업을 실행할 수 있는 [패키지 관리자 UI](tools/package-manager-ui.md) 및 [패키지 관리자 콘솔](tools/package-manager-console.md)을 제공합니다.
-  - Visual Studio 2017 설치 관리자에는 .NET을 사용하는 모든 워크로드가 있는 NuGet 패키지 관리자가 포함되어 있습니다. 별도로 설치하거나 패키지 관리자가 설치되어 있는지 확인하려면 Visual Studio 2017 설치 관리자를 실행하고 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** 아래에서 옵션을 확인합니다.
+- Windows의 Visual Studio: **NuGet 패키지 관리자**는 Visual Studio 2012 이상 버전에 포함됩니다. Visual Studio는 대부분의 NuGet 작업을 실행할 수 있는 [패키지 관리자 UI](tools/package-manager-ui.md) 및 [패키지 관리자 콘솔](tools/package-manager-console.md)을 제공합니다.
+  - Visual Studio 2017부터 설치 관리자에는 .NET을 사용하는 모든 워크로드가 있는 NuGet 패키지 관리자가 포함되어 있습니다. 별도로 설치하거나 패키지 관리자가 설치되어 있는지 확인하려면 Visual Studio 설치 관리자를 실행하고 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** 아래에서 옵션을 확인합니다.
   - 패키지 관리자 UI 및 콘솔은 Windows의 Visual Studio에만 있습니다. 현재 Mac용 Visual Studio에서는 사용할 수 없습니다.
   - CLI 도구는 IDE에서 NuGet 기능을 지원하는 데 필요합니다. `dotnet` CLI 또는 `nuget.exe` CLI를 사용할 수 있습니다. `dotnet` CLI는 .NET Core와 같은 Visual Studio 워크로드와 함께 설치됩니다. `nuget.exe` CLI는 앞에서 설명한 대로 별도로 설치해야 합니다.
   - 패키지 관리자 콘솔 명령은 Windows의 Visual Studio 내에서만 작동하며 다른 PowerShell 환경에서는 작동하지 않습니다.
@@ -100,12 +102,12 @@ NuGet CLI `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령�
 
 ### <a name="related-topics"></a>관련 항목
 
-- [dotnet 명령](tools/dotnet-commands.md)
-- [NuGet CLI 참조](tools/nuget-exe-cli-reference.md)
-- [패키지 관리자 UI 참조](tools/package-manager-ui.md)
-- [패키지 관리자 콘솔 참조](tools/package-manager-console.md)
+- [Visual Studio를 사용하여 패키지 설치 및 관리](tools/package-manager-ui.md)
+- [PowerShell을 사용하여 패키지 설치 및 관리](tools/package-manager-console.md)
+- [dotnet CLI를 사용하여 패키지 설치 및 관리](consume-packages/install-use-packages-dotnet-cli.md)
+- [nuget.exe CLI를 사용하여 패키지 설치 및 관리](consume-packages/install-use-packages-nuget-cli.md)
 - [패키지 관리자 콘솔 PowerShell 참조](tools/powershell-reference.md)
 - [패키지 만들기](create-packages/creating-a-package.md)
-- [패키지 게시](create-packages/publish-a-package.md)
+- [패키지 게시](nuget-org/publish-a-package.md)
 
 Windows에서 작업하는 개발자는 NuGet 패키지를 시각적으로 탐색, 생성 및 편집할 수 있는 오픈 소스 독립 실행형 도구인 [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)를 탐색할 수도 있습니다. 예를 들어 패키지를 다시 빌드할 필요 없이 패키지 구조를 실험적으로 변경하는 것이 매우 유용합니다.

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: c86a07c30631b7ee99526b014ac9c3b9f136aa81
-ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
+ms.openlocfilehash: 8cd7529c4a1ecf659abde03fb1632e26431aebf3
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671190"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426745"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>프로젝트에 대한 NuGet 패키지 찾기 및 평가
 
@@ -54,7 +54,7 @@ nuget.org를 방문하거나 Visual Studio에서 패키지 관리자 UI를 열�
 
 Visual Studio에서 NuGet 및 dotnet CLI 도구를 사용하는 경우 NuGet은 기본적으로 시험판 버전을 포함하지 않습니다. 이 동작을 변경하려면 다음 단계를 수행합니다.
 
-- **Visual Studio의 패키지 관리자 UI**: **NuGet 패키지 관리** UI에서 **시험판 포함** 확인란을 설정합니다. 이 확인란을 설정 또는 해제하면 패키지 관리자 UI 및 설치할 수 있는 사용 가능한 버전 목록을 새로 고칩니다.
+- **패키지 관리자 UI(Visual Studio)** : **NuGet 패키지 관리** UI에서 **시험판 포함** 확인란을 설정합니다. 이 확인란을 설정 또는 해제하면 패키지 관리자 UI 및 설치할 수 있는 사용 가능한 버전 목록을 새로 고칩니다.
 
     ![Visual Studio의 시험판 포함 확인란](media/Prerelease_02-CheckPrerelease.png)
 
@@ -96,13 +96,13 @@ NuGet은 Visual Studio의 C++ 프로젝트에서 사용할 수 있는 네이티�
 
 - *소유자 인터뷰*: 사용자가 사용할 수 있는 훌륭한 패키지를 만드는 데 새 개발자도 동등하게 헌신할 수 있으며, NuGet 생태계에 새로운 것을 가져올 수 있는 기회를 제공하는 것이 좋습니다. 이를 고려하여, 목록 페이지의 **정보** 아래에 있는 **연락처 소유자** 옵션을 통해 패키지 개발자에게 직접 문의해 보세요. 아마, 이들은 여러분의 요구에 부응하기 위해 여러분과 함께 기꺼이 협력할 것입니다!
 
-- *예약된 패키지 ID 접두사*: 많은 패키지 소유자가 [예약된 패키지 ID 접두사](../reference/id-prefix-reservation.md)에 지원했으며 허가되었습니다. [nuget.org](https://www.nuget.org/) 또는 Visual Studio에서 패키지 ID 옆에 있는 시각적 개체 확인 표시가 나타나면 패키지 소유자가 ID 접두사 예약에 대한 [조건](../reference/id-prefix-reservation.md#id-prefix-reservation-criteria)을 충족한다는 의미입니다. 즉, 패키지 소유자가 자체 및 해당 패키지를 식별하기에 명확합니다.
+- *예약된 패키지 ID 접두사*: 많은 패키지 소유자가 [예약된 패키지 ID 접두사](../nuget-org/id-prefix-reservation.md)에 지원했으며 허가되었습니다. [nuget.org](https://www.nuget.org/) 또는 Visual Studio에서 패키지 ID 옆에 있는 시각적 개체 확인 표시가 나타나면 패키지 소유자가 ID 접두사 예약에 대한 [조건](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria)을 충족한다는 의미입니다. 즉, 패키지 소유자가 자체 및 해당 패키지를 식별하기에 명확합니다.
 
 > [!Note]
 > nuget.org의 패키지 목록 페이지에서 **라이선스 정보**를 선택하면 볼 수 있는 패키지의 사용 조건에 항상 유의해야 합니다. 패키지에서 사용 조건을 지정하지 않은 경우 패키지 페이지의 **연락처 소유자** 링크를 사용하여 패키지 소유자에게 직접 문의해 보세요. Microsoft는 타사 패키지 공급자로부터 사용자에게 지적 재산권을 부여하지 않으며 타사에서 제공한 정보에 대해 책임을 지지 않습니다.
 
 ## <a name="license-url-deprecation"></a>라이선스 URL 사용 중단
-[licenseUrl](../reference/nuspec#licenseurl)에서 [license](../reference/nuspec#license)로 전환하면서 일부 NuGet 클라이언트 및 NuGet 피드에 몇몇 경우에 라이선싱 정보를 표시하는 기능이 아직 없을 수 있습니다. 이전 버전과의 호환성을 유지하기 위해 라이선스 URL은 그러한 경우 라이선스 정보를 검색하는 방법을 설명하는 이 문서를 가리킵니다.
+[licenseUrl](../reference/nuspec.md#licenseurl)에서 [license](../reference/nuspec.md#license)로 전환하면서 일부 NuGet 클라이언트 및 NuGet 피드에 몇몇 경우에 라이선싱 정보를 표시하는 기능이 아직 없을 수 있습니다. 이전 버전과의 호환성을 유지하기 위해 라이선스 URL은 그러한 경우 라이선스 정보를 검색하는 방법을 설명하는 이 문서를 가리킵니다.
 
 이 페이지로 연결되는 패키지에 대한 라이선스 URL을 클릭하면 패키지에 라이선스 파일이 포함됨을 의미하며
 * 새 라이선스 정보를 해석하고 클라이언트에 표시하는 방법을 아직 모르는 피드에 연결됩니다. **또는**
@@ -121,8 +121,8 @@ NuGet은 Visual Studio의 C++ 프로젝트에서 사용할 수 있는 네이티�
 NuGet 패키지 검색은 nuget.org, NuGet CLI 및 Visual Studio의 NuGet 패키지 관리자 확장에서 동일하게 작동합니다. 일반적으로 검색은 패키지 설명뿐만 아니라 키워드에도 적용됩니다.
 
 - **키워드**: 제공된 모든 키워드를 포함하는 관련 패키지를 찾습니다. 예를 들어, `modern UI` 같은 형식입니다. 제공된 모든 키워드를 포함하는 패키지를 검색하려면 `modern+UI`와 같은 용어 사이에 "+"를 사용합니다.
-- **구**: 인용 부호 안에 검색어를 입력하면 해당 용어와 대/소문자를 구분하지 않는 정확한 일치를 찾습니다. 예: `"modern UI" package`
-- **필터링**: `<property>:<term>` 구문을 사용하여 특정 속성에 검색어를 적용할 수 있습니다. 여기서 `<property>`(대/소문자 구분 안 함)은 `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` 및 `owner`일 수 있습니다. 필요에 따라 용어를 따옴표로 묶어 여러 속성을 동시에 검색할 수 있습니다. 또한 `id` 속성에 대한 검색은 부분 문자열 일치이지만, `packageid`는 정확히 일치 항목을 사용합니다. 예를 들면 다음과 같습니다.
+- **Phrases**: 인용 부호 안에 검색어를 입력하면 해당 용어와 대/소문자를 구분하지 않는 정확한 일치를 찾습니다. 예: `"modern UI" package`
+- **필터링**: `<property>:<term>` 구문을 사용하여 특정 속성에 검색어를 적용할 수 있습니다. 여기서 `<property>`(대/소문자 구분 안 함)은 `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` 및 `owner`일 수 있습니다. 필요에 따라 용어를 따옴표로 묶어 여러 속성을 동시에 검색할 수 있습니다. 또한 `id` 속성에 대한 검색은 부분 문자열 일치이지만, `packageid`는 정확히 일치 항목을 사용합니다. 예:
 
     ```
     id:NuGet.Core                # Match any part of the id property
