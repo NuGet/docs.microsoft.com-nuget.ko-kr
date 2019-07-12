@@ -1,5 +1,5 @@
 ---
-title: 설치 하 고 PowerShell을 사용 하 여 Visual Studio에서 NuGet 패키지 관리
+title: 설치 하 고 콘솔을 사용 하 여 Visual Studio에서 NuGet 패키지 관리
 description: Visual Studio에서 NuGet 패키지 관리자 콘솔을 사용 하 여 패키지를 사용 하 여 작업에 대 한 지침입니다.
 author: karann-msft
 ms.author: karann
@@ -7,14 +7,14 @@ ms.date: 06/24/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 11ec25598d3110ba84dec5044642e205e13346af
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 91ab3859994e5ae738c6637219681ebbfc92d420
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426212"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842591"
 ---
-# <a name="install-and-manage-packages-using-powershell-in-visual-studio"></a>설치 하 고 PowerShell을 사용 하 여 Visual Studio에서 패키지를 관리 합니다.
+# <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>설치 하 고 Visual Studio (PowerShell)에서 패키지 관리자 콘솔을 사용 하 여 패키지를 관리
 
 NuGet 패키지 관리자 콘솔에서 사용할 수 있습니다 [NuGet PowerShell 명령을](../tools/powershell-reference.md) 를 찾으려면 설치, 제거 및 NuGet 패키지를 업데이트 합니다. 콘솔을 사용 하는 패키지 관리자 UI 작업을 수행 하는 방법을 제공 하지 않는 경우에 필요 합니다. 사용 하도록 `nuget.exe` 콘솔에서 CLI 명령 참조 [콘솔에서 nuget.exe CLI를 사용 하 여](#using-the-nugetexe-cli-in-the-console)입니다.
 

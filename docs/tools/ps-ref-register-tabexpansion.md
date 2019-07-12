@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 98171c598bd4a3468bd23e2d6060e267c38021b4
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 8adb80af85e2e32fa8c35e5272cf90ff0c0ddcbb
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546607"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842492"
 ---
 # <a name="register-tabexpansion-package-manager-console-in-visual-studio"></a>등록 키를 누른 채 TabExpansion (Visual Studio에서 패키지 관리자 콘솔)
 
-*내 에서만 사용 가능 합니다 [NuGet 패키지 관리자 콘솔](package-manager-console.md) Windows의 Visual Studio에서 합니다.*
+*내 에서만 사용 가능 합니다 [패키지 관리자 콘솔](package-manager-console.md) Windows의 Visual Studio에서 합니다.*
 
 명령을 입력 하는 경우 탭을 사용 하면 해당 매개 변수에 대해 사용 가능한 옵션으로 확장된 값이 표시 되도록 지정 된 명령의 매개 변수에 대해 탭 확장을 등록 합니다. 명령에 대 한 모든 이전 확장을 덮어씁니다.
 
@@ -35,9 +35,9 @@ Register-TabExpansion [-Name] <String> [-Definition] <Object> [<CommonParameters
 
 ## <a name="common-parameters"></a>일반 매개 변수
 
-`Register-TabExpansion` 다음을 지원 합니다 [일반적인 PowerShell 매개 변수](http://go.microsoft.com/fwlink/?LinkID=113216): 디버그, 오류 동작, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, 자세한 정보 표시, WarningAction, WarningVariable.
+`Register-TabExpansion` 다음을 지원 합니다 [일반적인 PowerShell 매개 변수](http://go.microsoft.com/fwlink/?LinkID=113216): 디버그, 오류 동작, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction 및 WarningVariable.
 
-## <a name="examples"></a>예제
+## <a name="examples"></a>예
 
 프로젝트 이름 EventManager, 유틸리티 및 SpecialParser 3 개를 포함 하는 솔루션을 고려 합니다. 개발자가 자주 사용 하는 `Update-Package` 각 해당 프로젝트를 사용 하 여 서로 다른 시간에 명령 합니다. 있으면 편리 찾습니다 그녀는 `Update-Package` 명령에 대 한 자동 완성 확장을 제공 합니다 `-ProjectName` 인수 그녀 때마다 프로젝트 이름을 입력할 필요가 없도록 합니다. 
 

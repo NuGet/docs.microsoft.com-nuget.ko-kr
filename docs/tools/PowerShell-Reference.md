@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 977e06d36962366abd69f1c7f21ef33eca4e5029
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 425ba736eba4609ebd6b5185ae3f1f976ab07a67
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426120"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842559"
 ---
 # <a name="powershell-reference"></a>PowerShell 참조
 
-패키지 관리자 콘솔에는 아래에 나열 된 특정 명령을 통해 NuGet을 사용 하 여 상호 작용 하는 Windows에서 Visual Studio 내에서 PowerShell 인터페이스를 제공 합니다. (콘솔은 현재 mac 용 Visual Studio에서 사용할 수 있습니다.) 콘솔을 사용 하 여 지침을 참조 하세요 [설치 하 고 PowerShell을 사용 하 여 패키지를 관리할](../tools/package-manager-console.md) 항목입니다.
+패키지 관리자 콘솔에는 아래에 나열 된 특정 명령을 통해 NuGet을 사용 하 여 상호 작용 하는 Windows에서 Visual Studio 내에서 PowerShell 인터페이스를 제공 합니다. (콘솔은 현재 mac 용 Visual Studio에서 사용할 수 있습니다.) 콘솔을 사용 하 여 지침을 참조 하세요 [설치 패키지 관리자 콘솔을 사용 하 여 패키지를 관리 하 고](../tools/package-manager-console.md) 항목입니다.
 
 > [!Tip]
 > 모든 PowerShell 명령 패키지 소비만 관련이 있습니다. PowerShell 명령을 패키지 만들기 및 게시 제외 하는 패키지는 다른 패키지의 소비자를 수도 있습니다와 관련이 있습니다.
@@ -22,7 +22,7 @@ ms.locfileid: "67426120"
 > [!Important]
 > 여기에 나열 된 명령을 Visual Studio에서 패키지 관리자 콘솔에 관련이 있으며 다 합니다 [패키지 관리 모듈 명령을](/powershell/module/packagemanagement/?view=powershell-6) 일반 PowerShell 환경에서 사용할 수 있는 합니다. 특히 각 환경에 다른 사용할 수 없는 명령 및 동일한 이름 사용 하 여 명령을 해당 특정 인수에도 달라질 수 있습니다. Visual Studio에서 패키지 관리 콘솔을 사용 하는 경우 명령과이 있는 항목에 설명 된 인수를 적용 합니다.
 
-| 일반적인 명령 | 설명 | NuGet 버전 |
+| 일반적인 명령 | Description | NuGet 버전 |
 | --- | --- | --- |
 | [Install-Package](ps-ref-install-package.md) | 프로젝트에 패키지 및 해당 종속성을 설치합니다. | 모두 |
 | [Update-Package](ps-ref-update-package.md) | 프로젝트의 모든 패키지 및 해당 종속성 또는 패키지를 업데이트합니다. | 모두 |
