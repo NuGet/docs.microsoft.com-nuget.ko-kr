@@ -15,7 +15,7 @@
 ### [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
 ### [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md)
-### [PowerShell](tools/package-manager-console.md)
+### [패키지 관리자 콘솔(PowerShell)](tools/package-manager-console.md)
 ## NuGet 구성
 ### 패키지 복원 옵션
 #### [복원 옵션](consume-packages/package-restore.md)
@@ -31,21 +31,23 @@
 ### [packages.config](reference/packages-config.md)
 # 패키지 만들기
 ## [개요 및 워크플로](create-packages/overview-and-workflow.md)
-## [패키지 만들기 - nuget.exe CLI](create-packages/creating-a-package.md)
+## [패키지 만들기](create-packages/creating-a-package.md)
 ## [MSBuild를 사용하여 패키지 만들기](reference/msbuild-targets.md)
 ## [여러 대상 프레임워크 지원](create-packages/supporting-multiple-target-frameworks.md)
 ## [시험판 패키지 빌드](create-packages/prerelease-packages.md)
 ## [기호 패키지 만들기](create-packages/symbol-packages-snupkg.md)
 ## 고급 작업
 ### [소스 코드 및 구성 파일 수정](create-packages/source-and-config-file-transformations.md)
-### [지역화된 패키지 만들기](create-packages/creating-localized-packages.md)
 ### [프로젝트에서 참조하는 어셈블리 선택](create-packages/select-assemblies-referenced-by-projects.md)
+### [패키지 형식 설정](create-packages/set-package-type.md)
+### [지역화된 패키지 만들기](create-packages/creating-localized-packages.md)
 ## 특정 콘텐츠용 가이드
 ### [UWP 패키지 만들기](guides/create-uwp-packages.md)
 ### [네이티브 패키지 만들기](create-packages/native-packages.md)
 ### [NuGet 패키지로 UI 컨트롤 만들기](guides/create-UI-controls.md)
 ### [NuGet 패키지로 분석기 만들기](reference/analyzers-conventions.md)
 ### [Visual Studio 2015를 사용하여 Xamarin용 패키지 만들기](guides/create-packages-for-xamarin.md)
+### [COM interop 어셈블리가 포함된 패키지 만들기](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## 서명 패키지
 ### [패키지 서명](create-packages/sign-a-package.md)
 ### [서명된 패키지 서명 및 요구 사항](reference/signed-packages-reference.md)
@@ -335,4 +337,5 @@
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
 ## [FAQ](faqs/nuget-faq.md)
+## [프로젝트 형식](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
