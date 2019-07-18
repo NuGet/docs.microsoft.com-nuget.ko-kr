@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 1060d98278fed89ac63ee17c1896ae8bdce72a9e
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 0d637c441cf9f36e8e3e04e47b524b2defecae52
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426161"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67841662"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>빠른 시작: dotnet CLI를 사용하여 패키지 설치 및 사용
 
@@ -23,7 +23,7 @@ NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 �
 
 ## <a name="prerequisites"></a>전제 조건
 
-- `dotnet` 명령줄 도구를 제공하는 [.NET Core SDK](https://www.microsoft.com/net/download/).
+- `dotnet` 명령줄 도구를 제공하는 [.NET Core SDK](https://www.microsoft.com/net/download/). Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.
 
 ## <a name="create-a-project"></a>프로젝트 만들기
 

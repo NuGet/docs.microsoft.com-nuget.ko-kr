@@ -16,12 +16,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 0d82cf8614b88247bc3a3ba3019c11bf1b5e2593
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 9f9cdd188cf2ec678bc9047604e618f1af9124ae
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426797"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842460"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -54,7 +54,7 @@ dotnet.exe 또는 MSBuild를 사용하는 경우 다음 단계에 따라 .nupkg 
 
 1. `dotnet pack MyPackage.csproj` 또는 `msbuild -t:pack MyPackage.csproj`로 프로젝트를 압축합니다.
 
-[`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) 속성을 지정하지 않으면 레거시 기호 패키지가 생성됩니다.
+[`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) 속성을 지정하지 않으면 레거시 기호 패키지가 생성됩니다.
 
 > [!Note]
 > 레거시 형식 `.symbols.nupkg`는 여전히 호환성 문제에서만 지원됩니다([레거시 기호 패키지](Symbol-Packages.md) 참조). NuGet.org의 기호 서버는 새 기호 패키지 형식(`.snupkg`)만 허용합니다.

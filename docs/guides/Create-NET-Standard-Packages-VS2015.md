@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: af0c42853a9e407557a010ff2793406499b4b2ef
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 1198a781543e581f55740cc0ae5a212d3f8a8b61
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426875"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842448"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework 패키지 만들기
 
@@ -68,7 +68,7 @@ ms.locfileid: "67426875"
     nuget spec
     ```
 
-1. 편집기에서 `AppLogger.nuspec`을 열고 YOUR_NAME을 적절한 값으로 바꿔 다음과 일치하도록 업데이트합니다. 특히 `<id>` 값은 nuget.org 전체에서 고유해야 합니다([패키지 만들기](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)에서 설명한 명명 규칙 참조). 또한 작성자 및 설명 태그도 업데이트해야 합니다. 그렇지 않으면 압축 단계에서 오류가 발생합니다.
+1. 편집기에서 `AppLogger.nuspec`을 열고 YOUR_NAME을 적절한 값으로 바꿔 다음과 일치하도록 업데이트합니다. 특히 `<id>` 값은 nuget.org 전체에서 고유해야 합니다([패키지 만들기](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)에서 설명한 명명 규칙 참조). 또한 작성자 및 설명 태그도 업데이트해야 합니다. 그렇지 않으면 압축 단계에서 오류가 발생합니다.
 
     ```xml
     <?xml version="1.0"?>
@@ -163,11 +163,11 @@ nuget pack AppLogger.nuspec
 
 `pack`에는 Mac OS X에서 Mono 4.4.2가 필요하며, Linux 시스템에서는 작동하지 않습니다. 또한 Mac에서는 `.nuspec` 파일의 Windows 경로 이름을 Unix 스타일 경로로 변환해야 합니다.
 
-## <a name="related-topics"></a>관련 항목
+## <a name="related-topics"></a>관련된 항목
 
 - [.nuspec 참조](../reference/nuspec.md)
 - [여러 .NET Framework 버전 지원](../create-packages/supporting-multiple-target-frameworks.md)
-- [패키지에 MSBuild props 및 targets 포함](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
+- [패키지에 MSBuild props 및 targets 포함](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)
 - [기호 패키지](../create-packages/symbol-packages.md)
 - [패키지 버전 관리](../reference/package-versioning.md)
