@@ -1,71 +1,71 @@
 ---
 title: NuGet 2.7 릴리스 정보
-description: 알려진된 문제, 버그 수정, 추가 된 기능 및 Dcr 포함 하 여 NuGet 2.7 릴리스 정보입니다.
+description: 알려진 문제, 버그 수정, 추가 된 기능 및 Ecrs를 비롯 한 NuGet 2.7에 대 한 릴리스 정보입니다.
 author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 97d3e5f0238fd6947a54e5eb3229b89b6746f18c
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: f26ac80046ec321ce5bdbf2bac23c0e1939cd69a
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550967"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317076"
 ---
 # <a name="nuget-27-release-notes"></a>NuGet 2.7 릴리스 정보
 
-[WebMatrix 릴리스 정보에 대 한 NuGet 2.6.1](../release-notes/nuget-2.6.1-for-webmatrix.md) | [NuGet 2.7.1 릴리스 정보](../release-notes/nuget-2.7.1.md)
+[WebMatrix 용 nuget 2.6.1 릴리스 정보](../release-notes/nuget-2.6.1-for-webmatrix.md) | [nuget 2.7.1 릴리스 정보](../release-notes/nuget-2.7.1.md)
 
 NuGet 2.7은 2013 년 8 월 22 일에 출시 되었습니다.
 
 ## <a name="acknowledgements"></a>감사의 글
 
-NuGet 2.7에 대 한 중요 한 기여에 대 한 다음 외부 참가자를 감사 하려고 합니다.
+NuGet 2.7에 대 한 중요 한 기여에 대해 다음과 같은 외부 참가자에 게 감사 하려고 합니다.
 
 1. [Mike Roth](http://www.codeplex.com/site/users/view/mxrss) ([@mxrss](https://twitter.com/mxrss))
-    - 패키지를 나열 하는 자세한 정도 자세히 설명 되어 라이선스 url을 표시 합니다.
+    - 패키지 나열 및 자세한 정도를 자세히 설명 하는 경우 라이선스 url을 표시 합니다.
 2. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
-    - [#1956](http://nuget.codeplex.com/workitem/1956) -developmentDependency 특성을 추가 `packages.config` 만 런타임 패키지를 포함 하도록 pack 명령 사용
+    - [#1956](http://nuget.codeplex.com/workitem/1956) -developmentDependency 특성을에 `packages.config` 추가 하 고 pack 명령에 사용 하 여 런타임 패키지만 포함 합니다.
 3. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
-    - Nuget.exe pack 명령에서 중복 속성 키를 방지 합니다.
-4. [Ben Phegan](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
-    - [#2610](http://nuget.codeplex.com/workitem/2610) -200 컴퓨터 캐시 크기를 늘립니다.
+    - Nuget.exe pack 명령에서 중복 된 속성 키를 사용 하지 마십시오.
+4. [이혜준 Phegan](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
+    - [#2610](http://nuget.codeplex.com/workitem/2610) -컴퓨터 캐시 크기를 200로 늘립니다.
 5. [Slava Trenogin](http://www.codeplex.com/site/users/view/derigel) ([@derigel](https://twitter.com/derigel))
-    - [#3217](http://nuget.codeplex.com/workitem/3217) -잘못 된 탭에서 업데이트를 표시 하는 NuGet 수정 대화 상자
-    - 수정 Project.TargetFramework 프로젝트 관리자에서 null 일 수 있습니다.
-    - [#3248](http://nuget.codeplex.com/workitem/3248) -해결 SharedPackageRepository FindPackage/FindPackagesById 존재 하지 않는 packageId에서 실패
+    - [#3217](http://nuget.codeplex.com/workitem/3217) -잘못 된 탭의 업데이트를 표시 하는 NuGet 대화 상자 수정
+    - 프로젝트를 수정 합니다. ProjectManager에서 TargetFramework가 null 일 수 있습니다.
+    - [#3248](http://nuget.codeplex.com/workitem/3248) -SharedPackageRepository findpackage/FindPackagesById는 존재 하지 않는 packageId에서 실패 합니다.
 6. [Kevin Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
-    - [#3234](http://nuget.codeplex.com/workitem/3234) -이주 단계 프로젝트에 대 한 지원을 사용 하도록 설정
+    - [#3234](http://nuget.codeplex.com/workitem/3234) -Nomad 프로젝트에 대 한 지원 사용
 7. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
-    - [#3252](http://nuget.codeplex.com/workitem/3252) -파일이 존재 하지 않으면 하는 경우 수정 밀어넣기 명령이 실패 종료 코드 0.
+    - [#3252](http://nuget.codeplex.com/workitem/3252) -파일이 없으면 종료 코드 0을 사용 하 여 push command를 수정 하지 못합니다.
 8. [Martin Veselý](http://www.codeplex.com/site/users/view/veselkamartin)
-    - [#3226](http://nuget.codeplex.com/workitem/3226) -프로젝트를 데이터베이스 프로젝트를 참조 하는 경우 추가 BindingRedirect 명령 사용 하 여 버그를 수정 합니다.
+    - [#3226](http://nuget.codeplex.com/workitem/3226) -프로젝트에서 데이터베이스 프로젝트를 참조할 때 BindingRedirect 명령을 사용 하 여 버그를 수정 합니다.
 9. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
-    - [#2891](http://nuget.codeplex.com/workitem/2891) -nuget.pack '제외' 특성에 와일드 카드를 올바르게 구문 분석 중 버그를 수정 합니다.
+    - [#2891](http://nuget.codeplex.com/workitem/2891) -nuget의 버그를 수정 합니다. ' exclude ' 특성에서 와일드 카드를 구문 분석 합니다.
 10. [Justin Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
-     - [#3307](http://nuget.codeplex.com/workitem/3307) -버그 수정 `NuGet.targets` 패키지를 복원 하는 경우 nuget.exe에 $를 전달 하지 않습니다.
-11. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin)
-     - [#3294](http://nuget.codeplex.com/workitem/3294) -nuget.exe 패키지 명령 이름은 같지만 결국 "항목이 이미 있습니다." 예외를 발생 시키는 다른 대/소문자를 사용 하 여 파일을 추가 하 게 하는 버그를 수정 합니다.
+     - [#3307](http://nuget.codeplex.com/workitem/3307) 버그 `NuGet.targets` 를 수정 하면 패키지를 복원할 때 $ (Platform)를 nuget.exe에 전달 하지 않습니다.
+11. [Federici](http://www.codeplex.com/site/users/view/benerdin)
+     - [#3294](http://nuget.codeplex.com/workitem/3294) -이름이 같지만 대/소문자가 다른 파일을 추가할 수 있도록 하는 nuget.exe 패키지 명령의 버그를 수정 합니다. 결과적으로 "항목이 이미 있습니다." 예외가 발생 합니다.
 12. [Daniel Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
-     - [#2990](http://nuget.codeplex.com/workitem/2990) -버전 추가 속성을 NetPortableProfile 클래스입니다.
+     - [#2990](http://nuget.codeplex.com/workitem/2990) -버전 속성을 NetPortableProfile 클래스에 추가 합니다.
 13. [David Simner](https://www.codeplex.com/site/users/view/DavidSimner)
-     - [#3460](https://nuget.codeplex.com/workitem/3460) -NullReferenceException 버그를 해결할 requireApiKey 사실 이지만 헤더 = X-NUGET-APIKEY 없는
+     - [#3460](https://nuget.codeplex.com/workitem/3460) -requireapikey = true 인 경우에는 버그 NullReferenceException를 수정 하지만 헤더 X NUGET-apikey는 없습니다.
 14. [Michael Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
-     - [#3278](https://nuget.codeplex.com/workitem/3278) -MonoDevelop에서 올바르게 작동할 수 있도록 수정 NuGet.Build 대상 파일을
+     - [#3278](https://nuget.codeplex.com/workitem/3278) -MonoDevelop에서 제대로 작동 하도록 NuGet 빌드 대상 파일을 수정 합니다.
 15. [Pranav Krishnamoorthy](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
-     - 병렬 처리를 늘려 복원 명령은 성능 향상
+     - 병렬화를 높여 복원 명령 성능 향상
 
-## <a name="notable-features-in-the-release"></a>릴리스에서 주목할 만한 기능
+## <a name="notable-features-in-the-release"></a>릴리스의 주요 기능
 
-### <a name="package-restore-by-default-with-implicit-consent"></a>(암시적으로 승인)에 대해 기본적으로 패키지 복원
+### <a name="package-restore-by-default-with-implicit-consent"></a>기본적으로 패키지 복원 (암시적 동의 포함)
 
-NuGet 2.7 패키지를 복원 하는 새로운 방식이 소개 하 고 또한 주요 장애물을 극복: 패키지 복원 동의 이제 기본적으로 켜져! 새로운 방식을 암시적 동의 조합 패키지 복원 시나리오를 간소화 현저 하 게 됩니다.
+NuGet 2.7은 패키지 복원에 대 한 새로운 접근 방식을 소개 하 고 주요 장애물을 극복 합니다. 이제 패키지 복원 동의가 기본적으로 설정 되어 있습니다. 새 접근 방법과 암시적 동의의 조합은 패키지 복원 시나리오를 크게 간소화 합니다.
 
-#### <a name="implicit-consent"></a>암시적으로 승인
+#### <a name="implicit-consent"></a>암시적 동의
 
-NuGet 버전 2.0, 2.1, 2.2, 2.5 및 2.6을 사용 하 여 명시적으로 NuGet 시 누락 된 패키지를 다운로드 하도록 허용 하는 데 필요한 사용자 빌드합니다. 이 동의 하지 경우 명시적으로 부여 되어, 패키지 복원 활성화 있던 솔루션은 사용자가 승인 될 때까지 빌드를 실패 합니다.
+NuGet 버전 2.0, 2.1, 2.2, 2.5 및 2.6을 사용 하는 경우 사용자는 NuGet이 빌드하는 동안 누락 된 패키지를 다운로드 하도록 명시적으로 허용 해야 합니다. 이 동의가 명시적으로 제공 되지 않은 경우에는 사용자에 게 동의가 부여 될 때까지 패키지 복원을 사용 하도록 설정한 솔루션이 빌드되지 않습니다.
 
-NuGet 2.7부터, 패키지 복원 동의 기본적으로 설정 되어 사용자가 명시적으로 허용 하는 동안 *옵트아웃* 원한다 면 Visual Studio에서 NuGet의 설정에서 확인란을 사용 하 여 패키지 복원 합니다. 암시적으로 승인에 대 한이 변경에 다음 환경에서 NuGet을 적용 합니다.
+NuGet 2.7부터 패키지 복원 동의가 기본적으로 설정 되어 있으며, 원하는 경우 Visual Studio의 NuGet 설정에서 확인란을 사용 하 여 사용자가 패키지 복원을 명시적으로 *옵트아웃 (opt out* ) 할 수 있습니다. 암시적 동의의 이러한 변경은 다음 환경의 NuGet에 영향을 줍니다.
 
 * Visual Studio 2013 Preview
 * Visual Studio 2012
@@ -74,93 +74,93 @@ NuGet 2.7부터, 패키지 복원 동의 기본적으로 설정 되어 사용자
 
 #### <a name="automatic-package-restore-in-visual-studio"></a>Visual Studio에서 자동 패키지 복원
 
-NuGet 2.7 이상에서는 NuGet 자동으로 다운로드 누락 된 패키지 Visual Studio에서 빌드하는 동안 패키지 복원 되지 않은 솔루션에 대 한 명시적으로 설정 된 경우에 합니다. 이 자동 패키지 복원 하지만 MSBuild가 호출 되기 전에 프로젝트 또는 솔루션을 빌드할 때 Visual Studio에서 수행 합니다. 몇 가지 중요 한 이점 결과가 산출 됩니다.:
+NuGet 2.7부터 NuGet은 솔루션에 대해 패키지 복원이 명시적으로 사용 하도록 설정 되지 않은 경우에도 Visual Studio에서 빌드하는 동안 누락 된 패키지를 자동으로 다운로드 합니다. 이 자동 패키지 복원은 프로젝트 또는 솔루션을 빌드할 때 Visual Studio에서 발생 하지만 MSBuild를 호출 하기 전에 발생 합니다. 이 경우 다음과 같은 몇 가지 중요 한 이점이 있습니다.
 
-1. "NuGet 패키지 복원 사용" 제스처를 사용 하 여 솔루션을 더 이상 필요
-1. 프로젝트를 수정할 필요가 없습니다 및 NuGet 패키지 복원 활성화 되어 있는지 확인 하려면 프로젝트에 변경 되지 않습니다.
-1. 속성/대상이 파일에 대 한 MSBuild 가져오기를 포함 하는 것을 포함 하는 모든 NuGet 패키지를 복원할 *하기 전에* MSBuild가 호출 되도록 해당 속성/대상이 빌드하는 동안 적절 하 게 인식
+1. 솔루션에서 "NuGet 패키지 복원 사용" 제스처를 사용할 필요가 없습니다.
+1. 프로젝트를 수정할 필요가 없으며, NuGet이 프로젝트를 변경 하 여 패키지 복원을 사용할 수 있도록 합니다.
+1. Msbuild를 호출 하기 전에이를 포함 하는 모든 NuGet 패키지는 msbuild를 호출 *하기 전에* 복원 되어 해당 props/대상이 빌드 중에 올바르게 인식 되도록 합니다.
 
-Visual Studio에서 자동 패키지 복원 사용 하기 위해 (in) 작업 하나를 수행 해야 합니다.
+Visual Studio에서 자동 패키지 복원을 사용 하려면 다음 작업을 수행 해야 합니다.
 
-1. 체크 인 되지에 `packages` 폴더
+1. `packages` 폴더를 체크 인 하지 않음
 
-생략 하는 방법은 여러 가지 프로그램 `packages` 소스 제어에서 폴더입니다. 자세한 내용은 참조는 [패키지 및 소스 제어](../consume-packages/packages-and-source-control.md) 항목입니다.
+소스 제어에서 `packages` 폴더를 생략 하는 방법에는 여러 가지가 있습니다. 자세한 내용은 [패키지 및 소스 제어](../consume-packages/packages-and-source-control.md) 항목을 참조 하세요.
 
-모든 사용자가 암시적으로 하는 동안 자동 패키지 복원 동의 옵트인 옵트아웃할 수 있습니다 쉽게 Visual Studio에서 패키지 관리자 설정을 통해.
+모든 사용자가 암시적으로 자동 패키지 복원 동의에 옵트인 하는 동안 Visual Studio의 패키지 관리자 설정을 통해 쉽게 옵트아웃 (opt out) 할 수 있습니다.
 
 ![패키지 관리자 설정](./media/NuGet-2.7/package-manager-settings.png)
 
-#### <a name="simplified-package-restore-from-the-command-line"></a>명령줄에서 간단한 패키지 복원
+#### <a name="simplified-package-restore-from-the-command-line"></a>명령줄에서 간소화 된 패키지 복원
 
-NuGet 2.7 nuget.exe에 대 한 새 기능이 도입 되었습니다. `nuget.exe restore`
+Nuget 2.7에는 nuget.exe의 새로운 기능이 도입 되었습니다.`nuget.exe restore`
 
-이 새로운 복원 명령이 사용 하면 쉽게 솔루션 파일 또는 폴더를 인수로 허용 하 여 단일 명령 사용 하 여 솔루션에 대 한 모든 패키지를 복원할 수 있습니다. 또한 현재 폴더에서 단일 솔루션만 있으면 해당 인수 포함 됩니다. 즉, 단일 솔루션 파일 (MySolution.sln)를 포함 하는 폴더에서 모든 다음 작동 합니다.
+이 새 복원 명령을 사용 하면 솔루션 파일 또는 폴더를 인수로 수락 하 여 단일 명령으로 솔루션에 대 한 모든 패키지를 쉽게 복원할 수 있습니다. 또한이 인수는 현재 폴더에 솔루션을 하나만 포함 하는 경우에만 적용 됩니다. 즉, 다음은 모두 단일 솔루션 파일 (MySolution .sln)이 포함 된 폴더에서 작동 한다는 것을 의미 합니다.
 
-1. nuget.exe restore MySolution.sln
-1. nuget.exe 복원 합니다.
-1. nuget.exe restore
+1. nuget.exe 복원 MySolution .sln
+1. nuget.exe 복원.
+1. nuget.exe 복원
 
-Restore 명령은 솔루션 파일을 열고 솔루션 내에서 모든 프로젝트를 찾습니다. 여기에서 찾을 수는 `packages.config` 프로젝트 및 패키지의 모든 발견 된 복원의 각 파일에 있습니다. 에 있는 솔루션 수준 패키지를 복원 하기는 `.nuget\packages.config` 파일입니다. 새 Restore 명령에 대 한 자세한 정보를 찾을 수 있습니다 합니다 [명령줄 참조](../tools/cli-ref-restore.md)합니다.
+복원 명령은 솔루션 파일을 열고 솔루션 내의 모든 프로젝트를 찾습니다. 여기에서 각 프로젝트에 대 한 `packages.config` 파일을 찾고 찾은 모든 패키지를 복원 합니다. 또한 `.nuget\packages.config` 파일에 있는 솔루션 수준 패키지도 복원 합니다. 새 복원 명령에 대 한 자세한 내용은 [명령줄 참조](../reference/cli-reference/cli-ref-restore.md)에서 찾을 수 있습니다.
 
 #### <a name="the-new-package-restore-workflow"></a>새 패키지 복원 워크플로
 
-새 워크플로 소개 하는 대로 패키지를 복원 하려면 이러한 변경에 대 한 기대 됩니다. 소스 제어에서 패키지를 생략 하려면 단순히 커밋하지 않을 `packages` 폴더입니다. Visual Studio 사용자를 열고 솔루션을 빌드에 자동으로 복원 된 패키지 표시 됩니다. 명령줄 빌드에 대 한 호출 `nuget.exe restore` 를 호출 하기 전에 `msbuild`입니다. 솔루션에 "NuGet 패키지 복원 사용" 제스처를 사용 해야 하는 더 이상 하 고 더 이상 빌드를 변경 하려면 프로젝트를 수정 해야 합니다. 이 또한 MSBuild 가져오기를 가져오기에 대 한 NuGet의 최신 기능을 통해 추가 위해 특별히 포함 된 패키지에 대 한 훨씬 개선을 생성 [자동으로 가져오기 속성/대상이 파일](../release-notes/nuget-2.5.md#automatic-import-of-msbuild-targets-and-props-files) \build 폴더에서.
+새 워크플로를 도입 하기 때문에 패키지 복원에 대 한 이러한 변경 사항에 대해 기쁘게 생각 합니다. 원본 제어에서 패키지를 생략 하려면 간단히 폴더를 `packages` 커밋하지 마세요. 솔루션을 열고 빌드하는 Visual Studio 사용자는 패키지가 자동으로 복원 되는 것을 볼 수 있습니다. 명령줄 빌드의 경우를 호출 `nuget.exe restore` `msbuild`하기 전에를 호출 하면 됩니다. 솔루션에서 "NuGet 패키지 복원 사용" 제스처를 사용 하는 것이 더 이상 기억나지 않아도 되므로 빌드를 변경 하기 위해 프로젝트를 수정할 필요가 없습니다. 또한 MSBuild 가져오기를 포함 하는 패키지에 대해 훨씬 향상 된 환경을 제공 합니다. 특히, \build 폴더에서 [자동으로 props/targets 파일을 가져오기](../release-notes/nuget-2.5.md#automatic-import-of-msbuild-targets-and-props-files) 위해 NuGet의 최근 기능을 통해 추가 된 가져오기에 대해 훨씬 향상 된 환경을 제공 합니다.
 
-직접 수행한 작업을 하는 것 외에도이 새로운 방식은 마무리 하기 위해 몇 가지 중요 한 파트너와도 협력 합니다. 이러한 템플릿 중 하나에 대 한 구체적인 타임 라인이 아직 있는 없지만 각 파트너는 새로운 방법에 대 한 것으로 기대 합니다.
+지금까지 수행한 작업 외에도 몇 가지 중요 한 파트너를 사용 하 여이 새로운 접근 방법을 왕복 하 고 있습니다. 이러한 방법에 대 한 구체적인 타임 라인은 없지만 각 파트너는 새 접근 방식에 대 한 것 만큼 기쁘게 생각 합니다.
 
-* Team Foundation Service-이러한 통합 하는 작업에 대 한 호출 `nuget.exe restore` 기본 시나리오를 작성 합니다.
-* Windows Azure 웹 사이트-작업할 수 있고 Azure에 프로젝트를 밀어 `nuget.exe restore` 웹 사이트를 빌드하기 전에 호출 됩니다.
-* TeamCity-TeamCity에 대 한 해당 NuGet 설치 관리자 플러그 인을 업데이트 되는 8.x
-* 있고 AppHarbor 리포지토리에 푸시할 수 있도록 작업할 AppHarbor- `nuget.exe restore` 솔루션 빌드를 수행 하기 전에 호출 됩니다.
+* Team Foundation Service-에 대 `nuget.exe restore` 한 호출을 기본 빌드 시나리오로 통합 하기 위해 작업 중입니다.
+* Microsoft azure 웹 사이트-프로젝트를 Azure에 푸시할 수 있도록 하 고 `nuget.exe restore` 웹 사이트가 빌드되기 전에 호출 됩니다.
+* TeamCity-TeamCity .x 용 NuGet 설치 관리자 플러그 인을 업데이트 하는 중입니다.
+* AppHarbor-리포지토리를 AppHarbor `nuget.exe restore` 로 푸시하는 데 사용 되며 솔루션이 빌드 전에 호출 됩니다.
 
-각 위의 파트너를 사용 하 여 자신의 복사본 nuget.exe 사용할 때 및 솔루션에서 nuget.exe를 수행 해야 합니다.
+위의 각 파트너는 자체의 nuget.exe 복사본을 사용 하 고 솔루션에 nuget.exe를 전달 하지 않아도 됩니다.
 
 #### <a name="known-issues"></a>알려진 문제
 
-초기 2.7 릴리스에서 nuget.exe restore 사용 하 여 두 가지 알려진된 문제가 있었습니다 있지만에 대 한 업데이트를 사용 하 여 2013 년 9 월 6/에서 해결 된 것을 [NuGet.CommandLine 패키지](http://www.nuget.org/packages/NuGet.CommandLine/)합니다.  이 업데이트에서 제공 됩니다는 [NuGet 2.7 다운로드 페이지](https://nuget.codeplex.com/releases/view/107605) CodePlex에 있습니다.  실행 `nuget.exe update -self` 를 최신 릴리스로 업데이트 됩니다.
+초기 2.7 릴리스와 함께 nuget.exe 복원과 관련 하 여 두 가지 알려진 문제가 있었지만, [nuget.exe 패키지](http://www.nuget.org/packages/NuGet.CommandLine/)에 대 한 업데이트로 9/6/2013에서 수정 되었습니다.  이 업데이트는 CodePlex의 [NuGet 2.7 다운로드 페이지](https://nuget.codeplex.com/releases/view/107605) 에서도 사용할 수 있습니다.  를 `nuget.exe update -self` 실행 하면 최신 릴리스로 업데이트 됩니다.
 
-고정 했습니다.
+수정 된는 다음과 같습니다.
 
-1. [SLN 파일을 사용 하는 경우 Mono에서 새 패키지 복원이 작동 하지 않습니다.](https://nuget.codeplex.com/workitem/3596)
-1. [Wix 프로젝트를 사용 하 여 새 패키지 복원이 작동 하지 않습니다.](https://nuget.codeplex.com/workitem/3598)
+1. [SLN 파일을 사용 하는 경우 Mono에서 새 패키지 복원이 작동 하지 않음](https://nuget.codeplex.com/workitem/3596)
+1. [새 패키지 복원이 Wix 프로젝트에서 작동 하지 않음](https://nuget.codeplex.com/workitem/3598)
 
-이기도 새 패키지 복원 워크플로 사용 하 여 알려진된 문제 가능해 집니다 [자동 패키지 복원 솔루션 폴더 아래의 프로젝트에 대 한 작동 하지 않습니다](https://nuget.codeplex.com/workitem/3625)합니다. 이 문제는 NuGet 2.7.1에서에서 수정 되었습니다.
+[솔루션 폴더의 프로젝트에 대해 자동 패키지 복원이 작동 하지 않는](https://nuget.codeplex.com/workitem/3625)새 패키지 복원 워크플로에도 알려진 문제가 있습니다. 이 문제는 NuGet 2.7.1에서 수정 되었습니다.
 
-### <a name="project-retargeting-and-upgrade-build-errorswarnings"></a>프로젝트 대상 다시 지정 및 업그레이드에 대 한 빌드 오류/경고
+### <a name="project-retargeting-and-upgrade-build-errorswarnings"></a>프로젝트 대상 다시 지정 및 업그레이드 빌드 오류/경고
 
-여러 번을 대상 다시 지정 하거나 프로젝트를 업그레이드 한 후 찾아야 일부 NuGet 패키지의 작동이 되지 않습니다. 아쉽게도이 표시가 없습니다 하 고 지침이 없습니다에 문제를 해결 하는 방법입니다. NuGet 2.7의 경우 이제 사용 하 여 일부 Visual Studio 이벤트 대상이 변경 했거나, 설치 된 NuGet 패키지에 영향을 주는 방식으로 프로젝트를 업그레이드 하는 경우를 인식 하도록 합니다.
+프로젝트의 대상을 변경 하거나 프로젝트를 업그레이드 한 후에는 일부 NuGet 패키지가 제대로 작동 하지 않는 것을 확인할 수 있습니다. 아쉽게도이에 대해서는 설명 하지 않으며이를 해결 하는 방법에 대 한 지침은 없습니다. NuGet 2.7을 사용 하면 설치 된 NuGet 패키지에 영향을 주는 방식으로 프로젝트의 대상을 변경 하거나 업그레이드 한 경우 일부 Visual Studio 이벤트를 사용 하 여 인식 됩니다.
 
-패키지의 영향을 받았습니다 대상 변경 또는 업그레이드를 검색 하는 경우 즉시 빌드 오류를 알려 주는 도출 됩니다. 즉시 빌드 오류 외에 유지를 `requireReinstallation="true"` 플래그에 `packages.config` 파일 Visual Studio에서 빌드를 대상 변경의 영향 및 각 후속 된 모든 패키지에 대 한 경고가 표시 됩니다 빌드 패키지에 대 한 합니다.
+대상 사용자 또는 업그레이드의 영향을 받는 패키지가 있으면 즉시 알 수 있도록 빌드 오류를 생성 합니다. 즉시 빌드 오류 외에도 `requireReinstallation="true"` `packages.config` 파일에서 대상 변경의 영향을 받는 모든 패키지에 대 한 플래그를 유지 하 고 Visual Studio의 각 후속 빌드에서 해당 패키지에 대 한 빌드 경고를 발생 시킵니다.
 
-NuGet 영향을 받는 패키지를 다시 설치 하려면 자동 작업을 수행할 수 없습니다,이 표시 바랍니다 및 경고 도움말 안내 합니다. 하지만 패키지 다시 설치 해야 하는 경우 검색할 수 있습니다. 또한 노력 [패키지 다시 설치 지침 설명서](../consume-packages/reinstalling-and-updating-packages.md) 이러한 오류 메시지를 안내 합니다.
+NuGet은 영향을 받는 패키지를 다시 설치 하기 위해 자동 작업을 수행할 수 없지만,이를 통해 패키지를 다시 설치 해야 하는 경우를 검색 하는 데 도움이 될 것입니다. 또한 이러한 오류 메시지가 표시 되는 [패키지 다시 설치 지침 설명서](../consume-packages/reinstalling-and-updating-packages.md) 를 사용 하 고 있습니다.
 
 ### <a name="nuget-configuration-defaults"></a>NuGet 구성 기본값
 
-대부분의 회사 NuGet 내부적으로 사용 하면서 어려움 nuget.org 대신 내부 패키지 소스를 사용 하도록 개발자 안내 했습니다. NuGet 2.7 시스템 수준의 기본값은에 지정할 수 있는 구성 기본값 기능을 제공 합니다.
+대부분의 회사에서는 내부적으로 NuGet을 사용 하지만 개발자가 nuget.org 대신 내부 패키지 원본을 사용 하도록 안내 합니다. NuGet 2.7에는에 대해 시스템 차원의 기본값을 지정할 수 있도록 하는 구성 기본값 기능이 도입 되었습니다.
 
-1. 사용 가능한 패키지 소스
-1. 등록 되었지만 사용할 수 없는 패키지 소스
-1. Nuget.exe 기본 푸시 소스
+1. 패키지 원본 사용
+1. 등록 되었지만 사용 하지 않도록 설정 된 패키지 소스
+1. 기본 nuget.exe 푸시 소스
 
-에 있는 파일 내에서 이제 구성할 수 있습니다 이러한 각 `%ProgramData%\NuGet\NuGetDefaults.Config`합니다. 패키지 소스를 지정 하는이 구성 파일 경우 기본 nuget.org 패키지 원본이 자동으로 등록 되지 것입니다 및에서 `NuGetDefaults.Config` 대신 등록 됩니다.
+이제 이러한 각을에 `%ProgramData%\NuGet\NuGetDefaults.Config`있는 파일 내에서 구성할 수 있습니다. 이 구성 파일에서 패키지 소스를 지정 하는 경우 기본 nuget.org 패키지 원본이 자동으로 등록 되지 않고의 `NuGetDefaults.Config` 해당 원본 항목이 등록 됩니다.
 
-회사 배포에이 기능을 사용할 필요 없이 기대 `NuGetDefaults.Config` 그룹 정책을 사용 하 여 파일입니다.
+이 기능을 사용 하는 데 필요 하지는 않지만 회사에서 `NuGetDefaults.Config` 그룹 정책를 사용 하 여 파일을 배포할 것으로 간주 합니다.
 
-*이 기능은 개발자의 NuGet 설정에서 제거할 패키지 소스를 일으키지 않는 참고 합니다. 즉, 개발자가 이미 NuGet을 사용 하 고 nuget.org 패키지 원본이 따라서 경우 등록 제거 되지 않습니다을 만든 후를 `NuGetDefaults.Config` 파일입니다.*
+*이 기능을 통해 개발자의 NuGet 설정에서 패키지 소스가 제거 되지는 않습니다. 즉, 개발자가 이미 NuGet을 사용 하 고 있으므로 nuget.org 패키지 소스가 등록 된 경우 `NuGetDefaults.Config` 파일을 만든 후에는 제거 되지 않습니다.*
 
-참조 [구성에서 기본적으로 NuGet](../consume-packages/configuring-nuget-behavior.md#nuget-defaults-file) 이 기능에 대 한 자세한 내용은 합니다.
+이 기능에 대 한 자세한 내용은 [NuGet 구성 기본값](../consume-packages/configuring-nuget-behavior.md#nuget-defaults-file) 을 참조 하세요.
 
-### <a name="renaming-the-default-package-source"></a>기본 패키지 소스 이름 바꾸기
+### <a name="renaming-the-default-package-source"></a>기본 패키지 원본 이름 바꾸기
 
-NuGet에서 항상 "NuGet 공식 패키지 소스 라는" nuget.org를 가리키는 기본 패키지 소스를 등록 해야 합니다. 해당 이름의 세부 정보 표시 되었으며 것도 지정 하지 않은 실제로 가리킨다면 합니다. 이러한 두 가지 문제를 해결 하기 위해 단순히 "nuget.org" ui에서에이 패키지 소스를 바꾸었습니다 했습니다. 패키지 원본에 대 한 URL "www"를 포함 하도록 변경도 되었습니다. 접두사가 있는 번들 ID인 식별자가 있습니다. NuGet 2.7를 사용한 후에 기존 "NuGet 공식 패키지 소스" 자동 업데이트 됩니다을 이름으로 "nuget.org" 및 "<https://www.nuget.org/api/v2/>" 해당 URL로 합니다.
+NuGet은 항상 nuget.org를 가리키는 "NuGet 공식 패키지 원본" 이라는 기본 패키지 원본을 등록 했습니다. 이 이름은 verbose 이며 실제로 가리키는 위치도 지정 하지 않았습니다. 이러한 두 문제를 해결 하기 위해 UI에서이 패키지 소스의 이름을 "nuget.org"로 변경 했습니다. 패키지 원본에 대 한 URL도 "www"를 포함 하도록 변경 되었습니다. 접두사가 있는 번들 ID인 식별자가 있습니다. Nuget 2.7을 사용 하면 기존 "NuGet 공식 패키지 원본"이 자동으로 "nuget.org"로 이름으로 업데이트 되 고 "<https://www.nuget.org/api/v2/>"가 URL로 업데이트 됩니다.
 
 ### <a name="performance-improvements"></a>성능 향상
 
-2.7 적은 메모리를 사용, 작은 디스크 사용량 및 더 빠른 패키지 설치를 생성 하는 일부 성능 향상을 했습니다. 또한 더 효율적인 쿼리 하기 위해 전체 페이로드를 줄일 수 있는 OData 기반 피드 적용 했습니다.
+2\.7에서 약간의 성능이 향상 되어 메모리 사용 공간이 줄어들고, 디스크 사용이 줄어들고, 패키지 설치 속도가 빨라집니다. 또한 전체 페이로드를 줄이는 OData 기반 피드에 대해 더 현명한 쿼리를 만들었습니다.
 
 ### <a name="new-extensibility-apis"></a>새 확장성 Api
 
-이전 버전의 누락 된 기능 차이 맞게 확장 서비스를 몇 가지 새로운 Api를 추가 했습니다.
+이전 릴리스에서 누락 된 기능의 차이를 채우도록 확장성 서비스에 몇 가지 새로운 Api를 추가 했습니다.
 
 #### <a name="ivspackageinstallerservices"></a>IVsPackageInstallerServices
 
@@ -184,16 +184,16 @@ NuGet에서 항상 "NuGet 공식 패키지 소스 라는" nuget.org를 가리키
 
 ### <a name="development-only-dependencies"></a>개발 전용 종속성
 
-이 기능은 제공한 [Adam Ralph](https://twitter.com/adamralph) 패키지 작성자가 종속성만 개발에 사용 된 시간 및 패키지 종속성 않아도 선언를 허용 하 고 있습니다. 추가 하 여는 `developmentDependency="true"` 에서 패키지를 특성 `packages.config`, `nuget.exe pack` 종속성으로 패키지를 더 이상 포함 됩니다.
+이 기능은 [Adam Ralph](https://twitter.com/adamralph) 에서 제공 했으며 패키지 작성자는 개발 시에만 사용 되었으며 패키지 종속성이 필요 하지 않은 종속성을 선언할 수 있습니다. `developmentDependency="true"` 에서 패키지에특성을추가하면에서더이상해당패키지를종속성으로포함하지않습니다.`packages.config` `nuget.exe pack`
 
-### <a name="removed-support-for-visual-studio-2010-express-for-windows-phone"></a>Windows Phone 대 한 Visual Studio 2010 Express에 대 한 지원 제거
+### <a name="removed-support-for-visual-studio-2010-express-for-windows-phone"></a>Windows Phone Visual Studio 2010 Express에 대 한 지원이 제거 되었습니다.
 
-2.7의 새 패키지 복원 모델에서는 주요 NuGet VSPackage와 다른 새 vspackage 구현 됩니다. 기술 문제로 인해이 새 VSPackage 하지에서 제대로 작동 합니다 *Visual Studio 2010 Express에 대 한 Windows Phone* SKU 서로 동일한 코드 기반을 공유 지원 되는 Visual Studio Sku. 따라서 NuGet 2.7부터 우리는 삭제에 대 한 지원을 *Visual Studio 2010 Express에 대 한 Windows Phone* 게시 된 확장 프로그램에서 제공 합니다. 에 대 한 지원 *Visual Studio 2010 Express for Web* Visual Studio 확장 갤러리에 게시 된 기본 확장에 여전히 포함 되어 있습니다.
+2\.7의 새 패키지 복원 모델은 기본 NuGet VSPackage와 다른 새 VSPackage에 의해 구현 됩니다. 기술적 문제로 인해이 새로운 VSPackage는 다른 지원 되는 Visual Studio Sku와 동일한 코드 베이스를 공유 하는 *Windows Phone SKU 용 Visual studio 2010 Express* 에서 제대로 작동 하지 않습니다. 따라서 NuGet 2.7 부터는 게시 된 확장의 *Windows Phone에 대 한 Visual Studio 2010 Express* 에 대 한 지원이 삭제 됩니다. Visual studio *2010 Express For Web* 에 대 한 지원은 Visual Studio 확장 갤러리에 게시 된 기본 확장에도 포함 되어 있습니다.
 
-에서는 확실 하지 않은 얼마나 많은 개발자는 해당 버전의 Visual Studio에서 NuGet을 사용한 여전히 있으므로 특히 해당 사용자에 대 한 별도 Visual Studio 확장을 게시 하 고 CodePlex 대신 Visual Studio 확장 갤러리에 게시 . 계속 하는 경우이 영향을 수 있지만 해당 확장을 유지 하지 않으려고 알려주세요 codeplex는 문제를 제출 하 여 합니다.
+Visual Studio의 해당 버전/버전에서 아직 NuGet을 사용 하 고 있는 개발자 수를 확실히 알 수 있기 때문에 해당 사용자에 대 한 별도의 Visual Studio 확장을 게시 하 고 CodePlex에 게시 (Visual Studio 확장 갤러리 대신) 합니다. . 해당 확장을 계속 유지 관리 하지는 않지만이에 영향을 주는 경우 CodePlex에서 문제를 신고 하 여 알려주세요.
 
-참조 (Visual Studio 2010 Express에 대 한 Windows Phone)에 대 한 NuGet 패키지 관리자를 다운로드 합니다 [NuGet 2.7 다운로드](https://nuget.codeplex.com/releases/view/107605) 페이지입니다.
+NuGet 패키지 관리자 (Visual Studio 2010 Express for Windows Phone)를 다운로드 하려면 [nuget 2.7 다운로드](https://nuget.codeplex.com/releases/view/107605) 페이지를 방문 하세요.
 
 ### <a name="bug-fixes"></a>버그 수정
 
-이 릴리스의 NuGet에는 이러한 기능 외에 다른 여러 버그 수정도 포함 됩니다. 릴리스에서 해결 97 총 문제가 있었습니다. 작업의 전체 목록은 항목 고정 NuGet 2.7에서 하세요 보기는 [이 릴리스의 NuGet 문제 추적기](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.7&status=all)합니다.
+이러한 기능 외에도이 NuGet 릴리스에는 다른 많은 버그 수정이 포함 되어 있습니다. 릴리스에서 해결 된 총 97 개의 문제가 있습니다. NuGet 2.7에서 수정 된 작업 항목의 전체 목록은 [이 릴리스에 대 한 Nuget 문제 추적기](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.7&status=all)를 확인 하세요.
