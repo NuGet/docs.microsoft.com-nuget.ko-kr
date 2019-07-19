@@ -1,0 +1,59 @@
+---
+title: NuGet 열기-PackagePage PowerShell 참조
+description: Visual Studio의 NuGet 패키지 관리자 콘솔에서 열기-PackagePage PowerShell 명령에 대 한 참조입니다.
+author: karann-msft
+ms.author: karann
+ms.date: 12/07/2017
+ms.topic: reference
+ms.openlocfilehash: 0237c23d81000a1d58264cc0ab48c73d819d0e5a
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.translationtype: MT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68327380"
+---
+# <a name="open-packagepage-package-manager-console-in-visual-studio"></a><span data-ttu-id="e94b5-103">Open-PackagePage (Visual Studio의 패키지 관리자 콘솔)</span><span class="sxs-lookup"><span data-stu-id="e94b5-103">Open-PackagePage (Package Manager Console in Visual Studio)</span></span>
+
+<span data-ttu-id="e94b5-104">*3.0 이상에서 사용 되지 않음 Windows의 Visual Studio에서 [패키지 관리자 콘솔](../../consume-packages/install-use-packages-powershell.md) 내 에서만 사용할 수 있습니다.*</span><span class="sxs-lookup"><span data-stu-id="e94b5-104">*Deprecated in 3.0+; available only within the [Package Manager Console](../../consume-packages/install-use-packages-powershell.md) in Visual Studio on Windows.*</span></span>
+
+<span data-ttu-id="e94b5-105">지정 된 패키지에 대 한 프로젝트, 라이선스 또는 신고 URL을 사용 하 여 기본 브라우저를 시작 합니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-105">Launches the default browser with the project, license, or report abuse URL for the specified package.</span></span>
+
+## <a name="syntax"></a><span data-ttu-id="e94b5-106">구문</span><span class="sxs-lookup"><span data-stu-id="e94b5-106">Syntax</span></span>
+
+```ps
+Open-PackagePage [-Id] <string> [-Version] [-Source] [-License] [-ReportAbuse]
+    [-PassThru] [<CommonParameters>]
+```
+
+## <a name="parameters"></a><span data-ttu-id="e94b5-107">매개 변수</span><span class="sxs-lookup"><span data-stu-id="e94b5-107">Parameters</span></span>
+
+| <span data-ttu-id="e94b5-108">매개 변수</span><span class="sxs-lookup"><span data-stu-id="e94b5-108">Parameter</span></span> | <span data-ttu-id="e94b5-109">Description</span><span class="sxs-lookup"><span data-stu-id="e94b5-109">Description</span></span> |
+| --- | --- |
+| <span data-ttu-id="e94b5-110">ID</span><span class="sxs-lookup"><span data-stu-id="e94b5-110">Id</span></span> | <span data-ttu-id="e94b5-111">원하는 패키지의 패키지 ID입니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-111">The package ID of the desired package.</span></span> <span data-ttu-id="e94b5-112">-Id 스위치 자체는 선택 사항입니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-112">The -Id switch itself is optional.</span></span> |
+| <span data-ttu-id="e94b5-113">버전</span><span class="sxs-lookup"><span data-stu-id="e94b5-113">Version</span></span> | <span data-ttu-id="e94b5-114">패키지의 버전은 기본적으로 최신 버전을 기본값으로 합니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-114">The version of the package, defaulting to the latest version.</span></span> |
+| <span data-ttu-id="e94b5-115">Source</span><span class="sxs-lookup"><span data-stu-id="e94b5-115">Source</span></span> | <span data-ttu-id="e94b5-116">원본 드롭다운에서 선택 된 소스를 기본값으로 하는 패키지 원본입니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-116">The package source, defaulting to the selected source in the source drop-down.</span></span> |
+| <span data-ttu-id="e94b5-117">라이선스</span><span class="sxs-lookup"><span data-stu-id="e94b5-117">License</span></span> | <span data-ttu-id="e94b5-118">패키지의 라이선스 URL에 대 한 브라우저를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-118">Opens the browser to the package's License URL.</span></span> <span data-ttu-id="e94b5-119">라이선스와-ReportAbuse 모두 지정 하지 않으면 브라우저에서 패키지의 프로젝트 URL을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-119">If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL.</span></span> |
+| <span data-ttu-id="e94b5-120">ReportAbuse</span><span class="sxs-lookup"><span data-stu-id="e94b5-120">ReportAbuse</span></span> | <span data-ttu-id="e94b5-121">패키지의 신고 URL에 대 한 브라우저를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-121">Opens the browser to the package's Report Abuse URL.</span></span> <span data-ttu-id="e94b5-122">라이선스와-ReportAbuse 모두 지정 하지 않으면 브라우저에서 패키지의 프로젝트 URL을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-122">If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL.</span></span> |
+| <span data-ttu-id="e94b5-123">PassThru</span><span class="sxs-lookup"><span data-stu-id="e94b5-123">PassThru</span></span> | <span data-ttu-id="e94b5-124">URL을 표시 합니다. 브라우저를 열지 않으려면-WhatIf를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-124">Displays the URL; use with -WhatIf to suppress opening the browser.</span></span> |
+
+<span data-ttu-id="e94b5-125">이러한 매개 변수는 파이프라인 입력 또는 와일드 카드 문자를 허용 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-125">None of these parameters accept pipeline input or wildcard characters.</span></span>
+
+## <a name="common-parameters"></a><span data-ttu-id="e94b5-126">일반 매개 변수</span><span class="sxs-lookup"><span data-stu-id="e94b5-126">Common Parameters</span></span>
+
+<span data-ttu-id="e94b5-127">`Open-PackagePage`는 다음과 같은 [일반적인 PowerShell 매개 변수](http://go.microsoft.com/fwlink/?LinkID=113216)를 지원 합니다. 디버그, 오류 동작, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction 및 WarningVariable입니다.</span><span class="sxs-lookup"><span data-stu-id="e94b5-127">`Open-PackagePage` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.</span></span>
+
+## <a name="examples"></a><span data-ttu-id="e94b5-128">예</span><span class="sxs-lookup"><span data-stu-id="e94b5-128">Examples</span></span>
+
+```ps
+# Opens a browser with the Ninject package's project page
+Open-PackagePage Ninject
+
+# Opens a browser with the Ninject package's license page
+Open-PackagePage Ninject -License
+
+# Opens a browser with the Ninject package's report abuse page  
+Open-PackagePage Ninject -ReportAbuse
+
+# Assigns the license URL to the variable, $url, without launching the browser
+$url = Open-PackagePage Ninject -License -PassThru -WhatIf
+```
