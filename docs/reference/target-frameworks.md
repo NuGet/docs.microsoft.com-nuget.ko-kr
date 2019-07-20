@@ -6,20 +6,21 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 0b2a4fe45d0311b7540c73b481d6821357c723af
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: ea9f699b202d7f32648f0ccfeac3ceb1ca325b7e
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610655"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342435"
 ---
 # <a name="target-frameworks"></a>대상 프레임워크
 
 NuGet은 다양한 위치에서 대상 프레임워크 참조를 사용하여 패키지의 프레임워크 종속 구성 요소를 구체적으로 식별하고 격리합니다.
 
-- [.nuspec 매니페스트](../reference/nuspec.md): 패키지를 프로젝트의 대상 프레임 워크에 따라 프로젝트에 포함 될 고유한 패키지를 나타낼 수 있습니다.
-- [.nupkg 폴더 이름](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): 패키지의 내 `lib` 폴더는 Dll 및 프레임 워크에 적합 한 다른 콘텐츠가 포함 된 각 대상 프레임 워크에 따라 이름을 지정할 수 있습니다.
-- [packages.config](../reference/packages-config.md): `targetframework` 종속성 특성 설치할 패키지의 변형을 지정 합니다.
+- [프로젝트 파일](../create-packages/multiple-target-frameworks-project-file.md): SDK 스타일 프로젝트의 경우 *.csproj* 에는 대상 프레임 워크 참조가 포함 됩니다.
+- [. nuspec 매니페스트](../reference/nuspec.md): 패키지는 프로젝트의 대상 프레임 워크에 따라 프로젝트에 포함 될 개별 패키지를 나타낼 수 있습니다.
+- [. nupkg 폴더 이름](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): 패키지 `lib` 폴더 내의 폴더는 대상 프레임 워크에 따라 이름을 지정할 수 있으며, 각 프레임 워크에 적합 한 dll 및 기타 콘텐츠를 포함 합니다.
+- [packages.config](../reference/packages-config.md): 종속성 `targetframework` 의 특성은 설치할 패키지의 변형을 지정 합니다.
 
 > [!Note]
 > 아래 표를 계산하는 NuGet 클라이언트 소스 코드는 다음 위치에 있습니다.
@@ -28,7 +29,7 @@ NuGet은 다양한 위치에서 대상 프레임워크 참조를 사용하여 �
 
 ## <a name="supported-frameworks"></a>지원되는 프레임워크
 
-프레임워크는 일반적으로 짧은 대상 프레임워크 모니커 또는 TFM에서 참조됩니다. .NET Standard에서이으로 일반화 되어 *TxM* 여러 프레임 워크에 대 한 단일 참조를 허용 하도록 합니다.
+프레임워크는 일반적으로 짧은 대상 프레임워크 모니커 또는 TFM에서 참조됩니다. .NET Standard 여러 프레임 워크에 대 한 단일 참조를 *허용 하기 위해* 이를 트랜잭션으로 일반화 합니다.
 
 NuGet 클라이언트는 아래 표의 프레임워크를 지원합니다. 대괄호([]) 안에 표시된 항목은 동등한 항목입니다. `dotnet`과 같은 일부 도구는 일부 파일에서 정식 TFM의 변형을 사용할 수 있습니다. 예를 들어 `dotnet pack`은 `.nuspec` 파일에서 `netcoreapp2.0` 대신 `.NETCoreApp2.0`을 사용합니다. 다양한 NuGet 클라이언트 도구에서 이러한 변형을 적절하게 처리하지만, 파일을 직접 편집할 때는 항상 정식 TFM을 사용해야 합니다.
 
@@ -68,7 +69,7 @@ Windows Phone(SL) | wp | wp [wp7] |
 Windows Phone(UWP) | | wpa81 |
 UWP | uap | uap [uap10.0] |
 | | | uap10.0 |
-| | | uap10.0.xxxxx (여기서 10.0.xxxxx은 사용 중인 앱의 대상 플랫폼 최소 버전) |
+| | | uap 10.0. xxxxx (여기서 10.0. xxxxx는 소비 하는 앱의 대상 플랫폼 최소 버전) |
 .NET Standard | netstandard | netstandard1.0 |
 | | | netstandard1.1 |
 | | | netstandard1.2 |
@@ -120,9 +121,9 @@ Tizen | tizen | tizen3 |
 | win(Microsoft Store) | winrt |
 | | |
 
-## <a name="net-platform-standard"></a>.NET 플랫폼 표준
+## <a name="net-standard"></a>NET Standard
 
-[.NET 플랫폼 표준](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md)은 이진 호환 가능 프레임워크 간의 참조를 간소화하여 단일 대상 프레임워크가 다른 프레임워크의 조합을 참조할 수 있게 합니다. (배경 지식에 대한 자세한 내용은 [.NET 입문서](/dotnet/articles/standard/index)를 참조하세요.)
+[.NET Standard](/dotnet/standard/net-standard) 는 이진 호환 프레임 워크 간의 참조를 간소화 하 여 단일 대상 프레임 워크가 다른 프레임 워크의 조합을 참조할 수 있도록 합니다. (배경 지식에 대한 자세한 내용은 [.NET 입문서](/dotnet/articles/standard/index)를 참조하세요.)
 
 [NuGet Get Nearest Framework 도구](https://aka.ms/s2m3th)는 NuGet에서 프로젝트 프레임워크에 따라 패키지에서 사용할 수 있는 많은 프레임워크 자산 중에서 하나의 프레임워크를 선택하는 데 사용하는 것을 시뮬레이션합니다.
 
@@ -131,7 +132,7 @@ Tizen | tizen | tizen3 |
 ## <a name="portable-class-libraries"></a>이식 가능한 클래스 라이브러리
 
 > [!Warning]
-> **PCL은 권장되지 않습니다**. PCL이 지원되지만 패키지 작성자는 netstandard를 대신 지원해야 합니다. .NET 플랫폼 표준 Pcl 발전와 같은 정적 라이브러리에 연결 되지 않은 단일 모니커를 사용 하 여 플랫폼 간에 이진 이식성을 나타냅니다 *이식 가능한-a + b + c* 모니커 합니다.
+> **PCL은 권장되지 않습니다**. PCL이 지원되지만 패키지 작성자는 netstandard를 대신 지원해야 합니다. .NET 플랫폼 표준은 PCLs의 진화 이며, *이식 가능한 a + b + c* 모니커와 같은 정적 라이브러리에 연결 되지 않은 단일 모니커를 사용 하 여 플랫폼 간 이진 이식성을 나타냅니다.
 
 여러 자식 대상 프레임워크를 참조하는 대상 프레임워크를 정의하려면 `portable` 키워드를 사용하여 참조된 프레임워크 목록의 접두사로 지정합니다. 이러한 프레임워크에서 의도하지 않은 부작용이 발생할 수 있으므로 직접 컴파일되지 않은 추가 프레임워크를 인위적으로 포함하지 않습니다.
 
