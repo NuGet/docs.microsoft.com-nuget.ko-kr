@@ -31,12 +31,14 @@
 ### [packages.config](reference/packages-config.md)
 # 패키지 만들기
 ## [개요 및 워크플로](create-packages/overview-and-workflow.md)
-## [패키지 만들기](create-packages/creating-a-package.md)
+## [패키지 만들기(dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
+## [패키지 만들기(nuget.exe CLI)](create-packages/creating-a-package.md)
 ## [MSBuild를 사용하여 패키지 만들기](reference/msbuild-targets.md)
-## [여러 대상 프레임워크 지원](create-packages/supporting-multiple-target-frameworks.md)
+## [프로젝트 파일에서 여러 대상 프레임워크 지원](create-packages/multiple-target-frameworks-project-file.md)
 ## [시험판 패키지 빌드](create-packages/prerelease-packages.md)
 ## [기호 패키지 만들기](create-packages/symbol-packages-snupkg.md)
 ## 고급 작업
+### [여러 대상 프레임워크 지원](create-packages/supporting-multiple-target-frameworks.md)
 ### [소스 코드 및 구성 파일 수정](create-packages/source-and-config-file-transformations.md)
 ### [프로젝트에서 참조하는 어셈블리 선택](create-packages/select-assemblies-referenced-by-projects.md)
 ### [패키지 형식 설정](create-packages/set-package-type.md)
