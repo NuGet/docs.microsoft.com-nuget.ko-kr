@@ -3,33 +3,33 @@ title: NuGet 패키지를 만드는 방법
 description: 파일 및 버전 관리와 같은 주요 결정 사항을 포함하여 NuGet 패키지를 디자인하고 만드는 과정을 자세히 안내합니다.
 author: karann-msft
 ms.author: karann
-ms.date: 05/24/2019
+ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: e3a40a521a3b16d9757ef1bbf2511a1537d8bddb
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 1dce8556448131c36680167fdc3605e4378b9178
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425812"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842300"
 ---
-# <a name="creating-nuget-packages"></a>NuGet 패키지 만들기
+# <a name="create-nuget-packages"></a>NuGet 패키지 만들기
 
 패키지의 기능 또는 포함된 코드와 관계없이 CLI 도구인 `nuget.exe` 또는 `dotnet.exe`를 사용하여 해당 기능을 임의 수의 다른 개발자와 공유하고 사용할 수 있는 구성 요소로 패키지할 수 있습니다. NuGet CLI 도구를 설치하려면 [NuGet 클라이언트 도구 설치](../install-nuget-client-tools.md)를 참조하세요. Visual Studio에는 CLI 도구가 자동으로 포함되지 않습니다.
 
-- SDK 스타일 형식([SDK 특성](/dotnet/core/tools/csproj#additions))을 사용하는 .NET Core 및 .NET Standard 프로젝트와 또 다른 SDK 스타일 프로젝트의 경우, NuGet은 프로젝트 파일의 정보를 직접 사용하여 패키지를 만듭니다. 자세한 내용은 [Visual Studio를 사용하여 .NET Standard 패키지 만들기](../quickstart/create-and-publish-a-package-using-visual-studio.md) 및 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.
+- [SDK 스타일 형식](../resources/check-project-format.md)을 사용하는 .NET Core 및 .NET Standard 프로젝트와 또 다른 SDK 스타일 프로젝트의 경우, NuGet은 프로젝트 파일의 정보를 직접 사용하여 패키지를 만듭니다. 자세한 단계는 [dotnet CLI를 사용하여 .NET Standard 패키지 만들기](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md), [Visual Studion를 사용하여 .NET Standard 패키지 만들기](../quickstart/create-and-publish-a-package-using-visual-studio.md) 또는 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.
 
-- SDK 스타일이 아닌 프로젝트의 경우에는 이 문서에 설명된 단계에 따라 패키지를 만듭니다.
+- SDK 스타일이 아닌 프로젝트(일반적으로 .NET Framework 프로젝트)의 경우에는 이 문서에 설명된 단계에 따라 패키지를 만듭니다. [.NET Framework 패키지 만들기 및 게시](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)의 단계에 따라 `nuget.exe` CLI 및 Visual Studio를 사용하여 패키지를 만들 수도 있습니다.
 
 - `packages.config`에서 [PackageReference](../consume-packages/package-references-in-project-files.md)로 마이그레이션된 프로젝트의 경우에는 [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)를 사용합니다.
 
-엄밀히 말해, NuGet 패키지는 `.nupkg` 확장명으로 이름이 변경되고 내용이 특정 규칙과 일치하는 ZIP 파일입니다. 규칙을 충족하는 패키지를 만드는 자세한 프로세스에 대해 설명합니다. 집중적인 연습에 대해서는 [빠른 시작: 패키지 만들기 및 게시](../quickstart/create-and-publish-a-package.md)를 참조하세요.
+엄밀히 말해, NuGet 패키지는 `.nupkg` 확장명으로 이름이 변경되고 내용이 특정 규칙과 일치하는 ZIP 파일입니다. 규칙을 충족하는 패키지를 만드는 자세한 프로세스에 대해 설명합니다.
 
 패키징은 패키지로 전달하려는 컴파일된 코드(어셈블리), 기호 및/또는 기타 파일로 시작됩니다([개요 및 워크플로](overview-and-workflow.md) 참조). 이 프로세스는 프로젝트 파일의 정보에서 끌어오기를 사용하여 컴파일된 어셈블리 및 패키지를 동기화된 상태로 유지할 수 있지만, 패키지에 포함된 파일을 컴파일하거나 생성하는 프로세스와는 관련이 없습니다.
 
-> [!Note]
+> [!Important]
 > 이 항목은 SDK 스타일이 아닌 프로젝트 즉, 일반적으로 Visual Studio 2017 이상 버전 및 NuGet 4.0+를 사용하는 .NET Core 및 .NET Standard 프로젝트가 아닌 프로젝트에 적용됩니다.
 
-## <a name="deciding-which-assemblies-to-package"></a>패키지할 어셈블리 결정
+## <a name="decide-which-assemblies-to-package"></a>패키지할 어셈블리 결정
 
 가장 일반적인 용도의 패키지에는 다른 개발자가 자신의 프로젝트에서 사용할 수 있는 하나 이상의 어셈블리가 포함되어 있습니다.
 
@@ -41,7 +41,7 @@ ms.locfileid: "67425812"
 
 실제로 리소스는 특별한 경우입니다. 패키지가 프로젝트에 설치되면 어셈블리 참조가 지역화된 위성 어셈블리로 간주되므로 NuGet은 `.resources.dll`이라는 DLL을 *제외한* 패키지의 DLL에 해당 어셈블리 참조를 자동으로 추가합니다([지역화된 패키지 만들기](creating-localized-packages.md) 참조). 이러한 이유로 다른 경우에 필수 패키지 코드가 포함되는 파일에는 `.resources.dll`을 사용하지 마세요.
 
-라이브러리에 COM interop 어셈블리가 포함되어 있으면 [COM interop 어셈블리가 포함된 패키지 제작](#authoring-packages-with-com-interop-assemblies)의 지침을 추가로 수행하세요.
+라이브러리에 COM interop 어셈블리가 포함되어 있으면 [COM interop 어셈블리가 포함된 패키지 만들기](author-packages-with-com-interop-assemblies.md)의 지침을 추가로 수행하세요.
 
 ## <a name="the-role-and-structure-of-the-nuspec-file"></a>.nuspec 파일의 역할 및 구조
 
@@ -151,7 +151,7 @@ nuget locals -list global-packages
 > [!Note]
 > Visual Studio 프로젝트에서 `.nuspec`을 만드는 경우 패키지를 빌드할 때 프로젝트의 정보로 대체되는 토큰이 매니페스트에 포함됩니다. [Visual Studio 프로젝트에서 .nuspec 만들기](#from-a-visual-studio-project)를 참조하세요.
 
-## <a name="creating-the-nuspec-file"></a>.nuspec 파일 만들기
+## <a name="create-the-nuspec-file"></a>.nuspec 파일 만들기
 
 완전한 매니페스트를 만드는 것은 일반적으로 다음 방법 중 하나를 통해 생성된 기본 `.nuspec` 파일로 시작합니다.
 
@@ -183,8 +183,8 @@ NuGet 패키지는 `.nupkg` 확장명으로 이름이 바뀐 ZIP 파일일 뿐�
 | lib/{tfm} | 지정된 TFM(대상 프레임워크 모니커)에 대한 어셈블리(`.dll`), 문서(`.xml`) 및 기호(`.pdb`) 파일 | 어셈블리는 컴파일 및 런타임에 대한 참조로 추가됩니다. `.xml` 및 `.pdb`는 프로젝트 폴더에 복사됩니다. 프레임워크 대상 특정의 하위 폴더를 만들려면 [여러 대상 프레임워크 지원](supporting-multiple-target-frameworks.md)을 참조하세요. |
 | ref/{tfm} | 지정된 TFM(대상 프레임워크 모니커)에 대한 어셈블리(`.dll`) 및 기호(`.pdb`) 파일 | 어셈블리는 컴파일 시간에 대한 참조로만 추가됩니다. 따라서 프로젝트 bin 폴더에 아무것도 복사되지 않습니다. |
 | runtimes | 아키텍처 특정 어셈블리(`.dll`), 기호(`.pdb`) 및 네이티브 리소스(`.pri`) 파일 | 어셈블리는 런타임에 대한 참조로만 추가되고, 다른 파일은 프로젝트 폴더에 복사됩니다. 해당 컴파일 시간 어셈블리를 제공하려면 항상 `/ref/{tfm}` 폴더 아래에 해당하는 (TFM) `AnyCPU` 특정 어셈블리가 있어야 합니다. [여러 대상 프레임워크 지원](supporting-multiple-target-frameworks.md)을 참조하세요. |
-| 내용 | 임의 파일 | 콘텐츠가 프로젝트 루트에 복사됩니다. **content** 폴더를 궁극적으로 패키지를 사용하는 대상 애플리케이션의 루트로 간주합니다. 패키지에서 애플리케이션의 */images* 폴더에 이미지를 추가하도록 하려면 패키지의 *content/images* 폴더에 배치합니다. |
-| 빌드 | MSBuild `.targets` 및 `.props` 파일 | 프로젝트 파일 또는 `project.lock.json`(NuGet 3.x 이상)에 자동으로 삽입됩니다. |
+| 콘텐츠 | 임의 파일 | 콘텐츠가 프로젝트 루트에 복사됩니다. **content** 폴더를 궁극적으로 패키지를 사용하는 대상 애플리케이션의 루트로 간주합니다. 패키지에서 애플리케이션의 */images* 폴더에 이미지를 추가하도록 하려면 패키지의 *content/images* 폴더에 배치합니다. |
+| build | MSBuild `.targets` 및 `.props` 파일 | 프로젝트 파일 또는 `project.lock.json`(NuGet 3.x 이상)에 자동으로 삽입됩니다. |
 | 도구 | 패키지 관리자 콘솔에서 액세스할 수 있는 Powershell 스크립트 및 프로그램 | `tools` 폴더는 패키지 관리자 콘솔에 대한 `PATH` 환경 변수에만 추가 됩니다(특히 프로젝트를 빌드할 때는 MSBuild에 설정한 대로 `PATH`에 *추가되지 않음*). |
 
 폴더 구조에는 임의 개수의 대상 프레임워크에 대해 임의 개수의 어셈블리가 포함될 수 있으므로, 이 방법은 여러 프레임워크를 지원하는 패키지를 만들 때 필요합니다.
@@ -228,7 +228,7 @@ nuget spec
 
 토큰을 사용하면 프로젝트를 업데이트할 때 `.nuspec`의 버전 번호와 같은 중요한 값을 업데이트할 필요가 없습니다. (원하는 경우 언제든지 토큰을 리터럴 값으로 바꿀 수 있습니다.) 
 
-뒤에 나오는 [nuget pack을 실행하여 .nupkg 파일 생성](#running-nuget-pack-to-generate-the-nupkg-file)에서 설명한 대로 Visual Studio 프로젝트에서 작업할 때 사용할 수 있는 몇 가지 추가 패키징 옵션이 있습니다.
+뒤에 나오는 [nuget pack을 실행하여 .nupkg 파일 생성](#run-nuget-pack-to-generate-the-nupkg-file)에서 설명한 대로 Visual Studio 프로젝트에서 작업할 때 사용할 수 있는 몇 가지 추가 패키징 옵션이 있습니다.
 
 #### <a name="solution-level-packages"></a>솔루션 수준 패키지
 
@@ -250,7 +250,7 @@ nuget spec [<package-name>]
 
 결과 `.nuspec`에는 `projectUrl`과 같은 값에 대한 자리 표시자가 포함됩니다. 파일을 사용하기 전에 편집하여 최종 `.nupkg` 파일을 만들어야 합니다.
 
-## <a name="choosing-a-unique-package-identifier-and-setting-the-version-number"></a>고유한 패키지 식별자 선택 및 버전 번호 설정
+## <a name="choose-a-unique-package-identifier-and-setting-the-version-number"></a>고유한 패키지 식별자 선택 및 버전 번호 설정
 
 패키지 식별자(`<id>` 요소)와 버전 번호(`<version>` 요소)는 패키지에 포함된 정확한 코드를 고유하게 식별하므로 매니페스트에서 가장 중요한 두 가지 값입니다.
 
@@ -262,7 +262,7 @@ nuget spec [<package-name>]
 
 **패키지 버전에 대한 모범 사례:**
 
-- 일반적으로 반드시 필요한 것은 아니지만 라이브러리의 버전과 일치하도록 패키지의 버전을 설정합니다. 이는 앞서의 [패키지할 어셈블리 결정](#deciding-which-assemblies-to-package)에서 설명한 대로 패키지를 단일 어셈블리로 제한할 때의 간단한 문제입니다. 전반적으로 NuGet 자체는 종속성을 확인할 때 어셈블리 버전이 아니라 패키지 버전을 처리합니다.
+- 일반적으로 반드시 필요한 것은 아니지만 라이브러리의 버전과 일치하도록 패키지의 버전을 설정합니다. 이는 앞서의 [패키지할 어셈블리 결정](#decide-which-assemblies-to-package)에서 설명한 대로 패키지를 단일 어셈블리로 제한할 때의 간단한 문제입니다. 전반적으로 NuGet 자체는 종속성을 확인할 때 어셈블리 버전이 아니라 패키지 버전을 처리합니다.
 - 비표준 버전 구성표를 사용하는 경우 [패키지 버전 관리](../reference/package-versioning.md)에서 설명한 대로 NuGet 버전 관리 규칙을 고려해야 합니다.
 
 > 다음과 같은 일련의 간단한 블로그 게시물도 버전 관리를 이해하는 데 도움이 됩니다.
@@ -271,33 +271,7 @@ nuget spec [<package-name>]
 > - [2부: 핵심 알고리즘](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
 > - [3부: 바인딩 리디렉션을 통한 통합](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
 
-## <a name="setting-a-package-type"></a>패키지 유형 설정
-
-NuGet 3.5 이상을 사용하면 의도한 용도를 나타내기 위해 패키지를 특정 *패키지 유형*으로 표시할 수 있습니다. 이전 버전의 NuGet으로 만든 모든 패키지를 포함하여 유형으로 표시되지 않은 패키지의 기본값은 `Dependency` 유형입니다.
-
-- `Dependency` 유형 패키지는 라이브러리 또는 애플리케이션에 빌드 시간 자산 또는 런타임 자산을 추가하며, 모든 프로젝트 형식에 설치할 수 있습니다(호환된다고 가정할 경우).
-
-- `DotnetCliTool` 유형 패키지는 [.NET CLI](/dotnet/articles/core/tools/index)의 확장이며, 명령줄에서 호출됩니다. 이러한 패키지는 .NET Core 프로젝트에만 설치할 수 있으며 복원 작업에는 영향을 주지 않습니다. 이러한 프로젝트별 확장에 대한 자세한 내용은 [.NET Core 확장성](/dotnet/articles/core/tools/extensibility#per-project-based-extensibility) 설명서를 참조하세요.
-
-- 사용자 지정 유형 패키지는 패키지 ID와 동일한 형식 규칙을 준수하는 임의 형식의 식별자를 사용합니다. 그러나 `Dependency` 및 `DotnetCliTool` 이외의 유형은 Visual Studio의 NuGet 패키지 관리자에서 인식되지 않습니다.
-
-패키지 형식은 `.nuspec` 파일에 설정됩니다. 이전 버전과의 호환성에서 `Dependency` 유형을 명시적으로 *설정하지 않고*, 유형을 지정하지 않은 경우 이 유형을 가정하여 NuGet을 대신 사용하는 것이 가장 좋습니다.
-
-- `.nuspec`: `<metadata>` 요소 아래의 `packageTypes\packageType` 노드 내에서 패키지 유형을 나타냅니다.
-
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
-        <metadata>
-        <!-- ... -->
-        <packageTypes>
-            <packageType name="DotnetCliTool" />
-        </packageTypes>
-        </metadata>
-    </package>
-    ```
-
-## <a name="adding-a-readme-and-other-files"></a>추가 정보 및 기타 파일 추가
+## <a name="add-a-readme-and-other-files"></a>추가 정보 및 기타 파일 추가
 
 패키지에 포함할 파일을 직접 지정 하려면 `.nuspec` 파일에서 `<metadata>` 태그 *다음에 오는* `<files>` 노드를 사용합니다.
 
@@ -327,7 +301,7 @@ NuGet 3.5 이상을 사용하면 의도한 용도를 나타내기 위해 패키�
 > [!Note]
 > `.nuspec` 파일에서 빈 `<files>` 노드가 포함되면 NuGet은 `lib` 폴더에 있는 것 이외의 다른 콘텐츠를 패키지에 포함하지 않습니다.
 
-## <a name="including-msbuild-props-and-targets-in-a-package"></a>패키지에 MSBuild props 및 targets 포함
+## <a name="include-msbuild-props-and-targets-in-a-package"></a>패키지에 MSBuild props 및 targets 포함
 
 경우에 따라 패키지를 사용하는 프로젝트에 사용자 지정 빌드 대상 또는 속성(예: 빌드하는 동안 사용자 지정 도구 또는 프로세스 실행)을 추가할 수 있습니다. 이렇게 하려면 프로젝트의 `\build` 폴더 내에 `<package_id>.targets` 또는 `<package_id>.props`(예: `Contoso.Utility.UsefulStuff.targets`) 형식의 파일을 배치합니다.
 
@@ -367,27 +341,7 @@ NuGet에서 `\build` 파일이 포함된 패키지를 설치하는 경우 `.targ
 
 NuGet 3.x를 사용하면 대상이 프로젝트에 추가되지 않고 대신 `project.lock.json`을 통해 사용할 수 있게 됩니다.
 
-## <a name="authoring-packages-with-com-interop-assemblies"></a>COM interop 어셈블리가 포함된 패키지 제작
-
-COM interop 어셈블리가 포함된 패키지에는 적절한 [targets 파일](#including-msbuild-props-and-targets-in-a-package)이 포함되어야 올바른 `EmbedInteropTypes` 메타데이터가 PackageReference 형식을 사용하여 프로젝트에 추가됩니다. 기본적으로 PackageReference를 사용하는 경우 `EmbedInteropTypes` 메타데이터는 모든 어셈블리에 대해 항상 false이므로 targets 파일에는 이 메타데이터가 명시적으로 추가됩니다. 충돌을 방지하기 위해 대상 이름은 고유해야 합니다. 이상적으로는 패키지 이름과 포함되는 어셈블리의 조합을 사용하여 아래 예제의 `{InteropAssemblyName}`을 해당 값으로 바꿉니다. (예제는 [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop)을 참조하세요.)
-
-```xml
-<Target Name="Embedding**AssemblyName**From**PackageId**" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
-  <ItemGroup>
-    <ReferencePath Condition=" '%(FileName)' == '{InteropAssemblyName}' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
-      <EmbedInteropTypes>true</EmbedInteropTypes>
-    </ReferencePath>
-  </ItemGroup>
-</Target>
-```
-
-`packages.config` 관리 형식을 사용하는 경우 패키지에서 어셈블리에 대한 참조를 추가하면 NuGet 및 Visual Studio에서 COM interop 어셈블리를 확인하고 프로젝트 파일에서 `EmbedInteropTypes`를 true로 설정합니다. 이 경우 targets 파일이 재정의됩니다.
-
-또한 기본적으로 [빌드 자산은 전이적으로 이동하지 않습니다](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets). 여기서 설명한 대로 작성된 패키지는 프로젝트 간 참조에서 전이 종속성으로 끌어올 때 다르게 작동합니다. 패키지 소비자는 빌드를 포함하지 않도록 PrivateAssets 기본값을 수정하여 패키지를 이동할 수 있도록 합니다.
-
-<a name="creating-the-package"></a>
-
-## <a name="running-nuget-pack-to-generate-the-nupkg-file"></a>nugkg pack을 실행하여 .nupkg 파일 생성
+## <a name="run-nuget-pack-to-generate-the-nupkg-file"></a>nugkg pack을 실행하여 .nupkg 파일 생성
 
 어셈블리 또는 규칙 기반 작업 디렉터리를 사용하는 경우 `.nuspec` 파일이 포함된 `nuget pack`을 실행하고 `<project-name>`을 특정 파일 이름으로 바꿔 패키지를 만듭니다.
 
@@ -441,7 +395,7 @@ NuGet은 매니페스트의 자리 표시자 값을 변경하지 않은 경우�
     nuget pack MyProject.csproj -symbols
     ```
 
-### <a name="testing-package-installation"></a>패키지 설치 테스트
+### <a name="test-package-installation"></a>패키지 설치 테스트
 
 일반적으로 패키지를 게시하기 전에 프로젝트에 패키지를 설치하는 프로세스를 테스트하려고 합니다. 테스트를 통해 모든 파일이 프로젝트의 올바른 위치에 있는지 반드시 확인합니다.
 
@@ -465,6 +419,8 @@ NuGet은 매니페스트의 자리 표시자 값을 변경하지 않은 경우�
 - [원본 및 구성 파일 변환](../create-packages/source-and-config-file-transformations.md)
 - [지역화](../create-packages/creating-localized-packages.md)
 - [시험판 버전](../create-packages/prerelease-packages.md)
+- [패키지 형식 설정](../create-packages/set-package-type.md)
+- [COM interop 어셈블리가 포함된 패키지 만들기](../create-packages/author-packages-with-COM-interop-assemblies.md)
 
 마지막으로 주의해야 할 추가 패키지 유형이 있습니다.
 

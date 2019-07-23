@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/26/2017
 ms.topic: conceptual
-ms.openlocfilehash: a285650034c99026e34fcda398ca7ced4855e40a
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 58ad05cb854c8f7233d90d03c1b320f8797ca2ab
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425725"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842394"
 ---
 # <a name="package-creation-workflow"></a>패키지 만들기 워크플로
 
@@ -21,9 +21,7 @@ ms.locfileid: "67425725"
 > [!Note]
 > 다른 개발자가 사용할 패키지를 만드는 경우 개발자가 사용자의 작업에 의존하고 있음을 이해하는 것이 중요합니다. 이와 같이 패키지를 만들고 게시하는 것은 버그를 수정하고 다른 업데이트를 만들거나 최소한 패키지를 오픈 소스로 사용할 수 있게 하여 다른 사람들이 패키지를 유지 관리할 수 있도록 하기 위한 약속을 의미합니다.
 
-어떤 경우이든 패키지를 만드는 작업은 패키지할 어셈블리와 다른 파일을 결정하는 것으로 시작합니다. 그런 다음, 식별자, 버전 번호, 저작권 정보, MSBuild props 및 targets와 함께 패키지의 내용을 설명하는 `.nuspec` 파일이라고 하는 매니페스트 파일을 만듭니다.
-
-적절한 폴더에 필요한 모든 파일을 준비하고 적절한 `.nuspec` 파일을 만들었으면 `nuget pack` 명령(또는 [MSBuild pack 대상](../reference/msbuild-targets.md))을 사용하여 모든 파일을 함께 `.nupkg` 파일에 넣습니다. 그러면 다른 개발자가 사용할 수 있는 모든 호스트에 패키지를 배포할 준비가 되었습니다.
+어떤 경우든 패키지 만들기는 해당 식별자, 버전 번호, 라이선스, 저작권 정보 및 기타 필요한 콘텐츠를 결정하는 것부터 시작됩니다. 완료되면 "pack" 명령을 사용하여 모든 항목을 `.nupkg` 파일에 포함할 수 있습니다. 이 파일은 nuget.org와 같은 NuGet 피드에 게시할 수 있습니다.
 
 > [!Tip]
 > `.nupkg` 확장명이 있는 NuGet 패키지는 단순히 ZIP 파일입니다. 패키지의 내용을 쉽게 검사하려면 확장명을 `.zip`으로 변경하고 평소와 같이 해당 내용을 펼쳐봅니다. 호스트에 업로드하기 전에 확장명을 `.nupkg`로 다시 변경해야 합니다.

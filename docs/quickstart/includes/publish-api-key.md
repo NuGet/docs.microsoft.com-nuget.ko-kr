@@ -1,8 +1,16 @@
+---
+ms.openlocfilehash: 5acdc54726e4cb07794f8ee07d5e0d357ff622a3
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842044"
+---
 1. [nuget.org 계정에 로그인](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)하거나 아직 계정이 없는 경우 계정을 만듭니다.
 
 1. 사용자 이름(오른쪽 위)을 선택한 다음 **API 키**를 선택합니다.
 
-1. **만들기**를 선택하고, 키 이름을 지정하고, **범위 선택 > 푸시**를 선택합니다. **API 키**아래에서 **GLOB 패턴**에 *를 입력한 후 **만들기**를 선택합니다. (범위에 대한 자세한 내용은 아래를 참조하세요.)
+1. **만들기**를 선택하고, 키 이름을 지정하고, **범위 선택 > 푸시**를 선택합니다. **GLOB 패턴**에 *를 입력한 후 **만들기**를 선택합니다. (범위에 대한 자세한 내용은 아래를 참조하세요.)
 
 1. 키가 만들어지면 **복사**를 선택하여 CLI에서 필요한 액세스 키를 검색합니다.
 

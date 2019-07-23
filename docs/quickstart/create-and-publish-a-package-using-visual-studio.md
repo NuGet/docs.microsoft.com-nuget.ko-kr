@@ -1,33 +1,34 @@
 ---
 title: Windows에서 Visual Studio를 사용하여 .NET Standard 패키지 만들기 및 게시
-description: Windows에서 Visual Studio 2017을 사용하여 .NET Standard NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
+description: Windows에서 Visual Studio를 사용하여 .NET Standard NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
 author: karann-msft
 ms.author: karann
-ms.date: 05/24/2019
+ms.date: 07/09/2019
 ms.topic: quickstart
-ms.openlocfilehash: c75785d361f25564c8a59d7a2d85924c570a7b9a
-ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
+ms.openlocfilehash: d9eccfa373a5a283542fd158e76ba74b1872f3d6
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467810"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842137"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>빠른 시작: Visual Studio(.NET Standard, Windows 전용)를 사용하여 NuGet 패키지 만들기 및 게시
 
 Windows에서 Visual Studio의 .NET Standard 클래스 라이브러리에서 NuGet 패키지를 만들고 CLI 도구를 사용하여 nuget.org에 게시하는 간단한 과정입니다.
 
 > [!Note]
-> 이 빠른 시작은 Windows용 Visual Studio 2017에만 적용됩니다. Mac용 Visual Studio에는 여기에 설명된 기능이 포함되어 있지 않습니다. 대신 [dotnet CLI 도구](create-and-publish-a-package-using-the-dotnet-cli.md)를 사용하세요.
+> Mac용 Visual Studio를 사용하는 경우 NuGet 패키지 생성에 대해 [이 정보](/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library)를 참조하거나 [dotnet CLI 도구](create-and-publish-a-package-using-the-dotnet-cli.md)를 사용하세요.
 
 ## <a name="prerequisites"></a>전제 조건
 
-1. .Net 관련 워크로드를 사용하여 [visualstudio.com](https://www.visualstudio.com/)에서 모든 버전의 Visual Studio 2017을 설치합니다. .NET 워크로드가 설치될 때 Visual Studio 2017이 NuGet 기능을 자동으로 포함합니다.
+1. .NET 관련 워크로드를 사용하여 [visualstudio.com](https://www.visualstudio.com/)에서 Visual Studio 2017 이상 버전을 설치합니다. .NET 워크로드를 설치하면 Visual Studio 2017 이상에 NuGet 기능이 자동으로 포함됩니다.
 
-1. CLI 도구 중 하나를 설치합니다.
+1. `dotnet` CLI를 설치합니다.
 
-   * `dotnet` CLI의 경우 [.NET Core SDK](https://www.microsoft.com/net/download/)를 설치합니다. Dotnet CLI는 SDK 스타일 형식(SDK 특성)을 사용하는 .NET Standard 프로젝트에 필요합니다.
-
-   * `nuget.exe` CLI의 경우 [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)에서 다운로드하고, `.exe` 파일을 적합한 폴더에 저장하고, 해당 폴더를 PATH 환경 변수에 추가합니다. Nuget.exe CLI는 SDK 스타일이 아닌 형식으로 .NET Standard 라이브러리에 사용됩니다.
+   `dotnet` CLI의 경우, Visual Studio 2017부터 `dotnet` CLI가 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다. 그렇지 않으면 [.NET Core SDK](https://www.microsoft.com/net/download/)를 설치하여 `dotnet` CLI를 가져옵니다. `dotnet` CLI는 [SDK 스타일 형식](../resources/check-project-format.md)(SDK 특성)을 사용하는 .NET Standard 프로젝트에 필요합니다. 이 문서에서 사용되는 Visual Studio 2017 이상의 기본 클래스 라이브러리 템플릿은 SDK 특성을 사용합니다.
+   
+   > [!Important]
+   > 이 문서에서는 `dotnet` CLI가 권장됩니다. `nuget.exe` CLI를 사용하여 NuGet 패키지를 게시할 수는 있지만 이 문서의 일부 단계는 SDK 스타일 프로젝트 및 dotnet CLI와 관련이 있습니다. nuget.exe CLI는 [비 SDK 스타일 프로젝트](../resources/check-project-format.md)에 사용됩니다(일반적으로 .NET Framework). 비 SDK 스타일 프로젝트를 사용하는 경우 [.NET Framework 패키지 만들기 및 게시(Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md)의 절차에 따라 패키지를 만들고 게시합니다.
 
 1. 아직 없는 경우 [nuget.org에 체험 계정을 등록](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account)합니다. 새 계정을 만들면 확인 전자 메일을 보냅니다. 패키지를 업로드하려면 먼저 계정을 확인해야 합니다.
 
@@ -59,7 +60,9 @@ namespace AppLogger
 
 ## <a name="configure-package-properties"></a>패키지 속성 구성
 
-1. **프로젝트 > 속성** 메뉴 명령을 선택한 다음, **패키지** 탭을 선택합니다. (**패키지** 탭은 .NET Standard 클래스 라이브러리 프로젝트에만 표시됩니다. .NET Framework를 대상으로 하는 경우 [.NET Framework 패키지 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md)를 대신 참조하세요. .NET Standard 프로젝트에 나타나지 않으면 Visual Studio 2017을 최신 릴리스로 업데이트해야 합니다.)
+1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성** 메뉴 명령을 선택한 후 **패키지** 탭을 선택합니다.
+
+   **패키지** 탭은 Visual Studio의 SDK 스타일 프로젝트(일반적으로 .NET Standard 또는 .NET Core 클래스 라이브러리 프로젝트)에 대해서만 표시됩니다. 비 SDK 스타일 프로젝트(일반적으로 .NET Framework)를 대상으로 하는 경우 [프로젝트를 마이그레이션](../reference/migrate-packages-config-to-package-reference.md)하거나 `dotnet` CLI를 사용할 수 있으며, 단계별 지침 대신 [.NET Framework 패키지 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md) 또는 [.NET Framework 패키지 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md)를 참조하세요.
 
     ![Visual Studio 프로젝트의 NuGet 패키지 속성](media/qs_create-vs-01-package-properties.png)
 
@@ -75,6 +78,8 @@ namespace AppLogger
 
 1. 선택 사항: 프로젝트 파일에서 직접 속성을 보려면 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **AppLogger.csproj 편집**을 선택합니다.
 
+   이 옵션은 SDK 스타일 특성을 사용하는 프로젝트의 경우 Visual Studio 2017부터만 사용할 수 있습니다. 그렇지 않은 경우 프로젝트를 마우스 오른쪽 단추로 클릭하고 **프로젝트 언로드**를 선택합니다. 그런 다음, 언로드된 프로젝트를 마우스 오른쪽 단추로 클릭하고 **AppLogger.csproj 편집**을 선택합니다.
+
 ## <a name="run-the-pack-command"></a>pack 명령 실행
 
 1. 구성을 **해제**로 설정합니다.
@@ -82,6 +87,8 @@ namespace AppLogger
 1. **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **Pack** 명령을 선택합니다.
 
     ![Visual Studio 프로젝트 상황에 맞는 메뉴의 NuGet pack 명령](media/qs_create-vs-02-pack-command.png)
+
+    **Pack** 명령이 표시되지 않는 경우 프로젝트는 SDK 스타일 프로젝트가 아닌 것이므로 `nuget.exe` CLI를 사용해야 합니다. [프로젝트를 마이그레이션](../reference/migrate-packages-config-to-package-reference.md)하고 `dotnet` CLI를 사용하거나 단계별 지침 대신 [.NET Framework 패키지 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md)를 참조하세요.
 
 1. Visual Studio에서 프로젝트를 빌드하고 `.nupkg` 파일을 만듭니다. **출력** 창에서 패키지 파일의 경로가 포함된 다음과 같은 세부 정보가 있는지 확인합니다. 또한 빌드된 어셈블리는 .NET Standard 2.0 대상에 맞게 `bin\Release\netstandard2.0`에 있습니다.
 
@@ -116,7 +123,9 @@ msbuild -t:pack -p:Configuration=Release
 
 ### <a name="publish-with-dotnet-nuget-push-dotnet-cli"></a>dotnet nuget push로 게시(dotnet CLI)
 
-`nuget.exe`를 사용하는 대신 다음 단계를 사용할 수 있습니다.
+이 단계는 `nuget.exe`를 사용하는 방법의 대안으로 권장됩니다.
+
+패키지를 게시하려면 먼저 명령줄을 열어야 합니다.
 
 [!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
@@ -124,9 +133,9 @@ msbuild -t:pack -p:Configuration=Release
 
 `dotnet.exe`를 사용하는 대신 다음 단계를 사용할 수 있습니다.
 
-1. `.nupkg` 파일을 포함하는 폴더로 변경합니다.
+1. 명령줄을 열고 `.nupkg` 파일을 포함하는 폴더로 변경합니다.
 
-1. 다음 명령을 실행하여 패키지 이름을 지정하고 키 값을 API 키로 바꿉니다.
+1. 다음 명령을 실행하여 패키지 이름(고유한 패키지 ID)을 지정하고 키 값을 API 키로 바꿉니다.
 
     ```cli
     nuget push AppLogger.1.0.0.nupkg qz2jga8pl3dvn2akksyquwcs9ygggg4exypy3bhxy6w6x6 -Source https://api.nuget.org/v3/index.json
@@ -171,7 +180,7 @@ msbuild -t:pack -p:Configuration=Release
 > [!Note]
 > 프로젝트 루트에 readme.txt를 단순히 추가하기만 하면 결과 패키지에 포함되지 않습니다.
 
-## <a name="related-topics"></a>관련 항목
+## <a name="related-topics"></a>관련된 항목
 
 - [패키지 만들기](../create-packages/creating-a-package.md)
 - [패키지 게시](../nuget-org/publish-a-package.md)

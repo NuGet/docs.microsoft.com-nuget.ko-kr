@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: eeae62a09a9f405d27cd113ff586393f6305ba47
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 4cfc2fde08b240288851b87a391dc42c1ac8ecaf
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426707"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842315"
 ---
 # <a name="package-consumption-workflow"></a>패키지 사용 워크플로
 
@@ -49,5 +49,5 @@ NuGet은 설치된 각 패키지의 ID와 버전 번호를 기억하여 프로�
 | --- | --- |
 | [dotnet.exe CLI](install-use-packages-dotnet-cli.md) | (모든 플랫폼) .NET Core 및 .NET Standard 라이브러리와 .NET Framework를 대상으로 하는 SDK 스타일 프로젝트를 위한 CLI 도구입니다([SDK 특성](/dotnet/core/tools/csproj#additions) 참조). \<package_name\>으로 식별된 패키지를 검색하고 프로젝트 파일에 참조를 추가합니다. 종속성도 검색하고 설치합니다. |
 | Visual Studio | (Windows 및 Mac) 지정된 패키지 소스에서 패키지와 종속성을 찾고, 선택하고, 프로젝트에 설치할 수 있는 UI를 제공합니다. 설치된 패키지에 대한 참조를 프로젝트 파일에 추가합니다.<ul><li>[Visual Studio를 사용하여 패키지 설치 및 관리](../tools/package-manager-ui.md)</li><li>[프로젝트에 NuGet 패키지 포함(Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
-| [Visual Studio의 PowerShell](../tools/package-manager-console.md) | (Windows만) 선택된 소스에서 \<package_name\>으로 식별되는 패키지를 검색하여 솔루션의 지정된 프로젝트에 설치하고 참조를 프로젝트 파일에 추가합니다. 종속성도 검색하고 설치합니다. |
+| [Visual Studio의 패키지 관리자 콘솔](../tools/package-manager-console.md) | (Windows만) 선택된 소스에서 \<package_name\>으로 식별되는 패키지를 검색하여 솔루션의 지정된 프로젝트에 설치하고 참조를 프로젝트 파일에 추가합니다. 종속성도 검색하고 설치합니다. |
 | [nuget.exe CLI](install-use-packages-dotnet-cli.md) | (모든 플랫폼) .NET Framework 라이브러리와 .NET Standard 라이브러리를 대상으로 하는 SDK 스타일이 아닌 프로젝트를 위한 CLI 도구입니다. \<package_name\>으로 식별되는 패키지를 검색하고 해당 콘텐츠를 현재 디렉터리의 폴더로 확장합니다. `packages.config` 파일에 나열된 모든 패키지를 검색할 수도 있습니다. 종속성도 검색하고 설치하지만 프로젝트 파일 또는 `packages.config`는 변경하지 않습니다. |

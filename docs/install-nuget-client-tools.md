@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: 6e3011493b7b89bc43cd9a267aea7fd32d668cec
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: a4a3f5509792e56c09d18b3da98588d17f4756ee
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426567"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67841937"
 ---
 # <a name="install-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
 
@@ -20,8 +20,8 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 CLI(명�
 
 | 도구&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 설명 | 다운로드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
-| [dotnet.exe](#dotnetexe-cli) | .NET Core 및 .NET Standard 라이브러리와 .NET Framework를 대상으로 하는 것과 같은 SDK 스타일 프로젝트를 위한 CLI 도구입니다([SDK 특성](/dotnet/core/tools/csproj#additions) 참조). .NET Core SDK에 포함되며 모든 플랫폼에서 핵심 NuGet 기능을 제공합니다. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | .NET Framework 라이브러리와 .NET Standard 라이브러리를 대상으로 하는 SDK 스타일이 아닌 프로젝트를 위한 CLI 도구입니다. Windows에서 모든 NuGet 기능을 제공하며 Mono로 실행 중일 경우 Mac 및 Linux에서 대부분의 기능을 제공합니다. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [dotnet.exe](#dotnetexe-cli) | .NET Core 및 .NET Standard 라이브러리와 .NET Framework를 대상으로 하는 것과 같은 [SDK 스타일 프로젝트](resources/check-project-format.md)를 위한 CLI 도구입니다. .NET Core SDK에 포함되며 모든 플랫폼에서 핵심 NuGet 기능을 제공합니다. (Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.)| [.NET Core SDK](https://www.microsoft.com/net/download/) |
+| [nuget.exe](#nugetexe-cli) | .NET Framework 라이브러리와 .NET Standard 라이브러리를 대상으로 하는 [SDK 스타일이 아닌 프로젝트](resources/check-project-format.md)를 위한 CLI 도구입니다. Windows에서 모든 NuGet 기능을 제공하며 Mono로 실행 중일 경우 Mac 및 Linux에서 대부분의 기능을 제공합니다. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | Windows에서 패키지 관리자 UI 및 패키지 관리자 콘솔을 통해 NuGet 기능을 제공합니다(.NET 관련 워크로드와 함께 포함). Mac에서는 UI를 통해 특정 기능을 제공합니다. Visual Studio Code에서 NuGet 기능은 확장을 통해 제공됩니다. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 [MSBuild CLI](reference/msbuild-targets.md)는 주로 빌드 서버에서 유용한 패키지를 복원하고 만들 수 있는 기능을 제공합니다. MSBuild는 NuGet을 사용하기 위한 범용 도구가 아닙니다.
@@ -31,7 +31,7 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 CLI(명�
 두 NuGet CLI 도구는 `dotnet.exe` 및 `nuget.exe`입니다. 이 둘을 비교하려면 [기능 가용성](#feature-availability)을 참조하세요.
 
 * .NET Core 또는 .NET Standard를 대상으로 하려면 dotnet CLI를 사용합니다. dotnet CLI는 [SDK 특성](/dotnet/core/tools/csproj#additions)을 사용하는 SDK 스타일 프로젝트 형식에 필요합니다.
-* .NET Framework(SDK 스타일이 아닌 프로젝트에만 해당)를 대상으로 하려면 `nuget.exe CLI`를 사용합니다. 프로젝트가 `packages.config`로 마이그레이션된 경우 dotnet CLI를 사용합니다.
+* .NET Framework(SDK 스타일이 아닌 프로젝트에만 해당)를 대상으로 하려면 `nuget.exe CLI`를 사용합니다. 프로젝트가 `packages.config`에서 PackageReference로 마이그레이션되면 dotnet CLI를 사용합니다.
 
 ### <a name="dotnetexe-cli"></a>dotnet.exe CLI
 
@@ -39,7 +39,7 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 CLI(명�
 
 설치:
 
-- 개발자 컴퓨터에서 [.NET Core SDK](https://aka.ms/dotnetcoregs)를 설치합니다.
+- 개발자 컴퓨터에서 [.NET Core SDK](https://aka.ms/dotnetcoregs)를 설치합니다. Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.
 - 빌드 서버의 경우 [지속적인 통합에 .NET Core SDK 및 도구 사용](/dotnet/core/tools/using-ci-with-cli)에 대한 지침을 따르세요.
 
 dotnet CLI에서 기본 명령을 사용하는 방법에 대한 자세한 내용은 [dotnet CLI를 사용하여 패키지 설치 및 사용](consume-packages/install-use-packages-dotnet-cli.md)을 참조하세요.
@@ -48,14 +48,14 @@ dotnet CLI에서 기본 명령을 사용하는 방법에 대한 자세한 내용
 
 `nuget.exe` CLI인 `nuget.exe`는 모든 NuGet 기능을 제공하는 Windows용 명령줄 유틸리티입니다. 약간의 제한이 있지만 [Mono](http://www.mono-project.com/docs/getting-started/install/)를 사용하여 Mac OSX 및 Linux에서 실행할 수도 있습니다.
 
+`nuget.exe` CLI에서 기본 명령을 사용하는 방법에 대한 자세한 내용은 [nuget.exe CLI를 사용하여 패키지 설치 및 사용](consume-packages/install-use-packages-nuget-cli.md)을 참조하세요.
+
 설치:
 
 [!INCLUDE [install-cli](includes/install-cli.md)]
 
 > [!Tip]
 > Windows에서 `nuget update -self`를 사용하여 기존 nuget.exe를 최신 버전으로 업데이트합니다.
-
-`nuget.exe` CLI에서 기본 명령을 사용하는 방법에 대한 자세한 내용은 [nuget.exe CLI를 사용하여 패키지 설치 및 사용](consume-packages/install-use-packages-nuget-cli.md)을 참조하세요.
 
 > [!Note]
 > 최신 권장 NuGet CLI는 항상 `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`에서 사용할 수 있습니다. 이전의 지속적인 통합(CI) 시스템과 호환되도록 이전 URL `https://nuget.org/nuget.exe`에서 현재 [사용되지 않는 2.8.6 CLI 도구](https://github.com/NuGet/NuGetGallery/issues/5381)를 제공합니다.
@@ -100,10 +100,10 @@ dotnet CLI에서 기본 명령을 사용하는 방법에 대한 자세한 내용
 
 (4) `.nuspec` 파일에서 작동하지만 프로젝트 파일에서 작동하지 않습니다.
 
-### <a name="related-topics"></a>관련 항목
+### <a name="related-topics"></a>관련된 항목
 
 - [Visual Studio를 사용하여 패키지 설치 및 관리](tools/package-manager-ui.md)
-- [PowerShell을 사용하여 패키지 설치 및 관리](tools/package-manager-console.md)
+- [패키지 관리자 콘솔을 사용하여 패키지 설치 및 관리](tools/package-manager-console.md)
 - [dotnet CLI를 사용하여 패키지 설치 및 관리](consume-packages/install-use-packages-dotnet-cli.md)
 - [nuget.exe CLI를 사용하여 패키지 설치 및 관리](consume-packages/install-use-packages-nuget-cli.md)
 - [패키지 관리자 콘솔 PowerShell 참조](tools/powershell-reference.md)

@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: a8fd525f2446f9468664f1d80ef8808127a24be7
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 64f3a1978cd336064a77c9f3872357e65c37fc10
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427418"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842354"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 패키지 설치 및 관리
 
@@ -95,6 +95,8 @@ dotnet remove package Newtonsoft.Json
 ## <a name="restore-packages"></a>패키지 복원
 
 프로젝트 파일에 나열된 패키지를 복원하는 [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) 명령을 사용합니다([PackageReference](../consume-packages/package-references-in-project-files.md) 참조). .NET Core 2.0 이상에서는 `dotnet build` 및 `dotnet run`을 통해 복원이 자동으로 수행됩니다. NuGet 4.0부터 `nuget restore`와 같은 코드가 실행됩니다.
+
+다른 `dotnet` CLI 명령을 사용할 때처럼 명령줄을 열고 프로젝트 파일이 포함된 디렉터리로 전환합니다.
 
 `dotnet restore`를 사용하여 패키지를 복원하려면 다음을 수행합니다.
 

@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3be8d1dad6552db2fc04b2f324145ac7ce86acb2
-ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
+ms.openlocfilehash: 287237cf4041870c562a6a7f48f233d8fdc8ef33
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467769"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842380"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>패키지 복원 오류 문제 해결
 
-이 아티클에서는 패키지를 복원할 때 일반적인 오류 및 해당 문제를 해결하는 단계를 집중적으로 살펴봅니다. 패키지 복원에 대한 자세한 내용은 [패키지 복원](../consume-packages/package-restore.md#enable-and-disable-package-restore)을 참조하세요.
+이 아티클에서는 패키지를 복원할 때 일반적인 오류 및 해당 문제를 해결하는 단계를 집중적으로 살펴봅니다. 패키지 복원에 대한 자세한 내용은 [패키지 복원](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio)을 참조하세요.
 
 이 지침으로 문제가 해결되지 않을 경우 귀하의 시나리오를 더 면밀히 살펴볼 수 있도록 [GitHub에서 문제를 제출](https://github.com/NuGet/docs.microsoft.com-nuget/issues)해 주세요. 이 페이지에 표시되는 "이 페이지가 도움이 되었나요?" 컨트롤은 사용하지 마세요. Microsoft에서 귀하에게 연락하여 자세한 내용을 확인할 수 없기 때문입니다.
 
@@ -29,7 +29,7 @@ Visual Studio를 사용하는 경우 먼저 다음과 같이 패키지 복원을
 
 ![도구/옵션에서 NuGet 패키지 복원 활성화](../consume-packages/media/restore-01-autorestoreoptions.png)
 
-이러한 설정은 `NuGet.config` 파일에서도 변경할 수 있습니다. [동의](#consent) 섹션을 참조하세요.
+이러한 설정은 `NuGet.config` 파일에서도 변경할 수 있습니다. [동의](#consent) 섹션을 참조하세요. 프로젝트가 MSBuild 통합 패키지 복원을 사용하는 이전 프로젝트인 경우 자동 패키지 복원으로 [마이그레이션](package-restore.md#migrate-to-automatic-package-restore-visual-studio)해야 할 수 있습니다.
 
 <a name="missing"></a>
 
@@ -54,10 +54,10 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 패키지를 복원하려면 다음 방법 중 하나를 사용하세요.
 
 - 프로젝트 파일을 이동한 경우 패키지 참조를 업데이트하도록 파일을 직접 편집합니다.
-- Visual Studio에서 **도구 > NuGet 패키지 관리자 > 패키지 관리자 설정** 메뉴 명령을 선택하고 **패키지 복원**에서 두 옵션을 설정하고 **확인**을 선택하여 패키지 복원을 활성화합니다. 그런 다음, 솔루션을 다시 빌드합니다.
-- .NET Core 프로젝트의 경우 `dotnet restore` 또는 `dotnet build`를 실행합니다(복원이 자동으로 실행됨).
-- 명령줄에서 `nuget restore`를 실행합니다(단, `dotnet`을 사용하여 만든 프로젝트의 경우에는 `dotnet restore` 사용).
-- PackageReference 형식을 사용하는 프로젝트의 경우 명령줄에서 `msbuild -t:restore`를 실행합니다.
+- (Visual Studio) **도구 > NuGet 패키지 관리자 > 패키지 관리자 설정** 메뉴 명령을 선택하고 **패키지 복원**에서 두 옵션을 설정하고 **확인**을 선택하여 패키지 복원을 사용하도록 설정합니다. 그런 다음, 솔루션을 다시 빌드합니다.
+- (dotnet CLI) 명령줄에서 프로젝트를 포함하는 폴더로 전환한 후 `dotnet restore` 또는 `dotnet build`(자동으로 복원 실행)를 실행합니다.
+- (nuget.exe CLI) 명령줄에서 프로젝트를 포함하는 폴더로 전환한 후 `nuget restore`를 실행합니다(`dotnet` CLI로 만든 프로젝트 제외, 이 경우 `dotnet restore` 사용).
+- (PackageReference로 마이그레이션된 프로젝트) 명령줄에서 `msbuild -t:restore`를 실행합니다.
 
 복원되면 패키지가 *global-packages* 폴더에 있어야 합니다. PackageReference를 사용하는 프로젝트의 경우 복원에서 `obj/project.assets.json` 파일을 다시 만들어야 하고, `packages.config`를 사용하는 프로젝트의 경우 패키지가 프로젝트의 `packages` 폴더에 표시되어야 합니다. 이제 프로젝트가 성공적으로 빌드됩니다. 그렇지 않을 경우 후속 조치를 위해 [GitHub에서 문제를 제출](https://github.com/NuGet/docs.microsoft.com-nuget/issues)해 주세요.
 
