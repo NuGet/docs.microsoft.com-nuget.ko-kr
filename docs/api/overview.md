@@ -1,21 +1,21 @@
 ---
-title: NuGet API 개요
-description: NuGet API는 패키지를 다운로드 하 고, 메타 데이터를 가져오고, 새 패키지를 게시 하는 데 사용할 수 있는 HTTP 끝점의 집합입니다.
+title: NuGet 서버 API 개요
+description: NuGet 서버 API는 패키지를 다운로드 하 고, 메타 데이터를 가져오고, 새 패키지를 게시 하는 데 사용할 수 있는 HTTP 끝점 집합입니다.
 author: joelverhagen
 ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: e8e8fdeee4f0765e2409aea261db8217744ae2c7
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: aacf56a5dc5af9abf6f60d42bc7fd530a128d0d8
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317005"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419837"
 ---
-# <a name="nuget-api"></a>NuGet API
+# <a name="nuget-server-api"></a>NuGet 서버 API
 
-NuGet API는 패키지를 다운로드 하 고, 메타 데이터를 가져오고, 새 패키지를 게시 하 고, 공식 NuGet 클라이언트에서 사용할 수 있는 대부분의 다른 작업을 수행 하는 데 사용할 수 있는 HTTP 끝점 집합입니다.
+NuGet 서버 API는 패키지를 다운로드 하 고, 메타 데이터를 가져오고, 새 패키지를 게시 하 고, 공식 NuGet 클라이언트에서 사용할 수 있는 대부분의 다른 작업을 수행 하는 데 사용할 수 있는 HTTP 끝점 집합입니다.
 
 이 API는 visual studio, nuget.exe 및 .net CLI에서 nuget 클라이언트를 사용 하 여 [`dotnet restore`](/dotnet/core/tools/dotnet-restore?tabs=netcore2x), visual studio UI에서 검색 및 [`nuget.exe push`](../reference/cli-reference/cli-ref-push.md)를 수행 하는 등의 작업을 수행 합니다.
 
@@ -97,7 +97,7 @@ DELETE | 리소스를 삭제 하거나 목록에서 제거 합니다.
 
 ## <a name="http-status-codes"></a>HTTP 상태 코드
 
-코드 | Description
+코드 | 설명
 ---- | -----
 200  | 성공 및 응답 본문이 있습니다.
 201  | 성공 및 리소스가 생성 되었습니다.
@@ -119,7 +119,7 @@ API `GET` 끝점에 대 한 모든 요청은 HTTP 리디렉션 (301 또는 302)�
 
 ## <a name="http-request-headers"></a>HTTP 요청 헤더
 
-이름                     | Description
+이름                     | 설명
 ------------------------ | -----------
 X-NuGet-ApiKey           | 밀어넣기 및 삭제에 필요 합니다. 리소스를 참조 하세요. [ `PackagePublish`](package-publish-resource.md)
 X-NuGet-Client-Version   | **사용 되지 않음** 및 대체`X-NuGet-Protocol-Version`
