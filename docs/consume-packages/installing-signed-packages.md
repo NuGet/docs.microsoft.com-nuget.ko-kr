@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8da57dc295ea78f2eb183226fc9b2f4a37e3f5db
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 7b92d07d19a2e9073ecc38ed37b4ee2491080443
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426630"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317764"
 ---
 # <a name="manage-package-trust-boundaries"></a>패키지 트러스트 영역 관리
 
@@ -24,7 +24,7 @@ ms.locfileid: "67426630"
 > [!Note]
 > Windows에 NuGet 4.9.0+ 및 Visual Studio 버전 15.9 이상 필요
 
-[`nuget config`](../tools/cli-ref-config.md) 명령을 사용하여 [nuget.config](../reference/nuget-config-file.md) 파일에서 `signatureValidationMode`를 `require`로 설정하여 NuGet 클라이언트가 패키지 서명의 유효성을 검사하는 방법을 구성할 수 있습니다.
+[`nuget config`](../reference/cli-reference/cli-ref-config.md) 명령을 사용하여 [nuget.config](../reference/nuget-config-file.md) 파일에서 `signatureValidationMode`를 `require`로 설정하여 NuGet 클라이언트가 패키지 서명의 유효성을 검사하는 방법을 구성할 수 있습니다.
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require
@@ -40,7 +40,7 @@ nuget.exe config -set signatureValidationMode=require
 
 ### <a name="trust-package-author"></a>패키지 작성자 신뢰
 
-작성자 서명에 기반하여 패키지를 신뢰하려면 [`trusted-signers`](../tools/cli-ref-trusted-signers.md) 명령을 사용하여 nuget.config에서 `author` 속성을 설정합니다.
+작성자 서명에 기반하여 패키지를 신뢰하려면 [`trusted-signers`](../reference/cli-reference/cli-ref-trusted-signers.md) 명령을 사용하여 nuget.config에서 `author` 속성을 설정합니다.
 
 ```cmd
 nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE40881FF5F0AD3E58965DA20A9F571EF1651A56933748E1BF1C99E537C4E039 -FingerprintAlgorithm SHA256
@@ -55,7 +55,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 ```
 
 >[!TIP]
->`nuget.exe` [명령 확인](../tools/cli-ref-verify.md)을 사용하여 인증서 지문의 `SHA256` 값을 가져옵니다.
+>`nuget.exe` [명령 확인](../reference/cli-reference/cli-ref-verify.md)을 사용하여 인증서 지문의 `SHA256` 값을 가져옵니다.
 
 
 ### <a name="trust-all-packages-from-a-repository"></a>리포지토리의 모든 패키지 신뢰
@@ -95,7 +95,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 
 ### <a name="sync-repository-certificates"></a>리포지토리 인증서 동기화
 
-패키지 리포지토리는 [서비스 인덱스](../api/service-index.md)에서 사용하는 인증서를 알려야 합니다. 결과적으로, 리포지토리는 이러한 인증서를 업데이트하게 됩니다(예: 인증서가 만료되는 경우). 이 경우, 특정 정책이 있는 클라이언트는 새로 추가된 인증서를 포함하도록 구성을 업데이트해야 합니다. `nuget.exe` [신뢰할 수 있는 서명자 동기화 명령](../tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-)을 사용하여 리포지토리에 연결된 신뢰할 수 있는 서명자를 쉽게 업그레이드할 수 있습니다.
+패키지 리포지토리는 [서비스 인덱스](../api/service-index.md)에서 사용하는 인증서를 알려야 합니다. 결과적으로, 리포지토리는 이러한 인증서를 업데이트하게 됩니다(예: 인증서가 만료되는 경우). 이 경우, 특정 정책이 있는 클라이언트는 새로 추가된 인증서를 포함하도록 구성을 업데이트해야 합니다. `nuget.exe` [신뢰할 수 있는 서명자 동기화 명령](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-)을 사용하여 리포지토리에 연결된 신뢰할 수 있는 서명자를 쉽게 업그레이드할 수 있습니다.
 
 ### <a name="schema-reference"></a>스키마 참조
 

@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: 64f3a1978cd336064a77c9f3872357e65c37fc10
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: a796c7a7537c3052259c7cf3f17d60981a495442
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842354"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317711"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 패키지 설치 및 관리
 
@@ -18,7 +18,7 @@ CLI 도구를 사용하면 프로젝트 및 솔루션에서 NuGet 패키지를 �
 
 dotnet CLI는 .NET Core, .NET Standard 프로젝트(SDK 스타일 프로젝트 형식) 및 기타 모든 SDK 스타일 프로젝트(예: .NET Framework를 대상으로 하는 SDK 스타일 프로젝트)에서 사용하기 위한 것입니다. 자세한 내용은 [SDK 특성](/dotnet/core/tools/csproj#additions)을 참조하세요.
 
-이 문서에서는 가장 일반적인 몇 가지 dotnet CLI 명령에 대한 기본 사용법을 보여줍니다. 이러한 명령의 대부분의 경우 CLI 도구는 프로젝트 파일이 명령에 지정되지 않는 한 현재 디렉터리에서 프로젝트 파일을 찾습니다(프로젝트 파일은 선택적 스위치임). 사용할 수 있는 명령 및 인수의 전체 목록은 [.NET Core CLI (명령줄 인터페이스) 도구](../tools/dotnet-commands.md)를 참조하세요.
+이 문서에서는 가장 일반적인 몇 가지 dotnet CLI 명령에 대한 기본 사용법을 보여줍니다. 이러한 명령의 대부분의 경우 CLI 도구는 프로젝트 파일이 명령에 지정되지 않는 한 현재 디렉터리에서 프로젝트 파일을 찾습니다(프로젝트 파일은 선택적 스위치임). 사용할 수 있는 명령 및 인수의 전체 목록은 [.NET Core CLI (명령줄 인터페이스) 도구](../reference/dotnet-commands.md)를 참조하세요.
 
 ## <a name="prerequisites"></a>전제 조건
 

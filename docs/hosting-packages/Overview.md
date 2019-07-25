@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: f05c3a7a51bdc0760097422004cfc4339bf9ee2c
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 737b13be70de9aaa7dec7904d4c2a4ec494ef7b3
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426601"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317549"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>사용자 고유의 NuGet 피드 호스팅
 
@@ -38,4 +38,4 @@ NuGet은 이러한 모든 용도에서 다음과 같은 방법으로 개인 패�
 - Sonatype의 [Nexus](http://www.sonatype.org/nexus/)
 - JetBrains의 [TeamCity](https://www.jetbrains.com/teamcity/)
 
-패키지를 호스팅하는 방법에 관계 없이 `NuGet.Config`에서 사용할 수 있는 원본 목록에 추가하여 액세스할 있습니다. [패키지 소스](../tools/package-manager-ui.md#package-sources)에 설명된 대로 Visual Studio 또는 [`nuget sources`](../tools/cli-ref-sources.md)를 사용하는 명령줄에서 수행할 수 있습니다. 원본의 경로는 로컬 폴더 경로 이름, 네트워크 이름 또는 URL일 수 있습니다.
+패키지를 호스팅하는 방법에 관계 없이 `NuGet.Config`에서 사용할 수 있는 원본 목록에 추가하여 액세스할 있습니다. [패키지 소스](../consume-packages/install-use-packages-visual-studio.md#package-sources)에 설명된 대로 Visual Studio 또는 [`nuget sources`](../reference/cli-reference/cli-ref-sources.md)를 사용하는 명령줄에서 수행할 수 있습니다. 원본의 경로는 로컬 폴더 경로 이름, 네트워크 이름 또는 URL일 수 있습니다.

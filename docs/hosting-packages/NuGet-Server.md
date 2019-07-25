@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: e99d42744ec860976ae098be94e747ec4bc9a7c6
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 734f0a609f243c7bdb218a53ed664de68c707dd7
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551958"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317657"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -26,7 +26,7 @@ NuGet.Server에 대해 추가 질문이 있으면 [https://github.com/nuget/NuGe
 
 ## <a name="create-and-deploy-an-aspnet-web-application-with-nugetserver"></a>NuGet.Server를 사용하여 ASP.NET 웹 애플리케이션 만들기 및 배포
 
-1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택하고, "ASP.NET"을 검색하고, C#에 대한 **ASP.NET 웹 응용 프로그램(.NET Framework)** 템플릿을 선택하고, **프레임워크**를 ".NET Framework 4.6"으로 설정합니다.
+1. Visual Studio에서 **파일 &gt; 새로 만들기 &gt; 프로젝트**를 선택하고, "ASP.NET"을 검색하고, C#에 대한 **ASP.NET 웹 애플리케이션(.NET Framework)** 템플릿을 선택하고, **프레임워크**를 ".NET Framework 4.6"으로 설정합니다.
 
     ![새 프로젝트의 대상 프레임워크 설정](media/Hosting_01-NuGet.Server-Set4.6.png)
 
@@ -76,7 +76,7 @@ NuGet.Server에 대해 추가 질문이 있으면 [https://github.com/nuget/NuGe
 
 ## <a name="adding-packages-to-the-feed-externally"></a>외부에서 피드에 패키지 추가
 
-NuGet.Server 사이트를 실행하면 `web.config`에서 API 키 값을 설정하기 위해 제공된 [nuget push](../tools/cli-ref-push.md)를 사용하여 패키지를 추가할 수 있습니다.
+NuGet.Server 사이트를 실행하면 `web.config`에서 API 키 값을 설정하기 위해 제공된 [nuget push](../reference/cli-reference/cli-ref-push.md)를 사용하여 패키지를 추가할 수 있습니다.
 
 NuGet.Server 패키지를 설치한 후에 `web.config`에는 빈 `appSetting/apiKey` 값이 포함됩니다.
 
@@ -104,7 +104,7 @@ NuGet.Server 패키지를 설치한 후에 `web.config`에는 빈 `appSetting/ap
 
 ## <a name="removing-packages-from-the-feed"></a>피드에서 패키지 제거
 
-NuGet.Server에서 [nuget delete](../tools/cli-ref-delete.md) 명령은 주석과 API 키를 포함한 경우 리포지토리에서 패키지를 제거합니다.
+NuGet.Server에서 [nuget delete](../reference/cli-reference/cli-ref-delete.md) 명령은 주석과 API 키를 포함한 경우 리포지토리에서 패키지를 제거합니다.
 
 이 동작을 패키지 목록을 해제하는 것으로 변경하려면(패키지 복원에 사용할 수 있게 유지) `web.config`의 `enableDelisting` 키를 true로 변경하세요.
 

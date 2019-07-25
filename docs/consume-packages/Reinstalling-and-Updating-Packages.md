@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: 9b2a7b299a0cb944ad9045684e14cc7b83e1cff4
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 32b01e6066cf60f7a0942508e640fdd5658b4444
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426675"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68316970"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>패키지를 다시 설치하고 업데이트하는 방법
 
@@ -61,7 +61,7 @@ ms.locfileid: "67426675"
 
 ## <a name="using-update-package"></a>Update-Package 사용
 
-아래에 설명된 [고려 사항](#considerations)에 유념하여 Visual Studio 패키지 관리자 콘솔(**도구** > **NuGet 패키지 관리자** > **패키지 관리자 콘솔**)에서 [Update-Package 명령](../Tools/ps-ref-update-package.md)을 통해 모든 패키지를 쉽게 다시 설치할 수 있습니다.
+아래에 설명된 [고려 사항](#considerations)에 유념하여 Visual Studio 패키지 관리자 콘솔(**도구** > **NuGet 패키지 관리자** > **패키지 관리자 콘솔**)에서 [Update-Package 명령](../reference/ps-reference/ps-ref-update-package.md)을 통해 모든 패키지를 쉽게 다시 설치할 수 있습니다.
 
 ```ps
 Update-Package -Id <package_name> –reinstall
@@ -97,7 +97,7 @@ Update-Package
 
 [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md)를 사용하여 프로젝트 또는 솔루션에서 패키지를 업데이트하면 항상 최신 버전의 패키지(시험판 패키지 제외)로 업데이트됩니다. 원하는 경우 [업그레이드 버전 제한](#constraining-upgrade-versions)에서 설명한 대로 `packages.config`를 사용하는 프로젝트에서 업데이트 버전을 제한할 수 있습니다.
 
-명령에 대한 자세한 내용은 [Update-Package](../Tools/ps-ref-update-package.md) 참조를 참조하세요.
+명령에 대한 자세한 내용은 [Update-Package](../reference/ps-reference/ps-ref-update-package.md) 참조를 참조하세요.
 
 ### <a name="considerations"></a>고려 사항
 

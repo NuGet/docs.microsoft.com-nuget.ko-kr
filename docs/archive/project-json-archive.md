@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: d43f002b740b669de13f5872844ac0df97fc8fdc
-ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
+ms.openlocfilehash: 8d732e87f01c55bde87da0a2e382fd6d509886a3
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467791"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317009"
 ---
 # <a name="projectjson-archive"></a>project.json 보관 파일
 
@@ -142,7 +142,7 @@ PackageReference의 동작은 `project.json`에도 적용됩니다. NuGet 복원
 
 ### <a name="package-manager-options-control"></a>패키지 관리자 옵션 제어
 
-*원래 [패키지 관리자 UI 참조](../tools/package-manager-ui.md)에 포함됩니다.*
+*원래 [패키지 관리자 UI 참조](../consume-packages/install-use-packages-visual-studio.md)에 포함됩니다.*
 
 `project.json` 관리 형식을 사용하는 프로젝트는 **미리 보기 창 표시** 옵션만 표시합니다.
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 57b7f29b533a8e6d7db2710c7e42a239f50199a1
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 5309d94fafea9cdfc3699d443393be5d381dd145
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426663"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317725"
 ---
 # <a name="common-nuget-configurations"></a>일반적인 NuGet 구성
 
@@ -32,7 +32,7 @@ NuGet의 동작은 프로젝트, 사용자 및 컴퓨터 수준에서 존재할 
 
 `NuGet.Config` 파일은 [NuGet 구성 설정](../reference/nuget-config-file.md) 항목에서 설명한 대로 키/값 쌍을 포함한 간단한 XML 텍스트 파일입니다.
 
-설정은 NuGet CLI [config 명령](../tools/cli-ref-config.md)을 사용하여 관리됩니다.
+설정은 NuGet CLI [config 명령](../reference/cli-reference/cli-ref-config.md)을 사용하여 관리됩니다.
 - 기본적으로 사용자 수준 구성 파일이 변경됩니다.
 - 다른 파일의 설정을 변경하려면 `-configFile` 스위치를 사용합니다. 이 경우 파일은 모든 파일 이름을 사용할 수 있습니다.
 - 키는 항상 대/소문자를 구분합니다.

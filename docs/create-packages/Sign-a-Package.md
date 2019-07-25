@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: abdd06642ccc652527a1a005eda2689ce97df74c
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 85a862852761b68db882abdc1ca0e84d83d95f07
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426818"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317637"
 ---
 # <a name="signing-nuget-packages"></a>NuGet 패키지 서명
 
@@ -36,7 +36,7 @@ ms.locfileid: "67426818"
 > [!note]
 > nuget.exe 4.6.0 이상 필요
 
-[nuget sign](../tools/cli-ref-sign.md)을 사용하여 패키지에 서명:
+[nuget sign](../reference/cli-reference/cli-ref-sign.md)을 사용하여 패키지에 서명:
 
 ```cli
 nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
@@ -45,9 +45,9 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 > [!Tip]
 > 인증서 공급 기업은 위에서 표시된 `Timestamper` 선택적 인수에 사용할 수 있는 타임스탬프 서버 URL을 제공하는 경우가 많습니다. 공급 기업의 설명서 및/또는 해당 서비스 URL에 대한 지원으로 문의하세요.
 
-* 인증서 저장소에 있는 인증서나 파일의 인증서를 사용할 수 있습니다. [nuget sign](../tools/cli-ref-sign.md)에 대한 CLI 참조를 참조하세요.
+* 인증서 저장소에 있는 인증서나 파일의 인증서를 사용할 수 있습니다. [nuget sign](../reference/cli-reference/cli-ref-sign.md)에 대한 CLI 참조를 참조하세요.
 * 서명 인증서가 만료된 경우 서명된 패키지에 서명이 유효하다는 것을 확인해 주는 타임스탬프가 포함되어 있어야 합니다. 그렇지 않으면 서명 작업에서 [경고](../reference/errors-and-warnings/NU3002.md)가 발생합니다.
-* [nuget verify](../tools/cli-ref-verify.md)를 사용하여 특정 패키지의 서명 정보를 확인할 수 있습니다.
+* [nuget verify](../reference/cli-reference/cli-ref-verify.md)를 사용하여 특정 패키지의 서명 정보를 확인할 수 있습니다.
 
 ## <a name="register-the-certificate-on-nugetorg"></a>NuGet.org에서 인증서 등록
 

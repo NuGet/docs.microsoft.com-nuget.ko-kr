@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8cd7529c4a1ecf659abde03fb1632e26431aebf3
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 3af29e2f9b09ba5bd82779f9aacf314bd8933436
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426745"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317023"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>프로젝트에 대한 NuGet 패키지 찾기 및 평가
 
@@ -40,7 +40,7 @@ nuget.org를 방문하거나 Visual Studio에서 패키지 관리자 UI를 열�
 
 다행히도 두 가지 다른 방법을 통해 지원되는 프레임워크를 결정할 수 있습니다.
 
-1. NuGet 패키지 관리자 콘솔에서 [`Install-Package`](../tools/ps-ref-install-package.md) 명령을 사용하여 프로젝트에 패키지를 설치합니다. 패키지가 호환되지 않으면 이 명령은 패키지에서 지원하는 프레임워크를 표시합니다.
+1. NuGet 패키지 관리자 콘솔에서 [`Install-Package`](../reference/ps-reference/ps-ref-install-package.md) 명령을 사용하여 프로젝트에 패키지를 설치합니다. 패키지가 호환되지 않으면 이 명령은 패키지에서 지원하는 프레임워크를 표시합니다.
 
 1. **정보** 아래의 **수동 다운로드** 링크를 사용하여 nuget.org의 해당 페이지에서 패키지를 다운로드합니다. 확장명을 `.nupkg`에서 `.zip`으로 변경하고 해당 파일을 열어 `lib` 폴더의 내용을 검사합니다. 각 하위 폴더에는 TFM(대상 프레임워크 모니커, [대상 프레임워크](../reference/target-frameworks.md) 참조)으로 명명된 지원되는 각 프레임워크의 하위 폴더가 표시됩니다. `lib`에 하위 폴더가 없고 단일 DLL만 표시되면 프로젝트에 패키지를 설치하여 해당 호환성을 확인해야 합니다.
 
@@ -58,9 +58,9 @@ Visual Studio에서 NuGet 및 dotnet CLI 도구를 사용하는 경우 NuGet은 
 
     ![Visual Studio의 시험판 포함 확인란](media/Prerelease_02-CheckPrerelease.png)
 
-- **패키지 관리자 콘솔**: `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` 및 `Update-Package` 명령과 함께 `-IncludePrerelease` 스위치를 사용합니다. [PowerShell 참조](../tools/powershell-reference.md)를 참조하세요.
+- **패키지 관리자 콘솔**: `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` 및 `Update-Package` 명령과 함께 `-IncludePrerelease` 스위치를 사용합니다. [PowerShell 참조](../reference/powershell-reference.md)를 참조하세요.
 
-- **nuget.exe CLI**: `install`, `update`, `delete` 및 `mirror` 명령과 함께 `-prerelease` 스위치를 사용합니다. [NuGet CLI 참조](../tools/nuget-exe-cli-reference.md)를 참조하세요.
+- **nuget.exe CLI**: `install`, `update`, `delete` 및 `mirror` 명령과 함께 `-prerelease` 스위치를 사용합니다. [NuGet CLI 참조](../reference/nuget-exe-cli-reference.md)를 참조하세요.
 
 - **dotnet.exe CLI**: `-v` 인수를 사용하여 정확한 시험판 버전을 지정합니다. [dotnet add package 참조](/dotnet/core/tools/dotnet-add-package)를 참조하세요.
 
