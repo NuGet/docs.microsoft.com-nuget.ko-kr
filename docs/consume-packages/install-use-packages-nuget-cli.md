@@ -5,118 +5,118 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: a7177b956930835693921163e634321548c22462
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 9eefed6f2c1a362f27c4a5d33d07645d743379fa
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842365"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317742"
 ---
-# <a name="manage-packages-using-the-nugetexe-cli"></a><span data-ttu-id="cc1d1-103">nuget.exe CLI를 사용하여 패키지 관리</span><span class="sxs-lookup"><span data-stu-id="cc1d1-103">Manage packages using the nuget.exe CLI</span></span>
+# <a name="manage-packages-using-the-nugetexe-cli"></a><span data-ttu-id="632bf-103">nuget.exe CLI를 사용하여 패키지 관리</span><span class="sxs-lookup"><span data-stu-id="632bf-103">Manage packages using the nuget.exe CLI</span></span>
 
-<span data-ttu-id="cc1d1-104">CLI 도구를 사용하면 프로젝트 및 솔루션에서 NuGet 패키지를 쉽게 업데이트하고 복원할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-104">The CLI tool allows you to easily update and restore NuGet packages in projects and solutions.</span></span> <span data-ttu-id="cc1d1-105">이 도구는 Windows에서 모든 NuGet 기능을 제공하며 Mono로 실행 중일 경우 Mac 및 Linux에서 대부분의 기능도 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-105">This tool provides all NuGet capabilities on Windows, and also provides most features on Mac and Linux when running under Mono.</span></span>
+<span data-ttu-id="632bf-104">CLI 도구를 사용하면 프로젝트 및 솔루션에서 NuGet 패키지를 쉽게 업데이트하고 복원할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-104">The CLI tool allows you to easily update and restore NuGet packages in projects and solutions.</span></span> <span data-ttu-id="632bf-105">이 도구는 Windows에서 모든 NuGet 기능을 제공하며 Mono로 실행 중일 경우 Mac 및 Linux에서 대부분의 기능도 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-105">This tool provides all NuGet capabilities on Windows, and also provides most features on Mac and Linux when running under Mono.</span></span>
 
-<span data-ttu-id="cc1d1-106">nuget.exe CLI는 .NET Framework 프로젝트 및 SDK 스타일이 아닌 프로젝트(예: .NET Standard 라이브러리를 대상으로 하는 비 SDK 스타일 프로젝트)에 대한 것입니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-106">The nuget.exe CLI is for your .NET Framework project and non-SDK-style projects (for example, a non-SDK style project that targets .NET Standard libraries).</span></span> <span data-ttu-id="cc1d1-107">`PackageReference`로 마이그레이션된 SDK 스타일이 아닌 프로젝트를 사용하는 경우 대신 dotnet CLI를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-107">If you are using a non-SDK-style project that has been migrated to `PackageReference`, use the dotnet CLI instead.</span></span> <span data-ttu-id="cc1d1-108">NuGet CLI에는 패키지 참조에 대한 [packages.config](../reference/packages-config.md) 파일이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-108">The NuGet CLI requires a [packages.config](../reference/packages-config.md) file for package references.</span></span>
+<span data-ttu-id="632bf-106">`nuget.exe` CLI는 .NET Framework 프로젝트 및 SDK 스타일이 아닌 프로젝트(예: .NET Standard 라이브러리를 대상으로 하는 비 SDK 스타일 프로젝트)에 대한 것입니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-106">The `nuget.exe` CLI is for your .NET Framework project and non-SDK-style projects (for example, a non-SDK style project that targets .NET Standard libraries).</span></span> <span data-ttu-id="632bf-107">`PackageReference`로 마이그레이션된 SDK 스타일이 아닌 프로젝트를 사용하는 경우 대신 `dotnet` CLI를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-107">If you are using a non-SDK-style project that has been migrated to `PackageReference`, use the `dotnet` CLI instead.</span></span> <span data-ttu-id="632bf-108">`nuget.exe` CLI에는 패키지 참조에 대한 [packages.config](../reference/packages-config.md) 파일이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-108">The `nuget.exe` CLI requires a [packages.config](../reference/packages-config.md) file for package references.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cc1d1-109">대부분의 시나리오에서는 PackageReference에 `packages.config`를 사용하는 [SDK 스타일이 아닌 프로젝트를 마이그레이션](../reference/migrate-packages-config-to-package-reference.md)한 다음, `nuget.exe` CLI 대신 dotnet CLI를 사용하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-109">In most scenarios, we recommend [migrating non-SDK-style projects](../reference/migrate-packages-config-to-package-reference.md) that use `packages.config` to PackageReference, and then you can use the dotnet CLI instead of the `nuget.exe` CLI.</span></span> <span data-ttu-id="cc1d1-110">현재 C++ 및 ASP.NET 프로젝트에는 마이그레이션이 제공되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-110">Migration is not currently available for C++ and ASP.NET projects.</span></span>
+> <span data-ttu-id="632bf-109">대부분의 시나리오에서는 PackageReference에 `packages.config`를 사용하는 [SDK 스타일이 아닌 프로젝트를 마이그레이션](../reference/migrate-packages-config-to-package-reference.md)한 다음, `nuget.exe` CLI 대신 `dotnet` CLI를 사용하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-109">In most scenarios, we recommend [migrating non-SDK-style projects](../reference/migrate-packages-config-to-package-reference.md) that use `packages.config` to PackageReference, and then you can use the `dotnet` CLI instead of the `nuget.exe` CLI.</span></span> <span data-ttu-id="632bf-110">현재 C++ 및 ASP.NET 프로젝트에는 마이그레이션이 제공되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-110">Migration is not currently available for C++ and ASP.NET projects.</span></span>
 
-<span data-ttu-id="cc1d1-111">이 문서에서는 가장 일반적인 몇 가지 nuget.exe CLI 명령에 대한 기본 사용법을 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-111">This article shows you basic usage for a few of the most common nuget.exe CLI commands.</span></span> <span data-ttu-id="cc1d1-112">이러한 명령의 대부분의 경우, CLI 도구는 프로젝트 파일이 명령에 지정되지 않는 한 현재 디렉터리에서 프로젝트 파일을 찾습니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-112">For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command.</span></span> <span data-ttu-id="cc1d1-113">사용할 수 있는 명령 및 전체 목록은 [nuget.exe CLI 참조](../tools/nuget-exe-cli-reference.md)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-113">For a complete list of commands and the arguments you may use, see the [nuget.exe CLI reference](../tools/nuget-exe-cli-reference.md).</span></span>
+<span data-ttu-id="632bf-111">이 문서에서는 가장 일반적인 몇 가지 `nuget.exe` CLI 명령에 대한 기본 사용법을 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-111">This article shows you basic usage for a few of the most common `nuget.exe` CLI commands.</span></span> <span data-ttu-id="632bf-112">이러한 명령의 대부분의 경우, CLI 도구는 프로젝트 파일이 명령에 지정되지 않는 한 현재 디렉터리에서 프로젝트 파일을 찾습니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-112">For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command.</span></span> <span data-ttu-id="632bf-113">사용할 수 있는 명령 및 전체 목록은 [nuget.exe CLI 참조](../reference/nuget-exe-cli-reference.md)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="632bf-113">For a complete list of commands and the arguments you may use, see the [nuget.exe CLI reference](../reference/nuget-exe-cli-reference.md).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="cc1d1-114">전제 조건</span><span class="sxs-lookup"><span data-stu-id="cc1d1-114">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="632bf-114">전제 조건</span><span class="sxs-lookup"><span data-stu-id="632bf-114">Prerequisites</span></span>
 
-- <span data-ttu-id="cc1d1-115">`nuget.exe` CLI를 설치하려면 [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)에서 다운로드하고, 해당 `.exe` 파일을 적합한 폴더에 저장하고, 해당 폴더를 PATH 환경 변수에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-115">Install the `nuget.exe` CLI by downloading it from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), saving that `.exe` file to a suitable folder, and adding that folder to your PATH environment variable.</span></span>
+- <span data-ttu-id="632bf-115">`nuget.exe` CLI를 설치하려면 [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)에서 다운로드하고, 해당 `.exe` 파일을 적합한 폴더에 저장하고, 해당 폴더를 PATH 환경 변수에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-115">Install the `nuget.exe` CLI by downloading it from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), saving that `.exe` file to a suitable folder, and adding that folder to your PATH environment variable.</span></span>
 
-## <a name="install-a-package"></a><span data-ttu-id="cc1d1-116">패키지 설치</span><span class="sxs-lookup"><span data-stu-id="cc1d1-116">Install a package</span></span>
+## <a name="install-a-package"></a><span data-ttu-id="632bf-116">패키지 설치</span><span class="sxs-lookup"><span data-stu-id="632bf-116">Install a package</span></span>
 
-<span data-ttu-id="cc1d1-117">[설치](../tools/cli-ref-install.md) 명령은 지정된 패키지 소스를 사용하여 현재 폴더를 기본값으로 프로젝트에 패키지를 다운로드하고 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-117">The [install](../tools/cli-ref-install.md) command downloads and installs a package into a project, defaulting to the current folder, using specified package sources.</span></span> <span data-ttu-id="cc1d1-118">새 패키지를 프로젝트 루트 디렉터리의 *패키지* 폴더에 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-118">Install new packages into the *packages* folder in your project root directory.</span></span>
+<span data-ttu-id="632bf-117">[설치](../reference/cli-reference/cli-ref-install.md) 명령은 지정된 패키지 소스를 사용하여 현재 폴더를 기본값으로 프로젝트에 패키지를 다운로드하고 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-117">The [install](../reference/cli-reference/cli-ref-install.md) command downloads and installs a package into a project, defaulting to the current folder, using specified package sources.</span></span> <span data-ttu-id="632bf-118">새 패키지를 프로젝트 루트 디렉터리의 *패키지* 폴더에 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-118">Install new packages into the *packages* folder in your project root directory.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="cc1d1-119">`install` 명령은 프로젝트 파일이나 *packages.config*을 수정하지 않습니다. 이러한 방식으로 패키지를 디스크에만 추가하지만 프로젝트의 종속성은 변경하지 않는다는 점에서 `restore`와 유사합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-119">The `install`command does not modify a project file or *packages.config*; in this way it's similar to `restore` in that it only adds packages to disk but does not change a project's dependencies.</span></span> <span data-ttu-id="cc1d1-120">종속성을 추가하려면 패키지 관리자 UI 또는 Visual Studio의 콘솔을 통해 패키지를 추가하거나 *packages.config*를 수정한 다음, `install` 또는 `restore` 중 하나를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-120">To add a dependency, either add a package through the Package Manager UI or Console in Visual Studio, or modify *packages.config* and then run either `install` or `restore`.</span></span>
+> <span data-ttu-id="632bf-119">`install` 명령은 프로젝트 파일이나 *packages.config*을 수정하지 않습니다. 이러한 방식으로 패키지를 디스크에만 추가하지만 프로젝트의 종속성은 변경하지 않는다는 점에서 `restore`와 유사합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-119">The `install`command does not modify a project file or *packages.config*; in this way it's similar to `restore` in that it only adds packages to disk but does not change a project's dependencies.</span></span> <span data-ttu-id="632bf-120">종속성을 추가하려면 패키지 관리자 UI 또는 Visual Studio의 콘솔을 통해 패키지를 추가하거나 *packages.config*를 수정한 다음, `install` 또는 `restore` 중 하나를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-120">To add a dependency, either add a package through the Package Manager UI or Console in Visual Studio, or modify *packages.config* and then run either `install` or `restore`.</span></span>
 
-1. <span data-ttu-id="cc1d1-121">명령줄을 열고 프로젝트 파일이 포함된 디렉터리로 전환합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-121">Open a command line and switch to the directory that contains your project file.</span></span>
+1. <span data-ttu-id="632bf-121">명령줄을 열고 프로젝트 파일이 포함된 디렉터리로 전환합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-121">Open a command line and switch to the directory that contains your project file.</span></span>
 
-2. <span data-ttu-id="cc1d1-122">다음 명령을 사용하여 NuGet 패키지를 *패키지* 폴더에 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-122">Use the following command to install a NuGet package to the *packages* folder.</span></span>
+2. <span data-ttu-id="632bf-122">다음 명령을 사용하여 NuGet 패키지를 *패키지* 폴더에 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-122">Use the following command to install a NuGet package to the *packages* folder.</span></span>
 
     ```cli
     nuget install <packageID> -OutputDirectory packages
     ```
 
-    <span data-ttu-id="cc1d1-123">`Newtonsoft.json` 패키지를 *패키지* 폴더에 설치하려면 다음 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-123">To install the `Newtonsoft.json` package to the *packages* folder, use the following command:</span></span>
+    <span data-ttu-id="632bf-123">`Newtonsoft.json` 패키지를 *패키지* 폴더에 설치하려면 다음 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-123">To install the `Newtonsoft.json` package to the *packages* folder, use the following command:</span></span>
 
     ```cli
     nuget install Newtonsoft.Json -OutputDirectory packages
     ```
 
-<span data-ttu-id="cc1d1-124">또는 다음 명령을 사용하여 기존 `packages.config` 파일을 통해 NuGet 패키지를 *패키지* 폴더에 설치할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-124">Alternatively, you can use the following command to install a NuGet package using an existing `packages.config` file to the *packages* folder.</span></span> <span data-ttu-id="cc1d1-125">이렇게 하면 패키지가 프로젝트 종속성에 추가되지 않고 로컬로 설치됩니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-125">This does not add the package to your project dependencies, but installs it locally.</span></span>
+<span data-ttu-id="632bf-124">또는 다음 명령을 사용하여 기존 `packages.config` 파일을 통해 NuGet 패키지를 *패키지* 폴더에 설치할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-124">Alternatively, you can use the following command to install a NuGet package using an existing `packages.config` file to the *packages* folder.</span></span> <span data-ttu-id="632bf-125">이렇게 하면 패키지가 프로젝트 종속성에 추가되지 않고 로컬로 설치됩니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-125">This does not add the package to your project dependencies, but installs it locally.</span></span>
 
 ```cli
 nuget install packages.config -OutputDirectory packages
 ```
 
-## <a name="install-a-specific-version-of-a-package"></a><span data-ttu-id="cc1d1-126">특정 버전의 패키지 설치</span><span class="sxs-lookup"><span data-stu-id="cc1d1-126">Install a specific version of a package</span></span>
+## <a name="install-a-specific-version-of-a-package"></a><span data-ttu-id="632bf-126">특정 버전의 패키지 설치</span><span class="sxs-lookup"><span data-stu-id="632bf-126">Install a specific version of a package</span></span>
 
-<span data-ttu-id="cc1d1-127">[설치](../tools/cli-ref-install.md) 명령을 사용할 때 버전이 지정되지 않은 경우 NuGet은 패키지의 최신 버전을 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-127">If the version is not specified when you use the [install](../tools/cli-ref-install.md) command, NuGet installs the latest version of the package.</span></span> <span data-ttu-id="cc1d1-128">특정 버전의 Nuget 패키지를 설치할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-128">You can also install a specific version of a Nuget package:</span></span>
+<span data-ttu-id="632bf-127">[설치](../reference/cli-reference/cli-ref-install.md) 명령을 사용할 때 버전이 지정되지 않은 경우 NuGet은 패키지의 최신 버전을 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-127">If the version is not specified when you use the [install](../reference/cli-reference/cli-ref-install.md) command, NuGet installs the latest version of the package.</span></span> <span data-ttu-id="632bf-128">특정 버전의 Nuget 패키지를 설치할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-128">You can also install a specific version of a Nuget package:</span></span>
 
 ```cli
 nuget install <packageID | configFilePath> -Version <version>
 ```
 
-<span data-ttu-id="cc1d1-129">예를 들어 `Newtonsoft.json` 패키지의 버전 12.0.1을 추가하려면 다음 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-129">For example, to add version 12.0.1 of the `Newtonsoft.json` package, use this command:</span></span>
+<span data-ttu-id="632bf-129">예를 들어 `Newtonsoft.json` 패키지의 버전 12.0.1을 추가하려면 다음 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-129">For example, to add version 12.0.1 of the `Newtonsoft.json` package, use this command:</span></span>
 
 ```cli
 nuget install Newtonsoft.Json -Version 12.0.1
 ```
 
-<span data-ttu-id="cc1d1-130">`install`의 제한 사항 및 동작에 대한 자세한 내용은 [패키지 설치](#install-a-package)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-130">For more information on the limitations and behavior of `install`, see [Install a package](#install-a-package).</span></span>
+<span data-ttu-id="632bf-130">`install`의 제한 사항 및 동작에 대한 자세한 내용은 [패키지 설치](#install-a-package)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="632bf-130">For more information on the limitations and behavior of `install`, see [Install a package](#install-a-package).</span></span>
 
-## <a name="remove-a-package"></a><span data-ttu-id="cc1d1-131">패키지 제거</span><span class="sxs-lookup"><span data-stu-id="cc1d1-131">Remove a package</span></span>
+## <a name="remove-a-package"></a><span data-ttu-id="632bf-131">패키지 제거</span><span class="sxs-lookup"><span data-stu-id="632bf-131">Remove a package</span></span>
 
-<span data-ttu-id="cc1d1-132">하나 이상의 패키지를 삭제하려면 *패키지* 폴더에서 제거할 패키지를 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-132">To delete one or more packages, delete the packages you want to remove from the *packages* folder.</span></span>
+<span data-ttu-id="632bf-132">하나 이상의 패키지를 삭제하려면 *패키지* 폴더에서 제거할 패키지를 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-132">To delete one or more packages, delete the packages you want to remove from the *packages* folder.</span></span>
 
-<span data-ttu-id="cc1d1-133">패키지 다시 설치하려면 `restore` 또는 `install` 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-133">If you want to reinstall packages, use the `restore` or `install` command.</span></span>
+<span data-ttu-id="632bf-133">패키지 다시 설치하려면 `restore` 또는 `install` 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-133">If you want to reinstall packages, use the `restore` or `install` command.</span></span>
 
-## <a name="list-packages"></a><span data-ttu-id="cc1d1-134">패키지 나열</span><span class="sxs-lookup"><span data-stu-id="cc1d1-134">List packages</span></span>
+## <a name="list-packages"></a><span data-ttu-id="632bf-134">패키지 나열</span><span class="sxs-lookup"><span data-stu-id="632bf-134">List packages</span></span>
 
-<span data-ttu-id="cc1d1-135">[list](../tools/cli-ref-list.md) 명령을 사용하여 지정된 소스에서 패키지 목록을 표시할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-135">You can display a list of packages from a given source using the [list](../tools/cli-ref-list.md) command.</span></span> <span data-ttu-id="cc1d1-136">`-Source` 옵션을 사용하여 검색을 제한합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-136">Use the `-Source` option to restrict the search.</span></span>
+<span data-ttu-id="632bf-135">[list](../reference/cli-reference/cli-ref-list.md) 명령을 사용하여 지정된 소스에서 패키지 목록을 표시할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-135">You can display a list of packages from a given source using the [list](../reference/cli-reference/cli-ref-list.md) command.</span></span> <span data-ttu-id="632bf-136">`-Source` 옵션을 사용하여 검색을 제한합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-136">Use the `-Source` option to restrict the search.</span></span>
 
 ```cli
 nuget list -Source <source>
 ```
 
-<span data-ttu-id="cc1d1-137">예를 들어 *패키지* 폴더에 패키지를 나열합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-137">For example, list packages in the *packages* folder.</span></span>
+<span data-ttu-id="632bf-137">예를 들어 *패키지* 폴더에 패키지를 나열합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-137">For example, list packages in the *packages* folder.</span></span>
 
 ```cli
 nuget list -Source C:\Users\username\source\repos\MyProject\packages
 ```
 
-<span data-ttu-id="cc1d1-138">검색 용어를 사용하는 경우 패키지 이름, 태그 및 패키지 설명이 검색에 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-138">If you use a search term, the search includes names of packages, tags, and package descriptions.</span></span>
+<span data-ttu-id="632bf-138">검색 용어를 사용하는 경우 패키지 이름, 태그 및 패키지 설명이 검색에 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-138">If you use a search term, the search includes names of packages, tags, and package descriptions.</span></span>
 
 ```cli
 nuget list <search term>
 ```
 
-## <a name="update-an-individual-package"></a><span data-ttu-id="cc1d1-139">개별 패키지 업데이트</span><span class="sxs-lookup"><span data-stu-id="cc1d1-139">Update an individual package</span></span>
+## <a name="update-an-individual-package"></a><span data-ttu-id="632bf-139">개별 패키지 업데이트</span><span class="sxs-lookup"><span data-stu-id="632bf-139">Update an individual package</span></span>
 
-<span data-ttu-id="cc1d1-140">패키지 버전을 지정하지 않는 한 `install` 명령을 사용할 때 NuGet은 패키지의 최신 버전을 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-140">NuGet installs the latest version of the package when you use the `install` command unless you specify the package version.</span></span>
+<span data-ttu-id="632bf-140">패키지 버전을 지정하지 않는 한 `install` 명령을 사용할 때 NuGet은 패키지의 최신 버전을 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-140">NuGet installs the latest version of the package when you use the `install` command unless you specify the package version.</span></span>
 
-## <a name="update-all-packages"></a><span data-ttu-id="cc1d1-141">모든 패키지 업데이트</span><span class="sxs-lookup"><span data-stu-id="cc1d1-141">Update all packages</span></span>
+## <a name="update-all-packages"></a><span data-ttu-id="632bf-141">모든 패키지 업데이트</span><span class="sxs-lookup"><span data-stu-id="632bf-141">Update all packages</span></span>
 
-<span data-ttu-id="cc1d1-142">[업데이트](../tools/cli-ref-update.md) 명령을 사용하여 모든 패키지를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-142">Use the [update](../tools/cli-ref-update.md) command to update all packages.</span></span> <span data-ttu-id="cc1d1-143">프로젝트의 모든 패키지(`packages.config` 사용)를 사용 가능한 최신 버전으로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-143">Updates all packages in a project (using `packages.config`) to their latest available versions.</span></span> <span data-ttu-id="cc1d1-144">`update`를 실행하기 전에 `restore`를 실행하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-144">It is recommended to run `restore` before running `update`.</span></span>
+<span data-ttu-id="632bf-142">[업데이트](../reference/cli-reference/cli-ref-update.md) 명령을 사용하여 모든 패키지를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-142">Use the [update](../reference/cli-reference/cli-ref-update.md) command to update all packages.</span></span> <span data-ttu-id="632bf-143">프로젝트의 모든 패키지(`packages.config` 사용)를 사용 가능한 최신 버전으로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-143">Updates all packages in a project (using `packages.config`) to their latest available versions.</span></span> <span data-ttu-id="632bf-144">`update`를 실행하기 전에 `restore`를 실행하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-144">It is recommended to run `restore` before running `update`.</span></span>
 
 ```cli
 nuget update
 ```
 
-## <a name="restore-packages"></a><span data-ttu-id="cc1d1-145">패키지 복원</span><span class="sxs-lookup"><span data-stu-id="cc1d1-145">Restore packages</span></span>
+## <a name="restore-packages"></a><span data-ttu-id="632bf-145">패키지 복원</span><span class="sxs-lookup"><span data-stu-id="632bf-145">Restore packages</span></span>
 
-<span data-ttu-id="cc1d1-146">[복원](../tools/cli-ref-restore.md) 명령을 사용하면 *패키지* 폴더에서 누락된 모든 패키지를 다운로드하고 설치할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-146">Use the [restore](../tools/cli-ref-restore.md) command, which downloads and installs any packages missing from the *packages* folder.</span></span>
+<span data-ttu-id="632bf-146">[복원](../reference/cli-reference/cli-ref-restore.md) 명령을 사용하면 *패키지* 폴더에서 누락된 모든 패키지를 다운로드하고 설치할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-146">Use the [restore](../reference/cli-reference/cli-ref-restore.md) command, which downloads and installs any packages missing from the *packages* folder.</span></span>
 
-<span data-ttu-id="cc1d1-147">`restore`는 디스크에만 패키지를 추가하지만 프로젝트의 종속성은 변경하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-147">`restore` only adds packages to disk but does not change a project's dependencies.</span></span> <span data-ttu-id="cc1d1-148">프로젝트 종속성을 복원하려면 `packages.config`를 수정한 다음, `restore` 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-148">To restore project dependencies, modify `packages.config`, then use the `restore` command.</span></span>
+<span data-ttu-id="632bf-147">`restore`는 디스크에만 패키지를 추가하지만 프로젝트의 종속성은 변경하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-147">`restore` only adds packages to disk but does not change a project's dependencies.</span></span> <span data-ttu-id="632bf-148">프로젝트 종속성을 복원하려면 `packages.config`를 수정한 다음, `restore` 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-148">To restore project dependencies, modify `packages.config`, then use the `restore` command.</span></span>
 
-<span data-ttu-id="cc1d1-149">다른 `dotnet` CLI 명령을 사용할 때처럼 명령줄을 열고 프로젝트 파일이 포함된 디렉터리로 전환합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-149">As with the other `dotnet` CLI commands, first open a command line and switch to the directory that contains your project file.</span></span>
+<span data-ttu-id="632bf-149">다른 `nuget.exe` CLI 명령을 사용할 때처럼 명령줄을 열고 프로젝트 파일이 포함된 디렉터리로 전환합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-149">As with the other `nuget.exe` CLI commands, first open a command line and switch to the directory that contains your project file.</span></span>
 
-<span data-ttu-id="cc1d1-150">`restore`를 사용하여 패키지를 복원하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="cc1d1-150">To restore a package using `restore`:</span></span>
+<span data-ttu-id="632bf-150">`restore`를 사용하여 패키지를 복원하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="632bf-150">To restore a package using `restore`:</span></span>
 
 ```cli
 nuget restore MySolution.sln
