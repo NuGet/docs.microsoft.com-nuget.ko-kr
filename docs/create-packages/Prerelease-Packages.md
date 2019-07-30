@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 845f0ea84bcb92fedf9e5f4fb2b1deee1462a004
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 726f983c2522fdb538dfce858fdf2371ec0ce188
+ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610488"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433346"
 ---
 # <a name="building-pre-release-packages"></a>시험판 패키지 빌드
 
@@ -44,15 +44,15 @@ ms.locfileid: "65610488"
 
 기본적으로 NuGet은 패키지에서 작업할 때 시험판 버전을 포함하지 않지만 다음과 같이 이 동작을 변경할 수 있습니다.
 
-- **패키지 관리자 UI(Visual Studio)**: **NuGet 패키지 관리** UI에서 **시험판 포함** 확인란을 선택합니다.
+- **패키지 관리자 UI(Visual Studio)** : **NuGet 패키지 관리** UI에서 **시험판 포함** 확인란을 선택합니다.
 
     ![Visual Studio의 시험판 포함 확인란](media/Prerelease_02-CheckPrerelease.png)
 
     이 확인란을 설정 또는 해제하면 패키지 관리자 UI 및 설치할 수 있는 사용 가능한 버전 목록을 새로 고칩니다.
 
-- **패키지 관리자 콘솔**: `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` 및 `Update-Package` 명령과 함께 `-IncludePrerelease` 스위치를 사용합니다. [PowerShell 참조](../tools/powershell-reference.md)를 참조하세요.
+- **패키지 관리자 콘솔**: `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` 및 `Update-Package` 명령과 함께 `-IncludePrerelease` 스위치를 사용합니다. [PowerShell 참조](../reference/powershell-reference.md)를 참조하세요.
 
-- **NuGet CLI**: `install`, `update`, `delete` 및 `mirror` 명령과 함께 `-prerelease` 스위치를 사용합니다. [NuGet CLI 참조](../tools/nuget-exe-cli-reference.md)를 참조하세요.
+- **NuGet CLI**: `install`, `update`, `delete` 및 `mirror` 명령과 함께 `-prerelease` 스위치를 사용합니다. [NuGet CLI 참조](../reference/nuget-exe-cli-reference.md)를 참조하세요.
 
 ## <a name="semantic-versioning"></a>유의적 버전
 
@@ -64,7 +64,7 @@ ms.locfileid: "65610488"
 - `Minor`: 이전 버전과 호환되는 새로운 기능
 - `Patch`: 이전 버전과 호환되는 버그 수정에만 해당
 
-시험판 버전은 패치 번호 뒤에 하이픈과 문자열을 추가하여 표시됩니다. 엄밀히 말하면 하이픈 뒤에 ‘아무 문자열이나’ 사용할 수 있으며 NuGet은 패키지를 시험판으로 처리합니다. 그런 다음 NuGet은 해당 UI에 전체 버전 번호를 표시하여 소비자가 스스로 의미를 해석하도록 합니다.
+시험판 버전은 패치 번호 뒤에 하이픈과 문자열을 추가하여 표시됩니다. 엄밀히 말하면 하이픈 뒤에 ‘아무 문자열이나’ 사용할 수 있으며 NuGet은 패키지를 시험판으로 처리합니다.  그런 다음 NuGet은 해당 UI에 전체 버전 번호를 표시하여 소비자가 스스로 의미를 해석하도록 합니다.
 
 이 점을 고려하여 일반적으로 다음과 같이 인식된 명명 규칙을 따르는 것이 좋습니다.
 
@@ -81,10 +81,12 @@ ms.locfileid: "65610488"
     1.0.1-zzz
     1.0.1-rc
     1.0.1-open
-    1.0.1-beta12
-    1.0.1-beta05
+    1.0.1-beta.12
+    1.0.1-beta.5
     1.0.1-beta
-    1.0.1-alpha2
+    1.0.1-alpha.2
     1.0.1-alpha
 
-표시된 대로 접미사가 없는 버전은 항상 시험판 버전보다 우선합니다. 또한 두 자리 숫자(이상)를 사용할 수 있는 시험판 태그에서 숫자 접미사를 사용하는 경우 앞에 오는 숫자 0(예: beta01 및 beta05)을 사용하여 숫자가 커지는 경우 올바르게 정렬하도록 합니다.
+표시된 대로 접미사가 없는 버전은 항상 시험판 버전보다 우선합니다.
+
+semver2에는 선행 0이 필요하지 않지만 이전 버전 스키마를 따릅니다. 두 자리 숫자(이상)를 사용할 수 있는 시험판 태그에서 숫자 접미사를 사용하는 경우 앞에 오는 숫자 0(예: beta01 및 beta05)을 사용하여 숫자가 커지는 경우 올바르게 정렬하도록 합니다. 이 권장 사항은 이전 버전 스키마에만 적용됩니다.

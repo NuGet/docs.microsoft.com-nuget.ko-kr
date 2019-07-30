@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: a2aed3950b3e19e30d9d026ad1b9bdaef44c9d37
-ms.sourcegitcommit: 1ab750ff17e55c763d646c50e7630138804ce8b8
+ms.openlocfilehash: 178af1975fc4e6fcde8988d773812820f1f1bb84
+ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56247648"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433355"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet에서 패키지 종속성을 확인하는 방법
 
@@ -24,9 +24,10 @@ ms.locfileid: "56247648"
 
 PackageReference 형식을 사용하여 패키지를 프로젝트에 설치하는 경우 NuGet은 적절한 파일에서 단순 패키지 그래프에 대한 참조를 추가하고 충돌을 미리 해결합니다. 이 프로세스는 *전이적 복원*이라고 합니다. 패키지를 다시 설치하거나 복원하면 그래프에 나열된 패키지가 다운로드되어 더 빠르고 예측 가능한 빌드가 수행됩니다. 또한 2.8.\*와 같은 와일드카드(유동) 버전을 활용하여 클라이언트 컴퓨터 및 빌드 서버에서 비용이 많이 들고 오류가 발생하기 쉬운 `nuget update` 호출을 방지할 수 있습니다.
 
-NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리에서 종속성을 확인한 다음, 결과 그래프를 `project.assets.json`이라는 파일에 씁니다. 자산 파일은 기본적으로 프로젝트의 'obj' 폴더인 `MSBuildProjectExtensionsPath`에 있습니다. 그러면 MSBuild에서 이 파일을 읽고 잠재적인 참조를 찾을 수 있는 폴더의 집합으로 해당 파일을 변환한 다음 메모리의 프로젝트 트리에 추가합니다.
+NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리에서 종속성을 확인한 다음, 결과 그래프를 `project.assets.json`이라는 파일에 씁니다. 또한 [잠금 파일 기능을 사용하도록 설정한](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#locking-dependencies) 경우 이름이 `packages.lock.json`인 잠금 파일에 확인된 종속성을 씁니다.
+자산 파일은 기본적으로 프로젝트의 'obj' 폴더인 `MSBuildProjectExtensionsPath`에 있습니다. 그러면 MSBuild에서 이 파일을 읽고 잠재적인 참조를 찾을 수 있는 폴더의 집합으로 해당 파일을 변환한 다음 메모리의 프로젝트 트리에 추가합니다.
 
-잠금 파일은 임시적이며 원본 제어에 추가하면 안됩니다. `.gitignore`과 `.tfignore` 모두에서 기본적으로 나열됩니다. [패키지 및 원본 제어](packages-and-source-control.md)를 참조하세요.
+`project.assets.json` 파일은 임시적이며 원본 제어에 추가하면 안됩니다. `.gitignore`과 `.tfignore` 모두에서 기본적으로 나열됩니다. [패키지 및 원본 제어](packages-and-source-control.md)를 참조하세요.
 
 ### <a name="dependency-resolution-rules"></a>종속성 확인 규칙
 

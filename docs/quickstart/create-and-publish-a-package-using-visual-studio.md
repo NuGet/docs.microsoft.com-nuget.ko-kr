@@ -1,16 +1,16 @@
 ---
-title: Windows에서 Visual Studio를 사용하여 .NET Standard 패키지 만들기 및 게시
+title: Windows에서 Visual Studio를 사용하여 .NET Standard NuGet 패키지 만들기 및 게시
 description: Windows에서 Visual Studio를 사용하여 .NET Standard NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
 author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: quickstart
-ms.openlocfilehash: d9eccfa373a5a283542fd158e76ba74b1872f3d6
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 86e71460094de9b799384db83456a68db57647af
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842137"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419910"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>빠른 시작: Visual Studio(.NET Standard, Windows 전용)를 사용하여 NuGet 패키지 만들기 및 게시
 
@@ -21,9 +21,9 @@ Windows에서 Visual Studio의 .NET Standard 클래스 라이브러리에서 NuG
 
 ## <a name="prerequisites"></a>전제 조건
 
-1. .NET 관련 워크로드를 사용하여 [visualstudio.com](https://www.visualstudio.com/)에서 Visual Studio 2017 이상 버전을 설치합니다. .NET 워크로드를 설치하면 Visual Studio 2017 이상에 NuGet 기능이 자동으로 포함됩니다.
+1. .NET Core 관련 워크로드를 사용하여 [visualstudio.com](https://www.visualstudio.com/)에서 Visual Studio 2017 이상 버전을 설치합니다.
 
-1. `dotnet` CLI를 설치합니다.
+1. 아직 설치하지 않은 경우 `dotnet` CLI를 설치합니다.
 
    `dotnet` CLI의 경우, Visual Studio 2017부터 `dotnet` CLI가 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다. 그렇지 않으면 [.NET Core SDK](https://www.microsoft.com/net/download/)를 설치하여 `dotnet` CLI를 가져옵니다. `dotnet` CLI는 [SDK 스타일 형식](../resources/check-project-format.md)(SDK 특성)을 사용하는 .NET Standard 프로젝트에 필요합니다. 이 문서에서 사용되는 Visual Studio 2017 이상의 기본 클래스 라이브러리 템플릿은 SDK 특성을 사용합니다.
    
@@ -150,7 +150,7 @@ msbuild -t:pack -p:Configuration=Release
     Your package was pushed.
     ```
 
-[nuget push](../tools/cli-ref-push.md)를 참조하세요.
+[nuget push](../reference/cli-reference/cli-ref-push.md)를 참조하세요.
 
 ### <a name="publish-errors"></a>게시 오류
 
@@ -180,12 +180,12 @@ msbuild -t:pack -p:Configuration=Release
 > [!Note]
 > 프로젝트 루트에 readme.txt를 단순히 추가하기만 하면 결과 패키지에 포함되지 않습니다.
 
-## <a name="related-topics"></a>관련된 항목
+## <a name="related-topics"></a>관련 항목
 
 - [패키지 만들기](../create-packages/creating-a-package.md)
 - [패키지 게시](../nuget-org/publish-a-package.md)
 - [시험판 패키지](../create-packages/Prerelease-Packages.md)
-- [여러 대상 프레임워크 지원](../create-packages/supporting-multiple-target-frameworks.md)
+- [여러 대상 프레임워크 지원](../create-packages/multiple-target-frameworks-project-file.md)
 - [패키지 버전 관리](../reference/package-versioning.md)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)
 - [.NET Standard 라이브러리 설명서](/dotnet/articles/standard/library)

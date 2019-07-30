@@ -3,22 +3,22 @@ title: NuGet 패키지의 멀티 타기팅
 description: 단일 NuGet 패키지 내에서 여러 .NET Framework 버전을 대상으로 하는 다양한 방법에 대한 설명입니다.
 author: karann-msft
 ms.author: karann
-ms.date: 09/27/2017
+ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: a755438c1f63d33271f636cb663cc5b51a5aecbc
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: d12b12c4670f5dcb4c1e7e475d77926bd5d3935b
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324814"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342507"
 ---
-# <a name="supporting-multiple-net-framework-versions"></a>여러 .NET Framework 버전 지원
+# <a name="support-multiple-net-versions"></a>여러 .NET 버전 지원
 
-*NuGet 4.0 이상을 사용하는 .NET Core 프로젝트에서 복수 대상 지정에 대한 자세한 내용은 [MSBuild 대상으로 NuGet 압축 및 복원](../reference/msbuild-targets.md)을 참조하세요.*
+많은 라이브러리는 특정 버전의 .NET Framework를 대상으로 지정합니다. 예를 들어 UWP에 관련된 한 버전의 라이브러리 및 .NET Framework 4.6에서 기능을 활용하는 다른 버전의 라이브러리가 있을 수 있습니다. 이를 위해 NuGet은 동일한 라이브러리의 여러 버전을 단일 패키지에 배치하는 것을 지원합니다.
 
-많은 라이브러리는 특정 버전의 .NET Framework를 대상으로 지정합니다. 예를 들어 UWP에 관련된 한 버전의 라이브러리 및 .NET Framework 4.6에서 기능을 활용하는 다른 버전의 라이브러리가 있을 수 있습니다.
+이 문서에서는 패키지 또는 어셈블리를 빌드하는 방법에 관계없이 NuGet 패키지의 레이아웃에 대해 설명합니다. 즉, 이 레이아웃은 여러 비 SDK 스타일 *.csproj* 파일, 사용자 지정 *.nuspec* 또는 단일 다중 대상 SDK 스타일 *.csproj* 중 어떤 파일을 사용하든 동일합니다. SDK 스타일 프로젝트의 경우 NuGet [pack targets](../reference/msbuild-targets.md)는 패키지 레이아웃 방식을 알고, 어셈블리를 올바른 lib 폴더에 배치한 후 각 TFM(대상 프레임워크)에 대해 종속성 그룹을 만드는 과정을 자동화합니다. 자세한 지침은 [프로젝트 파일에서 여러 .NET Framework 버전 지원](multiple-target-frameworks-project-file.md)을 참조하세요.
 
-이를 수용하기 위해 NuGet에서는 [패키지 만들기](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)에 설명된 규칙 기반 작업 디렉터리 메서드를 사용할 때 단일 패키지에서 여러 버전의 동일한 라이브러리를 설정하도록 지원합니다.
+[패키지 만들기](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)에 설명된 규칙 기반 작업 디렉터리 방법을 사용하는 경우 이 문서에 설명된 대로 패키지 레이아웃을 수동으로 지정해야 합니다. SDK 스타일 프로젝트의 경우 자동화된 방법을 권장하지만 이 문서에 설명된 대로 패키지 레이아웃을 수동으로 지정하도록 선택할 수도 있습니다.
 
 ## <a name="framework-version-folder-structure"></a>프레임워크 버전 폴더 구조
 

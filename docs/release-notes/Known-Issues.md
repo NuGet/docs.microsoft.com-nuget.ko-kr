@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: fc338ba3810a125f638a937cf14456bf519a24a8
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: b104eb39ddeacd9ca1ea45937cf98ad57531112a
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548476"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317140"
 ---
 # <a name="known-issues-with-nuget"></a>알려진 NuGet 문제
 
@@ -29,7 +29,7 @@ $PAT = "개인 액세스 토큰" $Feed = "URL" .\nuget.exe sources add -Name Tes
 
 **해결 방법:**
 
-[-StorePasswordInClearText](../tools/cli-ref-sources.md) 옵션을 사용하여 암호를 일반 텍스트로 저장합니다.
+[-StorePasswordInClearText](../reference/cli-reference/cli-ref-sources.md) 옵션을 사용하여 암호를 일반 텍스트로 저장합니다.
 
 ## <a name="error-installing-packages-with-nuget-34-341"></a>NuGet 3.4, 3.4.1 패키지 설치 오류
 
@@ -63,7 +63,7 @@ install-package log4net
 
 `VSLangProj.dll` COM 구성 요소에 대한 형식 라이브러리가 시스템에서 등록 취소되었기 때문에 이 오류가 발생합니다. 예를 들어 두 버전의 Visual Studio가 나란히 설치되어 있고 이전 버전을 제거하면 이 문제가 발생할 수 있습니다. 이렇게 하면 위의 COM 라이브러리를 실수로 등록 취소할 수 있습니다.
 
-**해결 방법:**:
+**해결 방법:** :
 
 **관리자 권한 프롬프트에서**에서 다음 명령을 실행하여 `VSLangProj.dll`에 대한 형식 라이브러리를 다시 등록합니다.
 
@@ -75,7 +75,7 @@ install-package log4net
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>VS 2012에서 패키지를 업데이트한 후에 빌드가 실패합니다.
 
-문제: VS 2012 RTM을 사용하고 있습니다. NuGet 패키지를 업데이트할 때 "하나 이상의 패키지를 제거할 수 없습니다."라는 메시지가 표시됩니다. 그리고 Visual Studio를 다시 시작하라는 메시지가 표시됩니다. 이에 따라 VS를 다시 시작하면 이상한 빌드 오류가 발생합니다.
+문제: VS 2012 RTM을 사용하고 있습니다. NuGet 패키지를 업데이트하는 경우 다음 메시지가 표시됩니다. "하나 이상의 패키지를 제거할 수 없습니다." 그리고 Visual Studio를 다시 시작하라는 메시지가 표시됩니다. 이에 따라 VS를 다시 시작하면 이상한 빌드 오류가 발생합니다.
 
 이는 이전 패키지의 특정 파일이 백그라운드 MSBuild 프로세스에서 잠겨 있기 때문입니다. VS를 다시 시작한 후에도 백그라운드 MSBuild 프로세스에서 이전 패키지의 파일을 계속 사용함으로써 빌드가 실패합니다.
 

@@ -1,24 +1,24 @@
 ---
-title: NuGet 패키지를 만드는 방법
+title: nuget.exe CLI를 사용하여 NuGet 패키지 만들기
 description: 파일 및 버전 관리와 같은 주요 결정 사항을 포함하여 NuGet 패키지를 디자인하고 만드는 과정을 자세히 안내합니다.
 author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1dce8556448131c36680167fdc3605e4378b9178
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 894a39e9e67508234295db128928b09da7f468f0
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842300"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419823"
 ---
-# <a name="create-nuget-packages"></a>NuGet 패키지 만들기
+# <a name="create-a-package-using-the-nugetexe-cli"></a>nuget.exe CLI를 사용하여 패키지 만들기
 
 패키지의 기능 또는 포함된 코드와 관계없이 CLI 도구인 `nuget.exe` 또는 `dotnet.exe`를 사용하여 해당 기능을 임의 수의 다른 개발자와 공유하고 사용할 수 있는 구성 요소로 패키지할 수 있습니다. NuGet CLI 도구를 설치하려면 [NuGet 클라이언트 도구 설치](../install-nuget-client-tools.md)를 참조하세요. Visual Studio에는 CLI 도구가 자동으로 포함되지 않습니다.
 
-- [SDK 스타일 형식](../resources/check-project-format.md)을 사용하는 .NET Core 및 .NET Standard 프로젝트와 또 다른 SDK 스타일 프로젝트의 경우, NuGet은 프로젝트 파일의 정보를 직접 사용하여 패키지를 만듭니다. 자세한 단계는 [dotnet CLI를 사용하여 .NET Standard 패키지 만들기](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md), [Visual Studion를 사용하여 .NET Standard 패키지 만들기](../quickstart/create-and-publish-a-package-using-visual-studio.md) 또는 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.
+- SDK 스타일이 아닌 프로젝트(일반적으로 .NET Framework 프로젝트)의 경우에는 이 문서에 설명된 단계에 따라 패키지를 만듭니다. Visual Studio 및 `nuget.exe` CLI를 사용하는 단계별 지침은 [.NET Framework 패키지 만들기 및 게시](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)를 참조하세요.
 
-- SDK 스타일이 아닌 프로젝트(일반적으로 .NET Framework 프로젝트)의 경우에는 이 문서에 설명된 단계에 따라 패키지를 만듭니다. [.NET Framework 패키지 만들기 및 게시](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)의 단계에 따라 `nuget.exe` CLI 및 Visual Studio를 사용하여 패키지를 만들 수도 있습니다.
+- [SDK 스타일 형식](../resources/check-project-format.md)을 사용하는 .NET Core 및 .NET Standard 프로젝트와 또 다른 SDK 스타일 프로젝트의 경우, [dotnet CLI를 사용하여 NuGet 패키지 만들기](creating-a-package-dotnet-cli.md)를 참조하세요.
 
 - `packages.config`에서 [PackageReference](../consume-packages/package-references-in-project-files.md)로 마이그레이션된 프로젝트의 경우에는 [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)를 사용합니다.
 
@@ -65,7 +65,7 @@ ms.locfileid: "67842300"
 
 - 릴리스 정보
 - 저작권 정보
-- [Visual Studio의 패키지 관리자 UI](../tools/package-manager-ui.md)에 대한 간단한 설명
+- [Visual Studio의 패키지 관리자 UI](../consume-packages/install-use-packages-visual-studio.md)에 대한 간단한 설명
 - 로캘 ID
 - 프로젝트 URL
 - 라이선스(식 또는 파일로 사용)(`licenseUrl`은 사용되지 않으며, [`license`nusec 메타데이터 요소](../reference/nuspec.md#license)를 사용함)
@@ -183,8 +183,8 @@ NuGet 패키지는 `.nupkg` 확장명으로 이름이 바뀐 ZIP 파일일 뿐�
 | lib/{tfm} | 지정된 TFM(대상 프레임워크 모니커)에 대한 어셈블리(`.dll`), 문서(`.xml`) 및 기호(`.pdb`) 파일 | 어셈블리는 컴파일 및 런타임에 대한 참조로 추가됩니다. `.xml` 및 `.pdb`는 프로젝트 폴더에 복사됩니다. 프레임워크 대상 특정의 하위 폴더를 만들려면 [여러 대상 프레임워크 지원](supporting-multiple-target-frameworks.md)을 참조하세요. |
 | ref/{tfm} | 지정된 TFM(대상 프레임워크 모니커)에 대한 어셈블리(`.dll`) 및 기호(`.pdb`) 파일 | 어셈블리는 컴파일 시간에 대한 참조로만 추가됩니다. 따라서 프로젝트 bin 폴더에 아무것도 복사되지 않습니다. |
 | runtimes | 아키텍처 특정 어셈블리(`.dll`), 기호(`.pdb`) 및 네이티브 리소스(`.pri`) 파일 | 어셈블리는 런타임에 대한 참조로만 추가되고, 다른 파일은 프로젝트 폴더에 복사됩니다. 해당 컴파일 시간 어셈블리를 제공하려면 항상 `/ref/{tfm}` 폴더 아래에 해당하는 (TFM) `AnyCPU` 특정 어셈블리가 있어야 합니다. [여러 대상 프레임워크 지원](supporting-multiple-target-frameworks.md)을 참조하세요. |
-| 콘텐츠 | 임의 파일 | 콘텐츠가 프로젝트 루트에 복사됩니다. **content** 폴더를 궁극적으로 패키지를 사용하는 대상 애플리케이션의 루트로 간주합니다. 패키지에서 애플리케이션의 */images* 폴더에 이미지를 추가하도록 하려면 패키지의 *content/images* 폴더에 배치합니다. |
-| build | MSBuild `.targets` 및 `.props` 파일 | 프로젝트 파일 또는 `project.lock.json`(NuGet 3.x 이상)에 자동으로 삽입됩니다. |
+| 내용 | 임의 파일 | 콘텐츠가 프로젝트 루트에 복사됩니다. **content** 폴더를 궁극적으로 패키지를 사용하는 대상 애플리케이션의 루트로 간주합니다. 패키지에서 애플리케이션의 */images* 폴더에 이미지를 추가하도록 하려면 패키지의 *content/images* 폴더에 배치합니다. |
+| 빌드 | MSBuild `.targets` 및 `.props` 파일 | 프로젝트 파일 또는 `project.lock.json`(NuGet 3.x 이상)에 자동으로 삽입됩니다. |
 | 도구 | 패키지 관리자 콘솔에서 액세스할 수 있는 Powershell 스크립트 및 프로그램 | `tools` 폴더는 패키지 관리자 콘솔에 대한 `PATH` 환경 변수에만 추가 됩니다(특히 프로젝트를 빌드할 때는 MSBuild에 설정한 대로 `PATH`에 *추가되지 않음*). |
 
 폴더 구조에는 임의 개수의 대상 프레임워크에 대해 임의 개수의 어셈블리가 포함될 수 있으므로, 이 방법은 여러 프레임워크를 지원하는 패키지를 만들 때 필요합니다.
@@ -369,7 +369,7 @@ NuGet은 매니페스트의 자리 표시자 값을 변경하지 않은 경우�
 
 ### <a name="additional-options"></a>추가 옵션
 
-`nuget pack`에서 다양한 명령줄 스위치를 사용하여 파일을 제외하고, 매니페스트의 버전 번호를 재정의하고, 다른 기능 중에서 출력 폴더를 변경할 수 있습니다. 전체 목록은 [pack 명령 참조](../tools/cli-ref-pack.md)를 참조하세요.
+`nuget pack`에서 다양한 명령줄 스위치를 사용하여 파일을 제외하고, 매니페스트의 버전 번호를 재정의하고, 다른 기능 중에서 출력 폴더를 변경할 수 있습니다. 전체 목록은 [pack 명령 참조](../reference/cli-reference/cli-ref-pack.md)를 참조하세요.
 
 다음은 Visual Studio 프로젝트에서 일반적으로 사용되는 몇 가지 옵션입니다.
 
@@ -404,7 +404,7 @@ NuGet은 매니페스트의 자리 표시자 값을 변경하지 않은 경우�
 자동 테스트의 경우 기본 프로세스는 다음과 같습니다.
 
 1. `.nupkg` 파일을 로컬 폴더에 복사합니다.
-1. `nuget sources add -name <name> -source <path>` 명령([nuget sources](../tools/cli-ref-sources.md) 참조)을 사용하여 패키지 원본에 폴더를 추가합니다. 지정된 컴퓨터에서 이 로컬 원본을 한 번만 설정하면 됩니다.
+1. `nuget sources add -name <name> -source <path>` 명령([nuget sources](../reference/cli-reference/cli-ref-sources.md) 참조)을 사용하여 패키지 원본에 폴더를 추가합니다. 지정된 컴퓨터에서 이 로컬 원본을 한 번만 설정하면 됩니다.
 1. `nuget install <packageID> -source <name>`을 사용하여 해당 원본에서 패키지를 설치합니다. 여기서 `<name>`은 `nuget sources`에 지정된 원본 이름과 일치합니다. 원본을 지정하면 해당 원본에서만 패키지가 설치됩니다.
 1. 파일 시스템을 검사하여 파일이 올바르게 설치되었는지 확인합니다.
 

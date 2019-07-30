@@ -1,16 +1,16 @@
 ---
-title: Windows에서 Visual Studio를 사용하여 .NET Framework 패키지 만들기 및 게시
+title: Windows에서 Visual Studio를 사용하여 .NET Framework NuGet 패키지 만들기 및 게시
 description: Windows에서 Visual Studio를 사용하여 .NET Framework NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
 author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: bf561d36a06bf42c029eb96ff1b7930abffa4c0a
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 75160bf2b01f6d4707162e019a6263ddc64a6f5e
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842061"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342516"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>빠른 시작: Visual Studio(.NET Framework, Windows)를 사용하여 패키지 만들기 및 게시
 
@@ -86,7 +86,7 @@ DLL이 생성되고 프로젝트 속성이 설정되면 이제 `nuget spec` 명�
 
 1. 명령 프롬프트를 열고 `AppLogger.csproj` 파일이 있는 프로젝트 폴더로 이동합니다.
 
-1. 다음 명령을 실행합니다. `nuget spec AppLogger.csproj` 프로젝트를 지정하면 NuGet이 프로젝트의 이름과 일치하는 매니페스트를 만듭니다(이 경우 `AppLogger.nuspec`). 또한 매니페스트에는 교체 토큰도 포함되어 있습니다.
+1. `nuget spec AppLogger.csproj` 명령을 실행합니다. 프로젝트를 지정하면 NuGet이 프로젝트의 이름과 일치하는 매니페스트를 만듭니다(이 경우 `AppLogger.nuspec`). 또한 매니페스트에는 교체 토큰도 포함되어 있습니다.
 
 1. 텍스트 편집기에서 `AppLogger.nuspec`을 열어 해당 내용을 살펴봅니다. 이는 다음과 같아야 합니다.
 
@@ -119,7 +119,7 @@ DLL이 생성되고 프로젝트 속성이 설정되면 이제 `nuget spec` 명�
     - projectUrl
     - iconUrl
     - releaseNotes
-    - tags
+    - 태그
 
 1. 공용으로 빌드된 패키지의 경우 **태그** 속성에 특히 주의하세요. 태그는 다른 사람들이 nuget.org 같은 소스에서 패키지를 찾고 그 기능을 이해하는 데 도움이 됩니다.
 
@@ -162,7 +162,7 @@ DLL이 생성되고 프로젝트 속성이 설정되면 이제 `nuget spec` 명�
     Your package was pushed.
     ```
 
-[nuget push](../tools/cli-ref-push.md)를 참조하세요.
+[nuget push](../reference/cli-reference/cli-ref-push.md)를 참조하세요.
 
 ### <a name="publish-errors"></a>게시 오류
 
@@ -172,9 +172,15 @@ DLL이 생성되고 프로젝트 속성이 설정되면 이제 `nuget spec` 명�
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## <a name="related-topics"></a>관련된 항목
+## <a name="next-steps"></a>다음 단계
 
-- [패키지 만들기](../create-packages/creating-a-package.md)
+첫 번째 NuGet 패키지 만들기를 진행하시게 된 것을 축하드립니다.
+
+> [!div class="nextstepaction"]
+> [패키지 만들기](../create-packages/creating-a-package.md)
+
+NuGet에서 제공하는 다른 기능을 탐색하려면 아래 링크를 선택합니다.
+
 - [패키지 게시](../nuget-org/publish-a-package.md)
 - [시험판 패키지](../create-packages/Prerelease-Packages.md)
 - [여러 대상 프레임워크 지원](../create-packages/supporting-multiple-target-frameworks.md)

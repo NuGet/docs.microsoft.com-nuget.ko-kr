@@ -5,23 +5,23 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: a4a3f5509792e56c09d18b3da98588d17f4756ee
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: d7aa2e4bdb78dcc6747d9775cbdf0d6c41855b96
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67841937"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419807"
 ---
 # <a name="install-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
 
 > **패키지 설치를 원하십니까? [NuGet 패키지를 설치하는 방법](consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package)을 참조하세요.**
 
-NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 CLI(명령줄 인터페이스) 도구와 Visual Studio의 NuGet 기능을 사용할 수 있습니다. 이 문서에서는 다양한 도구의 기능, 설치 방법 및 비교 [기능 가용성](#feature-availability)에 대해 간략하게 설명합니다. NuGet으로 패키지 사용을 시작하려면 [패키지 설치 및 사용(.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) 및 [패키지 설치 및 사용(Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)을 참조하세요. NuGet 패키지를 만들기 시작하려면 [NET Standard 패키지 만들기 및 게시(dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) 및 [NET Standard 패키지 만들기 및 게시(Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)를 참조하세요.
+NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 CLI(명령줄 인터페이스) 도구와 Visual Studio의 NuGet 기능을 사용할 수 있습니다. 이 문서에서는 다양한 도구의 기능, 설치 방법 및 비교 [기능 가용성](#feature-availability)에 대해 간략하게 설명합니다. NuGet으로 패키지 사용을 시작하려면 [패키지 설치 및 사용(dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) 및 [패키지 설치 및 사용(Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)을 참조하세요. NuGet 패키지를 만들기 시작하려면 [NET Standard 패키지 만들기 및 게시(dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) 및 [NET Standard 패키지 만들기 및 게시(Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)를 참조하세요.
 
 | 도구&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 설명 | 다운로드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | .NET Core 및 .NET Standard 라이브러리와 .NET Framework를 대상으로 하는 것과 같은 [SDK 스타일 프로젝트](resources/check-project-format.md)를 위한 CLI 도구입니다. .NET Core SDK에 포함되며 모든 플랫폼에서 핵심 NuGet 기능을 제공합니다. (Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.)| [.NET Core SDK](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | .NET Framework 라이브러리와 .NET Standard 라이브러리를 대상으로 하는 [SDK 스타일이 아닌 프로젝트](resources/check-project-format.md)를 위한 CLI 도구입니다. Windows에서 모든 NuGet 기능을 제공하며 Mono로 실행 중일 경우 Mac 및 Linux에서 대부분의 기능을 제공합니다. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [nuget.exe](#nugetexe-cli) | .NET Framework 라이브러리와 .NET Standard 라이브러리를 대상으로 하는 것과 같은 [비 SDK 스타일 프로젝트](resources/check-project-format.md)를 위한 CLI 도구입니다. Windows에서 모든 NuGet 기능을 제공하며 Mono로 실행 중일 경우 Mac 및 Linux에서 대부분의 기능을 제공합니다. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | Windows에서 패키지 관리자 UI 및 패키지 관리자 콘솔을 통해 NuGet 기능을 제공합니다(.NET 관련 워크로드와 함께 포함). Mac에서는 UI를 통해 특정 기능을 제공합니다. Visual Studio Code에서 NuGet 기능은 확장을 통해 제공됩니다. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 [MSBuild CLI](reference/msbuild-targets.md)는 주로 빌드 서버에서 유용한 패키지를 복원하고 만들 수 있는 기능을 제공합니다. MSBuild는 NuGet을 사용하기 위한 범용 도구가 아닙니다.
@@ -30,8 +30,8 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 CLI(명�
 
 두 NuGet CLI 도구는 `dotnet.exe` 및 `nuget.exe`입니다. 이 둘을 비교하려면 [기능 가용성](#feature-availability)을 참조하세요.
 
-* .NET Core 또는 .NET Standard를 대상으로 하려면 dotnet CLI를 사용합니다. dotnet CLI는 [SDK 특성](/dotnet/core/tools/csproj#additions)을 사용하는 SDK 스타일 프로젝트 형식에 필요합니다.
-* .NET Framework(SDK 스타일이 아닌 프로젝트에만 해당)를 대상으로 하려면 `nuget.exe CLI`를 사용합니다. 프로젝트가 `packages.config`에서 PackageReference로 마이그레이션되면 dotnet CLI를 사용합니다.
+* .NET Core 또는 .NET Standard를 대상으로 하려면 dotnet CLI를 사용합니다. `dotnet` CLI는 [SDK 특성](/dotnet/core/tools/csproj#additions)을 사용하는 SDK 스타일 프로젝트 형식에 필요합니다.
+* .NET Framework(SDK 스타일이 아닌 프로젝트에만 해당)를 대상으로 하려면 `nuget.exe` CLI를 사용합니다. 프로젝트가 `packages.config`에서 PackageReference로 마이그레이션되면 dotnet CLI를 사용합니다.
 
 ### <a name="dotnetexe-cli"></a>dotnet.exe CLI
 
@@ -66,7 +66,7 @@ dotnet CLI에서 기본 명령을 사용하는 방법에 대한 자세한 내용
 
 - Mac용 Visual Studio: 특정 NuGet 기능이 직접 기본 제공됩니다. 연습은 [프로젝트에 NuGet 패키지 포함](/visualstudio/mac/nuget-walkthrough)을 참조하세요. 기타 기능의 경우 `dotnet.exe` 또는 `nuget.exe` CLI 도구를 사용합니다.
 
-- Windows의 Visual Studio: **NuGet 패키지 관리자**는 Visual Studio 2012 이상 버전에 포함됩니다. Visual Studio는 대부분의 NuGet 작업을 실행할 수 있는 [패키지 관리자 UI](tools/package-manager-ui.md) 및 [패키지 관리자 콘솔](tools/package-manager-console.md)을 제공합니다.
+- Windows의 Visual Studio: **NuGet 패키지 관리자**는 Visual Studio 2012 이상 버전에 포함됩니다. Visual Studio는 대부분의 NuGet 작업을 실행할 수 있는 [패키지 관리자 UI](consume-packages/install-use-packages-visual-studio.md) 및 [패키지 관리자 콘솔](consume-packages/install-use-packages-powershell.md)을 제공합니다.
   - Visual Studio 2017부터 설치 관리자에는 .NET을 사용하는 모든 워크로드가 있는 NuGet 패키지 관리자가 포함되어 있습니다. 별도로 설치하거나 패키지 관리자가 설치되어 있는지 확인하려면 Visual Studio 설치 관리자를 실행하고 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** 아래에서 옵션을 확인합니다.
   - 패키지 관리자 UI 및 콘솔은 Windows의 Visual Studio에만 있습니다. 현재 Mac용 Visual Studio에서는 사용할 수 없습니다.
   - CLI 도구는 IDE에서 NuGet 기능을 지원하는 데 필요합니다. `dotnet` CLI 또는 `nuget.exe` CLI를 사용할 수 있습니다. `dotnet` CLI는 .NET Core와 같은 Visual Studio 워크로드와 함께 설치됩니다. `nuget.exe` CLI는 앞에서 설명한 대로 별도로 설치해야 합니다.
@@ -100,13 +100,13 @@ dotnet CLI에서 기본 명령을 사용하는 방법에 대한 자세한 내용
 
 (4) `.nuspec` 파일에서 작동하지만 프로젝트 파일에서 작동하지 않습니다.
 
-### <a name="related-topics"></a>관련된 항목
+### <a name="related-topics"></a>관련 항목
 
-- [Visual Studio를 사용하여 패키지 설치 및 관리](tools/package-manager-ui.md)
-- [패키지 관리자 콘솔을 사용하여 패키지 설치 및 관리](tools/package-manager-console.md)
+- [Visual Studio를 사용하여 패키지 설치 및 관리](consume-packages/install-use-packages-visual-studio.md)
+- [PowerShell을 사용하여 패키지 설치 및 관리](consume-packages/install-use-packages-powershell.md)
 - [dotnet CLI를 사용하여 패키지 설치 및 관리](consume-packages/install-use-packages-dotnet-cli.md)
 - [nuget.exe CLI를 사용하여 패키지 설치 및 관리](consume-packages/install-use-packages-nuget-cli.md)
-- [패키지 관리자 콘솔 PowerShell 참조](tools/powershell-reference.md)
+- [패키지 관리자 콘솔 PowerShell 참조](reference/powershell-reference.md)
 - [패키지 만들기](create-packages/creating-a-package.md)
 - [패키지 게시](nuget-org/publish-a-package.md)
 

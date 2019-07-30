@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4b365488c8dd0e081449552b06451e7b40b5223b
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: f5d418fd5b6b9bb88958d6b7e9e3034f40485a7d
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426623"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419966"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>전역 패키지, 캐시 및 임시 폴더 관리
 
@@ -18,7 +18,7 @@ ms.locfileid: "67426623"
 
 | name | 설명 및 위치(사용자별)|
 | --- | --- |
-| global&#8209;packages | *global-packages* 폴더는 NuGet이 다운로드한 패키지를 설치하는 위치입니다. 각 패키지는 패키지 식별자 및 버전 번호와 일치하는 하위 폴더로 완전히 확장됩니다. PackageReference 형식을 사용하는 프로젝트는 항상 이 폴더의 직접 패키지를 직접 사용합니다. `packages.config`을 사용할 경우 패키지가 *global-packages* 폴더에 설치된 다음, 프로젝트의 `packages` 폴더에 복사됩니다.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>NUGET_PACKAGES 환경 변수 `globalPackagesFolder` 또는 `repositoryPath` [구성 설정](../reference/nuget-config-file.md#config-section)(각각 PackageReference 및 `packages.config`를 사용할 경우) 또는 `RestorePackagesPath` MSBuild 속성(MSBuild에만 해당)을 사용하여 재정의합니다. 환경 변수가 구성 설정보다 우선 합니다.</li></ul> |
+| global&#8209;packages | *global-packages* 폴더는 NuGet이 다운로드한 패키지를 설치하는 위치입니다. 각 패키지는 패키지 식별자 및 버전 번호와 일치하는 하위 폴더로 완전히 확장됩니다. [PackageReference](package-references-in-project-files.md) 형식을 사용하는 프로젝트는 항상 이 폴더의 직접 패키지를 직접 사용합니다. [packages.config](../reference/packages-config.md)를 사용할 경우 패키지가 *global-packages* 폴더에 설치된 다음, 프로젝트의 `packages` 폴더에 복사됩니다.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>NUGET_PACKAGES 환경 변수 `globalPackagesFolder` 또는 `repositoryPath` [구성 설정](../reference/nuget-config-file.md#config-section)(각각 PackageReference 및 `packages.config`를 사용할 경우) 또는 `RestorePackagesPath` MSBuild 속성(MSBuild에만 해당)을 사용하여 재정의합니다. 환경 변수가 구성 설정보다 우선 합니다.</li></ul> |
 | http&#8209;cache | Visual Studio 패키지 관리자(NuGet 3.x 이상) 및 `dotnet` 도구는 다운로드한 패키지의 복사본을 이 캐시에 `.dat` 파일로 저장하고, 각 패키지 소스에 대해 하위 폴더를 구성합니다. 패키지는 확장되지 않으며 캐시의 만료 시간은 30분입니다.<br/><ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>NUGET_HTTP_CACHE_PATH 환경 변수를 사용하여 재정의합니다.</li></ul> |
 | temp | NuGet이 다양한 작업을 수행하는 중 임시 파일을 저장하는 폴더입니다.<br/><li>Windows: `%temp%\NuGetScratch`</li><li>Mac/Linux: `/tmp/NuGetScratch`</li></ul> |
 | plugins-cache **4.8+** | NuGet이 작업 클레임 요청의 결과를 저장하는 폴더입니다.<br/><ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>NUGET_PLUGINS_CACHE_PATH 환경 변수를 사용하여 재정의합니다.</li></ul> |
@@ -34,7 +34,7 @@ NuGet은 캐시 및 *global-packages* 폴더를 사용하여 일반적으로 컴
 
 ## <a name="viewing-folder-locations"></a>폴더 위치 보기
 
-[nuget locals 명령](../tools/cli-ref-locals.md)을 사용하여 위치를 확인할 수 있습니다.
+[nuget locals 명령](../reference/cli-reference/cli-ref-locals.md)을 사용하여 위치를 확인할 수 있습니다.
 
 ```cli
 # Display locals for all folders: global-packages, http cache, temp and plugins cache

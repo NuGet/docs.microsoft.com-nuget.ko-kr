@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: 4e96d9969c8b4570ee69501d6529986f891ea4dc
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 30a77b427fe0a33b41262c5784045e5a6b10852f
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842600"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419991"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>빠른 시작: 패키지 만들기 및 게시(dotnet CLI)
 
@@ -101,12 +101,18 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## <a name="related-topics"></a>관련된 항목
+## <a name="next-steps"></a>다음 단계
 
-- [패키지 만들기](../create-packages/creating-a-package.md)
+첫 번째 NuGet 패키지 만들기를 진행하시게 된 것을 축하드립니다.
+
+> [!div class="nextstepaction"]
+> [패키지 만들기](../create-packages/creating-a-package-dotnet-cli.md)
+
+NuGet에서 제공하는 다른 기능을 탐색하려면 아래 링크를 선택합니다.
+
 - [패키지 게시](../nuget-org/publish-a-package.md)
 - [시험판 패키지](../create-packages/Prerelease-Packages.md)
-- [여러 대상 프레임워크 지원](../create-packages/supporting-multiple-target-frameworks.md)
+- [여러 대상 프레임워크 지원](../create-packages/multiple-target-frameworks-project-file.md)
 - [패키지 버전 관리](../reference/package-versioning.md)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)
 - [기호 패키지 만들기](../create-packages/symbol-packages-snupkg.md)
