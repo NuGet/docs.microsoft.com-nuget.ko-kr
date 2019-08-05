@@ -6,12 +6,12 @@ ms.author: diverdan92
 ms.date: 10/09/2017
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 94036e3ca7c65e6878f24a5a8514cbb0d8816d9c
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 650f570ec65a665e3d452af732ea22337835d8d9
+ms.sourcegitcommit: cae759ad8518c049575a30ad3bf04fe5d06244fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427228"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68616807"
 ---
 # <a name="package-id-prefix-reservation"></a>패키지 ID 접두사 예약
 
@@ -76,6 +76,8 @@ ms.locfileid: "67427228"
 ID 접두사 예약에 대한 모든 애플리케이션을 검토할 때 [nuget.org](https://www.nuget.org/) 팀은 아래 기준에 따라 애플리케이션을 평가합니다. 접두사를 예약하기 위해 모든 기준을 충족해야 하는 것은 아니지만, 충족되는 기준에 대한 실질적인 증거가 없는 경우 애플리케이션은 거부될 수 있습니다(지정된 설명 포함).
 
 1. 패키지 ID 접두사가 제대로 되어 있으며 패키지 소유자를 명확하게 식별하나요?
+
+1. 패키지 소유자가 [NuGet.org 계정에서 2FA를 활성화했나요](individual-accounts.md#enable-two-factor-authentication-2fa)?
 
 1. 소유자가 이미 제출한 패키지의 상당수가 패키지 ID 접두사 아래에 있나요?
 
