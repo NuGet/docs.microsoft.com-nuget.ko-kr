@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8e662194fffc031d0cfc0aa129a5a15b555a4231
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 8403ae38b5d2e907c6f06b162a18cdcd5425565b
+ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68420018"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817527"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -18,7 +18,7 @@ ms.locfileid: "68420018"
 
 [PackageReference](../consume-packages/package-references-in-project-files.md) 형식을 사용 하는 경우 NuGet 4.0 이상에서는 별도의 `.nuspec` 파일을 사용 하지 않고 프로젝트 파일 내에 모든 매니페스트 메타 데이터를 직접 저장할 수 있습니다.
 
-MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `restore` 대상이 있는 일류 MSBuild 시민이기도 합니다. 이러한 대상을 사용하면 다른 MSBuild 작업 또는 대상과 마찬가지로 NuGet을 사용하여 작업할 수 있습니다. (NuGet 3.x 및 이전 버전의 경우 NuGet CLI를 통해 [pack](../reference/cli-reference/cli-ref-pack.md) 및 [restore](../reference/cli-reference/cli-ref-restore.md) 명령을 대신 사용합니다.)
+MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `restore` 대상이 있는 일류 MSBuild 시민이기도 합니다. 이러한 대상을 사용하면 다른 MSBuild 작업 또는 대상과 마찬가지로 NuGet을 사용하여 작업할 수 있습니다. MSBuild를 사용 하 여 NuGet 패키지를 만드는 방법에 대 한 지침은 [msbuild를 사용 하 여 nuget 패키지 만들기](../create-packages/creating-a-package-msbuild.md)를 참조 하세요. (NuGet 3.x 및 이전 버전의 경우 NuGet CLI를 통해 [pack](../reference/cli-reference/cli-ref-pack.md) 및 [restore](../reference/cli-reference/cli-ref-restore.md) 명령을 대신 사용합니다.)
 
 ## <a name="target-build-order"></a>대상 빌드 순서
 
@@ -52,7 +52,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 | Authors | Authors | 현재 사용자의 사용자 이름 | |
 | 소유자 | 해당 사항 없음 | NuSpec에는 없음 | |
 | 제목 | 제목 | PackageId| |
-| Description | Description | "패키지 설명" | |
+| 설명 | 설명 | "패키지 설명" | |
 | Copyright | Copyright | 비어 있음 | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | 사용권이 | PackageLicenseExpression | 비어 있음 | 다음에 해당 합니다.`<license type="expression">` |
@@ -207,7 +207,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 [NuGet.org에서 허용 하는 라이선스 식 및 라이선스에 대해 자세히 알아보세요](nuspec.md#license).
 
-라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들어:
+라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예:
 
 ```xml
 <PropertyGroup>
@@ -329,13 +329,13 @@ Nuspec 파일을 압축 하는 *.csproj* 파일의 예는 다음과 같습니다
 1. 패키지를 다운로드합니다.
 1. 자산, targets 및 props 파일을 작성합니다.
 
-대상은 PackageReference 형식을 사용 하는 프로젝트에만 적용 됩니다.  `restore` 형식을 사용  하는 `packages.config` 프로젝트에 대해서는 작동 하지 않습니다. 대신 [nuget 복원을](../reference/cli-reference/cli-ref-restore.md) 사용 하십시오.
+대상은 PackageReference 형식을 사용 하는 프로젝트에만 적용 됩니다. `restore` 형식을 사용 하는 `packages.config` 프로젝트에 대해서는 작동 하지 않습니다. 대신 [nuget 복원을](../reference/cli-reference/cli-ref-restore.md) 사용 하십시오.
 
 ### <a name="restore-properties"></a>restore 속성
 
 추가 restore 설정은 프로젝트 파일의 MSBuild 속성에서 가져올 수 있습니다. 또한 값은 `-p:` 스위치를 사용하여 명령줄에서 설정할 수 있습니다(아래 예제 참조).
 
-| 속성 | Description |
+| 속성 | 설명 |
 |--------|--------|
 | RestoreSources | 세미콜론으로 구분된 패키지 원본의 목록입니다. |
 | RestorePackagesPath | 사용자 패키지 폴더에 대한 경로입니다. |
