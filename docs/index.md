@@ -7,12 +7,12 @@ ms.date: 02/12/2018
 ms.topic: hub-page
 layout: HubPage
 hide_bc: true
-ms.openlocfilehash: cdd032a5a7268a7ffddff5141229fd021ec275a5
-ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
+ms.openlocfilehash: 8f4fca447d61b6f435399a24ef4151604d43291d
+ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817534"
+ms.locfileid: "68833354"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -122,13 +122,16 @@ ms.locfileid: "68817534"
                             <a href="create-packages/overview-and-workflow.md">워크플로(개요)</a>
                         </p>
                         <p>
-                            <a href="create-packages/creating-a-package-dotnet-cli.md">패키지 만들기(dotnet CLI)</a>
+                            <a href="quickstart/create-and-publish-a-package-using-visual-studio.md">Visual Studio 사용</a>
                         </p>
                         <p>
-                            <a href="create-packages/creating-a-package.md">패키지 만들기(nuget.exe CLI)</a>
+                            <a href="create-packages/creating-a-package-dotnet-cli.md">dotnet CLI 사용</a>
                         </p>
                         <p>
-                            <a href="create-packages/creating-a-package.md">패키지 만들기 - MSBuild</a>
+                            <a href="create-packages/creating-a-package.md">nuget.exe CLI 사용</a>
+                        </p>
+                        <p>
+                            <a href="create-packages/creating-a-package.md">MSBuild 사용</a>
                         </p>
                         <p>
                             <a href="create-packages/multiple-target-frameworks-project-file.md">여러 대상 프레임워크 지원</a>
@@ -210,6 +213,8 @@ ms.locfileid: "68817534"
                         <p>
                             <a href="consume-packages/package-references-in-project-files.md">패키지 참조</a>
                         </p>
+                        <p>
+                            <a href="reference/msbuild-targets.md">MSBuild 대상으로 팩 및 복원</a>
                         </p>
                         <p>
                             <a href="reference/nuspec.md">.nuspec</a>
