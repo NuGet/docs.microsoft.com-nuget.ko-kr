@@ -39,7 +39,6 @@
 ## [기호 패키지 만들기](create-packages/symbol-packages-snupkg.md)
 ## 고급 작업
 ### [여러 대상 프레임워크 지원](create-packages/supporting-multiple-target-frameworks.md)
-### [MSBuild 팩 및 복원 대상 지정](reference/msbuild-targets.md)
 ### [소스 코드 및 구성 파일 수정](create-packages/source-and-config-file-transformations.md)
 ### [프로젝트에서 참조하는 어셈블리 선택](create-packages/select-assemblies-referenced-by-projects.md)
 ### [패키지 형식 설정](create-packages/set-package-type.md)
@@ -71,6 +70,7 @@
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config 파일](reference/nuget-config-file.md)
 ## [대상 프레임워크](reference/target-frameworks.md)
+## [MSBuild 대상으로 팩 및 복원](reference/msbuild-targets.md)
 ## [dotnet CLI](reference/dotnet-Commands.md)
 ## [nuget.exe CLI 참조](reference/nuget-exe-cli-reference.md)
 ### [add](reference/cli-reference/cli-ref-add.md)
