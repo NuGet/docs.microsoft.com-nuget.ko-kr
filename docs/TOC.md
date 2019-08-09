@@ -18,7 +18,7 @@
 ### [패키지 관리자 콘솔(PowerShell)](consume-packages/install-use-packages-powershell.md)
 ## NuGet 구성
 ### 패키지 복원 옵션
-#### [복원 옵션](consume-packages/package-restore.md)
+#### [패키지 복원](consume-packages/package-restore.md)
 #### [문제 해결](consume-packages/package-restore-troubleshooting.md)
 ### [패키지 재설치 및 업데이트](consume-packages/reinstalling-and-updating-packages.md)
 ### [글로벌 패키지 및 캐시 폴더 관리](consume-packages/managing-the-global-packages-and-cache-folders.md)
