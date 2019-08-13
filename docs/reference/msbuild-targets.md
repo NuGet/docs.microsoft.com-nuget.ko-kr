@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8403ae38b5d2e907c6f06b162a18cdcd5425565b
-ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
+ms.openlocfilehash: d8d1b2ef0185381d16c1bb73035588fe90bcfd14
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817527"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959687"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -35,6 +35,9 @@ MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `res
 
 마찬가지로, MSBuild 작업을 작성하고, 고유한 대상을 작성하고, MSBuild 작업에서 NuGet 속성을 사용할 수 있습니다.
 
+> [!NOTE]
+> `$(OutputPath)`는 상대적 이며 프로젝트 루트에서 명령을 실행 하는 것으로 예상 합니다.
+
 ## <a name="pack-target"></a>pack 대상
 
 PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `msbuild -t:pack` 를 사용 하 여 NuGet 패키지를 만드는 데 사용할 프로젝트 파일의 입력을 그립니다.
@@ -52,7 +55,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 | Authors | Authors | 현재 사용자의 사용자 이름 | |
 | 소유자 | 해당 사항 없음 | NuSpec에는 없음 | |
 | 제목 | 제목 | PackageId| |
-| 설명 | 설명 | "패키지 설명" | |
+| Description | Description | "패키지 설명" | |
 | Copyright | Copyright | 비어 있음 | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | 사용권이 | PackageLicenseExpression | 비어 있음 | 다음에 해당 합니다.`<license type="expression">` |
@@ -76,7 +79,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 - PackageVersion
 - PackageId
 - Authors
-- Description
+- 설명
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -207,7 +210,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 [NuGet.org에서 허용 하는 라이선스 식 및 라이선스에 대해 자세히 알아보세요](nuspec.md#license).
 
-라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예:
+라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들어:
 
 ```xml
 <PropertyGroup>

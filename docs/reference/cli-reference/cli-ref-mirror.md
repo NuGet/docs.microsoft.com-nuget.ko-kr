@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 076d7a480e2f07149e4ec7ac58c7ab37040e7a8f
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 81866172bfbf55c42ee96c213c0117f1f986235c
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327670"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959718"
 ---
 # <a name="mirror-command-nuget-cli"></a>mirror 명령(NuGet CLI)
 
@@ -19,7 +19,7 @@ ms.locfileid: "68327670"
 패키지와 해당 종속성을 지정 된 원본 리포지토리에서 대상 리포지토리로 미러링합니다.
 
 > [!NOTE]
-> 3\.2 이전 NuGet 버전에 대해이 명령을 [https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases)사용 하려면로 이동 하 고, 안정적인 최신 릴리스를 선택 하 고,를 로컬 디스크에 다운로드 `nuget.exe` `NuGet.ServerExtensions.dll` 하 고, `Nuget-Signed.exe` 로 이름을 바꿉니다 `Nuget-Signed.exe` .
+> 이전에 NuGet 2.x에서이 명령을 지원 (NuGet-Signed에서 nuget.exe로 이름 바꾸기) 하는 Nuget.exe 및 NuGet-Signed는 더 이상 다운로드할 수 없습니다. 이와 유사한 명령을 사용 하려면 [NuGetMirror](https://www.nuget.org/packages/NuGetMirror/)를 시도 합니다.
 
 ## <a name="usage"></a>사용법
 

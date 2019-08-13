@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 0e12944bdd5d43b8b9e84908be480a5249dd924f
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: cab56cb87f46335f9fdebdbc1649fead16459877
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327660"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959732"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 명령(NuGet CLI)
 
 **적용 대상:** 패키지 만들기 &bullet; **지원 되는 버전:** 2.7+
 
-지정 `.nuspec` 된 또는 프로젝트 파일을 기반으로 NuGet 패키지를 만듭니다. 명령 ( [dotnet 명령](../dotnet-Commands.md)참조) 및 `msbuild -t:pack` ( [MSBuild 대상](../msbuild-targets.md)참조)을 대체 항목으로 사용할 수 있습니다. `dotnet pack`
+지정 된 [nuspec](../nuspec.md) 또는 프로젝트 파일을 기반으로 하는 NuGet 패키지를 만듭니다. 명령 ( [dotnet 명령](../dotnet-Commands.md)참조) 및 `msbuild -t:pack` ( [MSBuild 대상](../msbuild-targets.md)참조)을 대체 항목으로 사용할 수 있습니다. `dotnet pack`
 
 > [!Important]
 > Mono에서는 프로젝트 파일에서 패키지를 만들 수 없습니다. 또한 nuget.exe에서 Windows 경로 이름을 변환 하지 않으므로 `.nuspec` 파일의 비로컬 경로를 Unix 스타일 경로로 조정 해야 합니다.
@@ -31,9 +31,9 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 ## <a name="options"></a>변수
 
-| 옵션 | Description |
+| 옵션 | 설명 |
 | --- | --- |
-| BasePath | `.nuspec` 파일에 정의 된 파일의 기본 경로를 설정 합니다. |
+| BasePath | [Nuspec](../nuspec.md) 파일에 정의 된 파일의 기본 경로를 설정 합니다. |
 | 빌드 | 패키지를 빌드하기 전에 프로젝트를 빌드해야 함을 지정 합니다. |
 | 제외 | 패키지를 만들 때 제외할 와일드 카드 패턴을 하나 이상 지정 합니다. 둘 이상의 패턴을 지정 하려면-Exclude 플래그를 반복 합니다. 아래 예제를 참조 하세요. |
 | ExcludeEmptyDirectories | 패키지를 빌드할 때 빈 디렉터리가 포함 되지 않도록 합니다. |

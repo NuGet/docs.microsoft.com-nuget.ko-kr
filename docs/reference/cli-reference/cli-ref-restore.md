@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 82113d460f7f5ff467b0a0552cc49283de95de25
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 211f24ff67c06da00d6a014e679cc422d493d6d5
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327640"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959739"
 ---
 # <a name="restore-command-nuget-cli"></a>restore 명령 (NuGet CLI)
 
@@ -35,7 +35,7 @@ nuget restore <projectPath> [options]
 | ConfigFile | 적용할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
 | DirectDownload | *(4.0 이상)* 는 이진 또는 메타 데이터로 캐시를 채우지 않고 패키지를 직접 다운로드 합니다. |
 | DisableParallelProcessing | 여러 패키지를 동시에 복원 하지 않습니다. |
-| FallbackSource | *(3.2 이상)* 주 또는 기본 원본에서 패키지를 찾을 수 없는 경우 대체로 사용할 패키지 원본 목록입니다. |
+| FallbackSource | *(3.2 이상)* 주 또는 기본 원본에서 패키지를 찾을 수 없는 경우 대체로 사용할 패키지 원본 목록입니다. 세미콜론을 사용 하 여 목록 항목을 구분 합니다. |
 | ForceEnglishOutput | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
 | Help | 명령어에 대한 도움말을 표시합니다. |
 | MSBuildPath | *(4.0 이상)* 명령에 사용할 MSBuild의 경로를 지정 합니다 `-MSBuildVersion`. |
@@ -49,7 +49,7 @@ nuget restore <projectPath> [options]
 | 폴더 | *(4.0 이상)* UWP 및 .NET Core 프로젝트에 대 한 모든 참조 프로젝트를 복원 합니다. 을 사용 하 `packages.config`는 프로젝트에는 적용 되지 않습니다. |
 | RequireConsent | 패키지를 다운로드 하 고 설치 하기 전에 패키지 복원이 사용 되는지 확인 합니다. 자세한 내용은 [패키지 복원](../../consume-packages/package-restore.md)을 참조 하세요. |
 | SolutionDirectory | 솔루션 폴더를 지정 합니다. 솔루션에 대 한 패키지를 복원 하는 경우 유효 하지 않습니다. 또는 `PackagesDirectory` `packages.config` 를`OutputDirectory` 사용 하지 않는 한 파일을 사용 하 여 복원할 때 필요 합니다. |
-| Source | 복원에 사용할 패키지 원본 (Url)의 목록을 지정 합니다. 생략 하는 경우 명령은 구성 파일에 제공 된 소스를 사용 합니다. [NuGet 동작 구성](../../consume-packages/configuring-nuget-behavior.md)을 참조 하세요. |
+| Source | 복원에 사용할 패키지 원본 (Url)의 목록을 지정 합니다. 생략 하는 경우 명령은 구성 파일에 제공 된 소스를 사용 합니다. [NuGet 동작 구성](../../consume-packages/configuring-nuget-behavior.md)을 참조 하세요. 세미콜론을 사용 하 여 목록 항목을 구분 합니다. |
 | Verbosity | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
 
 또한 [환경 변수](cli-ref-environment-variables.md)에 대한 정보를 참조할 수 있습니다.
