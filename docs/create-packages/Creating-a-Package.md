@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 894a39e9e67508234295db128928b09da7f468f0
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: f33624cf50248d8a137216ed0d725ed88c0defd2
+ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419823"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833367"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>nuget.exe CLI를 사용하여 패키지 만들기
 
@@ -138,7 +138,7 @@ ms.locfileid: "68419823"
 </package>
 ```
 
-종속성 선언 및 버전 번호 지정에 대한 자세한 내용은 [패키지 버전 관리](../reference/package-versioning.md)를 참조하세요. `dependency` 요소의 `include` 및 `exclude` 특성을 사용하여 패키지에 종속성의 자산을 직접 공개할 수도 있습니다. [.nuspec 참조 - 종속성](../reference/nuspec.md#dependencies)을 참조하세요.
+종속성 선언 및 버전 번호 지정에 대한 자세한 내용은 [packages.config](../reference/packages-config.md) 및 [패키지 버전화](../reference/package-versioning.md)를 참조하세요. `dependency` 요소의 `include` 및 `exclude` 특성을 사용하여 패키지에 종속성의 자산을 직접 공개할 수도 있습니다. [.nuspec 참조 - 종속성](../reference/nuspec.md#dependencies)을 참조하세요.
 
 매니페스트는 이 매니페스트에서 만든 패키지에 포함되어 있으므로 기존 패키지를 검사하여 임의 개수의 추가 예제를 찾을 수 있습니다. 좋은 소스는 컴퓨터에 있는 *global-packages* 폴더이며, 해당 위치는 다음 명령으로 반환됩니다.
 

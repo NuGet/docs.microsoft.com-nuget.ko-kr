@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3af29e2f9b09ba5bd82779f9aacf314bd8933436
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: cbe6fd964e88b054b9e2c5c8ead71d1f9090d63c
+ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317023"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817576"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>프로젝트에 대한 NuGet 패키지 찾기 및 평가
 
@@ -82,6 +82,10 @@ NuGet은 Visual Studio의 C++ 프로젝트에서 사용할 수 있는 네이티�
 
     ![패키지의 목록 페이지에 대한 다운로드 통계](media/Finding-03-Downloads.png)
 
+- *GitHub 사용*: 패키지 페이지에서 **GitHub 사용** 섹션에는 이 패키지에 따라 다른 상위 GitHub 리포지토리가 나열됩니다. 인기 있는 여러 GitHub 리포지토리에서 사용하는 패키지가 일반적으로 더 적합합니다.
+
+    ![GitHub 사용](media/GitHub-Usage.png)
+
 - *버전 기록*: 패키지 페이지의 **정보** 아래에서 최신 업데이트 날짜를 확인하고 **버전 기록**을 검사합니다. 잘 유지 관리된 패키지에는 최신 업데이트와 풍부한 버전 기록이 있습니다. 방치한 패키지에는 업데이트가 거의 없으며, 일정 기간 동안 업데이트되지 않은 경우가 많습니다.
 
     ![패키지 목록 페이지의 버전 기록](media/Finding-04-VersionHistory.png)
@@ -115,6 +119,7 @@ NuGet은 Visual Studio의 C++ 프로젝트에서 사용할 수 있는 네이티�
 1. `<license type="file">license\license.txt</license>`과 같은 태그가 있어야 합니다. 이는 이름이 `license.txt`인 라이선스 파일을 의미하며 해당 폴더의 루트에 있는 `license`라는 폴더 내에 있습니다.
 1. `license` 폴더로 이동하여 `license.txt` 파일을 엽니다.
 
+`.nuspec`에 라이선스를 설정하는 것과 동일한 MSBuild의 경우 [라이선스 표현식 또는 라이선스 파일 압축](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file)을 확인하세요.
 
 ## <a name="search-syntax"></a>검색 구문
 

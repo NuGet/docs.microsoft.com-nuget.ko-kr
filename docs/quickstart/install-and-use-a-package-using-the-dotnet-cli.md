@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: ee456fd49675db37fee78dc14502a897d84a2b99
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 47593cc65ad707b8880d854dc43824b9234fd44a
+ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342466"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833306"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>빠른 시작: dotnet CLI를 사용하여 패키지 설치 및 사용
 
@@ -30,6 +30,8 @@ NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 �
 NuGet 패키지는 일종의 .NET 프로젝트에 설치할 수 있습니다. 이 연습에서는 다음과 같이 간단한 .NET Core 콘솔 프로젝트를 만듭니다.
 
 1. 프로젝트의 폴더를 만듭니다.
+
+1. 명령 프롬프트를 열고 새 폴더로 전환합니다.
 
 1. 다음 명령을 사용하여 프로젝트를 만듭니다.
 

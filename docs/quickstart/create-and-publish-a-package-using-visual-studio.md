@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: quickstart
-ms.openlocfilehash: 86e71460094de9b799384db83456a68db57647af
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 0fc3b15c6d5ffa93eb6e26660f71cea2286ba77d
+ms.sourcegitcommit: aed04cc04b0902403612de6736a900d41c265afd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419910"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68821427"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>빠른 시작: Visual Studio(.NET Standard, Windows 전용)를 사용하여 NuGet 패키지 만들기 및 게시
 
@@ -99,17 +99,24 @@ namespace AppLogger
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
 
-### <a name="alternate-option-pack-with-msbuild"></a>대체 옵션: MSBuild로 압축
+### <a name="optional-generate-package-on-build"></a>(선택 사항) 빌드 시 패키지 생성
+
+프로젝트를 빌드할 때 NuGet 패키지를 자동으로 생성하도록 Visual Studio를 구성할 수 있습니다.
+
+1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성**을 선택합니다.
+
+2. **패키지** 탭에서 **빌드 시 NuGet 패키지 생성**을 선택합니다.
+
+   ![빌드 시 패키지를 자동으로 생성](media/qs_create-vs-05-generate-on-build.png)
+
+> [!NOTE]
+> 패키지를 자동으로 생성할 때 압축하는 데 소요되는 시간 때문에 프로젝트의 빌드 시간이 늘어납니다.
+
+### <a name="optional-pack-with-msbuild"></a>(선택 사항) MSBuild를 사용하여 압축
 
 **Pack** 메뉴 명령을 사용하는 대신 프로젝트에 필요한 패키지 데이터가 포함된 경우 NuGet 4.x 이상 및 MSBuild 15.1 이상은 `pack` 대상을 지원합니다. 명령 프롬프트를 열고 프로젝트 폴더로 이동한 후 다음 명령을 실행합니다. (일반적으로 시작 메뉴에서 "Visual Studio용 개발자 명령 프롬프트"를 시작하는 것이 좋습니다. MSBuild에 필요한 모든 경로로 구성되기 때문입니다.)
 
-```cli
-msbuild -t:pack -p:Configuration=Release
-```
-
-그러면 패키지를 `bin\Release` 폴더에서 찾을 수 있습니다.
-
-`msbuild -t:pack`에 대한 추가 옵션은 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md#pack-target)를 참조하세요.
+자세한 내용은 [MSBuild를 사용하여 패키지 만들기](../create-packages/creating-a-package-msbuild.md)를 참조하세요.
 
 ## <a name="publish-the-package"></a>패키지 게시
 
