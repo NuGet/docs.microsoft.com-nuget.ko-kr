@@ -3,36 +3,20 @@ title: nuget .config 파일 참조
 description: config, bindingRedirects, packageRestore, solution 및 packageSource 섹션이 포함된 NuGet.Config 파일 참조입니다.
 author: karann-msft
 ms.author: karann
-ms.date: 10/25/2017
+ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: b03bb8da0191a679671e5898ac70fff2024d52f2
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: a2955617b899bfadab42d1ae98dd20c8fc6ddca9
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317213"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020043"
 ---
 # <a name="nugetconfig-reference"></a>nuget.exe 참조
 
 Nuget 동작은 [일반적인 nuget 구성](../consume-packages/configuring-nuget-behavior.md)에 설명 된 `NuGet.Config` 대로 다른 파일의 설정에 의해 제어 됩니다.
 
 `nuget.config`는 최상위 `<configuration>` 노드를 포함하는 XML 파일이며, 이 파일에는 이 항목에서 설명하는 섹션 요소가 포함되어 있습니다. 각 섹션에는 0 개 이상의 항목이 포함 되어 있습니다. [config 파일 예제](#example-config-file)를 참조하세요. 설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.
-
-항목 내용
-
-- [config 섹션](#config-section)
-- [bindingRedirects 섹션](#bindingredirects-section)
-- [packageRestore 섹션](#packagerestore-section)
-- [solution 섹션](#solution-section)
-- [패키지 원본 섹션](#package-source-sections):
-  - [packageSources](#packagesources)
-  - [packageSourceCredentials](#packagesourcecredentials)
-  - [apikeys](#apikeys)
-  - [disabledPackageSources](#disabledpackagesources)
-  - [activePackageSource](#activepackagesource)
-- [해당 서명자 섹션](#trustedsigners-section)
-- [환경 변수 사용](#using-environment-variables)
-- [config 파일 예제](#example-config-file)
 
 <a name="dependencyVersion"></a>
 <a name="globalPackagesFolder"></a>
@@ -120,7 +104,7 @@ Nuget 동작은 [일반적인 nuget 구성](../consume-packages/configuring-nuge
 
 `packageSources` ,`packageSourceCredentials`, ,`trustedSigners` 및는 모두 함께 작동 하 여 설치, 복원 및 업데이트 작업 중에 NuGet이 패키지 리포지토리와 함께 작동 하는 방식을 구성 합니다. `activePackageSource` `apikeys` `disabledPackageSources`
 
-[명령은 명령을 사용 하 여`nuget setapikey` ](../reference/cli-reference/cli-ref-setapikey.md)관리 되 고 `apikeys` `trustedSigners` [명령을 사용 하 여 관리 되는를 제외 하 고는 일반적으로 이러한 설정을 관리 하는 `nuget trusted-signers` ](../reference/cli-reference/cli-ref-trusted-signers.md)데 사용 됩니다. [ `nuget sources` ](../reference/cli-reference/cli-ref-sources.md)
+`apikeys` `trustedSigners` [명령은 명령을 사용`nuget setapikey` ](../reference/cli-reference/cli-ref-setapikey.md)하 여 관리 되 고 [명령을 `nuget trusted-signers` ](../reference/cli-reference/cli-ref-trusted-signers.md)사용 하 여 관리 되는를 제외 하 고는 일반적으로 이러한 설정을 관리 하는 데 사용 됩니다. [ `nuget sources` ](../reference/cli-reference/cli-ref-sources.md)
 
 nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다.
 
@@ -240,6 +224,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
     <add key="All" value="(Aggregate source)" />
 </activePackageSource>
 ```
+
 ## <a name="trustedsigners-section"></a>해당 서명자 섹션
 
 설치 또는 복원 중 패키지를 허용 하는 데 사용 되는 신뢰할 수 있는 서명자를 저장 합니다. 사용자가로 설정 `signatureValidationMode` 된 경우에 `require`는이 목록을 비워 둘 수 없습니다. 
@@ -268,6 +253,50 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
         <owners>microsoft;aspnet;nuget</owners>
     </repository>
 </trustedSigners>
+```
+
+## <a name="fallbackpackagefolders-section"></a>fallbackPackageFolders 섹션
+
+*(3.5 +)* 는 패키지가 대체 폴더에 있는 경우 작업을 수행 하지 않아도 되도록 패키지를 사전 설치 하는 방법을 제공 합니다. 대체 패키지 폴더는 전역 패키지 폴더와 정확히 같은 폴더 및 파일 구조를 포함 합니다. *. nupkg* 가 있고 모든 파일이 추출 됩니다.
+
+이 구성에 대 한 조회 논리는 다음과 같습니다.
+
+- 전역 패키지 폴더를 확인 하 여 패키지/버전이 이미 다운로드 되었는지 확인 합니다.
+
+- 대체 폴더에서 패키지/버전 일치를 확인 합니다.
+
+조회 중 하나가 성공 하면 다운로드가 필요 하지 않습니다.
+
+일치 항목을 찾을 수 없는 경우 NuGet은 파일 원본 및 http 원본을 확인 한 다음 패키지를 다운로드 합니다.
+
+| Key | 값 |
+| --- | --- |
+| (대체 폴더 이름) | 대체 폴더의 경로입니다. |
+
+**예제**:
+
+```xml
+<fallbackPackageFolders>
+   <add key="XYZ Offline Packages" value="C:\somePath\someFolder\"/>
+</fallbackPackageFolders>
+```
+
+## <a name="packagemanagement-section"></a>packageManagement 섹션
+
+기본 패키지 관리 형식 (PackageReference 또는 )을 설정 합니다. SDK 스타일 프로젝트는 항상 PackageReference을 사용 합니다.
+
+| Key | 값 |
+| --- | --- |
+| 형식 | 기본 패키지 관리 형식을 나타내는 부울입니다. 이면 `1`format은 PackageReference입니다. 인 `0`경우 format은 *패키지인*입니다. |
+| 비활성화됨 | 첫 번째 패키지를 설치할 때 기본 패키지 형식을 선택 하 라는 메시지를 표시할지 여부를 나타내는 부울입니다. `False`프롬프트를 숨깁니다. |
+
+**예제**:
+
+```xml
+<packageManagement>
+   <add key="format" value="1" />
+   <add key="disabled" value="False" />
+</packageManagement>
 ```
 
 ## <a name="using-environment-variables"></a>환경 변수 사용
