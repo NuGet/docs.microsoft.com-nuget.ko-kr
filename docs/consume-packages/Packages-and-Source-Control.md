@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: ef4c45451cc52eb08dc627f8442c48e853d8ceaf
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 9d9ea10ccd32bb65ad0d62b591f5e2cb58ea3427
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324736"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019984"
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>소스 제어 시스템에서 NuGet 패키지 생략
 
@@ -89,9 +89,6 @@ project.assets.json
    # Ignore the NuGet packages folder in the root of the repository. If needed, prefix 'packages'
    # with additional folder names if it's not in the same folder as .tfignore.   
    packages
-
-   # Exclude package target files which may be required for MSBuild, again prefixing the folder name as needed.
-   !packages/*.targets
 
    # Omit temporary files
    project.lock.json

@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9eefed6f2c1a362f27c4a5d33d07645d743379fa
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 9ef990c16cca62a1fbad25ff1582bfa543135fab
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317742"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860572"
 ---
 # <a name="manage-packages-using-the-nugetexe-cli"></a>nuget.exe CLI를 사용하여 패키지 관리
 
@@ -110,14 +110,4 @@ nuget update
 
 ## <a name="restore-packages"></a>패키지 복원
 
-[복원](../reference/cli-reference/cli-ref-restore.md) 명령을 사용하면 *패키지* 폴더에서 누락된 모든 패키지를 다운로드하고 설치할 수 있습니다.
-
-`restore`는 디스크에만 패키지를 추가하지만 프로젝트의 종속성은 변경하지 않습니다. 프로젝트 종속성을 복원하려면 `packages.config`를 수정한 다음, `restore` 명령을 사용합니다.
-
-다른 `nuget.exe` CLI 명령을 사용할 때처럼 명령줄을 열고 프로젝트 파일이 포함된 디렉터리로 전환합니다.
-
-`restore`를 사용하여 패키지를 복원하려면 다음을 수행합니다.
-
-```cli
-nuget restore MySolution.sln
-```
+[!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]

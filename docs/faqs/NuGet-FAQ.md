@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9094d6b4a2dbd6ea1899b4470624948ce7c21f43
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 27a925c8748cb2085e8c9fe71ef23281cf9fd553
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317629"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860542"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -135,7 +135,7 @@ Visual Studio 자동화 개체 모델의 최상위 개체를 DTE(개발 도구 �
 
 **패키지 복원을 해제하려면 어떻게 할까요?**
 
-[패키지 복원 사용 설정/해제](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio)를 참조하세요.
+[패키지 복원 사용 설정/해제](../consume-packages/package-restore.md#enable-and-disable-package-restore-in-visual-studio)를 참조하세요.
 
 **원격 종속성이 있는 로컬 패키지를 설치할 때 "종속성을 확인할 수 없습니다."라는 오류 메시지가 표시되는 이유는 무엇인가요?**
 
