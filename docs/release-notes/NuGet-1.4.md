@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: de76cf610e580a36014be9274b9c2c762b1015ac
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 5f1d3ed6a1b20fb07437f1718faafaac0a193773
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317172"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488704"
 ---
 # <a name="nuget-14-release-notes"></a>NuGet 1.4 릴리스 정보
 
@@ -60,7 +60,7 @@ NuGet 1.4은 동시에 여러 프로젝트에서 패키지를 설치/제거/업�
 기본적으로 패키지에서 `Update-Package` 명령을 실행 하거나 대화 상자를 사용 하 여 패키지를 업데이트 하면 피드의 최신 버전으로 업데이트 됩니다. 모든 패키지를 업데이트 하는 새로운 지원 기능을 사용 하 여 패키지를 특정 버전 범위로 잠그는 경우가 있을 수 있습니다. 예를 들어 응용 프로그램은 패키지의 버전 2. * 에서만 작동 하지만 3.0 이상에서는 작동 하지 않는 것을 미리 알 수 있습니다. 패키지를 실수로 업데이트 하는 것을 방지 하기 위해 NuGet 1.4에서는 새 `packages.config` `allowedVersions` 특성을 사용 하 여 파일을 직접 편집 하 여 패키지를 업그레이드할 수 있는 버전 범위를 제한 하는 지원을 추가 합니다.
 
 예를 들어 다음 예제에서는 버전 범위 2.0-3.0 `SomePackage` (제외)로 패키지를 잠그는 방법을 보여 줍니다.
-특성 `allowedVersions` 은 [버전 범위 형식을](../reference/package-versioning.md#version-ranges-and-wildcards)사용 하 여 값을 허용 합니다.
+특성 `allowedVersions` 은 [버전 범위 형식을](../concepts/package-versioning.md#version-ranges-and-wildcards)사용 하 여 값을 허용 합니다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
