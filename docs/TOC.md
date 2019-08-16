@@ -27,7 +27,7 @@
 ### [일반적인 NuGet 구성](consume-packages/configuring-nuget-behavior.md)
 ## 프로젝트의 패키지 참조
 ### [프로젝트 파일의 패키지 참조](consume-packages/package-references-in-project-files.md)
-### [packages.config를 PackageReference로 마이그레이션](reference/migrate-packages-config-to-package-reference.md)
+### [packages.config를 PackageReference로 마이그레이션](consume-packages/migrate-packages-config-to-package-reference.md)
 ### [packages.config](reference/packages-config.md)
 # 패키지 만들기
 ## [개요 및 워크플로](create-packages/overview-and-workflow.md)
@@ -45,9 +45,9 @@
 ### [지역화된 패키지 만들기](create-packages/creating-localized-packages.md)
 ## 특정 콘텐츠용 가이드
 ### [UWP 패키지 만들기](guides/create-uwp-packages.md)
-### [네이티브 패키지 만들기](create-packages/native-packages.md)
+### [네이티브 패키지 만들기](guides/native-packages.md)
 ### [NuGet 패키지로 UI 컨트롤 만들기](guides/create-UI-controls.md)
-### [NuGet 패키지로 분석기 만들기](reference/analyzers-conventions.md)
+### [NuGet 패키지로 분석기 만들기](guides/analyzers-conventions.md)
 ### [Visual Studio 2015를 사용하여 Xamarin용 패키지 만들기](guides/create-packages-for-xamarin.md)
 ### [COM interop 어셈블리가 포함된 패키지 만들기](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## 서명 패키지
@@ -64,8 +64,8 @@
 ### [로컬 피드](hosting-packages/local-feeds.md)
 # 개념
 ## [패키지 설치 프로세스](concepts/package-installation-process.md)
-## [패키지 버전 관리](reference/package-versioning.md)
-## [종속성 확인](consume-packages/dependency-resolution.md)
+## [패키지 버전 관리](concepts/package-versioning.md)
+## [종속성 확인](concepts/dependency-resolution.md)
 # 참조
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config 파일](reference/nuget-config-file.md)
@@ -342,6 +342,6 @@
 #### [NuGet 1.3](release-notes/NuGet-1.3.md)
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
-## [FAQ](faqs/nuget-faq.md)
+## [FAQ](resources/nuget-faq.md)
 ## [프로젝트 형식](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
