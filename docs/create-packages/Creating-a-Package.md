@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: f33624cf50248d8a137216ed0d725ed88c0defd2
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: a9224ce4e515cf98893a7134077c90a47df1862a
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833367"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020080"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>nuget.exe CLI를 사용하여 패키지 만들기
 
@@ -183,8 +183,10 @@ NuGet 패키지는 `.nupkg` 확장명으로 이름이 바뀐 ZIP 파일일 뿐�
 | lib/{tfm} | 지정된 TFM(대상 프레임워크 모니커)에 대한 어셈블리(`.dll`), 문서(`.xml`) 및 기호(`.pdb`) 파일 | 어셈블리는 컴파일 및 런타임에 대한 참조로 추가됩니다. `.xml` 및 `.pdb`는 프로젝트 폴더에 복사됩니다. 프레임워크 대상 특정의 하위 폴더를 만들려면 [여러 대상 프레임워크 지원](supporting-multiple-target-frameworks.md)을 참조하세요. |
 | ref/{tfm} | 지정된 TFM(대상 프레임워크 모니커)에 대한 어셈블리(`.dll`) 및 기호(`.pdb`) 파일 | 어셈블리는 컴파일 시간에 대한 참조로만 추가됩니다. 따라서 프로젝트 bin 폴더에 아무것도 복사되지 않습니다. |
 | runtimes | 아키텍처 특정 어셈블리(`.dll`), 기호(`.pdb`) 및 네이티브 리소스(`.pri`) 파일 | 어셈블리는 런타임에 대한 참조로만 추가되고, 다른 파일은 프로젝트 폴더에 복사됩니다. 해당 컴파일 시간 어셈블리를 제공하려면 항상 `/ref/{tfm}` 폴더 아래에 해당하는 (TFM) `AnyCPU` 특정 어셈블리가 있어야 합니다. [여러 대상 프레임워크 지원](supporting-multiple-target-frameworks.md)을 참조하세요. |
-| 내용 | 임의 파일 | 콘텐츠가 프로젝트 루트에 복사됩니다. **content** 폴더를 궁극적으로 패키지를 사용하는 대상 애플리케이션의 루트로 간주합니다. 패키지에서 애플리케이션의 */images* 폴더에 이미지를 추가하도록 하려면 패키지의 *content/images* 폴더에 배치합니다. |
-| 빌드 | MSBuild `.targets` 및 `.props` 파일 | 프로젝트 파일 또는 `project.lock.json`(NuGet 3.x 이상)에 자동으로 삽입됩니다. |
+| 콘텐츠 | 임의 파일 | 콘텐츠가 프로젝트 루트에 복사됩니다. **content** 폴더를 궁극적으로 패키지를 사용하는 대상 애플리케이션의 루트로 간주합니다. 패키지에서 애플리케이션의 */images* 폴더에 이미지를 추가하도록 하려면 패키지의 *content/images* 폴더에 배치합니다. |
+| build | MSBuild `.targets` 및 `.props` 파일 | 프로젝트에 자동으로 삽입됩니다(NuGet 3.x 이상). |
+| buildMultiTargeting | 프레임워크 간 타기팅을 위한 MSBuild `.targets` 및 `.props` 파일 | 프로젝트에 자동으로 삽입됩니다. |
+| buildTransitive | ‘(5.0 이상)’ 사용하는 프로젝트로 타동적으로 흐르는 MSBuild `.targets` 및 `.props` 파일  [기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요. | 프로젝트에 자동으로 삽입됩니다. |
 | 도구 | 패키지 관리자 콘솔에서 액세스할 수 있는 Powershell 스크립트 및 프로그램 | `tools` 폴더는 패키지 관리자 콘솔에 대한 `PATH` 환경 변수에만 추가 됩니다(특히 프로젝트를 빌드할 때는 MSBuild에 설정한 대로 `PATH`에 *추가되지 않음*). |
 
 폴더 구조에는 임의 개수의 대상 프레임워크에 대해 임의 개수의 어셈블리가 포함될 수 있으므로, 이 방법은 여러 프레임워크를 지원하는 패키지를 만들 때 필요합니다.
@@ -218,7 +220,15 @@ nuget spec
 
 결과 `<project-name>.nuspec` 파일에는 패키지 시간에 프로젝트의 값(이미 설치된 다른 패키지에 대한 참조 포함)으로 대체되는 *토큰*이 포함됩니다.
 
-토큰은 프로젝트 속성의 양쪽에 `$` 기호로 구분됩니다. 예를 들어 이 방식으로 생성된 매니페스트의 `<id>` 값은 일반적으로 다음과 같이 나타납니다.
+*.nuspec*에 포함할 패키지 종속성이 있는 경우 `nuget pack`을 대신 사용하고 생성된 *.nupkg* 파일 내에서 *.nuspec* 파일을 가져옵니다. 예를 들어 다음 명령을 사용합니다.
+
+```cli
+# Use in a folder containing a project file <project-name>.csproj or <project-name>.vbproj
+nuget pack myproject.csproj
+```
+```
+
+A token is delimited by `$` symbols on both sides of the project property. For example, the `<id>` value in a manifest generated in this way typically appears as follows:
 
 ```xml
 <id>$id$</id>
@@ -339,7 +349,7 @@ NuGet에서 `\build` 파일이 포함된 패키지를 설치하는 경우 `.targ
 
 프레임워크 간 대상 지정을 위한 MSBuild `.props` 및 `.targets` 파일은 `\buildMultiTargeting` 폴더에 넣을 수 있습니다. 패키지 설치 중 NuGet은 해당 `<Import>` 요소를 프로젝트 파일에 추가하고, 대상 프레임워크를 설정하지 않는다는 조건(MSBuild 속성 `$(TargetFramework)`가 비어 있어야 함)을 함께 지정합니다.
 
-NuGet 3.x를 사용하면 대상이 프로젝트에 추가되지 않고 대신 `project.lock.json`을 통해 사용할 수 있게 됩니다.
+NuGet 3.x를 사용하면 대상이 프로젝트에 추가되지 않고 대신 `{projectName}.nuget.g.targets` 및 `{projectName}.nuget.g.props`를 통해 사용할 수 있게 됩니다.
 
 ## <a name="run-nuget-pack-to-generate-the-nupkg-file"></a>nugkg pack을 실행하여 .nupkg 파일 생성
 

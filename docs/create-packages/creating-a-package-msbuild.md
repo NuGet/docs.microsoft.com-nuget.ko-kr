@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: a0db6dc95ffa5ad73741ae53a6be9d6f937c1dbf
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: 92b42f0a6133565844d0b6df2cb50770793055ec
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833235"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860630"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>MSBuild를 사용하여 NuGet 패키지 만들기
 
@@ -105,7 +105,7 @@ Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습
 
 프로젝트에서 NuGet 패키지(`.nupkg` 파일)를 빌드하려면 `msbuild -t:pack` 명령을 실행합니다. 이 명령은 프로젝트도 자동으로 빌드합니다.
 
-개발자 명령 프롬프트에 다음 명령을 입력합니다.
+Visual Studio용 개발자 명령 프롬프트에서 다음 명령을 입력합니다.
 
 ```cmd
 # Uses the project file in the current folder by default

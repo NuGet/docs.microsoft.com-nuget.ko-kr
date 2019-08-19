@@ -5,27 +5,29 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: 32b01e6066cf60f7a0942508e640fdd5658b4444
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: bc077220e05b14180baac9611fda9234675ad640
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68316970"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860536"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>패키지를 다시 설치하고 업데이트하는 방법
 
 아래에서 설명하는 [패키지를 다시 설치하는 경우](#when-to-reinstall-a-package)에는 패키지에 대한 참조가 Visual Studio 프로젝트에서 손상될 수 있는 여러 가지 상황이 있습니다. 이러한 경우 동일한 버전의 패키지를 제거한 다음 다시 설치하면 해당 참조가 작업 순서에 맞게 복원됩니다. 패키지 업데이트는 업데이트된 버전을 설치하는 것이며, 이 경우 패키지를 작업 순서에 맞게 복원하기도 합니다.
 
+Visual Studio에서 패키지 관리자 콘솔은 패키지를 업데이트하고 다시 설치하기 위한 많은 유연한 옵션을 제공합니다.
+
 패키지 업데이트 및 다시 설치는 다음과 같이 수행됩니다.
 
-| 메서드 | 업데이트 | 다시 설치 |
+| 방법 | 주 지역에서 | 다시 설치 |
 | --- | --- | --- |
 | 패키지 관리자 콘솔([Update-Package 사용](#using-update-package)에서 설명) | `Update-Package` 명령 | `Update-Package -reinstall` 명령 |
 | 패키지 관리자 UI | **업데이트** 탭에서 패키지를 하나 이상 선택하고 **업데이트**를 선택합니다. | **설치됨** 탭에서 패키지를 선택하고, 이름을 기록한 다음, **제거**를 선택합니다. **찾아보기** 탭으로 전환하고, 패키지 이름을 검색하여 선택한 다음, **설치**를 선택합니다. |
 | nuget.exe CLI | `nuget update` 명령 | 모든 패키지의 경우 패키지 폴더를 삭제한 다음 `nuget install`을 실행합니다. 단일 패키지의 경우 패키지 폴더를 삭제하고 `nuget install <id>`를 사용하여 동일한 패키지를 다시 설치합니다. |
 
 > [!NOTE]
-> dotnet CLI의 경우 해당 절차가 필요하지 않습니다. 비슷한 시나리오에서 [dotnet CLI를 사용하여 패키지를 복원](../consume-packages/install-use-packages-dotnet-cli.md#restore-packages)할 수 있습니다.
+> dotnet CLI의 경우 해당 절차가 필요하지 않습니다. 비슷한 시나리오에서 [dotnet CLI를 사용하여 패키지를 복원](package-restore.md#restore-using-the-dotnet-cli)할 수 있습니다.
 
 이 문서의 내용
 

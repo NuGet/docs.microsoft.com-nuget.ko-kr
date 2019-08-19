@@ -1,11 +1,7 @@
 ---
 title: 새 기호 패키지 형식 '.snupkg'를 사용하여 NuGet 기호 패키지를 게시하는 방법 | Microsoft Docs
-author:
-- cristinamanu
-- kraigb
-ms.author:
-- cristinamanu
-- kraigb
+author: cristinamanu
+ms.author: cristinamanu
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
@@ -16,12 +12,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 9f9cdd188cf2ec678bc9047604e618f1af9124ae
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: e62d1872497e0e5e703bf7c49a87249ce9a996c7
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842460"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959671"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -112,14 +108,17 @@ Nuget.org에서 지원되는 기호 패키지에는 다음과 같은 제약 조�
 
 1) .snupkg는 해당 .nupkg와 동일한 id 및 버전을 갖습니다.
 2) .snupkg는 DLL/EXE 대신 해당 PDB가 동일한 폴더 계층 구조에 포함되도록 구분하여 모든 DLL 또는 EXE 파일의 nupkg와 정확히 동일한 폴더 구조를 가집니다. PDB 이외의 확장명을 가진 파일 및 폴더는 snupkg에서 제외됩니다.
-3) .snupkg의 .nuspec 파일도 아래와 같이 새 PackageType을 지정합니다. 하나의 PackageType만 지정해야 합니다. 
-``` 
-<packageTypes>
-  <packageType name="SymbolsPackage"/>
-</packageTypes>
-```
+3) .snupkg의 .nuspec 파일도 아래와 같이 새 PackageType을 지정합니다. 하나의 PackageType만 지정해야 합니다.
+
+   ```xml
+   <packageTypes>
+      <packageType name="SymbolsPackage"/>
+   </packageTypes>
+   ```
+
 4) 작성자가 nupkg 및 snupkg를 빌드하는 데 사용자 지정 nuspec을 사용하기로 결정한 경우 snupkg는 2)에 자세히 설명된 것과 동일한 계층 구조와 파일을 가져야 합니다.
 5) ```authors``` 및 ```owners``` 필드는 snupkg의 nuspec에서 제외됩니다.
+6) <license> 요소를 사용하지 마세요. .snupkg에는 해당.nupk와 동일한 라이선스가 적용됩니다.
 
 ## <a name="see-also"></a>참고 항목
 

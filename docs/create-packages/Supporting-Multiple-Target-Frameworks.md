@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: d12b12c4670f5dcb4c1e7e475d77926bd5d3935b
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 14483264030dd3bb32c7295886f2d37d52e735cc
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342507"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020040"
 ---
 # <a name="support-multiple-net-versions"></a>여러 .NET 버전 지원
 
@@ -120,6 +120,32 @@ NuGet은 패키지의 단일 라이브러리 폴더에서 어셈블리를 복사
 - `full`: 전체 프로필
 - `wp`: Windows Phone
 - `cf`: Compact Framework
+
+## <a name="declaring-dependencies-advanced"></a>종속성 선언(고급)
+
+프로젝트 파일을 압축하는 경우 NuGet은 프로젝트에서 종속성을 자동으로 생성하려고 합니다. *.nuspec* 파일을 사용하여 종속성을 선언하는 방법에 대한 이 섹션의 정보는 일반적으로 고급 시나리오에만 필요합니다.
+
+‘(버전 2.0 이상)’ `<dependencies>` 요소 내에서 `<group>` 요소를 사용하여 대상 프로젝트의 대상 프레임워크에 해당하는 *.nuspec*에서 패키지 종속성을 선언할 수 있습니다.  자세한 내용은 [dependencies 요소](../reference/nuspec.md#dependencies-element)를 참조하세요.
+
+각 그룹에는 `targetFramework`라는 특성이 있으며 0개 이상의 `<dependency>` 요소가 포함됩니다. 이 종속성은 대상 프레임워크가 프로젝트의 프레임워크 프로필과 호환될 때 함께 설치됩니다. 정확한 프레임워크 식별자는 [대상 프레임워크](../reference/target-frameworks.md)를 참조하세요.
+
+*lib/* 및 *ref/* 폴더의 파일에 대해 TFM(대상 프레임워크 모니커)당 하나의 그룹을 사용하는 것이 좋습니다.
+
+다음 예제에서는 `<group>` 요소의 여러 변형을 보여줍니다.
+
+```xml
+<dependencies>
+
+    <group targetFramework="net472">
+        <dependency id="jQuery" version="1.10.2" />
+        <dependency id="WebActivatorEx" version="2.2.0" />
+    </group>
+
+    <group targetFramework="net20">
+    </group>
+
+</dependencies>
+```
 
 ## <a name="determining-which-nuget-target-to-use"></a>사용할 NuGet 대상 결정
 

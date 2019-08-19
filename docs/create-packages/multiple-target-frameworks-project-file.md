@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: b7870bb6aac39f0865d88efc8c16751fdbecc3a8
-ms.sourcegitcommit: cae759ad8518c049575a30ad3bf04fe5d06244fb
+ms.openlocfilehash: 8c1d8a479747f6f7bce388c1555589543c8824a0
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616782"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020068"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>프로젝트 파일에서 여러 .NET Framework 버전 지원
 
@@ -27,9 +27,13 @@ SDK 스타일 프로젝트의 경우 프로젝트 파일에서 여러 대상 프
 
    최상의 호환성을 위해 .NET Standard 클래스 라이브러리를 만드는 것이 좋습니다.
 
-2. 대상 프레임워크를 지원하도록 *.csproj* 파일을 편집합니다.
-
-   예를 들어, `<TargetFramework>netstandard2.0</TargetFramework>`를 `<TargetFrameworks>netstandard2.0;net45</TargetFrameworks>`로 변경합니다.
+2. 대상 프레임워크를 지원하도록 *.csproj* 파일을 편집합니다. 예를 들어 다음을 변경합니다.
+   
+   `<TargetFramework>netstandard2.0</TargetFramework>`
+   
+   to:
+   
+   `<TargetFrameworks>netstandard2.0;net45</TargetFrameworks>`
 
    XML 요소를 단수형에서 복수형으로 변경했는지 확인합니다(여는 태그 및 닫는 태그 둘 다에 "s" 추가).
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 16a14a72f8bb2e5d5a56f6c3c277f0988869273d
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 05ece5f36ff7ae5920960c42cfde8b271dc3e712
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426692"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020005"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -105,7 +105,9 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 | compile | `lib` 폴더의 콘텐츠이며 프로젝트에서 폴더 내의 어셈블리를 컴파일할 수 있는지 여부 제어 |
 | 런타임 | `lib` 및 `runtimes` 폴더의 콘텐츠이며 이러한 어셈블리가 빌드 출력 디렉터리에 복사되는지 여부 제어 |
 | contentFiles | `contentfiles` 폴더의 콘텐츠 |
-| 빌드 | `build` 폴더의 prop 및 대상 |
+| build | `build` 폴더의 `.props` 및 `.targets` |
+| buildMultitargeting | 프레임워크 간 타기팅을 위한 `buildMultitargeting` 폴더의 `.props` 및 `.targets` |
+| buildTransitive | ‘(5.0 이상)’ 사용하는 프로젝트로 타동적으로 흐르는 자산을 위한 `buildTransitive` 폴더의 `.props` 및 `.targets`  [기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요. |
 | 분석기 | .NET 분석기 |
 | native | `native` 폴더의 콘텐츠 |
 | 없음 | 위의 항목을 사용하지 않습니다. |
