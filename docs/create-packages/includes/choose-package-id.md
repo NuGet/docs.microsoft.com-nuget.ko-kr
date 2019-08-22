@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e8949e9964ed19d342df53f08f59bb0f89e5feb0
-ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
+ms.openlocfilehash: 7ebe3c0f75b8de158879119bce4df26217849251
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817474"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488961"
 ---
 패키지 식별자와 버전 번호는 패키지에 포함된 정확한 코드를 고유하게 식별하므로 프로젝트에서 가장 중요한 두 가지 값입니다.
 
@@ -17,9 +17,9 @@ ms.locfileid: "68817474"
 **패키지 버전에 대한 모범 사례:**
 
 - 일반적으로 반드시 필요한 것은 아니지만 프로젝트(또는 어셈블리)의 버전과 일치하도록 패키지의 버전을 설정합니다. 이는 패키지를 단일 어셈블리로 제한할 때는 간단합니다. 전반적으로 NuGet 자체는 종속성을 확인할 때 어셈블리 버전이 아니라 패키지 버전을 처리합니다.
-- 비표준 버전 구성표를 사용하는 경우 [패키지 버전 관리](../../reference/package-versioning.md)에서 설명한 대로 NuGet 버전 관리 규칙을 고려해야 합니다. NuGet은 대부분 [semver 2와 호환](../../reference/package-versioning.md#semantic-versioning-200)됩니다.
+- 비표준 버전 구성표를 사용하는 경우 [패키지 버전 관리](../../concepts/package-versioning.md)에서 설명한 대로 NuGet 버전 관리 규칙을 고려해야 합니다. NuGet은 대부분 [semver 2와 호환](../../concepts/package-versioning.md#semantic-versioning-200)됩니다.
 
-> 종속성 확인에 대한 자세한 내용은 [PackageReference를 사용하여 종속성 확인](../../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference)을 참조하세요. 버전 관리를 보다 잘 이해하는 데 도움이 될 수 있는 이전 정보는 다음의 블로그 게시물 시리지를 참조하세요.
+> 종속성 확인에 대한 자세한 내용은 [PackageReference를 사용하여 종속성 확인](../../concepts/dependency-resolution.md#dependency-resolution-with-packagereference)을 참조하세요. 버전 관리를 보다 잘 이해하는 데 도움이 될 수 있는 이전 정보는 다음의 블로그 게시물 시리지를 참조하세요.
 >
 > - [1부: DLL 지옥에서 가져오기](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
 > - [2부: 핵심 알고리즘](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)

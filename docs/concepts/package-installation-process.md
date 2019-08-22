@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5676239bedb7f8fbe9f74725864afd297405d5c1
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 69ef02e3c935287759b4012aadcfb1cb9811367c
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842326"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488439"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>NuGet 패키지를 설치하면 어떻게 되나요?
 
@@ -39,7 +39,7 @@ ms.locfileid: "67842326"
 
 4. 다운로드되면 패키지를 사용자별 *global-packages* 폴더에 설치합니다. NuGet은 각 패키지 식별자에 대한 하위 폴더를 만든 다음, 설치된 각 패키지 버전에 대한 하위 폴더를 만듭니다.
 
-5. NuGet은 필요에 따라 패키지 종속성을 설치합니다. [종속성 확인](../consume-packages/dependency-resolution.md)에 설명된 대로 이 프로세스에서 프로세스의 패키지 버전을 업데이트할 수 있습니다.
+5. NuGet은 필요에 따라 패키지 종속성을 설치합니다. [종속성 확인](../concepts/dependency-resolution.md)에 설명된 대로 이 프로세스에서 프로세스의 패키지 버전을 업데이트할 수 있습니다.
 
 6. 다른 프로젝트 파일 및 폴더를 업데이트합니다.
 

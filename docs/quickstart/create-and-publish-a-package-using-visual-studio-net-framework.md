@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: 75160bf2b01f6d4707162e019a6263ddc64a6f5e
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 7bfe041c01114ac61e811497ecc31ebfdad45029
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342516"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488893"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>빠른 시작: Visual Studio(.NET Framework, Windows)를 사용하여 패키지 만들기 및 게시
 
@@ -184,5 +184,5 @@ NuGet에서 제공하는 다른 기능을 탐색하려면 아래 링크를 선�
 - [패키지 게시](../nuget-org/publish-a-package.md)
 - [시험판 패키지](../create-packages/Prerelease-Packages.md)
 - [여러 대상 프레임워크 지원](../create-packages/supporting-multiple-target-frameworks.md)
-- [패키지 버전 관리](../reference/package-versioning.md)
+- [패키지 버전 관리](../concepts/package-versioning.md)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)

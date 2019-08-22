@@ -1,16 +1,16 @@
 ---
 title: Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework NuGet 패키지 만들기
-description: NuGet 3.x 및 Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework NuGet 패키지를 만드는 종단 간 연습입니다.
+description: NuGet 3.x 및 Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework NuGet 패키지를 만드는 엔드투엔드 연습입니다.
 author: karann-msft
 ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: 1198a781543e581f55740cc0ae5a212d3f8a8b61
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 11dce27b93c3d09a2d27dc79f8d4fed86df879ba
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842448"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488983"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework 패키지 만들기
 
@@ -125,7 +125,7 @@ ms.locfileid: "67842448"
 </dependencies>
 ```
 
-여기서 *version* 특성의 구문은 버전 8.0.3 이상을 사용할 수 있음을 나타냅니다. 다른 버전 범위를 지정하려면 [패키지 버전 관리](../reference/package-versioning.md)를 참조하세요.
+여기서 *version* 특성의 구문은 버전 8.0.3 이상을 사용할 수 있음을 나타냅니다. 다른 버전 범위를 지정하려면 [패키지 버전 관리](../concepts/package-versioning.md)를 참조하세요.
 
 ### <a name="adding-a-readme"></a>추가 정보 추가
 
@@ -163,13 +163,13 @@ nuget pack AppLogger.nuspec
 
 `pack`에는 Mac OS X에서 Mono 4.4.2가 필요하며, Linux 시스템에서는 작동하지 않습니다. 또한 Mac에서는 `.nuspec` 파일의 Windows 경로 이름을 Unix 스타일 경로로 변환해야 합니다.
 
-## <a name="related-topics"></a>관련된 항목
+## <a name="related-topics"></a>관련 항목
 
 - [.nuspec 참조](../reference/nuspec.md)
 - [여러 .NET Framework 버전 지원](../create-packages/supporting-multiple-target-frameworks.md)
 - [패키지에 MSBuild props 및 targets 포함](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)
 - [기호 패키지](../create-packages/symbol-packages.md)
-- [패키지 버전 관리](../reference/package-versioning.md)
+- [패키지 버전 관리](../concepts/package-versioning.md)
 - [.NET Standard 라이브러리 설명서](/dotnet/articles/standard/library)
 - [.NET Framework에서 .NET Core로 이식](/dotnet/articles/core/porting/index)

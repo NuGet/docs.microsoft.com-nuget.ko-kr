@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: f1397e2f42fd65c3a883c864bd430ba5892c12b2
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.openlocfilehash: fe769f95e3eda4bc07db4369544472c00b35363d
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432528"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488649"
 ---
 # <a name="nuget-47-release-notes"></a>NuGet 4.7 릴리스 정보
 
@@ -20,7 +20,7 @@ ms.locfileid: "58432528"
 
 * [리포지토리 서명 패키지](https://github.com/NuGet/Home/wiki/Repository-Signatures)를 사용하도록 패키지 서명을 확대했습니다.
 
-* Visual Studio 버전 15.7에서는 [PackageReference를 사용하기 위해 packages.config 형식을 사용하는 기존 프로젝트를 마이그레이션하는 ](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference) 기능을 대신 도입했습니다.
+* Visual Studio 버전 15.7에서는 [PackageReference를 사용하기 위해 packages.config 형식을 사용하는 기존 프로젝트를 마이그레이션하는 ](https://docs.microsoft.com/en-us/nuget/consume-packages/migrate-packages-config-to-package-reference) 기능을 대신 도입했습니다.
 
 ## <a name="summary-whats-new-in-472"></a>요약: 4.7.2의 새로운 기능
 

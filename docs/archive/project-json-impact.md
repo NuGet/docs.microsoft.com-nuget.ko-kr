@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8c85c1a89469c491c6be1f81961197450744349c
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 34b08f06f04efdcf7bf73efc2cbdb5a5494ae2d9
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545575"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488191"
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>패키지를 만들 때 project.json의 영향
 
@@ -25,7 +25,7 @@ NuGet 3+에서 사용되는 `project.json` 시스템은 다음 섹션에 설명�
 
 ### <a name="install-and-uninstall-scripts-are-ignored"></a>스크립트 설치 및 제거 무시
 
-[종속성 확인](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference)에 설명된 전이적 복원 모델에는 "패키지 설치 시간"이라는 개념이 없습니다. 패키지가 표시되거나 표시되지 않지만 패키지를 설치할 때 발생하는 일관된 프로세스가 없습니다.
+[종속성 확인](../concepts/dependency-resolution.md#dependency-resolution-with-packagereference)에 설명된 전이적 복원 모델에는 "패키지 설치 시간"이라는 개념이 없습니다. 패키지가 표시되거나 표시되지 않지만 패키지를 설치할 때 발생하는 일관된 프로세스가 없습니다.
 
 또한 스크립트 설치가 Visual Studio에서만 지원되었습니다. 기타 IDE는 이러한 스크립트를 지원하려는 Visual Studio 확장성 API를 거절했으므로 일반적인 편집기 및 명령줄 도구에서 지원을 사용할 수 없었습니다.
 
@@ -63,9 +63,9 @@ shim을 통해 `packages.config` 및 `project.json`를 통해 시나리오 둘 �
 
 ## <a name="3x-package-format"></a>3.x 패키지 형식
 
-3.x 패키지 형식은 NuGet 2.x 이외에 몇 가지 추가 기능에서 허용됩니다.
+3\.x 패키지 형식은 NuGet 2.x 이외에 몇 가지 추가 기능에서 허용됩니다.
 
-1. 다른 플랫폼/장치에서 런타임에 사용되는 컴파일 및 일련의 구현 어셈블리에 사용되는 참조 어셈블리를 정의합니다. 그러면 소비자에게 일반적인 노출 영역을 제공하면서 플랫폼 특정 API를 활용할 수 있습니다. 그러면 특히 중간 이식 가능한 라이브러리를 쉽게 작성할 수 있습니다.
+1. 다른 플랫폼/디바이스에서 런타임에 사용되는 컴파일 및 일련의 구현 어셈블리에 사용되는 참조 어셈블리를 정의합니다. 그러면 소비자에게 일반적인 노출 영역을 제공하면서 플랫폼 특정 API를 활용할 수 있습니다. 그러면 특히 중간 이식 가능한 라이브러리를 쉽게 작성할 수 있습니다.
 
 1. 패키지가 플랫폼(예: 운영 체제 또는 CPU 아키텍처)에서 피벗할 수 있습니다.
 

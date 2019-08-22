@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 92b42f0a6133565844d0b6df2cb50770793055ec
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.openlocfilehash: a965a3049f46af59efcfad2ecf19e0923fda413b
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860630"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488947"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>MSBuild를 사용하여 NuGet 패키지 만들기
 
@@ -68,7 +68,7 @@ Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습
 > [!NOTE]
 > 공용으로 빌드된 패키지의 경우 **PackageTags** 속성에 특히 주의하세요. 이러한 태그는 다른 사람들이 패키지를 찾고 그 기능을 이해하는 데 도움이 됩니다.
 
-종속성 선언 및 버전 번호 지정에 대한 자세한 내용은 [프로젝트 파일의 패키지 참조](../consume-packages/package-references-in-project-files.md) 및 [패키지 버전](../reference/package-versioning.md)을 참조하세요. `<IncludeAssets>` 및 `<ExcludeAssets>` 특성을 사용하여 패키지에 종속성의 자산을 직접 공개할 수도 있습니다. 자세한 내용은 [종속성 자산 제어](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)를 참조하세요.
+종속성 선언 및 버전 번호 지정에 대한 자세한 내용은 [프로젝트 파일의 패키지 참조](../consume-packages/package-references-in-project-files.md) 및 [패키지 버전](../concepts/package-versioning.md)을 참조하세요. `<IncludeAssets>` 및 `<ExcludeAssets>` 특성을 사용하여 패키지에 종속성의 자산을 직접 공개할 수도 있습니다. 자세한 내용은 [종속성 자산 제어](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)를 참조하세요.
 
 ## <a name="choose-a-unique-package-identifier-and-set-the-version-number"></a>고유한 패키지 식별자 선택 및 버전 번호 설정
 
@@ -170,7 +170,7 @@ Time Elapsed 00:00:01.21
 다음 항목에서 설명한 대로 패키지의 기능을 확장하거나 그렇지 않고 다른 시나리오를 지원할 수도 있습니다.
 
 - [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)
-- [패키지 버전 관리](../reference/package-versioning.md)
+- [패키지 버전 관리](../concepts/package-versioning.md)
 - [여러 대상 프레임워크 지원](../create-packages/multiple-target-frameworks-project-file.md)
 - [원본 및 구성 파일 변환](../create-packages/source-and-config-file-transformations.md)
 - [지역화](../create-packages/creating-localized-packages.md)
@@ -180,5 +180,5 @@ Time Elapsed 00:00:01.21
 
 마지막으로 주의해야 할 추가 패키지 유형이 있습니다.
 
-- [네이티브 패키지](../create-packages/native-packages.md)
+- [네이티브 패키지](../guides/native-packages.md)
 - [기호 패키지](../create-packages/symbol-packages.md)

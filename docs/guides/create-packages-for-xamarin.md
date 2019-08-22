@@ -1,16 +1,16 @@
 ---
 title: Visual Studio 2015를 사용하여 Xamarin용 NuGet 패키지 만들기(iOS, Android 및 Windows용)
-description: iOS, Android 및 Windows에서 네이티브 API를 사용하는 Xamarin에 대한 NuGet 패키지를 만드는 종단 간 연습입니다.
+description: iOS, Android 및 Windows에서 네이티브 API를 사용하는 Xamarin에 대한 NuGet 패키지를 만드는 엔드투엔드 연습입니다.
 author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: tutorial
-ms.openlocfilehash: 81f78de02d9b6510f195e04c78436e38f9b7353d
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 927991429d8d4ce54aa35be3e450475a38141b11
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842418"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488908"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 Xamarin용 패키지 만들기
 
@@ -253,7 +253,7 @@ namespace Plugin.LoggingLibrary.Abstractions
 nuget pack LoggingLibrary.nuspec
 ```
 
-이렇게 하면 `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`가 생성됩니다. [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)와 같은 도구에서 이 파일을 열고 모든 노드를 확장하면 다음과 같은 내용이 표시됩니다.
+그러면 `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`가 생성됩니다. [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)와 같은 도구에서 이 파일을 열고 모든 노드를 확장하면 다음과 같은 내용이 표시됩니다.
 
 ![LoggingLibrary 패키지를 보여 주는 NuGet 패키지 탐색기](media/Cross-Platform-PackageExplorer.png)
 
@@ -262,11 +262,11 @@ nuget pack LoggingLibrary.nuspec
 
 다른 개발자가 패키지를 사용할 수 있게 하려면 [패키지 게시](../nuget-org/publish-a-package.md)의 지침을 따르세요.
 
-## <a name="related-topics"></a>관련된 항목
+## <a name="related-topics"></a>관련 항목
 
 - [.nuspec 참조](../reference/nuspec.md)
 - [기호 패키지](../create-packages/symbol-packages.md)
-- [패키지 버전 관리](../reference/package-versioning.md)
+- [패키지 버전 관리](../concepts/package-versioning.md)
 - [여러 .NET Framework 버전 지원](../create-packages/supporting-multiple-target-frameworks.md)
 - [패키지에 MSBuild props 및 targets 포함](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)

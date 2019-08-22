@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/27/2017
 ms.topic: reference
-ms.openlocfilehash: e4d8b5b9ab4605516827ead8939f278d110c7a48
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5ecbcd4855de8ea7b6301a5e307779216baf96fc
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547786"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488291"
 ---
 # <a name="projectjson-reference"></a>project.json 참조
 
@@ -62,7 +62,7 @@ ms.locfileid: "43547786"
 
 패키지를 복원할 때 `"5.0.0"`의 버전 제약 조건은 `>= 5.0.0`을 의미합니다. 즉 서버에서 5.0.0이 아닌 5.0.1을 사용할 수 있는 경우 NuGet에서 5.0.1을 설치하고 업그레이드에 대해 경고합니다. 그렇지 않은 경우 NuGet은 제약 조건과 일치하는 서버에서 가능한 가장 낮은 버전을 선택합니다.
 
-확인 규칙에 대한 자세한 내용은 [종속성 확인](../consume-packages/dependency-resolution.md)을 참조하세요.
+확인 규칙에 대한 자세한 내용은 [종속성 확인](../concepts/dependency-resolution.md)을 참조하세요.
 
 ### <a name="managing-dependency-assets"></a>종속성 자산 관리
 
@@ -71,7 +71,7 @@ ms.locfileid: "43547786"
 | include/exclude 태그 | 영향을 받는 대상 폴더 |
 | --- | --- |
 | contentFiles | 콘텐츠  |
-| 런타임(runtime) | Runtime, Resources 및 FrameworkAssemblies  |
+| 런타임 | Runtime, Resources 및 FrameworkAssemblies  |
 | compile | lib |
 | 빌드 | build(MSBuild props 및 targets) |
 | native | native |
@@ -176,6 +176,6 @@ NuGet 3 이상에서는 Visual Studio의 패키지 관리자 UI에서 내용을 
 
 ## <a name="projectlockjson"></a>project.lock.json
 
-`project.lock.json` 파일은 `project.json`을 사용하는 프로젝트에서 NuGet 패키지를 복원하는 과정에서 생성됩니다. NuGet에서 패키지의 그래프를 진행하면서 생성되는 모든 정보의 스냅숏을 저장하며, 프로젝트에 속한 모든 패키지의 버전, 내용 및 종속성이 포함됩니다. 빌드 시스템은 이 기능을 사용하여 프로젝트 자체의 로컬 패키지 폴더를 따르는 대신 프로젝트를 빌드할 때 관련된 전역 위치에서 패키지를 선택합니다. 이렇게 하면 별도의 많은 `.nuspec` 파일 대신 `project.lock.json`만 읽어야 하므로 빌드 성능이 더 빠릅니다.
+`project.lock.json` 파일은 `project.json`을 사용하는 프로젝트에서 NuGet 패키지를 복원하는 과정에서 생성됩니다. NuGet에서 패키지의 그래프를 진행하면서 생성되는 모든 정보의 스냅샷을 저장하며, 프로젝트에 속한 모든 패키지의 버전, 내용 및 종속성이 포함됩니다. 빌드 시스템은 이 기능을 사용하여 프로젝트 자체의 로컬 패키지 폴더를 따르는 대신 프로젝트를 빌드할 때 관련된 전역 위치에서 패키지를 선택합니다. 이렇게 하면 별도의 많은 `.nuspec` 파일 대신 `project.lock.json`만 읽어야 하므로 빌드 성능이 더 빠릅니다.
 
 `project.lock.json`은 패키지 복원 시 자동으로 생성되므로 `.gitignore` 및 `.tfignore`파일에 추가하여 원본 제어에서 생략할 수 있습니다([패키지 및 원본 제어](../consume-packages/packages-and-source-control.md) 참조). 그러나 원본 제어에 포함하는 경우 시간이 지남에 따라 확인된 종속성의 변경 내용이 변경 기록에 표시됩니다.

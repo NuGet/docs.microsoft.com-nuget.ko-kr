@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: f663b1b2176a5f0ae5bc6d82873193638e0efdaa
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: c0e6de2c3b9978538d504f4af6e744ece43b4a4d
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833390"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488941"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>빠른 시작: 패키지 만들기 및 게시(dotnet CLI)
 
@@ -119,7 +119,7 @@ NuGet에서 제공하는 다른 기능을 탐색하려면 아래 링크를 선�
 - [패키지 게시](../nuget-org/publish-a-package.md)
 - [시험판 패키지](../create-packages/Prerelease-Packages.md)
 - [여러 대상 프레임워크 지원](../create-packages/multiple-target-frameworks-project-file.md)
-- [패키지 버전 관리](../reference/package-versioning.md)
+- [패키지 버전 관리](../concepts/package-versioning.md)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)
 - [기호 패키지 만들기](../create-packages/symbol-packages-snupkg.md)
 - [패키지 서명](../create-packages/Sign-a-package.md)

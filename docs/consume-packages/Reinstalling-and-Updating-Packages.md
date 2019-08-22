@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: bc077220e05b14180baac9611fda9234675ad640
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.openlocfilehash: c48980bc3f955a62962ca6e9619ce09f4a94a835
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860536"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488085"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>패키지를 다시 설치하고 업데이트하는 방법
 
@@ -20,7 +20,7 @@ Visual Studio에서 패키지 관리자 콘솔은 패키지를 업데이트하�
 
 패키지 업데이트 및 다시 설치는 다음과 같이 수행됩니다.
 
-| 방법 | 주 지역에서 | 다시 설치 |
+| 메서드 | 업데이트 | 다시 설치 |
 | --- | --- | --- |
 | 패키지 관리자 콘솔([Update-Package 사용](#using-update-package)에서 설명) | `Update-Package` 명령 | `Update-Package -reinstall` 명령 |
 | 패키지 관리자 UI | **업데이트** 탭에서 패키지를 하나 이상 선택하고 **업데이트**를 선택합니다. | **설치됨** 탭에서 패키지를 선택하고, 이름을 기록한 다음, **제거**를 선택합니다. **찾아보기** 탭으로 전환하고, 패키지 이름을 검색하여 선택한 다음, **설치**를 선택합니다. |
@@ -59,7 +59,7 @@ Visual Studio에서 패키지 관리자 콘솔은 패키지를 업데이트하�
 </packages>
 ```
 
-모든 경우에 [패키지 버전 관리](../reference/package-versioning.md#version-ranges-and-wildcards)에서 설명한 표기법을 사용하세요.
+모든 경우에 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges-and-wildcards)에서 설명한 표기법을 사용하세요.
 
 ## <a name="using-update-package"></a>Update-Package 사용
 

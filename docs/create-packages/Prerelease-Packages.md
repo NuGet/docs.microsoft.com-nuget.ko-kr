@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 726f983c2522fdb538dfce858fdf2371ec0ce188
-ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
+ms.openlocfilehash: a7d07da30daf3f94db99476b88d9abaad1bb8a07
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433346"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488862"
 ---
 # <a name="building-pre-release-packages"></a>시험판 패키지 빌드
 
@@ -20,7 +20,7 @@ ms.locfileid: "68433346"
 
 안정적인 릴리스란 프로덕션 환경에서 사용할 수 있을 만큼 안정적인 릴리스입니다. 안정적인 최신 릴리스는 패키지를 업데이트하거나 복원하는 동안 설치됩니다([패키지 다시 설치 및 업데이트](../consume-packages/reinstalling-and-updating-packages.md)에 설명된 대로 제약 조건 적용).
 
-소프트웨어 릴리스 주기를 지원하기 위해 NuGet 1.6 이상을 사용하면 시험판 패키지의 배포에 허용됩니다. 여기서 버전 번호에는 `-alpha`, `-beta` 또는 `-rc`와 같은 유의적 버전 접미사가 포함됩니다. 자세한 내용은 [패키지 버전 관리](../reference/package-versioning.md#pre-release-versions)를 참조하세요.
+소프트웨어 릴리스 주기를 지원하기 위해 NuGet 1.6 이상을 사용하면 시험판 패키지의 배포에 허용됩니다. 여기서 버전 번호에는 `-alpha`, `-beta` 또는 `-rc`와 같은 유의적 버전 접미사가 포함됩니다. 자세한 내용은 [패키지 버전 관리](../concepts/package-versioning.md#pre-release-versions)를 참조하세요.
 
 다음 방법 중 하나를 사용하여 이러한 버전을 지정할 수 있습니다.
 
@@ -38,7 +38,7 @@ ms.locfileid: "68433346"
     <version>1.0.1-alpha</version>
     ```
 
-안정적인 버전을 출시할 준비가 되면 접미사를 제거합니다. 그러면 패키지가 시험판 버전보다 우선 적용됩니다. 다시 [패키지 버전 관리](../reference/package-versioning.md#pre-release-versions)를 참조하세요.
+안정적인 버전을 출시할 준비가 되면 접미사를 제거합니다. 그러면 패키지가 시험판 버전보다 우선 적용됩니다. 다시 [패키지 버전 관리](../concepts/package-versioning.md#pre-release-versions)를 참조하세요.
 
 ## <a name="installing-and-updating-pre-release-packages"></a>시험판 패키지 설치 및 업데이트
 

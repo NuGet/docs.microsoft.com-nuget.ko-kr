@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8d732e87f01c55bde87da0a2e382fd6d509886a3
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 87116669c1e685ffd0dbe4142c2f7e357c413497
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317009"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488252"
 ---
 # <a name="projectjson-archive"></a>project.json 보관 파일
 
@@ -54,19 +54,19 @@ ms.locfileid: "68317009"
 
 ## <a name="dependency-resolution-with-packagereference"></a>PackageReference를 사용하여 종속성 확인
 
-*원래 [종속성 확인](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference)에 포함됩니다.*
+*원래 [종속성 확인](../concepts/dependency-resolution.md#dependency-resolution-with-packagereference)에 포함됩니다.*
 
 PackageReference의 동작은 `project.json`에도 적용됩니다. NuGet 복원은 종속성 그래프를 `project.json` 옆에 있는 `project.lock.json` 파일에 씁니다.
 
 ## <a name="managing-dependency-assets"></a>종속성 자산 관리
 
-*원래 [종속성 확인](../consume-packages/dependency-resolution.md#managing-dependency-assets)에 포함됩니다.*
+*원래 [종속성 확인](../concepts/dependency-resolution.md#managing-dependency-assets)에 포함됩니다.*
 
 `project.json` 형식을 사용하는 경우 종속성에서 최상위 프로젝트로 이동하는 자산을 제어할 수 있습니다. 자세한 내용은 [project.json](project-json.md)을 참조하세요.
 
 ## <a name="excluding-references"></a>참조 제외
 
-*원래 [종속성 확인](../consume-packages/dependency-resolution.md#excluding-references)에 포함됩니다.*
+*원래 [종속성 확인](../concepts/dependency-resolution.md#excluding-references)에 포함됩니다.*
 
 - `project.json`: PackageC에 대한 종속성에 `"exclude" : "all"`을 추가합니다.
 
@@ -83,7 +83,7 @@ PackageReference의 동작은 `project.json`에도 적용됩니다. NuGet 복원
 
 ## <a name="resolving-incompatible-package-errors"></a>호환되지 않는 패키지 오류 해결
 
-*원래 [종속성 확인](../consume-packages/dependency-resolution.md#resolving-incompatible-package-errors)에 포함됩니다.*
+*원래 [종속성 확인](../concepts/dependency-resolution.md#resolving-incompatible-package-errors)에 포함됩니다.*
 
 추가된 오류 해결 방법:
 
@@ -124,7 +124,7 @@ PackageReference의 동작은 `project.json`에도 적용됩니다. NuGet 복원
 
 ### <a name="package-versioning"></a>패키지 버전 관리
 
-*원래 [패키지 버전 관리](../reference/package-versioning.md)에 포함됩니다.*
+*원래 [패키지 버전 관리](../concepts/package-versioning.md)에 포함됩니다.*
 
 `project.json` 형식을 사용하는 경우 NuGet은 숫자의 주, 부, 패치 및 시험판 접미사 부분에 와일드카드 표기법(\*)도 사용하도록 지원합니다.
 
