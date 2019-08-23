@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5bf75bb724846f652725bfcf636908c34adc174f
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.openlocfilehash: dfe5f2ef4f0ababd81b91073938752aab2bdc01e
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860677"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488802"
 ---
 # <a name="restore-packages-using-package-restore"></a>패키지 복원을 사용하여 패키지 복원
 
@@ -181,7 +181,7 @@ Azure DevOps Server 및 TFS 2013 이상에서는 TFS 2013 이상 팀 빌드 템�
     <PackageReference Include="Newtonsoft.json" Version="[6, 7)" />
     ```
 
-모든 경우에 [패키지 버전 관리](../reference/package-versioning.md)에서 설명한 표기법을 사용하세요.
+모든 경우에 [패키지 버전 관리](../concepts/package-versioning.md)에서 설명한 표기법을 사용하세요.
 
 ## <a name="force-restore-from-package-sources"></a>패키지 소스에서 강제로 복원
 
