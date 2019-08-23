@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 67bc95135f746c4a4685773808756df399cbf01e
-ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
-ms.translationtype: HT
+ms.openlocfilehash: f931ed297a6a1e9e24ce5eb30a8158f59925bb39
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959697"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488679"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -36,7 +36,7 @@ ms.locfileid: "68959697"
 
    `dotnet.exe pack` 또는 `msbuild pack target`를 사용 하 여 패키지를 만드는 경우 일반적으로 `.nuspec` 파일에 있는 [모든 속성을 프로젝트 파일에 포함](../reference/msbuild-targets.md#pack-target) 하는 것이 좋습니다. 그러나 대신 [파일을 `.nuspec` 사용 하 여 `msbuild pack target`또는를 사용 하 여 `dotnet.exe` 압축할 ](../reference/msbuild-targets.md#packing-using-a-nuspec)수 있습니다.
 
-- 에서 `packages.config` [PackageReference로](../consume-packages/package-references-in-project-files.md)마이그레이션된 프로젝트의 경우에는 패키지를 만들 때 파일이필요하지않습니다.`.nuspec` 대신 [msbuild-t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)를 사용 합니다.
+- 에서 `packages.config` [PackageReference로](../consume-packages/package-references-in-project-files.md)마이그레이션된 프로젝트의 경우에는 패키지를 만들 때 파일이필요하지않습니다.`.nuspec` 대신 [msbuild-t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)를 사용 합니다.
 
 ## <a name="general-form-and-schema"></a>일반 형식 및 스키마
 
@@ -74,7 +74,7 @@ ms.locfileid: "68959697"
 #### <a name="id"></a>id 
 대/소문자를 구분하지 않는 패키지 식별자이며, nuget.org 또는 패키지가 상주하는 모든 갤러리에서 고유해야 합니다. ID는 URL에 유효하지 않은 공백 또는 문자를 포함할 수 없고, 일반적으로 .NET 네임스페이스 규칙을 따릅니다. 지침은 [고유한 패키지 식별자 선택](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)을 참조하세요.
 #### <a name="version"></a>version
-*major.minor.patch* 패턴을 따르는 패키지의 버전입니다. 버전 번호는 [패키지 버전 관리](../reference/package-versioning.md#pre-release-versions)에서 설명한 대로 시험판 접미사를 포함할 수 있습니다. 
+*major.minor.patch* 패턴을 따르는 패키지의 버전입니다. 버전 번호는 [패키지 버전 관리](../concepts/package-versioning.md#pre-release-versions)에서 설명한 대로 시험판 접미사를 포함할 수 있습니다. 
 #### <a name="description"></a>description
 UI 표시를 위한 패키지에 대한 자세한 설명입니다. 
 #### <a name="authors"></a>authors
@@ -281,7 +281,7 @@ nuget pack MyProject.csproj
 | 특성 | Description |
 | --- | --- |
 | `id` | (필수) 패키지 페이지에서 “EntityFramework” 및 “NUnit” 패키지 nuget.org의 이름인 같은 종속성의 패키지 ID를 보여 줍니다. |
-| `version` | (필수) 종속성으로 허용되는 버전 범위입니다. 정확한 구문은 [패키지 버전 관리](../reference/package-versioning.md#version-ranges-and-wildcards)를 참조하세요. 와일드 카드 (부동) 버전은 지원 되지 않습니다. |
+| `version` | (필수) 종속성으로 허용되는 버전 범위입니다. 정확한 구문은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges-and-wildcards)를 참조하세요. 와일드 카드 (부동) 버전은 지원 되지 않습니다. |
 | include | 최종 패키지에 포함할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 `all`입니다. |
 | Exclude | 최종 패키지에서 제외할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 과도 하 `build,analyzers` 게 쓸 수 있는 값입니다. 그러나 `content/ ContentFiles` 는 과도 하 게 작성할 수 없는 최종 패키지에서 암시적으로 제외 됩니다. `exclude`로 지정된 태그는 `include`로 지정된 태그보다 우선 순위가 높습니다. 예를 들어 `include="runtime, compile" exclude="compile"`은 `include="runtime"`과 같습니다. |
 
