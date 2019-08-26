@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9ef990c16cca62a1fbad25ff1582bfa543135fab
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.openlocfilehash: 7039dd27f2dddebc3c84e5ad35d5efec59547792
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860572"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488827"
 ---
 # <a name="manage-packages-using-the-nugetexe-cli"></a>nuget.exe CLI를 사용하여 패키지 관리
 
@@ -19,7 +19,7 @@ CLI 도구를 사용하면 프로젝트 및 솔루션에서 NuGet 패키지를 �
 `nuget.exe` CLI는 .NET Framework 프로젝트 및 SDK 스타일이 아닌 프로젝트(예: .NET Standard 라이브러리를 대상으로 하는 비 SDK 스타일 프로젝트)에 대한 것입니다. `PackageReference`로 마이그레이션된 SDK 스타일이 아닌 프로젝트를 사용하는 경우 대신 `dotnet` CLI를 사용합니다. `nuget.exe` CLI에는 패키지 참조에 대한 [packages.config](../reference/packages-config.md) 파일이 필요합니다.
 
 > [!NOTE]
-> 대부분의 시나리오에서는 PackageReference에 `packages.config`를 사용하는 [SDK 스타일이 아닌 프로젝트를 마이그레이션](../reference/migrate-packages-config-to-package-reference.md)한 다음, `nuget.exe` CLI 대신 `dotnet` CLI를 사용하는 것이 좋습니다. 현재 C++ 및 ASP.NET 프로젝트에는 마이그레이션이 제공되지 않습니다.
+> 대부분의 시나리오에서는 PackageReference에 `packages.config`를 사용하는 [SDK 스타일이 아닌 프로젝트를 마이그레이션](../consume-packages/migrate-packages-config-to-package-reference.md)한 다음, `nuget.exe` CLI 대신 `dotnet` CLI를 사용하는 것이 좋습니다. 현재 C++ 및 ASP.NET 프로젝트에는 마이그레이션이 제공되지 않습니다.
 
 이 문서에서는 가장 일반적인 몇 가지 `nuget.exe` CLI 명령에 대한 기본 사용법을 보여줍니다. 이러한 명령의 대부분의 경우, CLI 도구는 프로젝트 파일이 명령에 지정되지 않는 한 현재 디렉터리에서 프로젝트 파일을 찾습니다. 사용할 수 있는 명령 및 전체 목록은 [nuget.exe CLI 참조](../reference/nuget-exe-cli-reference.md)를 참조하세요.
 
@@ -111,3 +111,13 @@ nuget update
 ## <a name="restore-packages"></a>패키지 복원
 
 [!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
+
+## <a name="get-the-cli-version"></a>CLI 버전 가져오기
+
+이 명령 사용:
+
+```cli
+nuget help
+```
+
+도움말 출력의 첫 번째 줄에는 버전이 표시됩니다. 위로 스크롤을 방지하려면 대신 `nuget help | more`를 사용합니다.

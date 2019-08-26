@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 05ece5f36ff7ae5920960c42cfde8b271dc3e712
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: ae80206117eed639140a0c7977043d8330bc37bb
+ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020005"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69564560"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -20,7 +20,7 @@ ms.locfileid: "69020005"
 
 ## <a name="project-type-support"></a>프로젝트 형식 지원
 
-기본적으로 PackageReference는 Windows 10 빌드 15063(크리에이터스 업데이트) 이상을 대상으로 하는 .NET Core 프로젝트, .NET Standard 프로젝트 및 UWP 프로젝트에 사용됩니다(C++ UWP 프로젝트는 제외). .NET Framework 프로젝트는 PackageReference를 지원하지만 현재 기본값은 `packages.config`입니다. PackageReference를 사용하려면 종속성을 `packages.config`에서 프로젝트 파일로 [마이그레이션](../reference/migrate-packages-config-to-package-reference.md)한 후 packages.config를 제거하세요.
+기본적으로 PackageReference는 Windows 10 빌드 15063(크리에이터스 업데이트) 이상을 대상으로 하는 .NET Core 프로젝트, .NET Standard 프로젝트 및 UWP 프로젝트에 사용됩니다(C++ UWP 프로젝트는 제외). .NET Framework 프로젝트는 PackageReference를 지원하지만 현재 기본값은 `packages.config`입니다. PackageReference를 사용하려면 종속성을 `packages.config`에서 프로젝트 파일로 [마이그레이션](../consume-packages/migrate-packages-config-to-package-reference.md)한 후 packages.config를 제거하세요.
 
 전체 .NET Framework를 대상으로 하는 ASP.NET 앱은 PackageReference에 대한 [제한적 지원](https://github.com/NuGet/Home/issues/5877)만 포함합니다. C++ 및 JavaScript 프로젝트 형식은 지원되지 않습니다.
 
@@ -48,7 +48,7 @@ ms.locfileid: "69020005"
 </ItemGroup>
 ```
 
-위의 예에서 3.6.0은 [패키지 버전 관리](../reference/package-versioning.md#version-ranges-and-wildcards)에 설명된 대로 가장 낮은 버전의 기본 설정으로 >=3.6.0인 버전을 가르킵니다.
+위의 예에서 3.6.0은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges-and-wildcards)에 설명된 대로 가장 낮은 버전의 기본 설정으로 >=3.6.0인 버전을 가르킵니다.
 
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>PackageReferences가 없는 프로젝트에 대해 PackageReference 사용
 고급: 프로젝트에 설치된 패키지가 없지만(프로젝트 파일에 PackageReferences가 없고 packages.config 파일이 없음) 프로젝트를 PackageReference 스타일로 복원하려는 경우 프로젝트 속성 RestoreProjectStyle을 프로젝트 파일의 PackageReference로 설정할 수 있습니다.
@@ -63,7 +63,7 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 
 ## <a name="floating-versions"></a>부동 버전
 
-[부동 버전](../consume-packages/dependency-resolution.md#floating-versions)은 `PackageReference`에서 지원됩니다.
+[부동 버전](../concepts/dependency-resolution.md#floating-versions)은 `PackageReference`에서 지원됩니다.
 
 ```xml
 <ItemGroup>
@@ -105,9 +105,9 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 | compile | `lib` 폴더의 콘텐츠이며 프로젝트에서 폴더 내의 어셈블리를 컴파일할 수 있는지 여부 제어 |
 | 런타임 | `lib` 및 `runtimes` 폴더의 콘텐츠이며 이러한 어셈블리가 빌드 출력 디렉터리에 복사되는지 여부 제어 |
 | contentFiles | `contentfiles` 폴더의 콘텐츠 |
-| build | `build` 폴더의 `.props` 및 `.targets` |
-| buildMultitargeting | 프레임워크 간 타기팅을 위한 `buildMultitargeting` 폴더의 `.props` 및 `.targets` |
-| buildTransitive | ‘(5.0 이상)’ 사용하는 프로젝트로 타동적으로 흐르는 자산을 위한 `buildTransitive` 폴더의 `.props` 및 `.targets`  [기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요. |
+| 빌드 | `build` 폴더의 `.props` 및 `.targets` |
+| buildMultitargeting | 프레임워크 간 타기팅을 위한 `buildMultitargeting` 폴더의 *(4.0)* `.props` 및 `.targets` |
+| buildTransitive | ‘(5.0 이상)’ 사용하는 프로젝트로 타동적으로 흐르는 자산을 위한 `buildTransitive` 폴더의 `.props` 및 `.targets` [기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요. |
 | 분석기 | .NET 분석기 |
 | native | `native` 폴더의 콘텐츠 |
 | 없음 | 위의 항목을 사용하지 않습니다. |
@@ -130,6 +130,9 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 ```
 
 `build`가 `PrivateAssets`에 포함되지 않기 때문에 대상 및 props은 부모 프로젝트로 전달되게 *됩니다*. 예를 들어 위의 참조가 AppLogger라는 NuGet 패키지를 빌드하는 프로젝트에서 사용됩니다. 프로젝트가 AppLogger를 사용할 수 있는 것처럼 AppLogger는 `Contoso.Utility.UsefulStuff`의 대상 및 props을 사용할 수 있습니다.
+
+> [!NOTE]
+> `.nuspec` 파일에서 `developmentDependency`가 `true`로 설정되면 패키지가 개발 전용 종속성으로 표시되므로 해당 패키지가 다른 패키지의 종속성으로 포함되지 않습니다. PackageReference *(NuGet 4.8 이상)* 를 사용하는 경우 이 플래그는 컴파일 시간 자산을 컴파일에서 제외한다는 의미이기도 합니다. 자세한 내용은 [PackageReference에 대한 DevelopmentDependency 지원](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)을 참조하세요.
 
 ## <a name="adding-a-packagereference-condition"></a>PackageReference 조건 추가
 
@@ -161,7 +164,7 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 ```
 
 ## <a name="locking-dependencies"></a>종속성 잠금
-이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다. 
+이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다.
 
 NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 세트이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다. 입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다. 그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다. 예:
 

@@ -12,12 +12,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: e62d1872497e0e5e703bf7c49a87249ce9a996c7
-ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
+ms.openlocfilehash: 992b3ddd04a1bb34e7aca25dfaa6f7df5485907b
+ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959671"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69564539"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -118,7 +118,7 @@ Nuget.org에서 지원되는 기호 패키지에는 다음과 같은 제약 조�
 
 4) 작성자가 nupkg 및 snupkg를 빌드하는 데 사용자 지정 nuspec을 사용하기로 결정한 경우 snupkg는 2)에 자세히 설명된 것과 동일한 계층 구조와 파일을 가져야 합니다.
 5) ```authors``` 및 ```owners``` 필드는 snupkg의 nuspec에서 제외됩니다.
-6) <license> 요소를 사용하지 마세요. .snupkg에는 해당.nupk와 동일한 라이선스가 적용됩니다.
+6) <license> 요소를 사용하지 마세요. .snupkg에는 해당 .nupkg와 동일한 라이선스가 적용됩니다.
 
 ## <a name="see-also"></a>참고 항목
 

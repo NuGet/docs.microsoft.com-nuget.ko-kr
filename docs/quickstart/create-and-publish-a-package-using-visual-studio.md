@@ -1,16 +1,16 @@
 ---
-title: Windows에서 Visual Studio를 사용하여 .NET Standard NuGet 패키지 만들기 및 게시
+title: Windows의 Visual Studio에서 .NET Standard NuGet 패키지 만들기 및 게시
 description: Windows에서 Visual Studio를 사용하여 .NET Standard NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
 author: karann-msft
 ms.author: karann
-ms.date: 07/09/2019
+ms.date: 08/16/2019
 ms.topic: quickstart
-ms.openlocfilehash: 0fc3b15c6d5ffa93eb6e26660f71cea2286ba77d
-ms.sourcegitcommit: aed04cc04b0902403612de6736a900d41c265afd
+ms.openlocfilehash: 9552f6c5291f950430bfb723cb713bf76a79ea66
+ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68821427"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69564603"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>빠른 시작: Visual Studio(.NET Standard, Windows 전용)를 사용하여 NuGet 패키지 만들기 및 게시
 
@@ -21,14 +21,14 @@ Windows에서 Visual Studio의 .NET Standard 클래스 라이브러리에서 NuG
 
 ## <a name="prerequisites"></a>전제 조건
 
-1. .NET Core 관련 워크로드를 사용하여 [visualstudio.com](https://www.visualstudio.com/)에서 Visual Studio 2017 이상 버전을 설치합니다.
+1. .NET Core 관련 워크로드를 사용하여 [visualstudio.com](https://www.visualstudio.com/)에서 모든 버전의 Visual Studio 2019를 설치합니다.
 
 1. 아직 설치하지 않은 경우 `dotnet` CLI를 설치합니다.
 
-   `dotnet` CLI의 경우, Visual Studio 2017부터 `dotnet` CLI가 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다. 그렇지 않으면 [.NET Core SDK](https://www.microsoft.com/net/download/)를 설치하여 `dotnet` CLI를 가져옵니다. `dotnet` CLI는 [SDK 스타일 형식](../resources/check-project-format.md)(SDK 특성)을 사용하는 .NET Standard 프로젝트에 필요합니다. 이 문서에서 사용되는 Visual Studio 2017 이상의 기본 클래스 라이브러리 템플릿은 SDK 특성을 사용합니다.
+   `dotnet` CLI의 경우, Visual Studio 2017부터 `dotnet` CLI가 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다. 그렇지 않으면 [.NET Core SDK](https://www.microsoft.com/net/download/)를 설치하여 `dotnet` CLI를 가져옵니다. `dotnet` CLI는 [SDK 스타일 형식](../resources/check-project-format.md)(SDK 특성)을 사용하는 .NET Standard 프로젝트에 필요합니다. 이 문서에서 사용되는 Visual Studio 2017 이상의 기본 .NET Standard 클래스 라이브러리 템플릿은 SDK 특성을 사용합니다.
    
    > [!Important]
-   > 이 문서에서는 `dotnet` CLI가 권장됩니다. `nuget.exe` CLI를 사용하여 NuGet 패키지를 게시할 수는 있지만 이 문서의 일부 단계는 SDK 스타일 프로젝트 및 dotnet CLI와 관련이 있습니다. nuget.exe CLI는 [비 SDK 스타일 프로젝트](../resources/check-project-format.md)에 사용됩니다(일반적으로 .NET Framework). 비 SDK 스타일 프로젝트를 사용하는 경우 [.NET Framework 패키지 만들기 및 게시(Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md)의 절차에 따라 패키지를 만들고 게시합니다.
+   > 비 SDK 스타일 프로젝트를 사용하는 경우 대신 [.NET Framework 패키지(Visual Studio) 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md)의 절차에 따라 패키지를 만들고 게시합니다. 이 문서에서는 `dotnet` CLI가 권장됩니다. `nuget.exe` CLI를 사용하여 NuGet 패키지를 게시할 수는 있지만 이 문서의 일부 단계는 SDK 스타일 프로젝트 및 dotnet CLI와 관련이 있습니다. nuget.exe CLI는 [비 SDK 스타일 프로젝트](../resources/check-project-format.md)에 사용됩니다(일반적으로 .NET Framework).
 
 1. 아직 없는 경우 [nuget.org에 체험 계정을 등록](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account)합니다. 새 계정을 만들면 확인 전자 메일을 보냅니다. 패키지를 업로드하려면 먼저 계정을 확인해야 합니다.
 
@@ -37,6 +37,9 @@ Windows에서 Visual Studio의 .NET Standard 클래스 라이브러리에서 NuG
 패키지할 코드에 대해 기존 .NET Standard 클래스 라이브러리 프로젝트를 사용하거나 다음과 같이 간단한 프로젝트를 만듭니다.
 
 1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 차례로 선택하고, **Visual C# > .NET Standard** 노드를 펼치고, “클래스 라이브러리(.NET Standard)” 템플릿을 선택하고, 프로젝트 이름을 AppLogger로 지정한 다음, **확인**을 클릭합니다.
+
+   > [!Tip]
+   > 별도로 선택하지 않는 한 .NET Standard는 가장 넓은 범위의 사용하는 프로젝트와 호환되기 때문에 NuGet 패키지의 기본 대상입니다.
 
 1. 결과 프로젝트 파일을 마우스 오른쪽 단추로 클릭하고, **빌드**를 선택하여 프로젝트가 제대로 만들어졌는지 확인합니다. DLL은 Debug(또는 해당 구성을 대신 빌드하는 경우 Release) 폴더 내에 있습니다.
 
@@ -55,28 +58,25 @@ namespace AppLogger
 }
 ```
 
-> [!Tip]
-> 별도로 선택하지 않는 한 .NET Standard는 가장 넓은 범위의 사용하는 프로젝트와 호환되기 때문에 NuGet 패키지의 기본 대상입니다.
-
 ## <a name="configure-package-properties"></a>패키지 속성 구성
 
 1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성** 메뉴 명령을 선택한 후 **패키지** 탭을 선택합니다.
 
-   **패키지** 탭은 Visual Studio의 SDK 스타일 프로젝트(일반적으로 .NET Standard 또는 .NET Core 클래스 라이브러리 프로젝트)에 대해서만 표시됩니다. 비 SDK 스타일 프로젝트(일반적으로 .NET Framework)를 대상으로 하는 경우 [프로젝트를 마이그레이션](../reference/migrate-packages-config-to-package-reference.md)하거나 `dotnet` CLI를 사용할 수 있으며, 단계별 지침 대신 [.NET Framework 패키지 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md) 또는 [.NET Framework 패키지 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md)를 참조하세요.
+   **패키지** 탭은 Microsoft Visual Studio의 SDK 스타일 프로젝트(일반적으로 .NET Standard 또는 .NET Core 클래스 라이브러리 프로젝트)에 대해서만 표시됩니다. 비 SDK 스타일 프로젝트(일반적으로 .NET Framework)를 대상으로 하는 경우, [프로젝트 마이그레이션](../consume-packages/migrate-packages-config-to-package-reference.md)을 수행하거나 단계별 지침 대신 [.NET Framework 패키지 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md)를 참조하세요.
 
     ![Visual Studio 프로젝트의 NuGet 패키지 속성](media/qs_create-vs-01-package-properties.png)
 
     > [!Note]
     > 공용으로 빌드된 패키지의 경우 **태그** 속성에 특히 주의하세요. 태그는 다른 사람들이 패키지를 찾고 그 기능을 이해하는 데 도움이 됩니다.
 
-1. 패키지에 고유 식별자를 제공하고 원하는 다른 모든 속성을 채웁니다. 다른 속성에 대한 설명은 [.nuspec 파일 참조](../reference/nuspec.md)를 참조하세요. 여기에 있는 모든 속성은 Visual Studio에서 프로젝트에 대해 만드는 `.nuspec` 매니페스트로 이동합니다.
+1. 패키지에 고유 식별자를 제공하고 원하는 다른 모든 속성을 채웁니다. MSBuild 속성(SDK 스타일 프로젝트)을 *.nuspec*의 속성에 매핑하려면 [대상 압축](../reference/msbuild-targets.md#pack-target)을 참조하세요. 속성 설명은 [.nuspec 파일 참조](../reference/nuspec.md)를 참조하세요. 여기에 있는 모든 속성은 Visual Studio에서 프로젝트에 대해 만드는 `.nuspec` 매니페스트로 이동합니다.
 
     > [!Important]
     > nuget.org 또는 무엇이든 사용 중인 호스트에서 고유한 식별자를 패키지에 제공해야 합니다. 이 연습에서는 나중 게시 단계에서 패키지를 공개적으로 표시할 수 있도록 이름에 “샘플” 또는 “테스트”를 포함하는 것이 좋습니다(실제로 아무도 사용할 가능성이 없더라도).
     >
     > 이미 존재하는 이름으로 패키지를 게시하려고 시도하면 오류가 표시됩니다.
 
-1. 선택 사항: 프로젝트 파일에서 직접 속성을 보려면 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **AppLogger.csproj 편집**을 선택합니다.
+1. (선택 사항) 프로젝트 파일에서 직접 속성을 보려면 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **AppLogger.csproj 편집**을 선택합니다.
 
    이 옵션은 SDK 스타일 특성을 사용하는 프로젝트의 경우 Visual Studio 2017부터만 사용할 수 있습니다. 그렇지 않은 경우 프로젝트를 마우스 오른쪽 단추로 클릭하고 **프로젝트 언로드**를 선택합니다. 그런 다음, 언로드된 프로젝트를 마우스 오른쪽 단추로 클릭하고 **AppLogger.csproj 편집**을 선택합니다.
 
@@ -88,7 +88,7 @@ namespace AppLogger
 
     ![Visual Studio 프로젝트 상황에 맞는 메뉴의 NuGet pack 명령](media/qs_create-vs-02-pack-command.png)
 
-    **Pack** 명령이 표시되지 않는 경우 프로젝트는 SDK 스타일 프로젝트가 아닌 것이므로 `nuget.exe` CLI를 사용해야 합니다. [프로젝트를 마이그레이션](../reference/migrate-packages-config-to-package-reference.md)하고 `dotnet` CLI를 사용하거나 단계별 지침 대신 [.NET Framework 패키지 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md)를 참조하세요.
+    **Pack** 명령이 표시되지 않는 경우 프로젝트는 SDK 스타일 프로젝트가 아닌 것이므로 `nuget.exe` CLI를 사용해야 합니다. [프로젝트를 마이그레이션](../consume-packages/migrate-packages-config-to-package-reference.md)하고 `dotnet` CLI를 사용하거나 단계별 지침 대신 [.NET Framework 패키지 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md)를 참조하세요.
 
 1. Visual Studio에서 프로젝트를 빌드하고 `.nupkg` 파일을 만듭니다. **출력** 창에서 패키지 파일의 경로가 포함된 다음과 같은 세부 정보가 있는지 확인합니다. 또한 빌드된 어셈블리는 .NET Standard 2.0 대상에 맞게 `bin\Release\netstandard2.0`에 있습니다.
 
@@ -128,7 +128,11 @@ namespace AppLogger
 
 [!INCLUDE [publish-api-key](includes/publish-api-key.md)]
 
-### <a name="publish-with-dotnet-nuget-push-dotnet-cli"></a>dotnet nuget push로 게시(dotnet CLI)
+### <a name="publish-with-the-dotnet-cli-or-nugetexe-cli"></a>dotnet CLI 또는 nuget.exe CLI를 사용하여 게시
+
+**.NET Core CLI**(dotnet CLI) 또는 **NuGet**(nuget.exe CLI) 중에서 CLI 도구용 탭을 하나 선택합니다.
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 이 단계는 `nuget.exe`를 사용하는 방법의 대안으로 권장됩니다.
 
@@ -136,7 +140,7 @@ namespace AppLogger
 
 [!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
-### <a name="publish-with-nuget-push-nugetexe-cli"></a>nuget push로 게시(nuget.exe CLI)
+# <a name="nugettabnuget"></a>[NuGet](#tab/nuget)
 
 `dotnet.exe`를 사용하는 대신 다음 단계를 사용할 수 있습니다.
 
@@ -158,6 +162,8 @@ namespace AppLogger
     ```
 
 [nuget push](../reference/cli-reference/cli-ref-push.md)를 참조하세요.
+
+---
 
 ### <a name="publish-errors"></a>게시 오류
 
@@ -189,11 +195,11 @@ namespace AppLogger
 
 ## <a name="related-topics"></a>관련 항목
 
-- [패키지 만들기](../create-packages/creating-a-package.md)
+- [패키지 만들기](../create-packages/creating-a-package-dotnet-cli.md)
 - [패키지 게시](../nuget-org/publish-a-package.md)
 - [시험판 패키지](../create-packages/Prerelease-Packages.md)
 - [여러 대상 프레임워크 지원](../create-packages/multiple-target-frameworks-project-file.md)
-- [패키지 버전 관리](../reference/package-versioning.md)
+- [패키지 버전 관리](../concepts/package-versioning.md)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)
 - [.NET Standard 라이브러리 설명서](/dotnet/articles/standard/library)
 - [.NET Framework에서 .NET Core로 이식](/dotnet/articles/core/porting/index)
