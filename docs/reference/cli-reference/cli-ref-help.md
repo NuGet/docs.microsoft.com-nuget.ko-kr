@@ -14,7 +14,7 @@ ms.locfileid: "68327800"
 ---
 # <a name="help-or--command-nuget-cli"></a>help or ? 명령(NuGet CLI)
 
-****모든 버전에서 모두 지원됩니다.**
+**모든 버전에서 모두 지원됩니다.**
 
 일반 도움말 정보 및 특정 명령에 대 한 도움말 정보를 표시 합니다.
 
@@ -28,7 +28,7 @@ nuget ? [command] [options]
 여기서 [command]는 도움말을 표시할 특정 명령을 식별 합니다.
 
 > [!Warning]
-> Nuget.org에 "help" 라는 패키지가 있기  때문에 몇 가지 명령을 `nuget help install`사용 하 여에 대 한 도움말을 먼저 지정 하는 것에 유의 해야 합니다. 명령을 `nuget install help`지정 하면 install 명령에 대 한 도움말을 볼 수 없지만 대신 help 라는 이름의 패키지를 설치 합니다.
+> Nuget.org에 "help" 라는 패키지가 있기 때문에 몇 가지 명령을 `nuget help install`사용 하 여에 대 한 도움말을 먼저 지정 하는 것에 유의 해야 합니다. 명령을 `nuget install help`지정 하면 install 명령에 대 한 도움말을 볼 수 없지만 대신 help 라는 이름의 패키지를 설치 합니다.
 
 ## <a name="options"></a>변수
 
