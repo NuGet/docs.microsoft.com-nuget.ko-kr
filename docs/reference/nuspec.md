@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: f931ed297a6a1e9e24ce5eb30a8158f59925bb39
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 29c52b6684dff252e9c45bf5365d83b6a3fe5201
+ms.sourcegitcommit: c65e7a889ddf64a8e2ff7bc59ec08edb308e16ca
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488679"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060251"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -76,7 +76,7 @@ ms.locfileid: "69488679"
 #### <a name="version"></a>version
 *major.minor.patch* 패턴을 따르는 패키지의 버전입니다. 버전 번호는 [패키지 버전 관리](../concepts/package-versioning.md#pre-release-versions)에서 설명한 대로 시험판 접미사를 포함할 수 있습니다. 
 #### <a name="description"></a>description
-UI 표시를 위한 패키지에 대한 자세한 설명입니다. 
+UI 표시를 위한 패키지에 대 한 설명입니다.
 #### <a name="authors"></a>authors
 nuget.org에서 프로필 이름과 일치하는, 쉼표로 구분된 패키지 작성자 목록입니다. 이러한 목록은 nuget.org의 NuGet 갤러리에 표시되고 동일한 작성자가 패키지를 상호 참조하는 데 사용됩니다. 
 
@@ -152,6 +152,9 @@ UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배�
 *(2.8 이상)* 패키지가 다른 패키지의 종속성으로 포함되지 않도록 패키지를 개발 전용 종속성으로 표시할지 여부를 지정 하는 부울 값입니다. PackageReference (NuGet 4.8 +)를 사용 하는 경우이 플래그는 컴파일 타임 자산을 컴파일에서 제외 한다는 의미 이기도 합니다. [PackageReference에 대 한 DevelopmentDependency 지원을](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference) 참조 하세요.
 
 #### <a name="summary"></a>요약
+> [!Important]
+> `summary`는 사용 되지 않습니다. 대신 `description`를 사용하세요.
+
 UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 `description`의 잘린 버전이 사용됩니다.
 
 #### <a name="releasenotes"></a>releaseNotes
