@@ -100,7 +100,7 @@ NuGet.Server 패키지를 설치한 후에 `web.config`에는 빈 `appSetting/ap
 </appSettings>
 ```
 
-서버가 이미 보호되거나 그렇지 않은 경우 API 키가 필요하지 않는 경우(예: 로컬 팀 네트워크에서 개인 서버를 사용하는 경우) `requireApiKey`를 `false`로 설정할 수 있습니다. 서버에 액세스할 수 있는 모든 사용자는 패키지를 푸시할 수 있습니다.
+서버가 이미 보호되거나 그렇지 않은 경우 API 키가 필요하지 않는 경우(예: 로컬 팀 네트워크에서 프라이빗 서버를 사용하는 경우) `requireApiKey`를 `false`로 설정할 수 있습니다. 서버에 액세스할 수 있는 모든 사용자는 패키지를 푸시할 수 있습니다.
 
 ## <a name="removing-packages-from-the-feed"></a>피드에서 패키지 제거
 
