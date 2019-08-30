@@ -5,14 +5,16 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9b12b1fa27308cf41b58b0c244ea648d3eecdc95
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 8cc990e0c9eed07c59c8dffb04d104be47051736
+ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520393"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999947"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
+
+NuGet.org 계정 질문처럼 NuGet.org와 관련된 질문과 대답은 [NuGet.org 질문과 대답](../nuget-org/nuget-org-faq.md)을 참조하세요.
 
 **NuGet을 실행하는 데 필요한 것은 무엇인가요?**
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: dfe5f2ef4f0ababd81b91073938752aab2bdc01e
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 93a94a5468b48179d27b89825cebf2447657c8f2
+ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488802"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999979"
 ---
 # <a name="restore-packages-using-package-restore"></a>패키지 복원을 사용하여 패키지 복원
 
@@ -44,7 +44,7 @@ ms.locfileid: "69488802"
 
    PackageReference를 사용하는 프로젝트의 경우 성공적으로 복원된 후 패키지는 *global-packages* 폴더에 있어야 하며 `obj/project.assets.json` 파일이 다시 만들어집니다. `packages.config`를 사용하는 프로젝트의 경우 패키지는 프로젝트의 `packages` 폴더에 표시되어야 합니다. 이제 프로젝트가 성공적으로 빌드됩니다. 
 
-2. 패키지 복원을 실행한 후에도 누락된 패키지 또는 패키지 관련 오류(예: Visual Studio의 솔루션 탐색기에 있는 오류 아이콘)가 계속 발생하는 경우 [패키지를 다시 설치하고 업데이트](../consume-packages/reinstalling-and-updating-packages.md)해야 할 수 있습니다.
+2. 패키지 복원을 실행한 후에도 누락된 패키지 또는 패키지 관련 오류(예: Visual Studio의 솔루션 탐색기에 있는 오류 아이콘)가 계속 발생하는 경우 [패키지 복원 오류 문제 해결](package-restore-troubleshooting.md)에 설명된 지침을 따르거나 [패키지를 다시 설치하고 업데이트](../consume-packages/reinstalling-and-updating-packages.md)해야 할 수 있습니다.
 
    Visual Studio에서 패키지 관리자 콘솔은 패키지를 다시 설치하기 위한 여러 가지 유연한 옵션을 제공합니다. [패키지 업데이트 사용](reinstalling-and-updating-packages.md#using-update-package)을 참조하세요.
 

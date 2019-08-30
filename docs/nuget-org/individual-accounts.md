@@ -1,18 +1,18 @@
 ---
-title: 개별 계정
+title: 개별 계정 - NuGet.org
 description: 패키지를 게시하려면 NuGet.org의 개별 계정이 필요합니다.
 author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: c88b88015bd6d5bae4789765126c0a3dec527e24
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 63c6b5eb5ad635e436b4d53a5f833af35f72d76f
+ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419873"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999976"
 ---
-# <a name="individual-accounts"></a>개별 계정
+# <a name="individual-accounts-on-nugetorg"></a>NuGet.org의 개별 계정
 
 NuGet.org에서 패키지를 게시하고 관리하려면 개별 계정을 만들어야 합니다.
 
@@ -69,3 +69,7 @@ NuGet.org 계정을 만들려면 개인 MSA(Microsoft 계정) 또는 AAD(Azure A
    ![2FA 사용](media/nuget-org-enter-code-2fa.png)
 
 5. 추가 지침에 따라 2단계 인증을 완료합니다.
+
+## <a name="delete-a-nugetorg-account"></a>NuGet.org 계정 삭제
+
+NuGet.org 계정 삭제처럼 추가 계정 관련 작업에 대해서는 [NuGet.org 계정 관리](nuget-org-faq.md#nugetorg-account-management)를 참조하세요.
