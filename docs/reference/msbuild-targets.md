@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: d8d1b2ef0185381d16c1bb73035588fe90bcfd14
-ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
+ms.openlocfilehash: a9331ad2ea0482737d84f4ea9a9babf95da8d66f
+ms.sourcegitcommit: d5cc3f01a92c2d69b794343c09aff07ba9e912e5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959687"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70385898"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -55,14 +55,15 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 | Authors | Authors | 현재 사용자의 사용자 이름 | |
 | 소유자 | 해당 사항 없음 | NuSpec에는 없음 | |
 | 제목 | 제목 | PackageId| |
-| Description | Description | "패키지 설명" | |
+| 설명 | Description | "패키지 설명" | |
 | Copyright | Copyright | 비어 있음 | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | 사용권이 | PackageLicenseExpression | 비어 있음 | 다음에 해당 합니다.`<license type="expression">` |
 | 사용권이 | PackageLicenseFile | 비어 있음 | `<license type="file">`에 해당합니다. 참조 된 라이선스 파일을 명시적으로 압축 해야 할 수도 있습니다. |
-| LicenseUrl | PackageLicenseUrl | 비어 있음 | `licenseUrl`더 이상 사용 되지 않습니다. PackageLicenseExpression 또는 PackageLicenseFile 속성을 사용 하십시오. |
+| LicenseUrl | PackageLicenseUrl | 비어 있음 | `PackageLicenseUrl`는 사용 되지 않습니다. PackageLicenseExpression 또는 PackageLicenseFile 속성을 사용 하십시오. |
 | ProjectUrl | PackageProjectUrl | 비어 있음 | |
-| IconUrl | PackageIconUrl | 비어 있음 | |
+| 아이콘 | PackageIcon | 비어 있음 | 참조 된 아이콘 이미지 파일을 명시적으로 압축 해야 할 수도 있습니다.|
+| IconUrl | PackageIconUrl | 비어 있음 | `PackageIconUrl`는 사용 되지 않습니다. PackageIcon 속성을 사용 하십시오. |
 | Tags | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
 | ReleaseNotes | PackageReleaseNotes | 비어 있음 | |
 | 리포지토리/u r l | RepositoryUrl | 비어 있음 | 소스 코드를 복제 하거나 검색 하는 데 사용 되는 리포지토리 URL입니다. 예 들어 *https://github.com/NuGet/NuGet.Client.git* |
@@ -79,7 +80,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 - PackageVersion
 - PackageId
 - Authors
-- 설명
+- Description
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -117,7 +118,32 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-[NuGet 문제 352](https://github.com/NuGet/Home/issues/352) `PackageIconUrl` 에 대 한 변경의 일환으로는 결국로 `PackageIconUri` 변경 되 고 결과 패키지의 루트에 포함 될 아이콘 파일의 상대 경로일 수 있습니다.
+> [!Important]
+> PackageIconUrl은 더 이상 사용 되지 않습니다. 대신 [Packageicon](#packing-an-icon-image-file) 을 사용 합니다.
+
+### <a name="packing-an-icon-image-file"></a>아이콘 이미지 파일 압축
+
+아이콘 이미지 파일을 압축 하는 경우 패키지 루트를 기준으로 패키지 경로를 지정 하려면 PackageIcon 속성을 사용 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 64x64의 이미지 해상도를 권장 합니다.
+
+예를 들어:
+
+```xml
+<PropertyGroup>
+    ...
+    <PackageIcon>icon.png</PackageIcon>
+    ...
+</PropertyGroup>
+
+<ItemGroup>
+    ...
+    <None Include="images\icon.png" Pack="true" PackagePath="\"/>
+    ...
+</ItemGroup>
+```
+
+[패키지 아이콘 샘플](https://github.com/NuGet/Samples/tree/master/PackageIconExample).
+
+Nuspec에 대 한 자세한 내용은 [nuspec reference에 대 한 참조를 참조](nuspec.md#icon)하세요.
 
 ### <a name="output-assemblies"></a>출력 어셈블리
 
@@ -210,7 +236,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 [NuGet.org에서 허용 하는 라이선스 식 및 라이선스에 대해 자세히 알아보세요](nuspec.md#license).
 
-라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들어:
+라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예:
 
 ```xml
 <PropertyGroup>
@@ -221,6 +247,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
     <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
+
 [라이선스 파일 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
 ### <a name="istool"></a>IsTool
@@ -375,7 +402,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 restore는 `obj` 빌드 폴더에 다음 파일을 만듭니다.
 
-| 파일 | Description |
+| 파일 | 설명 |
 |--------|--------|
 | `project.assets.json` | 모든 패키지 참조의 종속성 그래프를 포함 합니다. |
 | `{projectName}.projectFileExtension.nuget.g.props` | 패키지에 포함된 MSBuild props 파일에 대한 참조 |

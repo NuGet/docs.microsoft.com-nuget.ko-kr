@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 29c52b6684dff252e9c45bf5365d83b6a3fe5201
-ms.sourcegitcommit: c65e7a889ddf64a8e2ff7bc59ec08edb308e16ca
+ms.openlocfilehash: ea40f80a482a290b7399e5a6abc69e0c6fe32b77
+ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060251"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70384449"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -90,7 +90,7 @@ nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페�
 
 #### <a name="licenseurl"></a>licenseUrl
 > [!Important]
-> licenseUrl는 더 이상 사용 되지 않습니다. 대신 라이선스를 사용 하십시오.
+> licenseUrl는 사용 되지 않습니다. 대신 라이선스를 사용 하십시오.
 
 Nuget.org와 같은 Ui에 표시 되는 패키지의 라이선스에 대 한 URL입니다.
 
@@ -143,7 +143,36 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 ```
 
 #### <a name="iconurl"></a>iconUrl
+
+> [!Important]
+> iconUrl은 더 이상 사용 되지 않습니다. 대신 아이콘을 사용 합니다.
+
 UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배경이 있는 64x64 이미지에 대한 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub의 이미지를 사용 하려면와 같은 <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>원시 파일 URL을 사용 합니다. 
+   
+#### <a name="icon"></a>아이콘
+
+패키지 내 이미지 파일에 대 한 경로입니다. 종종 nuget.org와 같은 Ui에서 패키지 아이콘으로 표시 됩니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 64x64의 이미지 resoulution을 권장 합니다.
+
+예를 들어 nuget.exe를 사용 하 여 패키지를 만들 때 nuspec에 다음을 추가 합니다.
+
+```xml
+<package>
+  <metadata>
+    ...
+    <icon>images\icon.png</icon>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="..\icon.png" target="images\" />
+    ...
+  </files>
+</package>
+```
+
+[패키지 아이콘 nuspec 샘플.](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
+
+MSBuild에 해당 하는 경우 [아이콘 이미지 파일 압축](msbuild-targets.md#packing-an-icon-image-file)을 참조 하세요.
 
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 패키지를 설치하기 전에 클라이언트에서 소비자가 패키지 라이선스에 동의하도록 요구하는 메시지를 표시해야 할지 여부를 지정하는 부울 값입니다.
