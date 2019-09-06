@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: a2be42aeb322cfd0ab43c9cec6ad1b063cbc3089
-ms.sourcegitcommit: f291ff91561a6b58c2aec41c624d798e00ce41fa
+ms.openlocfilehash: d9937a2b087fd88c1e6fd9f07a513b5047bdcf2e
+ms.sourcegitcommit: ac9a00ccaf90e539a381e92b650074910b21eb0d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68462526"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70235086"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>빠른 시작: Visual Studio에서 패키지 설치 및 사용(Windows만 해당)
 
@@ -27,7 +27,7 @@ NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 �
 
 [visualstudio.com](https://www.visualstudio.com/)에서 추가 비용 없이 2019 Community 버전을 설치하거나 Professional 또는 Enterprise 버전을 사용할 수 있습니다.
 
-Mac용 Visual Studio를 사용하는 경우 [프로젝트에 NuGet 패키지 포함](/visualstudio/mac/nuget-walkthrough)을 참조하세요.
+Mac용 Visual Studio를 사용하는 경우 [Mac용 Visual Studio에서 패키지 설치 및 사용](install-and-use-a-package-in-visual-studio-mac.md)을 참조하세요.
 
 ## <a name="create-a-project"></a>프로젝트 만들기
 
