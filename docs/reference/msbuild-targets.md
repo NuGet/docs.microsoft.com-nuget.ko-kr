@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: a9331ad2ea0482737d84f4ea9a9babf95da8d66f
-ms.sourcegitcommit: d5cc3f01a92c2d69b794343c09aff07ba9e912e5
+ms.openlocfilehash: 16b8ff532b87a3e3f96029e77dd166eb39294c0b
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70385898"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815350"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -55,7 +55,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 | Authors | Authors | 현재 사용자의 사용자 이름 | |
 | 소유자 | 해당 사항 없음 | NuSpec에는 없음 | |
 | 제목 | 제목 | PackageId| |
-| 설명 | Description | "패키지 설명" | |
+| Description | Description | "패키지 설명" | |
 | Copyright | Copyright | 비어 있음 | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | 사용권이 | PackageLicenseExpression | 비어 있음 | 다음에 해당 합니다.`<license type="expression">` |
@@ -109,6 +109,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 - NuspecFile
 - NuspecBasePath
 - NuspecProperties
+- 명확함
 
 ## <a name="pack-scenarios"></a>pack 시나리오
 
@@ -125,7 +126,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 
 아이콘 이미지 파일을 압축 하는 경우 패키지 루트를 기준으로 패키지 경로를 지정 하려면 PackageIcon 속성을 사용 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 64x64의 이미지 해상도를 권장 합니다.
 
-예를 들어:
+예:
 
 ```xml
 <PropertyGroup>
@@ -172,6 +173,18 @@ Nuspec에 대 한 자세한 내용은 [nuspec reference에 대 한 참조를 참
 <IncludeAssets>
 <ExcludeAssets>
 <PrivateAssets>
+```
+
+### <a name="deterministic"></a>명확함
+
+를 사용 `MSBuild -t:pack -p:Deterministic=true`하는 경우 pack 대상에 대 한 여러 호출에서 정확히 동일한 패키지를 생성 합니다.
+Pack 명령의 출력은 컴퓨터의 앰비언트 상태에 영향을 받지 않습니다. 특히 zip 항목은 1980-01-01로 타임 스탬프가 기록 됩니다. 전체를 명확 하 게 하려면 해당 컴파일러 옵션 [결정적](/dotnet/csharp/language-reference/compiler-options/deterministic-compiler-option)를 사용 하 여 어셈블리를 빌드해야 합니다.
+다음과 같이 결정적 속성을 지정 하는 것이 좋습니다. 따라서 컴파일러와 NuGet은 모두이를 존중 합니다.
+
+```xml
+<PropertyGroup>
+  <Deterministic>true</Deterministic>
+</PropertyGroup>
 ```
 
 ### <a name="including-content-in-a-package"></a>패키지에 내용 포함
@@ -236,7 +249,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 [NuGet.org에서 허용 하는 라이선스 식 및 라이선스에 대해 자세히 알아보세요](nuspec.md#license).
 
-라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예:
+라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들어:
 
 ```xml
 <PropertyGroup>

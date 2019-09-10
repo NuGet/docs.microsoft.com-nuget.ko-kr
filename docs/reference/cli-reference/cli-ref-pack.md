@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: cab56cb87f46335f9fdebdbc1649fead16459877
-ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
+ms.openlocfilehash: 76829d45ea9821da3b7fdaa2f88d30dbb104fea1
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959732"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815353"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 명령(NuGet CLI)
 
@@ -29,12 +29,13 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 여기서 `<nuspecPath>` 및 `<projectPath>` 은`.nuspec` 각각 또는 프로젝트 파일을 지정 합니다.
 
-## <a name="options"></a>변수
+## <a name="options"></a>옵션
 
-| 옵션 | 설명 |
+| 옵션 | Description |
 | --- | --- |
 | BasePath | [Nuspec](../nuspec.md) 파일에 정의 된 파일의 기본 경로를 설정 합니다. |
 | 빌드 | 패키지를 빌드하기 전에 프로젝트를 빌드해야 함을 지정 합니다. |
+| 명확함 | 명령이 결정적 패키지를 만들어야 하는지 여부를 지정 합니다. Pack 명령을 여러 번 호출 하면 정확히 동일한 바이트-바이트 패키지가 생성 됩니다. Pack 명령의 출력은 컴퓨터의 앰비언트 상태에 영향을 받지 않습니다. 특히 zip 항목은 1980-01-01로 타임 스탬프가 기록 됩니다. 전체를 명확 하 게 하려면 해당 컴파일러 옵션 [결정적](/dotnet/csharp/language-reference/compiler-options/deterministic-compiler-option)를 사용 하 여 어셈블리를 빌드해야 합니다. |
 | 제외 | 패키지를 만들 때 제외할 와일드 카드 패턴을 하나 이상 지정 합니다. 둘 이상의 패턴을 지정 하려면-Exclude 플래그를 반복 합니다. 아래 예제를 참조 하세요. |
 | ExcludeEmptyDirectories | 패키지를 빌드할 때 빈 디렉터리가 포함 되지 않도록 합니다. |
 | ForceEnglishOutput | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
