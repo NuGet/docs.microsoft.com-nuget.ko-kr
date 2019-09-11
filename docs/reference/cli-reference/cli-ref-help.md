@@ -18,7 +18,7 @@ ms.locfileid: "68327800"
 
 일반 도움말 정보 및 특정 명령에 대 한 도움말 정보를 표시 합니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget help [command] [options]

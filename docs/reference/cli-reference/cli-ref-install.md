@@ -29,7 +29,7 @@ ms.locfileid: "68327790"
 
 종속성을 추가 하려면 Visual Studio에서 패키지 관리자 UI 또는 콘솔을 통해 패키지를 추가 하거나를 수정 `packages.config` 하 고 `install` 또는 `restore`를 실행 합니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget install <packageID | configFilePath> [options]

@@ -18,7 +18,7 @@ ms.locfileid: "68433310"
 
 NuGet 구성 값을 불러오거나 설정할 수 있습니다. 추가 사용에 대해서는 [일반적인 NuGet 구성](../../consume-packages/configuring-nuget-behavior.md)을 참조 하세요. 사용할 수 있는 키 값에 대한 자세한 내용은 [NuGet 구성 파일 참조](../nuget-config-file.md)를 볼 수 있습니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget config -Set <name>=[<value>] [<name>=<value> ...] [options]

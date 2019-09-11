@@ -23,7 +23,7 @@ ms.locfileid: "68327630"
 
 NuGet의 기본 구성은 (Windows) 또는 `%AppData%\NuGet\NuGet.Config` `~/.nuget/NuGet/NuGet.Config` (Mac/Linux `Nuget.Config` )를 로드 한 다음 드라이브의 루트에서 시작 `.nuget\Nuget.Config` 하 여 현재 디렉터리에서 끝나는 또는 파일을 로드 하 여 가져옵니다 ( [일반적인 NuGet 참조). 구성](../../consume-packages/configuring-nuget-behavior.md))
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget push <packagePath> [options]

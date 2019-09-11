@@ -20,7 +20,7 @@ ms.locfileid: "68327600"
 
 nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget sources <operation> -Name <name> -Source <source>

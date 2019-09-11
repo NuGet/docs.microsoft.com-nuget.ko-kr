@@ -18,7 +18,7 @@ ms.locfileid: "68327740"
 
 지정 된 원본의 패키지 목록을 표시 합니다. 소스를 지정 하지 않으면 전역 구성 파일 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config`에 정의 된 모든 소스가 사용 됩니다. 에서 소스를 지정 하지 않는 경우 `NuGet.Config` 는 기본 피드 (nuget.org)를 사용합니다.`list`
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget list [search terms] [options]

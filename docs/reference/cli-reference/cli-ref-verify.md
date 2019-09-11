@@ -21,7 +21,7 @@ ms.locfileid: "68327500"
 
 서명 된 패키지의 확인은 .NET Core, Mono 또는 비 Windows 플랫폼에서 아직 지원 되지 않습니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget verify <-All|-Signatures> <package(s)> [options]

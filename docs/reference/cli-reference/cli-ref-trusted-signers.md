@@ -19,7 +19,7 @@ ms.locfileid: "68327540"
 
 NuGet 구성에 대해 신뢰할 수 있는 서명자를 가져오거나 설정 합니다. 추가 사용에 대해서는 [일반적인 NuGet 구성](../../consume-packages/configuring-nuget-behavior.md)을 참조 하세요. Nuget 스키마의 모양에 대 한 자세한 내용은 [nuget 구성 파일 참조](../nuget-config-file.md)를 참조 하세요.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget trusted-signers <list|add|remove|sync> [options]

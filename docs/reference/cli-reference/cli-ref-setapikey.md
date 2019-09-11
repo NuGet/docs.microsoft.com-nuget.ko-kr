@@ -18,7 +18,7 @@ ms.locfileid: "68327610"
 
 지정 된 서버 URL에 대 한 API 키를 `NuGet.Config` 에 저장 하 여 후속 명령에 대해 입력이 필요 하지 않도록 합니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget setapikey <key> -Source <url> [options]

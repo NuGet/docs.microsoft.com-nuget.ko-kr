@@ -21,7 +21,7 @@ ms.locfileid: "68327590"
 
 패키지 서명은 .NET Core, Mono 또는 Windows 이외의 플랫폼에서 아직 지원 되지 않습니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget sign <package(s)> [options]

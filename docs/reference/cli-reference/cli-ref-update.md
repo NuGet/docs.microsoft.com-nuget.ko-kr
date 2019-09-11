@@ -24,7 +24,7 @@ ms.locfileid: "68327510"
 
 이 명령은 *-self* 플래그를 사용 하 여 nuget.exe 자체를 업데이트 하는 데도 사용할 수 있습니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget update <configPath> [options]

@@ -20,7 +20,7 @@ ms.locfileid: "68959739"
 
 Mac에서 CLI를 사용 하는 Mac OSX 및 Linux에서 패키지 복원은 PackageReference에서 지원 되지 않습니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget restore <projectPath> [options]

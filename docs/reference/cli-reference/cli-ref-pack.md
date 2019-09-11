@@ -21,7 +21,7 @@ ms.locfileid: "70815353"
 > [!Important]
 > Mono에서는 프로젝트 파일에서 패키지를 만들 수 없습니다. 또한 nuget.exe에서 Windows 경로 이름을 변환 하지 않으므로 `.nuspec` 파일의 비로컬 경로를 Unix 스타일 경로로 조정 해야 합니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget pack <nuspecPath | projectPath> [options] [-Properties ...]

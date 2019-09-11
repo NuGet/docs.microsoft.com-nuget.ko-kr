@@ -18,13 +18,13 @@ ms.locfileid: "68327810"
 
 *Http 캐시*, *전역 패키지* 폴더 및 임시 폴더와 같은 로컬 NuGet 리소스를 지우거 나 나열 합니다. `locals` 명령을 사용 하 여 해당 위치의 목록을 표시할 수도 있습니다. 자세한 내용은 [전역 패키지 및 캐시 폴더 관리](../../consume-packages/managing-the-global-packages-and-cache-folders.md)를 참조 하세요.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget locals <folder> [options]
 ```
 
-여기서 `<folder>` 는 `all` `global-packages` `temp` , `plugins-cache`    , (3.5 및 이전 버전),, (3.4 +) 및 (4.8 +) 중 하나입니다. `packages-cache` `http-cache`
+여기서 `<folder>` 는 `all` `global-packages` `temp` , `plugins-cache`, (3.5 및 이전 버전),, (3.4 +) 및 (4.8 +) 중 하나입니다. `packages-cache` `http-cache`
 
 ## <a name="options"></a>변수
 

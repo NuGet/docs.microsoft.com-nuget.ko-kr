@@ -20,7 +20,7 @@ ms.locfileid: "68327780"
 
 와 `add`마찬가지로 대상은 로컬 폴더 또는 UNC 경로 여야 합니다. Nuget.org 또는 private 서버와 같은 HTTP 패키지 리포지토리는 지원 되지 않습니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget init <source> <destination> [options]

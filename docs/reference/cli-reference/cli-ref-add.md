@@ -29,7 +29,7 @@ ms.locfileid: "68327860"
 
 원하는 패키지 소스 폴더 내부의 모든 파일을 확장하려면 `-Expand`를 사용하여 전환합니다. 일반적으로 `tools` 와 `lib`이라는 추가적인 하위폴더가 목적지 폴더 내부에 보일 수 있습니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget add <packagePath> -Source <sourcePath> [options]

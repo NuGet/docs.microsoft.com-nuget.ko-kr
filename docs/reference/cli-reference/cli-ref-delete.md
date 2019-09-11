@@ -18,7 +18,7 @@ ms.locfileid: "68327840"
 
 패키지 소스 또는 패키지 목록에서 삭제합니다. Nuget.org에서 delete 명령어는 [패키지 목록에서 삭제](../../nuget-org/policies/deleting-packages.md)의 의미를 갖습니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget delete <packageID> <packageVersion> [options]

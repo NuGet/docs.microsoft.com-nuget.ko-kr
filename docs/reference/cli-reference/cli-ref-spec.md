@@ -18,7 +18,7 @@ ms.locfileid: "68327570"
 
 새 패키지 `.nuspec` 에 대 한 파일을 생성 합니다. 프로젝트`.csproj`파일 ( `.nuspec` , `.vbproj`, `.fsproj`)과 동일한 폴더에서 실행 되 `spec` 는 경우 토큰화 된 파일을 만듭니다. 자세한 내용은 [패키지 만들기](../../create-packages/creating-a-package.md)를 참조 하세요.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget spec [<packageID>] [options]

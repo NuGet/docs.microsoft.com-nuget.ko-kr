@@ -21,7 +21,7 @@ ms.locfileid: "68959718"
 > [!NOTE]
 > 이전에 NuGet 2.x에서이 명령을 지원 (NuGet-Signed에서 nuget.exe로 이름 바꾸기) 하는 Nuget.exe 및 NuGet-Signed는 더 이상 다운로드할 수 없습니다. 이와 유사한 명령을 사용 하려면 [NuGetMirror](https://www.nuget.org/packages/NuGetMirror/)를 시도 합니다.
 
-## <a name="usage"></a>사용법
+## <a name="usage"></a>사용
 
 ```cli
 nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [options]
