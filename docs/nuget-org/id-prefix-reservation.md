@@ -1,17 +1,17 @@
 ---
 title: ID 접두사 예약
 description: 패키지 ID 접두사 예약 기능 설명 및 작성자 가이드.
-author: diverdan92
-ms.author: diverdan92
-ms.date: 10/09/2017
+author: karann-msft
+ms.author: karann
+ms.date: 09/07/2019
 ms.topic: reference
-ms.reviewer: ananguar
-ms.openlocfilehash: 650f570ec65a665e3d452af732ea22337835d8d9
-ms.sourcegitcommit: cae759ad8518c049575a30ad3bf04fe5d06244fb
+ms.reviewer: karann
+ms.openlocfilehash: 630c2b193500ec0b9aa5a7fe4af3ea95ae52aeec
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616807"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815287"
 ---
 # <a name="package-id-prefix-reservation"></a>패키지 ID 접두사 예약
 
@@ -88,6 +88,8 @@ ID 접두사 예약에 대한 모든 애플리케이션을 검토할 때 [nuget.
 1. 패키지 ID 접두사와 일치하는 패키지의 식별 속성이 명확하고 일관적인가요(특히 패키지 작성자)?
 
 1. 패키지에 라이선스가 있나요([라이선스](../reference/nuspec.md#license) 메타데이터 요소를 사용하고 사용이 중단된 licenseUrl은 사용하지 않음)?
+
+1. 패키지에 아이콘이 있는 경우, [아이콘](../reference/nuspec.md#icon) 메타데이터 요소(iconUrl을 제거하는 데 필수 요소 아님)를 사용하고 있나요?
 
 ## <a name="third-party-feed-provider-scenarios"></a>타사 피드 공급자 시나리오
 

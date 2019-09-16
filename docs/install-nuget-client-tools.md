@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: d7aa2e4bdb78dcc6747d9775cbdf0d6c41855b96
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 417388872a74b29a469d6a5c17c079a0d1a35dc3
+ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419807"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70384468"
 ---
 # <a name="install-nuget-client-tools"></a>NuGet 클라이언트 도구 설치
 
@@ -22,7 +22,7 @@ NuGet으로 작업하려면 패키지 소비자 또는 작성자로서 CLI(명�
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | .NET Core 및 .NET Standard 라이브러리와 .NET Framework를 대상으로 하는 것과 같은 [SDK 스타일 프로젝트](resources/check-project-format.md)를 위한 CLI 도구입니다. .NET Core SDK에 포함되며 모든 플랫폼에서 핵심 NuGet 기능을 제공합니다. (Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.)| [.NET Core SDK](https://www.microsoft.com/net/download/) |
 | [nuget.exe](#nugetexe-cli) | .NET Framework 라이브러리와 .NET Standard 라이브러리를 대상으로 하는 것과 같은 [비 SDK 스타일 프로젝트](resources/check-project-format.md)를 위한 CLI 도구입니다. Windows에서 모든 NuGet 기능을 제공하며 Mono로 실행 중일 경우 Mac 및 Linux에서 대부분의 기능을 제공합니다. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | Windows에서 패키지 관리자 UI 및 패키지 관리자 콘솔을 통해 NuGet 기능을 제공합니다(.NET 관련 워크로드와 함께 포함). Mac에서는 UI를 통해 특정 기능을 제공합니다. Visual Studio Code에서 NuGet 기능은 확장을 통해 제공됩니다. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
+| [Visual Studio](#visual-studio) | Windows에서 패키지 관리자 UI 및 패키지 관리자 콘솔을 통해 NuGet 기능을 제공합니다(.NET 관련 워크로드와 함께 포함). Mac에서는 UI를 통해 특정 기능을 제공합니다. Visual Studio Code에서 NuGet 기능은 확장을 통해 제공됩니다. | [Visual Studio](https://www.visualstudio.com/downloads/) |
 
 [MSBuild CLI](reference/msbuild-targets.md)는 주로 빌드 서버에서 유용한 패키지를 복원하고 만들 수 있는 기능을 제공합니다. MSBuild는 NuGet을 사용하기 위한 범용 도구가 아닙니다.
 
@@ -73,7 +73,7 @@ dotnet CLI에서 기본 명령을 사용하는 방법에 대한 자세한 내용
   - 패키지 관리자 콘솔 명령은 Windows의 Visual Studio 내에서만 작동하며 다른 PowerShell 환경에서는 작동하지 않습니다.
   - Visual Studio 2010 이하의 경우 “Visual Studio용 NuGet 패키지 관리자” 확장을 설치합니다.
   - Visual Studio 2013 및 2015용 NuGet 확장은 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)에서 다운로드할 수도 있습니다.
-  - 예정된 NuGet 기능을 미리 보려면 Visual Studio Stable 릴리스와 함께 작동하는 [Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/)를 설치합니다. Preview에 대한 문제를 보고하거나 아이디어를 공유하려면 [NuGet GitHub 리포지토리](https://github.com/Nuget/Home/issues)에서 이슈를 제기합니다.
+  - 예정된 NuGet 기능을 미리 보려면 Visual Studio Stable 릴리스와 함께 작동하는 [Visual Studio Preview](https://www.visualstudio.com/vs/preview/)를 설치합니다. Preview에 대한 문제를 보고하거나 아이디어를 공유하려면 [NuGet GitHub 리포지토리](https://github.com/Nuget/Home/issues)에서 이슈를 제기합니다.
 
 ## <a name="feature-availability"></a>기능 가용성
 

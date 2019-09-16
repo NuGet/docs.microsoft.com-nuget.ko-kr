@@ -12,12 +12,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 992b3ddd04a1bb34e7aca25dfaa6f7df5485907b
-ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
+ms.openlocfilehash: 109df18bcfd3e6a3fbd3ef3da1707ffada585140
+ms.sourcegitcommit: f4bfdbf62302c95f1f39e81ccf998f8bbc6d56b0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69564539"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70749037"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -29,7 +29,30 @@ ms.locfileid: "69564539"
 
 ## <a name="creating-a-symbol-package"></a>기호 패키지 만들기
 
-dotnet.exe, NuGet.exe 또는 MSBuild를 사용하여 snupkg 기호 패키지를 만들 수 있습니다. NuGet.exe를 사용하는 경우 다음 명령을 사용하여 .nupkg 파일 외에도 .snupkg 파일을 만들 수 있습니다.
+Dotnet 또는 MSBuild를 사용하는 경우 nupkg 파일 외에 .snupkg 파일을 만들도록 `IncludeSymbols` 및 `SymbolPackageFormat` 속성을 설정해야 합니다.
+
+* .csproj 파일에 다음 속성을 추가합니다.
+
+   ```xml
+   <PropertyGroup>
+      <IncludeSymbols>true</IncludeSymbols> 
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat> 
+   </PropertyGroup>
+   ```
+
+* 또는 명령줄에서 다음 속성을 지정합니다.
+
+     ```cli
+     dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
+     ```
+
+  또는
+
+  ```cli
+  msbuild MyPackage.csproj /t:pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
+  ```
+
+NuGet.exe를 사용하는 경우 다음 명령을 사용하여 .nupkg 파일 외에도 .snupkg 파일을 만들 수 있습니다.
 
 ```
 nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
@@ -37,20 +60,7 @@ nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 ```
 
-dotnet.exe 또는 MSBuild를 사용하는 경우 다음 단계에 따라 .nupkg 파일 외에도 .snupkg 파일을 만듭니다.
-
-1. .csproj 파일에 다음 속성을 추가합니다.
-
-    ```xml
-    <PropertyGroup>
-      <IncludeSymbols>true</IncludeSymbols>
-      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    </PropertyGroup>
-    ```
-
-1. `dotnet pack MyPackage.csproj` 또는 `msbuild -t:pack MyPackage.csproj`로 프로젝트를 압축합니다.
-
-[`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) 속성을 지정하지 않으면 레거시 기호 패키지가 생성됩니다.
+[`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. 이 속성을 지정하지 않으면 레거시 기호 패키지가 생성됩니다.
 
 > [!Note]
 > 레거시 형식 `.symbols.nupkg`는 여전히 호환성 문제에서만 지원됩니다([레거시 기호 패키지](Symbol-Packages.md) 참조). NuGet.org의 기호 서버는 새 기호 패키지 형식(`.snupkg`)만 허용합니다.
@@ -118,8 +128,8 @@ Nuget.org에서 지원되는 기호 패키지에는 다음과 같은 제약 조�
 
 4) 작성자가 nupkg 및 snupkg를 빌드하는 데 사용자 지정 nuspec을 사용하기로 결정한 경우 snupkg는 2)에 자세히 설명된 것과 동일한 계층 구조와 파일을 가져야 합니다.
 5) ```authors``` 및 ```owners``` 필드는 snupkg의 nuspec에서 제외됩니다.
-6) <license> 요소를 사용하지 마세요. .snupkg에는 해당 .nupkg와 동일한 라이선스가 적용됩니다.
+6) ```<license>``` 요소를 사용하지 마세요. .snupkg에는 해당 .nupkg와 동일한 라이선스가 적용됩니다.
 
 ## <a name="see-also"></a>참고 항목
 
-[NuGet-Package-Debugging-&-Symbols-Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)
+[NuGet 패키지 디버깅 & 기호 향상](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)

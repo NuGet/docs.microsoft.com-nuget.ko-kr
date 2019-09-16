@@ -5,23 +5,23 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: 7bfe041c01114ac61e811497ecc31ebfdad45029
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 40e240478918d327fbea0013bbf271ea2ee1fc47
+ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488893"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70384490"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>빠른 시작: Visual Studio(.NET Framework, Windows)를 사용하여 패키지 만들기 및 게시
 
 .NET Framework 클래스 라이브러리로 NuGet 패키지를 만들려면 Windows의 Visual Studio에서 DLL을 만든 후 nuget.exe 명령줄 도구를 사용하여 패키지를 만들고 게시해야 합니다.
 
 > [!Note]
-> 이 빠른 시작은 Windows용 Visual Studio 2017에만 적용됩니다. Mac용 Visual Studio에는 여기에 설명된 기능이 포함되어 있지 않습니다. 대신 [dotnet CLI 도구](create-and-publish-a-package-using-the-dotnet-cli.md)를 사용하세요.
+> 이 빠른 시작은 Windows용 Visual Studio 2017 이상 버전에만 적용됩니다. Mac용 Visual Studio에는 여기에 설명된 기능이 포함되어 있지 않습니다. 대신 [dotnet CLI 도구](create-and-publish-a-package-using-the-dotnet-cli.md)를 사용하세요.
 
 ## <a name="prerequisites"></a>전제 조건
 
-1. .Net 관련 워크로드를 사용하여 [visualstudio.com](https://www.visualstudio.com/)에서 모든 버전의 Visual Studio 2017을 설치합니다. .NET 워크로드가 설치될 때 Visual Studio 2017이 NuGet 기능을 자동으로 포함합니다.
+1. .NET 관련 워크로드를 사용하여 [visualstudio.com](https://www.visualstudio.com/)에서 Visual Studio 2017 이상 버전을 설치합니다. .NET 워크로드가 설치될 때 Visual Studio 2017이 NuGet 기능을 자동으로 포함합니다.
 
 1. `nuget.exe` CLI를 설치하려면 [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)에서 다운로드하고, 해당 `.exe` 파일을 적합한 폴더에 저장하고, 해당 폴더를 PATH 환경 변수에 추가합니다.
 
