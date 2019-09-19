@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 5ec6c0e17a3e8b9a3f156a48685bcaafe42c744b
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 7aea28d6224a89149aa33be035c82a45db3058f0
+ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488229"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094123"
 ---
 # <a name="package-content"></a>패키지 콘텐츠
 
@@ -48,7 +48,7 @@ PackageBaseAddress/3.0.0 | 초기 릴리스
 
 이름     | 입력     | 형식    | 필수 | 참고
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | URL    | string  | 예      | 패키지 ID, 소문자
+LOWER_ID | URL    | string  | 예      | 패키지 ID, lowercased
 
 `LOWER_ID` 값은에 의해 구현 된 규칙을 사용 하 여 원하는 패키지 ID lowercased. NET의 [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) 메서드입니다.
 
@@ -60,7 +60,7 @@ LOWER_ID | URL    | string  | 예      | 패키지 ID, 소문자
 
 이름     | 형식             | 필수 | 참고
 -------- | ---------------- | -------- | -----
-버전 | 문자열 배열 | 예      | 사용할 수 있는 패키지 Id
+버전 | 문자열 배열 | 예      | 사용 가능한 버전
 
 `versions` 배열의 문자열은 [정규화 된 NuGet 버전 문자열](../concepts/package-versioning.md#normalized-version-numbers)lowercased입니다. 버전 문자열에는 SemVer 2.0.0 build 메타 데이터가 포함 되지 않습니다.
 
