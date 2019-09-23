@@ -12,12 +12,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 109df18bcfd3e6a3fbd3ef3da1707ffada585140
-ms.sourcegitcommit: f4bfdbf62302c95f1f39e81ccf998f8bbc6d56b0
+ms.openlocfilehash: 5546881dbf7577eb289a28b35bc2c0e7dc5cac40
+ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70749037"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094105"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -92,25 +92,25 @@ NuGet은 두 패키지를 nuget.org에 게시합니다. `MyPackage.nupkg`가 먼
 
 ## <a name="nugetorg-symbol-server"></a>NuGet.org 기호 서버
 
-NuGet.org는 자체 기호 서버 리포지토리를 지원하며 새 기호 패키지 형식(`.snupkg`)만 허용합니다. 패키지 소비자는 Visual Studio에서 해당 기호 원본에 `https://symbols.nuget.org/download/symbols`를 추가하여 nuget.org 기호 서버에 게시된 기호를 사용할 수 있습니다. 그러면 Visual Studio 디버거에서 코드 패키지를 단계적으로 실행할 수 있습니다. 해당 프로세스에 대한 자세한 내용은 [Visual Studio 디버거에서 기호 파일(.pdb) 및 원본 파일 지정](https://docs.microsoft.com/en-us/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger?view=vs-2017)을 참조하세요.
+NuGet.org는 자체 기호 서버 리포지토리를 지원하며 새 기호 패키지 형식(`.snupkg`)만 허용합니다. 패키지 소비자는 Visual Studio에서 해당 기호 원본에 `https://symbols.nuget.org/download/symbols`를 추가하여 nuget.org 기호 서버에 게시된 기호를 사용할 수 있습니다. 그러면 Visual Studio 디버거에서 코드 패키지를 단계적으로 실행할 수 있습니다. 해당 프로세스에 대한 자세한 내용은 [Visual Studio 디버거에서 기호 파일(.pdb) 및 원본 파일 지정](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md)을 참조하세요.
 
-### <a name="nugetorg-symbol-package-constraints"></a>Nuget.org 기호 패키지 제약 조건
+### <a name="nugetorg-symbol-package-constraints"></a>NuGet.org 기호 패키지 제약 조건
 
-Nuget.org에서 지원되는 기호 패키지에는 다음과 같은 제약 조건이 있습니다.
+NuGet.org에는 기호 패키지에 대한 다음과 같은 제약 조건이 있습니다.
 
-- 다음 파일 확장명만 기호 패키지에 추가할 수 있습니다. ```.pdb,.nuspec,.xml,.psmdcp,.rels,.p7s```
-- 관리되는 [이식 가능한 pdbs](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)만 현재 nuget 기호 서버에서 지원됩니다.
-- pdbs 및 관련 nupkg dlls는 Visual Studio 버전 15.9 이상의 컴파일러로 빌드해야 합니다([pdb crypto 해시](https://github.com/dotnet/roslyn/issues/24429) 참조).
+- 기호 패키지에는 `.pdb`, `.nuspec`, `.xml`, `.psmdcp`, `.rels`, `.p7s`와 같은 파일 확장명만 사용할 수 있습니다.
+- 관리형 [이동식 PDB](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)만 NuGet.org의 기호 서버에서 지원됩니다.
+- PDB 및 관련 .nupkg DLL은 Visual Studio 버전 15.9 이상의 컴파일러로 빌드해야 합니다([PDB crypto 해시](https://github.com/dotnet/roslyn/issues/24429) 참조).
 
-다른 파일 형식이 .snupkg에 포함된 경우 nuget.org에 게시되는 기호 패키지가 실패합니다.
+이러한 제약 조건이 충족되지 않으면 NuGet.org에 게시된 기호 패키지가 유효성 검사에 실패합니다. 
 
 ### <a name="symbol-package-validation-and-indexing"></a>기호 패키지 유효성 검사 및 인덱싱
 
-[NuGet.org](https://www.nuget.org/)에 게시된 기호 패키지는 바이러스 검사와 같은 여러 유효성 검사를 거칩니다.
+[NuGet.org](https://www.nuget.org/)에 게시된 기호 패키지는 맬웨어 검색을 포함한 여러 유효성 검사를 거칩니다. 패키지가 유효성 검사에 실패하면 패키지 세부 정보 페이지에 오류 메시지가 표시됩니다. 또한 패키지 소유자는 식별된 문제를 해결하는 방법에 대한 지침이 포함된 전자 메일을 받게 됩니다.
 
-패키지가 모든 유효성 검사를 통과하면 기호가 인덱싱되고 NuGet.org 기호 서버에서 사용할 수 있게 되는 데 시간이 걸릴 수 있습니다. 패키지가 유효성 검사에 실패하면 .nupkg의 패키지 세부 정보 페이지가 업데이트되어 관련 오류가 표시되고 이를 알리는 이메일도 받게 됩니다.
+기호 패키지가 모든 유효성 검사를 통과하면 기호는 NuGet.org의 기호 서버에 의해 인덱싱됩니다. 인덱싱된 후에는 NuGet.org 기호 서버에서 기호를 사용할 수 있습니다.
 
-패키지 유효성 검사 및 인덱싱은 일반적으로 15분이 걸리지 않습니다. 패키지 게시가 예상보다 오래 걸리면 [status.nuget.org](https://status.nuget.org/)를 방문하여 nuget.org에 중단이 발생했는지를 확인합니다. 모든 시스템이 모두 제대로 작동하고 패키지가 한 시간 내에 성공적으로 게시되지 않은 경우 nuget.org에 로그인하여 패키지 세부 정보 페이지에서 지원 문의 링크를 사용하여 문의하세요.
+패키지 유효성 검사 및 인덱싱은 일반적으로 15분이 걸리지 않습니다. 패키지 게시가 예상보다 오래 걸리면 [status.nuget.org](https://status.nuget.org/)를 방문하여 NuGet.org에 중단이 발생했는지를 확인합니다. 모든 시스템이 모두 제대로 작동하고 패키지가 한 시간 내에 성공적으로 게시되지 않은 경우 nuget.org에 로그인하여 패키지 세부 정보 페이지에서 지원 문의 링크를 사용하여 문의하세요.
 
 ## <a name="symbol-package-structure"></a>기호 패키지 구조
 
@@ -132,4 +132,6 @@ Nuget.org에서 지원되는 기호 패키지에는 다음과 같은 제약 조�
 
 ## <a name="see-also"></a>참고 항목
 
-[NuGet 패키지 디버깅 & 기호 향상](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)
+소스 링크를 사용하여 .NET 어셈블리의 소스 코드 디버깅을 사용하도록 설정하는 것이 좋습니다. 자세한 내용은 [소스 링크 지침](/dotnet/standard/library-guidance/sourcelink.md)을 참조하세요.
+
+기호 패키지에 대한 자세한 내용은 [NuGet 패키지 디버깅 & 기호 향상](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements) 디자인 사양을 참조하세요.

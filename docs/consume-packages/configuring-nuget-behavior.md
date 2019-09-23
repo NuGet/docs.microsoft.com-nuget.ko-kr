@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 5309d94fafea9cdfc3699d443393be5d381dd145
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 89127203df0aa1eb24f36b8ec64c5bb4a4d59319
+ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317725"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094082"
 ---
 # <a name="common-nuget-configurations"></a>일반적인 NuGet 구성
 
@@ -25,7 +25,7 @@ NuGet의 동작은 프로젝트, 사용자 및 컴퓨터 수준에서 존재할 
 | 컴퓨터 | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. `$XDG_DATA_HOME`이 null이거나 비어 있으면 `~/.local/share` 또는 `/usr/local/share`가 사용됨(OS 배포에 따라 다름)  | 설정은 컴퓨터의 모든 작업에 적용되지만, 사용자 또는 프로젝트 수준 설정에 따라 재정의됩니다. |
 
 이전 버전의 NuGet에 대한 참고 사항:
-- NuGet 3.3 및 이전 버전에서는 솔루션 수준 설정에 대해 `.nuget` 폴더를 사용했습니다. NuGet 3.4 이상에서는 이 파일이 사용되지 않습니다.
+- NuGet 3.3 및 이전 버전에서는 솔루션 수준 설정에 대해 `.nuget` 폴더를 사용했습니다. 이 폴더는 NuGet 3.4 이상에서 사용되지 않습니다.
 - NuGet 2.6 - 3.x의 경우, Windows의 컴퓨터 수준 구성 파일은 %ProgramData%\NuGet\Config[\\{IDE}[\\{Version}[\\{SKU}]]]\NuGet.Config에 있습니다. 여기서 *{IDE}* 는 *VisualStudio*일 수 있고, *{Version}* 은 *14.0*과 같은 Visual Studio 버전이고, *{SKU}* 는 *Community*, *Pro* 또는 *Enterprise* 중 하나입니다. 설정을 NuGet 4.0 이상으로 마이그레이션하려면 구성 파일을 %ProgramFiles(x86)%\NuGet\Config에 복사하기만 하면 됩니다. Linux의 경우 이전의 이 위치는 /etc/opt이고, Mac의 경우 /Library/Application Support입니다.
 
 ## <a name="changing-config-settings"></a>구성 설정 변경
