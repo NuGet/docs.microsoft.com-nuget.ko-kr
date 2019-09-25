@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: f16bfe5481009f7924a61f03233d288d25ac618f
-ms.sourcegitcommit: f4bfdbf62302c95f1f39e81ccf998f8bbc6d56b0
+ms.openlocfilehash: 96d176beaa6b2f0c4f53488390e585b70c9ba846
+ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70774088"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71248158"
 ---
 # <a name="nuget-53-release-notes"></a>NuGet 5.3 릴리스 정보
 
@@ -18,11 +18,11 @@ NuGet 배포 차량:
 
 | NuGet 버전 | Visual Studio 버전에서 사용 가능| .NET SDK에서 사용 가능|
 |:---|:---|:---|
-| [**5.3.0-preview3**](https://nuget.org/downloads) | [Visual Studio 2019 버전 16.3 Preview 3](https://visualstudio.microsoft.com/vs/preview/) | [3.0.100-preview9](https://dotnet.microsoft.com/download/dotnet-core/3.0) <sup>1</sup> |
+| [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 버전 16.3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0) <sup>1</sup> |
 
 <sup>1</sup> .NET Core 워크 로드와 함께 Visual Studio 2019와 함께 설치 됨
 
-## <a name="summary-whats-new-in-53-preview-3"></a>요약: 5.3 preview 3의 새로운 기능
+## <a name="summary-whats-new-in-53"></a>요약: 5.3의 새로운 기능
 
 * 패키지 아이콘은 외부 URL이 필요 하지 않고 [패키지에 포함 될 수 있습니다](../reference/msbuild-targets.md#packing-an-icon-image-file). - [#352](https://github.com/NuGet/Home/issues/352)
 
@@ -32,6 +32,10 @@ NuGet 배포 차량:
 
 **버그**
 
+* 3\.0.100-preview9 SDK로 생성 된 NuGet 패키지는 2.2 SDK 사용자가 사용할 수 없습니다. 표준 시간대에 따라 [#8603](https://github.com/NuGet/Home/issues/8603)
+
+* "경로에 문자가 있습니다." 오류가 발생 하면 `nuget restore` [#8168](https://github.com/NuGet/Home/issues/8168) 의 "경로에 잘못 된 문자가 있습니다.
+
 * VS: 어셈블리는 부분적으로 ngen 되지 않고 완전히 ngen 됩니다 [#8513](https://github.com/NuGet/Home/issues/8513)
 
 * 메모리 사용 줄이기 (이벤트 구독 취소)- [#8471](https://github.com/NuGet/Home/issues/8471)
@@ -40,7 +44,7 @@ NuGet 배포 차량:
 
 * NU1403 개선-모든 패키지의 유효성을 검사 하 고 예상/실제 sha 값을 포함 합니다.- [#8424](https://github.com/NuGet/Home/issues/8424)
 
-* NuGetPackageManager에 여러 개의 열거가 있습니다. PreviewUpdatePackagesAsync- [#8401](https://github.com/NuGet/Home/issues/8401)
+* `NuGetPackageManager.PreviewUpdatePackagesAsync` [#8401](https://github.com/NuGet/Home/issues/8401) 의  - 여러 열거형
 
 * PluginProcess에서 "공용-> 내부" 변경 내용 되돌리기- [#8390](https://github.com/NuGet/Home/issues/8390)
 
@@ -64,7 +68,7 @@ NuGet 배포 차량:
 
 * VS 지연- [#8156](https://github.com/NuGet/Home/issues/8156) 에서 설정을 읽습니다.
 
-* ' Nuget 원본에서의 회귀 추가 ' 원인 "': ' 문자, 16 진수 값 0x3A를 이름" 오류- [#7948](https://github.com/NuGet/Home/issues/7948) 에 포함할 수 없습니다.
+* 의 `Nuget sources add` 회귀로 인해 "': ' 문자, 16 진수 값 0x3a를 이름" 오류- [#7948](https://github.com/NuGet/Home/issues/7948) 에 포함할 수 없습니다.
 
 * NuGet 플러그 인 자격 증명 공급자-프로세스 창을 숨깁니다.- [#7511](https://github.com/NuGet/Home/issues/7511)
 
@@ -86,6 +90,4 @@ NuGet 배포 차량:
 
 * Nuget.exe 디렉터리 및-PackageDirectory 옵션을 nuget.exe pack에 추가- [#7163](https://github.com/NuGet/Home/issues/7163)
 
-* NuGet Pack을 결정적으로 사용 하도록 설정 [#6229](https://github.com/NuGet/Home/issues/6229)
-
-**[이 릴리스에서 해결 된 모든 문제 목록-5.3 preview 3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
+**[이 릴리스에서 해결 된 모든 문제 목록-5.3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
