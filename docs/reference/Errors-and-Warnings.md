@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 66bfe3cbc55f68947e85af5384c37092889c5169
-ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
+ms.openlocfilehash: 6beda636449aaeba48f761acfe62e25e17365a3c
+ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094065"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71307179"
 ---
 # <a name="errors-and-warnings"></a>오류 및 경고
 
@@ -21,7 +21,7 @@ NuGet 4.3.0 +에서는이 항목에서 설명 하는 오류 및 경고 번호를
 
 ## <a name="errors"></a>오류
 
-| 그룹 | 오류 번호 |
+| 그룹화 | 오류 번호 |
 | --- | --- |
 | 잘못 된 입력 오류 | [NU1001](./errors-and-warnings/NU1001.md), [NU1002](./errors-and-warnings/NU1002.md), [NU1003](./errors-and-warnings/NU1003.md) |
 | 누락 된 패키지 및 프로젝트 오류 | [NU1100](./errors-and-warnings/NU1100.md), [NU1101](./errors-and-warnings/NU1101.md), [NU1102](./errors-and-warnings/NU1102.md), [NU1103](./errors-and-warnings/NU1103.md), [NU1104](./errors-and-warnings/NU1104.md), [NU1105](./errors-and-warnings/NU1105.md), [NU1106](./errors-and-warnings/NU1106.md), [NU1107](./errors-and-warnings/NU1107.md), [NU1108](./errors-and-warnings/NU1108.md) |
@@ -33,7 +33,7 @@ NuGet 4.3.0 +에서는이 항목에서 설명 하는 오류 및 경고 번호를
 
 ## <a name="warnings"></a>경고
 
-| 그룹 | 경고 번호 |
+| 그룹화 | 경고 번호 |
 | --- | --- |
 | 잘못 된 입력 경고 | [NU1501](./errors-and-warnings/NU1501.md), [NU1502](./errors-and-warnings/NU1502.md), [NU1503](./errors-and-warnings/NU1503.md) |
 | 예기치 않은 패키지 버전 경고 | [NU1601](./errors-and-warnings/NU1601.md), [NU1602](./errors-and-warnings/NU1602.md), [NU1603](./errors-and-warnings/NU1603.md), [NU1604](./errors-and-warnings/NU1604.md), [NU1605](./errors-and-warnings/NU1605.md), [NU1606](./errors-and-warnings/NU1108.md), [NU1607](./errors-and-warnings/NU1107.md) |
@@ -42,6 +42,6 @@ NuGet 4.3.0 +에서는이 항목에서 설명 하는 오류 및 경고 번호를
 | 피드 경고 | [NU1801](./errors-and-warnings/NU1801.md) |
 | NuGet 내부 경고 | [NU1500](./errors-and-warnings/NU1500.md) |
 | 서명 된 패키지 경고 (생성 및 확인) | [NU3000](./errors-and-warnings/NU3000.md), [NU3002](./errors-and-warnings/NU3002.md), [NU3003](./errors-and-warnings/NU3003.md), [NU3006](./errors-and-warnings/NU3006.md), [NU3007](./errors-and-warnings/NU3007.md), [NU3009](./errors-and-warnings/NU3009.md), [NU3010](./errors-and-warnings/NU3010.md), [NU3011](./errors-and-warnings/NU3011.md), [NU3012](./errors-and-warnings/NU3012.md), [NU3013](./errors-and-warnings/NU3013.md), [NU3014](./errors-and-warnings/NU3014.md), [NU3015](./errors-and-warnings/NU3015.md), [NU3016](./errors-and-warnings/NU3016.md), [NU3017 ](./errors-and-warnings/NU3017.md), [NU3018](./errors-and-warnings/NU3018.md), [NU3019](./errors-and-warnings/NU3019.md), [NU3020](./errors-and-warnings/NU3020.md), [NU3021](./errors-and-warnings/NU3021.md), [NU3022](./errors-and-warnings/NU3022.md), [NU3023](./errors-and-warnings/NU3023.md), [NU3024](./errors-and-warnings/NU3024.md), [NU3025](./errors-and-warnings/NU3025.md), [NU3026](./errors-and-warnings/NU3026.md), [NU3027](./errors-and-warnings/NU3027.md), [NU3028](./errors-and-warnings/NU3028.md), [NU3029](./errors-and-warnings/NU3029.md), [NU3030](./errors-and-warnings/NU3030.md), [NU3031](./errors-and-warnings/NU3031.md), [NU3032](./errors-and-warnings/NU3032.md), [NU3033](./errors-and-warnings/NU3033.md), [NU3035](./errors-and-warnings/NU3035.md), [NU3036](./errors-and-warnings/NU3036.md), [NU3037](./errors-and-warnings/NU3037.md), [NU3038](./errors-and-warnings/NU3038.md), [NU3040](./errors-and-warnings/NU3040.md) |
-| Pack 경고 | [NU5100](./errors-and-warnings/NU5100.md), [NU5101](./errors-and-warnings/NU5101.md), [NU5102](./errors-and-warnings/NU5102.md), [NU5103](./errors-and-warnings/NU5103.md), [NU5104](./errors-and-warnings/NU5104.md), [NU5105](./errors-and-warnings/NU5105.md), [NU5106](./errors-and-warnings/NU5106.md), [NU5107](./errors-and-warnings/NU5107.md), [NU5108](./errors-and-warnings/NU5108.md), [NU5109](./errors-and-warnings/NU5109.md), [NU5110](./errors-and-warnings/NU5110.md), [NU5111](./errors-and-warnings/NU5111.md), [NU5112](./errors-and-warnings/NU5112.md), [NU5114 ](./errors-and-warnings/NU5114.md), [NU5115](./errors-and-warnings/NU5115.md), [NU5116](./errors-and-warnings/NU5116.md), [NU5117](./errors-and-warnings/NU5117.md), [NU5118](./errors-and-warnings/NU5118.md), [NU5119](./errors-and-warnings/NU5119.md), [NU5120](./errors-and-warnings/NU5120.md), [NU5121](./errors-and-warnings/NU5121.md), [NU5122](./errors-and-warnings/NU5122.md), [NU5123](./errors-and-warnings/NU5123.md), [NU5128](./errors-and-warnings/NU5128.md), [NU5500](./errors-and-warnings/NU5500.md)
+| Pack 경고 | [NU5100](./errors-and-warnings/NU5100.md), [NU5101](./errors-and-warnings/NU5101.md), [NU5102](./errors-and-warnings/NU5102.md), [NU5103](./errors-and-warnings/NU5103.md), [NU5104](./errors-and-warnings/NU5104.md), [NU5105](./errors-and-warnings/NU5105.md), [NU5106](./errors-and-warnings/NU5106.md), [NU5107](./errors-and-warnings/NU5107.md), [NU5108](./errors-and-warnings/NU5108.md), [NU5109](./errors-and-warnings/NU5109.md), [NU5110](./errors-and-warnings/NU5110.md), [NU5111](./errors-and-warnings/NU5111.md), [NU5112](./errors-and-warnings/NU5112.md), [NU5114 ](./errors-and-warnings/NU5114.md), [NU5115](./errors-and-warnings/NU5115.md), [NU5116](./errors-and-warnings/NU5116.md), [NU5117](./errors-and-warnings/NU5117.md), [NU5118](./errors-and-warnings/NU5118.md), [NU5119](./errors-and-warnings/NU5119.md), [NU5120](./errors-and-warnings/NU5120.md), [NU5121](./errors-and-warnings/NU5121.md), [NU5122](./errors-and-warnings/NU5122.md), [NU5123](./errors-and-warnings/NU5123.md), [NU5127](./errors-and-warnings/NU5127.md), [NU5128](./errors-and-warnings/NU5128.md), [NU5129](./errors-and-warnings/NU5129.md), [NU5130](./errors-and-warnings/NU5130.md), [NU5131](./errors-and-warnings/NU5131.md), [NU5500](./errors-and-warnings/NU5500.md)
 | 라이선스 관련 팩 경고 | [NU5124](./errors-and-warnings/NU5124.md), [NU5125](./errors-and-warnings/NU5125.md)
 | 아이콘 특정 팩 경고 | [NU5046](./errors-and-warnings/NU5046.md), [NU5047](./errors-and-warnings/NU5047.md), [NU5048](./errors-and-warnings/NU5048.md)

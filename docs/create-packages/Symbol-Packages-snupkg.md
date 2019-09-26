@@ -12,12 +12,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 5546881dbf7577eb289a28b35bc2c0e7dc5cac40
-ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
+ms.openlocfilehash: 0197902e4dbc18893d68833fbcfe4263f185a594
+ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094105"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71307180"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -92,7 +92,7 @@ NuGet은 두 패키지를 nuget.org에 게시합니다. `MyPackage.nupkg`가 먼
 
 ## <a name="nugetorg-symbol-server"></a>NuGet.org 기호 서버
 
-NuGet.org는 자체 기호 서버 리포지토리를 지원하며 새 기호 패키지 형식(`.snupkg`)만 허용합니다. 패키지 소비자는 Visual Studio에서 해당 기호 원본에 `https://symbols.nuget.org/download/symbols`를 추가하여 nuget.org 기호 서버에 게시된 기호를 사용할 수 있습니다. 그러면 Visual Studio 디버거에서 코드 패키지를 단계적으로 실행할 수 있습니다. 해당 프로세스에 대한 자세한 내용은 [Visual Studio 디버거에서 기호 파일(.pdb) 및 원본 파일 지정](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md)을 참조하세요.
+NuGet.org는 자체 기호 서버 리포지토리를 지원하며 새 기호 패키지 형식(`.snupkg`)만 허용합니다. 패키지 소비자는 Visual Studio에서 해당 기호 원본에 `https://symbols.nuget.org/download/symbols`를 추가하여 nuget.org 기호 서버에 게시된 기호를 사용할 수 있습니다. 그러면 Visual Studio 디버거에서 코드 패키지를 단계적으로 실행할 수 있습니다. 해당 프로세스에 대한 자세한 내용은 [Visual Studio 디버거에서 기호 파일(.pdb) 및 원본 파일 지정](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger)을 참조하세요.
 
 ### <a name="nugetorg-symbol-package-constraints"></a>NuGet.org 기호 패키지 제약 조건
 
@@ -132,6 +132,6 @@ NuGet.org에는 기호 패키지에 대한 다음과 같은 제약 조건이 있
 
 ## <a name="see-also"></a>참고 항목
 
-소스 링크를 사용하여 .NET 어셈블리의 소스 코드 디버깅을 사용하도록 설정하는 것이 좋습니다. 자세한 내용은 [소스 링크 지침](/dotnet/standard/library-guidance/sourcelink.md)을 참조하세요.
+소스 링크를 사용하여 .NET 어셈블리의 소스 코드 디버깅을 사용하도록 설정하는 것이 좋습니다. 자세한 내용은 [소스 링크 지침](/dotnet/standard/library-guidance/sourcelink)을 참조하세요.
 
 기호 패키지에 대한 자세한 내용은 [NuGet 패키지 디버깅 & 기호 향상](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements) 디자인 사양을 참조하세요.

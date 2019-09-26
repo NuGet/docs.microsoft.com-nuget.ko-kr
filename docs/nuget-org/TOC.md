@@ -5,7 +5,8 @@
 ## [API 키](scoped-api-keys.md)
 # NuGet.org에서 패키지 관리
 ## [패키지 게시](publish-a-package.md)
-## [ID 접두사 예약 패키징](id-prefix-reservation.md)
+## [패키지 ID 접두사 예약](id-prefix-reservation.md)
+## [패키지 사용 중단](deprecate-packages.md)
 # 정책
 ## [데이터 요청](policies/Data-requests.md)
 ## [분쟁 해결](policies/dispute-resolution.md)
@@ -14,5 +15,5 @@
 # 참조
 ## [NuGet API](../api/overview.md)
 ## [licenses.nuget.org](licenses.nuget.org.md)
-# 자료
+# 리소스
 ## [FAQ](nuget-org-faq.md)
