@@ -107,7 +107,7 @@
 ### [Update-Package](reference/ps-reference/ps-ref-update-package.md)
 ## NuGet 서버 API
 ### [개요](api/overview.md)
-### 자료
+### 리소스
 #### [자동 완성](api/search-autocomplete-service-resource.md)
 #### [카탈로그](api/catalog-resource.md)
 #### [패키지 콘텐츠](api/package-base-address-resource.md)
@@ -259,7 +259,11 @@
 ### [NU5123](reference/errors-and-warnings/NU5123.md)
 ### [NU5124](reference/errors-and-warnings/NU5124.md)
 ### [NU5125](reference/errors-and-warnings/NU5125.md)
+### [NU5127](reference/errors-and-warnings/NU5127.md)
 ### [NU5128](reference/errors-and-warnings/NU5128.md)
+### [NU5128](reference/errors-and-warnings/NU5129.md)
+### [NU5130](reference/errors-and-warnings/NU5130.md)
+### [NU5131](reference/errors-and-warnings/NU5131.md)
 ### [NU5500](reference/errors-and-warnings/NU5500.md)
 ## 보관된 내용
 ### [project.json 관리 형식](archive/project-json.md)
@@ -275,7 +279,7 @@
 ### [Visual Studio의 NuGet API](visual-studio-extensibility/nuget-api-in-visual-studio.md)
 ### [프로젝트 시스템 지원](visual-studio-extensibility/project-system-support.md)
 ### [Visual Studio 템플릿](visual-studio-extensibility/visual-studio-templates.md)
-# 자료
+# 리소스
 ## 정책
 ### [거버넌스](policies/governance.md)
 ### [에코시스템](policies/ecosystem.md)
