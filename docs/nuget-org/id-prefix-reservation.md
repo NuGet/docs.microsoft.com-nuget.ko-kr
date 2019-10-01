@@ -6,16 +6,16 @@ ms.author: karann
 ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann
-ms.openlocfilehash: 630c2b193500ec0b9aa5a7fe4af3ea95ae52aeec
-ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
+ms.openlocfilehash: f6c4a18366b4df20fb210f718d3779e85c08d550
+ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70815287"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71248122"
 ---
 # <a name="package-id-prefix-reservation"></a>패키지 ID 접두사 예약
 
-패키지 소유자는 ID 접두사를 예약하여 해당 ID를 예약하고 보호할 수 있습니다. 패키지 소비자는 사용하는 패키지가 식별되는 속성에서 기만적이지 않은 패키지를 소비할 때 추가 정보를 제공받습니다. 
+패키지 소유자는 ID 접두사를 예약하여 해당 ID를 예약하고 보호할 수 있습니다. 패키지 소비자는 사용하는 패키지가 식별되는 속성에서 기만적이지 않을 때 추가 정보를 제공받습니다. 
 
 [nuget.org](https://www.nuget.org/) 및 Visual Studio 2017 버전 15.4 이상에서는 패키지가 예약된 ID 접두사 명명 패턴과 일치하는 한 예약된 패키지 ID 접두사가 있는 소유자가 제출한 패키지에 대한 시각적 표시기를 보여줍니다. 아래 참조에서는 ID 접두사 예약 시 내용과 소유자가 ID 접두사에 대한 적용 방법을 설명합니다.
 

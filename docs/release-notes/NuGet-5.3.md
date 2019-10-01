@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: 96d176beaa6b2f0c4f53488390e585b70c9ba846
-ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
+ms.openlocfilehash: 683ee7d1bef30d0a7414ec1694a9735d79b2ab45
+ms.sourcegitcommit: c529f5944868a0692ca8550b716a73e05df0ccbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71248158"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71687884"
 ---
 # <a name="nuget-53-release-notes"></a>NuGet 5.3 릴리스 정보
 
@@ -27,6 +27,8 @@ NuGet 배포 차량:
 * 패키지 아이콘은 외부 URL이 필요 하지 않고 [패키지에 포함 될 수 있습니다](../reference/msbuild-targets.md#packing-an-icon-image-file). - [#352](https://github.com/NuGet/Home/issues/352)
 
 * 패키지에 대 한 SHA 추적 및 적용을 통한 보안 향상- [#7281](https://github.com/NuGet/Home/issues/7281)
+
+* 사용 되지 않는/레거시 NuGet 패키지 [#2867](https://github.com/NuGet/Home/issues/2867)@no__t를 사용 하지 않습니다.-1[블로그 게시물](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/) | [문서](https://docs.microsoft.com/en-us/nuget/nuget-org/deprecate-packages)
 
 ### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
 
