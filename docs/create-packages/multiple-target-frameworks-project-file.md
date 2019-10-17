@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8c1d8a479747f6f7bce388c1555589543c8824a0
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: 1d23759433efb405fa5f0035049befced2c43d6b
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020068"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380682"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>프로젝트 파일에서 여러 .NET Framework 버전 지원
 
@@ -31,13 +31,13 @@ SDK 스타일 프로젝트의 경우 프로젝트 파일에서 여러 대상 프
    
    `<TargetFramework>netstandard2.0</TargetFramework>`
    
-   to:
+   다음과 같이 변경합니다.
    
    `<TargetFrameworks>netstandard2.0;net45</TargetFrameworks>`
 
    XML 요소를 단수형에서 복수형으로 변경했는지 확인합니다(여는 태그 및 닫는 태그 둘 다에 "s" 추가).
 
-3. 하나의 TFM에만 작동하는 코드가 있는 경우 `#if NET45` 또는 `#if NETSTANDARD20`을 사용하여 TFM 종속 코드를 구분할 수 있습니다. (자세한 내용은 [멀티 타기팅 방법](/dotnet/core/tutorials/libraries#how-to-multitarget)을 참조하세요.) 예를 들어 다음 코드를 사용할 수 있습니다.
+3. 하나의 TFM에만 작동하는 코드가 있는 경우 `#if NET45` 또는 `#if NETSTANDARD2_0`을 사용하여 TFM 종속 코드를 구분할 수 있습니다. (자세한 내용은 [멀티 타기팅 방법](/dotnet/core/tutorials/libraries#how-to-multitarget)을 참조하세요.) 예를 들어 다음 코드를 사용할 수 있습니다.
 
    ```csharp
    public string Platform {

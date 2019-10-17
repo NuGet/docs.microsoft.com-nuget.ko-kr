@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 40a42be91d3848db3e721a674e3fec4096fccd08
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: ec37057d40ddc9ed1826b0628aaa573c342b92b6
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69489016"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380748"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 NuGet 패키지 만들기
 
@@ -131,4 +131,4 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 마지막으로 주의해야 할 추가 패키지 유형이 있습니다.
 
 - [네이티브 패키지](../guides/native-packages.md)
-- [기호 패키지](../create-packages/symbol-packages.md)
+- [기호 패키지](../create-packages/symbol-packages-snupkg.md)

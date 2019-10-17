@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: 11dce27b93c3d09a2d27dc79f8d4fed86df879ba
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: b16bf422e2627be3b8516a875d749639734064a9
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488983"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380716"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework 패키지 만들기
 
@@ -169,7 +169,7 @@ nuget pack AppLogger.nuspec
 - [여러 .NET Framework 버전 지원](../create-packages/supporting-multiple-target-frameworks.md)
 - [패키지에 MSBuild props 및 targets 포함](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)
-- [기호 패키지](../create-packages/symbol-packages.md)
+- [기호 패키지](../create-packages/symbol-packages-snupkg.md)
 - [패키지 버전 관리](../concepts/package-versioning.md)
 - [.NET Standard 라이브러리 설명서](/dotnet/articles/standard/library)
 - [.NET Framework에서 .NET Core로 이식](/dotnet/articles/core/porting/index)

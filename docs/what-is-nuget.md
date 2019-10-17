@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: 435103b600f14b9bbf606c09f0c870115204d5c7
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: a08ac24ce6b1d64496c9fc1b20604850e9711dd6
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488492"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380669"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 소개
 
@@ -105,7 +105,7 @@ NuGet은 나중에 언제든지 참조 목록만 사용하여 공용 및/또는 
 
 개별 프로젝트 내에서 NuGet은 전체 종속성 그래프를 관리하며, 여기에는 동일한 패키지의 서로 다른 버전에 대한 여러 참조를 확인하는 작업이 다시 포함됩니다. 프로젝트에서 자체적으로 종속성이 동일한 하나 이상의 패키지에 대한 종속성을 사용하는 것이 매우 일반적입니다. nuget.org에서 가장 유용한 유틸리티 패키지 중 일부는 다른 많은 패키지에서 사용됩니다. 10개의 전체 종속성 그래프에서 동일한 패키지의 서로 다른 버전에 대해 10개의 다른 참조를 쉽게 갖출 수 있습니다. 해당 패키지의 여러 버전을 애플리케이션 자체에 가져오지 않기 위해 NuGet은 모든 소비자가 사용할 수 있는 단일 버전을 정렬합니다. (자세한 내용은 [종속성 확인](concepts/dependency-resolution.md)을 참조하세요.)
 
-그 외에도 NuGet은 패키지를 구성하는 방법([지역화](create-packages/creating-localized-packages.md) 및 [디버그 기호](create-packages/symbol-packages.md) 포함) 및 [참조](consume-packages/package-references-in-project-files.md)하는 방법([버전 범위](concepts/package-versioning.md#version-ranges-and-wildcards) 및 [시험판 버전](create-packages/prerelease-packages.md) 포함)과 관련된 모든 사양을 유지 관리합니다. 또한 NuGet은 서비스에서 프로그래밍 방식으로 작동하는 다양한 API를 제공하며 Visual Studio 확장 및 프로젝트 템플릿을 작성하는 개발자를 위한 지원을 제공합니다.
+그 외에도 NuGet은 패키지를 구성하는 방법([지역화](create-packages/creating-localized-packages.md) 및 [디버그 기호](create-packages/symbol-packages-snupkg.md) 포함) 및 [참조](consume-packages/package-references-in-project-files.md)하는 방법([버전 범위](concepts/package-versioning.md#version-ranges-and-wildcards) 및 [시험판 버전](create-packages/prerelease-packages.md) 포함)과 관련된 모든 사양을 유지 관리합니다. 또한 NuGet은 서비스에서 프로그래밍 방식으로 작동하는 다양한 API를 제공하며 Visual Studio 확장 및 프로젝트 템플릿을 작성하는 개발자를 위한 지원을 제공합니다.
 
 잠시 시간을 내어 이 설명서의 목차를 살펴보면 NuGet의 시작까지 거슬러 올라가는 릴리스 정보와 함께 이러한 모든 기능이 목차에 나와 있습니다.
 

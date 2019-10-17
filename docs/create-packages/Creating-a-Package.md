@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: e4223c25daa1c14c30de1ef063cd0f48df70c8b5
-ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
+ms.openlocfilehash: 353654d12e137222ab24417f30fd22e9f027c324
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69564581"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380704"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>nuget.exe CLI를 사용하여 패키지 만들기
 
@@ -186,7 +186,7 @@ NuGet 패키지는 `.nupkg` 확장명으로 이름이 바뀐 ZIP 파일일 뿐�
 | 내용 | 임의 파일 | 콘텐츠가 프로젝트 루트에 복사됩니다. **content** 폴더를 궁극적으로 패키지를 사용하는 대상 애플리케이션의 루트로 간주합니다. 패키지에서 애플리케이션의 */images* 폴더에 이미지를 추가하도록 하려면 패키지의 *content/images* 폴더에 배치합니다. |
 | 빌드 | *(3.x 이상)* MSBuild `.targets` 및 `.props` 파일 | 프로젝트에 자동으로 삽입됩니다. |
 | buildMultiTargeting | 프레임워크 간 타기팅을 위한 *(4.0 이상)* MSBuild `.targets` 및 `.props` 파일 | 프로젝트에 자동으로 삽입됩니다. |
-| buildTransitive | ‘(5.0 이상)’ 사용하는 프로젝트로 타동적으로 흐르는 MSBuild `.targets` 및 `.props` 파일 [기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요. | 프로젝트에 자동으로 삽입됩니다. |
+| buildTransitive | ‘(5.0 이상)’ 사용하는 프로젝트로 타동적으로 흐르는 MSBuild `.targets` 및 `.props` 파일  [기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요. | 프로젝트에 자동으로 삽입됩니다. |
 | 도구 | 패키지 관리자 콘솔에서 액세스할 수 있는 Powershell 스크립트 및 프로그램 | `tools` 폴더는 패키지 관리자 콘솔에 대한 `PATH` 환경 변수에만 추가 됩니다(특히 프로젝트를 빌드할 때는 MSBuild에 설정한 대로 `PATH`에 *추가되지 않음*). |
 
 폴더 구조에는 임의 개수의 대상 프레임워크에 대해 임의 개수의 어셈블리가 포함될 수 있으므로, 이 방법은 여러 프레임워크를 지원하는 패키지를 만들 때 필요합니다.
@@ -434,4 +434,4 @@ NuGet은 매니페스트의 자리 표시자 값을 변경하지 않은 경우�
 마지막으로 주의해야 할 추가 패키지 유형이 있습니다.
 
 - [네이티브 패키지](../guides/native-packages.md)
-- [기호 패키지](../create-packages/symbol-packages.md)
+- [기호 패키지](../create-packages/symbol-packages-snupkg.md)
