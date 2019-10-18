@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: 74b80b1791dcb403c90bb3032c009717c11ffe57
-ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
+ms.openlocfilehash: 00410214500c7f5256be243dd6fca0907ba9b0c4
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70815311"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380495"
 ---
 # <a name="nuget-cross-platform-plugins"></a>NuGet 플랫폼 간 플러그 인
 
@@ -70,12 +70,12 @@ NuGet 클라이언트 도구와 플러그 인 간의 통신은 양방향입니�
 ## <a name="plugin-installation-and-discovery"></a>플러그 인 설치 및 검색
 
 플러그 인은 규칙 기반 디렉터리 구조를 통해 검색 됩니다.
-CI/CD 시나리오와 고급 사용자는 환경 변수를 사용 하 여 동작을 재정의할 수 있습니다. `NUGET_NETFX_PLUGIN_PATHS` 및`NUGET_NETCORE_PLUGIN_PATHS` 은 NuGet 도구 버전의 5.3 이상 버전 에서만 사용할 수 있습니다.
+CI/CD 시나리오와 고급 사용자는 환경 변수를 사용 하 여 동작을 재정의할 수 있습니다. 환경 변수를 사용 하는 경우 절대 경로만 허용 됩니다. @No__t_0 및 `NUGET_NETCORE_PLUGIN_PATHS`는 5.3 이상 버전의 NuGet 도구 이상 에서만 사용할 수 있습니다.
 
-- `NUGET_NETFX_PLUGIN_PATHS`-.NET Framework 기반 도구 (Nuget.exe/Msbuild.exe/Visual Studio)에서 사용할 플러그 인을 정의 합니다. 가 보다 `NUGET_PLUGIN_PATHS`우선적으로 적용 됩니다. (NuGet 버전 5.3 이상)
-- `NUGET_NETCORE_PLUGIN_PATHS`-.NET Core 기반 도구 (dotnet)에서 사용할 플러그 인을 정의 합니다. 가 보다 `NUGET_PLUGIN_PATHS`우선적으로 적용 됩니다. (NuGet 버전 5.3 이상)
-- `NUGET_PLUGIN_PATHS`-해당 NuGet 프로세스에 사용 되는 플러그 인, 예약 된 우선 순위를 정의 합니다. 이 환경 변수가 설정 되 면 규칙 기반 검색을 재정의 합니다. 프레임 워크 관련 변수 중 하나가 지정 된 경우 무시 됩니다.
--  의 `%UserProfile%/.nuget/plugins`NuGet 홈 위치인 사용자 위치입니다. 이 위치를 재정의할 수 없습니다. .NET Core 및 .NET Framework 플러그 인에는 다른 루트 디렉터리가 사용 됩니다.
+- `NUGET_NETFX_PLUGIN_PATHS`-.NET Framework 기반 도구 (Nuget.exe/Msbuild.exe/Visual Studio)에서 사용할 플러그 인을 정의 합니다. @No__t_0 보다 우선적으로 적용 됩니다. (NuGet 버전 5.3 이상)
+- `NUGET_NETCORE_PLUGIN_PATHS`-.NET Core 기반 도구 (dotnet)에서 사용할 플러그 인을 정의 합니다. @No__t_0 보다 우선적으로 적용 됩니다. (NuGet 버전 5.3 이상)
+- `NUGET_PLUGIN_PATHS`-해당 NuGet 프로세스에 사용할 플러그 인을 정의 합니다. 우선 순위는 유지 됩니다. 이 환경 변수가 설정 되 면 규칙 기반 검색을 재정의 합니다. 프레임 워크 관련 변수 중 하나가 지정 된 경우 무시 됩니다.
+-  @No__t_0의 NuGet 홈 위치인 사용자 위치입니다. 이 위치를 재정의할 수 없습니다. .NET Core 및 .NET Framework 플러그 인에는 다른 루트 디렉터리가 사용 됩니다.
 
 | 프레임워크 | 루트 검색 위치  |
 | ------- | ------------------------ |
@@ -123,20 +123,20 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
 플러그 인의 보안 확인 및 인스턴스화는 비용이 많이 듭니다. 다운로드 작업은 인증 작업 보다 더 자주 수행 되지만 평균 NuGet 사용자에 게는 인증 플러그 인만 있을 수 있습니다.
 환경을 개선 하기 위해 NuGet은 지정 된 요청에 대 한 작업 클레임을 캐시 합니다. 이 캐시는 플러그 인 키가 플러그 인 경로 이며이 기능 캐시의 만료는 30 일입니다. 
 
-캐시는에 `%LocalAppData%/NuGet/plugins-cache` 있으며 환경 변수 `NUGET_PLUGINS_CACHE_PATH`를 사용 하 여 재정의 됩니다. 이 [캐시](../../consume-packages/managing-the-global-packages-and-cache-folders.md)를 지우려면 `plugins-cache` 옵션을 사용 하 여 지역 명령을 실행할 수 있습니다.
-이제 `all` 로컬 옵션은 플러그 인 캐시도 삭제 합니다. 
+캐시는 `%LocalAppData%/NuGet/plugins-cache`에 있으며 `NUGET_PLUGINS_CACHE_PATH` 환경 변수를 사용 하 여 재정의 됩니다. 이 [캐시](../../consume-packages/managing-the-global-packages-and-cache-folders.md)를 지우려면 `plugins-cache` 옵션을 사용 하 여 지역 명령을 실행할 수 있습니다.
+이제 `all` 지역 옵션이 플러그 인 캐시도 삭제 됩니다. 
 
 ## <a name="protocol-messages-index"></a>프로토콜 메시지 인덱스
 
 프로토콜 버전 *1.0.0* 메시지:
 
 1.  닫기
-    * 요청 방향:  NuGet-> 플러그 인
+    * 요청 방향: NuGet-> 플러그 인
     * 요청에 페이로드가 포함 되지 않습니다.
     * 응답이 필요 하지 않습니다.  적절 한 응답은 플러그 인 프로세스를 즉시 종료 하는 것입니다.
 
 2.  패키지의 파일 복사
-    * 요청 방향:  NuGet-> 플러그 인
+    * 요청 방향: NuGet-> 플러그 인
     * 요청은 다음을 포함 합니다.
         * 패키지 ID 및 버전
         * 패키지 원본 리포지토리 위치
@@ -147,7 +147,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
         * 작업에 성공한 경우 대상 디렉터리에 복사 된 파일의 전체 경로를 열거 한 것입니다.
 
 3.  패키지 파일 복사 (. nupkg)
-    * 요청 방향:  NuGet-> 플러그 인
+    * 요청 방향: NuGet-> 플러그 인
     * 요청은 다음을 포함 합니다.
         * 패키지 ID 및 버전
         * 패키지 원본 리포지토리 위치
@@ -166,7 +166,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
         * 암호 (사용 가능한 경우)
 
 5.  패키지에서 파일 가져오기
-    * 요청 방향:  NuGet-> 플러그 인
+    * 요청 방향: NuGet-> 플러그 인
     * 요청은 다음을 포함 합니다.
         * 패키지 ID 및 버전
         * 패키지 원본 리포지토리 위치
@@ -175,7 +175,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
         * 작업이 성공한 경우 패키지에서 파일 경로의 열거 가능
 
 6.  작업 클레임 가져오기 
-    * 요청 방향:  NuGet-> 플러그 인
+    * 요청 방향: NuGet-> 플러그 인
     * 요청은 다음을 포함 합니다.
         * 패키지 원본에 대 한 서비스 인덱스인 json
         * 패키지 원본 리포지토리 위치
@@ -187,7 +187,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
 > 이 메시지는 버전 *2.0.0*에서 업데이트 되었습니다. 클라이언트에서 이전 버전과의 호환성을 유지 합니다.
 
 7.  패키지 해시 가져오기
-    * 요청 방향:  NuGet-> 플러그 인
+    * 요청 방향: NuGet-> 플러그 인
     * 요청은 다음을 포함 합니다.
         * 패키지 ID 및 버전
         * 패키지 원본 리포지토리 위치
@@ -197,7 +197,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
         * 작업이 성공한 경우 요청 된 해시 알고리즘을 사용 하는 패키지 파일 해시
 
 8.  패키지 버전 가져오기
-    * 요청 방향:  NuGet-> 플러그 인
+    * 요청 방향: NuGet-> 플러그 인
     * 요청은 다음을 포함 합니다.
         * 패키지 ID
         * 패키지 원본 리포지토리 위치
@@ -214,7 +214,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
         * 작업이 성공한 경우의 서비스 인덱스
 
 10.  핸드셰이크
-     * 요청 방향:  NuGet <-> 플러그 인
+     * 요청 방향: NuGet <-> 플러그 인
      * 요청은 다음을 포함 합니다.
          * 현재 플러그 인 프로토콜 버전
          * 지원 되는 최소 플러그 인 프로토콜 버전
@@ -223,7 +223,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
          * 작업에 성공한 경우 협상 된 프로토콜 버전입니다.  오류가 발생 하면 플러그 인이 종료 됩니다.
 
 11.  Initialize
-     * 요청 방향:  NuGet-> 플러그 인
+     * 요청 방향: NuGet-> 플러그 인
      * 요청은 다음을 포함 합니다.
          * NuGet 클라이언트 도구 버전
          * NuGet 클라이언트 도구 유효 언어입니다.  ForceEnglishOutput 설정을 사용 하는 경우이 설정을 고려 합니다.
@@ -231,7 +231,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
      * 응답에는 다음이 포함 됩니다.
          * 작업의 결과를 나타내는 응답 코드입니다.  오류가 발생 하면 플러그 인이 종료 됩니다.
 
-12.  Log
+12.  로그
      * 요청 방향: 플러그 인-> NuGet
      * 요청은 다음을 포함 합니다.
          * 요청에 대 한 로그 수준입니다.
@@ -240,14 +240,14 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
          * 작업의 결과를 나타내는 응답 코드입니다.
 
 13.  NuGet 프로세스 종료 모니터링
-     * 요청 방향:  NuGet-> 플러그 인
+     * 요청 방향: NuGet-> 플러그 인
      * 요청은 다음을 포함 합니다.
          * NuGet 프로세스 ID
      * 응답에는 다음이 포함 됩니다.
          * 작업의 결과를 나타내는 응답 코드입니다.
 
 14.  패키지 프리페치
-     * 요청 방향:  NuGet-> 플러그 인
+     * 요청 방향: NuGet-> 플러그 인
      * 요청은 다음을 포함 합니다.
          * 패키지 ID 및 버전
          * 패키지 원본 리포지토리 위치
@@ -255,7 +255,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
          * 작업의 결과를 나타내는 응답 코드입니다.
 
 15.  자격 증명 설정
-     * 요청 방향:  NuGet-> 플러그 인
+     * 요청 방향: NuGet-> 플러그 인
      * 요청은 다음을 포함 합니다.
          * 패키지 원본 리포지토리 위치
          * 마지막으로 알려진 패키지 원본 사용자 이름 (사용 가능한 경우)
@@ -266,7 +266,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
          * 작업의 결과를 나타내는 응답 코드입니다.
 
 16.  로그 수준 설정
-     * 요청 방향:  NuGet-> 플러그 인
+     * 요청 방향: NuGet-> 플러그 인
      * 요청은 다음을 포함 합니다.
          * 기본 로그 수준
      * 응답에는 다음이 포함 됩니다.
@@ -276,7 +276,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
 
 17. 작업 클레임 가져오기
 
-* 요청 방향:  NuGet-> 플러그 인
+* 요청 방향: NuGet-> 플러그 인
     * 요청은 다음을 포함 합니다.
         * 패키지 원본에 대 한 서비스 인덱스인 json
         * 패키지 원본 리포지토리 위치
@@ -292,11 +292,11 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
 * 요청은 다음을 포함 합니다.
     * URI
     * isRetry
-    * NonInteractive
+    * 일부만
     * CanShowDialog
 * 응답에는 다음이 포함 됩니다.
-    * Username
-    * 암호
+    * 사용자 이름
+    * Password
     * 메시지
     * 인증 유형 목록
     * MessageResponseCode

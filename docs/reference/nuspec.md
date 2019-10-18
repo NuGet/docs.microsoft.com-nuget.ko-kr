@@ -6,18 +6,18 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: ea40f80a482a290b7399e5a6abc69e0c6fe32b77
-ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
+ms.openlocfilehash: 6bd730db16d8e8783f0d949bb04cf3b52c642cd0
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70384449"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380548"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
 `.nuspec` 파일은 패키지 메타데이터가 포함된 XML 매니페스트입니다. 이 매니페스트는 패키지를 빌드하고 소비자에게 정보를 제공하는 데 사용됩니다. 매니페스트는 항상 패키지에 포함됩니다.
 
-항목 내용
+항목 내용:
 
 - [일반 형식 및 스키마](#general-form-and-schema)
 - [대체 토큰](#replacement-tokens)(Visual Studio 프로젝트에서 사용하는 경우)
@@ -30,13 +30,13 @@ ms.locfileid: "70384449"
 
 ## <a name="project-type-compatibility"></a>프로젝트 형식 호환성
 
-- 를 사용 `nuget.exe pack` `.nuspec` 하`packages.config`는 비 SDK 스타일 프로젝트의 경우를 사용 합니다.
+- @No__t_2를 사용 하는 비 SDK 스타일 프로젝트의 경우 `nuget.exe pack`와 함께 `.nuspec`를 사용 합니다.
 
-- [Sdk 스타일 프로젝트](../resources/check-project-format.md) 에 대 한 패키지를 만드는 데는 파일이필요하지않습니다(일반적으로.netCore및[sdk특성을사용하는](/dotnet/core/tools/csproj#additions).NETStandard프로젝트`.nuspec` ). 패키지를 만들 때 이생성됩니다.`.nuspec`
+- [Sdk 스타일 프로젝트](../resources/check-project-format.md) 에 대 한 패키지를 만드는 데 `.nuspec` 파일은 필요 하지 않습니다 (일반적으로 .net Core 및 [sdk 특성](/dotnet/core/tools/csproj#additions)을 사용 하는 .NET Standard 프로젝트). (패키지를 만들 때 `.nuspec` 생성 됩니다.)
 
-   `dotnet.exe pack` 또는 `msbuild pack target`를 사용 하 여 패키지를 만드는 경우 일반적으로 `.nuspec` 파일에 있는 [모든 속성을 프로젝트 파일에 포함](../reference/msbuild-targets.md#pack-target) 하는 것이 좋습니다. 그러나 대신 [파일을 `.nuspec` 사용 하 여 `msbuild pack target`또는를 사용 하 여 `dotnet.exe` 압축할 ](../reference/msbuild-targets.md#packing-using-a-nuspec)수 있습니다.
+   @No__t_0 또는 `msbuild pack target`를 사용 하 여 패키지를 만드는 경우 일반적으로 프로젝트 파일의 `.nuspec` 파일에 있는 [모든 속성을 포함](../reference/msbuild-targets.md#pack-target) 하는 것이 좋습니다. 그러나 [`.nuspec` 파일을 사용 하 여 `dotnet.exe` 또는 `msbuild pack target`를 압축](../reference/msbuild-targets.md#packing-using-a-nuspec)하도록 선택할 수 있습니다.
 
-- 에서 `packages.config` [PackageReference로](../consume-packages/package-references-in-project-files.md)마이그레이션된 프로젝트의 경우에는 패키지를 만들 때 파일이필요하지않습니다.`.nuspec` 대신 [msbuild-t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)를 사용 합니다.
+- @No__t_0에서 [PackageReference](../consume-packages/package-references-in-project-files.md)로 마이그레이션된 프로젝트의 경우 패키지를 만들 때 `.nuspec` 파일이 필요 하지 않습니다. 대신 [msbuild-t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)를 사용 합니다.
 
 ## <a name="general-form-and-schema"></a>일반 형식 및 스키마
 
@@ -71,19 +71,19 @@ ms.locfileid: "70384449"
 
 이러한 요소는 `<metadata>` 요소 내에 나타나야 합니다.
 
-#### <a name="id"></a>id 
+#### <a name="id"></a>ID 
 대/소문자를 구분하지 않는 패키지 식별자이며, nuget.org 또는 패키지가 상주하는 모든 갤러리에서 고유해야 합니다. ID는 URL에 유효하지 않은 공백 또는 문자를 포함할 수 없고, 일반적으로 .NET 네임스페이스 규칙을 따릅니다. 지침은 [고유한 패키지 식별자 선택](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)을 참조하세요.
 #### <a name="version"></a>version
 *major.minor.patch* 패턴을 따르는 패키지의 버전입니다. 버전 번호는 [패키지 버전 관리](../concepts/package-versioning.md#pre-release-versions)에서 설명한 대로 시험판 접미사를 포함할 수 있습니다. 
-#### <a name="description"></a>description
+#### <a name="description"></a>설명
 UI 표시를 위한 패키지에 대 한 설명입니다.
 #### <a name="authors"></a>authors
-nuget.org에서 프로필 이름과 일치하는, 쉼표로 구분된 패키지 작성자 목록입니다. 이러한 목록은 nuget.org의 NuGet 갤러리에 표시되고 동일한 작성자가 패키지를 상호 참조하는 데 사용됩니다. 
+Nuget.org의 프로필 이름과 일치 하는 쉼표로 구분 된 패키지 작성자 목록입니다. 이러한는 nuget.org의 NuGet 갤러리에 표시 되 고 동일한 작성자가 패키지를 상호 참조 하는 데 사용 됩니다. 
 
 ### <a name="optional-metadata-elements"></a>선택적 metadata 요소
 
 #### <a name="owners"></a>owners
-nuget.org에서 프로필 이름을 사용하는 패키지 작성자에 대한 쉼표로 구분된 목록입니다. 이는 종종 `authors`에 있는 것과 동일한 목록이며, 패키지를 nuget.org에 업로드할 때 무시됩니다. [nuget.org에서 패키지 소유자 관리](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조하세요. 
+Nuget.org에서 프로필 이름을 사용 하 여 쉼표로 구분 된 패키지 작성자 목록입니다. 이는 종종 `authors`와 동일한 목록 이며, 패키지를 nuget.org에 업로드 하는 경우 무시 됩니다. [Nuget.org에서 패키지 소유자 관리](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조 하세요. 
 
 #### <a name="projecturl"></a>projectUrl
 nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페이지에 대한 URL입니다. 
@@ -95,18 +95,18 @@ nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페�
 Nuget.org와 같은 Ui에 표시 되는 패키지의 라이선스에 대 한 URL입니다.
 
 #### <a name="license"></a>사용권이
-Nuget.org와 같은 Ui에 표시 되는 패키지 내 라이선스 파일의 SPDX 라이선스 식 또는 경로입니다. MIT 또는 BSD-2 절과 같은 일반적인 라이선스를 사용 하 여 패키지에 라이선스를 부여 하는 경우 연결 된 [Spdx 라이선스 식별자](https://spdx.org/licenses/)를 사용 합니다. 예:
+Nuget.org와 같은 Ui에 표시 되는 패키지 내 라이선스 파일의 SPDX 라이선스 식 또는 경로입니다. MIT 또는 BSD-2 절과 같은 일반적인 라이선스를 사용 하 여 패키지에 라이선스를 부여 하는 경우 연결 된 [Spdx 라이선스 식별자](https://spdx.org/licenses/)를 사용 합니다. 예를 들면,
 
 `<license type="expression">MIT</license>`
 
 > [!Note]
 > NuGet.org는 오픈 소스 이니셔티브 또는 무료 Software Foundation에서 승인한 라이선스 식만 허용 합니다.
 
-패키지가 여러 일반적인 라이선스에서 사용이 허가 된 경우 [Spdx 식 구문 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)을 사용 하 여 복합 라이선스를 지정할 수 있습니다. 예를 들어:
+패키지가 여러 일반적인 라이선스에서 사용이 허가 된 경우 [Spdx 식 구문 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)을 사용 하 여 복합 라이선스를 지정할 수 있습니다. 예를 들면,
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-라이선스 식에서 지원 하지 않는 사용자 지정 라이선스를 사용 하는 경우 라이선스의 텍스트 `.txt` 를 `.md` 사용 하 여 또는 파일을 패키지할 수 있습니다. 예를 들어:
+라이선스 식에서 지원 하지 않는 사용자 지정 라이선스를 사용 하는 경우 라이선스 텍스트를 사용 하 여 `.txt` 또는 `.md` 파일을 패키지할 수 있습니다. 예를 들면,
 
 ```xml
 <package>
@@ -147,9 +147,9 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 > [!Important]
 > iconUrl은 더 이상 사용 되지 않습니다. 대신 아이콘을 사용 합니다.
 
-UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배경이 있는 64x64 이미지에 대한 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub의 이미지를 사용 하려면와 같은 <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>원시 파일 URL을 사용 합니다. 
+UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배경이 있는 64x64 이미지에 대한 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub의 이미지를 사용 하려면 <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>와 같은 원시 파일 URL을 사용 합니다. 
    
-#### <a name="icon"></a>아이콘
+#### <a name="icon"></a>아이콘과
 
 패키지 내 이미지 파일에 대 한 경로입니다. 종종 nuget.org와 같은 Ui에서 패키지 아이콘으로 표시 됩니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 64x64의 이미지 resoulution을 권장 합니다.
 
@@ -182,7 +182,7 @@ MSBuild에 해당 하는 경우 [아이콘 이미지 파일 압축](msbuild-targ
 
 #### <a name="summary"></a>요약
 > [!Important]
-> `summary`는 사용 되지 않습니다. 대신 `description`를 사용하세요.
+> `summary` 사용 되지 않습니다. 대신 `description` 를 사용하세요.
 
 UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 `description`의 잘린 버전이 사용됩니다.
 
@@ -201,10 +201,10 @@ UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 
 #### <a name="serviceable"></a>수리할 
 *(3.3 이상)* NuGet 내부 전용입니다.
 
-#### <a name="repository"></a>리포지토리(repository)
-저장소 메타 `type` 데이터는 및 `branch` `commit`(4.0 +), 및 및 (4.6 +)의 네 가지 선택적 특성으로 구성 됩니다. `url` 이러한 특성을 사용 하 여를 `.nupkg` 빌드한 리포지토리에 매핑할 수 있으며, 패키지를 작성 하는 개별 분기 이름 또는 커밋 sha-1 해시를 자세히 파악할 수 있습니다. 이 url은 버전 제어 소프트웨어에서 직접 호출할 수 있는 공개적으로 사용할 수 있는 url 이어야 합니다. 이는 컴퓨터에 대 한 것 이므로 html 페이지가 되어서는 안 됩니다. 프로젝트 페이지에 연결 하려면 `projectUrl` 필드를 대신 사용 합니다.
+#### <a name="repository"></a>리포지토리
+@No__t_0 및 `url` *(4.0 이상)* 및 `branch` 및 `commit` *(4.6 +)* 의 네 가지 선택적 특성으로 구성 된 리포지토리 메타 데이터입니다. 이러한 특성을 사용 하 여 `.nupkg`를 빌드한 리포지토리에 매핑할 수 있으며, 패키지를 작성 한 개별 분기 이름 및/또는 커밋 SHA-1 해시를 자세히 파악할 수 있습니다. 이 url은 버전 제어 소프트웨어에서 직접 호출할 수 있는 공개적으로 사용할 수 있는 url 이어야 합니다. 이는 컴퓨터에 대 한 것 이므로 html 페이지가 되어서는 안 됩니다. 프로젝트 페이지에 연결 하는 경우에는 `projectUrl` 필드를 대신 사용 합니다.
 
-예를 들어:
+예를 들면,
 ```xml
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
@@ -216,23 +216,23 @@ UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 
 </package>
 ```
 
-#### <a name="title"></a>title
+#### <a name="title"></a>제목
 일부 UI 표시에서 사용할 수 있는 사용자에 게 친숙 한 패키지의 제목입니다. (nuget.org 및 Visual Studio의 패키지 관리자는 제목을 표시 하지 않음)
 
 #### <a name="collection-elements"></a>컬렉션 요소
 
-#### <a name="packagetypes"></a>packageTypes
+#### <a name="packagetypes"></a>Packagetypes>
 *(3.5 이상)* 기존 종속 패키지가 아닌 경우 패키지의 유형을 지정하는 0개 이상의 `<packageType>` 요소 컬렉션입니다. 각 packageType에는 *name* 및 *version* 특성이 있습니다. [패키지 유형 설정](../create-packages/set-package-type.md)을 참조하세요.
 #### <a name="dependencies"></a>종속성
 패키지에 대한 종속성을 지정하는 0개 이상의 `<dependency>` 요소 컬렉션입니다. 각 종속성에는 *id*, *version*, *include*(3.x 이상) 및 *exclude*(3.x 이상) 특성이 있습니다. 아래의 [종속성](#dependencies-element)을 참조하세요.
 #### <a name="frameworkassemblies"></a>frameworkAssemblies
-*(1.2 이상)* 이 패키지에 필요한 .NET Framework 어셈블리 참조를 식별하는 0개 이상의 `<frameworkAssembly>` 요소 컬렉션이며, 패키지를 사용하는 프로젝트에 참조가 추가되도록 합니다. 각 frameworkAssembly에는 *assemblyName* 및 *targetFramework* 특성이 있습니다. 아래의 [프레임워크 어셈블리 참조 GAC 지정](#specifying-framework-assembly-references-gac)을 참조하세요. |
+*(1.2 이상)* 이 패키지에 필요한 .NET Framework 어셈블리 참조를 식별하는 0개 이상의 `<frameworkAssembly>` 요소 컬렉션이며, 패키지를 사용하는 프로젝트에 참조가 추가되도록 합니다. 각 frameworkAssembly에는 *assemblyName* 및 *targetFramework* 특성이 있습니다. 아래의 [프레임워크 어셈블리 참조 GAC 지정](#specifying-framework-assembly-references-gac)을 참조하세요.
 #### <a name="references"></a>참조
 *(1.5 이상)* 프로젝트 참조로 추가된 패키지의 `lib` 폴더에 있는 어셈블리를 명명하는 0개 이상의 `<reference>` 요소 컬렉션입니다. 각 참조에는 *file* 특성이 있습니다. 또한 `<references>`에는 *targetFramework* 특성이 있는 `<group>` 요소도 포함될 수 있으며, 그런 다음 `<reference>` 요소가 포함됩니다. 생략하면 `lib`의 모든 참조가 포함됩니다. 아래의 [명시적 어셈블리 참조 지정](#specifying-explicit-assembly-references)을 참조하세요.
 #### <a name="contentfiles"></a>contentFiles
 *(3.3 이상)* 사용하는 프로젝트에 포함할 콘텐츠 파일을 식별하는 `<files>` 요소 컬렉션입니다. 이러한 파일은 프로젝트 시스템 내에서 사용되는 방법을 설명하는 일단의 특성으로 지정됩니다. 아래의 [패키지에 포함할 파일 지정](#specifying-files-to-include-in-the-package)을 참조하세요.
 #### <a name="files"></a>파일 
-`<package>` 노드에는에 대 `<files>` `<metadata>`한 형제로 노드가 포함 될 수 있으며,이에 따라 `<metadata>`패키지에 포함할 어셈블리 및 콘텐츠 파일을 지정할 수 있습니다. `<contentFiles>` 자세한 내용은 이 항목의 뒷부분에 있는 [어셈블리 파일 포함](#including-assembly-files) 및 [콘텐츠 파일 포함](#including-content-files)을 참조하세요.
+@No__t_0 노드에는 `<metadata>`에 대 한 형제로 `<files>` 노드가 포함 될 수 있으며, `<metadata>` 아래의 `<contentFiles>` 자식은 포함 하 여 패키지에 포함할 어셈블리 및 콘텐츠 파일을 지정할 수 있습니다. 자세한 내용은 이 항목의 뒷부분에 있는 [어셈블리 파일 포함](#including-assembly-files) 및 [콘텐츠 파일 포함](#including-content-files)을 참조하세요.
 
 ### <a name="metadata-attributes"></a>메타 데이터 특성
 
@@ -285,7 +285,7 @@ nuget pack MyProject.csproj
 | **$id$** | 프로젝트 파일 | 프로젝트 파일의 AssemblyName (title) |
 | **$version$** | AssemblyInfo | 있는 경우 AssemblyInformationalVersion, 그렇지 않으면 AssemblyVersion |
 | **$author$** | AssemblyInfo | AssemblyCompany |
-| **$title$** | AssemblyInfo | AssemblyTitle |
+| **$title $** | AssemblyInfo | AssemblyTitle |
 | **$description$** | AssemblyInfo | AssemblyDescription |
 | **$copyright$** | AssemblyInfo | AssemblyCopyright |
 | **$configuration$** | 어셈블리 DLL | 어셈블리를 빌드하는 데 사용되는 구성이며, 기본값은 Debug입니다. Release 구성을 사용하여 패키지를 만들려면 항상 명령줄에서 `-properties Configuration=Release`를 사용합니다. |
@@ -310,18 +310,18 @@ nuget pack MyProject.csproj
 
 `<metadata>` 내의 `<dependencies>` 요소에는 최상위 패키지가 종속되는 다른 패키지를 식별하는 임의 개수의 `<dependency>` 요소가 포함됩니다. 각 `<dependency>`에 대한 특성은 다음과 같습니다.
 
-| 특성 | Description |
+| 특성 | 설명 |
 | --- | --- |
 | `id` | (필수) 패키지 페이지에서 “EntityFramework” 및 “NUnit” 패키지 nuget.org의 이름인 같은 종속성의 패키지 ID를 보여 줍니다. |
 | `version` | (필수) 종속성으로 허용되는 버전 범위입니다. 정확한 구문은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges-and-wildcards)를 참조하세요. 와일드 카드 (부동) 버전은 지원 되지 않습니다. |
-| include | 최종 패키지에 포함할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 `all`입니다. |
-| Exclude | 최종 패키지에서 제외할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 과도 하 `build,analyzers` 게 쓸 수 있는 값입니다. 그러나 `content/ ContentFiles` 는 과도 하 게 작성할 수 없는 최종 패키지에서 암시적으로 제외 됩니다. `exclude`로 지정된 태그는 `include`로 지정된 태그보다 우선 순위가 높습니다. 예를 들어 `include="runtime, compile" exclude="compile"`은 `include="runtime"`과 같습니다. |
+| include | 최종 패키지에 포함할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 `all`여야 합니다. |
+| Exclude | 최종 패키지에서 제외할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 과도 하 게 쓸 수 있는 `build,analyzers`입니다. 그러나 `content/ ContentFiles`은 과도 하 게 쓸 수 없는 최종 패키지에서 암시적으로 제외 됩니다. `exclude`로 지정된 태그는 `include`로 지정된 태그보다 우선 순위가 높습니다. 예를 들어 `include="runtime, compile" exclude="compile"`은 `include="runtime"`과 같습니다. |
 
 | include/exclude 태그 | 영향을 받는 대상 폴더 |
 | --- | --- |
 | contentFiles | 콘텐츠 |
 | 런타임 | Runtime, Resources 및 FrameworkAssemblies |
-| compile(컴파일) | lib |
+| compile | lib |
 | 빌드 | build(MSBuild props 및 targets) |
 | native | native |
 | 없음 | 영향을 받는 폴더 없음 |
@@ -346,7 +346,7 @@ nuget pack MyProject.csproj
 ```
 
 > [!Important]
-> 를 사용 하 `.nuspec` 여 `nuget spec`프로젝트에서을 만드는 경우 해당 프로젝트에 존재 하는 종속성은 결과 `.nuspec` 파일에 자동으로 포함 되지 않습니다. 대신를 사용 `nuget pack myproject.csproj`하 여 생성 된 *nupkg* 파일 내에서 *nuspec* 파일을 가져옵니다. *Nuspec* 는 종속성을 포함 합니다.
+> @No__t_1를 사용 하 여 프로젝트에서 `.nuspec`를 만드는 경우 해당 프로젝트에 존재 하는 종속성은 결과 `.nuspec` 파일에 자동으로 포함 되지 않습니다. 대신 `nuget pack myproject.csproj`를 사용 하 여 *nupkg* 파일 내에서 *nuspec* 파일을 가져옵니다. *Nuspec* 는 종속성을 포함 합니다.
 
 ### <a name="dependency-groups"></a>종속성 그룹
 
@@ -383,7 +383,7 @@ nuget pack MyProject.csproj
 
 ## <a name="explicit-assembly-references"></a>명시적 어셈블리 참조
 
-요소 `<references>` 는를 사용 `packages.config` 하 여 프로젝트에서 패키지를 사용할 때 대상 프로젝트에서 참조 해야 하는 어셈블리를 명시적으로 지정 하는 데 사용 됩니다. 명시적 참조는 일반적으로 디자인 타임 전용 어셈블리에만 사용됩니다. 자세한 내용은 프로젝트에서 참조 하는 [어셈블리를 선택](../create-packages/select-assemblies-referenced-by-projects.md) 하는 방법에 대 한 페이지를 참조 하세요.
+@No__t_0 요소는 `packages.config`를 사용 하는 프로젝트에서 패키지를 사용할 때 대상 프로젝트가 참조할 어셈블리를 명시적으로 지정 하는 데 사용 됩니다. 명시적 참조는 일반적으로 디자인 타임 전용 어셈블리에만 사용됩니다. 자세한 내용은 프로젝트에서 참조 하는 [어셈블리를 선택](../create-packages/select-assemblies-referenced-by-projects.md) 하는 방법에 대 한 페이지를 참조 하세요.
 
 예를 들어 다음 `<references>` 요소는 패키지에 추가 어셈블리가 있는 경우에도 `xunit.dll` 및 `xunit.extensions.dll`에 대한 참조만 추가하도록 NuGet에 지시합니다.
 
@@ -431,7 +431,7 @@ nuget pack MyProject.csproj
 
 `<frameworkAssemblies>` 요소는 0개 이상의 `<frameworkAssembly>` 요소를 포함하며, 각 요소마다 다음 특성을 지정합니다.
 
-| 특성 | Description |
+| 특성 | 설명 |
 | --- | --- |
 | **assemblyName** | (필수) 정규화된 어셈블리 이름입니다. |
 | **targetFramework** | (선택) 이 참조가 적용되는 대상 프레임워크를 지정합니다. 생략하면 참조가 모든 프레임워크에 적용됨을 나타냅니다. 정확한 프레임워크 식별자는 [대상 프레임워크](../reference/target-frameworks.md)를 참조하세요. |
@@ -455,7 +455,7 @@ nuget pack MyProject.csproj
 > [!Important]
 > 패키지가 프로젝트에 설치되면 어셈블리 참조가 지역화된 위성 어셈블리로 간주되므로 NuGet은 `.resources.dll`이라는 DLL을 *제외한* 패키지의 DLL에 해당 어셈블리 참조를 자동으로 추가합니다. 이러한 이유로 다른 경우에 필수 패키지 코드가 포함되는 파일에는 `.resources.dll`을 사용하지 마세요.
 
-이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들어:
+이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들면,
 
 ```xml
 <files>
@@ -471,13 +471,13 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 
 각 `<file>` 요소는 다음과 같은 특성을 지정합니다.
 
-| 특성 | Description |
+| 특성 | 설명 |
 | --- | --- |
 | **src** | `exclude` 특성으로 지정된 제외에 따라 포함할 파일의 위치입니다. 절대 경로가 지정되지 않으면 경로는 `.nuspec` 파일에 대한 상대 경로입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 | **target** | 원본 파일이 있는 패키지 내의 폴더에 대한 상대 경로이며, `lib`, `content`, `build` 또는 `tools`로 시작해야 합니다. [규칙 기반 작업 디렉터리에서 .nuspec 만들기](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)를 참조하세요. |
 | **exclude** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 
-### <a name="examples"></a>예
+### <a name="examples"></a>예제
 
 **단일 어셈블리**
 
@@ -680,7 +680,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 | --- | --- |
 | **include** | (필수) `exclude` 특성으로 지정된 제외에 따라 포함할 파일의 위치입니다. 절대 경로를 지정 하지 않으면 `contentFiles` 폴더에 대 한 상대 경로입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 | **exclude** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
-| **buildAction** | `Content`, `None`, `Embedded Resource`, `Compile` 등과 같이 MSBuild의 콘텐츠 항목에 할당할 빌드 작업입니다. 기본값은 `Compile`입니다. |
+| **buildAction** | @No__t_0, `None`, `Embedded Resource`, `Compile` 등의 MSBuild에 대 한 콘텐츠 항목에 할당할 빌드 작업입니다. 기본값은 `Compile`입니다. |
 | **copyToOutput** | 콘텐츠 항목을 빌드 (또는 게시) 출력 폴더에 복사할지 여부를 나타내는 부울 값입니다. 기본값은 false입니다. |
 | **flatten** | 빌드 출력의 단일 폴더에 콘텐츠 항목을 복사할지(true), 아니면 패키지의 폴더 구조를 유지할지(false) 여부를 나타내는 부울 값입니다. 이 플래그는 copyToOutput 플래그가 true로 설정된 경우에만 작동합니다. 기본값은 false입니다. |
 
@@ -696,7 +696,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 - `TxM`은 NuGet에서 지원하는 모든 법적 대상 프레임워크 모니커입니다([대상 프레임워크](../reference/target-frameworks.md) 참조).
 - 모든 폴더 구조는 이 구문의 끝에 추가될 수 있습니다.
 
-예를 들어:
+예를 들면,
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml
