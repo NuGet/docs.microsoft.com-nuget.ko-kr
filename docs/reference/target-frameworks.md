@@ -6,34 +6,34 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: ea9f699b202d7f32648f0ccfeac3ceb1ca325b7e
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: caa1509fd996c54f7de17e86559ea62ef67f749f
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342435"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380491"
 ---
 # <a name="target-frameworks"></a>대상 프레임워크
 
 NuGet은 다양한 위치에서 대상 프레임워크 참조를 사용하여 패키지의 프레임워크 종속 구성 요소를 구체적으로 식별하고 격리합니다.
 
 - [프로젝트 파일](../create-packages/multiple-target-frameworks-project-file.md): SDK 스타일 프로젝트의 경우 *.csproj* 에는 대상 프레임 워크 참조가 포함 됩니다.
-- [. nuspec 매니페스트](../reference/nuspec.md): 패키지는 프로젝트의 대상 프레임 워크에 따라 프로젝트에 포함 될 개별 패키지를 나타낼 수 있습니다.
-- [. nupkg 폴더 이름](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): 패키지 `lib` 폴더 내의 폴더는 대상 프레임 워크에 따라 이름을 지정할 수 있으며, 각 프레임 워크에 적합 한 dll 및 기타 콘텐츠를 포함 합니다.
-- [packages.config](../reference/packages-config.md): 종속성 `targetframework` 의 특성은 설치할 패키지의 변형을 지정 합니다.
+- [.nuspec 매니페스트](../reference/nuspec.md): 패키지는 프로젝트의 대상 프레임워크에 따라 프로젝트에 포함될 고유한 패키지를 나타낼 수 있습니다.
+- [.nupkg 폴더 이름](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): 패키지의 `lib` 폴더 내에 있는 폴더는 대상 프레임워크에 따라 이름을 지정할 수 있으며, 각 폴더에는 해당 프레임워크에 적합한 DLL 및 다른 콘텐츠가 포함됩니다.
+- [packages.config](../reference/packages-config.md): 종속성의 `targetframework` 특성은 설치할 패키지의 변형을 지정합니다.
 
 > [!Note]
 > 아래 표를 계산하는 NuGet 클라이언트 소스 코드는 다음 위치에 있습니다.
-> - 지원 되는 프레임 워크 이름: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> - 프레임 워크 우선 순위 및 매핑: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> - 지원되는 프레임워크 이름: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> - 프레임워크 우선 순위 및 매핑: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 ## <a name="supported-frameworks"></a>지원되는 프레임워크
 
-프레임워크는 일반적으로 짧은 대상 프레임워크 모니커 또는 TFM에서 참조됩니다. .NET Standard 여러 프레임 워크에 대 한 단일 참조를 *허용 하기 위해* 이를 트랜잭션으로 일반화 합니다.
+프레임워크는 일반적으로 짧은 대상 프레임워크 모니커 또는 TFM에서 참조됩니다. .NET Standard 여러 프레임 워크에 대 한 단일 참조를 *허용 하기 위해이를 트랜잭션* 으로 일반화 합니다.
 
 NuGet 클라이언트는 아래 표의 프레임워크를 지원합니다. 대괄호([]) 안에 표시된 항목은 동등한 항목입니다. `dotnet`과 같은 일부 도구는 일부 파일에서 정식 TFM의 변형을 사용할 수 있습니다. 예를 들어 `dotnet pack`은 `.nuspec` 파일에서 `netcoreapp2.0` 대신 `.NETCoreApp2.0`을 사용합니다. 다양한 NuGet 클라이언트 도구에서 이러한 변형을 적절하게 처리하지만, 파일을 직접 편집할 때는 항상 정식 TFM을 사용해야 합니다.
 
-| 이름 | 약어 | TFM/TxM |
+| name | 약어 | TFM/TxM |
 | ------------- | ------------ | --------- |
 |.NET Framework | net | net11 |
 | | | net20 |
@@ -55,7 +55,7 @@ NuGet 클라이언트는 아래 표의 프레임워크를 지원합니다. 대�
 | | | netcore451 [win81] |
 | | | netcore50 |
 |.NET MicroFramework | netmf | netmf |
-|Windows | win | win [win8, netcore45] |
+|창 | win | win [win8, netcore45] |
 | | | win8 [netcore45, win] |
 | | | win81 [netcore451] |
 | | | win10(Windows 10 플랫폼에서 지원되지 않음) |
@@ -70,7 +70,7 @@ Windows Phone(UWP) | | wpa81 |
 UWP | uap | uap [uap10.0] |
 | | | uap10.0 |
 | | | uap 10.0. xxxxx (여기서 10.0. xxxxx는 소비 하는 앱의 대상 플랫폼 최소 버전) |
-.NET Standard | netstandard | netstandard1.0 |
+.NET 표준 | netstandard | netstandard1.0 |
 | | | netstandard1.1 |
 | | | netstandard1.2 |
 | | | netstandard1.3 |
@@ -83,6 +83,7 @@ UWP | uap | uap [uap10.0] |
 | | | netcoreapp2.0 |
 | | | netcoreapp2.1 |
 | | | netcoreapp2.2 |
+| | | netcoreapp3.0 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
@@ -138,7 +139,7 @@ Tizen | tizen | tizen3 |
 
 타사에서 정의한 추가 프레임워크는 이러한 방식으로 액세스할 수 있는 다른 환경과의 호환성을 제공합니다. 또한 관련 프레임워크의 이러한 조합을 `Profile#`으로 참조할 수 있는 약식 프로필 번호가 있지만 폴더 및 `.nuspec`의 가독성을 떨어뜨리기 때문에 이러한 번호를 사용하지 않는 것이 좋습니다.
 
-| Profile# | 프레임워크 | 전체 이름 | .NET Standard |
+| Profile# | 프레임워크 | 전체 이름 | .NET 표준 |
  --- | --- | --- | ---
  Profile2 | .NETFramework 4.0 | portable-net40+win8+sl4+wp7 |
  | | Windows 8.0 | |
@@ -283,7 +284,7 @@ Tizen | tizen | tizen3 |
 
 또한 Xamarin을 대상으로 하는 NuGet 패키지는 Xamarin에서 정의한 추가 프레임워크를 사용할 수 있습니다. [Xamarin에 대한 NuGet 패키지 만들기](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/)를 참조하세요.
 
-| 이름 | 설명 | .NET Standard |
+| name | 설명 | .NET 표준 |
 | --- | --- | ---
 | monoandroid | Android OS에 대한 Mono 지원 | netstandard1.4 |
 | monotouch | iOS에 대한 Mono 지원 | netstandard1.4 |
