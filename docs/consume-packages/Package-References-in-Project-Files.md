@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: ae80206117eed639140a0c7977043d8330bc37bb
-ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
+ms.openlocfilehash: 892483760a9f3568da7101663e93c69ce3d70b96
+ms.sourcegitcommit: 8a424829b1f70cf7590e95db61997af6ae2d7a41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69564560"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510806"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -107,7 +107,7 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 | contentFiles | `contentfiles` 폴더의 콘텐츠 |
 | 빌드 | `build` 폴더의 `.props` 및 `.targets` |
 | buildMultitargeting | 프레임워크 간 타기팅을 위한 `buildMultitargeting` 폴더의 *(4.0)* `.props` 및 `.targets` |
-| buildTransitive | ‘(5.0 이상)’ 사용하는 프로젝트로 타동적으로 흐르는 자산을 위한 `buildTransitive` 폴더의 `.props` 및 `.targets` [기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요. |
+| buildTransitive | ‘(5.0 이상)’ 사용하는 프로젝트로 타동적으로 흐르는 자산을 위한 `buildTransitive` 폴더의 `.props` 및 `.targets`  [기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요. |
 | 분석기 | .NET 분석기 |
 | native | `native` 폴더의 콘텐츠 |
 | 없음 | 위의 항목을 사용하지 않습니다. |
@@ -164,7 +164,7 @@ PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 �
 ```
 
 ## <a name="locking-dependencies"></a>종속성 잠금
-이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다.
+이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다. 
 
 NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 세트이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다. 입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다. 그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다. 예:
 
@@ -236,11 +236,12 @@ ProjectA
 `ProjectA`가 `PackageX` 버전 `2.0.0`에 대한 종속성을 포함하고 `PackageX` 버전 `1.0.0`을 사용하는 `ProjectB`를 참조하는 경우 `ProjectB`의 잠금 파일은 `PackageX` 버전 `1.0.0`에 대한 종속성을 나열합니다. 그러나 `ProjectA`가 빌드되면 해당 잠금 파일에는 `ProjectB`의 잠금 파일에 나열된 `1.0.0`이 **아닌** `PackageX` 버전 **`2.0.0`** 에 대한 종속성이 포함됩니다. 따라서 공통 코드 프로젝트의 잠금 파일에는 이 파일을 사용하는 프로젝트에 대해 확인된 패키지가 거의 언급되지 않습니다.
 
 ### <a name="lock-file-extensibility"></a>잠금 파일 확장성
+
 다음 설명과 같이 잠금 파일을 사용하여 다양한 복원 동작을 제어할 수 있습니다.
 
-| 옵션 | MSBuild 해당 옵션 | 
-|:---  |:--- |
-| `--use-lock-file` | 프로젝트의 잠금 파일 사용을 부트스트랩합니다. 또는 프로젝트 파일에서 `RestorePackagesWithLockFile` 속성을 설정할 수 있습니다. | 
-| `--locked-mode` | 복원에 잠금 모드를 사용하도록 설정합니다. 이는 반복 가능한 빌드를 가져오려는 CI/CD 시나리오에서 유용합니다. `RestoreLockedMode` MSBuild 속성을 `true`로 설정할 수도 있습니다. |  
-| `--force-evaluate` | 이 옵션은 프로젝트에 정의된 부동 버전의 패키지에 유용합니다. 기본적으로 NuGet 복원은 `--force-evaluate` 옵션으로 복원을 실행하지 않는 한 각 복원에서 패키지 버전을 자동으로 업데이트하지 않습니다. |
-| `--lock-file-path` | 프로젝트의 사용자 지정 잠금 파일 위치를 정의합니다. MSBuild 속성 `NuGetLockFilePath`을 설정할 수도 있습니다. 기본적으로 NuGet은 루트 디렉터리에서 `packages.lock.json`을 지원합니다. 같은 디렉터리에 여러 프로젝트가 있는 경우 NuGet은 프로젝트별 잠금 파일 `packages.<project_name>.lock.json`을 지원합니다. |
+| 옵션 | MSBuild 해당 옵션 | 설명|
+|:---  |:--- |:--- |
+| `--use-lock-file` | RestorePackagesWithLockFile | 잠금 파일을 사용합니다. | 
+| `--locked-mode` | RestoreLockedMode | 복원에 잠금 모드를 사용하도록 설정합니다. 이는 반복 가능한 빌드를 원하는 CI/CD 시나리오에서 유용합니다.|   
+| `--force-evaluate` | RestoreForceEvaluate | 이 옵션은 프로젝트에 정의된 부동 버전의 패키지에 유용합니다. 기본적으로 NuGet 복원은 이 옵션으로 복원을 실행하지 않는 한 각 복원에서 패키지 버전을 자동으로 업데이트하지 않습니다. |
+| `--lock-file-path` | NuGetLockFilePath | 프로젝트의 사용자 지정 잠금 파일 위치를 정의합니다. 기본적으로 NuGet은 루트 디렉터리에서 `packages.lock.json`을 지원합니다. 같은 디렉터리에 여러 프로젝트가 있는 경우 NuGet은 프로젝트별 잠금 파일 `packages.<project_name>.lock.json`을 지원합니다. |

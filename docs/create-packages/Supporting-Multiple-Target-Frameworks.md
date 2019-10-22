@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 14483264030dd3bb32c7295886f2d37d52e735cc
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: 4413779361dad3a650da36b3c69bbb55b62804ee
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020040"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380728"
 ---
 # <a name="support-multiple-net-versions"></a>여러 .NET 버전 지원
 
 많은 라이브러리는 특정 버전의 .NET Framework를 대상으로 지정합니다. 예를 들어 UWP에 관련된 한 버전의 라이브러리 및 .NET Framework 4.6에서 기능을 활용하는 다른 버전의 라이브러리가 있을 수 있습니다. 이를 위해 NuGet은 동일한 라이브러리의 여러 버전을 단일 패키지에 배치하는 것을 지원합니다.
 
-이 문서에서는 패키지 또는 어셈블리를 빌드하는 방법에 관계없이 NuGet 패키지의 레이아웃에 대해 설명합니다. 즉, 이 레이아웃은 여러 비 SDK 스타일 *.csproj* 파일, 사용자 지정 *.nuspec* 또는 단일 다중 대상 SDK 스타일 *.csproj* 중 어떤 파일을 사용하든 동일합니다. SDK 스타일 프로젝트의 경우 NuGet [pack targets](../reference/msbuild-targets.md)는 패키지 레이아웃 방식을 알고, 어셈블리를 올바른 lib 폴더에 배치한 후 각 TFM(대상 프레임워크)에 대해 종속성 그룹을 만드는 과정을 자동화합니다. 자세한 지침은 [프로젝트 파일에서 여러 .NET Framework 버전 지원](multiple-target-frameworks-project-file.md)을 참조하세요.
+이 문서에서는 패키지 또는 어셈블리를 빌드하는 방법에 관계없이 NuGet 패키지의 레이아웃에 대해 설명합니다. 즉, 이 레이아웃은 여러 비 SDK 스타일 *.csproj* 파일, 사용자 지정 *.nuspec* 파일 또는 단일 다중 대상 SDK 스타일 *.csproj* 중 어떤 파일을 사용하든 동일합니다. SDK 스타일 프로젝트의 경우 NuGet [pack targets](../reference/msbuild-targets.md)는 패키지 레이아웃 방식을 알고, 어셈블리를 올바른 lib 폴더에 배치한 후 각 TFM(대상 프레임워크)에 대해 종속성 그룹을 만드는 과정을 자동화합니다. 자세한 지침은 [프로젝트 파일에서 여러 .NET Framework 버전 지원](multiple-target-frameworks-project-file.md)을 참조하세요.
 
 [패키지 만들기](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)에 설명된 규칙 기반 작업 디렉터리 방법을 사용하는 경우 이 문서에 설명된 대로 패키지 레이아웃을 수동으로 지정해야 합니다. SDK 스타일 프로젝트의 경우 자동화된 방법을 권장하지만 이 문서에 설명된 대로 패키지 레이아웃을 수동으로 지정하도록 선택할 수도 있습니다.
 
@@ -65,7 +65,7 @@ ms.locfileid: "69020040"
             \native
             \lib\uap10.0
 
-이러한 어셈블리는 런타임에만 사용할 수 있으므로 해당 컴파일 시간 어셈블리도 제공하려면 `AnyCPU` 어셈블리를 `/ref{tfm}` 폴더에 포함합니다. 
+이러한 어셈블리는 런타임에만 사용할 수 있으므로 해당 컴파일 시간 어셈블리도 제공하려면 `AnyCPU` 어셈블리를 `/ref/{tfm}` 폴더에 포함합니다. 
 
 NuGet은 항상 하나의 폴더에서 이러한 컴파일 또는 런타임 자산을 선택하므로, `/ref`의 호환 가능한 자산이 있는 경우 컴파일 시간 어셈블리를 추가하기 위해 `/lib`가 무시됩니다. 마찬가지로 `/runtime`의 일부 호환 가능한 자산이 있는 경우에도 런타임을 위해 `/lib`가 무시됩니다.
 

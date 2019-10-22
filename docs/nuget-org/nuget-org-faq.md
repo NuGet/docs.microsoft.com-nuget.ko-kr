@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1b373f245e934f2447acec2f97472d69999ae679
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.openlocfilehash: 24e35f4b2c047d5f337a1779e63846b11b0c1011
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999954"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380570"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>NuGet.org 질문과 대답
 
@@ -80,7 +80,7 @@ NuGet은 HTTP를 사용하여 패키지를 다운로드하므로, 큰 패키지�
 
 *MTR을 캡처하려면:*
 
-- [http://winmtr.net/download/](http://winmtr.net/)에서 WinMTR 다운로드
+- [WinMTR](https://sourceforge.net/projects/winmtr/files/WinMTR-v092.zip/download)을 다운로드합니다.
 - 호스트 이름으로 `api.nuget.org`를 입력하고 **시작**을 클릭합니다.
 - **보냄** 열이 100개 이상이 될 때까지 기다립니다.
 
