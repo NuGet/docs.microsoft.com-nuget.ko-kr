@@ -30,7 +30,7 @@ nuget list [search terms] [options]
 
 | 옵션 | Description |
 | --- | --- |
-| Allversions) | 패키지의 모든 버전을 나열 합니다. 기본적으로 최신 패키지 버전만 표시 됩니다. |
+| AllVersions | 패키지의 모든 버전을 나열 합니다. 기본적으로 최신 패키지 버전만 표시 됩니다. |
 | ConfigFile | 적용할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
 | ForceEnglishOutput | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
 | Help | 명령어에 대한 도움말을 표시합니다. |
