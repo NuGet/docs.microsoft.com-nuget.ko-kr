@@ -6,34 +6,34 @@ ms.author: jver
 ms.date: 3/1/2019
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 6657536ea6c699a834f57494c66b2a7d741dfcb7
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 3102cb9a20f354e92a0da8bba6457dc2ad0f0f2d
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488177"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610953"
 ---
 # <a name="package-details-url-template"></a>패키지 세부 정보 URL 템플릿
 
 클라이언트는 사용자가 웹 브라우저에서 추가 패키지 세부 정보를 볼 때 사용할 수 있는 URL을 작성할 수 있습니다. 이는 NuGet 클라이언트 응용 프로그램에서 표시 하는 범위 내에 적합 하지 않을 수 있는 패키지에 대 한 추가 정보를 패키지 원본에서 표시 하려는 경우에 유용 합니다.
 
-이 URL을 작성 하는 데 사용 되 `PackageDetailsUriTemplate` 는 리소스는 [서비스 인덱스](service-index.md)에 있는 리소스입니다.
+이 URL을 작성 하는 데 사용 되는 리소스는 [서비스 인덱스](service-index.md)에 있는 `PackageDetailsUriTemplate` 리소스입니다.
 
 ## <a name="versioning"></a>버전 관리
 
-사용 되는 값은 다음과 같습니다. `@type`
+사용 되는 `@type` 값은 다음과 같습니다.
 
-@type 값                     | 참고
+@type 값                     | 노트
 ------------------------------- | -----
 PackageDetailsUriTemplate/5.1.0 | 초기 릴리스
 
 ## <a name="url-template"></a>URL 템플릿
 
-다음 API에 대 한 URL은 앞서 언급 한 리소스 `@id` `@type` 값 중 하 나와 연결 된 속성의 값입니다.
+다음 API에 대 한 URL은 앞서 언급 한 리소스 `@type` 값 중 하 나와 연결 된 `@id` 속성의 값입니다.
 
 ## <a name="http-methods"></a>HTTP 메서드
 
-클라이언트는 사용자를 대신 하 여 패키지 세부 정보 URL에 대 한 요청을 수행할 수 없지만 웹 페이지는 클릭 된 URL을 `GET` 웹 브라우저에서 쉽게 열도록 허용 하는 메서드를 지원 해야 합니다.
+클라이언트는 사용자를 대신 하 여 패키지 세부 정보 URL에 대 한 요청을 수행 하지 않지만, 웹 브라우저에서 클릭 한 URL을 쉽게 열 수 있도록 웹 페이지에서 `GET` 방법을 지원 해야 합니다.
 
 ## <a name="construct-the-url"></a>URL 생성
 
@@ -41,16 +41,16 @@ PackageDetailsUriTemplate/5.1.0 | 초기 릴리스
 
 URL은 절대 URL 이어야 하 고 스키마 (프로토콜)는 HTTPS 여야 합니다.
 
-서비스 인덱스 `@id` 에서의 값은 다음 자리 표시자 토큰 중 하나를 포함 하는 URL 문자열입니다.
+서비스 인덱스에 있는 `@id`의 값은 다음 자리 표시자 토큰 중 하나를 포함 하는 URL 문자열입니다.
 
 ### <a name="url-placeholders"></a>URL 자리 표시자
 
-이름        | 형식    | 필수 | 참고
+name        | Type    | 필요한 공간 | 노트
 ----------- | ------- | -------- | -----
-`{id}`      | string  | no       | 세부 정보를 가져올 패키지 ID
-`{version}` | string  | no       | 세부 정보를 가져올 패키지 버전
+`{id}`      | string  | 아니요       | 세부 정보를 가져올 패키지 ID
+`{version}` | string  | 아니요       | 세부 정보를 가져올 패키지 버전
 
-서버는 대/ `{id}` 소문자 `{version}` 를 구분 하 여 및 값을 허용 해야 합니다. 또한 서버는 버전이 [정규화](https://docs.microsoft.com/en-us/nuget/concepts/package-versioning#normalized-version-numbers)되었는지 여부를 구분 하지 않아야 합니다. 즉, 서버에도 정규화 되지 않은 버전이 허용 되어야 합니다.
+서버는 대/소문자를 구분 하 여 `{id}` 및 `{version}` 값을 수락 해야 합니다. 또한 서버는 버전이 [정규화](https://docs.microsoft.com/nuget/concepts/package-versioning#normalized-version-numbers)되었는지 여부를 구분 하지 않아야 합니다. 즉, 서버에도 정규화 되지 않은 버전이 허용 되어야 합니다.
 
 예를 들어, nuget.exe의 패키지 세부 정보 템플릿은 다음과 같습니다.
 
