@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1f65939493cf423a76c024607264acee6c7e9050
-ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
+ms.openlocfilehash: 5197447531288a8b071354dbeb3a3ae02f7cce09
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66271566"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610527"
 ---
 #### <a name="windows"></a>Windows
 
@@ -19,7 +19,7 @@ ms.locfileid: "66271566"
 
 OS 배포에 따라 동작이 약간 다를 수 있습니다.
 
-1. [Mono 4.4.2 이상](http://www.mono-project.com/docs/getting-started/install/)을 설치합니다.
+1. [Mono 4.4.2 이상](https://www.mono-project.com/docs/getting-started/install/)을 설치합니다.
 
 1. 셸 프롬프트에서 다음 명령을 실행합니다.
 
