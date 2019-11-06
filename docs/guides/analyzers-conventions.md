@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0a8db9f6c55b7e79f9b338119e0b3ac6cb7a1e35
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 4d337299f725b38981b0121069d5e6295b05e34e
+ms.sourcegitcommit: f9645fc5f49c18978e12a292a3f832e162e069d5
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520513"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72924635"
 ---
 # <a name="analyzer-nuget-formats"></a>NuGet 분석기 형식
 
@@ -45,7 +45,7 @@ ms.locfileid: "69520513"
 
     $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
 
-- **framework_name**: 포함된 DLL에서 실행해야 하는 .NET Framework의 *선택적* API 노출 영역입니다. Roslyn은 분석기를 실행할 수 있는 유일한 호스트이므로 `dotnet`은 현재 유효한 값입니다. 대상을 지정하지 않으면 DLL이 *모든* 대상에 적용된다고 가정합니다.
+- **framework_name** 및 **version**: 포함된 DLL에서 실행해야 하는 .NET Framework의 *선택적* API 노출 영역입니다. Roslyn은 분석기를 실행할 수 있는 유일한 호스트이므로 `dotnet`은 현재 유효한 값입니다. 대상을 지정하지 않으면 DLL이 *모든* 대상에 적용된다고 가정합니다.
 - **supported_language**: DLL이 적용되는 언어로서 `cs`(C#), `vb`(Visual Basic) 및 `fs`(F#) 중 하나입니다. 언어는 해당 언어를 사용하는 프로젝트에만 분석기가 로드되어야 함을 나타냅니다. 언어를 지정하지 않으면 분석기를 지원하는 *모든* 언어에 DLL이 적용되는 것으로 간주됩니다.
 - **analyzer_name**: 분석기의 DLL을 지정합니다. DLL 이외의 추가 파일이 필요하며 대상 또는 속성 파일을 통해 포함되어야 합니다.
 
