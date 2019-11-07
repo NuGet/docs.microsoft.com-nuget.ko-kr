@@ -6,35 +6,35 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 7c6992d6bf3142eb6aca70f1fa3c46f72efd25a0
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: e0014a812ea591ef40c961e13864652d75ebdf6c
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520353"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610981"
 ---
-# <a name="package-versioning"></a><span data-ttu-id="6ee9c-103">패키지 버전 관리</span><span class="sxs-lookup"><span data-stu-id="6ee9c-103">Package versioning</span></span>
+# <a name="package-versioning"></a><span data-ttu-id="ae501-103">패키지 버전 관리</span><span class="sxs-lookup"><span data-stu-id="ae501-103">Package versioning</span></span>
 
-<span data-ttu-id="6ee9c-104">특정 패키지는 항상 패키지 식별자와 정확한 버전 번호를 사용하여 참조됩니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-104">A specific package is always referred to using its package identifier and an exact version number.</span></span> <span data-ttu-id="6ee9c-105">예를 들어, nuget.org의 [Entity Framework](https://www.nuget.org/packages/EntityFramework/)에는 버전 *4.1.10311*에서 버전 *6.1.3*(안정적인 최신 릴리스)과 *6.2.0-beta1*과 같은 다양한 시험판 버전에 이르기까지 수십 개의 특정 패키지가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-105">For example, [Entity Framework](https://www.nuget.org/packages/EntityFramework/) on nuget.org has several dozen specific packages available, ranging from version *4.1.10311* to version *6.1.3* (the latest stable release) and a variety of pre-release versions like *6.2.0-beta1*.</span></span>
+<span data-ttu-id="ae501-104">특정 패키지는 항상 패키지 식별자와 정확한 버전 번호를 사용하여 참조됩니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-104">A specific package is always referred to using its package identifier and an exact version number.</span></span> <span data-ttu-id="ae501-105">예를 들어, nuget.org의 [Entity Framework](https://www.nuget.org/packages/EntityFramework/)에는 버전 *4.1.10311*에서 버전 *6.1.3*(안정적인 최신 릴리스)과 *6.2.0-beta1*과 같은 다양한 시험판 버전에 이르기까지 수십 개의 특정 패키지가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-105">For example, [Entity Framework](https://www.nuget.org/packages/EntityFramework/) on nuget.org has several dozen specific packages available, ranging from version *4.1.10311* to version *6.1.3* (the latest stable release) and a variety of pre-release versions like *6.2.0-beta1*.</span></span>
 
-<span data-ttu-id="6ee9c-106">패키지를 만들 때 선택적 시험판 문자 접미사를 사용하여 특정 버전 번호를 할당합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-106">When creating a package, you assign a specific version number with an optional pre-release text suffix.</span></span> <span data-ttu-id="6ee9c-107">반면, 패키지를 사용할 때는 정확한 버전 번호 또는 허용 가능한 버전 범위를 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-107">When consuming packages, on the other hand, you can specify either an exact version number or a range of acceptable versions.</span></span>
+<span data-ttu-id="ae501-106">패키지를 만들 때 선택적 시험판 문자 접미사를 사용하여 특정 버전 번호를 할당합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-106">When creating a package, you assign a specific version number with an optional pre-release text suffix.</span></span> <span data-ttu-id="ae501-107">반면, 패키지를 사용할 때는 정확한 버전 번호 또는 허용 가능한 버전 범위를 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-107">When consuming packages, on the other hand, you can specify either an exact version number or a range of acceptable versions.</span></span>
 
-<span data-ttu-id="6ee9c-108">항목 내용</span><span class="sxs-lookup"><span data-stu-id="6ee9c-108">In this topic:</span></span>
+<span data-ttu-id="ae501-108">항목 내용</span><span class="sxs-lookup"><span data-stu-id="ae501-108">In this topic:</span></span>
 
-- <span data-ttu-id="6ee9c-109">시험판 접미사 등의 [버전 기본 사항](#version-basics)입니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-109">[Version basics](#version-basics) including pre-release suffixes.</span></span>
-- [<span data-ttu-id="6ee9c-110">버전 범위 및 와일드카드</span><span class="sxs-lookup"><span data-stu-id="6ee9c-110">Version ranges and wildcards</span></span>](#version-ranges-and-wildcards)
-- [<span data-ttu-id="6ee9c-111">정규화된 버전 번호</span><span class="sxs-lookup"><span data-stu-id="6ee9c-111">Normalized version numbers</span></span>](#normalized-version-numbers)
+- <span data-ttu-id="ae501-109">시험판 접미사 등의 [버전 기본 사항](#version-basics)입니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-109">[Version basics](#version-basics) including pre-release suffixes.</span></span>
+- [<span data-ttu-id="ae501-110">버전 범위 및 와일드카드</span><span class="sxs-lookup"><span data-stu-id="ae501-110">Version ranges and wildcards</span></span>](#version-ranges-and-wildcards)
+- [<span data-ttu-id="ae501-111">정규화된 버전 번호</span><span class="sxs-lookup"><span data-stu-id="ae501-111">Normalized version numbers</span></span>](#normalized-version-numbers)
 
-## <a name="version-basics"></a><span data-ttu-id="6ee9c-112">버전 기본 사항</span><span class="sxs-lookup"><span data-stu-id="6ee9c-112">Version basics</span></span>
+## <a name="version-basics"></a><span data-ttu-id="ae501-112">버전 기본 사항</span><span class="sxs-lookup"><span data-stu-id="ae501-112">Version basics</span></span>
 
-<span data-ttu-id="6ee9c-113">특정 버전 번호는 *주.부.패치[-접미사]* 형식으로 되어 있으며, 해당 구성 요소의 의미는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-113">A specific version number is in the form *Major.Minor.Patch[-Suffix]*, where the components have the following meanings:</span></span>
+<span data-ttu-id="ae501-113">특정 버전 번호는 *주.부.패치[-접미사]* 형식으로 되어 있으며, 해당 구성 요소의 의미는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-113">A specific version number is in the form *Major.Minor.Patch[-Suffix]*, where the components have the following meanings:</span></span>
 
-- <span data-ttu-id="6ee9c-114">*주*: 호환성이 손상되는 변경</span><span class="sxs-lookup"><span data-stu-id="6ee9c-114">*Major*: Breaking changes</span></span>
-- <span data-ttu-id="6ee9c-115">*부*: 이전 버전과 호환되는 새로운 기능</span><span class="sxs-lookup"><span data-stu-id="6ee9c-115">*Minor*: New features, but backwards compatible</span></span>
-- <span data-ttu-id="6ee9c-116">*패치*: 이전 버전과 호환되는 버그 수정에만 해당</span><span class="sxs-lookup"><span data-stu-id="6ee9c-116">*Patch*: Backwards compatible bug fixes only</span></span>
-- <span data-ttu-id="6ee9c-117">*-접미사*(선택 사항): 하이픈 다음에는 시험판 버전을 나타내는 문자열([유의적 버전 또는 SemVer 1.0 규칙](http://semver.org/spec/v1.0.0.html)을 따름)이 옵니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-117">*-Suffix* (optional): a hyphen followed by a string denoting a pre-release version (following the [Semantic Versioning or SemVer 1.0 convention](http://semver.org/spec/v1.0.0.html)).</span></span>
+- <span data-ttu-id="ae501-114">*주*: 호환성이 손상되는 변경</span><span class="sxs-lookup"><span data-stu-id="ae501-114">*Major*: Breaking changes</span></span>
+- <span data-ttu-id="ae501-115">*부*: 이전 버전과 호환되는 새로운 기능</span><span class="sxs-lookup"><span data-stu-id="ae501-115">*Minor*: New features, but backwards compatible</span></span>
+- <span data-ttu-id="ae501-116">*패치*: 이전 버전과 호환되는 버그 수정에만 해당</span><span class="sxs-lookup"><span data-stu-id="ae501-116">*Patch*: Backwards compatible bug fixes only</span></span>
+- <span data-ttu-id="ae501-117">*-접미사*(선택 사항): 하이픈 다음에는 시험판 버전을 나타내는 문자열([유의적 버전 또는 SemVer 1.0 규칙](https://semver.org/spec/v1.0.0.html)을 따름)이 옵니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-117">*-Suffix* (optional): a hyphen followed by a string denoting a pre-release version (following the [Semantic Versioning or SemVer 1.0 convention](https://semver.org/spec/v1.0.0.html)).</span></span>
 
-<span data-ttu-id="6ee9c-118">**예제:**</span><span class="sxs-lookup"><span data-stu-id="6ee9c-118">**Examples:**</span></span>
+<span data-ttu-id="ae501-118">**예제:**</span><span class="sxs-lookup"><span data-stu-id="ae501-118">**Examples:**</span></span>
 
     1.0.1
     6.11.1231
@@ -42,22 +42,22 @@ ms.locfileid: "69520353"
     2.2.44-beta1
 
 > [!Important]
-> <span data-ttu-id="6ee9c-119">nuget.org는 정확한 버전 번호가 없는 패키지 업로드를 모두 거부합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-119">nuget.org rejects any package upload that lacks an exact version number.</span></span> <span data-ttu-id="6ee9c-120">버전은 패키지를 만드는 데 사용되는 `.nuspec` 또는 프로젝트 파일에 지정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-120">The version must be specified in the `.nuspec` or project file used to create the package.</span></span>
+> <span data-ttu-id="ae501-119">nuget.org는 정확한 버전 번호가 없는 패키지 업로드를 모두 거부합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-119">nuget.org rejects any package upload that lacks an exact version number.</span></span> <span data-ttu-id="ae501-120">버전은 패키지를 만드는 데 사용되는 `.nuspec` 또는 프로젝트 파일에 지정해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-120">The version must be specified in the `.nuspec` or project file used to create the package.</span></span>
 
-### <a name="pre-release-versions"></a><span data-ttu-id="6ee9c-121">시험판 버전</span><span class="sxs-lookup"><span data-stu-id="6ee9c-121">Pre-release versions</span></span>
+### <a name="pre-release-versions"></a><span data-ttu-id="ae501-121">시험판 버전</span><span class="sxs-lookup"><span data-stu-id="ae501-121">Pre-release versions</span></span>
 
-<span data-ttu-id="6ee9c-122">엄밀히 따지면, 패키지 작성자는 어떤 문자열이든 시험판 버전을 나타내는 접미사로 사용할 수 있습니다. 그 이유는 NuGet이 이러한 모든 버전을 시험판으로 처리하며, 달리 해석하지 않기 때문입니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-122">Technically speaking, package creators can use any string as a suffix to denote a pre-release version, as NuGet treats any such version as pre-release and makes no other interpretation.</span></span> <span data-ttu-id="6ee9c-123">즉, NuGet은 어떤 UI가 사용되었는지에 상관없이 전체 버전 문자열을 표시하며, 접미사의 의미는 전적으로 소비자의 해석에 맡깁니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-123">That is, NuGet displays the full version string in whatever UI is involved, leaving any interpretation of the suffix's meaning to the consumer.</span></span>
+<span data-ttu-id="ae501-122">엄밀히 따지면, 패키지 작성자는 어떤 문자열이든 시험판 버전을 나타내는 접미사로 사용할 수 있습니다. 그 이유는 NuGet이 이러한 모든 버전을 시험판으로 처리하며, 달리 해석하지 않기 때문입니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-122">Technically speaking, package creators can use any string as a suffix to denote a pre-release version, as NuGet treats any such version as pre-release and makes no other interpretation.</span></span> <span data-ttu-id="ae501-123">즉, NuGet은 어떤 UI가 사용되었는지에 상관없이 전체 버전 문자열을 표시하며, 접미사의 의미는 전적으로 소비자의 해석에 맡깁니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-123">That is, NuGet displays the full version string in whatever UI is involved, leaving any interpretation of the suffix's meaning to the consumer.</span></span>
 
-<span data-ttu-id="6ee9c-124">그렇긴 하지만 패키지 개발자는 일반적으로 널리 인정된 명명 규칙을 따릅니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-124">That said, package developers generally follow recognized naming conventions:</span></span>
+<span data-ttu-id="ae501-124">그렇긴 하지만 패키지 개발자는 일반적으로 널리 인정된 명명 규칙을 따릅니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-124">That said, package developers generally follow recognized naming conventions:</span></span>
 
-- <span data-ttu-id="6ee9c-125">`-alpha`: 일반적으로 진행 중인 작업이나 실험에 사용되는 알파 릴리스입니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-125">`-alpha`: Alpha release, typically used for work-in-progress and experimentation.</span></span>
-- <span data-ttu-id="6ee9c-126">`-beta`: 일반적으로 다음에 계획된 릴리스에 대한 기능 완료인 베타 릴리스이지만 알려진 버그를 포함할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-126">`-beta`: Beta release, typically one that is feature complete for the next planned release, but may contain known bugs.</span></span>
-- <span data-ttu-id="6ee9c-127">`-rc`: 일반적으로 심각한 버그가 발생하지 않는 한 잠재적으로 최종적(안정적)인 릴리스인 릴리스 후보입니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-127">`-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.</span></span>
+- <span data-ttu-id="ae501-125">`-alpha`: 일반적으로 진행 중인 작업이나 실험에 사용되는 알파 릴리스입니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-125">`-alpha`: Alpha release, typically used for work-in-progress and experimentation.</span></span>
+- <span data-ttu-id="ae501-126">`-beta`: 일반적으로 다음에 계획된 릴리스에 대한 기능 완료인 베타 릴리스이지만 알려진 버그를 포함할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-126">`-beta`: Beta release, typically one that is feature complete for the next planned release, but may contain known bugs.</span></span>
+- <span data-ttu-id="ae501-127">`-rc`: 일반적으로 심각한 버그가 발생하지 않는 한 잠재적으로 최종적(안정적)인 릴리스인 릴리스 후보입니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-127">`-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.</span></span>
 
 > [!Note]
-> <span data-ttu-id="6ee9c-128">NuGet 4.3.0 이상은 *1.0.1-build.23*에서와 같이 시험판 번호에 점 표기법을 지원하는 [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html)을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-128">NuGet 4.3.0+ supports [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html), which supports pre-release numbers with dot notation, as in *1.0.1-build.23*.</span></span> <span data-ttu-id="6ee9c-129">NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-129">Dot notation is not supported with NuGet versions before 4.3.0.</span></span> <span data-ttu-id="6ee9c-130">*1.0.1-build23*과 같은 형식을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-130">You can use a form like *1.0.1-build23*.</span></span>
+> <span data-ttu-id="ae501-128">NuGet 4.3.0 이상은 *1.0.1-build.23*에서와 같이 시험판 번호에 점 표기법을 지원하는 [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html)을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-128">NuGet 4.3.0+ supports [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html), which supports pre-release numbers with dot notation, as in *1.0.1-build.23*.</span></span> <span data-ttu-id="ae501-129">NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-129">Dot notation is not supported with NuGet versions before 4.3.0.</span></span> <span data-ttu-id="ae501-130">*1.0.1-build23*과 같은 형식을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-130">You can use a form like *1.0.1-build23*.</span></span>
 
-<span data-ttu-id="6ee9c-131">패키지 참조를 확인할 때 패키지 버전 여러 개가 접미사만 다른 경우 NuGet은 먼저 접미사가 없는 버전을 선택한 다음, 알파벳 역순으로 시험판 버전에 우선 순위를 적용합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-131">When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order.</span></span> <span data-ttu-id="6ee9c-132">예를 들어, 다음 버전은 정확히 표시된 순서대로 선택됩니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-132">For example, the following versions would be chosen in the exact order shown:</span></span>
+<span data-ttu-id="ae501-131">패키지 참조를 확인할 때 패키지 버전 여러 개가 접미사만 다른 경우 NuGet은 먼저 접미사가 없는 버전을 선택한 다음, 알파벳 역순으로 시험판 버전에 우선 순위를 적용합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-131">When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order.</span></span> <span data-ttu-id="ae501-132">예를 들어, 다음 버전은 정확히 표시된 순서대로 선택됩니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-132">For example, the following versions would be chosen in the exact order shown:</span></span>
 
     1.0.1
     1.0.1-zzz
@@ -68,62 +68,62 @@ ms.locfileid: "69520353"
     1.0.1-alpha
     1.0.1-aaa
 
-## <a name="semantic-versioning-200"></a><span data-ttu-id="6ee9c-133">유의적 버전 2.0.0</span><span class="sxs-lookup"><span data-stu-id="6ee9c-133">Semantic Versioning 2.0.0</span></span>
+## <a name="semantic-versioning-200"></a><span data-ttu-id="ae501-133">유의적 버전 2.0.0</span><span class="sxs-lookup"><span data-stu-id="ae501-133">Semantic Versioning 2.0.0</span></span>
 
-<span data-ttu-id="6ee9c-134">NuGet은 NuGet 4.3.0 이상 및 Visual Studio 2017 버전 15.3 이상을 통해 [유의적 버전 2.0.0](http://semver.org/spec/v2.0.0.html)을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-134">With NuGet 4.3.0+ and Visual Studio 2017 version 15.3+, NuGet supports [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html).</span></span>
+<span data-ttu-id="ae501-134">NuGet은 NuGet 4.3.0 이상 및 Visual Studio 2017 버전 15.3 이상을 통해 [유의적 버전 2.0.0](https://semver.org/spec/v2.0.0.html)을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-134">With NuGet 4.3.0+ and Visual Studio 2017 version 15.3+, NuGet supports [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).</span></span>
 
-<span data-ttu-id="6ee9c-135">SemVer v2.0.0의 특정 의미 체계는 이전 클라이언트에서 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-135">Certain semantics of SemVer v2.0.0 are not supported in older clients.</span></span> <span data-ttu-id="6ee9c-136">NuGet은 다음 문 중 하나라도 참인 경우 패키지 버전이 SemVer v2.0.0에 해당한다고 간주합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-136">NuGet considers a package version to be SemVer v2.0.0 specific if either of the following statements is true:</span></span>
+<span data-ttu-id="ae501-135">SemVer v2.0.0의 특정 의미 체계는 이전 클라이언트에서 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-135">Certain semantics of SemVer v2.0.0 are not supported in older clients.</span></span> <span data-ttu-id="ae501-136">NuGet은 다음 문 중 하나라도 참인 경우 패키지 버전이 SemVer v2.0.0에 해당한다고 간주합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-136">NuGet considers a package version to be SemVer v2.0.0 specific if either of the following statements is true:</span></span>
 
-- <span data-ttu-id="6ee9c-137">시험판 레이블이 점으로 구분됩니다(예: *1.0.0-alpha.1*).</span><span class="sxs-lookup"><span data-stu-id="6ee9c-137">The pre-release label is dot-separated, for example, *1.0.0-alpha.1*</span></span>
-- <span data-ttu-id="6ee9c-138">버전에 빌드-메타데이터(예: *1.0.0+githash*)가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-138">The version has build-metadata, for example, *1.0.0+githash*</span></span>
+- <span data-ttu-id="ae501-137">시험판 레이블이 점으로 구분됩니다(예: *1.0.0-alpha.1*).</span><span class="sxs-lookup"><span data-stu-id="ae501-137">The pre-release label is dot-separated, for example, *1.0.0-alpha.1*</span></span>
+- <span data-ttu-id="ae501-138">버전에 빌드-메타데이터(예: *1.0.0+githash*)가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-138">The version has build-metadata, for example, *1.0.0+githash*</span></span>
 
-<span data-ttu-id="6ee9c-139">nuget.org의 경우 패키지는 다음 문 중 하나가 참인 경우 SemVer v2.0.0 패키지로 정의됩니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-139">For nuget.org, a package is defined as a SemVer v2.0.0 package if either of the following statements is true:</span></span>
+<span data-ttu-id="ae501-139">nuget.org의 경우 패키지는 다음 문 중 하나가 참인 경우 SemVer v2.0.0 패키지로 정의됩니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-139">For nuget.org, a package is defined as a SemVer v2.0.0 package if either of the following statements is true:</span></span>
 
-- <span data-ttu-id="6ee9c-140">패키지의 자체 버전은 위에서 정의한 대로 SemVer v2.0.0 규격이며, SemVer v1.0.0 규격이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-140">The package's own version is SemVer v2.0.0 compliant but not SemVer v1.0.0 compliant, as defined above.</span></span>
-- <span data-ttu-id="6ee9c-141">패키지의 모든 종속성 버전 범위에는 최소 또는 최대 버전이 있으며, 이는 위에서 정의한 대로 SemVer v2.0.0 규격이며, SemVer v1.0.0 규격이 아닙니다(예: *[1.0.0-alpha.1, )*).</span><span class="sxs-lookup"><span data-stu-id="6ee9c-141">Any of the package's dependency version ranges has a minimum or maximum version that is SemVer v2.0.0 compliant but not SemVer v1.0.0 compliant, defined above; for example, *[1.0.0-alpha.1, )*.</span></span>
+- <span data-ttu-id="ae501-140">패키지의 자체 버전은 위에서 정의한 대로 SemVer v2.0.0 규격이며, SemVer v1.0.0 규격이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-140">The package's own version is SemVer v2.0.0 compliant but not SemVer v1.0.0 compliant, as defined above.</span></span>
+- <span data-ttu-id="ae501-141">패키지의 모든 종속성 버전 범위에는 최소 또는 최대 버전이 있으며, 이는 위에서 정의한 대로 SemVer v2.0.0 규격이며, SemVer v1.0.0 규격이 아닙니다(예: *[1.0.0-alpha.1, )* ).</span><span class="sxs-lookup"><span data-stu-id="ae501-141">Any of the package's dependency version ranges has a minimum or maximum version that is SemVer v2.0.0 compliant but not SemVer v1.0.0 compliant, defined above; for example, *[1.0.0-alpha.1, )*.</span></span>
 
-<span data-ttu-id="6ee9c-142">SemVer v2.0.0 특정 패키지를 nuget.org에 업로드하는 경우 패키지는 이전 클라이언트에 표시되지 않으며, 다음 NuGet 클라이언트에서만 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-142">If you upload a SemVer v2.0.0-specific package to nuget.org, the package is invisible to older clients and available to only the following NuGet clients:</span></span>
+<span data-ttu-id="ae501-142">SemVer v2.0.0 특정 패키지를 nuget.org에 업로드하는 경우 패키지는 이전 클라이언트에 표시되지 않으며, 다음 NuGet 클라이언트에서만 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-142">If you upload a SemVer v2.0.0-specific package to nuget.org, the package is invisible to older clients and available to only the following NuGet clients:</span></span>
 
-- <span data-ttu-id="6ee9c-143">NuGet 4.3.0 이상</span><span class="sxs-lookup"><span data-stu-id="6ee9c-143">NuGet 4.3.0+</span></span>
-- <span data-ttu-id="6ee9c-144">Visual Studio 2017 버전 15.3 이상</span><span class="sxs-lookup"><span data-stu-id="6ee9c-144">Visual Studio 2017 version 15.3+</span></span>
-- <span data-ttu-id="6ee9c-145">[NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)을 사용하는 Visual Studio 2015</span><span class="sxs-lookup"><span data-stu-id="6ee9c-145">Visual Studio 2015 with [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)</span></span>
-- <span data-ttu-id="6ee9c-146">dotnet</span><span class="sxs-lookup"><span data-stu-id="6ee9c-146">dotnet</span></span>
-  - <span data-ttu-id="6ee9c-147">dotnetcore.exe(.NET SDK 2.0.0 이상)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-147">dotnetcore.exe (.NET SDK 2.0.0+)</span></span>
+- <span data-ttu-id="ae501-143">NuGet 4.3.0 이상</span><span class="sxs-lookup"><span data-stu-id="ae501-143">NuGet 4.3.0+</span></span>
+- <span data-ttu-id="ae501-144">Visual Studio 2017 버전 15.3 이상</span><span class="sxs-lookup"><span data-stu-id="ae501-144">Visual Studio 2017 version 15.3+</span></span>
+- <span data-ttu-id="ae501-145">[NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)을 사용하는 Visual Studio 2015</span><span class="sxs-lookup"><span data-stu-id="ae501-145">Visual Studio 2015 with [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)</span></span>
+- <span data-ttu-id="ae501-146">dotnet</span><span class="sxs-lookup"><span data-stu-id="ae501-146">dotnet</span></span>
+  - <span data-ttu-id="ae501-147">dotnetcore.exe(.NET SDK 2.0.0 이상)</span><span class="sxs-lookup"><span data-stu-id="ae501-147">dotnetcore.exe (.NET SDK 2.0.0+)</span></span>
 
-<span data-ttu-id="6ee9c-148">타사 클라이언트:</span><span class="sxs-lookup"><span data-stu-id="6ee9c-148">Third-party clients:</span></span>
+<span data-ttu-id="ae501-148">타사 클라이언트:</span><span class="sxs-lookup"><span data-stu-id="ae501-148">Third-party clients:</span></span>
 
-- <span data-ttu-id="6ee9c-149">JetBrains Rider</span><span class="sxs-lookup"><span data-stu-id="6ee9c-149">JetBrains Rider</span></span>
-- <span data-ttu-id="6ee9c-150">Paket 버전 5.0 이상</span><span class="sxs-lookup"><span data-stu-id="6ee9c-150">Paket version 5.0+</span></span>
+- <span data-ttu-id="ae501-149">JetBrains Rider</span><span class="sxs-lookup"><span data-stu-id="ae501-149">JetBrains Rider</span></span>
+- <span data-ttu-id="ae501-150">Paket 버전 5.0 이상</span><span class="sxs-lookup"><span data-stu-id="ae501-150">Paket version 5.0+</span></span>
 
 <!-- For compatibility with previous dependency-versions page -->
 <a name="version-ranges"></a>
 
-## <a name="version-ranges-and-wildcards"></a><span data-ttu-id="6ee9c-151">버전 범위 및 와일드카드</span><span class="sxs-lookup"><span data-stu-id="6ee9c-151">Version ranges and wildcards</span></span>
+## <a name="version-ranges-and-wildcards"></a><span data-ttu-id="ae501-151">버전 범위 및 와일드카드</span><span class="sxs-lookup"><span data-stu-id="ae501-151">Version ranges and wildcards</span></span>
 
-<span data-ttu-id="6ee9c-152">패키지 종속성을 참조할 때 NuGet은 간격 표기법으로 버전 범위를 다음과 같이 요약하여 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-152">When referring to package dependencies, NuGet supports using interval notation for specifying version ranges, summarized as follows:</span></span>
+<span data-ttu-id="ae501-152">패키지 종속성을 참조할 때 NuGet은 간격 표기법으로 버전 범위를 다음과 같이 요약하여 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-152">When referring to package dependencies, NuGet supports using interval notation for specifying version ranges, summarized as follows:</span></span>
 
-| <span data-ttu-id="6ee9c-153">Notation</span><span class="sxs-lookup"><span data-stu-id="6ee9c-153">Notation</span></span> | <span data-ttu-id="6ee9c-154">적용된 규칙</span><span class="sxs-lookup"><span data-stu-id="6ee9c-154">Applied rule</span></span> | <span data-ttu-id="6ee9c-155">설명</span><span class="sxs-lookup"><span data-stu-id="6ee9c-155">Description</span></span> |
+| <span data-ttu-id="ae501-153">Notation</span><span class="sxs-lookup"><span data-stu-id="ae501-153">Notation</span></span> | <span data-ttu-id="ae501-154">적용된 규칙</span><span class="sxs-lookup"><span data-stu-id="ae501-154">Applied rule</span></span> | <span data-ttu-id="ae501-155">설명</span><span class="sxs-lookup"><span data-stu-id="ae501-155">Description</span></span> |
 |----------|--------------|-------------|
-| <span data-ttu-id="6ee9c-156">1.0</span><span class="sxs-lookup"><span data-stu-id="6ee9c-156">1.0</span></span> | <span data-ttu-id="6ee9c-157">x ≥ 1.0</span><span class="sxs-lookup"><span data-stu-id="6ee9c-157">x ≥ 1.0</span></span> | <span data-ttu-id="6ee9c-158">최소 버전(포함)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-158">Minimum version, inclusive</span></span> |
-| <span data-ttu-id="6ee9c-159">(1.0,)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-159">(1.0,)</span></span> | <span data-ttu-id="6ee9c-160">x > 1.0</span><span class="sxs-lookup"><span data-stu-id="6ee9c-160">x > 1.0</span></span> | <span data-ttu-id="6ee9c-161">최소 버전(제외)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-161">Minimum version, exclusive</span></span> |
-| <span data-ttu-id="6ee9c-162">[1.0]</span><span class="sxs-lookup"><span data-stu-id="6ee9c-162">[1.0]</span></span> | <span data-ttu-id="6ee9c-163">x == 1.0</span><span class="sxs-lookup"><span data-stu-id="6ee9c-163">x == 1.0</span></span> | <span data-ttu-id="6ee9c-164">정확한 버전 일치</span><span class="sxs-lookup"><span data-stu-id="6ee9c-164">Exact version match</span></span> |
-| <span data-ttu-id="6ee9c-165">(,1.0]</span><span class="sxs-lookup"><span data-stu-id="6ee9c-165">(,1.0]</span></span> | <span data-ttu-id="6ee9c-166">x ≤ 1.0</span><span class="sxs-lookup"><span data-stu-id="6ee9c-166">x ≤ 1.0</span></span> | <span data-ttu-id="6ee9c-167">최대 버전(포함)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-167">Maximum version, inclusive</span></span> |
-| <span data-ttu-id="6ee9c-168">(,1.0)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-168">(,1.0)</span></span> | <span data-ttu-id="6ee9c-169">x < 1.0</span><span class="sxs-lookup"><span data-stu-id="6ee9c-169">x < 1.0</span></span> | <span data-ttu-id="6ee9c-170">최대 버전(제외)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-170">Maximum version, exclusive</span></span> |
-| <span data-ttu-id="6ee9c-171">[1.0,2.0]</span><span class="sxs-lookup"><span data-stu-id="6ee9c-171">[1.0,2.0]</span></span> | <span data-ttu-id="6ee9c-172">1.0 ≤ x ≤ 2.0</span><span class="sxs-lookup"><span data-stu-id="6ee9c-172">1.0 ≤ x ≤ 2.0</span></span> | <span data-ttu-id="6ee9c-173">정확한 범위(포함)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-173">Exact range, inclusive</span></span> |
-| <span data-ttu-id="6ee9c-174">(1.0,2.0)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-174">(1.0,2.0)</span></span> | <span data-ttu-id="6ee9c-175">1.0 < x < 2.0</span><span class="sxs-lookup"><span data-stu-id="6ee9c-175">1.0 < x < 2.0</span></span> | <span data-ttu-id="6ee9c-176">정확한 범위(제외)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-176">Exact range, exclusive</span></span> |
-| <span data-ttu-id="6ee9c-177">[1.0,2.0)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-177">[1.0,2.0)</span></span> | <span data-ttu-id="6ee9c-178">1.0 ≤ x < 2.0</span><span class="sxs-lookup"><span data-stu-id="6ee9c-178">1.0 ≤ x < 2.0</span></span> | <span data-ttu-id="6ee9c-179">최소 포함 및 최대 제외 혼합 버전</span><span class="sxs-lookup"><span data-stu-id="6ee9c-179">Mixed inclusive minimum and exclusive maximum version</span></span> |
-| <span data-ttu-id="6ee9c-180">(1.0)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-180">(1.0)</span></span>    | <span data-ttu-id="6ee9c-181">잘못된</span><span class="sxs-lookup"><span data-stu-id="6ee9c-181">invalid</span></span> | <span data-ttu-id="6ee9c-182">잘못된</span><span class="sxs-lookup"><span data-stu-id="6ee9c-182">invalid</span></span> |
+| <span data-ttu-id="ae501-156">1.0</span><span class="sxs-lookup"><span data-stu-id="ae501-156">1.0</span></span> | <span data-ttu-id="ae501-157">x ≥ 1.0</span><span class="sxs-lookup"><span data-stu-id="ae501-157">x ≥ 1.0</span></span> | <span data-ttu-id="ae501-158">최소 버전(포함)</span><span class="sxs-lookup"><span data-stu-id="ae501-158">Minimum version, inclusive</span></span> |
+| <span data-ttu-id="ae501-159">(1.0,)</span><span class="sxs-lookup"><span data-stu-id="ae501-159">(1.0,)</span></span> | <span data-ttu-id="ae501-160">x > 1.0</span><span class="sxs-lookup"><span data-stu-id="ae501-160">x > 1.0</span></span> | <span data-ttu-id="ae501-161">최소 버전(제외)</span><span class="sxs-lookup"><span data-stu-id="ae501-161">Minimum version, exclusive</span></span> |
+| <span data-ttu-id="ae501-162">[1.0]</span><span class="sxs-lookup"><span data-stu-id="ae501-162">[1.0]</span></span> | <span data-ttu-id="ae501-163">x == 1.0</span><span class="sxs-lookup"><span data-stu-id="ae501-163">x == 1.0</span></span> | <span data-ttu-id="ae501-164">정확한 버전 일치</span><span class="sxs-lookup"><span data-stu-id="ae501-164">Exact version match</span></span> |
+| <span data-ttu-id="ae501-165">(,1.0]</span><span class="sxs-lookup"><span data-stu-id="ae501-165">(,1.0]</span></span> | <span data-ttu-id="ae501-166">x ≤ 1.0</span><span class="sxs-lookup"><span data-stu-id="ae501-166">x ≤ 1.0</span></span> | <span data-ttu-id="ae501-167">최대 버전(포함)</span><span class="sxs-lookup"><span data-stu-id="ae501-167">Maximum version, inclusive</span></span> |
+| <span data-ttu-id="ae501-168">(,1.0)</span><span class="sxs-lookup"><span data-stu-id="ae501-168">(,1.0)</span></span> | <span data-ttu-id="ae501-169">x < 1.0</span><span class="sxs-lookup"><span data-stu-id="ae501-169">x < 1.0</span></span> | <span data-ttu-id="ae501-170">최대 버전(제외)</span><span class="sxs-lookup"><span data-stu-id="ae501-170">Maximum version, exclusive</span></span> |
+| <span data-ttu-id="ae501-171">[1.0,2.0]</span><span class="sxs-lookup"><span data-stu-id="ae501-171">[1.0,2.0]</span></span> | <span data-ttu-id="ae501-172">1.0 ≤ x ≤ 2.0</span><span class="sxs-lookup"><span data-stu-id="ae501-172">1.0 ≤ x ≤ 2.0</span></span> | <span data-ttu-id="ae501-173">정확한 범위(포함)</span><span class="sxs-lookup"><span data-stu-id="ae501-173">Exact range, inclusive</span></span> |
+| <span data-ttu-id="ae501-174">(1.0,2.0)</span><span class="sxs-lookup"><span data-stu-id="ae501-174">(1.0,2.0)</span></span> | <span data-ttu-id="ae501-175">1.0 < x < 2.0</span><span class="sxs-lookup"><span data-stu-id="ae501-175">1.0 < x < 2.0</span></span> | <span data-ttu-id="ae501-176">정확한 범위(제외)</span><span class="sxs-lookup"><span data-stu-id="ae501-176">Exact range, exclusive</span></span> |
+| <span data-ttu-id="ae501-177">[1.0,2.0)</span><span class="sxs-lookup"><span data-stu-id="ae501-177">[1.0,2.0)</span></span> | <span data-ttu-id="ae501-178">1.0 ≤ x < 2.0</span><span class="sxs-lookup"><span data-stu-id="ae501-178">1.0 ≤ x < 2.0</span></span> | <span data-ttu-id="ae501-179">최소 포함 및 최대 제외 혼합 버전</span><span class="sxs-lookup"><span data-stu-id="ae501-179">Mixed inclusive minimum and exclusive maximum version</span></span> |
+| <span data-ttu-id="ae501-180">(1.0)</span><span class="sxs-lookup"><span data-stu-id="ae501-180">(1.0)</span></span>    | <span data-ttu-id="ae501-181">잘못된</span><span class="sxs-lookup"><span data-stu-id="ae501-181">invalid</span></span> | <span data-ttu-id="ae501-182">잘못된</span><span class="sxs-lookup"><span data-stu-id="ae501-182">invalid</span></span> |
 
-<span data-ttu-id="6ee9c-183">PackageReference 형식을 사용하는 경우 NuGet은 숫자의 주, 부, 패치, 시험판 접미사 부분에 와일드카드 표기법(\*)도 사용할 수 있도록 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-183">When using the PackageReference format, NuGet also supports using a wildcard notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number.</span></span> <span data-ttu-id="6ee9c-184">와일드카드는 `packages.config` 형식으로 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-184">Wildcards are not supported with the `packages.config` format.</span></span>
+<span data-ttu-id="ae501-183">PackageReference 형식을 사용하는 경우 NuGet은 숫자의 주, 부, 패치, 시험판 접미사 부분에 와일드카드 표기법(\*)도 사용할 수 있도록 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-183">When using the PackageReference format, NuGet also supports using a wildcard notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number.</span></span> <span data-ttu-id="ae501-184">와일드카드는 `packages.config` 형식으로 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-184">Wildcards are not supported with the `packages.config` format.</span></span>
 
 > [!Note]
-> <span data-ttu-id="6ee9c-185">PackageReference의 버전 범위에는 시험판 버전이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-185">Version ranges in PackageReference include pre-release versions.</span></span> <span data-ttu-id="6ee9c-186">부동 버전은 옵트인되지 않는 한 의도적으로 시험판 버전을 확인하지 않도록 설계되었습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-186">By design, floating versions do not resolve prerelease versions unless opted into.</span></span> <span data-ttu-id="6ee9c-187">관련 기능 요청 상태는 [문제 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-187">For the status of the related feature request, see [issue 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297).</span></span>
+> <span data-ttu-id="ae501-185">PackageReference의 버전 범위에는 시험판 버전이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-185">Version ranges in PackageReference include pre-release versions.</span></span> <span data-ttu-id="ae501-186">부동 버전은 옵트인되지 않는 한 의도적으로 시험판 버전을 확인하지 않도록 설계되었습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-186">By design, floating versions do not resolve prerelease versions unless opted into.</span></span> <span data-ttu-id="ae501-187">관련 기능 요청 상태는 [문제 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="ae501-187">For the status of the related feature request, see [issue 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297).</span></span>
 
-### <a name="examples"></a><span data-ttu-id="6ee9c-188">예제</span><span class="sxs-lookup"><span data-stu-id="6ee9c-188">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="ae501-188">예</span><span class="sxs-lookup"><span data-stu-id="ae501-188">Examples</span></span>
 
-<span data-ttu-id="6ee9c-189">프로젝트 파일, `packages.config` 파일, `.nuspec` 파일에서 패키지 종속성의 버전 또는 버전 범위를 항상 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-189">Always specify a version or version range for package dependencies in project files, `packages.config` files, and `.nuspec` files.</span></span> <span data-ttu-id="6ee9c-190">버전 또는 버전 범위가 없으면, 종속성을 확인할 때 NuGet 2.8.x 이하는 사용 가능한 최신 패키지 버전을 선택하는 반면, NuGet 3.x 이상은 가장 낮은 패키지 버전을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-190">Without a version or version range, NuGet 2.8.x and earlier chooses the latest available package version when resolving a dependency, whereas NuGet 3.x and later chooses the lowest package version.</span></span> <span data-ttu-id="6ee9c-191">버전 또는 버전 범위를 지정하면 이러한 불확실성을 피할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-191">Specifying a version or version range avoids this uncertainty.</span></span>
+<span data-ttu-id="ae501-189">프로젝트 파일, `packages.config` 파일, `.nuspec` 파일에서 패키지 종속성의 버전 또는 버전 범위를 항상 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-189">Always specify a version or version range for package dependencies in project files, `packages.config` files, and `.nuspec` files.</span></span> <span data-ttu-id="ae501-190">버전 또는 버전 범위가 없으면, 종속성을 확인할 때 NuGet 2.8.x 이하는 사용 가능한 최신 패키지 버전을 선택하는 반면, NuGet 3.x 이상은 가장 낮은 패키지 버전을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-190">Without a version or version range, NuGet 2.8.x and earlier chooses the latest available package version when resolving a dependency, whereas NuGet 3.x and later chooses the lowest package version.</span></span> <span data-ttu-id="ae501-191">버전 또는 버전 범위를 지정하면 이러한 불확실성을 피할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-191">Specifying a version or version range avoids this uncertainty.</span></span>
 
-#### <a name="references-in-project-files-packagereference"></a><span data-ttu-id="6ee9c-192">프로젝트 파일의 참조(PackageReference)</span><span class="sxs-lookup"><span data-stu-id="6ee9c-192">References in project files (PackageReference)</span></span>
+#### <a name="references-in-project-files-packagereference"></a><span data-ttu-id="ae501-192">프로젝트 파일의 참조(PackageReference)</span><span class="sxs-lookup"><span data-stu-id="ae501-192">References in project files (PackageReference)</span></span>
 
 ```xml
 <!-- Accepts any version 6.1 and above. -->
@@ -149,9 +149,9 @@ ms.locfileid: "69520353"
 <PackageReference Include="ExamplePackage" Version="[1.3.2,1.5)" />
 ```
 
-<span data-ttu-id="6ee9c-193">**`packages.config`에서의 참조:**</span><span class="sxs-lookup"><span data-stu-id="6ee9c-193">**References in `packages.config`:**</span></span>
+<span data-ttu-id="ae501-193">**`packages.config`에서의 참조:**</span><span class="sxs-lookup"><span data-stu-id="ae501-193">**References in `packages.config`:**</span></span>
 
-<span data-ttu-id="6ee9c-194">`packages.config`에서 모든 종속성은 패키지를 복원할 때 사용되는 정확한 `version` 특성과 함께 나열됩니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-194">In `packages.config`, every dependency is listed with an exact `version` attribute that's used when restoring packages.</span></span> <span data-ttu-id="6ee9c-195">`allowedVersions` 특성은 패키지가 업데이트될 수 있는 버전을 제한하기 위해 업데이트 작업 시에만 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-195">The `allowedVersions` attribute is used only during update operations to constrain the versions to which the package might be updated.</span></span>
+<span data-ttu-id="ae501-194">`packages.config`에서 모든 종속성은 패키지를 복원할 때 사용되는 정확한 `version` 특성과 함께 나열됩니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-194">In `packages.config`, every dependency is listed with an exact `version` attribute that's used when restoring packages.</span></span> <span data-ttu-id="ae501-195">`allowedVersions` 특성은 패키지가 업데이트될 수 있는 버전을 제한하기 위해 업데이트 작업 시에만 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-195">The `allowedVersions` attribute is used only during update operations to constrain the versions to which the package might be updated.</span></span>
 
 ```xml
 <!-- Install/restore version 6.1.0, accept any version 6.1.0 and above on update. -->
@@ -180,9 +180,9 @@ ms.locfileid: "69520353"
 <package id="ExamplePackage" version="1.3.5" allowedVersions="[1.3.2,1.5)" />
 ```
 
-<span data-ttu-id="6ee9c-196">**`.nuspec`파일에서의 참조**</span><span class="sxs-lookup"><span data-stu-id="6ee9c-196">**References in `.nuspec` files**</span></span>
+<span data-ttu-id="ae501-196">**`.nuspec`파일에서의 참조**</span><span class="sxs-lookup"><span data-stu-id="ae501-196">**References in `.nuspec` files**</span></span>
 
-<span data-ttu-id="6ee9c-197">`<dependency>` 요소의 `version` 특성은 종속성에 허용되는 범위 버전을 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-197">The `version` attribute in a `<dependency>` element describes the range versions that are acceptable for a dependency.</span></span>
+<span data-ttu-id="ae501-197">`<dependency>` 요소의 `version` 특성은 종속성에 허용되는 범위 버전을 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-197">The `version` attribute in a `<dependency>` element describes the range versions that are acceptable for a dependency.</span></span>
 
 ```xml
 <!-- Accepts any version 6.1 and above. -->
@@ -204,24 +204,24 @@ ms.locfileid: "69520353"
 <dependency id="ExamplePackage" version="[1.3.2,1.5)" />
 ```
 
-## <a name="normalized-version-numbers"></a><span data-ttu-id="6ee9c-198">정규화된 버전 번호</span><span class="sxs-lookup"><span data-stu-id="6ee9c-198">Normalized version numbers</span></span>
+## <a name="normalized-version-numbers"></a><span data-ttu-id="ae501-198">정규화된 버전 번호</span><span class="sxs-lookup"><span data-stu-id="ae501-198">Normalized version numbers</span></span>
 
 > [!Note]
-> <span data-ttu-id="6ee9c-199">이는 NuGet 3.4 이상에서 호환성이 손상되는 변경입니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-199">This is a breaking change for NuGet 3.4 and later.</span></span>
+> <span data-ttu-id="ae501-199">이는 NuGet 3.4 이상에서 호환성이 손상되는 변경입니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-199">This is a breaking change for NuGet 3.4 and later.</span></span>
 
-<span data-ttu-id="6ee9c-200">설치, 다시 설치 또는 복원 작업 시 리포지토리에서 패키지를 가져올 때 NuGet 3.4 이상은 버전 번호를 다음과 같이 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-200">When obtaining packages from a repository during install, reinstall, or restore operations, NuGet 3.4+ treats version numbers as follows:</span></span>
+<span data-ttu-id="ae501-200">설치, 다시 설치 또는 복원 작업 시 리포지토리에서 패키지를 가져올 때 NuGet 3.4 이상은 버전 번호를 다음과 같이 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-200">When obtaining packages from a repository during install, reinstall, or restore operations, NuGet 3.4+ treats version numbers as follows:</span></span>
 
-- <span data-ttu-id="6ee9c-201">버전 번호 앞에 있는 0을 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-201">Leading zeroes are removed from version numbers:</span></span>
+- <span data-ttu-id="ae501-201">버전 번호 앞에 있는 0을 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-201">Leading zeroes are removed from version numbers:</span></span>
 
         1.00 is treated as 1.0
         1.01.1 is treated as 1.1.1
         1.00.0.1 is treated as 1.0.0.1
 
-- <span data-ttu-id="6ee9c-202">버전 번호의 네 번째 파트에서 0을 생략합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-202">A zero in the fourth part of the version number will be omitted</span></span>
+- <span data-ttu-id="ae501-202">버전 번호의 네 번째 파트에서 0을 생략합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-202">A zero in the fourth part of the version number will be omitted</span></span>
 
         1.0.0.0 is treated as 1.0.0
         1.0.01.0 is treated as 1.0.1
 
-<span data-ttu-id="6ee9c-203">`pack` 및 `restore` 작업은 가능한 경우 항상 버전을 정규화합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-203">`pack` and `restore` operations normalize versions whenever possible.</span></span> <span data-ttu-id="6ee9c-204">이미 빌드된 패키지의 경우, 이 정규화 작업이 패키지 자체의 버전 번호에 영향을 주지는 않습니다. NuGet이 종속성을 확인할 때 버전과 일치시키는 방식에만 영향을 줍니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-204">For packages already built, this normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.</span></span>
+<span data-ttu-id="ae501-203">`pack` 및 `restore` 작업은 가능한 경우 항상 버전을 정규화합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-203">`pack` and `restore` operations normalize versions whenever possible.</span></span> <span data-ttu-id="ae501-204">이미 빌드된 패키지의 경우, 이 정규화 작업이 패키지 자체의 버전 번호에 영향을 주지는 않습니다. NuGet이 종속성을 확인할 때 버전과 일치시키는 방식에만 영향을 줍니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-204">For packages already built, this normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.</span></span>
 
-<span data-ttu-id="6ee9c-205">그러나 패키지 버전 중복을 방지하기 위해서는 NuGet 패키지 리포지토리에서 이러한 값을 NuGet과 동일한 방식으로 처리해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-205">However, NuGet package repositories must treat these values in the same way as NuGet to prevent package version duplication.</span></span> <span data-ttu-id="6ee9c-206">따라서 패키지 버전 *1.0*을 포함하는 리포지토리는 버전 *1.0.0*도 별도의 다른 패키지로 호스트해서는 안 됩니다.</span><span class="sxs-lookup"><span data-stu-id="6ee9c-206">Thus a repository that contains version *1.0* of a package should not also host version *1.0.0* as a separate and different package.</span></span>
+<span data-ttu-id="ae501-205">그러나 패키지 버전 중복을 방지하기 위해서는 NuGet 패키지 리포지토리에서 이러한 값을 NuGet과 동일한 방식으로 처리해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-205">However, NuGet package repositories must treat these values in the same way as NuGet to prevent package version duplication.</span></span> <span data-ttu-id="ae501-206">따라서 패키지 버전 *1.0*을 포함하는 리포지토리는 버전 *1.0.0*도 별도의 다른 패키지로 호스트해서는 안 됩니다.</span><span class="sxs-lookup"><span data-stu-id="ae501-206">Thus a repository that contains version *1.0* of a package should not also host version *1.0.0* as a separate and different package.</span></span>
