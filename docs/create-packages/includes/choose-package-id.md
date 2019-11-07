@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7ebe3c0f75b8de158879119bce4df26217849251
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: c92f6e0c34347ee8555d416140d95ea2df5a3fbb
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488961"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610539"
 ---
 패키지 식별자와 버전 번호는 패키지에 포함된 정확한 코드를 고유하게 식별하므로 프로젝트에서 가장 중요한 두 가지 값입니다.
 
@@ -21,6 +21,6 @@ ms.locfileid: "69488961"
 
 > 종속성 확인에 대한 자세한 내용은 [PackageReference를 사용하여 종속성 확인](../../concepts/dependency-resolution.md#dependency-resolution-with-packagereference)을 참조하세요. 버전 관리를 보다 잘 이해하는 데 도움이 될 수 있는 이전 정보는 다음의 블로그 게시물 시리지를 참조하세요.
 >
-> - [1부: DLL 지옥에서 가져오기](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
-> - [2부: 핵심 알고리즘](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
-> - [3부: 바인딩 리디렉션을 통한 통합](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
+> - [1부: DLL 지옥에서 가져오기](https://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
+> - [2부: 핵심 알고리즘](https://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
+> - [3부: 바인딩 리디렉션을 통한 통합](https://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)

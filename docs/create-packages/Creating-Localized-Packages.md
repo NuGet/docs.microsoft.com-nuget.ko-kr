@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: dbc3781bd17f815c6b32fc70b275469337148f41
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 83414a824676844f9e44eab874e5eac788d50583
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488830"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610948"
 ---
 # <a name="creating-localized-nuget-packages"></a>지역화된 NuGet 패키지 만들기
 
@@ -71,7 +71,7 @@ ms.locfileid: "69488830"
 </package>
 ```
 
-이 방법을 사용하는 하나의 예제 패키지는 [Microsoft.Data.OData 5.4.0](http://nuget.org/packages/Microsoft.Data.OData/5.4.0)입니다.
+이 방법을 사용하는 하나의 예제 패키지는 [Microsoft.Data.OData 5.4.0](https://nuget.org/packages/Microsoft.Data.OData/5.4.0)입니다.
 
 ### <a name="advantages-and-disadvantages-localized-resource-assemblies"></a>장점 및 단점(지역화된 리소스 어셈블리)
 
@@ -119,11 +119,11 @@ ms.locfileid: "69488830"
 
 지원되는 각 언어에 대해 같은 방법으로 추가 위성 어셈블리를 만듭니다. 예를 들어 ASP.NET MVC 패키지 집합을 검사합니다.
 
-- [Microsoft.AspNet.Mvc](http://nuget.org/packages/Microsoft.AspNet.Mvc)(영어 기본)
-- [Microsoft.AspNet.Mvc.de](http://nuget.org/packages/Microsoft.AspNet.Mvc.de)(독일어)
-- [Microsoft.AspNet.Mvc.ja](http://nuget.org/packages/Microsoft.AspNet.Mvc.ja)(일본어)
-- [Microsoft.AspNet.Mvc.zh-Hans](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hans)(중국어(간체))
-- [Microsoft.AspNet.Mvc.zh-Hant](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hant)(중국어(번체))
+- [Microsoft.AspNet.Mvc](https://nuget.org/packages/Microsoft.AspNet.Mvc)(영어 기본)
+- [Microsoft.AspNet.Mvc.de](https://nuget.org/packages/Microsoft.AspNet.Mvc.de)(독일어)
+- [Microsoft.AspNet.Mvc.ja](https://nuget.org/packages/Microsoft.AspNet.Mvc.ja)(일본어)
+- [Microsoft.AspNet.Mvc.zh-Hans](https://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hans)(중국어(간체))
+- [Microsoft.AspNet.Mvc.zh-Hant](https://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hant)(중국어(번체))
 
 ### <a name="summary-of-required-conventions"></a>필수 규칙 요약
 

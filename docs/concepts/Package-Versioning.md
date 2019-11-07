@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 7c6992d6bf3142eb6aca70f1fa3c46f72efd25a0
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: e0014a812ea591ef40c961e13864652d75ebdf6c
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520353"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610981"
 ---
 # <a name="package-versioning"></a>패키지 버전 관리
 
@@ -32,7 +32,7 @@ ms.locfileid: "69520353"
 - *주*: 호환성이 손상되는 변경
 - *부*: 이전 버전과 호환되는 새로운 기능
 - *패치*: 이전 버전과 호환되는 버그 수정에만 해당
-- *-접미사*(선택 사항): 하이픈 다음에는 시험판 버전을 나타내는 문자열([유의적 버전 또는 SemVer 1.0 규칙](http://semver.org/spec/v1.0.0.html)을 따름)이 옵니다.
+- *-접미사*(선택 사항): 하이픈 다음에는 시험판 버전을 나타내는 문자열([유의적 버전 또는 SemVer 1.0 규칙](https://semver.org/spec/v1.0.0.html)을 따름)이 옵니다.
 
 **예제:**
 
@@ -55,7 +55,7 @@ ms.locfileid: "69520353"
 - `-rc`: 일반적으로 심각한 버그가 발생하지 않는 한 잠재적으로 최종적(안정적)인 릴리스인 릴리스 후보입니다.
 
 > [!Note]
-> NuGet 4.3.0 이상은 *1.0.1-build.23*에서와 같이 시험판 번호에 점 표기법을 지원하는 [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html)을 지원합니다. NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다. *1.0.1-build23*과 같은 형식을 사용할 수 있습니다.
+> NuGet 4.3.0 이상은 *1.0.1-build.23*에서와 같이 시험판 번호에 점 표기법을 지원하는 [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html)을 지원합니다. NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다. *1.0.1-build23*과 같은 형식을 사용할 수 있습니다.
 
 패키지 참조를 확인할 때 패키지 버전 여러 개가 접미사만 다른 경우 NuGet은 먼저 접미사가 없는 버전을 선택한 다음, 알파벳 역순으로 시험판 버전에 우선 순위를 적용합니다. 예를 들어, 다음 버전은 정확히 표시된 순서대로 선택됩니다.
 
@@ -70,7 +70,7 @@ ms.locfileid: "69520353"
 
 ## <a name="semantic-versioning-200"></a>유의적 버전 2.0.0
 
-NuGet은 NuGet 4.3.0 이상 및 Visual Studio 2017 버전 15.3 이상을 통해 [유의적 버전 2.0.0](http://semver.org/spec/v2.0.0.html)을 지원합니다.
+NuGet은 NuGet 4.3.0 이상 및 Visual Studio 2017 버전 15.3 이상을 통해 [유의적 버전 2.0.0](https://semver.org/spec/v2.0.0.html)을 지원합니다.
 
 SemVer v2.0.0의 특정 의미 체계는 이전 클라이언트에서 지원되지 않습니다. NuGet은 다음 문 중 하나라도 참인 경우 패키지 버전이 SemVer v2.0.0에 해당한다고 간주합니다.
 
@@ -80,7 +80,7 @@ SemVer v2.0.0의 특정 의미 체계는 이전 클라이언트에서 지원되�
 nuget.org의 경우 패키지는 다음 문 중 하나가 참인 경우 SemVer v2.0.0 패키지로 정의됩니다.
 
 - 패키지의 자체 버전은 위에서 정의한 대로 SemVer v2.0.0 규격이며, SemVer v1.0.0 규격이 아닙니다.
-- 패키지의 모든 종속성 버전 범위에는 최소 또는 최대 버전이 있으며, 이는 위에서 정의한 대로 SemVer v2.0.0 규격이며, SemVer v1.0.0 규격이 아닙니다(예: *[1.0.0-alpha.1, )*).
+- 패키지의 모든 종속성 버전 범위에는 최소 또는 최대 버전이 있으며, 이는 위에서 정의한 대로 SemVer v2.0.0 규격이며, SemVer v1.0.0 규격이 아닙니다(예: *[1.0.0-alpha.1, )* ).
 
 SemVer v2.0.0 특정 패키지를 nuget.org에 업로드하는 경우 패키지는 이전 클라이언트에 표시되지 않으며, 다음 NuGet 클라이언트에서만 사용할 수 있습니다.
 
@@ -119,7 +119,7 @@ PackageReference 형식을 사용하는 경우 NuGet은 숫자의 주, 부, 패�
 > [!Note]
 > PackageReference의 버전 범위에는 시험판 버전이 포함됩니다. 부동 버전은 옵트인되지 않는 한 의도적으로 시험판 버전을 확인하지 않도록 설계되었습니다. 관련 기능 요청 상태는 [문제 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297)를 참조하세요.
 
-### <a name="examples"></a>예제
+### <a name="examples"></a>예
 
 프로젝트 파일, `packages.config` 파일, `.nuspec` 파일에서 패키지 종속성의 버전 또는 버전 범위를 항상 지정합니다. 버전 또는 버전 범위가 없으면, 종속성을 확인할 때 NuGet 2.8.x 이하는 사용 가능한 최신 패키지 버전을 선택하는 반면, NuGet 3.x 이상은 가장 낮은 패키지 버전을 선택합니다. 버전 또는 버전 범위를 지정하면 이러한 불확실성을 피할 수 있습니다.
 

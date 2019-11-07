@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: 522dbbb2a39eb1cb6f0d23f39a48158b07c9076d
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: da8c5a05311c790bf6b873bc0f1a077d3ef1db87
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426849"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610625"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>NuGet 패키지인 UI 컨트롤 만들기
 
@@ -93,7 +93,7 @@ Visual Studio 및 Blend의 자산 창에 있는 XAML 디자이너의 도구 상�
 
 ![도구 상자 아이콘 샘플](https://raw.githubusercontent.com/NuGet/docs.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
 
-분홍색 배경은 런타임에 바뀝니다. 아이콘은 Visual Studio 테마를 변경하고 배경색이 예상되면 다시 그려집니다. 자세한 내용은 [Visual Studio용 이미지 및 아이콘](https://docs.microsoft.com/en-us/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)을 참조하세요.
+분홍색 배경은 런타임에 바뀝니다. 아이콘은 Visual Studio 테마를 변경하고 배경색이 예상되면 다시 그려집니다. 자세한 내용은 [Visual Studio용 이미지 및 아이콘](https://docs.microsoft.com/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)을 참조하세요.
 
 아래 예제에서 프로젝트에는 "ManagedPackage.MyCustomControl.png"라는 이미지 파일이 있습니다.
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/16/2019
 ms.topic: quickstart
-ms.openlocfilehash: 9552f6c5291f950430bfb723cb713bf76a79ea66
-ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
+ms.openlocfilehash: ef1bda19c5ca3c6b5a4bd9b9d4e3ef41d7dadb53
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69564603"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610631"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>빠른 시작: Visual Studio(.NET Standard, Windows 전용)를 사용하여 NuGet 패키지 만들기 및 게시
 
@@ -30,7 +30,7 @@ Windows에서 Visual Studio의 .NET Standard 클래스 라이브러리에서 NuG
    > [!Important]
    > 비 SDK 스타일 프로젝트를 사용하는 경우 대신 [.NET Framework 패키지(Visual Studio) 만들기 및 게시](create-and-publish-a-package-using-visual-studio-net-framework.md)의 절차에 따라 패키지를 만들고 게시합니다. 이 문서에서는 `dotnet` CLI가 권장됩니다. `nuget.exe` CLI를 사용하여 NuGet 패키지를 게시할 수는 있지만 이 문서의 일부 단계는 SDK 스타일 프로젝트 및 dotnet CLI와 관련이 있습니다. nuget.exe CLI는 [비 SDK 스타일 프로젝트](../resources/check-project-format.md)에 사용됩니다(일반적으로 .NET Framework).
 
-1. 아직 없는 경우 [nuget.org에 체험 계정을 등록](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account)합니다. 새 계정을 만들면 확인 전자 메일을 보냅니다. 패키지를 업로드하려면 먼저 계정을 확인해야 합니다.
+1. 아직 없는 경우 [nuget.org에 체험 계정을 등록](https://docs.microsoft.com/nuget/nuget-org/individual-accounts#add-a-new-individual-account)합니다. 새 계정을 만들면 확인 전자 메일을 보냅니다. 패키지를 업로드하려면 먼저 계정을 확인해야 합니다.
 
 ## <a name="create-a-class-library-project"></a>클래스 라이브러리 프로젝트 만들기
 

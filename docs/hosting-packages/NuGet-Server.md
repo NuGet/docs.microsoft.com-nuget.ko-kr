@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 734f0a609f243c7bdb218a53ed664de68c707dd7
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 82b353450ff1da23a17e5b1c6a825ad32782bf75
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317657"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610599"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -53,7 +53,7 @@ NuGet.Server에 대해 추가 질문이 있으면 [https://github.com/nuget/NuGe
 
 1. 위에서 설명한 영역의 **여기**를 클릭하여 패키지의 OData 피드를 확인합니다.
 
-1. 처음으로 애플리케이션을 실행하면 NuGet.Server에서는 각 패키지에 대한 폴더를 포함하도록 `Packages` 폴더를 다시 구성합니다. 이렇게 하면 NuGet 3.3에서 도입한 [로컬 스토리지 레이아웃](http://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands)과 일치하여 성능을 향상시킵니다. 패키지를 추가하는 경우 이 구조를 계속 진행합니다.
+1. 처음으로 애플리케이션을 실행하면 NuGet.Server에서는 각 패키지에 대한 폴더를 포함하도록 `Packages` 폴더를 다시 구성합니다. 이렇게 하면 NuGet 3.3에서 도입한 [로컬 스토리지 레이아웃](https://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands)과 일치하여 성능을 향상시킵니다. 패키지를 추가하는 경우 이 구조를 계속 진행합니다.
 
 1. 로컬 배포를 테스트하면 필요에 따라 다른 내부 또는 외부 사이트에 애플리케이션을 배포합니다.
 

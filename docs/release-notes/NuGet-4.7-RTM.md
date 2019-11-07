@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: fe769f95e3eda4bc07db4369544472c00b35363d
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 0c3c0380fe6efb3c58124ca5ba8bc1306a433340
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488649"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611344"
 ---
 # <a name="nuget-47-release-notes"></a>NuGet 4.7 릴리스 정보
 
@@ -20,7 +20,7 @@ ms.locfileid: "69488649"
 
 * [리포지토리 서명 패키지](https://github.com/NuGet/Home/wiki/Repository-Signatures)를 사용하도록 패키지 서명을 확대했습니다.
 
-* Visual Studio 버전 15.7에서는 [PackageReference를 사용하기 위해 packages.config 형식을 사용하는 기존 프로젝트를 마이그레이션하는 ](https://docs.microsoft.com/en-us/nuget/consume-packages/migrate-packages-config-to-package-reference) 기능을 대신 도입했습니다.
+* Visual Studio 버전 15.7에서는 [PackageReference를 사용하기 위해 packages.config 형식을 사용하는 기존 프로젝트를 마이그레이션하는 ](https://docs.microsoft.com/nuget/consume-packages/migrate-packages-config-to-package-reference) 기능을 대신 도입했습니다.
 
 ## <a name="summary-whats-new-in-472"></a>요약: 4.7.2의 새로운 기능
 
@@ -34,7 +34,7 @@ ms.locfileid: "69488649"
 
 ### <a name="the-migrate-packagesconfig-to-packagereference-option-is-not-available-in-the-right-click-context-menu"></a>`Migrate packages.config to PackageReference...` 옵션을 오른쪽 클릭 상황에 맞는 메뉴에서 사용할 수 없습니다.
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 프로젝트를 처음 열면 NuGet 작업이 수행될 때까지 NuGet을 초기화할 수 없습니다. 이로 인해 마이그레이션 옵션이 `packages.config` 또는 `References`의 오른쪽 클릭 상황에 맞는 메뉴에 표시되지 않습니다.
 

@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: cbe6fd964e88b054b9e2c5c8ead71d1f9090d63c
-ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
+ms.openlocfilehash: 9947a490e4373bb0b8b7fb0814828ff2a60615a8
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817576"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611081"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>프로젝트에 대한 NuGet 패키지 찾기 및 평가
 
-모든 .NET 프로젝트를 시작하거나 앱 또는 서비스에 대한 기능적 요구 사항을 확인할 때마다 해당 요구 사항을 충족하는 기존 NuGet 패키지를 사용하여 많은 시간과 노력을 많이 줄일 수 있습니다. 이러한 패키지는 [nuget.org](http://www.nuget.org/packages/)의 공용 컬렉션 또는 조직이나 다른 제3자가 제공한 전용 원본에서 제공할 수 있습니다.
+모든 .NET 프로젝트를 시작하거나 앱 또는 서비스에 대한 기능적 요구 사항을 확인할 때마다 해당 요구 사항을 충족하는 기존 NuGet 패키지를 사용하여 많은 시간과 노력을 많이 줄일 수 있습니다. 이러한 패키지는 [nuget.org](https://www.nuget.org/packages/)의 공용 컬렉션 또는 조직이나 다른 제3자가 제공한 전용 원본에서 제공할 수 있습니다.
 
 ## <a name="finding-packages"></a>패키지 찾기
 
@@ -125,7 +125,7 @@ NuGet은 Visual Studio의 C++ 프로젝트에서 사용할 수 있는 네이티�
 
 NuGet 패키지 검색은 nuget.org, NuGet CLI 및 Visual Studio의 NuGet 패키지 관리자 확장에서 동일하게 작동합니다. 일반적으로 검색은 패키지 설명뿐만 아니라 키워드에도 적용됩니다.
 
-- **키워드**: 제공된 모든 키워드를 포함하는 관련 패키지를 찾습니다. 예를 들어, `modern UI` 같은 형식입니다. 제공된 모든 키워드를 포함하는 패키지를 검색하려면 `modern+UI`와 같은 용어 사이에 "+"를 사용합니다.
+- **키워드**: 제공된 모든 키워드를 포함하는 관련 패키지를 찾습니다. 예: `modern UI`. 제공된 모든 키워드를 포함하는 패키지를 검색하려면 `modern+UI`와 같은 용어 사이에 "+"를 사용합니다.
 - **Phrases**: 인용 부호 안에 검색어를 입력하면 해당 용어와 대/소문자를 구분하지 않는 정확한 일치를 찾습니다. 예: `"modern UI" package`
 - **필터링**: `<property>:<term>` 구문을 사용하여 특정 속성에 검색어를 적용할 수 있습니다. 여기서 `<property>`(대/소문자 구분 안 함)은 `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` 및 `owner`일 수 있습니다. 필요에 따라 용어를 따옴표로 묶어 여러 속성을 동시에 검색할 수 있습니다. 또한 `id` 속성에 대한 검색은 부분 문자열 일치이지만, `packageid`는 정확히 일치 항목을 사용합니다. 예:
 

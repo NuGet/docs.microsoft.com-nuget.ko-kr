@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0e69491525fce03e504d9d455bee2718510c83c2
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549887"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610997"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Team Foundation 빌드를 사용하여 패키지 복원 설정
 
@@ -31,7 +31,7 @@ Visual Studio Team Services를 사용하는 시나리오에 이 연습이 지정
 
 NuGet을 사용하는 경우의 이점은 버전 제어 시스템에 대한 이진 파일을 검사하지 않도록 방지하기 위해 사용할 수 있다는 것입니다.
 
-개발자가 로컬로 작업을 시작하기 전에 전체 기록을 포함하여 전체 리포지토리를 복제해야 하기 때문에 Git과 같은 [분산 버전 제어](http://en.wikipedia.org/wiki/Distributed_revision_control) 시스템을 사용 중인 경우에 특히 흥미롭습니다. 이진 파일을 체크 인하면 이진 파일이 델타 압축 없이 일반적으로 저장되므로 상당한 리포지토리 블로트가 발생할 수 있습니다.
+개발자가 로컬로 작업을 시작하기 전에 전체 기록을 포함하여 전체 리포지토리를 복제해야 하기 때문에 Git과 같은 [분산 버전 제어](https://en.wikipedia.org/wiki/Distributed_revision_control) 시스템을 사용 중인 경우에 특히 흥미롭습니다. 이진 파일을 체크 인하면 이진 파일이 델타 압축 없이 일반적으로 저장되므로 상당한 리포지토리 블로트가 발생할 수 있습니다.
 
 NuGet은 오랜 시간 동안 빌드의 일부로 [패키지를 복원](../consume-packages/package-restore.md)하도록 지원했습니다. 프로젝트를 빌드하는 동안 NuGet이 패키지를 복원했기 때문에 이전 구현은 빌드 프로세스 확장하려는 패키지에서 '닭이 먼저냐, 달걀이 먼저냐'와 같은 문제가 있었습니다. 그러나 MSBuild는 빌드 중에 빌드를 확장할 수 없습니다. 따라서 MSBuild에 문제가 있다고 주장할 수 있지만 근본적인 문제라고 생각합니다. 확장해야 하는 측면에 따라 패키지를 복원할 때에는 등록하기가 너무 늦을 수 있습니다.
 
@@ -50,7 +50,7 @@ nuget restore path\to\solution.sln
 
 ## <a name="repository-structure"></a>리포지토리 구조
 
-이 데모 프로젝트는 Bing을 쿼리하는 데 명령줄 인수를 사용하는 간단한 명령줄 도구입니다. .NET Framework 4를 대상으로 지정하고 [BCL 패키지](http://www.nuget.org/profiles/dotnetframework/)를 사용합니다([Microsoft.Net.Http](http://www.nuget.org/packages/Microsoft.Net.Http), [Microsoft.Bcl](http://www.nuget.org/packages/Microsoft.Bcl), [Microsoft.Bcl.Async](http://www.nuget.org/packages/Microsoft.Bcl.Async) 및 [Microsoft.Bcl.Build](http://www.nuget.org/packages/Microsoft.Bcl.Build)).
+이 데모 프로젝트는 Bing을 쿼리하는 데 명령줄 인수를 사용하는 간단한 명령줄 도구입니다. .NET Framework 4를 대상으로 지정하고 [BCL 패키지](https://www.nuget.org/profiles/dotnetframework/)를 사용합니다([Microsoft.Net.Http](https://www.nuget.org/packages/Microsoft.Net.Http), [Microsoft.Bcl](https://www.nuget.org/packages/Microsoft.Bcl), [Microsoft.Bcl.Async](https://www.nuget.org/packages/Microsoft.Bcl.Async) 및 [Microsoft.Bcl.Build](https://www.nuget.org/packages/Microsoft.Bcl.Build)).
 
 리포지토리의 구조는 다음과 같습니다.
 

@@ -7,12 +7,12 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 1fb12c6cb9f7702c05990f79a6d43b9dd739e8cc
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 42031f7b5fe4d3c1b4dbe5e1bfbf9197014e0e88
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68328070"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611107"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>Visual Studio에서 패키지 관리자 콘솔을 사용하여 패키지 설치 및 관리(PowerShell)
 
@@ -172,9 +172,9 @@ C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 
 ## <a name="use-the-nugetexe-cli-in-the-console"></a>콘솔에서 nuget.exe CLI 사용
 
-[`nuget.exe` CLI](../reference/nuget-exe-cli-reference.md)를 패키지 관리자 콘솔에서 사용할 수 있게 하려면 콘솔에서 [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) 패키지를 설치합니다.
+[`nuget.exe` CLI](../reference/nuget-exe-cli-reference.md)를 패키지 관리자 콘솔에서 사용할 수 있게 하려면 콘솔에서 [NuGet.CommandLine](https://www.nuget.org/packages/NuGet.CommandLine/) 패키지를 설치합니다.
 
 ```ps
-# Other versions are available, see http://www.nuget.org/packages/NuGet.CommandLine/
+# Other versions are available, see https://www.nuget.org/packages/NuGet.CommandLine/
 Install-Package NuGet.CommandLine -Version 4.4.1
 ```

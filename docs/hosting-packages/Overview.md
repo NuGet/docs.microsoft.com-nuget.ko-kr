@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 10651e2cc26f7df4115e4de5dac8c91c93af7374
-ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
+ms.openlocfilehash: 3ca023c8d39b9b36388f5f517b50ca5cd2347cc0
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70815297"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610451"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>사용자 고유의 NuGet 피드 호스팅
 
@@ -31,11 +31,11 @@ NuGet은 이러한 모든 용도에서 다음과 같은 방법으로 개인 패�
 - [Cloudsmith](https://cloudsmith.io/l/nuget-feed/), 완전 관리형 패키지 관리 SaaS
 - [GitHub 패키지 레지스트리](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [LiGet](https://github.com/ai-traders/liget), Docker의 kestrel에서 실행되는 NuGet V2 서버의 오픈 소스 구현
-- [MyGet](http://myget.org)
-- Sonatype의 [Nexus](http://www.sonatype.org/nexus/)
-- [NuGet 서버(오픈 소스)](http://nuget-server.net), Inedo의 NuGet 서버와 비슷한 오픈 소스 구현
+- [MyGet](https://myget.org)
+- Sonatype의 [Nexus](https://www.sonatype.org/nexus/)
+- [NuGet 서버(오픈 소스)](https://github.com/svenkle/nuget-server), Inedo의 NuGet 서버와 비슷한 오픈 소스 구현
 - [NuGet 서버](http://nugetserver.net/), Inedo의 커뮤니티 프로젝트
-- Inedo의 [ProGet](http://inedo.com/proget)
+- Inedo의 [ProGet](https://inedo.com/proget)
 - [Sleet](https://github.com/emgarten/sleet), 오픈 소스 NuGet V3 정적 피드 생성기
 - JetBrains의 [TeamCity](https://www.jetbrains.com/teamcity/)
 

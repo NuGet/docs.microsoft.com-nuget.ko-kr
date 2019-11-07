@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 24e35f4b2c047d5f337a1779e63846b11b0c1011
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: e2b6a64b8010f16d0fc33cca437b348d8f784fd7
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380570"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610495"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>NuGet.org 질문과 대답
 
@@ -90,7 +90,7 @@ NuGet은 HTTP를 사용하여 패키지를 다운로드하므로, 큰 패키지�
 
 *Fiddler를 캡처하려면:*
 
-- 최신 버전의 [Fiddler](http://www.telerik.com/download/fiddler)를 설치합니다.
+- 최신 버전의 [Fiddler](https://www.telerik.com/download/fiddler)를 설치합니다.
 - Fiddler를 시작하고 **파일 > 트래픽 캡처** 메뉴를 사용하여 트래픽 캡처를 사용하지 않도록 설정합니다.
 - 모든 세션을 제거합니다(목록에서 모든 항목을 선택하고 **삭제** 키를 누름).
 - **도구 > Fiddler 옵션...** 메뉴의 **HTTPS** 탭에서 **HTTPS 트래픽 해독**을 선택하여 HTTPS 트래픽을 캡처하도록 Fiddler를 구성합니다.
@@ -101,7 +101,7 @@ NuGet은 HTTP를 사용하여 패키지를 다운로드하므로, 큰 패키지�
 
 참고: Fiddler를 통해 NuGet 트래픽을 라우팅하기 위해 `HTTP_PROXY` 환경 변수를 `http://127.0.0.1:8888`로 설정해야 할 수도 있습니다.
 
-실패하면 [StackOverflow 게시물에서 언급한 팁](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall)을 사용해 보세요.
+실패하면 [StackOverflow 게시물에서 언급한 팁](https://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall)을 사용해 보세요.
 
 ## <a name="nugetorg-account-management"></a>NuGet.org 계정 관리
 
@@ -228,17 +228,17 @@ NuGet.org에서 계정을 만드는 경우 해당 계정과 연결된 통신 전
 
 사용자 계정이 이전에 개인 Microsoft 계정으로 등록된 것으로 보이고 문제 없이 작동했지만, 지금은 해당 계정이 Azure Active Directory에 "관리되지 않는" 테넌트로 등록된 것으로 보입니다(Microsoft 계정을 인증하는 데 사용하는 ID 서비스). 
 
-@yourdomain.com 이메일 주소를 사용하는 조직의 누군가 또는 사용자가 AAD 통합 서비스에 등록했거나, [Azure Active Directory에 셀프 서비스 등록](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-self-service-signup)하여 사용한 Microsoft 계정 도메인에 이러한 "관리되지 않는" 테넌트를 만든 경우 이런 일이 발생할 수 있습니다(사용자의 경우 @yourdomain.com). 
+@yourdomain.com 이메일 주소를 사용하는 조직의 누군가 또는 사용자가 AAD 통합 서비스에 등록했거나, [Azure Active Directory에 셀프 서비스 등록](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-self-service-signup)하여 사용한 Microsoft 계정 도메인에 이러한 "관리되지 않는" 테넌트를 만든 경우 이런 일이 발생할 수 있습니다(사용자의 경우 @yourdomain.com). 
 
 **내 계정을 복구하려면 어떻게 해야 하나요?**
 
 현재 NuGet.org에는 Azure Active Directory에서 이러한 “관리되지 않는” 테넌트 계정을 사용하여 계정을 인증하는 방법이 없습니다. 지금은 이러한 계정을 인증하는 더 나은 방법을 찾아보고 있습니다.
 
-Microsoft 계정(@yourdomain.com)으로 NuGet.org에 로그인하려는 경우 사용자(또는 사용자 회사의 관리자)는 “@yourdomain.com” 전자 메일 주소를 사용하여 사용자를 인증하려면 DNS 유효성 검사를 수행하여 AAD의 소유권을 주장해야 합니다. Azure Active Directory에서 설명된 [도메인 관리자 인수](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/domains-admin-takeover)에 대한 단계를 따릅니다. 이 작업이 완료되면 일반적인 로그인으로 작업이 시작되어야 합니다.
+Microsoft 계정(@yourdomain.com)으로 NuGet.org에 로그인하려는 경우 사용자(또는 사용자 회사의 관리자)는 “@yourdomain.com” 전자 메일 주소를 사용하여 사용자를 인증하려면 DNS 유효성 검사를 수행하여 AAD의 소유권을 주장해야 합니다. Azure Active Directory에서 설명된 [도메인 관리자 인수](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover)에 대한 단계를 따릅니다. 이 작업이 완료되면 일반적인 로그인으로 작업이 시작되어야 합니다.
 
 **이상 모든 작업을 수행하지 않으려는 경우 내 계정을 복구하는 다른 방법은?**
 
-@yourdomain.com과 연결**되지 않은** 이메일을 사용하여 새 Microsoft 계정을 [만들](https://www.microsoft.com/en-us/account) 수 있습니다. [NuGet.org 계정 복구](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account) 섹션에 설명된 단계를 따릅니다.
+@yourdomain.com과 연결**되지 않은** 이메일을 사용하여 새 Microsoft 계정을 [만들](https://www.microsoft.com/account) 수 있습니다. [NuGet.org 계정 복구](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account) 섹션에 설명된 단계를 따릅니다.
 
 ### <a name="how-do-i-change-my-nugetorg-account-username"></a>내 NuGet.org 계정 사용자 이름을 변경하려면 어떻게 하나요?
 
@@ -250,7 +250,7 @@ Microsoft 계정(@yourdomain.com)으로 NuGet.org에 로그인하려는 경우 �
 
 ### <a name="how-to-delete-my-nugetorg-account"></a>내 NuGet.org 계정을 삭제하려면 어떻게 하나요?
 
-계정을 삭제하려면 사용자가 유일한 소유자인 모든 패키지의 소유권을 양도하는 것이 좋습니다. 소유권을 양도하는 방법은 [패키지 소유자 관리](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg)를 참조할 수 있습니다. 그러면 요청을 신속하게 처리하는 데도 도움이 됩니다.
+계정을 삭제하려면 사용자가 유일한 소유자인 모든 패키지의 소유권을 양도하는 것이 좋습니다. 소유권을 양도하는 방법은 [패키지 소유자 관리](https://docs.microsoft.com/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg)를 참조할 수 있습니다. 그러면 요청을 신속하게 처리하는 데도 도움이 됩니다.
 
 계정을 조직으로 변환하려는 경우 [내 NuGet.org 계정을 조직으로 변환](#how-to-transform-my-nugetorg-account-to-an-organization)에 제공된 단계를 따르세요.
 

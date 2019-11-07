@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: f85042b8fe1511934d6a3ac7de34da92c575f6e0
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.openlocfilehash: 6e352fef9fc36646f6feedbc390f847119cb00bf
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432520"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611360"
 ---
 # <a name="nuget-48-release-notes"></a>NuGet 4.8 릴리스 정보
 
@@ -35,8 +35,8 @@ ms.locfileid: "58432520"
 ## <a name="known-issues"></a>알려진 문제
 ### <a name="installing-signed-packages-on-a-ci-machine-or-in-an-offline-environment-takes-longer-than-usual"></a>CI 머신 또는 오프라인 환경에 서명된 패키지를 설치하는 데 평소보다 오래 걸립니다.
 
-#### <a name="issue"></a>문제
-머신에서 인터넷 액세스가 제한된 경우(예: CI/CD 시나리오의 빌드 머신) 해지 서버에 도달할 수 없으므로 서명된 NuGet 패키지 설치/복원 시 경고([NU3028](https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu3028))가 발생합니다. 이는 정상적입니다. 그러나 일부 경우에는 패키지 설치/복원에 평소보다 오래 걸리는 등의 의도하지 않은 결과가 발생할 수 있습니다.
+#### <a name="issue"></a>문제점
+머신에서 인터넷 액세스가 제한된 경우(예: CI/CD 시나리오의 빌드 머신) 해지 서버에 도달할 수 없으므로 서명된 NuGet 패키지 설치/복원 시 경고([NU3028](https://docs.microsoft.com/nuget/reference/errors-and-warnings/nu3028))가 발생합니다. 이는 정상적입니다. 그러나 일부 경우에는 패키지 설치/복원에 평소보다 오래 걸리는 등의 의도하지 않은 결과가 발생할 수 있습니다.
 
 #### <a name="workaround"></a>해결 방법
 해지 확인 모드를 전환하는 환경 변수가 도입된 Visual Studio 15.8.4 및 NuGet.exe 4.8.1로 업데이트합니다.
@@ -47,7 +47,7 @@ ms.locfileid: "58432520"
 
 ### <a name="the-migrate-packagesconfig-to-packagereference-option-is-not-available-in-the-right-click-context-menu"></a>`Migrate packages.config to PackageReference...` 옵션을 오른쪽 클릭 상황에 맞는 메뉴에서 사용할 수 없습니다.
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 프로젝트를 처음 열면 NuGet 작업이 수행될 때까지 NuGet을 초기화할 수 없습니다. 이로 인해 마이그레이션 옵션이 `packages.config` 또는 `References`의 오른쪽 클릭 상황에 맞는 메뉴에 표시되지 않습니다.
 
