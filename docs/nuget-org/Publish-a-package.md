@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 6d183100a8319b517347567f34d276e94eb4e15d
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 937d051ff6dc49e3204f7d0cb22c4f29b99a2a7d
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427188"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610608"
 ---
 # <a name="publishing-packages"></a>패키지 게시
 
@@ -64,7 +64,7 @@ nuget.org에 패키지를 푸시하려면 [nuget.exe v4.1.0 이상](https://www.
     nuget setApiKey <your_API_key>
     ```
 
-    이 명령은 NuGet 구성에 API 키를 저장하므로 동일한 컴퓨터에서 이 단계를 다시 반복해야 합니다.
+    이 명령은 NuGet 구성에 API 키를 저장하므로 동일한 컴퓨터에서 이 단계를 반복할 필요가 없습니다.
 
 1. 다음 명령을 사용하여 NuGet 갤러리에 패키지를 푸시합니다.
 
@@ -115,7 +115,7 @@ nuget.org에 푸시된 패키지는 바이러스 검사와 같은 여러 유효�
 1. 사용자 이름, 메시지를 입력하고 **추가**를 선택하여 **소유자 추가** 아래에 소유자를 추가합니다. 그러면 새로운 공동 소유자에게 확인 링크를 포함한 전자 메일을 보냅니다. 확인하면 해당 사용자에게는 소유자를 추가하고 제거하는 모든 권한이 있습니다. (확인될 때까지 **현재 소유자** 섹션에서는 해당 사용자가 승인 보류 중으로 표시됩니다.)
 1. 소유권을 이전하려면(잘못된 계정에서 소유권이 변경되거나 패키지가 게시될 경우) 새 소유자를 추가합니다. 소유권을 확인하면 목록에서 제거할 수 있습니다.
 
-회사 또는 그룹에 소유권을 할당하려면 적절한 팀 멤버에 전달되는 전자 메일 별칭을 사용하여 nuget.org 계정을 만듭니다. 예를 들어 다양한 Microsoft ASP.NET 패키지는 단순히 해당 별칭인 [microsoft](http://nuget.org/profiles/microsoft) 및 [aspnet](http://nuget.org/profiles/aspnet) 계정에서 공동 소유합니다.
+회사 또는 그룹에 소유권을 할당하려면 적절한 팀 멤버에 전달되는 전자 메일 별칭을 사용하여 nuget.org 계정을 만듭니다. 예를 들어 다양한 Microsoft ASP.NET 패키지는 단순히 해당 별칭인 [microsoft](https://nuget.org/profiles/microsoft) 및 [aspnet](https://nuget.org/profiles/aspnet) 계정에서 공동 소유합니다.
 
 ### <a name="recovering-package-ownership"></a>패키지 소유권 복구
 

@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann
-ms.openlocfilehash: f6c4a18366b4df20fb210f718d3779e85c08d550
-ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
+ms.openlocfilehash: da464cc44d8c874e13c0cdfab871f31e643b577f
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71248122"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610508"
 ---
 # <a name="package-id-prefix-reservation"></a>패키지 ID 접두사 예약
 
@@ -93,7 +93,7 @@ ID 접두사 예약에 대한 모든 애플리케이션을 검토할 때 [nuget.
 
 ## <a name="third-party-feed-provider-scenarios"></a>타사 피드 공급자 시나리오
 
-타사 피드 공급자가 접두사 예약을 제공하기 위해 자체 서비스를 구현하려는 경우, NuGet V3 피드 공급자에서 검색 서비스를 수정하여 제공할 수 있습니다. 피드 검색 서비스에 추가되는 내용은 아래 V3 피드에 대한 예제와 함께 *확인* 속성을 추가하는 것입니다. NuGet 클라이언트는 V2 피드에 추가된 속성을 지원하지 않습니다.
+타사 피드 공급자가 접두사 예약을 제공하기 위해 자체 서비스를 구현하려는 경우, NuGet V3 피드 공급자에서 검색 서비스를 수정하여 제공할 수 있습니다. 피드 검색 서비스를 변경하려면 `verified` 속성을 추가합니다. NuGet 클라이언트는 V2 피드에 추가된 속성을 지원하지 않습니다.
 
 자세한 내용은 [API의 검색 서비스에 대한 설명서](../api/search-query-service-resource.md)를 참조하세요.
 

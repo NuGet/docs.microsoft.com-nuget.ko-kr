@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9512899a4086d17d2584f16833aba33efb321eae
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: b45c25a92c0134228fb507ab321cb00ce156527f
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380697"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610547"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>MSBuild를 사용하여 NuGet 패키지 만들기
 
-코드에서 NuGet 패키지를 만드는 경우 해당 기능을 여러 다른 개발자가 공유하고 사용할 수 있는 구성 요소로 패키징할 수 있습니다. 이 문서에서는 MSBuild를 사용하여 패키지를 만드는 방법을 설명합니다. MSBuild는 NuGet이 포함된 모든 Visual Studio 워크로드와 함께 미리 설치되어 제공됩니다. 또한 [dotnet msbuild](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild)가 포함된 donet CLI를 통해 MSBuild도 사용할 수 있습니다.
+코드에서 NuGet 패키지를 만드는 경우 해당 기능을 여러 다른 개발자가 공유하고 사용할 수 있는 구성 요소로 패키징할 수 있습니다. 이 문서에서는 MSBuild를 사용하여 패키지를 만드는 방법을 설명합니다. MSBuild는 NuGet이 포함된 모든 Visual Studio 워크로드와 함께 미리 설치되어 제공됩니다. 또한 [dotnet msbuild](https://docs.microsoft.com/dotnet/core/tools/dotnet-msbuild)가 포함된 dotnet CLI를 통해 MSBuild도 사용할 수 있습니다.
 
 [SDK 스타일 형식](../resources/check-project-format.md)을 사용하는 .NET Core 및 .NET Standard 프로젝트와 또 다른 SDK 스타일 프로젝트의 경우, NuGet은 프로젝트 파일의 정보를 직접 사용하여 패키지를 만듭니다.  `<PackageReference>`를 사용하는 비SDK 프로젝트의 경우 NuGet에서 프로젝트 파일을 사용하여 패키지를 만들 수도 있습니다.
 

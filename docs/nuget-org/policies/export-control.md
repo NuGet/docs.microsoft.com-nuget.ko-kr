@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/27/2019
 ms.topic: conceptual
-ms.openlocfilehash: 97e7b253bed84fc6e9a97922c19756d138dd0381
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 4ea2d2f23a02088b54982b825a5be3c872e27c37
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426928"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611316"
 ---
 # <a name="export-control-policy"></a>수출통제 정책
 
@@ -28,4 +28,4 @@ EAR(Part 742.15(b) 및 734.3(b)(3))에 명시된 바와 같이 암호화 소스 
 
 위에서 설명한 알림 프로세스를 통해 수출 통제 관할지에서 공개적으로 사용 가능한 소스 코드를 릴리스하는 것은 이러한 항목에서 통합되거나 파생된 상용 소프트웨어에는 *적용되지 않습니다*.  NuGet.org를 통해 호스팅되는 소스 코드 또는 개체 코드를 통합하거나 파생된 상용 소프트웨어에 적용되는 수출법 준수에 대한 책임은 전적으로 사용자에게 있습니다.
 
-수출 및 지리적 수출 제한에 대한 자세한 내용은 https://www.microsoft.com/en-us/exporting 을 참조하세요.
+수출 및 지리적 수출 제한에 대한 자세한 내용은[Microsoft Exporting](https://www.microsoft.com/exporting)(Microsoft 수출)을 참조하세요.
