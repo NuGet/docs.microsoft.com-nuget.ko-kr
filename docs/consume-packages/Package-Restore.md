@@ -40,7 +40,7 @@ ms.locfileid: "69999979"
    - [Azure Pipelines](#restore-using-azure-pipelines)
    - [Azure DevOps Server](#restore-using-azure-devops-server)
 
-   프로젝트 파일( *.csproj*) 또는 *packages.config* 파일의 패키지 참조가 잘못된 경우(패키지 복원 이후 원하는 상태와 일치하지 않는 경우) 대신 패키지를 설치하거나 업데이트해야 합니다.
+   프로젝트 파일( *.csproj*) 또는 *packages.config* 파일의 패키지 참조가 잘못된 경우(패키지 복원 이후 원하는 상태와 일치하지 않는 경우) 패키지를 설치하거나 업데이트해야 합니다.
 
    PackageReference를 사용하는 프로젝트의 경우 성공적으로 복원된 후 패키지는 *global-packages* 폴더에 있어야 하며 `obj/project.assets.json` 파일이 다시 만들어집니다. `packages.config`를 사용하는 프로젝트의 경우 패키지는 프로젝트의 `packages` 폴더에 표시되어야 합니다. 이제 프로젝트가 성공적으로 빌드됩니다. 
 
@@ -125,7 +125,7 @@ Visual Studio에서 주로 **도구** > **옵션** > **NuGet 패키지 관리자
 [!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]
 
 > [!IMPORTANT]
-> 누락 된 패키지 참조를 프로젝트 파일에 추가 하려면 [dotnet add package `restore` 를 사용](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x)합니다 .이 패키지는 또한 명령을 실행 합니다.
+> 누락 된 패키지 참조를 프로젝트 파일에 추가 하려면 [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x)를 사용합니다. 이 패키지는 또한 `restore` 명령을 실행합니다.
 
 ## <a name="restore-using-the-nugetexe-cli"></a>nuget.exe CLI를 사용하여 복원
 
