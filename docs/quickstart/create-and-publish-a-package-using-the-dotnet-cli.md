@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: c0e6de2c3b9978538d504f4af6e744ece43b4a4d
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 8727f67608593e6ae8b96daa81b7423782dfc219
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488941"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096937"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>빠른 시작: 패키지 만들기 및 게시(dotnet CLI)
 
@@ -33,8 +33,6 @@ ms.locfileid: "69488941"
 1. 프로젝트의 현재 폴더 이름을 사용하는 `dotnet new classlib`를 입력합니다.
 
    이렇게 하면 새 프로젝트가 생성됩니다.
-
-1. `dotnet run`을 사용하여 앱이 제대로 만들어졌는지 테스트합니다.
 
 ## <a name="add-package-metadata-to-the-project-file"></a>프로젝트 파일에 패키지 메타데이터 추가
 
