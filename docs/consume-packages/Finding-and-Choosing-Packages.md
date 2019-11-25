@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9947a490e4373bb0b8b7fb0814828ff2a60615a8
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 0691660f20f9b5a1ff0dad110ee87c6e29c0a56e
+ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611081"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74253944"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>프로젝트에 대한 NuGet 패키지 찾기 및 평가
 
@@ -82,9 +82,12 @@ NuGet은 Visual Studio의 C++ 프로젝트에서 사용할 수 있는 네이티�
 
     ![패키지의 목록 페이지에 대한 다운로드 통계](media/Finding-03-Downloads.png)
 
-- *GitHub 사용*: 패키지 페이지에서 **GitHub 사용** 섹션에는 이 패키지에 따라 다른 상위 GitHub 리포지토리가 나열됩니다. 인기 있는 여러 GitHub 리포지토리에서 사용하는 패키지가 일반적으로 더 적합합니다.
+- *GitHub 사용*: 패키지 페이지에서 **GitHub 사용** 섹션에는 이 패키지에 종속되고 GitHub에서 별 수가 많은 퍼블릭 GitHub 리포지토리가 나열됩니다. GitHub 리포지토리의 별 수는 일반적으로 해당 리포지토리가 GitHub 사용자에게 얼마나 인기 있는지를 나타냅니다(별 수가 많을수록 일반적으로 더 인기 있음을 의미). GitHub의 별 및 리포지토리 순위 시스템에 대한 자세한 내용은 [GitHub의 시작 페이지](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars)를 참조하세요.
 
     ![GitHub 사용](media/GitHub-Usage.png)
+
+    > [!Note]
+    > 패키지의 GitHub 사용 섹션은 사람이 개별 리포지토리를 검토하는 과정 없이 주기적으로 자동으로 생성되며, 패키지에 종속되고 GitHub 사용자에게 인기 있는 GitHub 리포지토리를 표시하기 위해 정보를 제공하는 목적으로만 제공됩니다.
 
 - *버전 기록*: 패키지 페이지의 **정보** 아래에서 최신 업데이트 날짜를 확인하고 **버전 기록**을 검사합니다. 잘 유지 관리된 패키지에는 최신 업데이트와 풍부한 버전 기록이 있습니다. 방치한 패키지에는 업데이트가 거의 없으며, 일정 기간 동안 업데이트되지 않은 경우가 많습니다.
 

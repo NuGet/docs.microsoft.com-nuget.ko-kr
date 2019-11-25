@@ -6,12 +6,12 @@ ms.author: anangaur
 ms.date: 09/23/2019
 ms.topic: conceptual
 ms.reviewer: karann-msft
-ms.openlocfilehash: 120b463fda856fe9dd407b6eba32d60e0918f763
-ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
+ms.openlocfilehash: 70666ddf9cd7bdc448d29d4235e57bc91e2c003e
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71248884"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096878"
 ---
 # <a name="deprecating-packages"></a>패키지 사용 중단
 
@@ -45,7 +45,7 @@ ms.locfileid: "71248884"
 ### <a name="visual-studio"></a>Visual Studio 
 *Visual Studio 2019 버전 16.3부터 사용 가능*
 
-Visual Studio는 `Installed` 탭에서 사용되지 않는 패키지의 사용에 대한 경고를 표시합니다. 패키지와 사용 중단 정보(사용되지 않는 이유 및 대신 사용할 대체 패키지가 있는 경우 포함)로 안내됩니다.
+Visual Studio는 `Installed` 탭에서 사용되지 않는 패키지의 사용에 대해 경고합니다. 패키지와 사용 중단 정보(사용되지 않는 이유 및 대신 사용할 대체 패키지(있는 경우) 포함)에 대한 경고가 표시됩니다.
 
    ![패키지 관리자의 Visual Studio 설치 탭에서 사용되지 않는 패키지](media/deprecation-vs.png)
 

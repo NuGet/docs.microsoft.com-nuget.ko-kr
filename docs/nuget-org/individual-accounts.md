@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 63c6b5eb5ad635e436b4d53a5f833af35f72d76f
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.openlocfilehash: 7951b3db0cdcaee0a1eb955a5bf6fedce24c79c9
+ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999976"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74253950"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>NuGet.org의 개별 계정
 
@@ -48,7 +48,7 @@ NuGet.org 계정을 만들려면 개인 MSA(Microsoft 계정) 또는 AAD(Azure A
 
 ## <a name="enable-two-factor-authentication-2fa"></a>2FA(2단계 인증) 사용
 
-계정을 더 잘 보호하려면 2단계 인증을 사용하도록 설정합니다(권장).
+2FA(2단계 인증)는 웹 사이트나 앱에 로그인할 때 사용되는 추가 보안 계층입니다. 2FA를 사용하면 MSA(Microsoft 계정)로 로그인하고 사용자만 알고 있거나 액세스할 수 있는 다른 형식의 인증을 제공해야 합니다. 계정을 더 잘 보호하려면 2단계 인증을 사용하도록 설정합니다(권장).
 
 1. 계정에 로그인한 경우 프로필을 열고 **로그인 계정**에서 **사용**을 선택합니다.
 
@@ -69,6 +69,9 @@ NuGet.org 계정을 만들려면 개인 MSA(Microsoft 계정) 또는 AAD(Azure A
    ![2FA 사용](media/nuget-org-enter-code-2fa.png)
 
 5. 추가 지침에 따라 2단계 인증을 완료합니다.
+
+> [!Tip]
+> NuGet.org 계정에 대해 2FA를 사용하도록 설정해도 NuGet.org에 로그인하는 데 사용하는 Microsoft 계정에 연결될 수 있는 다른 계정 또는 서비스의 인증 설정에는 영향을 주지 않습니다.
 
 ## <a name="delete-a-nugetorg-account"></a>NuGet.org 계정 삭제
 
