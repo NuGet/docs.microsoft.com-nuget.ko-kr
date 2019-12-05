@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 47593cc65ad707b8880d854dc43824b9234fd44a
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: 9b6eb012b4bc8135b1648fa9f5e84d7d1c9d6b16
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833306"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825355"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>빠른 시작: dotnet CLI를 사용하여 패키지 설치 및 사용
 
@@ -35,7 +35,7 @@ NuGet 패키지는 일종의 .NET 프로젝트에 설치할 수 있습니다. �
 
 1. 다음 명령을 사용하여 프로젝트를 만듭니다.
 
-    ```cli
+    ```dotnetcli
     dotnet new console
     ```
 
@@ -45,7 +45,7 @@ NuGet 패키지는 일종의 .NET 프로젝트에 설치할 수 있습니다. �
 
 1. 다음 명령을 사용하여 `Newtonsoft.json` 패키지를 설치합니다.
 
-    ```cli
+    ```dotnetcli
     dotnet add package Newtonsoft.Json
     ```
 

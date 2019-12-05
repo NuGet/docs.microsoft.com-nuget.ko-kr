@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: d9e9f0026e4c907351b4b0cd0adced28a4670575
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.openlocfilehash: 67cca81c48970c7f2e2cf0a64ee5ba57704a31e2
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860614"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825168"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 패키지 설치 및 관리
 
@@ -32,13 +32,13 @@ dotnet CLI는 .NET Core, .NET Standard 프로젝트(SDK 스타일 프로젝트 �
 
 2. 다음 명령을 사용하여 Nuget 패키지를 설치합니다.
 
-    ```cli
+    ```dotnetcli
     dotnet add package <PACKAGE_NAME>
     ```
 
     예를 들어 `Newtonsoft.Json` 패키지를 설치하려면 다음 명령을 사용합니다.
 
-    ```cli
+    ```dotnetcli
     dotnet add package Newtonsoft.Json
     ```
 
@@ -56,13 +56,13 @@ dotnet CLI는 .NET Core, .NET Standard 프로젝트(SDK 스타일 프로젝트 �
 
 버전이 지정되지 않은 경우 NuGet은 패키지의 최신 버전을 설치합니다. [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) 명령을 사용하여 특정 버전의 Nuget 패키지를 설치할 수도 있습니다.
 
-```cli
+```dotnetcli
 dotnet add package <PACKAGE_NAME> -v <VERSION>
 ```
 
 예를 들어 `Newtonsoft.Json` 패키지의 버전 12.0.1을 추가하려면 다음 명령을 사용합니다.
 
-```cli
+```dotnetcli
 dotnet add package Newtonsoft.Json -v 12.0.1
 ```
 
@@ -70,7 +70,7 @@ dotnet add package Newtonsoft.Json -v 12.0.1
 
 [dotnet 목록 패키지](/dotnet/core/tools/dotnet-list-package?tabs=netcore2x) 명령을 사용하여 프로젝트의 패키지 참조를 나열할 수 있습니다.
 
-```cli
+```dotnetcli
 dotnet list package
 ```
 
@@ -78,13 +78,13 @@ dotnet list package
 
 [dotnet remove package](/dotnet/core/tools/dotnet-remove-package?tabs=netcore2x) 명령을 사용하여 프로젝트 파일에서 패키지 참조를 제거합니다.
 
-```cli
+```dotnetcli
 dotnet remove package <PACKAGE_NAME>
 ```
 
 예를 들어 `Newtonsoft.Json` 패키지를 제거하려면 다음 명령을 사용합니다.
 
-```cli
+```dotnetcli
 dotnet remove package Newtonsoft.Json
 ```
 

@@ -12,12 +12,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 03ab4e1f3501055abedf430395de095d773bc9da
-ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
+ms.openlocfilehash: 8528261f90e75e2dfac8cb746b396d227c3741f4
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74253923"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825183"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -42,7 +42,7 @@ Dotnet 또는 MSBuild를 사용하는 경우 nupkg 파일 외에 .snupkg 파일�
 
 * 또는 명령줄에서 다음 속성을 지정합니다.
 
-     ```cli
+     ```dotnetcli
      dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
      ```
 
@@ -54,7 +54,7 @@ Dotnet 또는 MSBuild를 사용하는 경우 nupkg 파일 외에 .snupkg 파일�
 
 NuGet.exe를 사용하는 경우 다음 명령을 사용하여 .nupkg 파일 외에도 .snupkg 파일을 만들 수 있습니다.
 
-```
+```cli
 nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
