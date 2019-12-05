@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: a2955617b899bfadab42d1ae98dd20c8fc6ddca9
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: 0b052bd03625172f1b941c365cbedf7629809d6f
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020043"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825194"
 ---
 # <a name="nugetconfig-reference"></a>nuget.exe 참조
 
-Nuget 동작은 [일반적인 nuget 구성](../consume-packages/configuring-nuget-behavior.md)에 설명 된 `NuGet.Config` 대로 다른 파일의 설정에 의해 제어 됩니다.
+NuGet 동작은 [일반적인 nuget 구성](../consume-packages/configuring-nuget-behavior.md)에 설명 된 대로 다른 `NuGet.Config` 또는 `nuget.config` 파일의 설정에 의해 제어 됩니다.
 
 `nuget.config`는 최상위 `<configuration>` 노드를 포함하는 XML 파일이며, 이 파일에는 이 항목에서 설명하는 섹션 요소가 포함되어 있습니다. 각 섹션에는 0 개 이상의 항목이 포함 되어 있습니다. [config 파일 예제](#example-config-file)를 참조하세요. 설정 이름은 대/소문자를 구분하지 않으며, 값에는 [환경 변수](#using-environment-variables)를 사용할 수 있습니다.
 
@@ -27,7 +27,7 @@ Nuget 동작은 [일반적인 nuget 구성](../consume-packages/configuring-nuge
 
 [`nuget config` 명령](../reference/cli-reference/cli-ref-config.md)을 사용하여 설정할 수 있는 기타 구성 설정을 포함합니다.
 
-`dependencyVersion`및 `repositoryPath` 는를 사용 하 `packages.config`는 프로젝트에만 적용 됩니다. `globalPackagesFolder`PackageReference 형식을 사용 하는 프로젝트에만 적용 됩니다.
+`dependencyVersion` 및 `repositoryPath` `packages.config`를 사용 하는 프로젝트에만 적용 됩니다. `globalPackagesFolder` PackageReference 형식을 사용 하는 프로젝트에만 적용 됩니다.
 
 | Key | 값 |
 | --- | --- |
@@ -36,7 +36,7 @@ Nuget 동작은 [일반적인 nuget 구성](../consume-packages/configuring-nuge
 | repositoryPath(`packages.config`만) | 기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. 이 설정은 NUGET_PACKAGES 환경 변수에 의해 재정의 되며이는 우선적으로 적용 됩니다. |
 | defaultPushSource | 작업에 대한 다른 패키지 원본이 없을 때 기본값으로 사용해야 하는 패키지 원본의 URL 또는 경로를 식별합니다. |
 | http_proxy, http_proxy.user, http_proxy.password, no_proxy | 패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다. 암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다. `no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다. 이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다. 자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요. |
-| signatureValidationMode | 패키지 설치 및 복원에 대 한 패키지 서명을 확인 하는 데 사용 되는 유효성 검사 모드를 지정 합니다. 값은 `accept`, `require`입니다. 기본값은 `accept`입니다.
+| signatureValidationMode | 패키지 설치 및 복원에 대 한 패키지 서명을 확인 하는 데 사용 되는 유효성 검사 모드를 지정 합니다. 값은 `accept``require`입니다. 기본값은 `accept`입니다.
 
 **예제**:
 
@@ -102,15 +102,15 @@ Nuget 동작은 [일반적인 nuget 구성](../consume-packages/configuring-nuge
 
 ## <a name="package-source-sections"></a>패키지 원본 섹션
 
-`packageSources` ,`packageSourceCredentials`, ,`trustedSigners` 및는 모두 함께 작동 하 여 설치, 복원 및 업데이트 작업 중에 NuGet이 패키지 리포지토리와 함께 작동 하는 방식을 구성 합니다. `activePackageSource` `apikeys` `disabledPackageSources`
+`packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources` 및 `trustedSigners` 모두 함께 작동 하 여 설치, 복원 및 업데이트 작업 중에 NuGet이 패키지 리포지토리와 함께 작동 하는 방식을 구성 합니다.
 
-`apikeys` `trustedSigners` [명령은 명령을 사용`nuget setapikey` ](../reference/cli-reference/cli-ref-setapikey.md)하 여 관리 되 고 [명령을 `nuget trusted-signers` ](../reference/cli-reference/cli-ref-trusted-signers.md)사용 하 여 관리 되는를 제외 하 고는 일반적으로 이러한 설정을 관리 하는 데 사용 됩니다. [ `nuget sources` ](../reference/cli-reference/cli-ref-sources.md)
+[`nuget sources` 명령은](../reference/cli-reference/cli-ref-sources.md) 일반적으로 [`nuget setapikey` 명령을](../reference/cli-reference/cli-ref-setapikey.md)사용 하 여 관리 되는 `apikeys`를 제외 하 고 이러한 설정을 관리 하는 데 사용 되며 [`nuget trusted-signers` 명령을](../reference/cli-reference/cli-ref-trusted-signers.md)사용 하 여 관리 되는 `trustedSigners`.
 
 nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다.
 
 ### <a name="packagesources"></a>packageSources
 
-알려진 모든 패키지 원본을 나열합니다. PackageReference 형식을 사용 하는 모든 프로젝트와 복원 작업 중에 순서는 무시 됩니다. NuGet은를 사용 하 여 `packages.config`프로젝트에 대 한 설치 및 업데이트 작업의 소스 순서를 고려 합니다.
+알려진 모든 패키지 원본을 나열합니다. PackageReference 형식을 사용 하는 모든 프로젝트와 복원 작업 중에 순서는 무시 됩니다. NuGet은 `packages.config`를 사용 하 여 프로젝트를 사용 하 여 설치 및 업데이트 작업을 위한 원본 순서를 고려 합니다.
 
 | Key | 값 |
 | --- | --- |
@@ -132,8 +132,8 @@ nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다
 
 | Key | 값 |
 | --- | --- |
-| 사용자 이름 | 일반 텍스트 형식의 원본에 대한 사용자 이름입니다. |
-| password | 원본에 대한 암호화된 암호입니다. |
+| username | 일반 텍스트 형식의 원본에 대한 사용자 이름입니다. |
+| 암호 | 원본에 대한 암호화된 암호입니다. |
 | cleartextpassword | 원본에 대한 암호화되지 않은 암호입니다. |
 
 **예제:**
@@ -227,19 +227,19 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 
 ## <a name="trustedsigners-section"></a>해당 서명자 섹션
 
-설치 또는 복원 중 패키지를 허용 하는 데 사용 되는 신뢰할 수 있는 서명자를 저장 합니다. 사용자가로 설정 `signatureValidationMode` 된 경우에 `require`는이 목록을 비워 둘 수 없습니다. 
+설치 또는 복원 중 패키지를 허용 하는 데 사용 되는 신뢰할 수 있는 서명자를 저장 합니다. 사용자가 `require``signatureValidationMode` 설정 하면이 목록은 비워 둘 수 없습니다. 
 
-이 섹션은 [ `nuget trusted-signers` 명령을](../reference/cli-reference/cli-ref-trusted-signers.md)사용 하 여 업데이트할 수 있습니다.
+이 섹션은 [`nuget trusted-signers` 명령을](../reference/cli-reference/cli-ref-trusted-signers.md)사용 하 여 업데이트할 수 있습니다.
 
 **스키마**:
 
-신뢰할 수 있는 서명자는 지정 된 `certificate` 서명자를 식별 하는 모든 인증서를 등록 하는 항목의 컬렉션을 포함 합니다. 신뢰할 수 있는 서명자는 `Author` `Repository`또는 일 수 있습니다.
+신뢰할 수 있는 서명자는 지정 된 서명자를 식별 하는 모든 인증서를 등록 하는 `certificate` 항목의 컬렉션을 포함 합니다. 신뢰할 수 있는 서명자는 `Author` 또는 `Repository`일 수 있습니다.
 
-또한 신뢰할 수 있는 *리포지토리* 는 `serviceIndex` 유효한 `https` uri 여야 하는 리포지토리에 대 한을 지정 하 고, 선택적으로 세미콜론으로 구분 된 목록을 `owners` 지정 하 여 해당 특정에서 신뢰할 수 있는 사용자를 제한할 수 있습니다. 리포지토리로.
+또한 신뢰할 수 있는 *리포지토리* 는 유효한 `https` uri 여야 하는 리포지토리에 대 한 `serviceIndex`를 지정 하 고 선택적으로 세미콜론으로 구분 된 `owners` 목록을 지정 하 여 해당 특정 리포지토리에서 신뢰할 수 있는 사용자를 제한할 수 있습니다.
 
-인증서 지문에 사용 되는 지원 되는 해시 `SHA256`알고리즘 `SHA384` 은 `SHA512`, 및입니다.
+인증서 지문에 사용 되는 지원 되는 해시 알고리즘은 `SHA256`, `SHA384` 및 `SHA512`입니다.
 
-가 `certificate` 서명 확인의 `true` 일부로 인증서 체인을 빌드하는 동안 지정 된 인증서를 신뢰할 수 없는 루트에 체인으로 연결할 수 있는 것으로 지정 `allowUntrustedRoot` 하면입니다.
+`certificate` `true` `allowUntrustedRoot` 지정 된 경우 서명 확인의 일부로 인증서 체인을 빌드하는 동안 지정 된 인증서를 신뢰할 수 없는 루트에 체인으로 연결할 수 있습니다.
 
 **예제**:
 
@@ -283,12 +283,12 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 
 ## <a name="packagemanagement-section"></a>packageManagement 섹션
 
-기본 패키지 관리 형식 (PackageReference 또는 )을 설정 합니다. SDK 스타일 프로젝트는 항상 PackageReference을 사용 합니다.
+기본 패키지 관리 형식 ( *PackageReference 또는* )을 설정 합니다. SDK 스타일 프로젝트는 항상 PackageReference을 사용 합니다.
 
 | Key | 값 |
 | --- | --- |
-| 형식 | 기본 패키지 관리 형식을 나타내는 부울입니다. 이면 `1`format은 PackageReference입니다. 인 `0`경우 format은 *패키지인*입니다. |
-| 비활성화됨 | 첫 번째 패키지를 설치할 때 기본 패키지 형식을 선택 하 라는 메시지를 표시할지 여부를 나타내는 부울입니다. `False`프롬프트를 숨깁니다. |
+| 형식 | 기본 패키지 관리 형식을 나타내는 부울입니다. `1`경우 format은 PackageReference입니다. `0`경우 format은 *패키지 .config*입니다. |
+| 비활성화됨 | 첫 번째 패키지를 설치할 때 기본 패키지 형식을 선택 하 라는 메시지를 표시할지 여부를 나타내는 부울입니다. `False`는 프롬프트를 숨깁니다. |
 
 **예제**:
 
