@@ -1,0 +1,53 @@
+---
+title: NuGet 5.4 릴리스 정보
+description: 새 기능, 버그 수정 및 Ecrs를 비롯 한 NuGet 5.4에 대 한 릴리스 정보입니다.
+author: karann-msft
+ms.author: karann
+ms.date: 09/06/2019
+ms.topic: conceptual
+ms.openlocfilehash: 69f78ba5483fcc92887624584663e8c496cfc497
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.translationtype: MT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74828395"
+---
+# <a name="nuget-54-release-notes"></a><span data-ttu-id="9e089-103">NuGet 5.4 릴리스 정보</span><span class="sxs-lookup"><span data-stu-id="9e089-103">NuGet 5.4 Release Notes</span></span>
+
+<span data-ttu-id="9e089-104">NuGet 배포 차량:</span><span class="sxs-lookup"><span data-stu-id="9e089-104">NuGet distribution vehicles:</span></span>
+
+| <span data-ttu-id="9e089-105">NuGet 버전</span><span class="sxs-lookup"><span data-stu-id="9e089-105">NuGet version</span></span> | <span data-ttu-id="9e089-106">Visual Studio 버전에서 사용 가능</span><span class="sxs-lookup"><span data-stu-id="9e089-106">Available in Visual Studio version</span></span>| <span data-ttu-id="9e089-107">.NET SDK에서 사용 가능</span><span class="sxs-lookup"><span data-stu-id="9e089-107">Available in .NET SDK(s)</span></span>|
+|:---|:---|:---|
+| [<span data-ttu-id="9e089-108">**5.4.0**</span><span class="sxs-lookup"><span data-stu-id="9e089-108">**5.4.0**</span></span>](https://nuget.org/downloads) | [<span data-ttu-id="9e089-109">Visual Studio 2019 버전 16.4</span><span class="sxs-lookup"><span data-stu-id="9e089-109">Visual Studio 2019 version 16.4</span></span>](https://visualstudio.microsoft.com/downloads/) | <span data-ttu-id="9e089-110">[3.1.100](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="9e089-110">[3.1.100](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup></span></span> |
+
+<span data-ttu-id="9e089-111"><sup>1</sup> .NET Core 워크 로드와 함께 Visual Studio 2019와 함께 설치 됨</span><span class="sxs-lookup"><span data-stu-id="9e089-111"><sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload</span></span>
+
+## <a name="summary-whats-new-in-54"></a><span data-ttu-id="9e089-112">요약: 5.4의 새로운 기능</span><span class="sxs-lookup"><span data-stu-id="9e089-112">Summary: What's New in 5.4</span></span>
+
+* <span data-ttu-id="9e089-113">빠른 솔루션 로드 시간-첫 번째 솔루션 로드 중 NuGet 코드를 실행 하는 오버 헤드가 JIT 비용을 줄이기 위해 부분 ngen을 통해 축소 되었습니다 [#6007](https://github.com/NuGet/Home/issues/6007)</span><span class="sxs-lookup"><span data-stu-id="9e089-113">Faster solution load time - Overhead running NuGet code during first solution load has been reduced via partial-ngen to reduce JIT cost - [#6007](https://github.com/NuGet/Home/issues/6007)</span></span>
+
+* <span data-ttu-id="9e089-114">새 도우미 함수-패키지 id 및 버전 목록이 제공 될 경우 최상위 패키지를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="9e089-114">New helper function - given a list of package ids and versions, get the likely top level packages.</span></span><span data-ttu-id="9e089-115"> - [#8316](https://github.com/NuGet/Home/issues/8316)</span><span class="sxs-lookup"><span data-stu-id="9e089-115"> - [#8316](https://github.com/NuGet/Home/issues/8316)</span></span>
+
+### <a name="issues-fixed-in-this-release"></a><span data-ttu-id="9e089-116">이번 릴리스에서 수정된 문제</span><span class="sxs-lookup"><span data-stu-id="9e089-116">Issues fixed in this release</span></span>
+
+<span data-ttu-id="9e089-117">**버그**</span><span class="sxs-lookup"><span data-stu-id="9e089-117">**Bugs**</span></span>
+
+* <span data-ttu-id="9e089-118">플러그 인: linux/Mac에서 로깅 시간 정확성이 off- [#8747](https://github.com/NuGet/Home/issues/8747)</span><span class="sxs-lookup"><span data-stu-id="9e089-118">Plugin: Logging time accuracy is off on linux/Mac - [#8747](https://github.com/NuGet/Home/issues/8747)</span></span>
+
+* <span data-ttu-id="9e089-119">플러그 인을 삭제 하면 경우에 따라 전체 작업이 throw 및 실패할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9e089-119">Disposing of a plugin can sometimes throw and fail the whole operation.</span></span><span data-ttu-id="9e089-120"> - [#8732](https://github.com/NuGet/Home/issues/8732)</span><span class="sxs-lookup"><span data-stu-id="9e089-120"> - [#8732](https://github.com/NuGet/Home/issues/8732)</span></span>
+
+* <span data-ttu-id="9e089-121">PMUI- [#8679](https://github.com/NuGet/Home/issues/8679) 의 허용 및 차단 된 버전 목록에서 버전 중복 표시를 중지 합니다.</span><span class="sxs-lookup"><span data-stu-id="9e089-121">Stop displaying version duplicates in allowed and blocked versions list in PMUI - [#8679](https://github.com/NuGet/Home/issues/8679)</span></span>
+
+* <span data-ttu-id="9e089-122">잠금 파일이 제대로 생성 되지 않음-lockedmode로 복원에 영향을 주지 않습니다.- [#8645](https://github.com/NuGet/Home/issues/8645)</span><span class="sxs-lookup"><span data-stu-id="9e089-122">Lock File not properly generated - framework ordering should not impact the restore with lockedmode - [#8645](https://github.com/NuGet/Home/issues/8645)</span></span>
+
+* <span data-ttu-id="9e089-123">SDK 3.0.100에 <RuntimeIdentifiers> 집합이 설정 된 프로젝트에 대해 LockFile 유효성 검사가 실패 합니다.- [#8639](https://github.com/NuGet/Home/issues/8639)</span><span class="sxs-lookup"><span data-stu-id="9e089-123">LockFile validation fails for projects with <RuntimeIdentifiers> set in SDK 3.0.100 - [#8639](https://github.com/NuGet/Home/issues/8639)</span></span>
+
+* <span data-ttu-id="9e089-124">서명 유효성 검사는 이제 동일한 OID에 2 개의 값이 있는 타임 스탬프를 사용 하 여 서명을 올바르게 거부 합니다. [#8629](https://github.com/NuGet/Home/issues/8629)</span><span class="sxs-lookup"><span data-stu-id="9e089-124">Signing Validation will now properly reject signatures with timestamps which have 2 values under the same OID - [#8629](https://github.com/NuGet/Home/issues/8629)</span></span>
+
+* <span data-ttu-id="9e089-125">라이선스 목록 업데이트- [#8544](https://github.com/NuGet/Home/issues/8544)</span><span class="sxs-lookup"><span data-stu-id="9e089-125">Update the license list - [#8544](https://github.com/NuGet/Home/issues/8544)</span></span>
+
+<span data-ttu-id="9e089-126">**DCRs**</span><span class="sxs-lookup"><span data-stu-id="9e089-126">**DCRs**</span></span>
+
+* <span data-ttu-id="9e089-127">IFeedbackDiagnosticFileProvider에 진단 파일 온 보 딩- [#8535](https://github.com/NuGet/Home/issues/8535)</span><span class="sxs-lookup"><span data-stu-id="9e089-127">Onboarding diagnostic files to IFeedbackDiagnosticFileProvider - [#8535](https://github.com/NuGet/Home/issues/8535)</span></span>
+
+<span data-ttu-id="9e089-128">**[이 릴리스에서 해결 된 모든 문제 목록-5.4](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.4")**</span><span class="sxs-lookup"><span data-stu-id="9e089-128">**[List of all issues fixed in this release - 5.4](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.4")**</span></span>
