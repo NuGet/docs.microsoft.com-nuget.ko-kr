@@ -13,7 +13,7 @@
 ## [패키지 찾기 및 선택](consume-packages/finding-and-choosing-packages.md)
 ## 패키지 설치 및 관리
 ### [Visual Studio](consume-packages/install-use-packages-visual-studio.md)
-### [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
+### [Mac용 Visual Studio](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
 ### [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md)
 ### [패키지 관리자 콘솔(PowerShell)](consume-packages/install-use-packages-powershell.md)
@@ -287,6 +287,7 @@
 ## 릴리스 정보
 ### [알려진 문제](release-notes/known-issues.md)
 ### NuGet 5.x
+#### [NuGet 5.4](release-notes/NuGet-5.4.md)
 #### [NuGet 5.3](release-notes/NuGet-5.3.md)
 #### [NuGet 5.2](release-notes/NuGet-5.2-RTM.md)
 #### [NuGet 5.1](release-notes/NuGet-5.1-RTM.md)
