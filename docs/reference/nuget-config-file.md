@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: 0b052bd03625172f1b941c365cbedf7629809d6f
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: d6cad228eb052563fe57ea635bff0ea548cedc1f
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825194"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383566"
 ---
 # <a name="nugetconfig-reference"></a>nuget.exe 참조
 
@@ -305,7 +305,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 
 예를 들어 Windows의 `HOME` 환경 변수가 `c:\users\username`으로 설정되면 구성 파일의 `%HOME%\NuGetRepository` 값이 `c:\users\username\NuGetRepository`로 해석됩니다.
 
-마찬가지로, Mac/Linux의 `HOME`이 `/home/myStuff`로 설정되면 구성 파일의 `%HOME%/NuGetRepository`가 `/home/myStuff/NuGetRepository`로 해석됩니다.
+마찬가지로, Mac/Linux의 `HOME`이 `/home/myStuff`로 설정되면 구성 파일의 `$HOME/NuGetRepository`가 `/home/myStuff/NuGetRepository`로 해석됩니다.
 
 환경 변수가 없으면 NuGet에서 구성 파일의 리터럴 값을 사용합니다.
 
