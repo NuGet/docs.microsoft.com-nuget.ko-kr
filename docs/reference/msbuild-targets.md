@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: ed3545454a811c311190a191c566d9e9192f3fcc
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: 2c2b5b21569e2644154670d502146f1e0f9c4c81
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825060"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385016"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -56,7 +56,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 | Owners | 해당 사항 없음 | NuSpec에는 없음 | |
 | 제목 | 제목 | PackageId| |
 | 설명 | 설명 | "패키지 설명" | |
-| 저작권 | 저작권 | 비어 있음 | |
+| Copyright | Copyright | 비어 있음 | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | 라이선스 | PackageLicenseExpression | 비어 있음 | `<license type="expression">`에 해당 합니다. |
 | 라이선스 | PackageLicenseFile | 비어 있음 | `<license type="file">`에 해당합니다. 참조 된 라이선스 파일을 명시적으로 압축 해야 합니다. |
@@ -81,7 +81,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 - PackageId
 - 만든 이
 - 설명
-- 저작권
+- Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
 - PackageLicenseExpression
@@ -120,7 +120,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우 `m
 
 `PackageIconUrl` 새 [`PackageIcon`](#packageicon) 속성을 위해 더 이상 사용 되지 않습니다.
 
-NuGet 5.3 & Visual Studio 2019 버전 16.3부터 패키지 메타 데이터에서 `PackageIconUrl`만 지정 하는 경우 `pack` [NU5048](errors-and-warnings/nu5048) 경고를 발생 시킵니다.
+NuGet 5.3 & Visual Studio 2019 버전 16.3부터 패키지 메타 데이터에서 `PackageIconUrl`만 지정 하는 경우 `pack` [NU5048](./errors-and-warnings/nu5048.md) 경고를 발생 시킵니다.
 
 ### <a name="packageicon"></a>PackageIcon
 
