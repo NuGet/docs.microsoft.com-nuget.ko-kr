@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: 69f78ba5483fcc92887624584663e8c496cfc497
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: c7fb9c1e587b6603abe63581c662571abfd4506b
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74828395"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384113"
 ---
 # <a name="nuget-54-release-notes"></a>NuGet 5.4 릴리스 정보
 
@@ -27,6 +27,8 @@ NuGet 배포 차량:
 * 빠른 솔루션 로드 시간-첫 번째 솔루션 로드 중 NuGet 코드를 실행 하는 오버 헤드가 JIT 비용을 줄이기 위해 부분 ngen을 통해 축소 되었습니다 [#6007](https://github.com/NuGet/Home/issues/6007)
 
 * 새 도우미 함수-패키지 id 및 버전 목록이 제공 될 경우 최상위 패키지를 가져옵니다. - [#8316](https://github.com/NuGet/Home/issues/8316)
+
+* [GitHub 작업](https://github.com/features/actions)에서 nuget.exe를 설치 하 고 구성 하기 위한 새로운 [`nuget/setup-nuget`](https://github.com/marketplace/actions/setup-nuget-exe-for-use-with-actions) 동작입니다. - [#8818](https://github.com/NuGet/Home/issues/8818)
 
 ### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
 
