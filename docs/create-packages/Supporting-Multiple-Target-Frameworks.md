@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 69e12ce1c78f8d4d50cbad7a0237d767064193ab
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 34f7c6132ba6050e20114642932ccf29a5ec088d
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610644"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385098"
 ---
 # <a name="support-multiple-net-versions"></a>여러 .NET 버전 지원
 
@@ -67,7 +67,7 @@ ms.locfileid: "73610644"
 
 이러한 어셈블리는 런타임에만 사용할 수 있으므로 해당 컴파일 시간 어셈블리도 제공하려면 `AnyCPU` 어셈블리를 `/ref/{tfm}` 폴더에 포함합니다. 
 
-NuGet은 항상 하나의 폴더에서 이러한 컴파일 또는 런타임 자산을 선택하므로, `/ref`의 호환 가능한 자산이 있는 경우 컴파일 시간 어셈블리를 추가하기 위해 `/lib`가 무시됩니다. 마찬가지로 `/runtime`의 일부 호환 가능한 자산이 있는 경우에도 런타임을 위해 `/lib`가 무시됩니다.
+NuGet은 항상 하나의 폴더에서 이러한 컴파일 또는 런타임 자산을 선택하므로, `/ref`의 호환 가능한 자산이 있는 경우 컴파일 시간 어셈블리를 추가하기 위해 `/lib`가 무시됩니다. 마찬가지로 `/runtimes`의 일부 호환 가능한 자산이 있는 경우에도 런타임을 위해 `/lib`가 무시됩니다.
 
 `.nuspec` 매니페스트에서 이러한 파일을 참조하는 예제는 [UWP 패키지 만들기](../guides/create-uwp-packages.md)를 참조하세요.
 

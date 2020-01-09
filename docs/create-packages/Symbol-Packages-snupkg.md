@@ -12,18 +12,18 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 8528261f90e75e2dfac8cb746b396d227c3741f4
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: de37cbf1f63da3de07774281eceef99c51abdaa5
+ms.sourcegitcommit: 96aab8a1ad35eca0c029679d0158d9cc93d66009
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825183"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75676382"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
 기호 패키지를 사용하면 NuGet 패키지의 디버깅 환경을 향상시킬 수 있습니다.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 필수 [NuGet protocols](../api/nuget-protocols.md)를 구현하는 [nuget.exe v4.9.0 이상](https://www.nuget.org/downloads) 또는 [dotnet.exe v2.2.0 이상](https://www.microsoft.com/net/download/dotnet-core/2.2).
 
@@ -35,8 +35,8 @@ Dotnet 또는 MSBuild를 사용하는 경우 nupkg 파일 외에 .snupkg 파일�
 
    ```xml
    <PropertyGroup>
-      <IncludeSymbols>true</IncludeSymbols> 
-      <SymbolPackageFormat>snupkg</SymbolPackageFormat> 
+      <IncludeSymbols>true</IncludeSymbols>
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
    </PropertyGroup>
    ```
 
@@ -130,7 +130,7 @@ NuGet.org에는 기호 패키지에 대한 다음과 같은 제약 조건이 있
 5) ```authors``` 및 ```owners``` 필드는 snupkg의 nuspec에서 제외됩니다.
 6) ```<license>``` 요소를 사용하지 마세요. .snupkg에는 해당 .nupkg와 동일한 라이선스가 적용됩니다.
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참조
 
 소스 링크를 사용하여 .NET 어셈블리의 소스 코드 디버깅을 사용하도록 설정하는 것이 좋습니다. 자세한 내용은 [소스 링크 지침](/dotnet/standard/library-guidance/sourcelink)을 참조하세요.
 
