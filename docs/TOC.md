@@ -49,7 +49,7 @@
 ### [네이티브 패키지 만들기](guides/native-packages.md)
 ### [NuGet 패키지로 UI 컨트롤 만들기](guides/create-UI-controls.md)
 ### [NuGet 패키지로 분석기 만들기](guides/analyzers-conventions.md)
-### [Visual Studio 2015를 사용하여 Xamarin용 패키지 만들기](guides/create-packages-for-xamarin.md)
+### [Visual Studio 2017 또는 2019를 사용하여 Xamarin용 패키지 만들기](guides/create-packages-for-xamarin.md)
 ### [COM interop 어셈블리가 포함된 패키지 만들기](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## 서명 패키지
 ### [패키지 서명](create-packages/sign-a-package.md)
@@ -67,7 +67,7 @@
 ## [패키지 설치 프로세스](concepts/package-installation-process.md)
 ## [패키지 버전 관리](concepts/package-versioning.md)
 ## [종속성 확인](concepts/dependency-resolution.md)
-# 참조
+# 참고
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config 파일](reference/nuget-config-file.md)
 ## [대상 프레임워크](reference/target-frameworks.md)
