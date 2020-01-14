@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: b104eb39ddeacd9ca1ea45937cf98ad57531112a
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 8f2b33a7290301bd16db3b1979ae496eee602f55
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317140"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383660"
 ---
 # <a name="known-issues-with-nuget"></a>알려진 NuGet 문제
 
@@ -71,7 +71,7 @@ install-package log4net
 
 명령이 실패하면 해당 위치에 파일이 있는지 확인합니다.
 
-이 오류에 대한 자세한 내용은 이 [작업 항목](https://nuget.codeplex.com/workitem/3609 "작업 항목 3609")를 참조하세요.
+이 오류에 대한 자세한 내용은 이 [작업 항목](https://nuget.codeplex.com/workitem/3609 "작업 항목 3609")을 참조하세요.
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>VS 2012에서 패키지를 업데이트한 후에 빌드가 실패합니다.
 
@@ -90,7 +90,7 @@ VS 2010 SP1을 실행하는 경우 설치되어 있는 이전 버전의 NuGet을
 로그를 볼 때 `SignatureMismatchException`에 대한 언급이 표시될 수 있습니다.
 
 이 문제가 발생하지 않도록 하기 위해 [Visual Studio 2010 SP1 핫픽스](http://bit.ly/vsixcertfix)를 설치할 수 있습니다.
-또는 Visual Studio를 관리자 권한으로 실행하여 NuGet을 제거한 다음 VS 확장 갤러리에서 설치하기만 하면 됩니다.  자세한 내용은 [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019)를 참조하세요.
+또는 Visual Studio를 관리자 권한으로 실행하여 NuGet을 제거한 다음 VS 확장 갤러리에서 설치하기만 하면 됩니다. 자세한 내용은 <https://support.microsoft.com/kb/2581019>를 참조하세요.
 
 ## <a name="package-manager-console-throws-an-exception-when-the-reflector-visual-studio-add-in-is-also-installed"></a>리플렉터 Visual Studio 추가 기능이 설치되면 패키지 관리자 콘솔에서 예외가 발생합니다.
 
@@ -159,7 +159,7 @@ Visual Studio 확장 관리자를 통해 NuGet을 제거하려고 하면 [제거
 
 ## <a name="the-package-manager-console-crashes-when-i-open-it-in-windows-xp-whats-wrong"></a>Windows XP에서 패키지 관리자 콘솔을 열면 패키지 관리자 콘솔 작동이 중단됩니다. 무엇이 문제인가요?
 
-NuGet에는 Powershell 2.0 런타임이 필요합니다. Windows XP에는 기본적으로 Powershell 2.0이 없습니다. [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929)에서 Powershell 2.0 런타임을 다운로드할 수 있습니다. 설치한 후에 Visual Studio를 다시 시작하면 패키지 관리자 콘솔을 열 수 있습니다.
+NuGet에는 Powershell 2.0 런타임이 필요합니다. Windows XP에는 기본적으로 Powershell 2.0이 없습니다. <https://support.microsoft.com/kb/968929>에서 Powershell 2.0 런타임을 다운로드할 수 있습니다. 설치한 후에 Visual Studio를 다시 시작하면 패키지 관리자 콘솔을 열 수 있습니다.
 
 ## <a name="visual-studio-2010-sp1-beta-crashes-on-exit-if-the-package-manager-console-is-open"></a>패키지 관리자 콘솔이 열려 있으면 종료 시 Visual Studio 2010 SP1 베타가 충돌합니다.
 

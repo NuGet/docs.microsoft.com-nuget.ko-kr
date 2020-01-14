@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 1053a18926f63e02f0b1c100e7cc1cd293654ced
-ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
+ms.openlocfilehash: 00fe1d5fa81132b5d6826203a0d26e56aa8d4755
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71307209"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383984"
 ---
 # <a name="signing-nuget-packages"></a>NuGet 패키지 서명
 
@@ -19,7 +19,7 @@ ms.locfileid: "71307209"
 
 ## <a name="get-a-code-signing-certificate"></a>코드 서명 인증서 가져오기
 
-유효한 인증서는 [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 등의 공용 인증서 기관에서 얻을 수 있으며, Windows에서 신뢰할 수 있는 인증 기관의 전체 목록은 [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners)에서 확인할 수 있습니다.
+유효한 인증서는 [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 등의 공용 인증서 기관에서 얻을 수 있으며, Windows에서 신뢰할 수 있는 인증 기관의 전체 목록은 [http://aka.ms/trustcertpartners](https://aka.ms/trustcertpartners)에서 확인할 수 있습니다.
 
 테스트 목적으로 자체 발급된 인증서를 사용할 수 있습니다. 그러나 자체 발급된 인증서를 사용하여 서명된 패키지는 NuGet.org에서 수락되지 않습니다. [테스트 인증서 만들기](#create-a-test-certificate)에 대해 자세히 알아보세요.
 
@@ -54,7 +54,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 서명된 패키지를 게시하려면 먼저 NuGet.org를 사용하여 인증서를 등록해야 합니다. 이진 DER 형식의 `.cer` 파일로 인증서가 필요합니다.
 
 1. NuGet.org레 [로그인](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)합니다.
-1. `Account settings`(또는 조직 계정으로 인증서를 등록하려는 경우 `Manage Organization` **>** `Edit Organziation`)으로 이동합니다.
+1. `Account settings`(또는 조직 계정으로 인증서를 등록하려는 경우 `Manage Organization` **>** `Edit Organziation`)(으)로 이동합니다.
 1. `Certificates` 섹션을 확장하고 `Register new`을 선택합니다.
 1. 이전에 내보낸 인증서 파일을 찾아서 선택합니다.
   ![등록된 인증서](../reference/media/registered-certs.png)

@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 3ca023c8d39b9b36388f5f517b50ca5cd2347cc0
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 81acf15ac69d78d39d2784e77c18ba38bfea126d
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610451"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385544"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>사용자 고유의 NuGet 피드 호스팅
 
@@ -32,7 +32,7 @@ NuGet은 이러한 모든 용도에서 다음과 같은 방법으로 개인 패�
 - [GitHub 패키지 레지스트리](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [LiGet](https://github.com/ai-traders/liget), Docker의 kestrel에서 실행되는 NuGet V2 서버의 오픈 소스 구현
 - [MyGet](https://myget.org)
-- Sonatype의 [Nexus](https://www.sonatype.org/nexus/)
+- Sonatype에서의 [Nexus 리포지토리 OSS](https://www.sonatype.com/nexus-repository-oss)입니다.
 - [NuGet 서버(오픈 소스)](https://github.com/svenkle/nuget-server), Inedo의 NuGet 서버와 비슷한 오픈 소스 구현
 - [NuGet 서버](http://nugetserver.net/), Inedo의 커뮤니티 프로젝트
 - Inedo의 [ProGet](https://inedo.com/proget)

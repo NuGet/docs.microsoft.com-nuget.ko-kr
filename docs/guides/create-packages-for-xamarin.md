@@ -1,22 +1,22 @@
 ---
-title: Visual Studio 2015를 사용하여 Xamarin용 NuGet 패키지 만들기(iOS, Android 및 Windows용)
+title: Visual Studio 2017 또는 2019를 사용하여 Xamarin용 NuGet 패키지 만들기(iOS, Android 및 Windows용)
 description: iOS, Android 및 Windows에서 네이티브 API를 사용하는 Xamarin에 대한 NuGet 패키지를 만드는 엔드투엔드 연습입니다.
 author: karann-msft
 ms.author: karann
-ms.date: 01/09/2017
+ms.date: 11/05/2019
 ms.topic: tutorial
-ms.openlocfilehash: 927991429d8d4ce54aa35be3e450475a38141b11
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: fce3c9a92dfee325f9e914bf3d6444601fb38b6c
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488908"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385688"
 ---
-# <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 Xamarin용 패키지 만들기
+# <a name="create-packages-for-xamarin-with-visual-studio-2017-or-2019"></a>Visual Studio 2017 또는 2019를 사용하여 Xamarin용 패키지 만들기
 
 Xamarin용 패키지에는 런타임 운영 체제에 따라 iOS, Android 및 Windows에서 네이티브 API를 사용하는 코드가 포함되어 있습니다. 이 작업은 간단하지만 개발자가 공통 API 노출 영역을 통해 PCL 또는 .NET Standard 라이브러리에서 패키지를 사용할 수 있게 하는 것이 좋습니다.
 
-이 연습에서는 Visual Studio 2015를 사용하여 iOS, Android 및 Windows의 모바일 프로젝트에 사용할 수 있는 플랫폼 간 NuGet 패키지를 만듭니다.
+이 연습에서는 Visual Studio 2017 또는 2019를 사용하여 iOS, Android 및 Windows의 모바일 프로젝트에 사용할 수 있는 플랫폼 간 NuGet 패키지를 만듭니다.
 
 1. [필수 구성 요소](#prerequisites)
 1. [프로젝트 구조 및 추상화 코드 만들기](#create-the-project-structure-and-abstraction-code)
@@ -25,9 +25,9 @@ Xamarin용 패키지에는 런타임 운영 체제에 따라 iOS, Android 및 Wi
 1. [구성 요소 패키징](#package-the-component)
 1. [관련 항목](#related-topics)
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
-1. UWP(유니버설 Windows 플랫폼) 및 Xamarin이 있는 Visual Studio 2015 - [visualstudio.com](https://www.visualstudio.com/)에서 추가 비용 없이 Community 버전을 설치합니다. Professional 및 Enterprise 버전도 사용할 수 있습니다. UWP 및 Xamarin 도구를 포함하려면 사용자 지정 설치를 선택하고 적절한 옵션을 선택합니다.
+1. UWP(유니버설 Windows 플랫폼) 및 Xamarin이 있는 Visual Studio 2017 또는 2019입니다. [visualstudio.com](https://www.visualstudio.com/)에서 추가 비용 없이 Community 버전을 설치합니다. Professional 및 Enterprise 버전도 사용할 수 있습니다. UWP 및 Xamarin 도구를 포함하려면 사용자 지정 설치를 선택하고 적절한 옵션을 선택합니다.
 1. NuGet CLI - [nuget.org/downloads](https://nuget.org/downloads)에서 최신 버전의 nuget.exe를 다운로드하여 원하는 위치에 저장합니다. 그런 다음 해당 위치를 PATH 환경 변수에 추가합니다(아직 없는 경우).
 
 > [!Note]
@@ -35,23 +35,33 @@ Xamarin용 패키지에는 런타임 운영 체제에 따라 iOS, Android 및 Wi
 
 ## <a name="create-the-project-structure-and-abstraction-code"></a>프로젝트 구조 및 추상화 코드 만들기
 
-1. Visual Studio용 [Plugin for Xamarin Templates 확장](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates)을 다운로드하여 실행합니다. 이러한 템플릿을 사용하면 이 연습에 필요한 프로젝트 구조를 쉽게 만들 수 있습니다.
-1. Visual Studio의 **파일 > 새로 만들기 > 프로젝트**에서 `Plugin`을 검색하고, **Plugin for Xamarin** 템플릿을 선택하고, 이름을 LoggingLibrary로 변경한 다음, [확인]을 클릭합니다.
+1. Visual Studio용 [플랫폼 간 .NET 표준 플러그 인 템플릿 확장](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates)을 다운로드하여 실행합니다. 이러한 템플릿을 사용하면 이 연습에 필요한 프로젝트 구조를 쉽게 만들 수 있습니다.
+1. Visual Studio 2017의 **파일 > 새로 만들기 > 프로젝트**에서 `Plugin`을(를) 검색하고, **플랫폼 간 .NET 표준 라이브러리 플러그 인** 템플릿을 선택하고, 이름을 LoggingLibrary로 변경한 다음, 확인을 클릭합니다.
 
-    ![Visual Studio에서 비어 있는 새 앱(이식 가능한 Xamarin.Forms) 프로젝트](media/CrossPlatform-NewProject.png)
+    ![VS 2017에서 비어 있는 새 앱(이식 가능한 Xamarin.Forms) 프로젝트](media/CrossPlatform-NewProject.png)
 
-결과 솔루션에는 다양한 플랫폼 특정 프로젝트와 함께 두 개의 PCL 프로젝트가 포함되어 있습니다.
+    Visual Studio 2019의 **파일 > 새로 만들기 > 프로젝트**에서 `Plugin`을(를) 검색하고, **플랫폼 간 .NET 표준 라이브러리 플러그 인** 템플릿을 선택하고, 다음을 클릭합니다.
 
-- `Plugin.LoggingLibrary.Abstractions (Portable)`라는 PCL은 구성 요소의 공용 인터페이스(API 노출 영역)를 정의합니다. 이 경우 ILoggingLibrary.cs 파일에 포함된 `ILoggingLibrary` 인터페이스입니다. 여기서는 라이브러리에 대한 인터페이스를 정의합니다.
-- 다른 `Plugin.LoggingLibrary (Portable)` PCL에는 런타임 시 추상 인터페이스의 플랫폼 특정 구현을 찾는 CrossLoggingLibrary.cs의 코드가 포함되어 있습니다. 일반적으로 이 파일은 수정할 필요가 없습니다.
-- `Plugin.LoggingLibrary.Android`와 같은 플랫폼 특정 프로젝트에는 각각 해당 LoggingLibraryImplementation.cs 파일의 네이티브 인터페이스 구현이 포함되어 있습니다. 여기서는 라이브러리 코드를 빌드합니다.
+    ![VS 2019에서 비어 있는 새 앱(이식 가능한 Xamarin.Forms) 프로젝트](media/CrossPlatform-NewProject19-Part1.png)
 
-기본적으로 Abstractions 프로젝트의 ILoggingLibrary.cs 파일에는 인터페이스 정의가 있지만 메서드는 없습니다. 이 연습의 목적을 위해 다음과 같이 `Log` 메서드를 추가합니다.
+    이름을 LoggingLibrary로 변경하고 만들기를 클릭합니다.
+
+    ![VS 2019에서 비어 있는 새 앱(이식 가능한 Xamarin.Forms) 구성](media/CrossPlatform-NewProject19-Part2.png)
+
+결과 솔루션에는 다양한 플랫폼별 프로젝트와 함께 다음과 같은 두 개의 Shared 프로젝트가 포함되어 있습니다.
+
+- `ILoggingLibrary.shared.cs` 파일에 포함된 `ILoggingLibrary` 프로젝트는 구성 요소의 공용 인터페이스(API 노출 영역)를 정의합니다. 여기서는 라이브러리에 대한 인터페이스를 정의합니다.
+- 다른 Shared 프로젝트에는 런타임 시 추상 인터페이스의 플랫폼 특정 구현을 찾는 `CrossLoggingLibrary.shared.cs`의 코드가 포함되어 있습니다. 일반적으로 이 파일은 수정할 필요가 없습니다.
+- `LoggingLibrary.android.cs` 등의 플랫폼별 프로젝트에는 각각 해당 `LoggingLibraryImplementation.cs`(VS 2017) 또는 `LoggingLibrary.<PLATFORM>.cs`(VS 2019) 파일의 네이티브 인터페이스 구현이 포함되어 있습니다. 여기서는 라이브러리 코드를 빌드합니다.
+
+기본적으로 `ILoggingLibrary` 프로젝트의 ILoggingLibrary.shared.cs 파일에는 인터페이스 정의가 있지만, 메서드는 없습니다. 이 연습의 목적을 위해 다음과 같이 `Log` 메서드를 추가합니다.
 
 ```cs
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Plugin.LoggingLibrary.Abstractions
+namespace Plugin.LoggingLibrary
 {
     /// <summary>
     /// Interface for LoggingLibrary
@@ -70,11 +80,12 @@ namespace Plugin.LoggingLibrary.Abstractions
 
 `ILoggingLibrary` 인터페이스 및 해당 메서드의 플랫폼 특정 구현을 구현하려면 다음을 수행합니다.
 
-1. 각 플랫폼 프로젝트의 `LoggingLibraryImplementation.cs` 파일을 열고 필요한 코드를 추가합니다. 예를 들어 다음과 같습니다(`Plugin.LoggingLibrary.Android` 프로젝트 사용).
+1. 각 플랫폼 프로젝트의 `LoggingLibraryImplementation.cs`(VS 2017) 또는 `LoggingLibrary.<PLATFORM>.cs`(VS 2019) 파일을 열고 필요한 코드를 추가합니다. 예(`Android` 플랫폼 프로젝트 사용):
 
     ```cs
-    using Plugin.LoggingLibrary.Abstractions;
     using System;
+    using System.Collections.Generic;
+    using System.Text;
 
     namespace Plugin.LoggingLibrary
     {
@@ -95,9 +106,10 @@ namespace Plugin.LoggingLibrary.Abstractions
     ```
 
 1. 지원하려는 각 플랫폼에 대한 프로젝트에서 이 구현을 반복합니다.
-1. iOS 프로젝트를 마우스 오른쪽 단추로 클릭하고, **속성**을 선택하고, **빌드** 탭을 클릭한 다음, **출력 경로** 및 **XML 문서 파일** 설정에서 "\iPhone"을 제거합니다. 이는 이 연습에서 나중의 편의를 위한 작업입니다. 완료되면 파일을 저장합니다.
-1. 솔루션을 마우스 오른쪽 단추로 클릭하고, **구성 관리자...** 를 선택한 다음, 지원하는 PCL 및 각 플랫폼에 대한 **빌드** 상자를 선택합니다.
 1. 솔루션을 마우스 오른쪽 단추로 클릭하고, **솔루션 빌드**를 선택하여 작업을 확인하고, 다음에 패키지할 아티팩트를 생성합니다. 누락된 참조에 대한 오류가 발생하면 솔루션을 마우스 오른쪽 단추로 클릭하고, **NuGet 패키지 복원**을 선택하여 종속성을 설치한 다음, 다시 빌드합니다.
+
+> [!Note]
+> Visual Studio 2019를 사용하는 경우 **NuGet 패키지 복원**을 선택하고 다시 빌드를 시도하기 전에 `LoggingLibrary.csproj`에서 버전을 `MSBuild.Sdk.Extras`에서 `2.0.54`로 변경해야 합니다. 이 파일은 먼저 프로젝트를 마우스 오른쪽 단추로 클릭하고 `Unload Project`을(를) 선택해야만 액세스할 수 있습니다. 그런 다음 언로드된 프로젝트를 마우스 오른쪽 단추로 클릭하고 `Edit LoggingLibrary.csproj`을(를) 선택합니다.
 
 > [!Note]
 > iOS용으로 빌드하려면 [Visual Studio용 Xamarin.iOS 소개](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/)에서 설명한 대로 네트워크에서 Visual Studio에 연결된 Mac이 필요합니다. Mac을 사용할 수 없는 경우 구성 관리자에서 iOS 프로젝트를 선택 취소합니다(위 3단계).
@@ -125,7 +137,7 @@ namespace Plugin.LoggingLibrary.Abstractions
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Awesome application logging utility</description>
         <releaseNotes>First release</releaseNotes>
-        <copyright>Copyright 2016</copyright>
+        <copyright>Copyright 2018</copyright>
         <tags>logger logging logs</tags>
         </metadata>
     </package>
@@ -209,7 +221,7 @@ namespace Plugin.LoggingLibrary.Abstractions
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Awesome application logging utility</description>
     <releaseNotes>First release</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2018</copyright>
     <tags>logger logging logs</tags>
         <dependencies>
         <group targetFramework="MonoAndroid">
