@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 3/1/2019
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 3102cb9a20f354e92a0da8bba6457dc2ad0f0f2d
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 1b84c6e88a56216e5747d5bc602219af6695c305
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610953"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812937"
 ---
 # <a name="package-details-url-template"></a>패키지 세부 정보 URL 템플릿
 
@@ -23,7 +23,7 @@ ms.locfileid: "73610953"
 
 사용 되는 `@type` 값은 다음과 같습니다.
 
-@type 값                     | 노트
+@type 값                     | 참고
 ------------------------------- | -----
 PackageDetailsUriTemplate/5.1.0 | 초기 릴리스
 
@@ -45,12 +45,12 @@ URL은 절대 URL 이어야 하 고 스키마 (프로토콜)는 HTTPS 여야 합
 
 ### <a name="url-placeholders"></a>URL 자리 표시자
 
-name        | Type    | 필요한 공간 | 노트
+이름        | 형식    | 필수 | 참고
 ----------- | ------- | -------- | -----
-`{id}`      | string  | 아니요       | 세부 정보를 가져올 패키지 ID
-`{version}` | string  | 아니요       | 세부 정보를 가져올 패키지 버전
+`{id}`      | string  | no       | 세부 정보를 가져올 패키지 ID
+`{version}` | string  | no       | 세부 정보를 가져올 패키지 버전
 
-서버는 대/소문자를 구분 하 여 `{id}` 및 `{version}` 값을 수락 해야 합니다. 또한 서버는 버전이 [정규화](https://docs.microsoft.com/nuget/concepts/package-versioning#normalized-version-numbers)되었는지 여부를 구분 하지 않아야 합니다. 즉, 서버에도 정규화 되지 않은 버전이 허용 되어야 합니다.
+서버는 대/소문자를 구분 하 여 `{id}` 및 `{version}` 값을 수락 해야 합니다. 또한 서버는 버전이 [정규화](../concepts/package-versioning.md#normalized-version-numbers)되었는지 여부를 구분 하지 않아야 합니다. 즉, 서버에도 정규화 되지 않은 버전이 허용 되어야 합니다.
 
 예를 들어, nuget.exe의 패키지 세부 정보 템플릿은 다음과 같습니다.
 

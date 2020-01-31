@@ -6,18 +6,18 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: ff8f988a4d47e18d74945d274be5cca78d3ff8e5
-ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
+ms.openlocfilehash: ccb9c21041bef6f2bb791667a6e08b36c55b3e1f
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74096917"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813158"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
 `.nuspec` 파일은 패키지 메타데이터가 포함된 XML 매니페스트입니다. 이 매니페스트는 패키지를 빌드하고 소비자에게 정보를 제공하는 데 사용됩니다. 매니페스트는 항상 패키지에 포함됩니다.
 
-항목 내용:
+항목 내용
 
 - [일반 형식 및 스키마](#general-form-and-schema)
 - [대체 토큰](#replacement-tokens)(Visual Studio 프로젝트에서 사용하는 경우)
@@ -32,9 +32,9 @@ ms.locfileid: "74096917"
 
 - `packages.config`를 사용 하는 비 SDK 스타일 프로젝트의 경우 `nuget.exe pack`와 함께 `.nuspec`를 사용 합니다.
 
-- [Sdk 스타일 프로젝트](../resources/check-project-format.md) 에 대 한 패키지를 만드는 데 `.nuspec` 파일은 필요 하지 않습니다 (일반적으로 .net Core 및 [sdk 특성](/dotnet/core/tools/csproj#additions)을 사용 하는 .NET Standard 프로젝트). (패키지를 만들 때 `.nuspec` 생성 됩니다.)
+- [Sdk 스타일 프로젝트](../resources/check-project-format.md) 에 대 한 패키지를 만드는 데는 파일이필요하지않습니다(일반적으로.netCore및[sdk특성을사용하는](/dotnet/core/tools/csproj#additions).NETStandard프로젝트`.nuspec` ). (패키지를 만들 때 `.nuspec` 생성 됩니다.)
 
-   `dotnet.exe pack` 또는 `msbuild pack target`를 사용 하 여 패키지를 만드는 경우 일반적으로 프로젝트 파일의 `.nuspec` 파일에 있는 [모든 속성을 포함](../reference/msbuild-targets.md#pack-target) 하는 것이 좋습니다. 그러나 [`.nuspec` 파일을 사용 하 여 `dotnet.exe` 또는 `msbuild pack target`를 압축](../reference/msbuild-targets.md#packing-using-a-nuspec)하도록 선택할 수 있습니다.
+   `dotnet.exe pack` 또는 `msbuild pack target`를 사용 하 여 패키지를 만드는 경우 일반적으로 `.nuspec` 파일에 있는 [모든 속성을 프로젝트 파일에 포함](../reference/msbuild-targets.md#pack-target) 하는 것이 좋습니다. 그러나 [`.nuspec` 파일을 사용 하 여 `dotnet.exe` 또는 `msbuild pack target`를 압축 ](../reference/msbuild-targets.md#packing-using-a-nuspec)하도록 선택할 수 있습니다.
 
 - `packages.config`에서 [PackageReference](../consume-packages/package-references-in-project-files.md)로 마이그레이션된 프로젝트의 경우 패키지를 만들 때 `.nuspec` 파일이 필요 하지 않습니다. 대신 [msbuild-t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)를 사용 합니다.
 
@@ -73,7 +73,7 @@ ms.locfileid: "74096917"
 
 #### <a name="id"></a>ID 
 대/소문자를 구분하지 않는 패키지 식별자이며, nuget.org 또는 패키지가 상주하는 모든 갤러리에서 고유해야 합니다. ID는 URL에 유효하지 않은 공백 또는 문자를 포함할 수 없고, 일반적으로 .NET 네임스페이스 규칙을 따릅니다. 지침은 [고유한 패키지 식별자 선택](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)을 참조하세요.
-#### <a name="version"></a>version
+#### <a name="version"></a>버전
 *major.minor.patch* 패턴을 따르는 패키지의 버전입니다. 버전 번호는 [패키지 버전 관리](../concepts/package-versioning.md#pre-release-versions)에서 설명한 대로 시험판 접미사를 포함할 수 있습니다. 
 #### <a name="description"></a>설명
 UI 표시를 위한 패키지에 대 한 설명입니다.
@@ -82,7 +82,7 @@ Nuget.org의 프로필 이름과 일치 하는 쉼표로 구분 된 패키지 �
 
 ### <a name="optional-metadata-elements"></a>선택적 metadata 요소
 
-#### <a name="owners"></a>owners
+#### <a name="owners"></a>소유자
 Nuget.org에서 프로필 이름을 사용 하 여 쉼표로 구분 된 패키지 작성자 목록입니다. 이는 종종 `authors`와 동일한 목록 이며, 패키지를 nuget.org에 업로드 하는 경우 무시 됩니다. [Nuget.org에서 패키지 소유자 관리](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조 하세요. 
 
 #### <a name="projecturl"></a>projectUrl
@@ -95,18 +95,18 @@ nuget.org뿐만 아니라 종종 UI 표시에 표시되는 패키지의 홈페�
 Nuget.org와 같은 Ui에 표시 되는 패키지의 라이선스에 대 한 URL입니다.
 
 #### <a name="license"></a>사용권이
-Nuget.org와 같은 Ui에 표시 되는 패키지 내 라이선스 파일의 SPDX 라이선스 식 또는 경로입니다. MIT 또는 BSD-2 절과 같은 일반적인 라이선스를 사용 하 여 패키지에 라이선스를 부여 하는 경우 연결 된 [Spdx 라이선스 식별자](https://spdx.org/licenses/)를 사용 합니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
+Nuget.org와 같은 Ui에 표시 되는 패키지 내 라이선스 파일의 SPDX 라이선스 식 또는 경로입니다. MIT 또는 BSD-2 절과 같은 일반적인 라이선스를 사용 하 여 패키지에 라이선스를 부여 하는 경우 연결 된 [Spdx 라이선스 식별자](https://spdx.org/licenses/)를 사용 합니다. 예를 들면 다음과 같습니다.:
 
 `<license type="expression">MIT</license>`
 
 > [!Note]
 > NuGet.org는 오픈 소스 이니셔티브 또는 무료 Software Foundation에서 승인한 라이선스 식만 허용 합니다.
 
-패키지가 여러 일반적인 라이선스에서 사용이 허가 된 경우 [Spdx 식 구문 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)을 사용 하 여 복합 라이선스를 지정할 수 있습니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
+패키지가 여러 일반적인 라이선스에서 사용이 허가 된 경우 [Spdx 식 구문 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)을 사용 하 여 복합 라이선스를 지정할 수 있습니다. 예를 들면 다음과 같습니다.:
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-라이선스 식에서 지원 하지 않는 사용자 지정 라이선스를 사용 하는 경우 라이선스 텍스트를 사용 하 여 `.txt` 또는 `.md` 파일을 패키지할 수 있습니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
+라이선스 식에서 지원 하지 않는 사용자 지정 라이선스를 사용 하는 경우 라이선스 텍스트를 사용 하 여 `.txt` 또는 `.md` 파일을 패키지할 수 있습니다. 예를 들면 다음과 같습니다.:
 
 ```xml
 <package>
@@ -147,11 +147,11 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 > [!Important]
 > iconUrl은 더 이상 사용 되지 않습니다. 대신 아이콘을 사용 합니다.
 
-UI 표시에서 패키지에 대한 아이콘으로 사용하는 투명한 배경이 있는 64x64 이미지에 대한 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub의 이미지를 사용 하려면 <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>와 같은 원시 파일 URL을 사용 합니다. 
+UI 표시에서 패키지에 대 한 아이콘으로 사용할 투명도 배경을 포함 하는 128x128 이미지의 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub의 이미지를 사용 하려면 <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>와 같은 원시 파일 URL을 사용 합니다. 
    
-#### <a name="icon"></a>아이콘과
+#### <a name="icon"></a>아이콘
 
-패키지 내 이미지 파일에 대 한 경로입니다. 종종 nuget.org와 같은 Ui에서 패키지 아이콘으로 표시 됩니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 64x64의 이미지 resoulution을 권장 합니다.
+패키지 내 이미지 파일에 대 한 경로입니다. 종종 nuget.org와 같은 Ui에서 패키지 아이콘으로 표시 됩니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 128x128 이미지를 확인 하는 것이 좋습니다.
 
 예를 들어 nuget.exe를 사용 하 여 패키지를 만들 때 nuspec에 다음을 추가 합니다.
 
@@ -207,7 +207,7 @@ UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 
 #### <a name="repository"></a>리포지토리
 `type` 및 `url` *(4.0 이상)* 및 `branch` 및 `commit` *(4.6 +)* 의 네 가지 선택적 특성으로 구성 된 리포지토리 메타 데이터입니다. 이러한 특성을 사용 하 여 `.nupkg`를 빌드한 리포지토리에 매핑할 수 있으며, 패키지를 작성 한 개별 분기 이름 및/또는 커밋 SHA-1 해시를 자세히 파악할 수 있습니다. 이 url은 버전 제어 소프트웨어에서 직접 호출할 수 있는 공개적으로 사용할 수 있는 url 이어야 합니다. 이는 컴퓨터에 대 한 것 이므로 html 페이지가 되어서는 안 됩니다. 프로젝트 페이지에 연결 하는 경우에는 `projectUrl` 필드를 대신 사용 합니다.
 
-예를 들어 다음과 같은 가치를 제공해야 합니다.
+예를 들면 다음과 같습니다.:
 ```xml
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
@@ -224,7 +224,7 @@ UI 표시를 위한 패키지에 대한 간단한 설명입니다. 생략하면 
 
 #### <a name="collection-elements"></a>컬렉션 요소
 
-#### <a name="packagetypes"></a>Packagetypes>
+#### <a name="packagetypes"></a>packageTypes
 *(3.5 이상)* 기존 종속 패키지가 아닌 경우 패키지의 유형을 지정하는 0개 이상의 `<packageType>` 요소 컬렉션입니다. 각 packageType에는 *name* 및 *version* 특성이 있습니다. [패키지 유형 설정](../create-packages/set-package-type.md)을 참조하세요.
 #### <a name="dependencies"></a>종속성
 패키지에 대한 종속성을 지정하는 0개 이상의 `<dependency>` 요소 컬렉션입니다. 각 종속성에는 *id*, *version*, *include*(3.x 이상) 및 *exclude*(3.x 이상) 특성이 있습니다. 아래의 [종속성](#dependencies-element)을 참조하세요.
@@ -288,7 +288,7 @@ nuget pack MyProject.csproj
 | **$id$** | 프로젝트 파일 | 프로젝트 파일의 AssemblyName (title) |
 | **$version$** | AssemblyInfo | 있는 경우 AssemblyInformationalVersion, 그렇지 않으면 AssemblyVersion |
 | **$author$** | AssemblyInfo | AssemblyCompany |
-| **$title $** | AssemblyInfo | AssemblyTitle |
+| **$title$** | AssemblyInfo | AssemblyTitle |
 | **$description$** | AssemblyInfo | AssemblyDescription |
 | **$copyright$** | AssemblyInfo | AssemblyCopyright |
 | **$configuration$** | 어셈블리 DLL | 어셈블리를 빌드하는 데 사용되는 구성이며, 기본값은 Debug입니다. Release 구성을 사용하여 패키지를 만들려면 항상 명령줄에서 `-properties Configuration=Release`를 사용합니다. |
@@ -318,13 +318,13 @@ nuget pack MyProject.csproj
 | `id` | (필수) 패키지 페이지에서 “EntityFramework” 및 “NUnit” 패키지 nuget.org의 이름인 같은 종속성의 패키지 ID를 보여 줍니다. |
 | `version` | (필수) 종속성으로 허용되는 버전 범위입니다. 정확한 구문은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges-and-wildcards)를 참조하세요. 와일드 카드 (부동) 버전은 지원 되지 않습니다. |
 | include | 최종 패키지에 포함할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 `all`여야 합니다. |
-| Exclude | 최종 패키지에서 제외할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 과도 하 게 쓸 수 있는 `build,analyzers`입니다. 그러나 `content/ ContentFiles`은 과도 하 게 쓸 수 없는 최종 패키지에서 암시적으로 제외 됩니다. `exclude`로 지정된 태그는 `include`로 지정된 태그보다 우선 순위가 높습니다. 예를 들어 `include="runtime, compile" exclude="compile"`은 `include="runtime"`과 같습니다. |
+| exclude | 최종 패키지에서 제외할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 과도 하 게 쓸 수 있는 `build,analyzers`입니다. 그러나 `content/ ContentFiles`은 과도 하 게 쓸 수 없는 최종 패키지에서 암시적으로 제외 됩니다. `exclude`로 지정된 태그는 `include`로 지정된 태그보다 우선 순위가 높습니다. 예를 들어 `include="runtime, compile" exclude="compile"`은 `include="runtime"`과 같습니다. |
 
 | include/exclude 태그 | 영향을 받는 대상 폴더 |
 | --- | --- |
 | contentFiles | 콘텐츠 |
 | 런타임 | Runtime, Resources 및 FrameworkAssemblies |
-| compile | lib |
+| compile(컴파일) | lib |
 | 빌드 | build(MSBuild props 및 targets) |
 | native | native |
 | 없음 | 영향을 받는 폴더 없음 |
@@ -458,7 +458,7 @@ nuget pack MyProject.csproj
 > [!Important]
 > 패키지가 프로젝트에 설치되면 어셈블리 참조가 지역화된 위성 어셈블리로 간주되므로 NuGet은 `.resources.dll`이라는 DLL을 *제외한* 패키지의 DLL에 해당 어셈블리 참조를 자동으로 추가합니다. 이러한 이유로 다른 경우에 필수 패키지 코드가 포함되는 파일에는 `.resources.dll`을 사용하지 마세요.
 
-이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
+이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들면 다음과 같습니다.:
 
 ```xml
 <files>
@@ -480,7 +480,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 | **target** | 원본 파일이 있는 패키지 내의 폴더에 대한 상대 경로이며, `lib`, `content`, `build` 또는 `tools`로 시작해야 합니다. [규칙 기반 작업 디렉터리에서 .nuspec 만들기](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)를 참조하세요. |
 | **exclude** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 
-### <a name="examples"></a>예제
+### <a name="examples"></a>예
 
 **단일 어셈블리**
 
@@ -699,7 +699,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 - `TxM`은 NuGet에서 지원하는 모든 법적 대상 프레임워크 모니커입니다([대상 프레임워크](../reference/target-frameworks.md) 참조).
 - 모든 폴더 구조는 이 구문의 끝에 추가될 수 있습니다.
 
-예를 들어 다음과 같은 가치를 제공해야 합니다.
+예를 들면 다음과 같습니다.:
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml

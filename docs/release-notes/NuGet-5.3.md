@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: e77219d355f73f3bf01f68283ffb2759813af563
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: ca71c5b9ef546f3ea92e55763d5059466ac3a930
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611321"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813756"
 ---
 # <a name="nuget-53-release-notes"></a>NuGet 5.3 릴리스 정보
 
@@ -29,7 +29,7 @@ NuGet 배포 차량:
 
 * 패키지에 대 한 SHA 추적 및 적용을 통한 보안 향상- [#7281](https://github.com/NuGet/Home/issues/7281)
 
-* 사용 되지 않는/레거시 NuGet 패키지의 사용 중단을 사용 하도록 설정 [#2867](https://github.com/NuGet/Home/issues/2867) | [블로그 게시물](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/) | [문서](https://docs.microsoft.com/nuget/nuget-org/deprecate-packages)
+* 사용 되지 않는/레거시 NuGet 패키지의 사용 중단을 사용 하도록 설정 [#2867](https://github.com/NuGet/Home/issues/2867) | [블로그 게시물](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/) | [문서](../nuget-org/deprecate-packages.md)
 
 ### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
 
