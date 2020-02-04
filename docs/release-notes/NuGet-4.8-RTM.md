@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 6e352fef9fc36646f6feedbc390f847119cb00bf
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: e6f6d9f703dd4761236d166f3772618c100aca09
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611360"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813769"
 ---
 # <a name="nuget-48-release-notes"></a>NuGet 4.8 릴리스 정보
 
@@ -30,13 +30,13 @@ ms.locfileid: "73611360"
 
 ## <a name="summary-whats-new-in-482"></a>요약: 4.8.2의 새로운 기능
 
-* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="known-issues"></a>알려진 문제
 ### <a name="installing-signed-packages-on-a-ci-machine-or-in-an-offline-environment-takes-longer-than-usual"></a>CI 머신 또는 오프라인 환경에 서명된 패키지를 설치하는 데 평소보다 오래 걸립니다.
 
 #### <a name="issue"></a>문제점
-머신에서 인터넷 액세스가 제한된 경우(예: CI/CD 시나리오의 빌드 머신) 해지 서버에 도달할 수 없으므로 서명된 NuGet 패키지 설치/복원 시 경고([NU3028](https://docs.microsoft.com/nuget/reference/errors-and-warnings/nu3028))가 발생합니다. 이는 정상적입니다. 그러나 일부 경우에는 패키지 설치/복원에 평소보다 오래 걸리는 등의 의도하지 않은 결과가 발생할 수 있습니다.
+머신에서 인터넷 액세스가 제한된 경우(예: CI/CD 시나리오의 빌드 머신) 해지 서버에 도달할 수 없으므로 서명된 NuGet 패키지 설치/복원 시 경고([NU3028](../reference/errors-and-warnings/nu3028.md))가 발생합니다. 이는 정상적입니다. 그러나 일부 경우에는 패키지 설치/복원에 평소보다 오래 걸리는 등의 의도하지 않은 결과가 발생할 수 있습니다.
 
 #### <a name="workaround"></a>해결 방법
 해지 확인 모드를 전환하는 환경 변수가 도입된 Visual Studio 15.8.4 및 NuGet.exe 4.8.1로 업데이트합니다.

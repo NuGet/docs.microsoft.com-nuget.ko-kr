@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0c3c0380fe6efb3c58124ca5ba8bc1306a433340
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 2290025d42dcd5704b6b019c17346201fe6a990d
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611344"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813795"
 ---
 # <a name="nuget-47-release-notes"></a>NuGet 4.7 릴리스 정보
 
@@ -20,11 +20,11 @@ ms.locfileid: "73611344"
 
 * [리포지토리 서명 패키지](https://github.com/NuGet/Home/wiki/Repository-Signatures)를 사용하도록 패키지 서명을 확대했습니다.
 
-* Visual Studio 버전 15.7에서는 [PackageReference를 사용하기 위해 packages.config 형식을 사용하는 기존 프로젝트를 마이그레이션하는 ](https://docs.microsoft.com/nuget/consume-packages/migrate-packages-config-to-package-reference) 기능을 대신 도입했습니다.
+* Visual Studio 버전 15.7에서는 [PackageReference를 사용하기 위해 packages.config 형식을 사용하는 기존 프로젝트를 마이그레이션하는 ](../consume-packages/migrate-packages-config-to-package-reference.md) 기능을 대신 도입했습니다.
 
 ## <a name="summary-whats-new-in-472"></a>요약: 4.7.2의 새로운 기능
 
-* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="summary-whats-new-in-473"></a>요약: 4.7.3의 새로운 기능
 

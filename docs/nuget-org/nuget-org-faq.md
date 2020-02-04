@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: e2b6a64b8010f16d0fc33cca437b348d8f784fd7
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 915f6e4cfc0b21d2b10006c62e8230720d07ce74
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610495"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813743"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>NuGet.org 질문과 대답
 
@@ -175,7 +175,7 @@ NuGet.org 계정을 삭제하여 Microsoft 계정 및 NuGet.org 계정 간 연�
 
 NuGet.org에서 계정을 만드는 경우 해당 계정과 연결된 통신 전자 메일 주소가 있습니다. 일반적으로 이 주소는 연결된 Microsoft 계정에 사용되는 이메일 주소와 동일합니다. 그러나 통신용으로 다른 이메일 주소를 지정하는 것은 선택할 수 있습니다. 따라서 기술적으로 다른 Microsoft 계정 즉, 통신 전자 메일 주소로 `account1@outlook.com`을 사용하여 NuGet.org 계정에 연결하는 `account2@outlook.com`이 있을 수 있습니다.
 
-위의 오류는 `account1@outlook.com` 통신 전자 메일 주소를 사용하는 NuGet.org 계정이 이미 있지만 `account1@outlook.com`이 **아닌** 전자 메일을 사용하여 다른 Microsoft 계정과 연결되어 있다는 것을 의미합니다.
+위의 오류는 `account1@outlook.com` 통신 메일 주소를 사용하는 NuGet.org 계정이 이미 있지만 `account1@outlook.com`이 **아닌** 메일을 사용하여 다른 Microsoft 계정과 연결되어 있다는 것을 의미합니다.
 
 **이 NuGet.org 계정에 어떤 Microsoft 계정이 연결되어 있는지 알려면 어떻게 하나요?**
 
@@ -242,7 +242,7 @@ Microsoft 계정(@yourdomain.com)으로 NuGet.org에 로그인하려는 경우 �
 
 ### <a name="how-do-i-change-my-nugetorg-account-username"></a>내 NuGet.org 계정 사용자 이름을 변경하려면 어떻게 하나요?
 
-변경할 수 없습니다. 정책상 사용자 이름 변경이 아직 허용되지 않습니다. 사용자 이름을 변경하는 유일한 방법은 원하는 사용자 이름으로 새 계정을 만드는 것입니다. 새 계정을 만들기 전에 기존 계정을 삭제하는 것이 좋습니다. 그렇지 않은 경우 등록된 Microsoft 계정을 다시 사용할 수 없습니다.
+변경할 수 없습니다. 정책상 사용자 이름 변경이 허용되지 않습니다. 또한 이름 변경은 [패키지 소유자를 기준으로 패키지 신뢰 정책](../consume-packages/installing-signed-packages.md#trust-package-owners)을 정의했을 수 있는 사용자의 호환성이 손상되는 변경입니다. 사용자 이름을 변경하는 유일한 방법은 원하는 사용자 이름으로 새 계정을 만드는 것입니다. 새 계정을 만들기 전에 기존 계정을 삭제하는 것이 좋습니다. 그렇지 않은 경우 등록된 Microsoft 계정을 다시 사용할 수 없습니다.
 > [!Important]
 > 사용자를 삭제하면 여전히 `username`을 **예약**할 수 있습니다. 다시 동일한 사용자 이름을 재사용할 수 없습니다. **여기에는 대/소문자 변경도 포함됩니다**. 예를 들어 `mycoolname` 사용자 이름으로 사용자를 만든 다음, `MyCoolName`(대/소문자 변경)으로 변경하려는 경우 사용자를 삭제한 후에는 변경할 수 없습니다.
 
@@ -250,7 +250,7 @@ Microsoft 계정(@yourdomain.com)으로 NuGet.org에 로그인하려는 경우 �
 
 ### <a name="how-to-delete-my-nugetorg-account"></a>내 NuGet.org 계정을 삭제하려면 어떻게 하나요?
 
-계정을 삭제하려면 사용자가 유일한 소유자인 모든 패키지의 소유권을 양도하는 것이 좋습니다. 소유권을 양도하는 방법은 [패키지 소유자 관리](https://docs.microsoft.com/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg)를 참조할 수 있습니다. 그러면 요청을 신속하게 처리하는 데도 도움이 됩니다.
+계정을 삭제하려면 사용자가 유일한 소유자인 모든 패키지의 소유권을 양도하는 것이 좋습니다. 소유권을 양도하는 방법은 [패키지 소유자 관리](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조할 수 있습니다. 그러면 요청을 신속하게 처리하는 데도 도움이 됩니다.
 
 계정을 조직으로 변환하려는 경우 [내 NuGet.org 계정을 조직으로 변환](#how-to-transform-my-nugetorg-account-to-an-organization)에 제공된 단계를 따르세요.
 
