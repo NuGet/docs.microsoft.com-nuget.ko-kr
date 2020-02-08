@@ -12,24 +12,24 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 0109aea95ec255b3e0abcdff4cf51b4bfeafbb8c
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 839c38ec165372bab9b93dec25e5c8e8e9439bfa
+ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813483"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036892"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
-기호 패키지를 사용하면 NuGet 패키지의 디버깅 환경을 향상시킬 수 있습니다.
+디버깅 환경이 제대로 작동하려면 컴파일된 코드와 소스 코드 간의 연결, 지역 변수 이름, 스택 추적 등의 중요한 정보를 제공하는 디버그 기호가 있어야 합니다. 기호 패키지(.snupkg)를 사용하여 이러한 기호를 배포하고 NuGet 패키지의 디버깅 환경을 개선할 수 있습니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-필수 [NuGet protocols](../api/nuget-protocols.md)를 구현하는 [nuget.exe v4.9.0 이상](https://www.nuget.org/downloads) 또는 [dotnet.exe v2.2.0 이상](https://www.microsoft.com/net/download/dotnet-core/2.2).
+필수 [NuGet 프로토콜](../api/nuget-protocols.md)을 구현하는 [nuget.exe v4.9.0 이상](https://www.nuget.org/downloads) 또는 [dotnet CLI v2.2.0 이상](https://www.microsoft.com/net/download/dotnet-core/2.2)
 
 ## <a name="creating-a-symbol-package"></a>기호 패키지 만들기
 
-Dotnet 또는 MSBuild를 사용하는 경우 nupkg 파일 외에 .snupkg 파일을 만들도록 `IncludeSymbols` 및 `SymbolPackageFormat` 속성을 설정해야 합니다.
+dotnet CLI 또는 MSBuild를 사용하는 경우 nupkg 파일 외에 .snupkg 파일을 만들도록 `IncludeSymbols` 및 `SymbolPackageFormat` 속성을 설정해야 합니다.
 
 * .csproj 파일에 다음 속성을 추가합니다.
 
@@ -108,17 +108,17 @@ NuGet.org에는 기호 패키지에 대한 다음과 같은 제약 조건이 있
 
 [NuGet.org](https://www.nuget.org/)에 게시된 기호 패키지는 맬웨어 검색을 포함한 여러 유효성 검사를 거칩니다. 패키지가 유효성 검사에 실패하면 패키지 세부 정보 페이지에 오류 메시지가 표시됩니다. 또한 패키지 소유자는 식별된 문제를 해결하는 방법에 대한 지침이 포함된 전자 메일을 받게 됩니다.
 
-기호 패키지가 모든 유효성 검사를 통과하면 기호는 NuGet.org의 기호 서버에 의해 인덱싱됩니다. 인덱싱된 후에는 NuGet.org 기호 서버에서 기호를 사용할 수 있습니다.
+기호 패키지가 모든 유효성 검사를 통과하면 기호는 NuGet.org의 기호 서버에 의해 인덱싱되어 사용할 수 있게 됩니다.
 
 패키지 유효성 검사 및 인덱싱은 일반적으로 15분이 걸리지 않습니다. 패키지 게시가 예상보다 오래 걸리면 [status.nuget.org](https://status.nuget.org/)를 방문하여 NuGet.org에 중단이 발생했는지를 확인합니다. 모든 시스템이 모두 제대로 작동하고 패키지가 한 시간 내에 성공적으로 게시되지 않은 경우 nuget.org에 로그인하여 패키지 세부 정보 페이지에서 지원 문의 링크를 사용하여 문의하세요.
 
 ## <a name="symbol-package-structure"></a>기호 패키지 구조
 
-.Nupkg 파일은 현재와 정확히 동일하지만 .snupkg 파일은 다음과 같은 특징이 있습니다.
+기호 패키지(. snupkg)의 특징은 다음과 같습니다.
 
-1) .snupkg는 해당 .nupkg와 동일한 id 및 버전을 갖습니다.
-2) .snupkg는 DLL/EXE 대신 해당 PDB가 동일한 폴더 계층 구조에 포함되도록 구분하여 모든 DLL 또는 EXE 파일의 nupkg와 정확히 동일한 폴더 구조를 가집니다. PDB 이외의 확장명을 가진 파일 및 폴더는 snupkg에서 제외됩니다.
-3) .snupkg의 .nuspec 파일도 아래와 같이 새 PackageType을 지정합니다. 하나의 PackageType만 지정해야 합니다.
+1) .snupkg는 해당 NuGet 패키지(.nupkg)와 동일한 ID 및 버전을 갖습니다.
+2) .snupkg는 DLL/EXE 대신 해당 PDB가 동일한 폴더 계층 구조에 포함되도록 구분하여 모든 DLL 또는 EXE 파일의 해당 nupkg와 정확히 동일한 폴더 구조를 가집니다. PDB 이외의 확장명을 가진 파일 및 폴더는 snupkg에서 제외됩니다.
+3) 기호 패키지의 .nuspec 파일은 `SymbolsPackage` 패키지 유형입니다.
 
    ```xml
    <packageTypes>

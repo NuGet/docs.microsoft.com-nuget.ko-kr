@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 69ef02e3c935287759b4012aadcfb1cb9811367c
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 1ae030c308b14b8884fb608c1683c8c46000b0bd
+ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488439"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036905"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>NuGet 패키지를 설치하면 어떻게 되나요?
 
