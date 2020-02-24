@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 535d5a16a559cde065ee0277471edfbaf1aea084
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: c198bb73f0e4f5a59826db905eaf4622fe8543bc
+ms.sourcegitcommit: 1799d4ac23c8aacee7498fdc72c40dd1646d267b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825278"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77476258"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 NuGet 패키지 만들기
 
@@ -122,6 +122,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 - [패키지 버전 관리](../concepts/package-versioning.md)
 - [여러 대상 프레임워크 지원](../create-packages/multiple-target-frameworks-project-file.md)
+- [패키지 아이콘 추가](../reference/nuspec.md#icon)
 - [원본 및 구성 파일 변환](../create-packages/source-and-config-file-transformations.md)
 - [지역화](../create-packages/creating-localized-packages.md)
 - [시험판 버전](../create-packages/prerelease-packages.md)
