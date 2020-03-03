@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: c62e5b7b53d30a1b362e87dbbea26355a36b1274
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 852dca8c70b09d941e844b1f7cd03b38e2192481
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813275"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230887"
 ---
 # <a name="package-metadata"></a>패키지 메타데이터
 
@@ -23,7 +23,7 @@ NuGet V3 API를 사용 하 여 패키지 원본에서 사용할 수 있는 패�
 
 사용 되는 `@type` 값은 다음과 같습니다.
 
-@type 값                     | 참고
+@type 값                     | 메모
 ------------------------------- | -----
 RegistrationsBaseUrl            | 초기 릴리스
 RegistrationsBaseUrl/3.0.0-beta | `RegistrationsBaseUrl`의 별칭
@@ -76,9 +76,9 @@ Nuget.org에서 사용 하는 추론은 다음과 같습니다. 128 이상의 �
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-이름     | 입력     | 형식    | 필수 | 참고
+속성     | 그런 다음     | Type    | 필수 | 메모
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | URL    | string  | 예      | 패키지 ID, lowercased
+LOWER_ID | URL    | 문자열  | 예      | 패키지 ID, lowercased
 
 `LOWER_ID` 값은에서 구현 된 규칙을 사용 하 여 원하는 패키지 ID lowercased. NET의 [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) 메서드입니다.
 
@@ -86,10 +86,10 @@ LOWER_ID | URL    | string  | 예      | 패키지 ID, lowercased
 
 응답은 다음 속성을 포함 하는 루트 개체를 포함 하는 JSON 문서입니다.
 
-이름  | 형식             | 필수 | 참고
+속성  | Type             | 필수 | 메모
 ----- | ---------------- | -------- | -----
-count | 정수          | 예      | 인덱스의 등록 페이지 수
-항목 | 개체의 배열 | 예      | 등록 페이지의 배열입니다.
+count | integer          | 예      | 인덱스의 등록 페이지 수
+items | 개체의 배열 | 예      | 등록 페이지의 배열입니다.
 
 Index 개체 `items` 배열의 각 항목은 등록 페이지를 나타내는 JSON 개체입니다.
 
@@ -97,14 +97,14 @@ Index 개체 `items` 배열의 각 항목은 등록 페이지를 나타내는 JS
 
 등록 인덱스에 있는 등록 페이지 개체의 속성은 다음과 같습니다.
 
-이름   | 형식             | 필수 | 참고
+속성   | Type             | 필수 | 메모
 ------ | ---------------- | -------- | -----
-@id    | string           | 예      | 등록 페이지의 URL입니다.
-count  | 정수          | 예      | 페이지에 있는 등록의 수입니다.
-항목  | 개체의 배열 | no       | 등록의 배열 및 연결 메타 데이터
-작을  | string           | 예      | 페이지에서 가장 낮은 SemVer 2.0.0 버전 (포함)
-부모(parent) | string           | no       | 등록 인덱스의 URL입니다.
-위의  | string           | 예      | 페이지의 최고 SemVer 2.0.0 버전 (포함)
+@id    | 문자열           | 예      | 등록 페이지의 URL입니다.
+count  | integer          | 예      | 페이지에 있는 등록의 수입니다.
+items  | 개체의 배열 | 아니요       | 등록의 배열 및 연결 메타 데이터
+lower  | 문자열           | 예      | 페이지에서 가장 낮은 SemVer 2.0.0 버전 (포함)
+부모(parent) | 문자열           | 아니요       | 등록 인덱스의 URL입니다.
+upper  | 문자열           | 예      | 페이지의 최고 SemVer 2.0.0 버전 (포함)
 
 Page 개체의 `lower` 및 `upper` 범위는 특정 페이지 버전에 대 한 메타 데이터가 필요한 경우에 유용 합니다.
 이러한 범위는 필요한 유일한 등록 페이지를 인출 하는 데 사용할 수 있습니다. 버전 문자열은 [NuGet의 버전 규칙](../concepts/package-versioning.md)을 따릅니다. 버전 문자열은 정규화 되며 빌드 메타 데이터를 포함 하지 않습니다. NuGet 에코 시스템의 모든 버전과 마찬가지로 버전 문자열의 비교는 [SemVer 2.0.0의 버전 우선 순위 규칙](https://semver.org/spec/v2.0.0.html#spec-item-11)을 사용 하 여 구현 됩니다.
@@ -121,11 +121,11 @@ Page 개체의 `lower` 및 `upper` 범위는 특정 페이지 버전에 대 한 
 
 등록 페이지에 있는 등록 리프 개체의 속성은 다음과 같습니다.
 
-이름           | 형식   | 필수 | 참고
+속성           | Type   | 필수 | 메모
 -------------- | ------ | -------- | -----
-@id            | string | 예      | 등록 리프에 대 한 URL입니다.
-catalogEntry   | 개체 | 예      | 패키지 메타 데이터를 포함 하는 카탈로그 항목입니다.
-packageContent | string | 예      | 패키지 콘텐츠에 대 한 URL (. nupkg)
+@id            | 문자열 | 예      | 등록 리프에 대 한 URL입니다.
+catalogEntry   | object | 예      | 패키지 메타 데이터를 포함 하는 카탈로그 항목입니다.
+packageContent | 문자열 | 예      | 패키지 콘텐츠에 대 한 URL (. nupkg)
 
 각 등록 리프 개체는 단일 패키지 버전과 연결 된 데이터를 나타냅니다.
 
@@ -133,26 +133,26 @@ packageContent | string | 예      | 패키지 콘텐츠에 대 한 URL (. nupkg
 
 등록 리프 개체의 `catalogEntry` 속성에는 다음과 같은 속성이 있습니다.
 
-이름                     | 형식                       | 필수 | 참고
+속성                     | Type                       | 필수 | 메모
 ------------------------ | -------------------------- | -------- | -----
-@id                      | string                     | 예      | 이 개체를 생성 하는 데 사용 되는 문서에 대 한 URL입니다.
-authors                  | 문자열 또는 문자열 배열 | no       | 
-dependencyGroups         | 개체의 배열           | no       | 대상 프레임 워크를 기준으로 그룹화 된 패키지의 종속성
-중단              | 개체                     | no       | 패키지와 연결 된 사용 중단
-설명              | string                     | no       | 
-iconUrl                  | string                     | no       | 
-ID                       | string                     | 예      | 패키지의 ID입니다.
-licenseUrl               | string                     | no       |
-licenseExpression        | string                     | no       | 
-목록                   | boolean                    | no       | 없는 경우 나열 된 것으로 간주 해야 합니다.
-minClientVersion         | string                     | no       | 
-projectUrl               | string                     | no       | 
-published                | string                     | no       | 패키지가 게시 되었을 때의 ISO 8601 타임 스탬프를 포함 하는 문자열입니다.
-requireLicenseAcceptance | boolean                    | no       | 
-요약                  | string                     | no       | 
-태그                     | 문자열 또는 문자열 배열  | no       | 
-제목                    | string                     | no       | 
-버전                  | string                     | 예      | 정규화 후의 전체 버전 문자열
+@id                      | 문자열                     | 예      | 이 개체를 생성 하는 데 사용 되는 문서에 대 한 URL입니다.
+authors                  | 문자열 또는 문자열 배열 | 아니요       | 
+dependencyGroups         | 개체의 배열           | 아니요       | 대상 프레임 워크를 기준으로 그룹화 된 패키지의 종속성
+중단              | object                     | 아니요       | 패키지와 연결 된 사용 중단
+description              | 문자열                     | 아니요       | 
+iconUrl                  | 문자열                     | 아니요       | 
+id                       | 문자열                     | 예      | 패키지의 ID입니다.
+licenseUrl               | 문자열                     | 아니요       |
+licenseExpression        | 문자열                     | 아니요       | 
+나열                   | boolean                    | 아니요       | 없는 경우 나열 된 것으로 간주 해야 합니다.
+minClientVersion         | 문자열                     | 아니요       | 
+projectUrl               | 문자열                     | 아니요       | 
+published                | 문자열                     | 아니요       | 패키지가 게시 되었을 때의 ISO 8601 타임 스탬프를 포함 하는 문자열입니다.
+requireLicenseAcceptance | boolean                    | 아니요       | 
+요약                  | 문자열                     | 아니요       | 
+tags                     | 문자열 또는 문자열 배열  | 아니요       | 
+title                    | 문자열                     | 아니요       | 
+버전                  | 문자열                     | 예      | 정규화 후의 전체 버전 문자열
 
 패키지 `version` 속성은 정규화 후의 전체 버전 문자열입니다. 이는 SemVer 2.0.0 build 데이터가 여기에 포함 될 수 있음을 의미 합니다.
 
@@ -167,10 +167,10 @@ requireLicenseAcceptance | boolean                    | no       |
 
 각 종속성 그룹 개체에는 다음과 같은 속성이 있습니다.
 
-이름            | 형식             | 필수 | 참고
+속성            | Type             | 필수 | 메모
 --------------- | ---------------- | -------- | -----
-targetFramework | string           | no       | 이러한 종속성이 적용 되는 대상 프레임 워크입니다.
-종속성    | 개체의 배열 | no       |
+targetFramework | 문자열           | 아니요       | 이러한 종속성이 적용 되는 대상 프레임 워크입니다.
+종속성    | 개체의 배열 | 아니요       |
 
 `targetFramework` 문자열은 NuGet의 .NET 라이브러리 [nuget. 프레임 워크](https://www.nuget.org/packages/NuGet.Frameworks/)에서 구현 된 형식을 사용 합니다. `targetFramework` 지정 하지 않으면 종속성 그룹이 모든 대상 프레임 워크에 적용 됩니다.
 
@@ -180,11 +180,11 @@ targetFramework | string           | no       | 이러한 종속성이 적용 �
 
 각 패키지 종속성에는 다음과 같은 속성이 있습니다.
 
-이름         | 형식   | 필수 | 참고
+속성         | Type   | 필수 | 메모
 ------------ | ------ | -------- | -----
-ID           | string | 예      | 패키지 종속성의 ID입니다.
-range        | 개체 | no       | 종속성의 허용 되는 [버전 범위](../concepts/package-versioning.md#version-ranges-and-wildcards) 입니다.
-등록 | string | no       | 이 종속성에 대 한 등록 인덱스의 URL입니다.
+id           | 문자열 | 예      | 패키지 종속성의 ID입니다.
+range        | object | 아니요       | 종속성의 허용 되는 [버전 범위](../concepts/package-versioning.md#version-ranges) 입니다.
+등록 | 문자열 | 아니요       | 이 종속성에 대 한 등록 인덱스의 URL입니다.
 
 `range` 속성이 제외 되거나 빈 문자열인 경우 클라이언트는 `(, )`버전 범위를 기본값으로 지정 해야 합니다. 즉, 종속성의 모든 버전을 사용할 수 있습니다. `*` 값은 `range` 속성에 사용할 수 없습니다.
 
@@ -192,15 +192,15 @@ range        | 개체 | no       | 종속성의 허용 되는 [버전 범위](..
 
 각 패키지 사용 중단에는 다음과 같은 속성이 있습니다.
 
-이름             | 형식             | 필수 | 참고
+속성             | Type             | 필수 | 메모
 ---------------- | ---------------- | -------- | -----
-이유          | 문자열 배열 | 예      | 패키지가 더 이상 사용 되지 않는 이유
-message          | string           | no       | 이 사용 중단에 대 한 추가 세부 정보
-alternatePackage | 개체           | no       | 대신 사용 해야 하는 대체 패키지
+이유          | 문자열 배열입니다. | 예      | 패키지가 더 이상 사용 되지 않는 이유
+message          | 문자열           | 아니요       | 이 사용 중단에 대 한 추가 세부 정보
+alternatePackage | object           | 아니요       | 대신 사용 해야 하는 대체 패키지
 
 `reasons` 속성은 하나 이상의 문자열을 포함 해야 하며 다음 표의 문자열만 포함 해야 합니다.
 
-Reason       | 설명             
+이유       | Description             
 ------------ | -----------
 레거시       | 패키지가 더 이상 유지 관리 되지 않습니다.
 CriticalBugs | 패키지에 사용 하기에 적합 하지 않은 버그가 있습니다.
@@ -212,11 +212,10 @@ CriticalBugs | 패키지에 사용 하기에 적합 하지 않은 버그가 있�
 
 대체 패키지 개체에는 다음과 같은 속성이 있습니다.
 
-이름         | 형식   | 필수 | 참고
+속성         | Type   | 필수 | 메모
 ------------ | ------ | -------- | -----
-ID           | string | 예      | 대체 패키지의 ID입니다.
-range        | 개체 | no       | 허용 되는 [버전 범위](../concepts/package-versioning.md#version-ranges-and-wildcards)이거나, 버전이 허용 되는 경우 `*`입니다.
-등록 | string | no       | 이 대체 패키지의 등록 인덱스에 대 한 URL입니다.
+id           | 문자열 | 예      | 대체 패키지의 ID입니다.
+range        | object | 아니요       | 허용 되는 [버전 범위](../concepts/package-versioning.md#version-ranges)이거나, 버전이 허용 되는 경우 `*`입니다.
 
 ### <a name="sample-request"></a>샘플 요청
 
@@ -237,14 +236,14 @@ range        | 개체 | no       | 허용 되는 [버전 범위](../concepts/pac
 
 `items` 배열을 등록 인덱스에 제공 하지 않으면 `@id` 값의 HTTP GET 요청은 개체가 루트로 포함 된 JSON 문서를 반환 합니다. 개체에는 다음 속성이 있습니다.
 
-이름   | 형식             | 필수 | 참고
+속성   | Type             | 필수 | 메모
 ------ | ---------------- | -------- | -----
-@id    | string           | 예      | 등록 페이지의 URL입니다.
-count  | 정수          | 예      | 페이지에 있는 등록의 수입니다.
-항목  | 개체의 배열 | 예      | 등록의 배열 및 연결 메타 데이터
-작을  | string           | 예      | 페이지에서 가장 낮은 SemVer 2.0.0 버전 (포함)
-부모(parent) | string           | 예      | 등록 인덱스의 URL입니다.
-위의  | string           | 예      | 페이지의 최고 SemVer 2.0.0 버전 (포함)
+@id    | 문자열           | 예      | 등록 페이지의 URL입니다.
+count  | integer          | 예      | 페이지에 있는 등록의 수입니다.
+items  | 개체의 배열 | 예      | 등록의 배열 및 연결 메타 데이터
+lower  | 문자열           | 예      | 페이지에서 가장 낮은 SemVer 2.0.0 버전 (포함)
+부모(parent) | 문자열           | 예      | 등록 인덱스의 URL입니다.
+upper  | 문자열           | 예      | 페이지의 최고 SemVer 2.0.0 버전 (포함)
 
 등록 리프 개체의 모양은 [위의](#registration-leaf-object-in-a-page)등록 인덱스와 동일 합니다.
 
@@ -267,14 +266,14 @@ count  | 정수          | 예      | 페이지에 있는 등록의 수입니다
 
 등록 리프는 다음 속성을 포함 하는 루트 개체가 포함 된 JSON 문서입니다.
 
-이름           | 형식    | 필수 | 참고
+속성           | Type    | 필수 | 메모
 -------------- | ------- | -------- | -----
-@id            | string  | 예      | 등록 리프에 대 한 URL입니다.
-catalogEntry   | string  | no       | 이러한 리프를 생성 한 카탈로그 항목에 대 한 URL입니다.
-목록         | boolean | no       | 없는 경우 나열 된 것으로 간주 해야 합니다.
-packageContent | string  | no       | 패키지 콘텐츠에 대 한 URL (. nupkg)
-published      | string  | no       | 패키지가 게시 되었을 때의 ISO 8601 타임 스탬프를 포함 하는 문자열입니다.
-등록   | string  | no       | 등록 인덱스의 URL입니다.
+@id            | 문자열  | 예      | 등록 리프에 대 한 URL입니다.
+catalogEntry   | 문자열  | 아니요       | 이러한 리프를 생성 한 카탈로그 항목에 대 한 URL입니다.
+나열         | boolean | 아니요       | 없는 경우 나열 된 것으로 간주 해야 합니다.
+packageContent | 문자열  | 아니요       | 패키지 콘텐츠에 대 한 URL (. nupkg)
+published      | 문자열  | 아니요       | 패키지가 게시 되었을 때의 ISO 8601 타임 스탬프를 포함 하는 문자열입니다.
+등록   | 문자열  | 아니요       | 등록 인덱스의 URL입니다.
 
 > [!Note]
 > Nuget.org에서 패키지를 나열 하지 않으면 `published` 값이 year 1900로 설정 됩니다.

@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: e02b2a241008b1b7096f20b351173fd3df7ed172
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 7384e8b30cb2ec5fe53ea0fe485858bc1f7b3c43
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317511"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231255"
 ---
 # <a name="signed-packages"></a>서명된 패키지
 
@@ -26,15 +26,15 @@ NuGet 패키지에는 변조 된 콘텐츠에 대 한 보호를 제공 하는 �
 작성자 서명 된 패키지를 만드는 방법에 대 한 자세한 내용은 [패키지 서명](../create-packages/Sign-a-package.md) 및 [nuget sign 명령](../reference/cli-reference/cli-ref-sign.md)을 참조 하세요.
 
 > [!Important]
-> 패키지 서명은 현재 Windows에서 nuget.exe를 사용 하는 경우에만 지원 됩니다. 서명 된 패키지의 확인은 현재 Windows의 nuget.exe 또는 Visual Studio를 사용 하는 경우에만 지원 됩니다.
+> 패키지 서명은 현재 Windows에서 nuget.exe를 사용 하는 경우에만 지원 됩니다. [서명 된 패키지의 확인은 현재 Windows의 nuget.exe 또는 Visual Studio를 사용 하는 경우에만 지원 됩니다](../reference/cli-reference/cli-ref-verify.md) .
 
 ## <a name="certificate-requirements"></a>인증서 요구 사항
 
-패키지 서명에는 코드 서명 인증서가 필요 합니다 `id-kp-codeSigning` .이 인증서는 목적 [[RFC 5280 섹션 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]에 유효한 특수 한 인증서 형식입니다. 또한 인증서에는 RSA 공개 키 길이가 2048 비트 이상 이어야 합니다.
+패키지 서명에는 코드 서명 인증서가 필요 합니다 .이 인증서는 `id-kp-codeSigning` 목적 [[RFC 5280 섹션 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]에 유효한 특수 한 인증서 형식입니다. 또한 인증서에는 RSA 공개 키 길이가 2048 비트 이상 이어야 합니다.
 
 ## <a name="timestamp-requirements"></a>타임 스탬프 요구 사항
 
-서명 된 패키지에는 서명 인증서의 유효 기간을 초과 하 여 서명 유효성을 보장 하기 위해 RFC 3161 타임 스탬프가 포함 되어야 합니다. 타임 스탬프에 서명 하는 데 사용 되는 인증서는 `id-kp-timeStamping` 용도 [[RFC 5280 section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]에 대해 유효 해야 합니다. 또한 인증서에는 RSA 공개 키 길이가 2048 비트 이상 이어야 합니다.
+서명 된 패키지에는 서명 인증서의 유효 기간을 초과 하 여 서명 유효성을 보장 하기 위해 RFC 3161 타임 스탬프가 포함 되어야 합니다. 타임 스탬프에 서명 하는 데 사용 되는 인증서는 `id-kp-timeStamping` 목적 [[RFC 5280 섹션 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]에 대해 유효 해야 합니다. 또한 인증서에는 RSA 공개 키 길이가 2048 비트 이상 이어야 합니다.
 
 추가 기술 세부 정보는 [패키지 서명 기술 사양](https://github.com/NuGet/Home/wiki/Package-Signatures-Technical-Details) (GitHub)에서 찾을 수 있습니다.
 

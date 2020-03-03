@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 906d07eb22599eb423b00300954ff2601dd33369
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 13b6f5abe93a17c809564265990f86f6780aa67e
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75383553"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230813"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>NuGet 자격 증명 공급자를 사용 하 여 Visual Studio에서 피드 인증
 
@@ -19,6 +19,8 @@ Visual Studio 용 NuGet 자격 증명 공급자를 설치 하면 NuGet Visual St
 
 샘플 구현은 [VsCredentialProvider 샘플](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)에서 찾을 수 있습니다.
 
+Visual Studio 내에서 NuGet은 플러그 인 자격 증명 공급자도 검색 하는 내부 `VsCredentialProviderImporter`를 사용 합니다. 이러한 플러그 인 자격 증명 공급자는 `IVsCredentialProvider`형식의 MEF 내보내기로 검색할 수 있어야 합니다.
+
 Visual Studio에서 4.8 + NuGet 부터는 새로운 플랫폼 간 인증 플러그 인도 지원 하지만 성능상의 이유로 권장 되는 방법은 아닙니다.
 
 > [!Note]
@@ -26,16 +28,6 @@ Visual Studio에서 4.8 + NuGet 부터는 새로운 플랫폼 간 인증 플러�
 >
 > Visual Studio 용 NuGet 자격 증명 공급자는 Visual Studio 에서만 작동 합니다 (dotnet restore 또는 nuget.exe는 아님). Nuget.exe를 사용 하는 자격 증명 공급자는 [Nuget.exe 자격 증명 공급자](nuget-exe-Credential-providers.md)를 참조 하세요.
 > Dotnet 및 msbuild의 자격 증명 공급자의 경우 [NuGet 플랫폼 간 플러그 인](nuget-cross-platform-authentication-plugin.md) 을 참조 하세요.
-
-## <a name="available-nuget-credential-providers-for-visual-studio"></a>Visual Studio 용 사용 가능한 NuGet 자격 증명 공급자
-
-Visual Studio Team Services를 지원 하기 위해 Visual Studio NuGet 확장에 기본 제공 되는 자격 증명 공급자가 있습니다.
-
-NuGet Visual Studio 확장은 플러그 인 자격 증명 공급자도 검색 하는 내부 `VsCredentialProviderImporter`를 사용 합니다. 이러한 플러그 인 자격 증명 공급자는 `IVsCredentialProvider`형식의 MEF 내보내기로 검색할 수 있어야 합니다.
-
-사용 가능한 플러그 인 자격 증명 공급자는 다음과 같습니다.
-
-- [Visual Studio 용 MyGet 자격 증명 공급자](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio)
 
 ## <a name="creating-a-nuget-credential-provider-for-visual-studio"></a>Visual Studio 용 NuGet 자격 증명 공급자 만들기
 
@@ -77,7 +69,7 @@ Visual Studio 용 사용자 지정 NuGet 자격 증명 공급자는 [VisualStudi
 
 #### <a name="getcredentialasync"></a>GetCredentialAsync
 
-| 입력 매개 변수 |설명|
+| 입력 매개 변수 |Description|
 | ----------------|-----------|
 | Uri uri | 자격 증명을 요청 하는 패키지 원본 Uri입니다.|
 | IWebProxy 프록시 | 네트워크에서 통신할 때 사용할 웹 프록시입니다. 프록시 인증을 구성 하지 않은 경우 Null입니다. |
