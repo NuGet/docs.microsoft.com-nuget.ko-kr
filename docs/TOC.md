@@ -24,6 +24,7 @@
 ### [패키지 재설치 및 업데이트](consume-packages/reinstalling-and-updating-packages.md)
 ### [글로벌 패키지 및 캐시 폴더 관리](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ### [패키지 트러스트 영역 관리](consume-packages/installing-signed-packages.md)
+### [인증된 피드 작업](consume-packages/consuming-packages-authenticated-feeds.md)
 ### [소스 제어 시스템 작업](consume-packages/packages-and-source-control.md)
 ### [일반적인 NuGet 구성](consume-packages/configuring-nuget-behavior.md)
 ## 프로젝트의 패키지 참조
@@ -45,7 +46,8 @@
 ### [패키지 형식 설정](create-packages/set-package-type.md)
 ### [지역화된 패키지 만들기](create-packages/creating-localized-packages.md)
 ## 특정 콘텐츠용 가이드
-### [UWP 패키지 만들기](guides/create-uwp-packages.md)
+### [UWP 패키지 만들기 (C++)](guides/create-uwp-packages.md)
+### [UWP 패키지 만들기 (C#)](guides/create-uwp-packages-CS.md)
 ### [네이티브 패키지 만들기](guides/native-packages.md)
 ### [NuGet 패키지로 UI 컨트롤 만들기](guides/create-UI-controls.md)
 ### [NuGet 패키지로 분석기 만들기](guides/analyzers-conventions.md)
