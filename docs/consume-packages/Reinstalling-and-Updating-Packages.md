@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: c48980bc3f955a62962ca6e9619ce09f4a94a835
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 101c6d6b9d93da912f60c40b27559e80327154b8
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488085"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231190"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>패키지를 다시 설치하고 업데이트하는 방법
 
@@ -59,7 +59,7 @@ Visual Studio에서 패키지 관리자 콘솔은 패키지를 업데이트하�
 </packages>
 ```
 
-모든 경우에 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges-and-wildcards)에서 설명한 표기법을 사용하세요.
+모든 경우에 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges)에서 설명한 표기법을 사용하세요.
 
 ## <a name="using-update-package"></a>Update-Package 사용
 
