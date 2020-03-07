@@ -16,7 +16,7 @@ ms.locfileid: "72380682"
 
 프로젝트를 처음 만들 때 가장 넓은 범위의 소비 프로젝트와 호환성되므로 .NET Standard 클래스 라이브러리를 만드는 것이 좋습니다. .NET Standard를 사용하여 기본적으로 .NET 라이브러리에 [플랫폼 간 지원](/dotnet/standard/library-guidance/cross-platform-targeting)을 추가합니다. 그러나 일부 시나리오에서는 특정 프레임워크를 대상으로 하는 코드도 포함해야 할 수 있습니다. 이 문서에서는 [SDK 스타일 ](../resources/check-project-format.md) 프로젝트에 대해 이 작업을 수행하는 방법을 보여 줍니다.
 
-SDK 스타일 프로젝트의 경우 프로젝트 파일에서 여러 대상 프레임워크([TFM](/dotnet/standard/frameworks))에 대한 지원을 구성한 후 `dotnet pack` 또는 `msbuild /t:pack`을 사용하여 패키지를 만들 수 있습니다.
+SDK 스타일 프로젝트의 경우 프로젝트 파일에서 여러 대상 프레임워크([Target Framework Moniker, TFM](/dotnet/standard/frameworks))에 대한 지원을 구성한 후 `dotnet pack` 또는 `msbuild /t:pack`을 사용하여 패키지를 만들 수 있습니다.
 
 > [!NOTE]
 > nuget.exe CLI는 SDK 스타일 프로젝트 압축을 지원하지 않으므로 `dotnet pack` 또는 `msbuild /t:pack`만 사용해야 합니다. 대신 일반적으로 `.nuspec` 파일에 있는 [모든 속성을 프로젝트 파일에 포함](../reference/msbuild-targets.md#pack-target)하는 것이 좋습니다. 비 SDK 스타일 프로젝트에서 여러 .NET Framework 버전을 대상으로 하려면 [여러 .NET Framework 버전 지원](supporting-multiple-target-frameworks.md)을 참조하세요.
