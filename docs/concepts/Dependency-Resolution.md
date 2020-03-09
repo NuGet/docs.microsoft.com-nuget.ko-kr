@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: c6f50e6eb21826afebcdcd4045c7ab8b6e6489e3
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813327"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231086"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet에서 패키지 종속성을 확인하는 방법
 
@@ -22,10 +22,10 @@ ms.locfileid: "76813327"
 
 ## <a name="dependency-resolution-with-packagereference"></a>PackageReference를 사용하여 종속성 확인
 
-PackageReference 형식을 사용하여 패키지를 프로젝트에 설치하는 경우 NuGet은 적절한 파일에서 단순 패키지 그래프에 대한 참조를 추가하고 충돌을 미리 해결합니다. 이 프로세스는 *전이적 복원*이라고 합니다. 패키지를 다시 설치하거나 복원하면 그래프에 나열된 패키지가 다운로드되어 더 빠르고 예측 가능한 빌드가 수행됩니다. 또한 2.8.\*와 같은 와일드카드(유동) 버전을 활용하여 클라이언트 컴퓨터 및 빌드 서버에서 비용이 많이 들고 오류가 발생하기 쉬운 `nuget update` 호출을 방지할 수 있습니다.
+PackageReference 형식을 사용하여 패키지를 프로젝트에 설치하는 경우 NuGet은 적절한 파일에서 단순 패키지 그래프에 대한 참조를 추가하고 충돌을 미리 해결합니다. 이 프로세스는 *전이적 복원*이라고 합니다. 패키지를 다시 설치하거나 복원하면 그래프에 나열된 패키지가 다운로드되어 더 빠르고 예측 가능한 빌드가 수행됩니다. 최신 패키지 버전을 사용하도록 프로젝트를 수정하지 않으려면 부동 버전(예: 2.8.\*)을 이용할 수도 있습니다.
 
 NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리에서 종속성을 확인한 다음, 결과 그래프를 `project.assets.json`이라는 파일에 씁니다. 또한 [잠금 파일 기능을 사용하도록 설정한](../consume-packages/package-references-in-project-files.md#locking-dependencies) 경우 이름이 `packages.lock.json`인 잠금 파일에 확인된 종속성을 씁니다.
-자산 파일은 기본적으로 프로젝트의 'obj' 폴더인 `MSBuildProjectExtensionsPath`에 있습니다. 그러면 MSBuild에서 이 파일을 읽고 잠재적인 참조를 찾을 수 있는 폴더의 집합으로 해당 파일을 변환한 다음 메모리의 프로젝트 트리에 추가합니다.
+자산 파일은 기본적으로 프로젝트의 ‘obj’ 폴더인 `MSBuildProjectExtensionsPath`에 있습니다. 그러면 MSBuild에서 이 파일을 읽고 잠재적인 참조를 찾을 수 있는 폴더의 집합으로 해당 파일을 변환한 다음 메모리의 프로젝트 트리에 추가합니다.
 
 `project.assets.json` 파일은 임시적이며 원본 제어에 추가하면 안됩니다. `.gitignore`과 `.tfignore` 모두에서 기본적으로 나열됩니다. [패키지 및 원본 제어](../consume-packages/packages-and-source-control.md)를 참조하세요.
 
@@ -53,16 +53,16 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 <a name="floating-versions"></a>
 
-#### <a name="floating-wildcard-versions"></a>유동적인(와일드카드) 버전
+#### <a name="floating-versions"></a>부동 버전
 
-유동 또는 와일드카드 종속성 버전은 \* 와일드카드로 지정됩니다(예: 6.0.\*). 이 버전 사양에는 "최신 6.0.x 버전 사용"이 나와 있습니다. 4.\*는 "최신 4.x 버전 사용"을 의미합니다. 와일드카드를 사용하면 소비 애플리케이션(또는 패키지)을 변경하지 않고도 종속성 패키지가 계속 진화할 수 있습니다.
+부동 종속성 버전은 \* 문자로 지정합니다. 예: `6.0.*`. 이 버전 사양에는 “최신 6.0.x 버전 사용”으로 표시됩니다. `4.*`는 “최신 4.x 버전 사용”을 의미합니다. 부동 버전을 사용하면 최신 종속성 버전을 유지하면서 프로젝트 파일 변경을 줄일 수 있습니다.
 
-와일드카드를 사용하면 NuGet에서 버전 패턴과 일치하는 패키지의 가장 높은 버전을 확인합니다. 예를 들어 6.0.\*는 6.0으로 시작하는 패키지의 버전 중 가장 높은 버전을 가져옵니다.
+부동 버전을 사용하는 경우 NuGet은 버전 패턴과 일치하는 최신 패키지 버전을 확인합니다. 예를 들어 `6.0.*`는 6.0으로 시작하는 최신 패키지 버전을 가져옵니다.
 
 ![유동적인 6.0.* 버전 요구 시 6.0.1 버전 선택](media/projectJson-dependency-4.png)
 
 > [!Note]
-> 와일드카드 및 시험판 버전의 동작에 대한 자세한 내용은 [패키지 버전 관리](package-versioning.md#version-ranges-and-wildcards)를 참조하세요.
+> 부동 버전 및 시험판 버전의 동작에 대한 자세한 내용은 [패키지 버전 관리](package-versioning.md#version-ranges)를 참조하세요.
 
 
 <a name="nearest-wins"></a>

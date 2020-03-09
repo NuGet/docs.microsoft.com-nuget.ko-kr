@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 93a94a5468b48179d27b89825cebf2447657c8f2
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.openlocfilehash: c1f1957c58839ac763238938b476eb0882c56a59
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999979"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231212"
 ---
 # <a name="restore-packages-using-package-restore"></a>패키지 복원을 사용하여 패키지 복원
 
@@ -120,6 +120,17 @@ Visual Studio에서 주로 **도구** > **옵션** > **NuGet 패키지 관리자
 > [!Important]
 > `nuget.config`에서 `packageRestore` 설정을 바로 편집할 경우 Visual Studio를 다시 시작해야 **옵션** 대화 상자에 최신 값이 표시됩니다.
 
+### <a name="choose-default-package-management-format"></a>기본 패키지 관리 형식 선택
+
+![NuGet 패키지 관리자 옵션을 통해 기본 패키지 관리 형식 제어](media/Restore-02-PackageFormatOptions.png)
+
+NuGet에는 프로젝트에서 패키지를 사용할 수 있는 두 가지 형식([`PackageReference`](package-references-in-project-files.md) 및 [`packages.config`](../reference/packages-config.md))이 있습니다. 기본 형식은 **패키지 관리** 제목 아래의 드롭다운에서 선택할 수 있습니다. 프로젝트의 첫 번째 패키지를 설치할 때 확인하는 옵션도 사용할 수 있습니다.
+
+> [!Note]
+> 프로젝트에서 두 패키지 관리 형식을 모두 지원하지 않는 경우 프로젝트와 호환되는 패키지 관리 형식이 사용되므로, 옵션에 설정된 기본 형식이 아닐 수도 있습니다. 또한 옵션 창에서 해당 옵션을 선택했더라도 NuGet에서 첫 번째 패키지 설치 시 선택 메시지를 표시하지 않습니다.
+>
+> 패키지 관리자 콘솔을 사용하여 프로젝트의 첫 번째 패키지를 설치하는 경우, 옵션 창에서 해당 옵션을 선택했더라도 NuGet에서 형식을 선택하라는 메시지를 표시하지 않습니다.
+
 ## <a name="restore-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 복원
 
 [!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]
@@ -169,13 +180,13 @@ Azure DevOps Server 및 TFS 2013 이상에서는 TFS 2013 이상 팀 빌드 템�
 
 어떤 방법으로든 NuGet에서 패키지를 복원하는 경우 `packages.config` 또는 프로젝트 파일에 지정된 제약 조건을 준수합니다.
 
-- `packages.config`에서 종속성의 `allowedVersion` 속성에 버전 범위를 지정할 수 있습니다. 자세한 내용은 [업그레이드 버전 제한](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions)을 참조하세요. 예:
+- `packages.config`에서 종속성의 `allowedVersion` 속성에 버전 범위를 지정할 수 있습니다. 자세한 내용은 [업그레이드 버전 제한](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions)을 참조하세요. 예를 들어:
 
     ```xml
     <package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
     ```
 
-- 프로젝트 파일에서 PackageReference를 사용하여 종속성 범위를 직접 지정할 수 있습니다. 예:
+- 프로젝트 파일에서 PackageReference를 사용하여 종속성 범위를 직접 지정할 수 있습니다. 예를 들어:
 
     ```xml
     <PackageReference Include="Newtonsoft.json" Version="[6, 7)" />

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: b6a009832430ee08f51ea1028feb878a39f45222
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825148"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230618"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -48,7 +48,7 @@ ms.locfileid: "74825148"
 </ItemGroup>
 ```
 
-위의 예에서 3.6.0은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges-and-wildcards)에 설명된 대로 가장 낮은 버전의 기본 설정으로 >=3.6.0인 버전을 가르킵니다.
+위의 예에서 3.6.0은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges)에 설명된 대로 가장 낮은 버전의 기본 설정으로 >=3.6.0인 버전을 가르킵니다.
 
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>PackageReferences가 없는 프로젝트에 대해 PackageReference 사용
 
@@ -113,8 +113,8 @@ PackageReference 프로젝트에서 전이 종속성 버전은 복원 시간에 
 | 런타임 | `lib` 및 `runtimes` 폴더의 콘텐츠이며 이러한 어셈블리가 빌드 출력 디렉터리에 복사되는지 여부 제어 |
 | contentFiles | `contentfiles` 폴더의 콘텐츠 |
 | 빌드 | `build` 폴더의 `.props` 및 `.targets` |
-| buildMultitargeting | 프레임워크 간 타기팅을 위한 `buildMultitargeting` 폴더의 *(4.0)* `.props` 및 `.targets` |
-| buildTransitive | ‘(5.0 이상)’ 사용하는 프로젝트로 타동적으로 흐르는 자산을 위한 `buildTransitive` 폴더의 `.props` 및 `.targets`  [기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요. |
+| buildMultitargeting | *(4.0)* 프레임워크 간 타기팅을 위한 `buildMultitargeting` 폴더의 `.props` 및 `.targets` |
+| buildTransitive | ‘(5.0 이상)’ 사용하는 프로젝트로 전이적으로 흐르는 자산을 위한 `buildTransitive` 폴더의 `.props` 및 `.targets`  [기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요. |
 | 분석기 | .NET 분석기 |
 | native | `native` 폴더의 콘텐츠 |
 | 없음 | 위의 항목을 사용하지 않습니다. |
@@ -170,10 +170,110 @@ PackageReference 프로젝트에서 전이 종속성 버전은 복원 시간에 
 </ItemGroup>
 ```
 
+## <a name="generatepathproperty"></a>GeneratePathProperty
+
+이 기능은 NuGet **5.0** 이상 및 Visual Studio 2019 **16.0** 이상에서 사용할 수 있습니다.
+
+경우에 따라 MSBuild 대상의 패키지 파일을 참조하는 것이 좋습니다.
+`packages.config` 기반 프로젝트에서 패키지는 프로젝트 파일의 상대 폴더에 설치됩니다. 그러나 PackageReference에서는 머신마다 다를 수 있는 *global-packages* 폴더의 패키지가 [사용](../concepts/package-installation-process.md)됩니다.
+
+이 문제를 해결하기 위해 NuGet은 사용할 패키지의 위치를 가리키는 속성을 도입했습니다.
+
+예:
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Some.Package" Version="1.0.0" GeneratePathProperty="true" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgSome_Package)\something.exe" />
+  </Target>
+````
+
+또한 NuGet은 tools 폴더를 포함하는 패키지의 속성을 자동으로 생성합니다.
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Package.With.Tools" Version="1.0.0" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
+  </Target>
+````
+
+MSBuild 속성과 패키지 ID에는 동일한 제한이 없기 때문에 패키지 ID를 MSBuild 이름으로 변경하고 `Pkg` 단어를 앞에 추가해야 합니다.
+생성된 속성의 정확한 이름을 확인하려면 생성된 [nuget.exe](../reference/msbuild-targets.md#restore-outputs) 파일을 확인합니다.
+
+## <a name="nuget-warnings-and-errors"></a>NuGet 경고 및 오류
+
+‘이 기능은 NuGet **4.3** 이상 및 Visual Studio 2017 **15.3** 이상에서 사용할 수 있습니다.’ 
+
+많은 패키지 및 복원 시나리오에서는 모든 NuGet 경고 및 오류가 코딩되고 `NU****`로 시작합니다. 모든 NuGet 경고 및 오류는 [참조](../reference/errors-and-warnings.md) 문서에 나와 있습니다.
+
+NuGet은 다음과 같은 경고 속성을 확인합니다.
+
+- `TreatWarningsAsErrors` - 모든 경고를 오류로 처리
+- `WarningsAsErrors` - 특정 경고를 오류로 처리
+- `NoWarn` - 프로젝트 수준 또는 패키지 수준에서 특정 경고 숨기기
+
+예:
+
+```xml
+<PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1603;NU1605</WarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <NoWarn>$(NoWarn);NU5124</NoWarn>
+</PropertyGroup>
+...
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0" NoWarn="NU1605" />
+</ItemGroup>
+```
+
+### <a name="suppressing-nuget-warnings"></a>NuGet 경고 표시 안 함
+
+패키지 및 복원 작업 중에 발생하는 모든 NuGet 경고를 해결하는 것이 좋지만, 특정 상황에서는 경고를 표시하지 않을 수도 있습니다.
+프로젝트 수준에서 경고를 표시하지 않으려면 다음을 수행합니다.
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1"/>
+</ItemGroup>
+```
+
+경고가 그래프의 특정 패키지에만 적용되는 경우도 있습니다. PackageReference 항목에 `NoWarn`을 추가하면 보다 선택적으로 경고 표시를 해제할 수 있습니다. 
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1" NoWarn="NU1603" />
+</ItemGroup>
+```
+
+#### <a name="suppressing-nuget-package-warnings-in-visual-studio"></a>Visual Studio에서 NuGet 패키지 경고 표시 안 함
+
+Visual Studio에서 IDE를 통해 [경고 표시를 해제](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages
+)할 수도 있습니다.
+
 ## <a name="locking-dependencies"></a>종속성 잠금
+
 이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다. 
 
-NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 세트이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다. 입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다. 그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다. 예:
+NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 세트이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다. 입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다. 그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다. 예를 들어:
 
 * `<PackageReference Include="My.Sample.Lib" Version="4.*"/>` 같은 부동 버전을 사용하는 경우. 여기서 의도는 패키지의 모든 복원에서 최신 버전으로 이동하는 것이지만, 사용자가 그래프를 특정 최신 버전으로 잠그고 명시적 제스처에 따라 이후 버전(사용 가능한 경우)으로 이동하는 경우가 있습니다.
 * PackageReference 버전 요구 사항과 일치하는 패키지의 최신 버전이 게시됩니다. 예: 
@@ -185,6 +285,7 @@ NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)
 * 지정된 패키지 버전이 리포지토리에서 제거됩니다. nuget.org에서는 패키지 삭제를 허용하지 않지만 일부 패키지 리포지토리에는 이 제약 조건이 없습니다. 따라서 NuGet은 삭제된 버전으로 확인할 수 없는 경우 가장 일치하는 항목을 찾습니다.
 
 ### <a name="enabling-lock-file"></a>잠금 파일 사용
+
 패키지 종속성의 전체 클로저를 유지하기 위해 프로젝트의 MSBuild 속성 `RestorePackagesWithLockFile`을 설정하여 잠금 파일 기능을 옵트인할 수 있습니다.
 
 ```xml
@@ -245,15 +346,15 @@ ProjectA
              |------>PackageX 1.0.0
 ```
 
-`ProjectA`가 `PackageX` 버전 `2.0.0`에 대한 종속성을 포함하고 `PackageX` 버전 `1.0.0`을 사용하는 `ProjectB`를 참조하는 경우 `ProjectB`의 잠금 파일은 `PackageX` 버전 `1.0.0`에 대한 종속성을 나열합니다. 그러나 `ProjectA`가 빌드되면 해당 잠금 파일에는 `ProjectB`의 잠금 파일에 나열된 `1.0.0`이 **아닌** `PackageX` 버전 **`2.0.0`** 에 대한 종속성이 포함됩니다. 따라서 공통 코드 프로젝트의 잠금 파일에는 이 파일을 사용하는 프로젝트에 대해 확인된 패키지가 거의 언급되지 않습니다.
+`ProjectA`가 `PackageX` 버전 `2.0.0`에 대한 종속성을 포함하고 `PackageX` 버전 `1.0.0`을 사용하는 `ProjectB`를 참조하는 경우 `ProjectB`의 잠금 파일은 `PackageX` 버전 `1.0.0`에 대한 종속성을 나열합니다. 그러나 `ProjectA`를 빌드하면 해당 잠금 파일에는 `ProjectB`의 잠금 파일에 나열된 대로 `PackageX` 버전 `1.0.0`이 **아닌** **`2.0.0`** 에 대한 종속성이 포함됩니다. 따라서 공통 코드 프로젝트의 잠금 파일에는 이 파일을 사용하는 프로젝트에 대해 확인된 패키지가 거의 언급되지 않습니다.
 
 ### <a name="lock-file-extensibility"></a>잠금 파일 확장성
 
 다음 설명과 같이 잠금 파일을 사용하여 다양한 복원 동작을 제어할 수 있습니다.
 
-| 옵션 | MSBuild 해당 옵션 | 설명|
-|:---  |:--- |:--- |
-| `--use-lock-file` | RestorePackagesWithLockFile | 잠금 파일을 사용합니다. | 
-| `--locked-mode` | RestoreLockedMode | 복원에 잠금 모드를 사용하도록 설정합니다. 이는 반복 가능한 빌드를 원하는 CI/CD 시나리오에서 유용합니다.|   
-| `--force-evaluate` | RestoreForceEvaluate | 이 옵션은 프로젝트에 정의된 부동 버전의 패키지에 유용합니다. 기본적으로 NuGet 복원은 이 옵션으로 복원을 실행하지 않는 한 각 복원에서 패키지 버전을 자동으로 업데이트하지 않습니다. |
-| `--lock-file-path` | NuGetLockFilePath | 프로젝트의 사용자 지정 잠금 파일 위치를 정의합니다. 기본적으로 NuGet은 루트 디렉터리에서 `packages.lock.json`을 지원합니다. 같은 디렉터리에 여러 프로젝트가 있는 경우 NuGet은 프로젝트별 잠금 파일 `packages.<project_name>.lock.json`을 지원합니다. |
+| NuGet.exe 옵션 | dotnet 옵션 | MSBuild 해당 옵션 | 설명 |
+|:--- |:--- |:--- |:--- |
+| `-UseLockFile` |`--use-lock-file` | RestorePackagesWithLockFile | 잠금 파일을 사용합니다. |
+| `-LockedMode` | `--locked-mode` | RestoreLockedMode | 복원에 잠금 모드를 사용하도록 설정합니다. 이는 반복 가능한 빌드를 원하는 CI/CD 시나리오에서 유용합니다.|   
+| `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | 이 옵션은 프로젝트에 정의된 부동 버전의 패키지에 유용합니다. 기본적으로 NuGet 복원은 이 옵션으로 복원을 실행하지 않는 한 각 복원에서 패키지 버전을 자동으로 업데이트하지 않습니다. |
+| `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | 프로젝트의 사용자 지정 잠금 파일 위치를 정의합니다. 기본적으로 NuGet은 루트 디렉터리에서 `packages.lock.json`을 지원합니다. 같은 디렉터리에 여러 프로젝트가 있는 경우 NuGet은 프로젝트별 잠금 파일 `packages.<project_name>.lock.json`을 지원합니다. |

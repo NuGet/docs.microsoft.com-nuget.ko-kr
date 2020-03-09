@@ -3,14 +3,14 @@ title: MSBuild를 사용하여 NuGet 패키지 만들기
 description: 파일 및 버전 관리와 같은 주요 결정 사항을 포함하여 NuGet 패키지를 디자인하고 만드는 과정을 자세히 안내합니다.
 author: karann-msft
 ms.author: karann
-ms.date: 08/05/2019
+ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: b45c25a92c0134228fb507ab321cb00ce156527f
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 7166d622ef9d3975fc1c931d30caf570a765a6da
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610547"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231320"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>MSBuild를 사용하여 NuGet 패키지 만들기
 
@@ -34,6 +34,10 @@ SDK 스타일 프로젝트에는 기본적으로 사용할 수 있는 pack 기�
 - 호스트에 표시되어야 하는 패키지 제목(예: nuget.org)
 - `Authors`: 작성자 및 소유자 정보. 지정하지 않으면 기본값 `AssemblyName`입니다.
 - `Company`: 회사 이름. 지정하지 않으면 기본값 `AssemblyName`입니다.
+
+또한 PackageReference를 사용하는, SDK 스타일이 아닌 프로젝트를 패키지하는 경우 다음이 필요합니다.
+
+- `PackageOutputPath`에서 패키지를 호출할 때 생성되는 패키지의 출력 폴더입니다.
 
 Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습니다(솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성**을 선택한 다음, **패키지** 탭 선택). 프로젝트 파일( *.csproj*)에서 직접 속성을 설정할 수도 있습니다.
 
@@ -69,6 +73,10 @@ Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습
 > 공용으로 빌드된 패키지의 경우 **PackageTags** 속성에 특히 주의하세요. 이러한 태그는 다른 사람들이 패키지를 찾고 그 기능을 이해하는 데 도움이 됩니다.
 
 종속성 선언 및 버전 번호 지정에 대한 자세한 내용은 [프로젝트 파일의 패키지 참조](../consume-packages/package-references-in-project-files.md) 및 [패키지 버전](../concepts/package-versioning.md)을 참조하세요. `<IncludeAssets>` 및 `<ExcludeAssets>` 특성을 사용하여 패키지에 종속성의 자산을 직접 공개할 수도 있습니다. 자세한 내용은 [종속성 자산 제어](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)를 참조하세요.
+
+## <a name="add-an-optional-description-field"></a>설명 필드(선택 사항) 추가
+
+[!INCLUDE [add description to package](includes/add-description.md)]
 
 ## <a name="choose-a-unique-package-identifier-and-set-the-version-number"></a>고유한 패키지 식별자 선택 및 버전 번호 설정
 

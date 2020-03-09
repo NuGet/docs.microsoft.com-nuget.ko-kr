@@ -6,16 +6,14 @@ ms.author: karann
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 830714269ac422a4784c15b000e374195f02332f
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 2fefd9cff4d151111023521c31d58878743775bf
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580287"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231177"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>소스 코드 및 구성 파일 변환
-
-`packages.config`를 사용하는 프로젝트의 경우 NuGet은 패키지 설치 및 제거 시 소스 코드 및 구성 파일에 변환 기능을 지원합니다. 패키지가 [PackageReference](../consume-packages/package-references-in-project-files.md)를 사용하여 프로젝트에 설치된 경우에만 소스 코드 변환이 적용됩니다.
 
 **소스 코드 변환**은 패키지를 설치할 때 단방향 토큰 교체를 패키지의 `content` 또는 `contentFiles` 폴더(`packages.config`를 사용하는 고객의 경우 `content`, `PackageReference`의 경우 `contentFiles`)에 있는 파일에 적용합니다. 여기서 토큰은 Visual Studio [프로젝트 속성](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)을 참조합니다. 이렇게 하면 프로젝트의 네임스페이스에 파일을 삽입하거나 일반적으로 ASP.NET 프로젝트에서 `global.asax`로 이동하는 코드를 사용자 지정할 수 있습니다.
 
@@ -110,9 +108,12 @@ NuGet이 `modules` 섹션을 대체하지 않았습니다. 새 요소 및 특성
 
 해당 `web.config.transform` 파일을 검사하려면 위 링크에서 ELMAH 패키지를 다운로드하고, 패키지 확장명을 `.nupkg`에서 `.zip`으로 변경한 다음 해당 ZIP 파일에서 `content\web.config.transform`을 엽니다.
 
-패키지를 설치 및 제거하는 영향을 보려면 Visual Studio에서 새 ASP.NET 프로젝트를 만들고(템플릿이 새 프로젝트 대화 상자의 **Visual C# > 웹** 아래에 있음), 빈 ASP.NET 응용 프로그램을 선택합니다. `web.config`를 열어 초기 상태를 확인합니다. 그런 다음 프로젝트를 마우스 오른쪽 단추로 클릭하고, **NuGet 패키지 관리**를 선택하고, nuget.org에서 ELMAH를 찾고, 최신 버전을 설치합니다. `web.config`의 모든 변경 내용을 확인합니다. 이제 패키지를 제거하면 `web.config`가 이전 상태로 되돌아갑니다.
+패키지를 설치 및 제거하는 영향을 보려면 Visual Studio에서 새 ASP.NET 프로젝트를 만들고(템플릿이 새 프로젝트 대화 상자의 **Visual C# &gt; 웹** 아래에 있음), 빈 ASP.NET 애플리케이션을 선택합니다. `web.config`를 열어 초기 상태를 확인합니다. 그런 다음 프로젝트를 마우스 오른쪽 단추로 클릭하고, **NuGet 패키지 관리**를 선택하고, nuget.org에서 ELMAH를 찾고, 최신 버전을 설치합니다. `web.config`의 모든 변경 내용을 확인합니다. 이제 패키지를 제거하면 `web.config`가 이전 상태로 되돌아갑니다.
 
 ### <a name="xdt-transforms"></a>XDT 변환
+
+> [!Note]
+> [`packages.config`에서 `PackageReference`로 마이그레이션하는 방법에 대한 문서의 패키지 호환성 이슈 섹션](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues)에 설명된 대로, 아래에서 설명하는 XDT 변환은 `packages.config`에서만 지원됩니다. 패키지에 아래 파일을 추가하는 경우 `PackageReference`와 함께 패키지를 사용하는 고객에 대해서는 변환이 적용되지 않습니다(`PackageReference`에서 XDT 변환을 사용하려면 [이 샘플](https://github.com/NuGet/Samples/tree/master/XDTransformExample) 참조).
 
 [XDT 구문](https://msdn.microsoft.com/library/dd465326.aspx)을 사용하여 구성 파일을 수정할 수 있습니다. `$` 구분 기호(대/소문자 구분) 내에서 속성 이름을 포함하여 NuGet에서 토큰을 [프로젝트 속성](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)으로 바꿀 수도 있습니다.
 

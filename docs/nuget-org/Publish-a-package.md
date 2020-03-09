@@ -1,24 +1,24 @@
 ---
 title: NuGet 패키지를 게시하는 방법
-description: NuGet 패키지를 nuget.org 또는 개인 피드에 게시하는 방법 및 nuget.org에서 패키지 소유권을 관리하는 방법에 대한 자세한 지침입니다.
+description: NuGet 패키지를 nuget.org 또는 프라이빗 피드에 게시하는 방법 및 nuget.org에서 패키지 소유권을 관리하는 방법에 대한 자세한 지침입니다.
 author: karann-msft
 ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 937d051ff6dc49e3204f7d0cb22c4f29b99a2a7d
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 02c6c8f3018bfd063c2d16a10381f88b54cac840
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610608"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231346"
 ---
 # <a name="publishing-packages"></a>패키지 게시
 
-패키지를 만들고 `.nupkg` 파일이 준비되면 공용 또는 개인용으로 다른 개발자가 사용할 수 있도록 하는 간단한 프로세스입니다.
+패키지를 만들고 `.nupkg` 파일이 준비되면 공용 또는 전용으로 다른 개발자가 사용할 수 있도록 하는 간단한 프로세스입니다.
 
 - 공용 패키지는 이 문서에 설명된 대로 모든 개발자가 [nuget.org](https://www.nuget.org/packages/manage/upload)를 통해 전역적으로 사용할 수 있습니다(NuGet 4.1.0 이상 필요).
-- 개인 패키지는 파일 공유, 개인 NuGet 서버, [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 또는 타사 리포지토리(myget, ProGet, Nexus Repository 및 Artifactory)를 호스트하여 팀 또는 조직에서만 사용할 수 있습니다. 자세한 내용은 [패키지 개요 호스트](../hosting-packages/overview.md)를 참조하세요.
+- 프라이빗 패키지는 파일 공유, 프라이빗 NuGet 서버, [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 또는 타사 리포지토리(myget, ProGet, Nexus Repository 및 Artifactory)를 호스트하여 팀 또는 조직에서만 사용할 수 있습니다. 자세한 내용은 [패키지 개요 호스트](../hosting-packages/overview.md)를 참조하세요.
 
 이 문서에서는 nuget.org에 대한 게시를 다룹니다. Azure Artifacts에 게시하는 방법은 [패키지 관리](https://www.visualstudio.com/docs/package/nuget/publish)를 참조하세요.
 
@@ -65,6 +65,10 @@ nuget.org에 패키지를 푸시하려면 [nuget.exe v4.1.0 이상](https://www.
     ```
 
     이 명령은 NuGet 구성에 API 키를 저장하므로 동일한 컴퓨터에서 이 단계를 반복할 필요가 없습니다.
+
+    > [!NOTE]
+    > API 키는 프라이빗 피드 인증에 사용되지 않습니다. 소스 인증에 사용할 자격 증명을 관리하려면 [`nuget sources` 명령](../reference/cli-reference/cli-ref-sources.md)을 참조하세요.
+    > API 키는 개별 NuGet 서버에서 가져올 수 있습니다. nuget.org용 APIKeys를 만들고 관리하려면 [publish-api-key](../quickstart/includes/publish-api-key.md)를 참조하세요.
 
 1. 다음 명령을 사용하여 NuGet 갤러리에 패키지를 푸시합니다.
 

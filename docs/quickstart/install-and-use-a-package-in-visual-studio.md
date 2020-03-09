@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 92fc78a88733d0308dc26e10c5b0bafb86b78045
-ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
+ms.openlocfilehash: 96e138561390984d9def495ba5e091c43023cc92
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71307224"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231333"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>빠른 시작: Visual Studio에서 패키지 설치 및 사용(Windows만 해당)
 
@@ -21,7 +21,7 @@ NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 �
 > [!Tip]
 > **nuget.org 시작**: *nuget.org* 검색은 일반적으로 .NET 개발자가 고유의 애플리케이션에서 다시 사용할 수 있는 구성 요소를 찾는 방법입니다. *nuget.org*를 직접 검색하거나 이 문서에 표시된 대로 Visual Studio 내에서 패키지를 설치할 수 있습니다. 일반 정보는 [NuGet 패키지 찾기 및 평가](../consume-packages/finding-and-choosing-packages.md)를 참조하세요.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - Visual Studio 2019의 .NET 데스크톱 개발 워크로드.
 
@@ -124,6 +124,12 @@ Visual Studio에서 프로젝트를 만들고 솔루션 탐색기에서 열립�
 1. JSON 텍스트로 바꾼 텍스트 블록의 내용을 보려면 단추를 선택합니다.
 
     ![단추를 선택한 후 WPF 앱의 출력](media/QS_Use-07-AppEnd.png)
+
+## <a name="related-video"></a>관련 동영상
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/Install-and-Use-a-NuGet-Package-with-Visual-Studio-2-of-5/player]
+
+[Channel 9](https://channel9.msdn.com/Series/NuGet-101) 및 [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_)에서 더 많은 NuGet 비디오를 확인하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

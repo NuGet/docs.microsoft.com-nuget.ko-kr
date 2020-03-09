@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 6f659af6b09a12be54a5ef843d34f956119b33f4
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 8e825410d621ff2946e23e80173292f24f9d21f2
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520493"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231273"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>packages.config를 PackageReference로 마이그레이션
 
@@ -30,11 +30,13 @@ Visual Studio 2017 버전 15.7 이상은 프로젝트를 [packages.config](../re
 * 현재 C++ 및 ASP.NET 프로젝트에는 마이그레이션이 제공되지 않습니다.
 * 일부 패키지는 PackageReference와 완전히 호환되지 않을 수 있습니다. 자세한 내용은 [패키지 호환성 문제](#package-compatibility-issues)를 참조하세요.
 
+또한 PackageReferences와 packages.config의 작동 방식에는 몇 가지 차이점이 있습니다. 예를 들어 [업그레이드 버전 제한](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions)은 PackageReference에서 지원되지 않지만 [부동 버전](../consume-packages/package-references-in-project-files.md#floating-versions) 지원을 추가합니다.
+
 ### <a name="known-issues"></a>알려진 문제
 
 1. `Migrate packages.config to PackageReference...` 옵션을 오른쪽 클릭 상황에 맞는 메뉴에서 사용할 수 없습니다. 
 
-#### <a name="issue"></a>문제 
+#### <a name="issue"></a>문제점 
  
 프로젝트를 처음 열면 NuGet 작업이 수행될 때까지 NuGet을 초기화할 수 없습니다. 이로 인해 마이그레이션 옵션이 `packages.config` 또는 `References`의 오른쪽 클릭 상황에 맞는 메뉴에 표시되지 않습니다. 
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: a08ac24ce6b1d64496c9fc1b20604850e9711dd6
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: c326cf184ff20fb798a5770f0a4cf9bf42bed3f5
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380669"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230696"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 소개
 
@@ -18,9 +18,9 @@ ms.locfileid: "72380669"
 
 .NET(.NET Core 포함)의 경우 코드를 공유하는 Microsoft 지원 메커니즘은 **NuGet**입니다. 이는 .NET용 패키지를 만들고 호스트하고 사용하는 방법을 정의하고 각 역할에 대한 [도구를 제공](install-nuget-client-tools.md)합니다.
 
-간단히 말해, NuGet 패키지는 컴파일된 코드(DLL), 해당 코드와 관련된 다른 파일 및 패키지의 버전 번호와 같은 정보를 포함한 설명적 매니페스트가 포함된 `.nupkg` 확장명의 단일 ZIP 파일입니다. 공유할 코드를 가진 개발자는 패키지 파일을 만들어 공용 또는 전용 호스트에 게시합니다. 패키지 소비자는 적합한 호스트에서 이러한 패키지를 받고, 프로젝트에 추가한 다음, 프로젝트 코드에서 패키지 기능을 호출합니다. 그런 다음 NuGet 자체에서 모든 중간 세부 정보를 처리합니다.
+간단히 말해, NuGet 패키지는 컴파일된 코드(DLL), 해당 코드와 관련된 다른 파일 및 패키지의 버전 번호와 같은 정보를 포함한 설명적 매니페스트가 포함된 `.nupkg` 확장명의 단일 ZIP 파일입니다. 공유할 코드를 가진 개발자는 패키지 파일을 만들어 퍼블릭 또는 프라이빗 호스트에 게시합니다. 패키지 소비자는 적합한 호스트에서 이러한 패키지를 받고, 프로젝트에 추가한 다음, 프로젝트 코드에서 패키지 기능을 호출합니다. 그런 다음 NuGet 자체에서 모든 중간 세부 정보를 처리합니다.
 
-NuGet은 공용 nuget.org 호스트와 함께 전용 호스트를 지원하기 때문에 NuGet 패키지를 사용하여 조직 또는 작업 그룹에 독점적인 코드를 공유할 수 있습니다. 고유한 코드를 고유한 프로젝트에서만 사용하도록 팩터링하는 편리한 방법으로 NuGet 패키지를 사용할 수도 있습니다. 간단히 말하면 NuGet 패키지는 공유 가능한 코드 단위이지만, 특정 공유 방법을 필요로 하거나 의미하지 않습니다.
+NuGet은 퍼블릭 nuget.org 호스트와 함께 프라이빗 호스트를 지원하기 때문에 NuGet 패키지를 사용하여 조직 또는 작업 그룹에 독점적인 코드를 공유할 수 있습니다. 고유한 코드를 고유한 프로젝트에서만 사용하도록 팩터링하는 편리한 방법으로 NuGet 패키지를 사용할 수도 있습니다. 간단히 말하면 NuGet 패키지는 공유 가능한 코드 단위이지만, 특정 공유 방법을 필요로 하거나 의미하지 않습니다.
 
 ## <a name="the-flow-of-packages-between-creators-hosts-and-consumers"></a>작성자, 호스트 및 소비자 간의 패키지 흐름
 
@@ -76,7 +76,7 @@ NuGet에서 이 서비스를 수행하는 방법에 대한 자세한 내용은 [
 
 ![NuGet 참조 목록은 패키지 설치 시 만들어지며, 다른 위치에서 패키지를 복원하는 데 사용할 수 있습니다.](media/nuget-restore.png)
 
-NuGet은 나중에 언제든지 참조 목록만 사용하여 공용 및/또는 사설 호스트에서 해당 패키지 모두를 다시 설치, 즉 *복원*할 수 있습니다.&mdash;&mdash; 프로젝트를 소스 제어에 커밋하거나 다른 방식으로 공유하는 경우, 참조 목록만 포함하고 패키지 이진 파일은 제외합니다([패키지 및 소스 제어](consume-packages/packages-and-source-control.md) 참조).
+NuGet은 나중에 언제든지 참조 목록만 사용하여 퍼블릭 및/또는 프라이빗 호스트에서 해당 패키지 모두를 다시 설치, 즉 *복원*할 수 있습니다.&mdash;&mdash; 프로젝트를 소스 제어에 커밋하거나 다른 방식으로 공유하는 경우, 참조 목록만 포함하고 패키지 이진 파일은 제외합니다([패키지 및 소스 제어](consume-packages/packages-and-source-control.md) 참조).
 
 자동화된 배포 시스템의 일부로 프로젝트의 복사본을 얻는 빌드 서버와 같이 프로젝트를 받는 컴퓨터는 필요할 때마다 NuGet에서 종속성을 복원하도록 요청하기만 하면 됩니다. Azure DevOps와 같은 빌드 시스템은 이와 같은 정확한 목적을 위해 "NuGet restore" 단계를 제공합니다. 마찬가지로 개발자가 프로젝트의 복사본을 얻는 경우(예: 리포지토리 복제 시) `nuget restore`(NuGet CLI), `dotnet restore`(dotnet CLI) 또는 `Install-Package`(패키지 관리자 콘솔) 같은 명령을 호출하여 모든 필요한 패키지를 얻습니다. Visual Studio 자체로서는 [패키지 복원](consume-packages/package-restore.md)에 설명된 대로 자동 복원을 사용하도록 설정한 경우 프로젝트를 빌드할 때 패키지를 자동으로 복원합니다.
 
@@ -97,7 +97,7 @@ NuGet은 나중에 언제든지 참조 목록만 사용하여 공용 및/또는 
 
 지금까지는 NuGet의 다음 특징을 알아보았습니다.
 
-- NuGet은 전용 호스팅을 지원하는 중앙 nuget.org 리포지토리를 제공합니다.
+- NuGet은 프라이빗 호스팅을 지원하는 중앙 nuget.org 리포지토리를 제공합니다.
 - NuGet에서는 개발자가 패키지를 만들고, 게시하고, 사용하는 데 필요한 도구를 제공합니다.
 - NuGet이 프로젝트에서 사용되는 패키지의 참조 목록 및 해당 목록에서 해당 패키지를 복원하고 업데이트할 수 있는 기능을 유지 관리한다는 것이 가장 중요합니다.
 
@@ -105,9 +105,15 @@ NuGet은 나중에 언제든지 참조 목록만 사용하여 공용 및/또는 
 
 개별 프로젝트 내에서 NuGet은 전체 종속성 그래프를 관리하며, 여기에는 동일한 패키지의 서로 다른 버전에 대한 여러 참조를 확인하는 작업이 다시 포함됩니다. 프로젝트에서 자체적으로 종속성이 동일한 하나 이상의 패키지에 대한 종속성을 사용하는 것이 매우 일반적입니다. nuget.org에서 가장 유용한 유틸리티 패키지 중 일부는 다른 많은 패키지에서 사용됩니다. 10개의 전체 종속성 그래프에서 동일한 패키지의 서로 다른 버전에 대해 10개의 다른 참조를 쉽게 갖출 수 있습니다. 해당 패키지의 여러 버전을 애플리케이션 자체에 가져오지 않기 위해 NuGet은 모든 소비자가 사용할 수 있는 단일 버전을 정렬합니다. (자세한 내용은 [종속성 확인](concepts/dependency-resolution.md)을 참조하세요.)
 
-그 외에도 NuGet은 패키지를 구성하는 방법([지역화](create-packages/creating-localized-packages.md) 및 [디버그 기호](create-packages/symbol-packages-snupkg.md) 포함) 및 [참조](consume-packages/package-references-in-project-files.md)하는 방법([버전 범위](concepts/package-versioning.md#version-ranges-and-wildcards) 및 [시험판 버전](create-packages/prerelease-packages.md) 포함)과 관련된 모든 사양을 유지 관리합니다. 또한 NuGet은 서비스에서 프로그래밍 방식으로 작동하는 다양한 API를 제공하며 Visual Studio 확장 및 프로젝트 템플릿을 작성하는 개발자를 위한 지원을 제공합니다.
+그 외에도 NuGet은 패키지를 구성하는 방법([지역화](create-packages/creating-localized-packages.md) 및 [디버그 기호](create-packages/symbol-packages-snupkg.md) 포함) 및 [참조](consume-packages/package-references-in-project-files.md)하는 방법([버전 범위](concepts/package-versioning.md#version-ranges) 및 [시험판 버전](create-packages/prerelease-packages.md) 포함)과 관련된 모든 사양을 유지 관리합니다. 또한 NuGet은 서비스에서 프로그래밍 방식으로 작동하는 다양한 API를 제공하며 Visual Studio 확장 및 프로젝트 템플릿을 작성하는 개발자를 위한 지원을 제공합니다.
 
 잠시 시간을 내어 이 설명서의 목차를 살펴보면 NuGet의 시작까지 거슬러 올라가는 릴리스 정보와 함께 이러한 모든 기능이 목차에 나와 있습니다.
+
+## <a name="related-video"></a>관련 동영상
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/What-is-NuGet-1-of-5/player]
+
+[Channel 9](https://channel9.msdn.com/Series/NuGet-101) 및 [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_)에서 더 많은 NuGet 비디오를 확인하세요.
 
 ## <a name="comments-contributions-and-issues"></a>의견, 참여 및 문제
 
