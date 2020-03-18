@@ -7,11 +7,11 @@ ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
 ms.openlocfilehash: 19e7934e2f249056c532369fa5e8ee6e35cc8086
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230605"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428380"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -82,7 +82,7 @@ Nuget.org의 프로필 이름과 일치 하는 쉼표로 구분 된 패키지 �
 
 ### <a name="optional-metadata-elements"></a>선택적 metadata 요소
 
-#### <a name="owners"></a>owners
+#### <a name="owners"></a>소유자
 Nuget.org에서 프로필 이름을 사용 하 여 쉼표로 구분 된 패키지 작성자 목록입니다. 이는 종종 `authors`와 동일한 목록 이며, 패키지를 nuget.org에 업로드 하는 경우 무시 됩니다. [Nuget.org에서 패키지 소유자 관리](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조 하세요. 
 
 #### <a name="projecturl"></a>projectUrl
@@ -318,13 +318,13 @@ nuget pack MyProject.csproj
 | `id` | (필수) 패키지 페이지에서 “EntityFramework” 및 “NUnit” 패키지 nuget.org의 이름인 같은 종속성의 패키지 ID를 보여 줍니다. |
 | `version` | (필수) 종속성으로 허용되는 버전 범위입니다. 정확한 구문은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges)를 참조하세요. 부동 버전은 지원 되지 않습니다. |
 | include | 최종 패키지에 포함할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 `all`입니다. |
-| Exclude | 최종 패키지에서 제외할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 과도 하 게 쓸 수 있는 `build,analyzers`입니다. 그러나 `content/ ContentFiles`은 과도 하 게 쓸 수 없는 최종 패키지에서 암시적으로 제외 됩니다. `exclude`로 지정된 태그는 `include`로 지정된 태그보다 우선 순위가 높습니다. 예를 들어 `include="runtime, compile" exclude="compile"`은 `include="runtime"`과 같습니다. |
+| exclude | 최종 패키지에서 제외할 종속성을 나타내는 include/exclude 태그(아래 참조)에 대한 쉼표로 구분된 목록입니다. 기본값은 과도 하 게 쓸 수 있는 `build,analyzers`입니다. 그러나 `content/ ContentFiles`은 과도 하 게 쓸 수 없는 최종 패키지에서 암시적으로 제외 됩니다. `exclude`로 지정된 태그는 `include`로 지정된 태그보다 우선 순위가 높습니다. 예를 들어 `include="runtime, compile" exclude="compile"`은 `include="runtime"`과 같습니다. |
 
 | include/exclude 태그 | 영향을 받는 대상 폴더 |
 | --- | --- |
 | contentFiles | 콘텐츠 |
 | 런타임 | Runtime, Resources 및 FrameworkAssemblies |
-| compile | lib |
+| compile(컴파일) | lib |
 | build | build(MSBuild props 및 targets) |
 | native | native |
 | none | 영향을 받는 폴더 없음 |

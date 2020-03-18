@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
 ms.openlocfilehash: 940582d5173f5a53dcd04cf1258fc02a2439af4e
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825289"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428296"
 ---
 # <a name="nuget-25-release-notes"></a>NuGet 2.5 릴리스 정보
 
@@ -18,7 +18,7 @@ Nuget [2.2.1 릴리스 정보](../release-notes/nuget-2.2.1.md) | [Nuget 2.6 릴
 
 NuGet 2.5은 2013 년 4 월 25 일에 출시 되었습니다. 이 릴리스는 너무 하도록 강요 되 버전 2.3 및 2.4를 건너 뛰 세요. 최신 버전은 NuGet에 대해 보유 한 가장 큰 릴리스입니다. 릴리스의 [작업 항목 수가 160](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.5&status=all) 이상입니다.
 
-## <a name="acknowledgements"></a>승인
+## <a name="acknowledgements"></a>감사의 말
 
 NuGet 2.5에 대 한 중요 한 기여에 대해 다음과 같은 외부 참가자에 게 감사 하려고 합니다.
 
@@ -182,7 +182,7 @@ nuget push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
 
 구성에 액세스 하는 nuget.exe 명령 (' spec ' 및 ' pack ' 제외)은 이제 새로운 '-000' 옵션을 지원 합니다 .이 옵션을 사용 하면 특정 구성 파일 을%Appdata%\nuget\nuget.config의 기본 구성 파일 대신 사용할 수 있습니다.
 
-예:
+예제:
 
 ```cli
 nuget sources add -name test -source http://test -ConfigFile C:\test\.nuget\Nuget.Config

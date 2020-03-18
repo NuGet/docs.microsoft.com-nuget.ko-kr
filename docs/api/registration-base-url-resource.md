@@ -7,11 +7,11 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
 ms.openlocfilehash: 852dca8c70b09d941e844b1f7cd03b38e2192481
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230887"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428308"
 ---
 # <a name="package-metadata"></a>패키지 메타데이터
 
@@ -144,7 +144,7 @@ iconUrl                  | 문자열                     | 아니요       |
 id                       | 문자열                     | 예      | 패키지의 ID입니다.
 licenseUrl               | 문자열                     | 아니요       |
 licenseExpression        | 문자열                     | 아니요       | 
-나열                   | boolean                    | 아니요       | 없는 경우 나열 된 것으로 간주 해야 합니다.
+목록                   | boolean                    | 아니요       | 없는 경우 나열 된 것으로 간주 해야 합니다.
 minClientVersion         | 문자열                     | 아니요       | 
 projectUrl               | 문자열                     | 아니요       | 
 published                | 문자열                     | 아니요       | 패키지가 게시 되었을 때의 ISO 8601 타임 스탬프를 포함 하는 문자열입니다.
@@ -270,7 +270,7 @@ upper  | 문자열           | 예      | 페이지의 최고 SemVer 2.0.0 버�
 -------------- | ------- | -------- | -----
 @id            | 문자열  | 예      | 등록 리프에 대 한 URL입니다.
 catalogEntry   | 문자열  | 아니요       | 이러한 리프를 생성 한 카탈로그 항목에 대 한 URL입니다.
-나열         | boolean | 아니요       | 없는 경우 나열 된 것으로 간주 해야 합니다.
+목록         | boolean | 아니요       | 없는 경우 나열 된 것으로 간주 해야 합니다.
 packageContent | 문자열  | 아니요       | 패키지 콘텐츠에 대 한 URL (. nupkg)
 published      | 문자열  | 아니요       | 패키지가 게시 되었을 때의 ISO 8601 타임 스탬프를 포함 하는 문자열입니다.
 등록   | 문자열  | 아니요       | 등록 인덱스의 URL입니다.

@@ -6,11 +6,11 @@ ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
 ms.openlocfilehash: 00410214500c7f5256be243dd6fca0907ba9b0c4
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380495"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428386"
 ---
 # <a name="nuget-cross-platform-plugins"></a>NuGet 플랫폼 간 플러그 인
 
@@ -70,12 +70,12 @@ NuGet 클라이언트 도구와 플러그 인 간의 통신은 양방향입니�
 ## <a name="plugin-installation-and-discovery"></a>플러그 인 설치 및 검색
 
 플러그 인은 규칙 기반 디렉터리 구조를 통해 검색 됩니다.
-CI/CD 시나리오와 고급 사용자는 환경 변수를 사용 하 여 동작을 재정의할 수 있습니다. 환경 변수를 사용 하는 경우 절대 경로만 허용 됩니다. @No__t_0 및 `NUGET_NETCORE_PLUGIN_PATHS`는 5.3 이상 버전의 NuGet 도구 이상 에서만 사용할 수 있습니다.
+CI/CD 시나리오와 고급 사용자는 환경 변수를 사용 하 여 동작을 재정의할 수 있습니다. 환경 변수를 사용 하는 경우 절대 경로만 허용 됩니다. `NUGET_NETFX_PLUGIN_PATHS` 및 `NUGET_NETCORE_PLUGIN_PATHS`는 5.3 이상 버전의 NuGet 도구 이상 에서만 사용할 수 있습니다.
 
-- `NUGET_NETFX_PLUGIN_PATHS`-.NET Framework 기반 도구 (Nuget.exe/Msbuild.exe/Visual Studio)에서 사용할 플러그 인을 정의 합니다. @No__t_0 보다 우선적으로 적용 됩니다. (NuGet 버전 5.3 이상)
-- `NUGET_NETCORE_PLUGIN_PATHS`-.NET Core 기반 도구 (dotnet)에서 사용할 플러그 인을 정의 합니다. @No__t_0 보다 우선적으로 적용 됩니다. (NuGet 버전 5.3 이상)
+- `NUGET_NETFX_PLUGIN_PATHS`-.NET Framework 기반 도구 (Nuget.exe/Msbuild.exe/Visual Studio)에서 사용할 플러그 인을 정의 합니다. `NUGET_PLUGIN_PATHS`보다 우선적으로 적용 됩니다. (NuGet 버전 5.3 이상)
+- `NUGET_NETCORE_PLUGIN_PATHS`-.NET Core 기반 도구 (dotnet)에서 사용할 플러그 인을 정의 합니다. `NUGET_PLUGIN_PATHS`보다 우선적으로 적용 됩니다. (NuGet 버전 5.3 이상)
 - `NUGET_PLUGIN_PATHS`-해당 NuGet 프로세스에 사용할 플러그 인을 정의 합니다. 우선 순위는 유지 됩니다. 이 환경 변수가 설정 되 면 규칙 기반 검색을 재정의 합니다. 프레임 워크 관련 변수 중 하나가 지정 된 경우 무시 됩니다.
--  @No__t_0의 NuGet 홈 위치인 사용자 위치입니다. 이 위치를 재정의할 수 없습니다. .NET Core 및 .NET Framework 플러그 인에는 다른 루트 디렉터리가 사용 됩니다.
+-  `%UserProfile%/.nuget/plugins`의 NuGet 홈 위치인 사용자 위치입니다. 이 위치를 재정의할 수 없습니다. .NET Core 및 .NET Framework 플러그 인에는 다른 루트 디렉터리가 사용 됩니다.
 
 | 프레임워크 | 루트 검색 위치  |
 | ------- | ------------------------ |
@@ -103,7 +103,7 @@ CI/CD 시나리오와 고급 사용자는 환경 변수를 사용 하 여 동작
 > [!Note]
 > 현재 플러그 인을 설치할 수 있는 사용자 스토리가 없습니다. 필수 파일을 미리 정해진 위치로 이동 하는 것 만큼 간단 합니다.
 
-## <a name="supported-operations"></a>지원 되는 작업
+## <a name="supported-operations"></a>지원되는 작업
 
 새 플러그 인 프로토콜에서 두 가지 작업이 지원 됩니다.
 
@@ -123,14 +123,14 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
 플러그 인의 보안 확인 및 인스턴스화는 비용이 많이 듭니다. 다운로드 작업은 인증 작업 보다 더 자주 수행 되지만 평균 NuGet 사용자에 게는 인증 플러그 인만 있을 수 있습니다.
 환경을 개선 하기 위해 NuGet은 지정 된 요청에 대 한 작업 클레임을 캐시 합니다. 이 캐시는 플러그 인 키가 플러그 인 경로 이며이 기능 캐시의 만료는 30 일입니다. 
 
-캐시는 `%LocalAppData%/NuGet/plugins-cache`에 있으며 `NUGET_PLUGINS_CACHE_PATH` 환경 변수를 사용 하 여 재정의 됩니다. 이 [캐시](../../consume-packages/managing-the-global-packages-and-cache-folders.md)를 지우려면 `plugins-cache` 옵션을 사용 하 여 지역 명령을 실행할 수 있습니다.
+캐시는 `%LocalAppData%/NuGet/plugins-cache`에 있으며 `NUGET_PLUGINS_CACHE_PATH`환경 변수를 사용 하 여 재정의 됩니다. 이 [캐시](../../consume-packages/managing-the-global-packages-and-cache-folders.md)를 지우려면 `plugins-cache` 옵션을 사용 하 여 지역 명령을 실행할 수 있습니다.
 이제 `all` 지역 옵션이 플러그 인 캐시도 삭제 됩니다. 
 
 ## <a name="protocol-messages-index"></a>프로토콜 메시지 인덱스
 
 프로토콜 버전 *1.0.0* 메시지:
 
-1.  닫기
+1.  닫습니다
     * 요청 방향: NuGet-> 플러그 인
     * 요청에 페이로드가 포함 되지 않습니다.
     * 응답이 필요 하지 않습니다.  적절 한 응답은 플러그 인 프로세스를 즉시 종료 하는 것입니다.
@@ -222,7 +222,7 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
          * 작업의 결과를 나타내는 응답 코드입니다.
          * 작업에 성공한 경우 협상 된 프로토콜 버전입니다.  오류가 발생 하면 플러그 인이 종료 됩니다.
 
-11.  Initialize
+11.  초기화
      * 요청 방향: NuGet-> 플러그 인
      * 요청은 다음을 포함 합니다.
          * NuGet 클라이언트 도구 버전
@@ -290,13 +290,13 @@ Dotnet의 NuGet 시나리오에서 플러그 인은 dotnet의 특정 런타임 �
 
 * 요청 방향: NuGet-> 플러그 인
 * 요청은 다음을 포함 합니다.
-    * URI
-    * isRetry
-    * 일부만
+    * Uri
+    * IsRetry
+    * NonInteractive
     * CanShowDialog
 * 응답에는 다음이 포함 됩니다.
     * 사용자 이름
-    * Password
+    * 암호
     * 메시지
     * 인증 유형 목록
     * MessageResponseCode
