@@ -1,24 +1,24 @@
 ---
 title: NuGet 패키지를 게시하는 방법
-description: NuGet 패키지를 nuget.org 또는 프라이빗 피드에 게시하는 방법 및 nuget.org에서 패키지 소유권을 관리하는 방법에 대한 자세한 지침입니다.
+description: NuGet 패키지를 nuget.org 또는 개인 피드에 게시하는 방법 및 nuget.org에서 패키지 소유권을 관리하는 방법에 대한 자세한 지침입니다.
 author: karann-msft
 ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 02c6c8f3018bfd063c2d16a10381f88b54cac840
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78231346"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428638"
 ---
 # <a name="publishing-packages"></a>패키지 게시
 
-패키지를 만들고 `.nupkg` 파일이 준비되면 공용 또는 전용으로 다른 개발자가 사용할 수 있도록 하는 간단한 프로세스입니다.
+패키지를 만들고 `.nupkg` 파일이 준비되면 공용 또는 개인용으로 다른 개발자가 사용할 수 있도록 하는 간단한 프로세스입니다.
 
 - 공용 패키지는 이 문서에 설명된 대로 모든 개발자가 [nuget.org](https://www.nuget.org/packages/manage/upload)를 통해 전역적으로 사용할 수 있습니다(NuGet 4.1.0 이상 필요).
-- 프라이빗 패키지는 파일 공유, 프라이빗 NuGet 서버, [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 또는 타사 리포지토리(myget, ProGet, Nexus Repository 및 Artifactory)를 호스트하여 팀 또는 조직에서만 사용할 수 있습니다. 자세한 내용은 [패키지 개요 호스트](../hosting-packages/overview.md)를 참조하세요.
+- 개인 패키지는 파일 공유, 개인 NuGet 서버, [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 또는 타사 리포지토리(myget, ProGet, Nexus Repository 및 Artifactory)를 호스트하여 팀 또는 조직에서만 사용할 수 있습니다. 자세한 내용은 [패키지 개요 호스트](../hosting-packages/overview.md)를 참조하세요.
 
 이 문서에서는 nuget.org에 대한 게시를 다룹니다. Azure Artifacts에 게시하는 방법은 [패키지 관리](https://www.visualstudio.com/docs/package/nuget/publish)를 참조하세요.
 

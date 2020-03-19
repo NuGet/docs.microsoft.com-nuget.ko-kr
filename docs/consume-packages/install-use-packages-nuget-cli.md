@@ -6,11 +6,11 @@ ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
 ms.openlocfilehash: 7039dd27f2dddebc3c84e5ad35d5efec59547792
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488827"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428416"
 ---
 # <a name="manage-packages-using-the-nugetexe-cli"></a>nuget.exe CLI를 사용하여 패키지 관리
 
@@ -23,7 +23,7 @@ CLI 도구를 사용하면 프로젝트 및 솔루션에서 NuGet 패키지를 �
 
 이 문서에서는 가장 일반적인 몇 가지 `nuget.exe` CLI 명령에 대한 기본 사용법을 보여줍니다. 이러한 명령의 대부분의 경우, CLI 도구는 프로젝트 파일이 명령에 지정되지 않는 한 현재 디렉터리에서 프로젝트 파일을 찾습니다. 사용할 수 있는 명령 및 전체 목록은 [nuget.exe CLI 참조](../reference/nuget-exe-cli-reference.md)를 참조하세요.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - `nuget.exe` CLI를 설치하려면 [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)에서 다운로드하고, 해당 `.exe` 파일을 적합한 폴더에 저장하고, 해당 폴더를 PATH 환경 변수에 추가합니다.
 

@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
 ms.openlocfilehash: b3e6f0efc9e2e12de186ffd4ce29d496d07d5fc4
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230956"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428572"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>nuget.exe CLI를 사용하여 패키지 만들기
 

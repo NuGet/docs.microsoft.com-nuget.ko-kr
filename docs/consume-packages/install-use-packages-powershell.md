@@ -8,11 +8,11 @@ ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
 ms.openlocfilehash: 42031f7b5fe4d3c1b4dbe5e1bfbf9197014e0e88
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611107"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428578"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>Visual Studio에서 패키지 관리자 콘솔을 사용하여 패키지 설치 및 관리(PowerShell)
 
@@ -143,7 +143,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 Visual Studio 2017부터 .NET 관련 워크로드를 선택하면 NuGet 및 NuGet 패키지 관리자가 자동으로 설치됩니다. Visual Studio 설치 관리자에서 **개별 구성 요소 > 코드 도구 > NuGet 패키지 관리자** 옵션을 선택하여 개별적으로 설치할 수도 있습니다.
 
-또한 Visual Studio 2015 이전 버전에서 NuGet 패키지 관리자가 누락된 경우 **도구 > 확장 및 업데이트...** 를 선택하고 NuGet 패키지 관리자 확장을 검색합니다. Visual Studio에서 확장 설치 관리자를 사용할 수 없는 경우 [https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html)에서 직접 확장을 다운로드할 수 있습니다.
+또한 Visual Studio 2015 이전 버전에서 NuGet 패키지 관리자가 누락된 경우 **도구 > 확장 및 업데이트...** 를 선택하고 NuGet 패키지 관리자 확장을 검색합니다. Visual Studio에서 확장 설치 관리자를 사용할 수 없는 경우 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)에서 직접 확장을 다운로드할 수 있습니다.
 
 현재, Mac용 Visual Studio에서는 패키지 관리자 콘솔을 사용할 수 없습니다. 그러나 [NuGet CLI](../reference/nuget-exe-CLI-reference.md)를 통해 동일한 명령을 사용할 수 있습니다. Mac용 Visual Studio에는 NuGet 패키지를 관리하기 위한 UI가 있습니다. [프로젝트에 NuGet 패키지 포함](/visualstudio/mac/nuget-walkthrough)을 참조하세요.
 
