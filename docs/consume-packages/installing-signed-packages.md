@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
 ms.openlocfilehash: 034b9dd9699af529e4d82d6ee5b1c42214673341
-ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74096859"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428602"
 ---
 # <a name="manage-package-trust-boundaries"></a>패키지 트러스트 영역 관리
 
@@ -95,7 +95,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 
 ### <a name="sync-repository-certificates"></a>리포지토리 인증서 동기화
 
-패키지 리포지토리는 [서비스 인덱스](../api/service-index.md)에서 사용하는 인증서를 알려야 합니다. 결과적으로, 리포지토리는 이러한 인증서를 업데이트하게 됩니다(예: 인증서가 만료되는 경우). 이 경우, 특정 정책이 있는 클라이언트는 새로 추가된 인증서를 포함하도록 구성을 업데이트해야 합니다. `nuget.exe` [신뢰할 수 있는 서명자 동기화 명령](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-name)을 사용하여 리포지토리에 연결된 신뢰할 수 있는 서명자를 쉽게 업그레이드할 수 있습니다.
+패키지 리포지토리는 [서비스 인덱스](../api/service-index.md)에서 사용하는 인증서를 알려야 합니다. 결과적으로, 리포지토리는 이러한 인증서를 업데이트하게 됩니다(예: 인증서가 만료되는 경우). 이 경우, 특정 정책이 있는 클라이언트는 새로 추가된 인증서를 포함하도록 구성을 업데이트해야 합니다. `nuget.exe` [신뢰할 수 있는 서명자 동기화 명령](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-name)을 사용하여 리포지토리에 연결된 신뢰할 수 있는 서명자를 쉽게 업그레이드할 수 있씁니다.
 
 ### <a name="schema-reference"></a>스키마 참조
 

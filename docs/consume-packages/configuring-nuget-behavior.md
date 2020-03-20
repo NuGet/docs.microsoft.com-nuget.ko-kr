@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
 ms.openlocfilehash: 89127203df0aa1eb24f36b8ec64c5bb4a4d59319
-ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094082"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428542"
 ---
 # <a name="common-nuget-configurations"></a>일반적인 NuGet 구성
 
@@ -18,7 +18,7 @@ NuGet의 동작은 프로젝트, 사용자 및 컴퓨터 수준에서 존재할 
 
 ## <a name="config-file-locations-and-uses"></a>Config 파일 위치 및 사용
 
-| 범위 | NuGet.Config 파일 위치 | 설명 |
+| Scope | NuGet.Config 파일 위치 | 설명 |
 | --- | --- | --- |
 | 솔루션 | 현재 폴더(솔루션 폴더) 또는 드라이브 루트까지의 모든 폴더.| 솔루션 폴더에서는 하위 폴더의 모든 프로젝트에 설정이 적용됩니다. 구성 파일이 프로젝트 폴더에 있는 경우에는 해당 프로젝트에 영향을 주지 않습니다. |
 | 사용자 | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.config/NuGet/NuGet.Config` 또는 `~/.nuget/NuGet/NuGet.Config`(OS 배포에 따라 다름) | 설정은 모든 작업에 적용되지만, 프로젝트 수준 설정에 따라 재정의됩니다. |
