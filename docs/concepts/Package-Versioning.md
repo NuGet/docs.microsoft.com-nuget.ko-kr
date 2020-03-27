@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 912c0d015e2f499bc7386483bc6c35ecd765d3d4
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.openlocfilehash: c79976c2f4ded2fba3796fb847d3c90807d7b86c
+ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79428476"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80147450"
 ---
 # <a name="package-versioning"></a>패키지 버전 관리
 
@@ -221,6 +221,10 @@ PackageReference 형식을 사용하는 경우 NuGet은 버전 번호의 주, �
 
         1.0.0.0 is treated as 1.0.0
         1.0.01.0 is treated as 1.0.1
+        
+- SemVer 2.0.0 빌드 메타데이터가 제거됨
+
+        1.0.7+r3456 is treated as 1.0.7
 
 `pack` 및 `restore` 작업은 가능한 경우 항상 버전을 정규화합니다. 이미 빌드된 패키지의 경우, 이 정규화 작업이 패키지 자체의 버전 번호에 영향을 주지는 않습니다. NuGet이 종속성을 확인할 때 버전과 일치시키는 방식에만 영향을 줍니다.
 
