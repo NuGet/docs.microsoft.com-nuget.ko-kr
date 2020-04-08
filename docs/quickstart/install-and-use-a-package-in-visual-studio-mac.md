@@ -6,10 +6,10 @@ ms.author: jomatthi
 ms.date: 08/14/2019
 ms.topic: quickstart
 ms.openlocfilehash: 6f3fd4f2ffec0037a48aec845fddee258b5c1e7f
-ms.sourcegitcommit: ac9a00ccaf90e539a381e92b650074910b21eb0d
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "70238479"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-for-mac"></a>빠른 시작: Mac용 Visual Studio에서 패키지 설치 및 사용
@@ -21,7 +21,7 @@ NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 �
 > [!Tip]
 > **nuget.org 시작**: *nuget.org* 검색은 일반적으로 .NET 개발자가 고유의 애플리케이션에서 다시 사용할 수 있는 구성 요소를 찾는 방법입니다. *nuget.org*를 직접 검색하거나 이 문서에 표시된 대로 Visual Studio 내에서 패키지를 설치할 수 있습니다. 일반 정보는 [NuGet 패키지 찾기 및 평가](../consume-packages/finding-and-choosing-packages.md)를 참조하세요.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - Mac용 Visual Studio 2019.
 

@@ -6,10 +6,10 @@ ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
 ms.openlocfilehash: 67cca81c48970c7f2e2cf0a64ee5ba57704a31e2
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "74825168"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 패키지 설치 및 관리
@@ -20,9 +20,9 @@ dotnet CLI는 .NET Core, .NET Standard 프로젝트(SDK 스타일 프로젝트 �
 
 이 문서에서는 가장 일반적인 몇 가지 dotnet CLI 명령에 대한 기본 사용법을 보여줍니다. 이러한 명령의 대부분의 경우 CLI 도구는 프로젝트 파일이 명령에 지정되지 않는 한 현재 디렉터리에서 프로젝트 파일을 찾습니다(프로젝트 파일은 선택적 스위치임). 사용할 수 있는 명령 및 인수의 전체 목록은 [.NET Core CLI (명령줄 인터페이스) 도구](../reference/dotnet-commands.md)를 참조하세요.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
-- `dotnet` 명령줄 도구를 제공하는 [.NET Core SDK](https://www.microsoft.com/net/download/). Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.
+- [ 명령줄 도구를 제공하는 ](https://www.microsoft.com/net/download/).NET Core SDK`dotnet`. Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.
 
 ## <a name="install-a-package"></a>패키지 설치
 

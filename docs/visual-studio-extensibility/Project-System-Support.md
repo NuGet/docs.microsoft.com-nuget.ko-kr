@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 01/09/2017
 ms.topic: reference
 ms.openlocfilehash: 00a64d95c943e9e5cb3a279358a6495125a1bd87
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551372"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64495925"
 ---
 # <a name="nuget-support-for-the-visual-studio-project-system"></a>Visual Studio 프로젝트 시스템에 대한 NuGet 지원
 
@@ -25,7 +25,7 @@ NuGet과 통합하려면 프로젝트 시스템은 이 항목에서 설명된 �
 
 NuGet 클라이언트는 다음 표에 설명된 대로 [프로젝트의 기능](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md)에 따라 프로젝트 형식과 호환 가능한 패키지를 결정합니다.
 
-| 기능 | 설명 |
+| 기능 | Description |
 | --- | --- |
 | AssemblyReferences | 프로젝트가 어셈블리 참조를 지원함을 나타냅니다(WinRTReferences와 구별). |
 | DeclaredSourceItems | 프로젝트가 프로젝트 자체에서 소스 항목을 선언하는 (DNX가 아닌) 일반적인 MSBuild 프로젝트임을 나타냅니다. |
@@ -101,7 +101,7 @@ class VsProjectCapabilitiesPresenceChecker : IVsBooleanSymbolPresenceChecker
 
 ## <a name="responding-to-queries"></a>쿼리에 응답
 
-프로젝트는 `IVsHierarchy::GetProperty`를 통해 `VSHPROPID_ProjectCapabilitiesChecker` 속성을 지원하여 이 기능을 선언합니다. `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll` 어셈블리에 정의된 `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`라는 인스턴스를 반환해야 합니다. [NuGet 패키지](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime)를 설치하여 이 어셈블리를 참조합니다.
+프로젝트는 `VSHPROPID_ProjectCapabilitiesChecker`를 통해 `IVsHierarchy::GetProperty` 속성을 지원하여 이 기능을 선언합니다. `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker` 어셈블리에 정의된 `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll`라는 인스턴스를 반환해야 합니다. [NuGet 패키지](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime)를 설치하여 이 어셈블리를 참조합니다.
 
 예를 들어 다음 `case` 문을 `IVsHierarchy::GetProperty` 메서드의 `switch` 문에 추가할 수 있습니다.
 

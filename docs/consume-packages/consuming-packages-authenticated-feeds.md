@@ -6,10 +6,10 @@ ms.author: nikolev
 ms.date: 02/28/2020
 ms.topic: conceptual
 ms.openlocfilehash: bb624ec6987dd5c6ee38d5bb7e01200487dd4bed
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231742"
 ---
 # <a name="consuming-packages-from-authenticated-feeds"></a>인증된 피드의 패키지 사용

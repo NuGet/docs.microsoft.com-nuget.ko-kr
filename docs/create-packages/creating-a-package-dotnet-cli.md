@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 02/20/2020
 ms.topic: conceptual
 ms.openlocfilehash: 712e4c7159aa9719052330d8e45f63e18e390325
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78230587"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 NuGet 패키지 만들기
@@ -61,7 +61,7 @@ Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습
 </Project>
 ```
 
-[MSBuild pack 대상](../reference/msbuild-targets.md#pack-target), [종속성 자산 제어](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets) 및 [NuGet 메타데이터 속성](/dotnet/core/tools/csproj#nuget-metadata-properties)에 설명된 대로 `Title`, `PackageDescription` 및 `PackageTags`와 같은 선택적 속성을 설정할 수도 있습니다.
+`Title`MSBuild pack 대상`PackageDescription`, `PackageTags`종속성 자산 제어[ 및 ](../reference/msbuild-targets.md#pack-target)NuGet 메타데이터 속성[에 설명된 대로 ](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets), [ 및 ](/dotnet/core/tools/csproj#nuget-metadata-properties)와 같은 선택적 속성을 설정할 수도 있습니다.
 
 > [!NOTE]
 > 공용으로 빌드된 패키지의 경우 **PackageTags** 속성에 특히 주의하세요. 이러한 태그는 다른 사람들이 패키지를 찾고 그 기능을 이해하는 데 도움이 됩니다.
@@ -98,7 +98,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 ### <a name="automatically-generate-package-on-build"></a>빌드 시 패키지를 자동으로 생성
 
-`dotnet build`를 실행할 때 `dotnet pack`을 자동으로 실행하려면 프로젝트 파일의 `<PropertyGroup>` 내에 다음 줄을 추가합니다.
+`dotnet pack`를 실행할 때 `dotnet build`을 자동으로 실행하려면 프로젝트 파일의 `<PropertyGroup>` 내에 다음 줄을 추가합니다.
 
 ```xml
 <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

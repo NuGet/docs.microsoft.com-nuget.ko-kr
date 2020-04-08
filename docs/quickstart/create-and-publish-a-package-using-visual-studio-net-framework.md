@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
 ms.openlocfilehash: e00aac83a710e2f745d5e4bb9aec741ee686e595
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72380640"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>빠른 시작: Visual Studio(.NET Framework, Windows)를 사용하여 패키지 만들기 및 게시
@@ -19,7 +19,7 @@ ms.locfileid: "72380640"
 > [!Note]
 > 이 빠른 시작은 Windows용 Visual Studio 2017 이상 버전에만 적용됩니다. Mac용 Visual Studio에는 여기에 설명된 기능이 포함되어 있지 않습니다. 대신 [dotnet CLI 도구](create-and-publish-a-package-using-the-dotnet-cli.md)를 사용하세요.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 1. .NET 관련 워크로드를 사용하여 [visualstudio.com](https://www.visualstudio.com/)에서 Visual Studio 2017 이상 버전을 설치합니다. .NET 워크로드가 설치될 때 Visual Studio 2017이 NuGet 기능을 자동으로 포함합니다.
 

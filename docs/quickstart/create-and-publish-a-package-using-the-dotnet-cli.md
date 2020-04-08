@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
 ms.openlocfilehash: 8c09d6d5662ed6ff0deffa5d45b823ad0992f399
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231307"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>빠른 시작: 패키지 만들기 및 게시(dotnet CLI)
@@ -18,7 +18,7 @@ ms.locfileid: "78231307"
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-1. `dotnet` CLI를 포함하는 [.NET Core SDK](https://www.microsoft.com/net/download/)를 설치합니다. Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.
+1. [ CLI를 포함하는 ](https://www.microsoft.com/net/download/).NET Core SDK`dotnet`를 설치합니다. Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.
 
 1. 아직 없는 경우 [nuget.org에 체험 계정을 등록](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)합니다. 새 계정을 만들면 확인 전자 메일을 보냅니다. 패키지를 업로드하려면 먼저 계정을 확인해야 합니다.
 
@@ -77,7 +77,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 ### <a name="automatically-generate-package-on-build"></a>빌드 시 패키지를 자동으로 생성
 
-`dotnet build`를 실행할 때 `dotnet pack`을 자동으로 실행하려면 프로젝트 파일의 `<PropertyGroup>` 내에 다음 줄을 추가합니다.
+`dotnet pack`를 실행할 때 `dotnet build`을 자동으로 실행하려면 프로젝트 파일의 `<PropertyGroup>` 내에 다음 줄을 추가합니다.
 
 ```xml
 <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.openlocfilehash: 1c19f962dc9e42154c0f4374432548e867e9538a
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73610710"
 ---
 # <a name="building-pre-release-packages"></a>시험판 패키지 빌드
@@ -24,7 +24,7 @@ ms.locfileid: "73610710"
 
 다음 방법 중 하나를 사용하여 이러한 버전을 지정할 수 있습니다.
 
-- **프로젝트에서 사용 하는 경우 [ `PackageReference` ](../consume-packages/package-references-in-project-files.md)** : 의미 체계 버전 접미사가 포함된 `.csproj` 파일의 [ `PackageVersion` ](/dotnet/core/tools/csproj.md#packageversion) 요소:
+- **프로젝트에서 사용 하는 경우 [`PackageReference`](../consume-packages/package-references-in-project-files.md)** : 의미 체계 버전 접미사가 포함된 `.csproj` 파일의 [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) 요소:
 
     ```xml
     <PropertyGroup>
@@ -32,7 +32,7 @@ ms.locfileid: "73610710"
     </PropertyGroup>
     ```
 
-- **프로젝트에 [ `packages.config` ](../reference/packages-config.md) 파일이 있는 경우**: 의미 체계 버전 접미사가 포함된 [ `.nuspec` ](../reference/nuspec.md) 파일의 [ `version` ](../reference/nuspec.md#version) 요소:
+- **프로젝트에 [`packages.config`](../reference/packages-config.md) 파일이 있는 경우**: 의미 체계 버전 접미사가 포함된 [`.nuspec`](../reference/nuspec.md) 파일의 [`version`](../reference/nuspec.md#version) 요소:
 
     ```xml
     <version>1.0.1-alpha</version>
@@ -44,23 +44,23 @@ ms.locfileid: "73610710"
 
 기본적으로 NuGet은 패키지에서 작업할 때 시험판 버전을 포함하지 않지만 다음과 같이 이 동작을 변경할 수 있습니다.
 
-- **패키지 관리자 UI(Visual Studio)** : **NuGet 패키지 관리** UI에서 **시험판 포함** 확인란을 선택합니다.
+- **Visual Studio의 패키지 관리자 UI**: **NuGet 패키지 관리** UI에서 **시험판 포함** 확인란을 확인합니다.
 
     ![Visual Studio의 시험판 포함 확인란](media/Prerelease_02-CheckPrerelease.png)
 
     이 확인란을 설정 또는 해제하면 패키지 관리자 UI 및 설치할 수 있는 사용 가능한 버전 목록을 새로 고칩니다.
 
-- **패키지 관리자 콘솔**: `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` 및 `Update-Package` 명령과 함께 `-IncludePrerelease` 스위치를 사용합니다. [PowerShell 참조](../reference/powershell-reference.md)를 참조하세요.
+- **패키지 관리자 콘솔**: `-IncludePrerelease`, `Find-Package`, `Get-Package`, `Install-Package` 및 `Sync-Package` 명령과 함께 `Update-Package` 스위치를 사용합니다. [PowerShell 참조](../reference/powershell-reference.md)를 참조하세요.
 
-- **NuGet CLI**: `install`, `update`, `delete` 및 `mirror` 명령과 함께 `-prerelease` 스위치를 사용합니다. [NuGet CLI 참조](../reference/nuget-exe-cli-reference.md)를 참조하세요.
+- **NuGet CLI**: `-prerelease`, `install`, `update` 및 `delete` 명령과 함께 `mirror` 스위치를 사용합니다. [NuGet CLI 참조](../reference/nuget-exe-cli-reference.md)를 참조하세요.
 
-## <a name="semantic-versioning"></a>유의적 버전
+## <a name="semantic-versioning"></a>유의적 버전 사용
 
 [유의적 버전 또는 SemVer 규칙](https://semver.org/spec/v1.0.0.html)은 버전 번호의 문자열을 활용하여 기본 코드의 의미를 전달하는 방법을 설명합니다.
 
 이 규칙에서 각 버전에는 다음과 같은 의미를 포함한 세 부분인 `Major.Minor.Patch`가 있습니다.
 
-- `Major`: 호환성이 손상되는 변경
+- `Major`: 주요 변경 사항
 - `Minor`: 이전 버전과 호환되는 새로운 기능
 - `Patch`: 이전 버전과 호환되는 버그 수정에만 해당
 
@@ -68,12 +68,12 @@ ms.locfileid: "73610710"
 
 이 점을 고려하여 일반적으로 다음과 같이 인식된 명명 규칙을 따르는 것이 좋습니다.
 
-- `-alpha`: 일반적으로 개발 중 및 실험에 사용되는 알파 릴리스
+- `-alpha`: 일반적으로 개발 중 및 실험에 사용되는 알파 버전
 - `-beta`: 일반적으로 다음에 계획된 릴리스에 대한 기능 완료인 베타 릴리스이지만 알려진 버그를 포함할 수 있습니다.
 - `-rc`: 일반적으로 심각한 버그가 발생하지 않는 한 잠재적으로 최종적(안정적)인 릴리스인 릴리스 후보입니다.
 
 > [!Note]
-> NuGet 4.3.0+는 `1.0.1-build.23`과 마찬가지로 점 표기법을 사용하는 시험판 번호를 지원하는 [유의적 버전 v2.0.0](https://semver.org/spec/v2.0.0.html)을 지원합니다. NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다. 이전 버전의 NuGet에서는 `1.0.1-build23` 같은 양식을 사용할 수 있지만 이는 항상 시험판 버전으로 간주됩니다.
+> NuGet 4.3.0+는 [과 마찬가지로 점 표기법을 사용하는 시험판 번호를 지원하는 ](https://semver.org/spec/v2.0.0.html)유의적 버전 v2.0.0`1.0.1-build.23`을 지원합니다. NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다. 이전 버전의 NuGet에서는 `1.0.1-build23` 같은 양식을 사용할 수 있지만 이는 항상 시험판 버전으로 간주됩니다.
 
 그러나 어떤 접미사를 사용하든지 NuGet은 알파벳 역순으로 우선 순위를 적용합니다.
 

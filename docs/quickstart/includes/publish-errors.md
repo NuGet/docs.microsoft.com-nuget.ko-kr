@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: b0af2000b1f43cd0b91f2c95dfc0c11540a94cab
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496022"
+---
 `push` 명령의 오류는 일반적으로 문제를 나타냅니다. 예를 들어 프로젝트에서 버전 번호를 업데이트하는 것을 잊었을 수 있고 이미 존재하는 패키지를 게시하려고 시도할 수 있습니다.
 
 또한 호스트에 이미 존재하는 식별자를 사용하여 패키지를 게시하려고 하면 오류가 표시됩니다. 예를 들어 이름 “AppLogger”가 이미 있습니다. 이러한 경우 `push` 명령은 다음 오류를 제공합니다.

@@ -6,17 +6,17 @@ ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 31243076f36f6ff274c4377c1773ea59dda8c834
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548146"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64495497"
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>NuGet 에코시스템 개요
 
 2010을 소개하므로 NuGet에서는 개발 프로세스의 다양한 측면을 개선하고 자동화하는 좋은 기회를 제공합니다.
 
-NuGet이 허용 [Apache v2 라이선스](http://choosealicense.com/licenses/apache/) 하의 오픈 소스이기 때문에 다른 프로젝트에서는 NuGet를 활용할 수 있고 회사는 해당 제품에서 지원을 빌드할 수 있습니다. 오픈 소스 프로젝트나 엔터프라이즈 응용 프로그램 개발에서 NuGet 및 NuGet 주위에 빌드되는 다른 응용 프로그램은 소프트웨어 개발 프로세스를 향상시키기 위한 도구의 광범위한 에코시스템을 제공합니다.
+NuGet이 허용 [Apache v2 라이선스](http://choosealicense.com/licenses/apache/) 하의 오픈 소스이기 때문에 다른 프로젝트에서는 NuGet를 활용할 수 있고 회사는 해당 제품에서 지원을 빌드할 수 있습니다. 오픈 소스 프로젝트나 엔터프라이즈 애플리케이션 개발에서 NuGet 및 NuGet 주위에 빌드되는 다른 애플리케이션은 소프트웨어 개발 프로세스를 향상시키기 위한 도구의 광범위한 에코시스템을 제공합니다.
 
 이러한 프로젝트는 모두 개발자 기여로 인해 혁신할 수 있습니다. NuGet 자체에 기여한 것처럼 가능한 경우 오류 및 새로운 기능 아이디어를 보고하고, 피드백을 제공하고, 설명서를 작성하고, 코드에 기여하여 이러한 프로젝트에 참여할 수 있습니다.
 

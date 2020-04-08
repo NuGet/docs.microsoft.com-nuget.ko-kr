@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428470"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet에서 패키지 종속성을 확인하는 방법
@@ -24,7 +24,7 @@ ms.locfileid: "79428470"
 
 PackageReference 형식을 사용하여 패키지를 프로젝트에 설치하는 경우 NuGet은 적절한 파일에서 단순 패키지 그래프에 대한 참조를 추가하고 충돌을 미리 해결합니다. 이 프로세스는 *전이적 복원*이라고 합니다. 패키지를 다시 설치하거나 복원하면 그래프에 나열된 패키지가 다운로드되어 더 빠르고 예측 가능한 빌드가 수행됩니다. 최신 패키지 버전을 사용하도록 프로젝트를 수정하지 않으려면 부동 버전(예: 2.8.\*)을 이용할 수도 있습니다.
 
-NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리에서 종속성을 확인한 다음, 결과 그래프를 `project.assets.json`이라는 파일에 씁니다. 또한 [잠금 파일 기능을 사용하도록 설정한](../consume-packages/package-references-in-project-files.md#locking-dependencies) 경우 이름이 `packages.lock.json`인 잠금 파일에 확인된 종속성을 씁니다.
+NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리에서 종속성을 확인한 다음, 결과 그래프를 `project.assets.json`이라는 파일에 씁니다. 또한 `packages.lock.json`잠금 파일 기능을 사용하도록 설정한[ 경우 이름이 ](../consume-packages/package-references-in-project-files.md#locking-dependencies)인 잠금 파일에 확인된 종속성을 씁니다.
 자산 파일은 기본적으로 프로젝트의 'obj' 폴더인 `MSBuildProjectExtensionsPath`에 있습니다. 그러면 MSBuild에서 이 파일을 읽고 잠재적인 참조를 찾을 수 있는 폴더의 집합으로 해당 파일을 변환한 다음 메모리의 프로젝트 트리에 추가합니다.
 
 `project.assets.json` 파일은 임시적이며 원본 제어에 추가하면 안됩니다. `.gitignore`과 `.tfignore` 모두에서 기본적으로 나열됩니다. [패키지 및 원본 제어](../consume-packages/packages-and-source-control.md)를 참조하세요.
@@ -55,7 +55,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 #### <a name="floating-versions"></a>부동 버전
 
-부동 종속성 버전은 \* 문자로 지정합니다. 예: `6.0.*`. 이 버전 사양에는 “최신 6.0.x 버전 사용”으로 표시됩니다. `4.*`는 “최신 4.x 버전 사용”을 의미합니다. 부동 버전을 사용하면 최신 종속성 버전을 유지하면서 프로젝트 파일 변경을 줄일 수 있습니다.
+부동 종속성 버전은 \* 문자로 지정합니다. `6.0.*`)을 입력합니다. 이 버전 사양에는 “최신 6.0.x 버전 사용”으로 표시됩니다. `4.*`는 “최신 4.x 버전 사용”을 의미합니다. 부동 버전을 사용하면 최신 종속성 버전을 유지하면서 프로젝트 파일 변경을 줄일 수 있습니다.
 
 부동 버전을 사용하는 경우 NuGet은 버전 패턴과 일치하는 최신 패키지 버전을 확인합니다. 예를 들어 `6.0.*`는 6.0으로 시작하는 최신 패키지 버전을 가져옵니다.
 
@@ -102,7 +102,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 `packages.config`를 사용하면 NuGet은 각각의 개별 패키지를 설치하는 동안 종속성 충돌을 해결하려고 합니다. 즉 A 패키지가 설치되고 B 패키지에 종속되어 있고 B 패키지가 이미 다른 패키지의 종속성으로 `packages.config`에 나열되어 있는 경우, NuGet은 요청된 B 패키지의 버전을 비교하고 모든 버전 제약 조건을 충족하는 버전을 찾으려고 합니다. 특히 NuGet은 종속성을 충족하는 더 낮은 *major.minor* 버전을 선택합니다.
 
-기본적으로 NuGet 2.8은 가장 낮은 패치 버전을 찾습니다([NuGet 2.8 릴리스 정보](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies) 참조). `Nuget.Config`의 `DependencyVersion` 특성 및 명령줄의 `-DependencyVersion` 스위치를 통해 이 설정을 제어할 수 있습니다.  
+기본적으로 NuGet 2.8은 가장 낮은 패치 버전을 찾습니다([NuGet 2.8 릴리스 정보](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies) 참조). `DependencyVersion`의 `Nuget.Config` 특성 및 명령줄의 `-DependencyVersion` 스위치를 통해 이 설정을 제어할 수 있습니다.  
 
 더 큰 종속성 그래프의 경우 종속성을 확인하기 위한 `packages.config` 프로세스가 복잡해집니다. 새 패키지를 설치할 때마다 그래프 전체를 통과해야 하며 버전 충돌이 발생할 가능성이 높습니다. 충돌이 발생하면 특히 프로젝트 파일 자체를 잠재적으로 수정하여 설치가 중지되고 프로젝트가 확정되지 않은 상태로 유지됩니다. 다른 패키지 관리 형식을 사용하는 경우에는 문제가 되지 않습니다.
 
@@ -110,7 +110,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 PackageReference 형식을 사용하는 경우 종속성에서 최상위 프로젝트로 이동하는 자산을 제어할 수 있습니다. 자세한 내용은 [PackageReference](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)를 참조하세요.
 
-또한 최상위 프로젝트 자체가 패키지인 경우 `.nuspec` 파일에 나열된 종속성이 있는 `include` 및 `exclude` 특성을 사용하여 이 흐름을 제어할 수도 있습니다. [.nuspec 참조 - 종속성](../reference/nuspec.md#dependencies)을 참조하세요.
+또한 최상위 프로젝트 자체가 패키지인 경우 `include` 파일에 나열된 종속성이 있는 `exclude` 및 `.nuspec` 특성을 사용하여 이 흐름을 제어할 수도 있습니다. [.nuspec 참조 - 종속성](../reference/nuspec.md#dependencies)을 참조하세요.
 
 ## <a name="excluding-references"></a>참조 제외
 
@@ -124,7 +124,7 @@ PackageReference 형식을 사용하는 경우 종속성에서 최상위 프로�
     <PackageReference Include="PackageC" Version="1.0.0" ExcludeAssets="All" />
     ```
 
-- `packages.config`: 원하는 `C.dll` 버전만 참조하도록 `.csproj` 파일에서 PackageC에 대한 참조를 제거합니다.
+- `packages.config`: 원하는 `.csproj` 버전만 참조하도록 `C.dll` 파일에서 PackageC에 대한 참조를 제거합니다.
     
 ## <a name="dependency-updates-during-package-install"></a>패키지 설치 중 종속성 업데이트 
 

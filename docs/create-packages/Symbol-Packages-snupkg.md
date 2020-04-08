@@ -12,12 +12,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 839c38ec165372bab9b93dec25e5c8e8e9439bfa
-ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
+ms.openlocfilehash: c42032f1869f4be0af44ffa8fbd5ad522f73c459
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036892"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80380420"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -25,7 +25,7 @@ ms.locfileid: "77036892"
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-필수 [NuGet 프로토콜](../api/nuget-protocols.md)을 구현하는 [nuget.exe v4.9.0 이상](https://www.nuget.org/downloads) 또는 [dotnet CLI v2.2.0 이상](https://www.microsoft.com/net/download/dotnet-core/2.2)
+필수 [NuGet 프로토콜](https://www.nuget.org/downloads)을 구현하는 [nuget.exe v4.9.0 이상](https://www.microsoft.com/net/download/dotnet-core/2.2) 또는 [dotnet CLI v2.2.0 이상](../api/nuget-protocols.md)
 
 ## <a name="creating-a-symbol-package"></a>기호 패키지 만들기
 
@@ -99,7 +99,7 @@ NuGet.org는 자체 기호 서버 리포지토리를 지원하며 새 기호 패
 NuGet.org에는 기호 패키지에 대한 다음과 같은 제약 조건이 있습니다.
 
 - 기호 패키지에는 `.pdb`, `.nuspec`, `.xml`, `.psmdcp`, `.rels`, `.p7s`와 같은 파일 확장명만 사용할 수 있습니다.
-- 관리형 [이동식 PDB](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)만 NuGet.org의 기호 서버에서 지원됩니다.
+- 관리형 [이동식 PDB](https://github.com/dotnet/runtime/blob/87572a799bfd37779c079faf28544e3f9a16be58/src/libraries/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)만 NuGet.org의 기호 서버에서 지원됩니다.
 - PDB 및 관련 .nupkg DLL은 Visual Studio 버전 15.9 이상의 컴파일러로 빌드해야 합니다([PDB crypto 해시](https://github.com/dotnet/roslyn/issues/24429) 참조).
 
 이러한 제약 조건이 충족되지 않으면 NuGet.org에 게시된 기호 패키지가 유효성 검사에 실패합니다. 
@@ -130,7 +130,7 @@ NuGet.org에는 기호 패키지에 대한 다음과 같은 제약 조건이 있
 5) ```authors```, ```owners```, ```requireLicenseAcceptance```, ```license type```, ```licenseUrl``` 및 ```icon``` 필드는 snupkg의 nuspec에서 제외됩니다.
 6) ```<license>``` 요소를 사용하지 마세요. .snupkg에는 해당 .nupkg와 동일한 라이선스가 적용됩니다.
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 
 소스 링크를 사용하여 .NET 어셈블리의 소스 코드 디버깅을 사용하도록 설정하는 것이 좋습니다. 자세한 내용은 [소스 링크 지침](/dotnet/standard/library-guidance/sourcelink)을 참조하세요.
 

@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 07/27/2017
 ms.topic: reference
 ms.openlocfilehash: 5ecbcd4855de8ea7b6301a5e307779216baf96fc
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69488291"
 ---
 # <a name="projectjson-reference"></a>project.json 참조
@@ -47,7 +47,7 @@ ms.locfileid: "69488291"
 "PackageID" : "version_constraint"
 ```
 
-예:
+다음은 그 예입니다.
 
 ```json
 "dependencies": {
@@ -73,10 +73,10 @@ ms.locfileid: "69488291"
 | contentFiles | 콘텐츠  |
 | 런타임 | Runtime, Resources 및 FrameworkAssemblies  |
 | compile | lib |
-| 빌드 | build(MSBuild props 및 targets) |
+| build | build(MSBuild props 및 targets) |
 | native | native |
-| 없음 | 영향을 받는 폴더 없음 |
-| 모두 | 모든 폴더 |
+| none | 영향을 받는 폴더 없음 |
+| all | 모든 폴더 |
 
 `exclude`로 지정된 태그는 `include`로 지정된 태그보다 우선 순위가 높습니다. 예를 들어 `include="runtime, compile" exclude="compile"`은 `include="runtime"`과 같습니다.
 
@@ -136,7 +136,7 @@ ms.locfileid: "69488291"
 모든 런타임에서 실행할 수 있는 PCL이 포함된 패키지는 런타임을 지정할 필요가 없습니다. 또한 모든 종속성을 충족해야 합니다. 그렇지 않으면 런타임을 지정해야 합니다.
 
 
-## <a name="supports"></a>supports
+## <a name="supports"></a>지원
 
 패키지 종속성에 대한 검사 집합을 정의합니다. 실행될 PCL 또는 앱의 위치를 정의할 수 있습니다. 코드가 다른 곳에서 실행될 수 있으므로 이 정의는 제한적이지 않습니다. 그러나 이러한 검사를 지정하면 NuGet은 나열된 TxM에서 모든 종속성이 충족되는지 확인합니다. 이 값의 예는 `net46.app`, `uwp.10.0.app` 등입니다.
 
@@ -149,9 +149,9 @@ ms.locfileid: "69488291"
 }
 ```
 
-## <a name="imports"></a>imports
+## <a name="imports"></a>가져오기
 
-imports는 `dotnet` TxM을 사용하는 패키지가 dotnet TxM을 선언하지 않은 패키지와 작동할 수 있도록 설계되었습니다. 프로젝트에서 `dotnet` TxM을 사용하는 경우 `dotnet`이 아닌 플랫폼이 `dotnet`과 호환될 수 있도록 `project.json`에 다음을 추가하지 않는 한 종속된 모든 패키지에도 `dotnet` TxM이 있어야 합니다.
+imports는 `dotnet` TxM을 사용하는 패키지가 dotnet TxM을 선언하지 않은 패키지와 작동할 수 있도록 설계되었습니다. 프로젝트에서 `dotnet` TxM을 사용하는 경우 `dotnet`이 아닌 플랫폼이 `project.json`과 호환될 수 있도록 `dotnet`에 다음을 추가하지 않는 한 종속된 모든 패키지에도 `dotnet` TxM이 있어야 합니다.
 
 ```json
 "frameworks": {
@@ -176,6 +176,6 @@ NuGet 3 이상에서는 Visual Studio의 패키지 관리자 UI에서 내용을 
 
 ## <a name="projectlockjson"></a>project.lock.json
 
-`project.lock.json` 파일은 `project.json`을 사용하는 프로젝트에서 NuGet 패키지를 복원하는 과정에서 생성됩니다. NuGet에서 패키지의 그래프를 진행하면서 생성되는 모든 정보의 스냅샷을 저장하며, 프로젝트에 속한 모든 패키지의 버전, 내용 및 종속성이 포함됩니다. 빌드 시스템은 이 기능을 사용하여 프로젝트 자체의 로컬 패키지 폴더를 따르는 대신 프로젝트를 빌드할 때 관련된 전역 위치에서 패키지를 선택합니다. 이렇게 하면 별도의 많은 `.nuspec` 파일 대신 `project.lock.json`만 읽어야 하므로 빌드 성능이 더 빠릅니다.
+`project.lock.json` 파일은 `project.json`을 사용하는 프로젝트에서 NuGet 패키지를 복원하는 과정에서 생성됩니다. NuGet에서 패키지의 그래프를 진행하면서 생성되는 모든 정보의 스냅샷을 저장하며, 프로젝트에 속한 모든 패키지의 버전, 내용 및 종속성이 포함됩니다. 빌드 시스템은 이 기능을 사용하여 프로젝트 자체의 로컬 패키지 폴더를 따르는 대신 프로젝트를 빌드할 때 관련된 전역 위치에서 패키지를 선택합니다. 이렇게 하면 별도의 많은 `project.lock.json` 파일 대신 `.nuspec`만 읽어야 하므로 빌드 성능이 더 빠릅니다.
 
 `project.lock.json`은 패키지 복원 시 자동으로 생성되므로 `.gitignore` 및 `.tfignore`파일에 추가하여 원본 제어에서 생략할 수 있습니다([패키지 및 원본 제어](../consume-packages/packages-and-source-control.md) 참조). 그러나 원본 제어에 포함하는 경우 시간이 지남에 따라 확인된 종속성의 변경 내용이 변경 기록에 표시됩니다.

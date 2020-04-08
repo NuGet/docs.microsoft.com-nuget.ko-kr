@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
 ms.openlocfilehash: 034b9dd9699af529e4d82d6ee5b1c42214673341
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428602"
 ---
 # <a name="manage-package-trust-boundaries"></a>패키지 트러스트 영역 관리
@@ -24,7 +24,7 @@ ms.locfileid: "79428602"
 > [!Note]
 > Windows에 NuGet 4.9.0+ 및 Visual Studio 버전 15.9 이상 필요
 
-[`nuget config`](../reference/cli-reference/cli-ref-config.md) 명령을 사용하여 [nuget.config](../reference/nuget-config-file.md) 파일에서 `signatureValidationMode`를 `require`로 설정하여 NuGet 클라이언트가 패키지 서명의 유효성을 검사하는 방법을 구성할 수 있습니다.
+`signatureValidationMode``require`[ 명령을 사용하여 ](../reference/nuget-config-file.md)nuget.config[ 파일에서 `nuget config`를 ](../reference/cli-reference/cli-ref-config.md)로 설정하여 NuGet 클라이언트가 패키지 서명의 유효성을 검사하는 방법을 구성할 수 있습니다.
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require

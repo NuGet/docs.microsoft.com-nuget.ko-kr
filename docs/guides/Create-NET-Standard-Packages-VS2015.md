@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
 ms.openlocfilehash: b16bf422e2627be3b8516a875d749639734064a9
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72380716"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework 패키지 만들기
@@ -20,7 +20,7 @@ ms.locfileid: "72380716"
 
 이 가이드에서는 .NET Standard 라이브러리 1.4를 대상으로 하는 NuGet 패키지 또는 .NET Framework 4.6을 대상으로 하는 NuGet 패키지를 만드는 과정을 안내합니다. .NET Standard 1.4 라이브러리는 .NET Framework 4.6.1, 유니버설 Windows 플랫폼 10, .NET Core 및 Mono/Xamarin에서 작동합니다. 자세한 내용은 [.NET Standard 매핑 테이블](/dotnet/standard/net-standard#net-implementation-support)(.NET 설명서)을 참조하세요. 원하는 경우 다른 버전의 .NET Standard 라이브러리를 선택할 수 있습니다.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 1. Visual Studio 2015 업데이트 3
 1. (.NET Standard에만 해당) [.NET Core SDK](https://www.microsoft.com/net/download/)
@@ -62,7 +62,7 @@ ms.locfileid: "72380716"
 
 ## <a name="create-and-update-the-nuspec-file"></a>.nuspec 파일 만들기 및 업데이트
 
-1. 명령 프롬프트를 열고, `.sln` 파일이 있는 위치에서 한 수준 아래의 `AppLogger.csproj` 폴더로 이동한 다음, NuGet `spec` 명령을 실행하여 초기 `AppLogger.nuspec` 파일을 만듭니다.
+1. 명령 프롬프트를 열고, `AppLogger.csproj` 파일이 있는 위치에서 한 수준 아래의 `.sln` 폴더로 이동한 다음, NuGet `spec` 명령을 실행하여 초기 `AppLogger.nuspec` 파일을 만듭니다.
 
     ```cli
     nuget spec

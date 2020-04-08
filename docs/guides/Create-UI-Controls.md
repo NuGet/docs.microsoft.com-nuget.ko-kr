@@ -6,17 +6,17 @@ ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
 ms.openlocfilehash: da8c5a05311c790bf6b873bc0f1a077d3ef1db87
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73610625"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>NuGet 패키지인 UI 컨트롤 만들기
 
 Visual Studio 2017부터 NuGet 패키지에서 제공하는 UWP 및 WPF 컨트롤에 추가된 기능을 활용할 수 있습니다. 이 가이드는 [ExtensionSDKasNuGetPackage 샘플](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)을 사용하여 UWP 컨트롤의 컨텍스트에서 이러한 기능을 설명합니다. 달리 언급하지 않는 한 WPF 컨트롤에도 동일한 내용이 적용됩니다.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 1. Visual Studio 2017
 1. [UWP 패키지를 만드는](create-uwp-packages.md) 방법 이해
@@ -153,7 +153,7 @@ WPF의 경우 .NET Framework v4.6.1 이상을 대상으로 하는 프로젝트�
 > [!Note]
 > 이 내용은 UWP 컨트롤에만 적용됩니다.
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참조
 
 - [UWP 패키지 만들기](create-uwp-packages.md)
 - [ExtensionSDKasNuGetPackage 샘플](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)

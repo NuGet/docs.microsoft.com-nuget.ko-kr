@@ -6,11 +6,11 @@ ms.author: anangaur
 ms.date: 3/7/2018
 ms.topic: conceptual
 ms.openlocfilehash: eacd29d4c9340a0f015fcdf6c5b9dd41bf781419
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432558"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64498681"
 ---
 # <a name="nuget-46-release-notes"></a>NuGet 4.6 릴리스 정보
 
@@ -24,7 +24,7 @@ ms.locfileid: "58432558"
 
 ## <a name="summary-whats-new-in-463"></a>요약: 4.6.3의 새로운 기능
 
-* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="summary-whats-new-in-464"></a>요약: 4.6.4의 새로운 기능
 
@@ -53,7 +53,7 @@ ms.locfileid: "58432558"
 * NuGet.exe가 어셈블리 이름의 '+'를 '%2B'로 바꿈 - [#5956](https://github.com/NuGet/Home/issues/5956)
 * Fn+F1을 눌러도 PM UI 및 콘솔의 올바른 도움말 페이지로 이동되지 않음 - [#5912](https://github.com/NuGet/Home/issues/5912)
 * VS NuGet가 특정 상황에서 프로젝트 파일에 절대 경로를 기록함 - [#5888](https://github.com/NuGet/Home/issues/5888)
-* 4.3 재발 해결 - 콘텐츠 파일에서 자리 표시자 $product$ 및 $AssemblyGuid$가 변환을 통해 대체되지 않음 - [#5880](https://github.com/NuGet/Home/issues/5880)
+* 4\.3 재발 해결 - 콘텐츠 파일에서 자리 표시자 $product$ 및 $AssemblyGuid$가 변환을 통해 대체되지 않음 - [#5880](https://github.com/NuGet/Home/issues/5880)
 * 여러 소스를 사용하는 dotnet restore가 충돌함 - [#5817](https://github.com/NuGet/Home/issues/5817)
 * 팩이 프로젝트 버전을 다시 계산해야 git 버전 관리가 가능함 - [#4790](https://github.com/NuGet/Home/issues/4790)
 * 호환되지 않는 패키지를 설치할 때 이해하기 어려운 오류 개선 - [#4555](https://github.com/NuGet/Home/issues/4555)

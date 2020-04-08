@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
 ms.openlocfilehash: 34f7c6132ba6050e20114642932ccf29a5ec088d
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428626"
 ---
 # <a name="support-multiple-net-versions"></a>여러 .NET 버전 지원
@@ -42,7 +42,7 @@ ms.locfileid: "79428626"
         \netcore
             \MyAssembly.dll
 
-패키지를 빌드할 때 이러한 파일 중 일부를 쉽게 포함하려면 `.nuspec`의 `<files>` 섹션에서 재귀 `**` 와일드 카드를 사용합니다.
+패키지를 빌드할 때 이러한 파일 중 일부를 쉽게 포함하려면 `**`의 `<files>` 섹션에서 재귀 `.nuspec` 와일드 카드를 사용합니다.
 
 ```xml
 <files>
@@ -52,7 +52,7 @@ ms.locfileid: "79428626"
 
 ### <a name="architecture-specific-folders"></a>아키텍처 관련 폴더
 
-아키텍처 관련 어셈블리, 즉, ARM, x86 및 x64를 대상으로 하는 별도 어셈블리가 있는 경우 `{platform}-{architecture}\lib\{framework}` 또는 `{platform}-{architecture}\native`라는 하위 폴더 내에서 `runtimes`라는 폴더에 배치해야 합니다. 예를 들어 다음 폴더 구조는 Windows 10 및 `uap10.0` 프레임워크를 대상으로 하는 네이티브 및 관리 DLL을 모두 수용합니다.
+아키텍처 관련 어셈블리, 즉, ARM, x86 및 x64를 대상으로 하는 별도 어셈블리가 있는 경우 `runtimes` 또는 `{platform}-{architecture}\lib\{framework}`라는 하위 폴더 내에서 `{platform}-{architecture}\native`라는 폴더에 배치해야 합니다. 예를 들어 다음 폴더 구조는 Windows 10 및 `uap10.0` 프레임워크를 대상으로 하는 네이티브 및 관리 DLL을 모두 수용합니다.
 
     \runtimes
         \win10-arm
@@ -69,7 +69,7 @@ ms.locfileid: "79428626"
 
 NuGet은 항상 하나의 폴더에서 이러한 컴파일 또는 런타임 자산을 선택하므로, `/ref`의 호환 가능한 자산이 있는 경우 컴파일 시간 어셈블리를 추가하기 위해 `/lib`가 무시됩니다. 마찬가지로 `/runtimes`의 일부 호환 가능한 자산이 있는 경우에도 런타임을 위해 `/lib`가 무시됩니다.
 
-`.nuspec` 매니페스트에서 이러한 파일을 참조하는 예제는 [UWP 패키지 만들기](../guides/create-uwp-packages.md)를 참조하세요.
+[ 매니페스트에서 이러한 파일을 참조하는 예제는 ](../guides/create-uwp-packages.md)UWP 패키지 만들기`.nuspec`를 참조하세요.
 
 또한 [Packing a Windows store app component with NuGet](https://blogs.msdn.microsoft.com/mim/2013/09/02/packaging-a-windows-store-apps-component-with-nuget-part-2)(NuGet으로 Windows 스토어 앱 구성 요소 압축)을 참조하세요.
 
@@ -125,7 +125,7 @@ NuGet은 패키지의 단일 라이브러리 폴더에서 어셈블리를 복사
 
 프로젝트 파일을 압축하는 경우 NuGet은 프로젝트에서 종속성을 자동으로 생성하려고 합니다. *.nuspec* 파일을 사용하여 종속성을 선언하는 방법에 대한 이 섹션의 정보는 일반적으로 고급 시나리오에만 필요합니다.
 
-‘(버전 2.0 이상)’ `<dependencies>` 요소 내에서 `<group>` 요소를 사용하여 대상 프로젝트의 대상 프레임워크에 해당하는 *.nuspec*에서 패키지 종속성을 선언할 수 있습니다.  자세한 내용은 [dependencies 요소](../reference/nuspec.md#dependencies-element)를 참조하세요.
+‘(버전 2.0 이상)’ *요소 내에서* 요소를 사용하여 대상 프로젝트의 대상 프레임워크에 해당하는 *.nuspec*에서 패키지 종속성을 선언할 수 있습니다.`<group>``<dependencies>` 자세한 내용은 [dependencies 요소](../reference/nuspec.md#dependencies-element)를 참조하세요.
 
 각 그룹에는 `targetFramework`라는 특성이 있으며 0개 이상의 `<dependency>` 요소가 포함됩니다. 이 종속성은 대상 프레임워크가 프로젝트의 프레임워크 프로필과 호환될 때 함께 설치됩니다. 정확한 프레임워크 식별자는 [대상 프레임워크](../reference/target-frameworks.md)를 참조하세요.
 
@@ -160,7 +160,7 @@ NuGet은 패키지의 단일 라이브러리 폴더에서 어셈블리를 복사
 > [!Warning]
 > 변경할 수 있는 콘텐츠 파일 및 스크립트 실행은 `packages.config` 형식에서만 제공됩니다. 모든 다른 형식과 함께 더 이상 사용되지 않으며 새 패키지에서 사용하면 안 됩니다.
 
-`packages.config`에서 `content` 및 `tools` 폴더 내의 동일한 폴더 규칙을 사용하는 대상 프레임워크에서 콘텐츠 파일 및 PowerShell 스크립트를 그룹화할 수 있습니다. 예를 들어:
+`packages.config`에서 `content` 및 `tools` 폴더 내의 동일한 폴더 규칙을 사용하는 대상 프레임워크에서 콘텐츠 파일 및 PowerShell 스크립트를 그룹화할 수 있습니다. 다음은 그 예입니다.
 
     \content
         \net46

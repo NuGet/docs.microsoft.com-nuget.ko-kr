@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
 ms.openlocfilehash: 101c6d6b9d93da912f60c40b27559e80327154b8
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428428"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>패키지를 다시 설치하고 업데이트하는 방법

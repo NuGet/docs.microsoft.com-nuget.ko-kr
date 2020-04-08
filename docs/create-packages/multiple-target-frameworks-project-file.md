@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
 ms.openlocfilehash: 1d23759433efb405fa5f0035049befced2c43d6b
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72380682"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>프로젝트 파일에서 여러 .NET Framework 버전 지원
@@ -74,7 +74,7 @@ SDK 스타일 프로젝트의 경우 프로젝트 파일에서 여러 대상 프
 </Project>
 ```
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참조
 
 * [대상 프레임워크를 지정하는 방법](/dotnet/standard/frameworks#how-to-specify-target-frameworks)
 * [플랫폼 간 대상 지정](/dotnet/standard/library-guidance/cross-platform-targeting)

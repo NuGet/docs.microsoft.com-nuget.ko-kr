@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
 ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73610997"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Team Foundation 빌드를 사용하여 패키지 복원 설정
@@ -84,7 +84,7 @@ nuget restore path\to\solution.sln
 ### <a name="ignore-files"></a>파일 무시
 
 > [!Note]
-> 현재 클라이언트를 버전 제어에 대한 `packages` 폴더에 추가하는 [NuGet 클라이언트의 알려진 버그](https://nuget.codeplex.com/workitem/4072)가 있습니다. 해결 방법은 소스 제어 통합을 사용하지 않도록 설정하는 것입니다. 이를 수행하려면 솔루션에 병렬되는 `.nuget` 폴더에 `Nuget.Config ` 파일이 필요합니다. 이 폴더가 아직 존재하지 않으면 만들어야 합니다. [`Nuget.Config`](../consume-packages/configuring-nuget-behavior.md)에서 다음 콘텐츠를 추가합니다.
+> 현재 클라이언트를 버전 제어에 대한 [ 폴더에 추가하는 ](https://nuget.codeplex.com/workitem/4072)NuGet 클라이언트의 알려진 버그`packages`가 있습니다. 해결 방법은 소스 제어 통합을 사용하지 않도록 설정하는 것입니다. 이를 수행하려면 솔루션에 병렬되는 `Nuget.Config ` 폴더에 `.nuget` 파일이 필요합니다. 이 폴더가 아직 존재하지 않으면 만들어야 합니다. [`Nuget.Config`](../consume-packages/configuring-nuget-behavior.md)에서 다음 콘텐츠를 추가합니다.
 
 ```xml
 <configuration>
@@ -94,7 +94,7 @@ nuget restore path\to\solution.sln
 </configuration>
 ```
 
-**패키지** 폴더를 체크 인하지 않으려는 버전 제어에 통신하기 위해 TF 버전 제어(`.tfignore`)뿐만 아니라 두 Git(`.gitignore`)에 무시 파일을 추가했습니다. 이러한 파일은 체크 인하지 않으려는 파일의 패턴을 설명합니다.
+**패키지** 폴더를 체크 인하지 않으려는 버전 제어에 통신하기 위해 TF 버전 제어(`.gitignore`)뿐만 아니라 두 Git(`.tfignore`)에 무시 파일을 추가했습니다. 이러한 파일은 체크 인하지 않으려는 파일의 패턴을 설명합니다.
 
 `.gitignore` 파일은 다음과 같습니다.
 

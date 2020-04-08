@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
 ms.openlocfilehash: de164b136a1636b89f674b8626613094fc53e04c
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "75385574"
 ---
 # <a name="create-nuget-packages-that-contain-com-interop-assemblies"></a>COM interop 어셈블리가 포함된 패키지 만들기

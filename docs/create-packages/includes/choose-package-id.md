@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c92f6e0c34347ee8555d416140d95ea2df5a3fbb
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73610539"
 ---
 패키지 식별자와 버전 번호는 패키지에 포함된 정확한 코드를 고유하게 식별하므로 프로젝트에서 가장 중요한 두 가지 값입니다.

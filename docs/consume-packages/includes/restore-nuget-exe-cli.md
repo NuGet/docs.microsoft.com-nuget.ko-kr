@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 2fc62e7161a07d739760ed638653fbdec0dfc330
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "68860568"
 ---
 [복원](../../reference/cli-reference/cli-ref-restore.md) 명령을 사용하면 *패키지* 폴더에서 누락된 모든 패키지를 다운로드하고 설치할 수 있습니다.

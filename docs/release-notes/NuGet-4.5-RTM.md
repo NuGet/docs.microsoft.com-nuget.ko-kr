@@ -6,11 +6,11 @@ ms.author: anangaur
 ms.date: 12/4/2017
 ms.topic: conceptual
 ms.openlocfilehash: 321aedb471bc6f86e9c03878093b199267e31195
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432506"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496578"
 ---
 # <a name="nuget-45-release-notes"></a>NuGet 4.5 릴리스 정보
 
@@ -20,7 +20,7 @@ ms.locfileid: "58432506"
 
 ## <a name="summary-whats-new-in-452"></a>요약: 4.5.2의 새로운 기능
 
-* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="summary-whats-new-in-453"></a>요약: 4.5.3의 새로운 기능
 
@@ -34,7 +34,7 @@ ms.locfileid: "58432506"
 
 ### <a name="you-are-unable-to-view-add-or-update-dotnetclitools-using-nuget-package-manager"></a>NuGet 패키지 관리자를 사용하여 DotNetCLITools를 보거나 추가 또는 업데이트할 수 없음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 않으며 허용하지도 않습니다. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
@@ -44,7 +44,7 @@ NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 
 
 ### <a name="retargeting-target-framework-version-may-lead-to-incomplete-intellisense"></a>대상 프레임워크 버전의 대상을 변경하면 불완전한 IntelliSense가 발생할 수 있음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불완전한 IntelliSense가 발생할 수 있습니다. 이 문제는 PackageReferences를 패키지 관리자 형식으로 사용하는 경우에 발생합니다. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
@@ -54,7 +54,7 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 ### <a name="a-package-in-a-net-core-project-that-contains-an-assembly-with-an-invalid-signature-can-trigger-an-infinite-restore-loop"></a>잘못된 시그니처와 함께 어셈블리가 포함된 .NET Core 프로젝트의 패키지는 무한 복원 루프를 트리거할 수 있음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 경우에 따라 잘못된 시그니처와 함께 어셈블리가 포함된 패키지를 사용하거나 패키지 버전이 'DateTime' 표시기로 설정된 경우 패키지 자동 복원이 무한 루프로 실행됩니다([dotnet/project-system#1457](https://github.com/dotnet/project-system/issues/1457)).
 
@@ -90,6 +90,6 @@ NuGet 4.4 RTM에서 수정된 문제는 [NuGet 4.4 RTM 릴리스 정보](../rele
 - 검색이 Blob 등록보다 먼저 수행되면 UI 클라이언트에서 오류 또는 경고를 표시하지 못합니다. - [#2149](https://github.com/NuGet/Home/issues/2149)
 - Get-Packages - 업데이트에서 잘못된 쿼리를 생성합니다. - [#2135](https://github.com/NuGet/Home/issues/2135)
 
-## <a name="links-to-github-issues-fixed-in-45-rtm"></a>4.5 RTM에서 수정된 GitHub 문제에 대한 링크
+## <a name="links-to-github-issues-fixed-in-45-rtm"></a>4\.5 RTM에서 수정된 GitHub 문제에 대한 링크
 
 [문제 목록](https://github.com/NuGet/Home/issues?q=is%3Aissue+milestone%3A4.5+is%3Aclosed)

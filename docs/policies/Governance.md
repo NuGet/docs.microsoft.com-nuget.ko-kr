@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 2aaaf41b3fc4ef3621333e5099780b5d7ef393bc
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549452"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64500392"
 ---
 # <a name="nuget-governance"></a>NuGet 거버넌스
 
@@ -90,6 +90,6 @@ NuGet 계정 보유자가 자격이 상실되거나 희생된 불행한 상황�
 
 이 정책을 행사해야 하는 경우 패키지의 ID와 버전이 포함된 전자 메일을 [support@nuget.org](mailto:support@nuget.org)로 보내주세요.
 
-## <a name="transparency"></a>투명도
+## <a name="transparency"></a>투명성
 
 오픈 소스 프로젝트의 거버넌스에 대해 커뮤니티의 신뢰를 쌓는 것이 성공에 필수적입니다. 이를 위해 의사 결정은 투명하고 공개적인 방식으로 수행되어야 합니다. 프로젝트의 방향에 대한 논의는 공개적으로 수행되어야 합니다. 선한 독재자의 결정으로 커뮤니티를 부당하게 보호하면 안됩니다. 또한 커뮤니티 구성원이 의사 결정 및 해당 상황에 대한 전체 기록을 이해할 수 있도록 프로젝트 결정에 대한 토론을 보관해야 합니다.

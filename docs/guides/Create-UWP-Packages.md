@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 03/21/2017
 ms.topic: tutorial
 ms.openlocfilehash: 77aa186291122a8d05018ecacd1329da459badad
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72380757"
 ---
 # <a name="create-uwp-packages"></a>UWP 패키지 만들기
@@ -18,7 +18,7 @@ ms.locfileid: "72380757"
 
 이 연습에서는 관리 및 네이티브 프로젝트에서 모두 사용할 수 있는 네이티브 UWP 구성 요소(XAML 컨트롤 포함)를 사용하여 NuGet 패키지를 만듭니다.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 1. Visual Studio 2017 또는 Visual Studio 2015 - [visualstudio.com](https://www.visualstudio.com/)에서 추가 비용 없이 2017 Community 버전을 설치합니다. Professional 및 Enterprise 버전도 사용할 수 있습니다.
 

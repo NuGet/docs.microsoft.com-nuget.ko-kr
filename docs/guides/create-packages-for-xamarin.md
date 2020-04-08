@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/05/2019
 ms.topic: tutorial
 ms.openlocfilehash: 0cb653bad9e853d908039b3f7a94e1dd7eefdde5
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78230904"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2017-or-2019"></a>Visual Studio 2017 또는 2019를 사용하여 Xamarin용 패키지 만들기
@@ -50,7 +50,7 @@ Xamarin용 패키지에는 런타임 운영 체제에 따라 iOS, Android 및 Wi
 
 결과 솔루션에는 다양한 플랫폼별 프로젝트와 함께 다음과 같은 두 개의 Shared 프로젝트가 포함되어 있습니다.
 
-- `ILoggingLibrary.shared.cs` 파일에 포함된 `ILoggingLibrary` 프로젝트는 구성 요소의 공용 인터페이스(API 노출 영역)를 정의합니다. 여기서는 라이브러리에 대한 인터페이스를 정의합니다.
+- `ILoggingLibrary` 파일에 포함된 `ILoggingLibrary.shared.cs` 프로젝트는 구성 요소의 공용 인터페이스(API 노출 영역)를 정의합니다. 여기서는 라이브러리에 대한 인터페이스를 정의합니다.
 - 다른 Shared 프로젝트에는 런타임 시 추상 인터페이스의 플랫폼 특정 구현을 찾는 `CrossLoggingLibrary.shared.cs`의 코드가 포함되어 있습니다. 일반적으로 이 파일은 수정할 필요가 없습니다.
 - `LoggingLibrary.android.cs` 등의 플랫폼별 프로젝트에는 각각 해당 `LoggingLibraryImplementation.cs`(VS 2017) 또는 `LoggingLibrary.<PLATFORM>.cs`(VS 2019) 파일의 네이티브 인터페이스 구현이 포함되어 있습니다. 여기서는 라이브러리 코드를 빌드합니다.
 
@@ -109,14 +109,14 @@ namespace Plugin.LoggingLibrary
 1. 솔루션을 마우스 오른쪽 단추로 클릭하고, **솔루션 빌드**를 선택하여 작업을 확인하고, 다음에 패키지할 아티팩트를 생성합니다. 누락된 참조에 대한 오류가 발생하면 솔루션을 마우스 오른쪽 단추로 클릭하고, **NuGet 패키지 복원**을 선택하여 종속성을 설치한 다음, 다시 빌드합니다.
 
 > [!Note]
-> Visual Studio 2019를 사용하는 경우 **NuGet 패키지 복원**을 선택하고 다시 빌드를 시도하기 전에 `LoggingLibrary.csproj`에서 버전을 `MSBuild.Sdk.Extras`에서 `2.0.54`로 변경해야 합니다. 이 파일은 먼저 프로젝트를 마우스 오른쪽 단추로 클릭하고 `Unload Project`을(를) 선택해야만 액세스할 수 있습니다. 그런 다음 언로드된 프로젝트를 마우스 오른쪽 단추로 클릭하고 `Edit LoggingLibrary.csproj`을(를) 선택합니다.
+> Visual Studio 2019를 사용하는 경우 **NuGet 패키지 복원**을 선택하고 다시 빌드를 시도하기 전에 `MSBuild.Sdk.Extras`에서 버전을 `2.0.54`에서 `LoggingLibrary.csproj`로 변경해야 합니다. 이 파일은 먼저 프로젝트를 마우스 오른쪽 단추로 클릭하고 `Unload Project`을(를) 선택해야만 액세스할 수 있습니다. 그런 다음 언로드된 프로젝트를 마우스 오른쪽 단추로 클릭하고 `Edit LoggingLibrary.csproj`을(를) 선택합니다.
 
 > [!Note]
 > iOS용으로 빌드하려면 [Visual Studio용 Xamarin.iOS 소개](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/)에서 설명한 대로 네트워크에서 Visual Studio에 연결된 Mac이 필요합니다. Mac을 사용할 수 없는 경우 구성 관리자에서 iOS 프로젝트를 선택 취소합니다(위 3단계).
 
 ## <a name="create-and-update-the-nuspec-file"></a>.nuspec 파일 만들기 및 업데이트
 
-1. 명령 프롬프트를 열고, `.sln` 파일이 있는 위치에서 한 수준 아래의 `LoggingLibrary` 폴더로 이동한 다음, NuGet `spec` 명령을 실행하여 초기 `Package.nuspec` 파일을 만듭니다.
+1. 명령 프롬프트를 열고, `LoggingLibrary` 파일이 있는 위치에서 한 수준 아래의 `.sln` 폴더로 이동한 다음, NuGet `spec` 명령을 실행하여 초기 `Package.nuspec` 파일을 만듭니다.
 
     ```cli
     nuget spec
@@ -148,7 +148,7 @@ namespace Plugin.LoggingLibrary
 
 ### <a name="add-reference-assemblies"></a>참조 어셈블리 추가
 
-플랫폼 특정 참조 어셈블리를 포함하려면 지원되는 플랫폼에 맞게 `LoggingLibrary.nuspec`의 `<files>` 요소에 다음을 추가합니다.
+플랫폼 특정 참조 어셈블리를 포함하려면 지원되는 플랫폼에 맞게 `<files>`의 `LoggingLibrary.nuspec` 요소에 다음을 추가합니다.
 
 ```xml
 <!-- Insert below <metadata> element -->
@@ -265,7 +265,7 @@ namespace Plugin.LoggingLibrary
 nuget pack LoggingLibrary.nuspec
 ```
 
-그러면 `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`가 생성됩니다. [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)와 같은 도구에서 이 파일을 열고 모든 노드를 확장하면 다음과 같은 내용이 표시됩니다.
+이렇게 하면 `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`가 생성됩니다. [NuGet 패키지 탐색기](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)와 같은 도구에서 이 파일을 열고 모든 노드를 확장하면 다음과 같은 내용이 표시됩니다.
 
 ![LoggingLibrary 패키지를 보여 주는 NuGet 패키지 탐색기](media/Cross-Platform-PackageExplorer.png)
 

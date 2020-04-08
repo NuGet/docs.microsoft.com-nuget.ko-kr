@@ -6,10 +6,10 @@ ms.author: zivkan
 ms.date: 05/24/2019
 ms.topic: conceptual
 ms.openlocfilehash: b32075c3f2c06c15c07d36602bdabdaee8b9405a
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "67427478"
 ---
 # <a name="select-assemblies-referenced-by-projects"></a>프로젝트에서 참조하는 어셈블리 선택
@@ -31,7 +31,7 @@ ms.locfileid: "67427478"
 
 ## <a name="packagesconfig-support"></a>`packages.config` 지원
 
-`packages.config`를 사용하여 NuGet 패키지를 관리하는 프로젝트는 일반적으로 `lib\<tfm>\` 디렉터리의 모든 어셈블리에 참조를 추가합니다. `ref\` 디렉터리는 `PackageReference`를 지원하기 위해 추가되었으므로 `packages.config` 사용 시 고려되지 않습니다. `packages.config`를 사용하는 프로젝트에 대해 참조되는 어셈블리를 명시적으로 설정하려면 패키지에서 [nuspec 파일의 `<references>` 요소](../reference/nuspec.md#explicit-assembly-references)를 사용해야 합니다. 예:
+`packages.config`를 사용하여 NuGet 패키지를 관리하는 프로젝트는 일반적으로 `lib\<tfm>\` 디렉터리의 모든 어셈블리에 참조를 추가합니다. `ref\` 디렉터리는 `PackageReference`를 지원하기 위해 추가되었으므로 `packages.config` 사용 시 고려되지 않습니다. `packages.config`를 사용하는 프로젝트에 대해 참조되는 어셈블리를 명시적으로 설정하려면 패키지에서 [nuspec 파일의 `<references>` 요소](../reference/nuspec.md#explicit-assembly-references)를 사용해야 합니다. 다음은 그 예입니다.
 
 ```xml
 <references>
@@ -42,9 +42,9 @@ ms.locfileid: "67427478"
 ```
 
 > [!Note]
-> `packages.config` 프로젝트는 [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md)라는 프로세스를 사용하여 어셈블리를 `bin\<configuration>\` 출력 디렉터리에 복사합니다. 프로젝트의 어셈블리가 복사된 다음, 빌드 시스템이 참조된 어셈블리에 대한 어셈블리 매니페스트를 살펴본 후, 해당 어셈블리를 복사하고 모든 어셈블리에 대해 재귀적으로 반복합니다. 즉, `lib\<tfm>\` 디렉터리에 있는 어셈블리가 다른 어셈블리의 매니페스트에 종속성으로 나열되지 않은 경우(`Assembly.Load`, MEF 또는 다른 종속성 주입 프레임워크를 사용하여 런타임 시 어셈블리가 로드된 경우), `bin\<tfm>\`에 있더라도 프로젝트의 `bin\<configuration>\` 출력 디렉터리에 복사되지 않을 수 있습니다.
+> `packages.config` 프로젝트는 [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md)라는 프로세스를 사용하여 어셈블리를 `bin\<configuration>\` 출력 디렉터리에 복사합니다. 프로젝트의 어셈블리가 복사된 다음, 빌드 시스템이 참조된 어셈블리에 대한 어셈블리 매니페스트를 살펴본 후, 해당 어셈블리를 복사하고 모든 어셈블리에 대해 재귀적으로 반복합니다. 즉, `lib\<tfm>\` 디렉터리에 있는 어셈블리가 다른 어셈블리의 매니페스트에 종속성으로 나열되지 않은 경우(`Assembly.Load`, MEF 또는 다른 종속성 주입 프레임워크를 사용하여 런타임 시 어셈블리가 로드된 경우), `bin\<configuration>\`에 있더라도 프로젝트의 `bin\<tfm>\` 출력 디렉터리에 복사되지 않을 수 있습니다.
 
-## <a name="example"></a>예
+## <a name="example"></a>예제
 
 내 패키지에는 .NET Framework 4.7.2를 대상으로 하는 세 개의 어셈블리 `MyLib.dll`, `MyHelpers.dll` 및 `MyUtilities.dll`이 포함됩니다. `MyUtilities.dll`에는 다른 두 어셈블리에서만 사용할 수 있는 클래스가 포함되어 있으므로 IntelliSense에서 또는 패키지를 사용하여 프로젝트를 컴파일할 때 해당 클래스를 사용할 수 없도록 합니다. 내 `nuspec` 파일에 다음 XML 요소가 포함되어 있어야 합니다.
 

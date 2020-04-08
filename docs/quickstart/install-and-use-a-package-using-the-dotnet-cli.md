@@ -6,15 +6,15 @@ ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
 ms.openlocfilehash: 006fff8360ac62393e4b88c1a253514591d22f4c
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231280"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>빠른 시작: dotnet CLI를 사용하여 패키지 설치 및 사용
 
-NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 제공하는 다시 사용할 수 있는 코드를 포함합니다. 배경 지식은 [NuGet이란?](../What-is-NuGet.md)을 참조하세요. 패키지는 이 문서에 설명된 대로 널리 사용되는 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 패키지에 대해 `dotnet add package` 명령을 사용하여 .NET Core 프로젝트에 설치됩니다.
+NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 제공하는 다시 사용할 수 있는 코드를 포함합니다. 배경 지식은 [NuGet이란?](../What-is-NuGet.md)을 참조하세요. 패키지는 이 문서에 설명된 대로 널리 사용되는 `dotnet add package`Newtonsoft.Json[ 패키지에 대해 ](https://www.nuget.org/packages/Newtonsoft.Json/) 명령을 사용하여 .NET Core 프로젝트에 설치됩니다.
 
 패키지가 설치되면 `using <namespace>`를 사용하여 코드에서 패키지를 참조합니다. 여기서 \<네임스페이스\>는 사용 중인 패키지에 특정됩니다. 그런 다음, 패키지의 API를 사용할 수 있습니다.
 
@@ -23,7 +23,7 @@ NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 �
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-- `dotnet` 명령줄 도구를 제공하는 [.NET Core SDK](https://www.microsoft.com/net/download/). Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.
+- [ 명령줄 도구를 제공하는 ](https://www.microsoft.com/net/download/).NET Core SDK`dotnet`. Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.
 
 ## <a name="create-a-project"></a>프로젝트 만들기
 

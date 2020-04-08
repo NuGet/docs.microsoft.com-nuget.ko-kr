@@ -7,10 +7,10 @@ ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 81acf15ac69d78d39d2784e77c18ba38bfea126d
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "75385544"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>사용자 고유의 NuGet 피드 호스팅

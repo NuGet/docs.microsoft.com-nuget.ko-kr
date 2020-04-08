@@ -7,11 +7,11 @@ ms.date: 02/03/2017
 ms.topic: conceptual
 ms.reviewer: ananguar
 ms.openlocfilehash: 2d0bb6356c0a20843bdc884b68f5f61838b82e73
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549248"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496639"
 ---
 # <a name="nuget-40-rc-release-notes"></a>NuGet 4.0 RC 릴리스 정보
 
@@ -56,7 +56,7 @@ ms.locfileid: "43549248"
 
 - System.Xml.XmlException: Core Properties 파트에 인식할 수 없는 루트 요소가 있습니다. 줄 2, 위치 2 - [#2718](https://github.com/NuGet/Home/issues/2718)
 
-- 텍스트 필드에 이스케이프된 &lt; 또는 &gt;가 있는 `.nuspec`은 더 이상 빌드되지 않습니다. - [#2651](https://github.com/NuGet/Home/issues/2651)
+- 텍스트 필드에 이스케이프된 `.nuspec` 또는 &lt;가 있는 &gt;은 더 이상 빌드되지 않습니다. - [#2651](https://github.com/NuGet/Home/issues/2651)
 
 - nuget.exe delete는 자격 증명을 묻지 않습니다(비대화형 모드입니다) - [#2626](https://github.com/NuGet/Home/issues/2626)
 

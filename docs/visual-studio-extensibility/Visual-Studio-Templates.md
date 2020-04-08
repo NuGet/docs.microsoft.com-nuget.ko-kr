@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 01/03/2018
 ms.topic: conceptual
 ms.openlocfilehash: be7c10fb6ce60375f77e38f9b604ec33063e52fc
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550512"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64498245"
 ---
 # <a name="packages-in-visual-studio-templates"></a>Visual Studio 템플릿의 패키지
 
@@ -66,7 +66,7 @@ Visual Studio 프로젝트/항목 템플릿을 배포하는 데 권장되는 방
 
 VSIX 자체는 다음과 같이 템플릿에 필요한 패키지의 원본으로 사용할 수 있습니다.
 
-1. `.vstemplate` 파일의 `<packages>` 요소를 다음과 같이 수정합니다.
+1. `<packages>` 파일의 `.vstemplate` 요소를 다음과 같이 수정합니다.
 
     ```xml
     <packages repository="extension" repositoryId="MyTemplateContainerExtensionId">
@@ -74,7 +74,7 @@ VSIX 자체는 다음과 같이 템플릿에 필요한 패키지의 원본으로
     </packages>
     ```
 
-    `repository` 특성은 리포지토리의 유형을 `extension`으로 지정하고, `repositoryId`는 VSIX 자체의 고유 식별자입니다(이 값은 확장의 `vsixmanifest` 파일에 있는 `ID` 특성의 값임, 참조: [VSIX 확장 스키마 2.0 참조](/visualstudio/extensibility/vsix-extension-schema-2-0-reference)).
+    `repository` 특성은 리포지토리의 유형을 `extension`으로 지정하고, `repositoryId`는 VSIX 자체의 고유 식별자입니다(이 값은 확장의 `ID` 파일에 있는 `vsixmanifest` 특성의 값임, 참조: [VSIX 확장 스키마 2.0 참조](/visualstudio/extensibility/vsix-extension-schema-2-0-reference)).
 
 1. `nupkg` 파일을 VSIX 내의 `Packages`라는 폴더에 배치합니다.
 
@@ -90,7 +90,7 @@ VSIX 자체는 다음과 같이 템플릿에 필요한 패키지의 원본으로
 
 단일 프로젝트/항목 템플릿만 배포하고 여러 템플릿을 함께 패키지할 필요가 없으면, 프로젝트/항목 템플릿 ZIP 파일에 직접 패키지를 포함하는 간단하지만 더 제한적인 방법을 사용할 수 있습니다.
 
-1. `.vstemplate` 파일의 `<packages>` 요소를 다음과 같이 수정합니다.
+1. `<packages>` 파일의 `.vstemplate` 요소를 다음과 같이 수정합니다.
 
     ```xml
     <packages repository="template"">
@@ -116,7 +116,7 @@ MSI를 사용하여 설치된 SDK는 개발자의 컴퓨터에 NuGet 패키지�
     - 키 이름: 고유한 이름을 사용합니다. 예를 들어 VS 2012용 ASP.NET MVC 4 템플릿인 경우 `AspNetMvc4VS11`을 사용합니다.
     - 값: packages 폴더에 대한 전체 경로입니다.
 
-1. `.vstemplate` 파일의 `<packages>` 요소에 `repository="registry"` 특성을 추가하고, `keyName` 특성에 레지스트리 키 이름을 지정합니다.
+1. `<packages>` 파일의 `.vstemplate` 요소에 `repository="registry"` 특성을 추가하고, `keyName` 특성에 레지스트리 키 이름을 지정합니다.
 
     - 패키지의 압축을 미리 푼 경우 `isPreunzipped="true"` 특성을 사용합니다.
     - *(NuGet 3.2 이상)*  패키지 설치의 끝에서 디자인 타임 빌드를 강제로 수행하려면 `forceDesignTimeBuild="true"` 특성을 추가합니다.
@@ -141,6 +141,6 @@ MSI를 사용하여 설치된 SDK는 개발자의 컴퓨터에 NuGet 패키지�
     <!-- ... -->
     ```
 
-1. 프로젝트/항목 템플릿을 만들 때 저장하도록 `.vstemplate` 파일에서 [`<PromptForSaveOnCreation>true</PromptForSaveOnCreation>`](/visualstudio/extensibility/promptforsaveoncreation-element-visual-studio-templates)을 포함해야 합니다.
+1. 프로젝트/항목 템플릿을 만들 때 저장하도록 [ 파일에서 `<PromptForSaveOnCreation>true</PromptForSaveOnCreation>`](/visualstudio/extensibility/promptforsaveoncreation-element-visual-studio-templates)`.vstemplate`을 포함해야 합니다.
 
 1. `packages.config` 파일을 템플릿에 포함하지 않고, NuGet 패키지를 설치할 때 추가될 참조 또는 내용을 포함하지 않습니다.

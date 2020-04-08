@@ -6,10 +6,10 @@ ms.author: mikejo
 ms.date: 07/09/2019
 ms.topic: conceptual
 ms.openlocfilehash: b151547e40e567b38acc2b0b9ee84c50d85000c9
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/15/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69488489"
 ---
 # <a name="identify-the-project-format"></a>프로젝트 형식 식별
@@ -18,7 +18,7 @@ NuGet은 모든 .NET 프로젝트에서 작동합니다. 그러나 프로젝트 
 
 프로젝트가 SDK 스타일인지 여부는 프로젝트를 만드는 데 사용되는 메서드에 따라 달라집니다. 다음 표에서는 Visual Studio 2017 이상 버전을 사용하여 프로젝트를 만들 때 프로젝트의 기본 프로젝트 형식 및 관련 CLI 도구를 보여 줍니다.
 
-| 프로젝트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 기본 프로젝트 형식 | CLI 도구&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 참고 사항 |
+| 프로젝트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 기본 프로젝트 형식 | CLI 도구&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 메모 |
 |:------------- |:-------------|:-----|:-----|
 | .NET Standard | SDK 스타일 | [dotnet CLI](../install-nuget-client-tools.md#dotnetexe-cli) | Visual Studio 2017 이전 버전으로 만든 프로젝트는 SDK 스타일이 아닙니다. `nuget.exe` CLI를 사용합니다. |
 | .NET Core | SDK 스타일 | [dotnet CLI](../install-nuget-client-tools.md#dotnetexe-cli) | Visual Studio 2017 이전 버전으로 만든 프로젝트는 SDK 스타일이 아닙니다. `nuget.exe` CLI를 사용합니다. |

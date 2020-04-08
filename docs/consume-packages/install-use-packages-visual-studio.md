@@ -11,10 +11,10 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
 ms.openlocfilehash: 3adceac8c725d9ea1610aea090753c9c1d8bc818
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428422"
 ---
 # <a name="install-and-manage-packages-in-visual-studio-using-the-nuget-package-manager"></a>Visual Studio에서 NuGet 패키지 관리자를 사용하여 패키지 설치 및 관리

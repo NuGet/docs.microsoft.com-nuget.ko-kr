@@ -9,10 +9,10 @@ ms.reviewer:
 - kraigb
 - camsoper
 ms.openlocfilehash: 152de360bfa31a0c8c60fac0b12149748773b13e
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "67427078"
 ---
 # <a name="your-organization-on-nugetorg"></a>NuGet.org의 조직
@@ -60,10 +60,10 @@ ms.locfileid: "67427078"
 
 | 사용 권한 | 협력자 | 관리자 |
 | --- | --- | --- |
-| 조직의 패키지 관리<br/>(새 패키지 제출, 기존 패키지 업데이트 또는 나열 취소) | 예 | 예 |
-| 조직 메타데이터 변경<br/>(이메일 주소, 알림 설정) | 아니요 | 예 |
-| 조직 멤버 관리 | 아니요 | 예 |
-| 조직 패키지에 대한 공동 소유권 요청 또는 작업 | 아니요 | 예 |
+| 조직의 패키지 관리<br/>(새 패키지 제출, 기존 패키지 업데이트 또는 나열 취소) | yes | yes |
+| 조직 메타데이터 변경<br/>(이메일 주소, 알림 설정) | 예 | yes |
+| 조직 멤버 관리 | 예 | yes |
+| 조직 패키지에 대한 공동 소유권 요청 또는 작업 | 예 | yes |
 
 ## <a name="managing-packages"></a>패키지 관리
 

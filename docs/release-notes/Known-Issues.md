@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
 ms.openlocfilehash: 8f2b33a7290301bd16db3b1979ae496eee602f55
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "75383660"
 ---
 # <a name="known-issues-with-nuget"></a>알려진 NuGet 문제
@@ -39,7 +39,7 @@ NuGet 3.4 및 3.4.1에서 NuGet 추가 기능을 사용하면 사용 가능한 �
 
 ![원본이 없는 NuGet config 파일](./media/knownIssue-34-NoSources.PNG)
 
-`%AppData%\NuGet\`(Windows) 또는 `~/.nuget/`(Mac/Linux) 폴더에 있는 `NuGet.Config` 파일이 실수로 비어 있습니다. 이 문제를 해결하려면 Visual Studio(Windows에서 해당하는 경우)를 닫고 `NuGet.Config` 파일을 삭제하고 작업을 다시 시도해 봅니다. NuGet이 새 `NuGet.Config`를 생성한 후에 계속할 수 있습니다.
+`NuGet.Config`(Windows) 또는 `%AppData%\NuGet\`(Mac/Linux) 폴더에 있는 `~/.nuget/` 파일이 실수로 비어 있습니다. 이 문제를 해결하려면 Visual Studio(Windows에서 해당하는 경우)를 닫고 `NuGet.Config` 파일을 삭제하고 작업을 다시 시도해 봅니다. NuGet이 새 `NuGet.Config`를 생성한 후에 계속할 수 있습니다.
 
 ## <a name="error-installing-packages-with-nuget-27"></a>NuGet 2.7 패키지 설치 오류
 
@@ -75,7 +75,7 @@ install-package log4net
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>VS 2012에서 패키지를 업데이트한 후에 빌드가 실패합니다.
 
-문제: VS 2012 RTM을 사용하고 있습니다. NuGet 패키지를 업데이트하는 경우 다음 메시지가 표시됩니다. "하나 이상의 패키지를 제거할 수 없습니다." 그리고 Visual Studio를 다시 시작하라는 메시지가 표시됩니다. 이에 따라 VS를 다시 시작하면 이상한 빌드 오류가 발생합니다.
+문제: VS 2012 RTM을 사용하고 있습니다. NuGet 패키지를 업데이트할 때 "하나 이상의 패키지를 제거할 수 없습니다."라는 메시지가 표시됩니다. 그리고 Visual Studio를 다시 시작하라는 메시지가 표시됩니다. 이에 따라 VS를 다시 시작하면 이상한 빌드 오류가 발생합니다.
 
 이는 이전 패키지의 특정 파일이 백그라운드 MSBuild 프로세스에서 잠겨 있기 때문입니다. VS를 다시 시작한 후에도 백그라운드 MSBuild 프로세스에서 이전 패키지의 파일을 계속 사용함으로써 빌드가 실패합니다.
 
@@ -90,7 +90,7 @@ VS 2010 SP1을 실행하는 경우 설치되어 있는 이전 버전의 NuGet을
 로그를 볼 때 `SignatureMismatchException`에 대한 언급이 표시될 수 있습니다.
 
 이 문제가 발생하지 않도록 하기 위해 [Visual Studio 2010 SP1 핫픽스](http://bit.ly/vsixcertfix)를 설치할 수 있습니다.
-또는 Visual Studio를 관리자 권한으로 실행하여 NuGet을 제거한 다음 VS 확장 갤러리에서 설치하기만 하면 됩니다. 자세한 내용은 <https://support.microsoft.com/kb/2581019>를 참조하세요.
+또는 Visual Studio를 관리자 권한으로 실행하여 NuGet을 제거한 다음 VS 확장 갤러리에서 설치하기만 하면 됩니다. 자세한 내용은 <https://support.microsoft.com/kb/2581019>을 참조하세요.
 
 ## <a name="package-manager-console-throws-an-exception-when-the-reflector-visual-studio-add-in-is-also-installed"></a>리플렉터 Visual Studio 추가 기능이 설치되면 패키지 관리자 콘솔에서 예외가 발생합니다.
 
@@ -171,7 +171,7 @@ NuGet 시험판 버전으로 빌드된 패키지를 설치한 경우 해당 프�
 
 ## <a name="attempting-to-install-or-uninstall-results-in-the-error-cannot-create-a-file-when-that-file-already-exists"></a>설치 또는 제거를 시도하면 “파일이 이미 있는 경우 해당 파일을 만들 수 없습니다.”라는 오류가 발생합니다.
 
-어떤 이유로 Visual Studio 확장이 VSIX 확장을 제거한 이상한 상태가 될 수 있지만 일부 파일은 남아 있습니다. 이 문제를 해결하려면:
+어떤 이유로 Visual Studio 확장이 VSIX 확장을 제거한 이상한 상태가 될 수 있지만 일부 파일은 남아 있습니다. 이 문제를 해결하려면
 
 1. Visual Studio 끝내기
 1. 다음 폴더를 엽니다(컴퓨터의 다른 드라이브에 있을 수 있음).
@@ -201,7 +201,7 @@ NuGet 시험판 버전으로 빌드된 패키지를 설치한 경우 해당 프�
 
 ## <a name="write-error-command-doesnt-work-inside-installps1uninstallps1initps1"></a>쓰기 오류 명령이 install.ps1/uninstall.ps1/init.ps1 내에서 작동하지 않습니다.
 
-이것은 알려진 문제입니다. 쓰기 오류를 호출하는 대신 throw 호출을 시도합니다.
+이것은 알려진 문제이며 쓰기 오류를 호출하는 대신 throw 호출을 시도합니다.
 
     throw "My error message"
 
