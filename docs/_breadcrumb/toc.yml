@@ -6,7 +6,7 @@
       tocHref: /nuget/
       topicHref: /nuget
       items:
-        - name: 시작
+        - name: 시작하기
           tocHref: /nuget/quickstart/
           topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
         - name: 패키지 사용
@@ -42,7 +42,7 @@
         - name: 릴리스 정보
           tocHref: /nuget/release-notes/
           topicHref: /nuget/release-notes/known-issues
-        - name: 자료
+        - name: 리소스
           tocHref: /nuget/resources/
           topicHref: /nuget/resources/nuget-faq
         - name: NuGet.org
