@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 83414a824676844f9e44eab874e5eac788d50583
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73610948"
 ---
 # <a name="creating-localized-nuget-packages"></a>지역화된 NuGet 패키지 만들기
@@ -99,7 +99,7 @@ ms.locfileid: "73610948"
 
 그런 다음 위성 어셈블리는 `{identifier}.{language}.{version}.nupkg` 명명 규칙(예: `ContosoUtilities.de.1.0.0.nupkg`)을 사용합니다. 식별자는 기본 패키지의 식별자와 정확하게 일치**해야** 합니다.
 
-이것이 별도 패키지이기 때문에 지역화된 메타데이터가 포함된 고유의 `.nuspec` 파일이 있습니다. `.nuspec`의 언어는 파일 이름에서 사용되는 언어와 일치**해야** 합니다.
+이것이 별도 패키지이기 때문에 지역화된 메타데이터가 포함된 고유의 `.nuspec` 파일이 있습니다. `.nuspec`의 언어는 파일 이름에서 사용되는 언어와 **반드시** 일치해야 합니다.
 
 또한 위성 어셈블리는 [] 버전 표기법을 사용하여 정확한 버전의 기본 패키지를 종속성으로 선언**해야** 합니다([패키지 버전 관리](../concepts/package-versioning.md) 참조). 예를 들어 `ContosoUtilities.de.1.0.0.nupkg`는 `ContosoUtilities.1.0.0.nupkg`에서 `[1.0.0]` 표기법을 사용하여 종속성을 선언해야 합니다. 물론 위성 패키지에는 기본 패키지와 다른 버전 번호가 있습니다.
 

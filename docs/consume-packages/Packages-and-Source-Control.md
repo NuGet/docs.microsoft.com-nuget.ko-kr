@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
 ms.openlocfilehash: 9d9ea10ccd32bb65ad0d62b591f5e2cb58ea3427
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/14/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69019984"
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>소스 제어 시스템에서 NuGet 패키지 생략
@@ -63,7 +63,7 @@ project.assets.json
 선택한 파일에서 TFVC를 사용하여 소스 제어 통합을 사용하지 않으려면:
 
 1. (`.sln` 파일이 있는)솔루션 폴더에서 `.nuget`라는 폴더를 만듭니다.
-    - 팁: Windows의 Windows 탐색기에서 이 폴더를 만들려면 후행 점을 *포함한* `.nuget.`이라는 이름을 사용합니다.
+    - 팁: Windows의 Windows 탐색기에서 이 폴더를 만들려면 후행 점을 ‘포함한’ `.nuget.`이라는 이름을 사용합니다. 
 
 1. 해당 폴더에서 `NuGet.Config`라는 파일을 만들고 편집하기 위해 엽니다.
 

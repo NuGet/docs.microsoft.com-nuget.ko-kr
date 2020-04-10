@@ -6,11 +6,11 @@ ms.author: anangaur
 ms.date: 03/03/2017
 ms.topic: conceptual
 ms.openlocfilehash: c27d0aa2e5c9af9cb15d2f487b93e93aca666214
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547763"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496600"
 ---
 # <a name="nuget-40-rtm-release-notes"></a>NuGet 4.0 RTM 릴리스 정보
 
@@ -20,7 +20,7 @@ ms.locfileid: "43547763"
 
 ### <a name="nuget-restore-may-fail-when-you-have-multiple-projects-referencing-another-project-in-a-solution"></a>솔루션에 다른 프로젝트를 참조하는 프로젝트가 여러 개 있는 경우 NuGet 복원이 실패할 수 있습니다.
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 대/소문자나 상대 경로가 다른, 동일한 프로젝트에 대한 프로젝트 참조가 솔루션에 있는 경우 NuGet 복원이 작동하지 않을 수 있습니다. [NuGet#4574](https://github.com/NuGet/Home/issues/4574)
 
@@ -30,7 +30,7 @@ ms.locfileid: "43547763"
 
 ### <a name="while-using-package-manager-console-enter-key-may-not-work"></a>패키지 관리자 콘솔을 사용하는 동안 'Enter' 키가 작동하지 않을 수 있음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 경우에 따라 패키지 관리자 콘솔에서 Enter 키가 작동하지 않습니다. 이런 경우 수정 진행 상황을 확인하고 재현 단계에 대해 도움이 되는 추가 정보를 제공하세요. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
 
@@ -40,7 +40,7 @@ Visual Studio를 다시 시작하고 솔루션을 열기 전에 PMC를 엽니다
 
 ### <a name="in-net-core-projects-you-may-end-up-in-infinite-restore-loop-when-you-use-a-package-containing-an-assembly-with-an-invalid-signature"></a>.NET Core 프로젝트에서 잘못된 시그니처와 함께 어셈블리가 포함된 패키지를 사용할 때 무한 복원 루프가 발생할 수 있음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 경우에 따라 잘못된 시그니처와 함께 어셈블리가 포함된 패키지를 사용하거나 패키지 버전이 'DateTime' 표시기로 설정되었을 때 패키지 자동 복원이 무한 루프로 실행됩니다. [NuGet#4542](https://github.com/NuGet/Home/issues/4542)
 
@@ -50,7 +50,7 @@ Visual Studio를 다시 시작하고 솔루션을 열기 전에 PMC를 엽니다
 
 ### <a name="you-are-unable-to-view-add-or-update-dotnetclitools-using-nuget-package-manager"></a>NuGet 패키지 관리자를 사용하여 DotNetCLITools를 보거나 추가 또는 업데이트할 수 없음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 않으며 허용하지도 않습니다. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
@@ -60,7 +60,7 @@ NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 
 
 ### <a name="nuget-restore-will-fail-when-you-set-packageid-property-for-projects"></a>프로젝트에 대해 PackageId 속성을 설정하면 NuGet 복원이 실패함
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 .NET Core 프로젝트의 경우 Visual Studio의 NuGet 복원에 프로젝트의 PackageId 속성이 반영되지 않습니다. [NuGet#4586](https://github.com/NuGet/Home/issues/4586)
 
@@ -70,7 +70,7 @@ NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 
 
 ### <a name="when-your-project-does-not-have-obj-folder-package-restore-may-fail"></a>프로젝트에 'obj' 폴더가 없는 경우 패키지 복원에 실패할 수 있음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 'obj' 폴더가 삭제된 경우 Visual Studio에서 PackageReferences를 복원하지 못합니다. [NuGet#4528](https://github.com/NuGet/Home/issues/4528)
 
@@ -80,7 +80,7 @@ NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 
 
 ### <a name="manually-updating-packages-using-update-package-in-console-may-fail"></a>콘솔에서 Update-Package를 사용하여 패키지를 수동으로 업데이트하면 실패할 수 있음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 방금 변환된 PackageReferences 프로젝트에 대해 한 번만 콘솔에서 Update-Package를 수동으로 사용할 수 있습니다. [NuGet#4431](https://github.com/NuGet/Home/issues/4431)
 
@@ -90,7 +90,7 @@ NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 
 
 ### <a name="retargeting-target-framework-version-may-lead-to-incomplete-intellisense"></a>대상 프레임워크 버전의 대상을 변경하면 불완전한 IntelliSense가 발생할 수 있음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불완전한 IntelliSense가 발생할 수 있습니다. 이 문제는 PackageReferences를 패키지 관리자 형식으로 사용하는 경우에 발생합니다. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
@@ -100,7 +100,7 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 ### <a name="msbuild-trestore-fails-when-a-project-targeting-net461-references-another-project-targeting-netstandard"></a>.NET461을 대상으로 하는 프로젝트가 .NETStandard를 대상으로 하는 다른 프로젝트를 참조하는 경우 msbuild /t:restore가 실패함
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 .NET461을 대상으로 하는 PackageReference 기반 프로젝트가 .NETStandard를 대상으로 하는 다른 PackageReference 기반 프로젝트를 참조하는 경우 msbuild /t:restore가 실패합니다.  [NuGet#4532](https://github.com/NuGet/Home/issues/4532)
 
@@ -116,7 +116,7 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 - NuGet.Core.sln의 문자열을 지역화합니다. - [#2041](https://github.com/NuGet/Home/issues/2041)
 
-- Nuget은 LSL 모드에서 웹 응용 프로그램 프로젝트를 강제로 로드합니다. - [#4258](https://github.com/NuGet/Home/issues/4258)
+- Nuget은 LSL 모드에서 웹 애플리케이션 프로젝트를 강제로 로드합니다. - [#4258](https://github.com/NuGet/Home/issues/4258)
 
 - UI에서 "SDK가 설치된" 패키지에 대한 버전 변경을 차단하기 위해 AutoReferenced PackageReference를 지원합니다. - [#4044](https://github.com/NuGet/Home/issues/4044)
 
@@ -138,7 +138,7 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 ### <a name="bugs"></a>버그
 
-- Visual Studio의 NuGet restore에서 프로젝트의 PackageId 속성이 적용되지 않습니다. - [#4586](https://github.com/NuGet/Home/issues/4586)
+- Visual Studio의 NuGet 복원에서 프로젝트의 PackageId 속성이 적용되지 않습니다. - [#4586](https://github.com/NuGet/Home/issues/4586)
 
 - vsix 패키지에 패키지를 추가하면 NuGet ProjectSystemCache 오류가 발생합니다. - [#4545](https://github.com/NuGet/Home/issues/4545)
 
@@ -173,7 +173,7 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 - vsfeedback - netcoreapp1.1을 대상으로 지정하면 경고가 표시됩니다. - [#4397](https://github.com/NuGet/Home/issues/4397)
 
-- 빈 ASP.NET Core 웹 응용 프로그램에 NuGet 패키지를 추가하려고 하면 PathTooLongException이 발생합니다. - [#4391](https://github.com/NuGet/Home/issues/4391)
+- 빈 ASP.NET Core 웹 애플리케이션에 NuGet 패키지를 추가하려고 하면 PathTooLongException이 발생합니다. - [#4391](https://github.com/NuGet/Home/issues/4391)
 
 - Pack이 너무 자주 실행됨 -- dotnet
   - “Pack” 대상과 관련된 대상 종속성 그래프에 순환 종속성이 있으므로 dotnetcore pack이 실패합니다. - [#4381](https://github.com/NuGet/Home/issues/4381)
@@ -252,13 +252,13 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 - 참조된 프로젝트를 언로드하는 솔루션을 빌드한 후에 오류 목록에 오류가 있습니다. - [#4208](https://github.com/NuGet/Home/issues/4208)
 
-- MSB4057: "_GenerateRestoreGraphProjectEntry" 대상이 프로젝트에 존재하지 않습니다. - [#4194](https://github.com/NuGet/Home/issues/4194)
+- MSB4057: “_GenerateRestoreGraphProjectEntry” 대상이 프로젝트에 존재하지 않습니다. - [#4194](https://github.com/NuGet/Home/issues/4194)
 
 - vsfeedback: 모든 프로젝트를 선택하면 솔루션에 대한 NuGet 관리자 UI 작동이 중단됩니다. - [#4191](https://github.com/NuGet/Home/issues/4191)
 
 - 후행 슬래시가 있으면 nuget.exe msbuildpath가 실패합니다. - [#4180](https://github.com/NuGet/Home/issues/4180)
 
-- vsfeedback: nuget restore에서 LinqToTwitter 프로젝트에 대한 여러 프로젝트 참조 경고를 제공합니다 - [#4156](https://github.com/NuGet/Home/issues/4156)
+- vsfeedback: NuGet 복원에서 LinqToTwitter 프로젝트에 대한 여러 프로젝트 참조 경고를 제공합니다 - [#4156](https://github.com/NuGet/Home/issues/4156)
 
 - `.csproj`의 pack에 minClientVersion 특성이 포함되지 않습니다. - [#4135](https://github.com/NuGet/Home/issues/4135)
 
@@ -320,7 +320,7 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 - NuGet과 관련된 Blend 문제 - [#4043](https://github.com/NuGet/Home/issues/4043)
 
-- 4.0.0.2067을 CLI 및 SDK 리포지토리에 통합하여 RC2와 함께 제공합니다. - [#4029](https://github.com/NuGet/Home/issues/4029)
+- 4\.0.0.2067을 CLI 및 SDK 리포지토리에 통합하여 RC2와 함께 제공합니다. - [#4029](https://github.com/NuGet/Home/issues/4029)
 
 - 새 Core 콘솔 앱 만들기, 솔루션 닫기, 솔루션 열기 및 솔루션 닫기를 수행하면 VS가 중단됩니다. - [#4008](https://github.com/NuGet/Home/issues/4008)
 

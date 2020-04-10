@@ -7,11 +7,11 @@ ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 72d707cb9bacd8abbac873ee10b2fd00f233d3cc
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432480"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496587"
 ---
 # <a name="nuget-43-release-notes"></a>NuGet 4.3 릴리스 정보
 
@@ -21,14 +21,14 @@ ms.locfileid: "58432480"
 
 ## <a name="summary-whats-new-in-431"></a>요약: 4.3.1의 새로운 기능
 
-* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 사용 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 보안 수정: ~/.nuget 내에서 만든 파일에 대한 권한이 열려 있습니다. [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 * 보안 수정: NUPKG 내부에 있는 파일에는 NUPKG 디렉터리 위의 상대 경로가 포함될 수 있습니다. [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>알려진 문제
 
 ### <a name="nuget-restore-may-treat-disabled-package-sources-as-enabled-in-some-cases"></a>일부 경우에 NuGet 복원이 사용하지 않도록 설정된 패키지 소스를 사용 설정된 것으로 처리할 수 있음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 다음 restore 명령줄 기술은 사용하지 않도록 설정된 패키지 원본을 사용 가능한 것으로 처리합니다. [NuGet#5704](https://github.com/NuGet/Home/issues/5704)
 - `msbuild /t:restore`
@@ -42,7 +42,7 @@ ms.locfileid: "58432480"
 
 ### <a name="while-using-package-manager-console-enter-key-may-not-work"></a>패키지 관리자 콘솔을 사용하는 동안 'Enter' 키가 작동하지 않을 수 있음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 경우에 따라 패키지 관리자 콘솔에서 Enter 키가 작동하지 않습니다. 이런 경우 수정 진행 상황을 확인하고 재현 단계에 대해 도움이 되는 추가 정보를 제공하세요. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
 
@@ -52,7 +52,7 @@ Visual Studio를 다시 시작하고 솔루션을 열기 전에 PMC를 엽니다
 
 ### <a name="you-are-unable-to-view-add-or-update-dotnetclitools-using-nuget-package-manager"></a>NuGet 패키지 관리자를 사용하여 DotNetCLITools를 보거나 추가 또는 업데이트할 수 없음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 않으며 허용하지도 않습니다. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
@@ -62,7 +62,7 @@ NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 
 
 ### <a name="retargeting-target-framework-version-may-lead-to-incomplete-intellisense"></a>대상 프레임워크 버전의 대상을 변경하면 불완전한 IntelliSense가 발생할 수 있음
 
-#### <a name="issue"></a>문제
+#### <a name="issue"></a>문제점
 
 Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불완전한 IntelliSense가 발생할 수 있습니다. 이 문제는 PackageReferences를 패키지 관리자 형식으로 사용하는 경우에 발생합니다. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
@@ -129,6 +129,6 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 - 잠금 파일에 종속성 진단을 넣습니다. - [#1599](https://github.com/NuGet/Home/issues/1599)
 
-## <a name="links-to-github-issues-fixed-in-43-rtm"></a>4.3 RTM에서 수정된 GitHub 문제에 대한 링크
+## <a name="links-to-github-issues-fixed-in-43-rtm"></a>4\.3 RTM에서 수정된 GitHub 문제에 대한 링크
 
 [문제 목록](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.3")

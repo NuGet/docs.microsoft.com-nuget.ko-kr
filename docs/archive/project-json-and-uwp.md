@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 07/17/2017
 ms.topic: conceptual
 ms.openlocfilehash: ac3c137dd0ba50571737093eef11c8ab0ef932b2
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548666"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64494363"
 ---
 # <a name="projectjson-and-uwp"></a>project.json 및 UWP
 
@@ -21,11 +21,11 @@ ms.locfileid: "43548666"
 
 ## <a name="adding-uwp-support-to-an-existing-package"></a>기존 패키지에 UWP 지원 추가
 
-기존 패키지가 있고 UWP 응용 프로그램에 대한 지원을 추가하려는 경우 여기서 설명하는 패키징 형식을 사용할 필요가 없습니다. 여기서 설명하는 기능이 필요하고 NuGet 클라이언트 버전 3 이상으로 업데이트된 클라이언트에서만 작동하도록 하려면 이 형식을 채택하면 됩니다.
+기존 패키지가 있고 UWP 애플리케이션에 대한 지원을 추가하려는 경우 여기서 설명하는 패키징 형식을 사용할 필요가 없습니다. 여기서 설명하는 기능이 필요하고 NuGet 클라이언트 버전 3 이상으로 업데이트된 클라이언트에서만 작동하도록 하려면 이 형식을 채택하면 됩니다.
 
 ## <a name="i-already-target-netcore45"></a>이미 netcore45를 대상으로 하고 있는 경우
 
-이미 `netcore45`를 대상으로 지정하고 있고 여기서 설명하는 기능을 활용할 필요가 없는 경우 아무 작업도 필요하지 않습니다. `netcore45` 패키지는 UWP 응용 프로그램에서 사용할 수 있습니다.
+이미 `netcore45`를 대상으로 지정하고 있고 여기서 설명하는 기능을 활용할 필요가 없는 경우 아무 작업도 필요하지 않습니다. `netcore45` 패키지는 UWP 애플리케이션에서 사용할 수 있습니다.
 
 ## <a name="i-want-to-take-advantage-of-windows-10-specific-apis"></a>Windows 10 특정 API를 활용하려는 경우
 
@@ -58,7 +58,7 @@ ms.locfileid: "43548666"
 | 도구 | `install.ps1` 및 `uninstall.ps1`은 실행되지 않습니다. `init.ps1`은 항상 있는 그대로 작동합니다. |
 | 콘텐츠 | 사용자의 프로젝트에 자동으로 복사되지 않습니다. 프로젝트의 콘텐츠 포함에 대한 지원은 이후 릴리스에 예정되어 있습니다. |
 | Lib | `lib`는 많은 패키지에 대해 NuGet 2.x에서 작동하는 것과 동일한 방식으로 작동하지만, 패키지를 사용할 때 패키지 내부에서 사용할 수 있는 이름에 대한 확장된 옵션 및 올바른 하위 폴더를 선택하기 위한 더 나은 논리를 사용할 수 있습니다. 그러나 `ref`와 함께 사용하는 경우 `lib` 폴더에는 `ref` 폴더의 어셈블리에서 정의한 노출 영역을 구현하는 어셈블리가 포함됩니다. |
-| Ref | `ref`는 컴파일할 응용 프로그램에 대한 공용 노출 영역(공용 형식 및 메서드)을 정의하는 .NET 어셈블리가 포함되는 선택적 폴더입니다. 이 폴더에 있는 어셈블리는 구현이 없어도 컴파일러에 대한 노출 영역을 전적으로 정의하는 데 사용됩니다. 패키지에 `ref` 폴더가 없으면 `lib`는 참조 어셈블리와 구현 어셈블리입니다. |
+| Ref | `ref`는 컴파일할 애플리케이션에 대한 공용 노출 영역(공용 형식 및 메서드)을 정의하는 .NET 어셈블리가 포함되는 선택적 폴더입니다. 이 폴더에 있는 어셈블리는 구현이 없어도 컴파일러에 대한 노출 영역을 전적으로 정의하는 데 사용됩니다. 패키지에 `ref` 폴더가 없으면 `lib`는 참조 어셈블리와 구현 어셈블리입니다. |
 | runtimes | `runtimes`는 OS 특정 코드(예: CPU 아키텍처 및 OS 특정 이진 파일 또는 플랫폼에 종속된 이진 파일)가 포함된 선택적 폴더입니다. |
 
 ## <a name="msbuild-targets-and-props-files-in-packages"></a>패키지의 MSBuild targets 및 props 파일
@@ -69,7 +69,7 @@ MSBuild는 이러한 두 파일을 찾고 프로젝트 빌드 프로세스의 �
 
 ## <a name="lib-and-ref"></a>Lib 및 Ref
 
-NuGet v3에서는 `lib` 폴더의 동작이 크게 변경되지 않았습니다. 그러나 모든 어셈블리는 TxM이라는 하위 폴더 내에 있어야 하며 더 이상 `lib` 폴더 바로 아래에 배치할 수 없습니다. TxM은 패키지에 지정된 특정 자산이 작동해야 하는 플랫폼의 이름입니다. 이러한 이름은 논리적으로 TFM(Target Framework Monikers)의 확장입니다. 예를 들어 `net45`, `net46`, `netcore50` 및 `dnxcore50`는 모두 TxM의 예입니다([대상 프레임워크](../reference/target-frameworks.md) 참조). TxM은 다른 플랫폼 특정 노출 영역뿐만 아니라 프레임워크(TFM)도 참조할 수 있습니다. 예를 들어 UWP TxM(`uap10.0`)은 .NET 노출 영역과 UWP 응용 프로그램에 대한 Windows 노출 영역을 나타냅니다.
+NuGet v3에서는 `lib` 폴더의 동작이 크게 변경되지 않았습니다. 그러나 모든 어셈블리는 TxM이라는 하위 폴더 내에 있어야 하며 더 이상 `lib` 폴더 바로 아래에 배치할 수 없습니다. TxM은 패키지에 지정된 특정 자산이 작동해야 하는 플랫폼의 이름입니다. 이러한 이름은 논리적으로 TFM(Target Framework Monikers)의 확장입니다. 예를 들어 `net45`, `net46`, `netcore50` 및 `dnxcore50`는 모두 TxM의 예입니다([대상 프레임워크](../reference/target-frameworks.md) 참조). TxM은 다른 플랫폼 특정 노출 영역뿐만 아니라 프레임워크(TFM)도 참조할 수 있습니다. 예를 들어 UWP TxM(`uap10.0`)은 .NET 노출 영역과 UWP 애플리케이션에 대한 Windows 노출 영역을 나타냅니다.
 
 lib 구조의 예:
 
