@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: a2f1fed578f1635296892ab925219f0f27883c02
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7e725d8114cde3de189dc3a648bc5a6c0b0e785b
+ms.sourcegitcommit: 0a63956bf12aaf1b1b45e680bc8e90f97347988c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "67426938"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83367949"
 ---
 # <a name="resolving-disputes-over-nuget-package-names"></a>NuGet 패키지 이름 분쟁 해결
 
@@ -20,10 +20,10 @@ ms.locfileid: "67426938"
 
 이 시나리오에서 Nancy는 나쁜 의도를 가진 것으로 보이지 않지만 대신 고유한 시간 및 코드를 제공하여 Northwind의 도구 및 고객을 지원합니다. 동시에 Northwind는 Northwind 이름의 정당한 소유자입니다.
 
-Northwind 및 Nancy는 둘 다 개발자 커뮤니티를 제공하는 데 관심이 있기 때문에 아래 프로세스를 수행하여 적합한 해결 방법을 함께 모색합니다. 일반적으로 NuGet 팀이 관련될 필요는 없습니다. 협업은 일반적으로 뛰어난 결과를 발생시킵니다. 사실 NuGet 팀이 날짜에 주의하도록 만드는 모든 분쟁은 팀이 판단을 미루지 않고 완료되었습니다.
+Northwind 및 Nancy는 둘 다 개발자 커뮤니티를 제공하는 데 관심이 있기 때문에 아래 프로세스를 수행하여 적합한 해결 방법을 함께 모색합니다. 일반적으로 NuGet 팀이 관련될 필요는 없습니다. 협업은 일반적으로 뛰어난 결과를 발생시킵니다.
 
-## <a name="process"></a>Process
+## <a name="process"></a>프로세스
 
-1. 패키지 세부 정보 페이지에 있는 **소유자에게 문의** 링크를 사용하여 분쟁이 발생한 패키지의 소유자에게 문의합니다. 친절하고 직접적인 방식으로 문제를 설명합니다.
+1. 패키지 세부 정보 페이지에서 **연락처 소유자** 링크를 사용하여 분쟁이 발생한 패키지의 소유자에게 연락합니다. 직접 친절하게 문제를 설명합니다.
 2. 해당 NuGet 및 .NET Foundation이 분쟁을 인식하도록 [support@nuget.org](mailto:support@nuget.org)에 메시지의 복사본을 보냅니다.
 3. 해결을 위해 최대 30일 동안 대기한 다음 [support@nuget.org](mailto:support@nuget.org)에 다시 알립니다. nuget.org 지원팀이 참여하고 두 당사자와 분쟁을 해결하려고 합니다.
