@@ -24,9 +24,9 @@ NuGet 3.5 이상을 사용하면 의도한 용도를 나타내기 위해 패키�
 
 - 사용자 지정 유형 패키지는 패키지 ID와 동일한 형식 규칙을 준수하는 임의 형식의 식별자를 사용합니다. 그러나 `Dependency` 및 `DotnetTool` 이외의 유형은 Visual Studio의 NuGet 패키지 관리자에서 인식되지 않습니다.
 
-패키지 형식은 `.nuspec` 파일에 설정됩니다. 이전 버전과의 호환성에서 *유형을 명시적으로*설정하지 않고`Dependency`, 유형을 지정하지 않은 경우 이 유형을 가정하여 NuGet을 대신 사용하는 것이 가장 좋습니다.
+패키지 형식은 `.nuspec` 파일에 설정됩니다. 이전 버전과의 호환성에서 `Dependency` 유형을 명시적으로 *설정하지 않고*, 유형을 지정하지 않은 경우 이 유형을 가정하여 NuGet을 대신 사용하는 것이 가장 좋습니다.
 
-- `.nuspec`: `packageTypes\packageType` 요소 아래의 `<metadata>` 노드 내에서 패키지 유형을 나타냅니다.
+- `.nuspec`: `<metadata>` 요소 아래의 `packageTypes\packageType` 노드 내에서 패키지 유형을 나타냅니다.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>

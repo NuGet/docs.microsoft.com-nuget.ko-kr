@@ -62,7 +62,7 @@ ms.locfileid: "72380716"
 
 ## <a name="create-and-update-the-nuspec-file"></a>.nuspec 파일 만들기 및 업데이트
 
-1. 명령 프롬프트를 열고, `AppLogger.csproj` 파일이 있는 위치에서 한 수준 아래의 `.sln` 폴더로 이동한 다음, NuGet `spec` 명령을 실행하여 초기 `AppLogger.nuspec` 파일을 만듭니다.
+1. 명령 프롬프트를 열고, `.sln` 파일이 있는 위치에서 한 수준 아래의 `AppLogger.csproj` 폴더로 이동한 다음, NuGet `spec` 명령을 실행하여 초기 `AppLogger.nuspec` 파일을 만듭니다.
 
     ```cli
     nuget spec

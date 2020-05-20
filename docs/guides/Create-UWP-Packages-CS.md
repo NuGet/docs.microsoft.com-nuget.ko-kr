@@ -22,7 +22,7 @@ ms.locfileid: "78231754"
 
 1. Visual Studio 2019. [visualstudio.com](https://www.visualstudio.com/)에서 추가 비용 없이 2019 Community 버전을 설치합니다. Professional 및 Enterprise 버전도 사용할 수 있습니다.
 
-1. NuGet CLI - `nuget.exe`nuget.org/downloads[에서 최신 버전의 ](https://nuget.org/downloads)를 다운로드하여 선택한 위치에 저장합니다(다운로드는 바로 `.exe`임). 그런 다음 해당 위치를 PATH 환경 변수에 추가합니다(아직 없는 경우). [자세한 내용](/nuget/reference/nuget-exe-cli-reference#windows).
+1. NuGet CLI - [nuget.org/downloads](https://nuget.org/downloads)에서 최신 버전의 `nuget.exe`를 다운로드하여 선택한 위치에 저장합니다(다운로드는 바로 `.exe`임). 그런 다음 해당 위치를 PATH 환경 변수에 추가합니다(아직 없는 경우). [자세한 내용](/nuget/reference/nuget-exe-cli-reference#windows).
 
 ## <a name="create-a-uwp-windows-runtime-component"></a>UWP Windows 런타임 구성 요소 만들기
 

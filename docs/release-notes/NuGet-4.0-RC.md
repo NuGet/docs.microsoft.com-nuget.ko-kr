@@ -56,7 +56,7 @@ ms.locfileid: "64496639"
 
 - System.Xml.XmlException: Core Properties 파트에 인식할 수 없는 루트 요소가 있습니다. 줄 2, 위치 2 - [#2718](https://github.com/NuGet/Home/issues/2718)
 
-- 텍스트 필드에 이스케이프된 `.nuspec` 또는 &lt;가 있는 &gt;은 더 이상 빌드되지 않습니다. - [#2651](https://github.com/NuGet/Home/issues/2651)
+- 텍스트 필드에 이스케이프된 &lt; 또는 &gt;가 있는 `.nuspec`은 더 이상 빌드되지 않습니다. - [#2651](https://github.com/NuGet/Home/issues/2651)
 
 - nuget.exe delete는 자격 증명을 묻지 않습니다(비대화형 모드입니다) - [#2626](https://github.com/NuGet/Home/issues/2626)
 

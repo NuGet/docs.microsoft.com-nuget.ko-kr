@@ -50,9 +50,9 @@ ms.locfileid: "73610710"
 
     이 확인란을 설정 또는 해제하면 패키지 관리자 UI 및 설치할 수 있는 사용 가능한 버전 목록을 새로 고칩니다.
 
-- **패키지 관리자 콘솔**: `-IncludePrerelease`, `Find-Package`, `Get-Package`, `Install-Package` 및 `Sync-Package` 명령과 함께 `Update-Package` 스위치를 사용합니다. [PowerShell 참조](../reference/powershell-reference.md)를 참조하세요.
+- **패키지 관리자 콘솔**: `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` 및 `Update-Package` 명령과 함께 `-IncludePrerelease` 스위치를 사용합니다. [PowerShell 참조](../reference/powershell-reference.md)를 참조하세요.
 
-- **NuGet CLI**: `-prerelease`, `install`, `update` 및 `delete` 명령과 함께 `mirror` 스위치를 사용합니다. [NuGet CLI 참조](../reference/nuget-exe-cli-reference.md)를 참조하세요.
+- **NuGet CLI**: `install`, `update`, `delete` 및 `mirror` 명령과 함께 `-prerelease` 스위치를 사용합니다. [NuGet CLI 참조](../reference/nuget-exe-cli-reference.md)를 참조하세요.
 
 ## <a name="semantic-versioning"></a>유의적 버전 사용
 
@@ -73,7 +73,7 @@ ms.locfileid: "73610710"
 - `-rc`: 일반적으로 심각한 버그가 발생하지 않는 한 잠재적으로 최종적(안정적)인 릴리스인 릴리스 후보입니다.
 
 > [!Note]
-> NuGet 4.3.0+는 [과 마찬가지로 점 표기법을 사용하는 시험판 번호를 지원하는 ](https://semver.org/spec/v2.0.0.html)유의적 버전 v2.0.0`1.0.1-build.23`을 지원합니다. NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다. 이전 버전의 NuGet에서는 `1.0.1-build23` 같은 양식을 사용할 수 있지만 이는 항상 시험판 버전으로 간주됩니다.
+> NuGet 4.3.0+는 `1.0.1-build.23`과 마찬가지로 점 표기법을 사용하는 시험판 번호를 지원하는 [유의적 버전 v2.0.0](https://semver.org/spec/v2.0.0.html)을 지원합니다. NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다. 이전 버전의 NuGet에서는 `1.0.1-build23` 같은 양식을 사용할 수 있지만 이는 항상 시험판 버전으로 간주됩니다.
 
 그러나 어떤 접미사를 사용하든지 NuGet은 알파벳 역순으로 우선 순위를 적용합니다.
 

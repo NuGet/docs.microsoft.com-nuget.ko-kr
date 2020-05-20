@@ -208,7 +208,7 @@ MSBuild 속성과 패키지 ID에는 동일한 제한이 없기 때문에 패키
 
 ## <a name="nuget-warnings-and-errors"></a>NuGet 경고 및 오류
 
-‘이 기능은 NuGet **4.3** 이상 및 Visual Studio 2017 **15.3** 이상에서 사용할 수 있습니다.’ 
+‘이 기능은 NuGet **4.3** 이상 및 Visual Studio 2017 **15.3** 이상에서 사용할 수 있습니다.’
 
 많은 패키지 및 복원 시나리오에서는 모든 NuGet 경고 및 오류가 코딩되고 `NU****`로 시작합니다. 모든 NuGet 경고 및 오류는 [참조](../reference/errors-and-warnings.md) 문서에 나와 있습니다.
 
@@ -271,7 +271,7 @@ Visual Studio에서 IDE를 통해 [경고 표시를 해제](/visualstudio/ide/ho
 
 ## <a name="locking-dependencies"></a>종속성 잠금
 
-이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다. 
+이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다.
 
 NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 세트이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다. 입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다. 그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다. 예를 들어:
 

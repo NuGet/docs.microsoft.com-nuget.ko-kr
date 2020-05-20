@@ -16,7 +16,7 @@ ms.locfileid: "64495912"
 
 Visual Studio의 패키지 관리자 UI 및 콘솔 외에도 NuGet은 [MEF(Managed Extensibility Framework)](/dotnet/framework/mef/index)를 통해 몇 가지 유용한 서비스를 내보냅니다. 이 인터페이스를 사용하면 Visual Studio의 다른 구성 요소에서 NuGet과 상호 작용하여 패키지를 설치하거나 제거하고, 설치된 패키지에 대한 정보를 얻을 수 있습니다.
 
-NuGet 3.3 이상에서는 NuGet에서 `NuGet.VisualStudio` 어셈블리의 `NuGet.VisualStudio.dll` 네임스페이스에 있는 다음 서비스를 모두 내보냅니다.
+NuGet 3.3 이상에서는 NuGet에서 `NuGet.VisualStudio.dll` 어셈블리의 `NuGet.VisualStudio` 네임스페이스에 있는 다음 서비스를 모두 내보냅니다.
 
 - [`IRegistryKey`](#iregistrykey-interface): 레지스트리 하위 키에서 값을 검색하는 메서드
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface): 프로젝트에 NuGet 패키지를 설치하는 메서드
@@ -33,7 +33,7 @@ NuGet 3.3 이상에서는 NuGet에서 `NuGet.VisualStudio` 어셈블리의 `NuGe
 
 ## <a name="using-nuget-services"></a>NuGet 서비스 사용
 
-1. 프로젝트에 [ 어셈블리가 포함된 `NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio)`NuGet.VisualStudio.dll` 패키지를 설치합니다.
+1. 프로젝트에 `NuGet.VisualStudio.dll` 어셈블리가 포함된 [`NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio) 패키지를 설치합니다.
 
     패키지가 설치되면 자동으로 어셈블리 참조의 **Interop 형식 포함** 속성이 **True**로 설정됩니다. 이렇게 하면 사용자가 최신 버전의 NuGet으로 업데이트할 때 버전 변경에 대한 코드를 복원할 수 있게 합니다.
 

@@ -101,7 +101,7 @@ class VsProjectCapabilitiesPresenceChecker : IVsBooleanSymbolPresenceChecker
 
 ## <a name="responding-to-queries"></a>쿼리에 응답
 
-프로젝트는 `VSHPROPID_ProjectCapabilitiesChecker`를 통해 `IVsHierarchy::GetProperty` 속성을 지원하여 이 기능을 선언합니다. `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker` 어셈블리에 정의된 `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll`라는 인스턴스를 반환해야 합니다. [NuGet 패키지](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime)를 설치하여 이 어셈블리를 참조합니다.
+프로젝트는 `IVsHierarchy::GetProperty`를 통해 `VSHPROPID_ProjectCapabilitiesChecker` 속성을 지원하여 이 기능을 선언합니다. `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll` 어셈블리에 정의된 `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`라는 인스턴스를 반환해야 합니다. [NuGet 패키지](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime)를 설치하여 이 어셈블리를 참조합니다.
 
 예를 들어 다음 `case` 문을 `IVsHierarchy::GetProperty` 메서드의 `switch` 문에 추가할 수 있습니다.
 

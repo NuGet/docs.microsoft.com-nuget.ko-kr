@@ -42,7 +42,7 @@ ms.locfileid: "67427478"
 ```
 
 > [!Note]
-> `packages.config` 프로젝트는 [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md)라는 프로세스를 사용하여 어셈블리를 `bin\<configuration>\` 출력 디렉터리에 복사합니다. 프로젝트의 어셈블리가 복사된 다음, 빌드 시스템이 참조된 어셈블리에 대한 어셈블리 매니페스트를 살펴본 후, 해당 어셈블리를 복사하고 모든 어셈블리에 대해 재귀적으로 반복합니다. 즉, `lib\<tfm>\` 디렉터리에 있는 어셈블리가 다른 어셈블리의 매니페스트에 종속성으로 나열되지 않은 경우(`Assembly.Load`, MEF 또는 다른 종속성 주입 프레임워크를 사용하여 런타임 시 어셈블리가 로드된 경우), `bin\<configuration>\`에 있더라도 프로젝트의 `bin\<tfm>\` 출력 디렉터리에 복사되지 않을 수 있습니다.
+> `packages.config` 프로젝트는 [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md)라는 프로세스를 사용하여 어셈블리를 `bin\<configuration>\` 출력 디렉터리에 복사합니다. 프로젝트의 어셈블리가 복사된 다음, 빌드 시스템이 참조된 어셈블리에 대한 어셈블리 매니페스트를 살펴본 후, 해당 어셈블리를 복사하고 모든 어셈블리에 대해 재귀적으로 반복합니다. 즉, `lib\<tfm>\` 디렉터리에 있는 어셈블리가 다른 어셈블리의 매니페스트에 종속성으로 나열되지 않은 경우(`Assembly.Load`, MEF 또는 다른 종속성 주입 프레임워크를 사용하여 런타임 시 어셈블리가 로드된 경우), `bin\<tfm>\`에 있더라도 프로젝트의 `bin\<configuration>\` 출력 디렉터리에 복사되지 않을 수 있습니다.
 
 ## <a name="example"></a>예제
 

@@ -19,7 +19,7 @@ CLI 도구를 사용하면 프로젝트 및 솔루션에서 NuGet 패키지를 �
 `nuget.exe` CLI는 .NET Framework 프로젝트 및 SDK 스타일이 아닌 프로젝트(예: .NET Standard 라이브러리를 대상으로 하는 비 SDK 스타일 프로젝트)에 대한 것입니다. `PackageReference`로 마이그레이션된 SDK 스타일이 아닌 프로젝트를 사용하는 경우 대신 `dotnet` CLI를 사용합니다. `nuget.exe` CLI에는 패키지 참조에 대한 [packages.config](../reference/packages-config.md) 파일이 필요합니다.
 
 > [!NOTE]
-> 대부분의 시나리오에서는 PackageReference에 [를 사용하는 ](../consume-packages/migrate-packages-config-to-package-reference.md)SDK 스타일이 아닌 프로젝트를 마이그레이션`packages.config`한 다음, `dotnet` CLI 대신 `nuget.exe` CLI를 사용하는 것이 좋습니다. 현재 C++ 및 ASP.NET 프로젝트에는 마이그레이션이 제공되지 않습니다.
+> 대부분의 시나리오에서는 PackageReference에 `packages.config`를 사용하는 [SDK 스타일이 아닌 프로젝트를 마이그레이션](../consume-packages/migrate-packages-config-to-package-reference.md)한 다음, `nuget.exe` CLI 대신 `dotnet` CLI를 사용하는 것이 좋습니다. 현재 C++ 및 ASP.NET 프로젝트에는 마이그레이션이 제공되지 않습니다.
 
 이 문서에서는 가장 일반적인 몇 가지 `nuget.exe` CLI 명령에 대한 기본 사용법을 보여줍니다. 이러한 명령의 대부분의 경우, CLI 도구는 프로젝트 파일이 명령에 지정되지 않는 한 현재 디렉터리에서 프로젝트 파일을 찾습니다. 사용할 수 있는 명령 및 전체 목록은 [nuget.exe CLI 참조](../reference/nuget-exe-cli-reference.md)를 참조하세요.
 
@@ -102,7 +102,7 @@ nuget list <search term>
 
 ## <a name="update-all-packages"></a>모든 패키지 업데이트
 
-[업데이트](../reference/cli-reference/cli-ref-update.md) 명령을 사용하여 모든 패키지를 업데이트합니다. 프로젝트의 모든 패키지(`packages.config` 사용)를 사용 가능한 최신 버전으로 업데이트합니다. `restore`를 실행하기 전에 `update`를 실행하는 것이 좋습니다.
+[업데이트](../reference/cli-reference/cli-ref-update.md) 명령을 사용하여 모든 패키지를 업데이트합니다. 프로젝트의 모든 패키지(`packages.config` 사용)를 사용 가능한 최신 버전으로 업데이트합니다. `update`를 실행하기 전에 `restore`를 실행하는 것이 좋습니다.
 
 ```cli
 nuget update

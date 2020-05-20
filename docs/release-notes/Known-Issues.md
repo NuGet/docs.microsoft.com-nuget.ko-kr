@@ -39,7 +39,7 @@ NuGet 3.4 및 3.4.1에서 NuGet 추가 기능을 사용하면 사용 가능한 �
 
 ![원본이 없는 NuGet config 파일](./media/knownIssue-34-NoSources.PNG)
 
-`NuGet.Config`(Windows) 또는 `%AppData%\NuGet\`(Mac/Linux) 폴더에 있는 `~/.nuget/` 파일이 실수로 비어 있습니다. 이 문제를 해결하려면 Visual Studio(Windows에서 해당하는 경우)를 닫고 `NuGet.Config` 파일을 삭제하고 작업을 다시 시도해 봅니다. NuGet이 새 `NuGet.Config`를 생성한 후에 계속할 수 있습니다.
+`%AppData%\NuGet\`(Windows) 또는 `~/.nuget/`(Mac/Linux) 폴더에 있는 `NuGet.Config` 파일이 실수로 비어 있습니다. 이 문제를 해결하려면 Visual Studio(Windows에서 해당하는 경우)를 닫고 `NuGet.Config` 파일을 삭제하고 작업을 다시 시도해 봅니다. NuGet이 새 `NuGet.Config`를 생성한 후에 계속할 수 있습니다.
 
 ## <a name="error-installing-packages-with-nuget-27"></a>NuGet 2.7 패키지 설치 오류
 

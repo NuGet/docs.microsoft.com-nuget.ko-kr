@@ -22,7 +22,7 @@ dotnet CLI는 .NET Core, .NET Standard 프로젝트(SDK 스타일 프로젝트 �
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-- [ 명령줄 도구를 제공하는 ](https://www.microsoft.com/net/download/).NET Core SDK`dotnet`. Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.
+- `dotnet` 명령줄 도구를 제공하는 [.NET Core SDK](https://www.microsoft.com/net/download/). Visual Studio 2017부터 dotnet CLI는 모든 .NET Core 관련 워크로드와 함께 자동으로 설치됩니다.
 
 ## <a name="install-a-package"></a>패키지 설치
 

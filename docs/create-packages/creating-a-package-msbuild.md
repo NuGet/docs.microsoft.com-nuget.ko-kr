@@ -67,7 +67,7 @@ Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습
 </Project>
 ```
 
-`Title`MSBuild pack 대상`PackageDescription`, `PackageTags`종속성 자산 제어[ 및 ](../reference/msbuild-targets.md#pack-target)NuGet 메타데이터 속성[에 설명된 대로 ](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets), [ 및 ](/dotnet/core/tools/csproj#nuget-metadata-properties)와 같은 선택적 속성을 설정할 수도 있습니다.
+[MSBuild pack 대상](../reference/msbuild-targets.md#pack-target), [종속성 자산 제어](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets) 및 [NuGet 메타데이터 속성](/dotnet/core/tools/csproj#nuget-metadata-properties)에 설명된 대로 `Title`, `PackageDescription` 및 `PackageTags`와 같은 선택적 속성을 설정할 수도 있습니다.
 
 > [!NOTE]
 > 공용으로 빌드된 패키지의 경우 **PackageTags** 속성에 특히 주의하세요. 이러한 태그는 다른 사람들이 패키지를 찾고 그 기능을 이해하는 데 도움이 됩니다.

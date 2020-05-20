@@ -151,7 +151,7 @@ ms.locfileid: "69488291"
 
 ## <a name="imports"></a>가져오기
 
-imports는 `dotnet` TxM을 사용하는 패키지가 dotnet TxM을 선언하지 않은 패키지와 작동할 수 있도록 설계되었습니다. 프로젝트에서 `dotnet` TxM을 사용하는 경우 `dotnet`이 아닌 플랫폼이 `project.json`과 호환될 수 있도록 `dotnet`에 다음을 추가하지 않는 한 종속된 모든 패키지에도 `dotnet` TxM이 있어야 합니다.
+imports는 `dotnet` TxM을 사용하는 패키지가 dotnet TxM을 선언하지 않은 패키지와 작동할 수 있도록 설계되었습니다. 프로젝트에서 `dotnet` TxM을 사용하는 경우 `dotnet`이 아닌 플랫폼이 `dotnet`과 호환될 수 있도록 `project.json`에 다음을 추가하지 않는 한 종속된 모든 패키지에도 `dotnet` TxM이 있어야 합니다.
 
 ```json
 "frameworks": {
@@ -176,6 +176,6 @@ NuGet 3 이상에서는 Visual Studio의 패키지 관리자 UI에서 내용을 
 
 ## <a name="projectlockjson"></a>project.lock.json
 
-`project.lock.json` 파일은 `project.json`을 사용하는 프로젝트에서 NuGet 패키지를 복원하는 과정에서 생성됩니다. NuGet에서 패키지의 그래프를 진행하면서 생성되는 모든 정보의 스냅샷을 저장하며, 프로젝트에 속한 모든 패키지의 버전, 내용 및 종속성이 포함됩니다. 빌드 시스템은 이 기능을 사용하여 프로젝트 자체의 로컬 패키지 폴더를 따르는 대신 프로젝트를 빌드할 때 관련된 전역 위치에서 패키지를 선택합니다. 이렇게 하면 별도의 많은 `project.lock.json` 파일 대신 `.nuspec`만 읽어야 하므로 빌드 성능이 더 빠릅니다.
+`project.lock.json` 파일은 `project.json`을 사용하는 프로젝트에서 NuGet 패키지를 복원하는 과정에서 생성됩니다. NuGet에서 패키지의 그래프를 진행하면서 생성되는 모든 정보의 스냅샷을 저장하며, 프로젝트에 속한 모든 패키지의 버전, 내용 및 종속성이 포함됩니다. 빌드 시스템은 이 기능을 사용하여 프로젝트 자체의 로컬 패키지 폴더를 따르는 대신 프로젝트를 빌드할 때 관련된 전역 위치에서 패키지를 선택합니다. 이렇게 하면 별도의 많은 `.nuspec` 파일 대신 `project.lock.json`만 읽어야 하므로 빌드 성능이 더 빠릅니다.
 
 `project.lock.json`은 패키지 복원 시 자동으로 생성되므로 `.gitignore` 및 `.tfignore`파일에 추가하여 원본 제어에서 생략할 수 있습니다([패키지 및 원본 제어](../consume-packages/packages-and-source-control.md) 참조). 그러나 원본 제어에 포함하는 경우 시간이 지남에 따라 확인된 종속성의 변경 내용이 변경 기록에 표시됩니다.
