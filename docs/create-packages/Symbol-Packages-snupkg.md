@@ -25,7 +25,7 @@ ms.locfileid: "80380420"
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-필수 [NuGet 프로토콜](https://www.nuget.org/downloads)을 구현하는 [nuget.exe v4.9.0 이상](https://www.microsoft.com/net/download/dotnet-core/2.2) 또는 [dotnet CLI v2.2.0 이상](../api/nuget-protocols.md)
+필수 [NuGet 프로토콜](../api/nuget-protocols.md)을 구현하는 [nuget.exe v4.9.0 이상](https://www.nuget.org/downloads) 또는 [dotnet CLI v2.2.0 이상](https://www.microsoft.com/net/download/dotnet-core/2.2)
 
 ## <a name="creating-a-symbol-package"></a>기호 패키지 만들기
 
