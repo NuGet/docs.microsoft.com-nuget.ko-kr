@@ -56,7 +56,7 @@ Nuget 패키지 관리자 콘솔에서는 [NuGet PowerShell 명령](../reference
 
 1. 다른 패키지 원본 및/또는 프로젝트를 선택하면 후속 명령의 해당 기본값이 변경됩니다. 기본값을 변경하 않고 이러한 설정을 재정의하기 위해 대부분의 명령은 `-Source` 및 `-ProjectName` 옵션을 지원합니다.
 
-1. 패키지 원본을 관리하려면 기어 아이콘을 선택합니다. 이 아이콘은 **패키지 관리자 UI** 페이지에 설명된 대로 [도구 > 옵션 > NuGet 패키지 관리자 > 패키지 원본](install-use-packages-visual-studio.md#package-sources) 대화 상자에 대한 바로 가기입니다. 또한 다음과 같은 프로젝트 선택기 오른쪽에 있는 컨트롤은 콘솔의 내용을 지웁니다.
+1. 패키지 원본을 관리하려면 기어 아이콘을 선택합니다. 이 아이콘은 [패키지 관리자 UI](install-use-packages-visual-studio.md#package-sources) 페이지에 설명된 대로 **도구 > 옵션 > NuGet 패키지 관리자 > 패키지 원본** 대화 상자에 대한 바로 가기입니다. 또한 다음과 같은 프로젝트 선택기 오른쪽에 있는 컨트롤은 콘솔의 내용을 지웁니다.
 
     ![패키지 관리자 콘솔 설정 및 지우기 컨트롤](media/PackageManagerConsoleControls2.png)
 
