@@ -24,7 +24,7 @@ ms.locfileid: "79428602"
 > [!Note]
 > Windows에 NuGet 4.9.0+ 및 Visual Studio 버전 15.9 이상 필요
 
-`signatureValidationMode``require`[ 명령을 사용하여 ](../reference/nuget-config-file.md)nuget.config[ 파일에서 `nuget config`를 ](../reference/cli-reference/cli-ref-config.md)로 설정하여 NuGet 클라이언트가 패키지 서명의 유효성을 검사하는 방법을 구성할 수 있습니다.
+[`nuget config`](../reference/cli-reference/cli-ref-config.md) 명령을 사용하여 [nuget.config](../reference/nuget-config-file.md) 파일에서 `signatureValidationMode`를 `require`로 설정하여 NuGet 클라이언트가 패키지 서명의 유효성을 검사하는 방법을 구성할 수 있습니다.
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require
