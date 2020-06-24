@@ -5,9 +5,9 @@
             "registration": "https://api.nuget.org/v3/registration3/nuget.versioning/index.json",
             "id": "NuGet.Versioning",
             "version": "4.4.0",
-            "description": "NuGet's implementation of Semantic Versioning.",
+            "description": "NuGet의 의미 체계 버전 관리 구현입니다.",
             "summary": "",
-            "title": "<span data-ttu-id=\"32fdd-101\">NuGet. 버전 관리</span><span class=\"sxs-lookup\"><span data-stu-id=\"32fdd-101\">NuGet.Versioning</span></span>",
+            "title": "NuGet. 버전 관리",
             "licenseUrl": "https://raw.githubusercontent.com/NuGet/NuGet.Client/dev/LICENSE.txt",
             "tags": [
                 "semver",
@@ -19,6 +19,11 @@
             ],
             "totalDownloads": 141896,
             "verified": true,
+            "packageTypes": [
+                {
+                    "name": "Dependency"
+                }
+            ],
             "versions": [
                 {
                     "version": "3.3.0",
@@ -48,9 +53,9 @@
             "registration": "https://api.nuget.org/v3/registration3/nerdbank.gitversioning/index.json",
             "id": "Nerdbank.GitVersioning",
             "version": "2.0.41",
-            "description": "Stamps your assemblies with semver 2.0 compliant git commit specific version information and provides NuGet versioning information as well.",
+            "description": "Semver 2.0 규격 git 커밋 특정 버전 정보를 사용 하 여 어셈블리를 스탬프 하 고 NuGet 버전 정보를 제공 합니다.",
             "summary": "Stamps your assemblies with semver 2.0 compliant git commit specific version information and provides NuGet versioning information as well.",
-            "title": "<span data-ttu-id=\"32fdd-102\">Nerdbank</span><span class=\"sxs-lookup\"><span data-stu-id=\"32fdd-102\">Nerdbank.GitVersioning</span></span>",
+            "title": "Nerdbank",
             "licenseUrl": "https://raw.githubusercontent.com/AArnott/Nerdbank.GitVersioning/ed547462f7/LICENSE.txt",
             "projectUrl": "http://github.com/aarnott/Nerdbank.GitVersioning",
             "tags": [
