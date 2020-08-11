@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9f427005251bc2bf7a8a79285e39b4bd49062dbf
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 45928e60033959bc8b4f43d1ef3e4c943e7ec057
+ms.sourcegitcommit: e02482e15c0cef63153086ed50d14f5b2a38f598
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428494"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473883"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>프로젝트에 대한 NuGet 패키지 찾기 및 평가
 
@@ -18,19 +18,31 @@ ms.locfileid: "79428494"
 
 ## <a name="finding-packages"></a>패키지 찾기
 
-nuget.org를 방문하거나 Visual Studio에서 패키지 관리자 UI를 열면 총 다운로드 수를 기준으로 정렬된 패키지 목록이 표시됩니다. 이렇게 하면 수백만 개의 .NET 프로젝트에서 가장 널리 사용되는 패키지가 바로 표시됩니다. 최소한 처음 몇 페이지에 나열된 패키지 중 일부는 프로젝트에 유용합니다.
+nuget.org를 방문하거나 Visual Studio에서 패키지 관리자 UI를 열면 관련성을 기준으로 정렬된 패키지 목록이 표시됩니다. 이 목록은 모든 .NET 프로젝트에서 가장 널리 사용되는 패키지를 보여 줍니다. 이 중에는 사용자의 프로젝트에 유용한 패키지가 있을 가능성이 높습니다.
 
 ![가장 인기 있는 패키지를 보여 주는 nuget.org/packages의 기본 보기](media/Finding-01-Popularity.png)
 
-페이지의 오른쪽 위에 **시험판 포함** 옵션이 있습니다. 이 옵션을 선택하면 nuget.org에서 베타 및 기타 초기 릴리스를 포함한 모든 패키지 버전을 표시합니다. 안정적인 릴리스만 표시하려면 이 옵션을 선택 취소합니다.
-
-특정 요구 사항에 따라서는 Visual Studio의 패키지 관리자나 nuget.org와 같은 포털에서 태그로 검색하는 방법이 적합한 패키지를 검색하는 가장 일반적인 방법입니다. 예를 들어 "json"을 검색하면 해당 키워드로 태그가 지정된 모든 NuGet 패키지를 나열하며, 이에 따라 JSON 데이터 형식과 어떤 관계가 있습니다.
+nuget.org에서 페이지 오른쪽 위에 있는 **필터** 단추를 확인합니다. 고급 검색 패널을 클릭하면 확장되어 정렬 및 필터링 옵션이 표시됩니다.
 
 ![nuget.org의 'json'에 대한 검색 결과](media/Finding-02-SearchResults.png)
 
-패키지 ID를 알고 있는 경우 이를 사용하여 검색할 수도 있습니다. 아래의 [검색 구문](#search-syntax)을 참조하세요.
+**패키지 형식** 필터를 사용하여 특정 형식의 패키지를 표시할 수 있습니다.
+- **`All types`** : 이것은 기본적인 동작입니다. 형식에 관계없이 모든 패키지가 표시됩니다.
+- **`Dependency`** : 프로젝트에 설치할 수 있는 일반 NuGet 패키지입니다.
+- **`.NET tool`** : 콘솔 애플리케이션을 포함하는 NuGet 패키지인 [.NET 도구](/dotnet/core/tools/global-tools)로 필터링합니다.
+- **`Template`** : [`dotnet new`](/dotnet/core/tools/dotnet-new) 명령을 사용하여 새 프로젝트를 만드는 데 사용할 수 있는 [.NET 템플릿](/dotnet/core/install/templates)으로 필터링합니다.
 
-현재 검색 결과는 관련성에 따라 정렬되므로 일반적으로 사용자의 요구 사항에 맞는 패키지에 대한 결과의 처음 몇 페이지를 최소한으로 살펴보거나 검색 용어를 더 구체적으로 조정하려고 합니다.
+**정렬 기준** 옵션을 사용하여 검색 결과를 정렬할 수 있습니다.
+- **`Relevance`** : 이것은 기본적인 동작입니다. 내부 채점 알고리즘에 따라 결과를 정렬합니다.
+- **`Downloads`** : 전체 다운로드 수를 기준으로 검색 결과를 내림차순으로 정렬합니다.
+- **`Recently updated`** : 검색 결과를 최신 버전의 만든 날짜를 기준으로 내림차순으로 정렬합니다.
+
+**옵션** 섹션에서 **`Include prerelease`** 확인란을 찾을 수 있습니다.
+확인란을 선택하면 nuget.org는 시험판을 포함한 모든 패키지 버전을 표시합니다. 안정적인 버전만 표시하려면 이 옵션을 선택 취소합니다.
+
+검색 필터를 적용하려면 **`Apply`** 단추를 클릭합니다. **`Reset`** 단추를 클릭하면 언제든지 기본 동작으로 돌아갈 수 있습니다.
+
+[검색 구문](#search-syntax)을 사용하여 태그, 소유자, 패키지 ID를 필터링할 수도 있습니다.
 
 ### <a name="does-the-package-support-my-projects-target-framework"></a>패키지에서 내 프로젝트의 대상 프레임워크를 지원합니까?
 
@@ -48,13 +60,13 @@ nuget.org를 방문하거나 Visual Studio에서 패키지 관리자 UI를 열�
 
 대부분의 패키지 작성자는 미리 보기 및 베타 릴리스를 제공하여 지속적으로 개선하고 최신 수정 버전에 대한 피드백을 얻고 있습니다.
 
-기본적으로 nuget.org에서는 시험판 패키지를 검색 결과에 표시합니다. 안정적인 릴리스만 검색하려면 페이지 오른쪽 위의 **시험판 포함** 옵션을 선택 취소합니다
+기본적으로 nuget.org에서는 시험판 패키지를 검색 결과에 표시합니다. 안정적인 릴리스만 검색하려면 페이지 오른쪽 위의 **필터** 단추에서 액세스할 수 있는 고급 검색 패널의 **시험판 포함** 옵션 선택을 취소합니다.
 
 ![nuget.org의 시험판 포함 확인란](media/Finding-06-include-prerelease.png)
 
 Visual Studio에서 NuGet 및 dotnet CLI 도구를 사용하는 경우 NuGet은 기본적으로 시험판 버전을 포함하지 않습니다. 이 동작을 변경하려면 다음 단계를 수행합니다.
 
-- **패키지 관리자 UI(Visual Studio)** : **NuGet 패키지 관리** UI에서 **시험판 포함** 확인란을 설정합니다. 이 확인란을 설정 또는 해제하면 패키지 관리자 UI 및 설치할 수 있는 사용 가능한 버전 목록을 새로 고칩니다.
+- **Visual Studio의 패키지 관리자 UI**: **NuGet 패키지 관리** UI에서 **시험판 포함** 확인란을 설정합니다. 이 확인란을 설정 또는 해제하면 패키지 관리자 UI 및 설치할 수 있는 사용 가능한 버전 목록을 새로 고칩니다.
 
     ![Visual Studio의 시험판 포함 확인란](media/Prerelease_02-CheckPrerelease.png)
 
@@ -128,7 +140,7 @@ NuGet은 Visual Studio의 C++ 프로젝트에서 사용할 수 있는 네이티�
 
 NuGet 패키지 검색은 nuget.org, NuGet CLI 및 Visual Studio의 NuGet 패키지 관리자 확장에서 동일하게 작동합니다. 일반적으로 검색은 패키지 설명뿐만 아니라 키워드에도 적용됩니다.
 
-- **필터링**: `<property>:<term>` 구문을 사용하여 특정 속성에 검색어를 적용할 수 있습니다. 여기서 `<property>`(대/소문자 구분 안 함)은 `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` 및 `owner`일 수 있습니다. 동시에 여러 속성을 검색할 수 있습니다. `id` 속성에 대한 검색은 부분 문자열 일치이지만, `packageid` 및 `owner`는 대/소문자를 구분하지 않는 정확한 일치를 사용합니다. 예:
+- **필터링**: `<property>:<term>` 구문을 사용하여 특정 속성에 검색어를 적용할 수 있습니다. 여기서 `<property>`(대/소문자 구분 안 함)은 `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` 및 `owner`일 수 있습니다. 동시에 여러 속성을 검색할 수 있습니다. `id` 속성에 대한 검색은 부분 문자열 일치이지만, `packageid` 및 `owner`는 대/소문자를 구분하지 않는 정확한 일치를 사용합니다. 예제:
 
 ```
 PackageId:jquery             # Match the package ID in an exact, case-insensitive manner
