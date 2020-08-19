@@ -1,60 +1,104 @@
 ---
 title: NuGet CLI 업데이트 명령
-description: Nuget.exe update 명령에 대 한 참조
+description: nuget.exe update 명령에 대 한 참조
 author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: b5da09c3dd6ffa0ce1b7b44731ed67ddd0336c58
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 84f939188ac190f6d539f8ee2b422049a274f178
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327510"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622579"
 ---
-# <a name="update-command-nuget-cli"></a><span data-ttu-id="d99ad-103">update 명령(NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="d99ad-103">update command (NuGet CLI)</span></span>
+# <a name="update-command-nuget-cli"></a><span data-ttu-id="87cf3-103">update 명령 (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="87cf3-103">update command (NuGet CLI)</span></span>
 
-<span data-ttu-id="d99ad-104">**적용 대상:** 패키지 &bullet; 사용 **지원 버전:** 모두</span><span class="sxs-lookup"><span data-stu-id="d99ad-104">**Applies to:** package consumption &bullet; **Supported versions:** all</span></span>
+<span data-ttu-id="87cf3-104">**적용 대상:** 패키지 사용 &bullet; **지원 버전:** 모두</span><span class="sxs-lookup"><span data-stu-id="87cf3-104">**Applies to:** package consumption &bullet; **Supported versions:** all</span></span>
 
-<span data-ttu-id="d99ad-105">프로젝트의 모든 패키지(`packages.config` 사용)를 사용 가능한 최신 버전으로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-105">Updates all packages in a project (using `packages.config`) to their latest available versions.</span></span> <span data-ttu-id="d99ad-106">을`update`실행 하기 전에 [' 복원 '](cli-ref-restore.md) 을 실행 하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-106">It is recommended to run ['restore'](cli-ref-restore.md) before running the `update`.</span></span> <span data-ttu-id="d99ad-107">개별 패키지를 업데이트 하려면 버전 번호를 [`nuget install`](cli-ref-install.md) 지정 하지 않고를 사용 합니다 .이 경우 NuGet은 최신 버전을 설치 합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-107">(To update an individual package, use [`nuget install`](cli-ref-install.md) without specifying a version number, in which case NuGet installs the latest version.)</span></span>
+<span data-ttu-id="87cf3-105">프로젝트의 모든 패키지(`packages.config` 사용)를 사용 가능한 최신 버전으로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-105">Updates all packages in a project (using `packages.config`) to their latest available versions.</span></span> <span data-ttu-id="87cf3-106">을 실행 하기 전에 [' 복원 '](cli-ref-restore.md) 을 실행 하는 것이 좋습니다 `update` .</span><span class="sxs-lookup"><span data-stu-id="87cf3-106">It is recommended to run ['restore'](cli-ref-restore.md) before running the `update`.</span></span> <span data-ttu-id="87cf3-107">개별 패키지를 업데이트 하려면 [`nuget install`](cli-ref-install.md) 버전 번호를 지정 하지 않고를 사용 합니다 .이 경우 NuGet은 최신 버전을 설치 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-107">(To update an individual package, use [`nuget install`](cli-ref-install.md) without specifying a version number, in which case NuGet installs the latest version.)</span></span>
 
-<span data-ttu-id="d99ad-108">참고: `update` 는 Mono (Mac OSX 또는 Linux)에서 실행 되는 CLI 또는 PackageReference 형식을 사용 하는 경우에는 작동 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-108">Note: `update` does not work with the CLI running under Mono (Mac OSX or Linux) or when using the PackageReference format.</span></span>
+<span data-ttu-id="87cf3-108">참고: `update` 는 Mono (MAC OSX 또는 Linux)에서 실행 되는 CLI 또는 PackageReference 형식을 사용 하는 경우에는 작동 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-108">Note: `update` does not work with the CLI running under Mono (Mac OSX or Linux) or when using the PackageReference format.</span></span>
 
-<span data-ttu-id="d99ad-109">이러한 참조가 이미 있는 경우이 명령은프로젝트파일의어셈블리참조도업데이트합니다.`update`</span><span class="sxs-lookup"><span data-stu-id="d99ad-109">The `update` command also updates assembly references in the project file, provided those references already exist.</span></span> <span data-ttu-id="d99ad-110">업데이트 된 패키지에 추가 된 어셈블리가 있으면 새 참조가 추가 *되지 않습니다* .</span><span class="sxs-lookup"><span data-stu-id="d99ad-110">If an updated package has an added assembly, a new reference is *not* added.</span></span> <span data-ttu-id="d99ad-111">새 패키지 종속성에도 해당 어셈블리 참조가 추가 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-111">New package dependencies also don't have their assembly references added.</span></span> <span data-ttu-id="d99ad-112">이러한 작업을 업데이트의 일부로 포함 하려면 패키지 관리자 UI 또는 패키지 관리자 콘솔을 사용 하 여 Visual Studio에서 패키지를 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-112">To include these operations as part of an update, update the package in Visual Studio using the Package Manager UI or the Package Manager Console.</span></span>
+<span data-ttu-id="87cf3-109">`update`이러한 참조가 이미 있는 경우이 명령은 프로젝트 파일의 어셈블리 참조도 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-109">The `update` command also updates assembly references in the project file, provided those references already exist.</span></span> <span data-ttu-id="87cf3-110">업데이트 된 패키지에 추가 된 어셈블리가 있으면 새 참조가 추가 *되지 않습니다* .</span><span class="sxs-lookup"><span data-stu-id="87cf3-110">If an updated package has an added assembly, a new reference is *not* added.</span></span> <span data-ttu-id="87cf3-111">새 패키지 종속성에도 해당 어셈블리 참조가 추가 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-111">New package dependencies also don't have their assembly references added.</span></span> <span data-ttu-id="87cf3-112">이러한 작업을 업데이트의 일부로 포함 하려면 패키지 관리자 UI 또는 패키지 관리자 콘솔을 사용 하 여 Visual Studio에서 패키지를 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-112">To include these operations as part of an update, update the package in Visual Studio using the Package Manager UI or the Package Manager Console.</span></span>
 
-<span data-ttu-id="d99ad-113">이 명령은 *-self* 플래그를 사용 하 여 nuget.exe 자체를 업데이트 하는 데도 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-113">This command can also be used to update nuget.exe itself using the *-self* flag.</span></span>
+<span data-ttu-id="87cf3-113">이 명령은 *-self* 플래그를 사용 하 여 nuget.exe 자체를 업데이트 하는 데도 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-113">This command can also be used to update nuget.exe itself using the *-self* flag.</span></span>
 
-## <a name="usage"></a><span data-ttu-id="d99ad-114">사용</span><span class="sxs-lookup"><span data-stu-id="d99ad-114">Usage</span></span>
+## <a name="usage"></a><span data-ttu-id="87cf3-114">사용량</span><span class="sxs-lookup"><span data-stu-id="87cf3-114">Usage</span></span>
 
 ```cli
 nuget update <configPath> [options]
 ```
 
-<span data-ttu-id="d99ad-115">여기서 `<configPath>` 는 프로젝트의 `packages.config` 종속성을 나열 하는 또는 솔루션 파일을 식별 합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-115">where `<configPath>` identifies either a `packages.config` or solution file that lists the project's dependencies.</span></span>
+<span data-ttu-id="87cf3-115">여기서는 `<configPath>` `packages.config` 프로젝트의 종속성을 나열 하는 또는 솔루션 파일을 식별 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-115">where `<configPath>` identifies either a `packages.config` or solution file that lists the project's dependencies.</span></span>
 
-## <a name="options"></a><span data-ttu-id="d99ad-116">변수</span><span class="sxs-lookup"><span data-stu-id="d99ad-116">Options</span></span>
+## <a name="options"></a><span data-ttu-id="87cf3-116">옵션</span><span class="sxs-lookup"><span data-stu-id="87cf3-116">Options</span></span>
 
-| <span data-ttu-id="d99ad-117">옵션</span><span class="sxs-lookup"><span data-stu-id="d99ad-117">Option</span></span> | <span data-ttu-id="d99ad-118">설명</span><span class="sxs-lookup"><span data-stu-id="d99ad-118">Description</span></span> |
-| --- | --- |
-| <span data-ttu-id="d99ad-119">ConfigFile</span><span class="sxs-lookup"><span data-stu-id="d99ad-119">ConfigFile</span></span> | <span data-ttu-id="d99ad-120">적용할 NuGet 설정 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-120">The NuGet configuration file to apply.</span></span> <span data-ttu-id="d99ad-121">지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-121">If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.</span></span>|
-| <span data-ttu-id="d99ad-122">FileConflictAction</span><span class="sxs-lookup"><span data-stu-id="d99ad-122">FileConflictAction</span></span> | <span data-ttu-id="d99ad-123">프로젝트에서 참조 하는 기존 파일을 덮어쓰거나 무시 하도록 요청 된 경우 수행할 동작을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-123">Specifies the action to take when asked to overwrite or ignore existing files referenced by the project.</span></span> <span data-ttu-id="d99ad-124">값은 *overwrite, ignore, none*입니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-124">Values are *overwrite, ignore, none*.</span></span> |
-| <span data-ttu-id="d99ad-125">ForceEnglishOutput</span><span class="sxs-lookup"><span data-stu-id="d99ad-125">ForceEnglishOutput</span></span> | <span data-ttu-id="d99ad-126">*(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-126">*(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.</span></span> |
-| <span data-ttu-id="d99ad-127">Help</span><span class="sxs-lookup"><span data-stu-id="d99ad-127">Help</span></span> | <span data-ttu-id="d99ad-128">명령어에 대한 도움말을 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-128">Displays help information for the command.</span></span> |
-| <span data-ttu-id="d99ad-129">ID</span><span class="sxs-lookup"><span data-stu-id="d99ad-129">Id</span></span> | <span data-ttu-id="d99ad-130">업데이트할 패키지 Id의 목록을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-130">Specifies a list of package IDs to update.</span></span> |
-| <span data-ttu-id="d99ad-131">MSBuildPath</span><span class="sxs-lookup"><span data-stu-id="d99ad-131">MSBuildPath</span></span> | <span data-ttu-id="d99ad-132">*(4.0 이상)* 명령에 사용할 MSBuild의 경로를 지정 합니다 `-MSBuildVersion`.</span><span class="sxs-lookup"><span data-stu-id="d99ad-132">*(4.0+)* Specifies the path of MSBuild to use with the command, taking precedence over `-MSBuildVersion`.</span></span> |
-| <span data-ttu-id="d99ad-133">MSBuildVersion</span><span class="sxs-lookup"><span data-stu-id="d99ad-133">MSBuildVersion</span></span> | <span data-ttu-id="d99ad-134">*(3.2 이상)* 이 명령에 사용할 MSBuild의 버전을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-134">*(3.2+)* Specifies the version of MSBuild to be used with this command.</span></span> <span data-ttu-id="d99ad-135">지원 되는 값은 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9입니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-135">Supported values are 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9.</span></span> <span data-ttu-id="d99ad-136">기본적으로 경로에 MSBuild가 선택 되어 있으며, 그렇지 않은 경우 기본적으로 설치 되어 있는 MSBuild의 가장 높은 버전으로 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-136">By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</span></span> |
-| <span data-ttu-id="d99ad-137">NonInteractive</span><span class="sxs-lookup"><span data-stu-id="d99ad-137">NonInteractive</span></span> | <span data-ttu-id="d99ad-138">사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-138">Suppresses prompts for user input or confirmations.</span></span> |
-| <span data-ttu-id="d99ad-139">PreRelease</span><span class="sxs-lookup"><span data-stu-id="d99ad-139">PreRelease</span></span> | <span data-ttu-id="d99ad-140">시험판 버전으로 업데이트할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-140">Allows updating to prerelease versions.</span></span> <span data-ttu-id="d99ad-141">이미 설치 된 시험판 패키지를 업데이트 하는 경우에는이 플래그가 필요 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-141">This flag is not required when updating prerelease packages that are already installed.</span></span> |
-| <span data-ttu-id="d99ad-142">RepositoryPath</span><span class="sxs-lookup"><span data-stu-id="d99ad-142">RepositoryPath</span></span> | <span data-ttu-id="d99ad-143">패키지가 설치 되는 로컬 폴더를 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-143">Specifies the local folder where packages are installed.</span></span> |
-| <span data-ttu-id="d99ad-144">색상</span><span class="sxs-lookup"><span data-stu-id="d99ad-144">Safe</span></span> | <span data-ttu-id="d99ad-145">설치 된 패키지와 동일한 주 버전 및 부 버전 내에서 가장 높은 버전의 업데이트만 사용할 수 있도록 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-145">Specifies that only updates with the highest version available within the same major and minor version as the installed package will be installed.</span></span> |
-| <span data-ttu-id="d99ad-146">자체</span><span class="sxs-lookup"><span data-stu-id="d99ad-146">Self</span></span> | <span data-ttu-id="d99ad-147">Nuget.exe를 최신 버전으로 업데이트 합니다. 다른 모든 인수는 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-147">Updates nuget.exe to the latest version; all other arguments are ignored.</span></span> |
-| <span data-ttu-id="d99ad-148">Source</span><span class="sxs-lookup"><span data-stu-id="d99ad-148">Source</span></span> | <span data-ttu-id="d99ad-149">업데이트에 사용할 패키지 원본 (Url) 목록을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-149">Specifies the list of package sources (as URLs) to use for the updates.</span></span> <span data-ttu-id="d99ad-150">생략 하는 경우 명령은 구성 파일에 제공 된 소스를 사용 합니다. [일반적인 NuGet 구성](../../consume-packages/configuring-nuget-behavior.md)을 참조 하세요.</span><span class="sxs-lookup"><span data-stu-id="d99ad-150">If omitted, the command uses the sources provided in configuration files, see [Common NuGet configurations](../../consume-packages/configuring-nuget-behavior.md).</span></span> |
-| <span data-ttu-id="d99ad-151">Verbosity</span><span class="sxs-lookup"><span data-stu-id="d99ad-151">Verbosity</span></span> | <span data-ttu-id="d99ad-152">출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-152">Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.</span></span> |
-| <span data-ttu-id="d99ad-153">버전</span><span class="sxs-lookup"><span data-stu-id="d99ad-153">Version</span></span> | <span data-ttu-id="d99ad-154">하나의 패키지 ID와 함께 사용 하는 경우 업데이트할 패키지의 버전을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-154">When used with one package ID, specifies the version of the package to update.</span></span> |
+- **`-ConfigFile`**
 
-<span data-ttu-id="d99ad-155">또한 [환경 변수](cli-ref-environment-variables.md)에 대한 정보를 참조할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d99ad-155">Also see [Environment variables](cli-ref-environment-variables.md)</span></span>
+  <span data-ttu-id="87cf3-117">적용할 NuGet 구성 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-117">The NuGet configuration file to apply.</span></span> <span data-ttu-id="87cf3-118">지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` 또는 `~/.config/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-118">If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="d99ad-156">예제</span><span class="sxs-lookup"><span data-stu-id="d99ad-156">Examples</span></span>
+- **`-FileConflictAction [PromptUser, Overwrite, Ignore]`**
+
+  <span data-ttu-id="87cf3-119">패키지의 파일이 대상 프로젝트에 이미 있는 경우의 기본 동작을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-119">Specifies the default action when a file from a package already exists in the target project.</span></span> <span data-ttu-id="87cf3-120">`Overwrite`항상 파일을 덮어쓰려면로 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-120">Set to `Overwrite` to always overwrite files.</span></span> <span data-ttu-id="87cf3-121">파일을 `Ignore` 건너뛰려면로 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-121">Set to `Ignore` to skip files.</span></span>
+
+  <span data-ttu-id="87cf3-122">`PromptUser`기본값은 또는가 제공 되지 않은 경우 충돌 하는 각 파일에 대해 메시지를 표시 `OverwriteAll` `IgnoreAll` 하며 나머지 모든 파일에 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-122">The `PromptUser` action, the default, will prompt for each conflicting file unless `OverwriteAll` or `IgnoreAll` is provided, which will apply to all remaining files.</span></span>
+
+- **`-ForceEnglishOutput`**
+
+  <span data-ttu-id="87cf3-123">*(3.5 +)* 고정 된 영어 기반 문화권을 사용 하 여 nuget.exe을 강제로 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-123">*(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.</span></span>
+
+- **`-?|-help`**
+
+  <span data-ttu-id="87cf3-124">명령에 대 한 도움말 정보를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-124">Displays help information for the command.</span></span>
+
+- **`-Id`**
+
+  <span data-ttu-id="87cf3-125">업데이트할 패키지 Id의 목록을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-125">Specifies a list of package IDs to update.</span></span>
+
+- **`-MSBuildPath`**
+
+  <span data-ttu-id="87cf3-126">*(4.0 이상)* 명령에 사용할 MSBuild의 경로를 지정 합니다 `-MSBuildVersion` .</span><span class="sxs-lookup"><span data-stu-id="87cf3-126">*(4.0+)* Specifies the path of MSBuild to use with the command, taking precedence over `-MSBuildVersion`.</span></span>
+
+- **`-MSBuildVersion`**
+
+  <span data-ttu-id="87cf3-127">*(3.2 이상)* 이 명령에 사용할 MSBuild의 버전을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-127">*(3.2+)* Specifies the version of MSBuild to be used with this command.</span></span> <span data-ttu-id="87cf3-128">지원 되는 값은 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9입니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-128">Supported values are 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9.</span></span> <span data-ttu-id="87cf3-129">기본적으로 경로에 MSBuild가 선택 되어 있으며, 그렇지 않은 경우 기본적으로 설치 되어 있는 MSBuild의 가장 높은 버전으로 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-129">By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</span></span>
+
+- **`-NonInteractive`**
+
+  <span data-ttu-id="87cf3-130">사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-130">Suppresses prompts for user input or confirmations.</span></span>
+
+- **`-PreRelease`**
+
+  <span data-ttu-id="87cf3-131">시험판 버전으로 업데이트할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-131">Allows updating to prerelease versions.</span></span> <span data-ttu-id="87cf3-132">이미 설치 된 시험판 패키지를 업데이트 하는 경우에는이 플래그가 필요 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-132">This flag is not required when updating prerelease packages that are already installed.</span></span>
+
+- **`-RepositoryPath`**
+
+  <span data-ttu-id="87cf3-133">패키지가 설치 되는 로컬 폴더를 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-133">Specifies the local folder where packages are installed.</span></span>
+
+- **`-Safe`**
+
+  <span data-ttu-id="87cf3-134">설치 된 패키지와 동일한 주 버전 및 부 버전 내에서 가장 높은 버전의 업데이트만 사용할 수 있도록 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-134">Specifies that only updates with the highest version available within the same major and minor version as the installed package will be installed.</span></span>
+
+- **`-Self`**
+
+  <span data-ttu-id="87cf3-135">최신 버전으로 nuget.exe 업데이트 다른 모든 인수는 무시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-135">Updates nuget.exe to the latest version; all other arguments are ignored.</span></span>
+
+- **`-Source`**
+
+  <span data-ttu-id="87cf3-136">업데이트에 사용할 패키지 원본 (Url) 목록을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-136">Specifies the list of package sources (as URLs) to use for the updates.</span></span> <span data-ttu-id="87cf3-137">생략 하는 경우 명령은 구성 파일에 제공 된 소스를 사용 합니다. [일반적인 NuGet 구성](../../consume-packages/configuring-nuget-behavior.md)을 참조 하세요.</span><span class="sxs-lookup"><span data-stu-id="87cf3-137">If omitted, the command uses the sources provided in configuration files, see [Common NuGet configurations](../../consume-packages/configuring-nuget-behavior.md).</span></span>
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  <span data-ttu-id="87cf3-138">출력에 표시 되는 세부 정보의 양을 지정 합니다. `normal` (기본값), `quiet` 또는 `detailed` 입니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-138">Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.</span></span>
+
+- **`-Version`**
+
+  <span data-ttu-id="87cf3-139">하나의 패키지 ID와 함께 사용 하는 경우 업데이트할 패키지의 버전을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="87cf3-139">When used with one package ID, specifies the version of the package to update.</span></span>
+
+<span data-ttu-id="87cf3-140">[환경 변수](cli-ref-environment-variables.md) 참조</span><span class="sxs-lookup"><span data-stu-id="87cf3-140">Also see [Environment variables](cli-ref-environment-variables.md)</span></span>
+
+## <a name="examples"></a><span data-ttu-id="87cf3-141">예</span><span class="sxs-lookup"><span data-stu-id="87cf3-141">Examples</span></span>
 
 ```cli
 nuget update
