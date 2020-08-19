@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 649c440d868c89068a069a396919b58b999369e5
-ms.sourcegitcommit: f29fa9b93fd59e679fab50d7413bbf67da3ea5b3
+ms.openlocfilehash: 0483a75c7ee1fd851f935f44d96a417e2e86bf20
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86451140"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622956"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 명령 (NuGet CLI)
 
@@ -22,7 +22,7 @@ ms.locfileid: "86451140"
 > [`dotnet pack`](../dotnet-Commands.md) [`msbuild -t:pack`](../msbuild-targets.md) [PackageReference](../../consume-packages/package-references-in-project-files.md) 기반 프로젝트의 경우 또는를 사용 합니다.
 > Mono에서는 프로젝트 파일에서 패키지를 만들 수 없습니다. 또한 `.nuspec` Windows 경로 이름을 변환 하지 않으므로 파일의 비로컬 경로를 Unix 스타일 경로로 조정 해야 합니다 nuget.exe.
 
-## <a name="usage"></a>사용
+## <a name="usage"></a>사용량
 
 ```cli
 nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
@@ -31,29 +31,109 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 여기서 `<nuspecPath>` 및 `<projectPath>` 은 `.nuspec` 각각 또는 프로젝트 파일을 지정 합니다.
 
 ## <a name="options"></a>옵션
+- **`-BasePath`**
 
-| 옵션 | 설명 |
-| --- | --- |
-| BasePath | [Nuspec](../nuspec.md) 파일에 정의 된 파일의 기본 경로를 설정 합니다. |
-| 빌드 | 패키지를 빌드하기 전에 프로젝트를 빌드해야 함을 지정 합니다. |
-| 제외 | 패키지를 만들 때 제외할 와일드 카드 패턴을 하나 이상 지정 합니다. 둘 이상의 패턴을 지정 하려면-Exclude 플래그를 반복 합니다. 아래 예제를 참조하세요. |
-| ExcludeEmptyDirectories | 패키지를 빌드할 때 빈 디렉터리가 포함 되지 않도록 합니다. |
-| ForceEnglishOutput | *(3.5 +)* 고정 된 영어 기반 문화권을 사용 하 여 nuget.exe을 강제로 실행 합니다. |
-| ConfigFile | Pack 명령의 구성 파일을 지정 합니다. |
-| 도움말 | 명령에 대 한 도움말 정보를 표시 합니다. |
-| IncludeReferencedProjects | 빌드된 패키지에 종속성 또는 패키지의 일부로 참조 된 프로젝트를 포함 해야 함을 나타냅니다. 참조 된 프로젝트에 `.nuspec` 프로젝트와 이름이 같은 해당 파일이 있는 경우 참조 된 프로젝트가 종속성으로 추가 됩니다. 그렇지 않으면 참조 된 프로젝트가 패키지의 일부로 추가 됩니다. |
-| MinClientVersion | 만든 패키지에 대 한 *minClientVersion* 특성을 설정 합니다. 이 값은 파일의 기존 *minClientVersion* 특성 (있는 경우)의 값을 재정의 합니다 `.nuspec` . |
-| MSBuildPath | *(4.0 이상)* 명령에 사용할 MSBuild의 경로를 지정 합니다 `-MSBuildVersion` . |
-| MSBuildVersion | *(3.2 이상)* 이 명령에 사용할 MSBuild의 버전을 지정 합니다. 지원 되는 값은 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9입니다. 기본적으로 경로에 MSBuild가 선택 되어 있으며, 그렇지 않은 경우 기본적으로 설치 되어 있는 MSBuild의 가장 높은 버전으로 설정 됩니다. |
-| NoDefaultExcludes | 및와 같이 점으로 시작 하는 NuGet 패키지 파일 및 파일 및 폴더의 기본 제외를 `.svn` 방지 `.gitignore` 합니다. |
-| NoPackageAnalysis | 패키지를 빌드한 후 팩에서 패키지 분석을 실행하지 않아야 함을 지정합니다. |
-| OutputDirectory | 만들어진 패키지가 저장 되는 폴더를 지정 합니다. 폴더를 지정 하지 않으면 현재 폴더가 사용 됩니다. |
-| 속성 | 다른 옵션 다음에 오는 명령줄에서 마지막에 표시 되어야 합니다. 프로젝트 파일의 값을 재정의 하는 속성의 목록을 지정 합니다. 속성 이름에 대 한 [일반적인 MSBuild 프로젝트 속성](/visualstudio/msbuild/common-msbuild-project-properties) 을 참조 하세요. 여기에 있는 Properties 인수는 세미콜론으로 구분 된 토큰 = 값 쌍의 목록이 며,이 목록은 파일의 각 항목이 `$token$` `.nuspec` 지정 된 값으로 대체 됩니다. 값은 따옴표로 묶인 문자열일 수 있습니다. "구성" 속성의 경우 기본값은 "Debug"입니다. 릴리스 구성으로 변경 하려면를 사용 `-Properties Configuration=Release` 합니다. **일반적**으로 이러한 속성은 비정상적인 동작을 방지 하기 위해 해당 프로젝트 빌드 중에 사용 된 것과 동일 해야 합니다. |
-| 접미사 | *(3.4.4 +)* 일반적으로 빌드 또는 기타 시험판 식별자를 추가 하는 데 사용 되는 내부적으로 생성 된 버전 번호에 접미사를 추가 합니다. 예를 들어를 사용 하면 `-suffix nightly` 와 같은 버전 번호를 사용 하 여 패키지를 만듭니다 `1.2.3-nightly` . 서로 다른 버전의 NuGet 및 NuGet 패키지 관리자와의 경고, 오류 및 잠재적 비 호환성을 방지 하려면 접미사를 문자로 시작 해야 합니다. |
-| 기호 | 패키지에 원본 및 기호가 포함 되도록 지정 합니다. 파일에 사용 되는 경우 `.nuspec` 일반 NuGet 패키지 파일 및 해당 기호 패키지를 만듭니다. 기본적으로 [레거시 기호 패키지](../../create-packages/Symbol-Packages.md)를 만듭니다. 기호 패키지에 대한 새 권장 형식은 .snupkg입니다. [기호 패키지(.snupkg) 만들기](../../create-packages/Symbol-Packages-snupkg.md)를 참조하세요. |
-| 도구 | 프로젝트의 출력 파일을 폴더에 배치 하도록 지정 합니다 `tool` . |
-| 자세한 정도 | 출력에 표시 되는 세부 정보의 양을 지정 합니다. *보통*, *자동*, *자세히*입니다. |
-| 버전 | 파일의 버전 번호를 재정의 `.nuspec` 합니다. |
+   [Nuspec](../nuspec.md) 파일에 정의 된 파일의 기본 경로를 설정 합니다.
+
+- **`-Build`**
+
+  패키지를 빌드하기 전에 프로젝트를 빌드해야 함을 지정 합니다.
+
+- **`-ConfigFile`**
+
+  적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` 또는 `~/.config/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.
+
+- **`-Exclude`**
+
+  패키지를 만들 때 제외할 와일드 카드 패턴을 하나 이상 지정 합니다. 둘 이상의 패턴을 지정 하려면-Exclude 플래그를 반복 합니다. 아래 예제를 참조하세요.
+
+- **`-ExcludeEmptyDirectories`**
+
+  패키지를 빌드할 때 빈 디렉터리가 포함 되지 않도록 합니다.
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5 +)* 고정 된 영어 기반 문화권을 사용 하 여 nuget.exe을 강제로 실행 합니다.
+
+- **`-?|-help`**
+
+  명령에 대 한 도움말 정보를 표시 합니다.
+
+- **`-IncludeReferencedProjects`**
+
+  빌드된 패키지에 종속성 또는 패키지의 일부로 참조 된 프로젝트를 포함 해야 함을 나타냅니다. 참조 된 프로젝트에 `.nuspec` 프로젝트와 이름이 같은 해당 파일이 있는 경우 참조 된 프로젝트가 종속성으로 추가 됩니다. 그렇지 않으면 참조 된 프로젝트가 패키지의 일부로 추가 됩니다.
+
+- **`-InstallPackageToOutputPath`**
+
+  명령이 공유 피드를 지원 하도록 패키지 출력 디렉터리를 준비 해야 하는지 여부를 지정 합니다.
+
+- **`-MinClientVersion`**
+
+  만든 패키지에 대 한 *minClientVersion* 특성을 설정 합니다. 이 값은 파일의 기존 *minClientVersion* 특성 (있는 경우)의 값을 재정의 합니다 `.nuspec` .
+
+- **`-MSBuildPath`**
+
+  *(4.0 이상)* 명령에 사용할 MSBuild의 경로를 지정 합니다 `-MSBuildVersion` .
+
+- **`-MSBuildVersion`**
+
+  *(3.2 이상)* 이 명령에 사용할 MSBuild의 버전을 지정 합니다. 지원 되는 값은 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9입니다. 기본적으로 경로에 MSBuild가 선택 되어 있으며, 그렇지 않은 경우 기본적으로 설치 되어 있는 MSBuild의 가장 높은 버전으로 설정 됩니다.
+
+- **`-NoDefaultExcludes`**
+
+  및와 같이 점으로 시작 하는 NuGet 패키지 파일 및 파일 및 폴더의 기본 제외를 `.svn` 방지 `.gitignore` 합니다.
+
+- **`-NonInteractive`**
+
+  사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다.
+
+- **`-NoPackageAnalysis`**
+
+  패키지를 빌드한 후 팩에서 패키지 분석을 실행하지 않아야 함을 지정합니다.
+
+- **`-OutputDirectory`**
+
+  만들어진 패키지가 저장 되는 폴더를 지정 합니다. 폴더를 지정 하지 않으면 현재 폴더가 사용 됩니다.
+
+- **`-OutputFileNamesWithoutVersion`**
+
+  명령에서 버전 없이 패키지 출력 이름을 준비 해야 하는지 여부를 지정 합니다.
+
+- **`-PackagesDirectory`**
+
+  패키지 폴더를 지정 합니다.
+
+- **`-p|-Properties`**
+
+  다른 옵션 다음에 오는 명령줄에서 마지막에 표시 되어야 합니다. 프로젝트 파일의 값을 재정의 하는 속성의 목록을 지정 합니다. 속성 이름에 대 한 [일반적인 MSBuild 프로젝트 속성](/visualstudio/msbuild/common-msbuild-project-properties) 을 참조 하세요. 여기에 있는 Properties 인수는 세미콜론으로 구분 된 토큰 = 값 쌍의 목록이 며,이 목록은 파일의 각 항목이 `$token$` `.nuspec` 지정 된 값으로 대체 됩니다. 값은 따옴표로 묶인 문자열일 수 있습니다. "구성" 속성의 경우 기본값은 "Debug"입니다. 릴리스 구성으로 변경 하려면를 사용 `-Properties Configuration=Release` 합니다. **일반적**으로 이러한 속성은 비정상적인 동작을 방지 하기 위해 해당 프로젝트 빌드 중에 사용 된 것과 동일 해야 합니다.
+
+- **`-SolutionDirectory`**
+
+  솔루션 디렉터리를 지정 합니다.
+
+- **`-Suffix`**
+
+  *(3.4.4 +)* 일반적으로 빌드 또는 기타 시험판 식별자를 추가 하는 데 사용 되는 내부적으로 생성 된 버전 번호에 접미사를 추가 합니다. 예를 들어를 사용 하면 `-suffix nightly` 와 같은 버전 번호를 사용 하 여 패키지를 만듭니다 `1.2.3-nightly` . 서로 다른 버전의 NuGet 및 NuGet 패키지 관리자와의 경고, 오류 및 잠재적 비 호환성을 방지 하려면 접미사를 문자로 시작 해야 합니다.
+
+- **`-SymbolPackageFormat`**
+
+  기호 패키지를 만들 때에서 및 형식을 선택할 수 있습니다 `snupkg` `symbols.nupkg` .
+
+- **`-Symbols`**
+
+  패키지에 원본 및 기호가 포함 되도록 지정 합니다. 파일에 사용 되는 경우 `.nuspec` 일반 NuGet 패키지 파일 및 해당 기호 패키지를 만듭니다. 기본적으로 [레거시 기호 패키지](../../create-packages/Symbol-Packages.md)를 만듭니다. 기호 패키지에 대한 새 권장 형식은 .snupkg입니다. [기호 패키지(.snupkg) 만들기](../../create-packages/Symbol-Packages-snupkg.md)를 참조하세요.
+
+- **`-Tool`**
+
+   프로젝트의 출력 파일을 폴더에 배치 하도록 지정 합니다 `tool` .
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  출력에 표시 되는 세부 정보의 양을 지정 합니다. `normal` (기본값), `quiet` 또는 `detailed` 입니다.
+
+- **`-Version`**
+
+  파일의 버전 번호를 재정의 `.nuspec` 합니다.
 
 [환경 변수](cli-ref-environment-variables.md) 참조
 
@@ -84,7 +164,7 @@ Pack 작업 중에 모든 NuGet 경고를 해결 하는 것이 좋지만 특정 
 
 > nuget.exe pack nuspec NoWarn = NU5104
 
-## <a name="examples"></a>예제
+## <a name="examples"></a>예
 
 ```cli
 nuget pack

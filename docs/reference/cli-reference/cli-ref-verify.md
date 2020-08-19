@@ -1,33 +1,33 @@
 ---
 title: NuGet CLI verify 명령
-description: Nuget.exe verify 명령에 대 한 참조입니다.
+description: nuget.exe verify 명령에 대 한 참조
 author: dtivel
 ms.author: dtivel
 ms.date: 03/06/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 9510f7323fe0cb860e0dbde51c1eda761846ee27
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 2c501753a16820c5d027441001561c6b637ccda9
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327500"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622605"
 ---
-# <a name="verify-command-nuget-cli"></a>verify 명령(NuGet CLI)
+# <a name="verify-command-nuget-cli"></a>verify 명령 (NuGet CLI)
 
-**적용 대상:** 패키지 &bullet; 사용 **지원 버전:** 4.6 이상
+**적용 대상:** 패키지 사용 &bullet; **지원 버전:** 4.6 이상
 
 패키지를 확인 합니다.
 
 서명 된 패키지의 확인은 .NET Core, Mono 또는 비 Windows 플랫폼에서 아직 지원 되지 않습니다.
 
-## <a name="usage"></a>사용
+## <a name="usage"></a>사용량
 
 ```cli
 nuget verify <-All|-Signatures> <package(s)> [options]
 ```
 
-여기서 `<package(s)>` 는 하나 `.nupkg` 이상의 파일입니다.
+여기서 `<package(s)>` 는 하나 이상의 `.nupkg` 파일입니다.
 
 ## <a name="nuget-verify--all"></a>nuget 확인-모두
 
@@ -39,18 +39,31 @@ nuget verify <-All|-Signatures> <package(s)> [options]
 
 ## <a name="options-for-verify--signatures"></a>"서명 확인"에 대 한 옵션
 
-| 옵션 | Description |
-| --- | --- |
-| CertificateFingerprint | 서명 된 패키지에 서명 해야 하는 인증서의 SHA-256 인증서 지문을 하나 이상 지정 합니다. 인증서 SHA-256 지문을 인증서의 SHA-256 해시입니다. 여러 입력은 세미콜론으로 구분 해야 합니다. |
+- **`-CertificateFingerprint`**
 
-## <a name="options"></a>변수
+  서명 된 패키지에 서명 해야 하는 인증서의 SHA-256 인증서 지문을 하나 이상 지정 합니다. 인증서 SHA-256 지문을 인증서의 SHA-256 해시입니다. 여러 입력은 세미콜론으로 구분 해야 합니다.
 
-| 옵션 | 설명 |
-| --- | --- |
-| ConfigFile | 적용할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
-| ForceEnglishOutput | 고정 영어 기반 문화권을 사용 하 여 nuget.exe를 실행 합니다. |
-| Help | 명령어에 대한 도움말을 표시합니다. |
-| Verbosity | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
+## <a name="options"></a>옵션
+
+- **`-ConfigFile`**
+
+  적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` 또는 `~/.config/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.
+
+- **`-ForceEnglishOutput`**
+
+  고정 된 영어 기반 문화권을 사용 하 여 nuget.exe을 강제로 실행 합니다.
+
+- **`-?|-help`**
+
+  명령에 대 한 도움말 정보를 표시 합니다.
+
+- **`-NonInteractive`**
+
+  사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다.
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  출력에 표시 되는 세부 정보의 양을 지정 합니다. `normal` (기본값), `quiet` 또는 `detailed` 입니다.
 
 ## <a name="examples"></a>예
 

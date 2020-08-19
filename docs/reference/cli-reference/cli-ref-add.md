@@ -1,56 +1,78 @@
 ---
 title: NuGet CLI add 명령
-description: Nuget.exe add 명령에 대 한 참조
+description: nuget.exe add 명령에 대 한 참조
 author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 7a72186e1dece082cd200a03849a0b12c751a645
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 89d268946243e8eae07e482db48e809a15260c38
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327860"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622904"
 ---
-# <a name="add-command-nuget-cli"></a>add 명령(NuGet CLI)
+# <a name="add-command-nuget-cli"></a>add 명령 (NuGet CLI)
 
-**적용 대상**: 패키지 게시 &bullet; **지원 버전**: 3.3+
+**적용 대상**: 패키지 게시 &bullet; **지원 버전**: 3.3 이상
 
-특정한 패키지를 폴더나 UNC 경로와 같은 비 HTTP 패키지 소스에 패키지 이름과 버전 번호로 된 폴더 내부에 계층 레이아웃으로 추가합니다. 예를 들어:
+패키지 ID 및 버전 번호에 대 한 폴더를 만드는 계층적 레이아웃에서 HTTP가 아닌 패키지 원본 (폴더 또는 UNC 경로)에 지정 된 패키지를 추가 합니다. 다음은 그 예입니다. 
 
-    \\myserver\packages
-      └─<packageID>
-        └─<version>
-          ├─<packageID>.<version>.nupkg
-          ├─<packageID>.<version>.nupkg.sha512
-          └─<packageID>.nuspec
+```
+\\myserver\packages
+  └─<packageID>
+    └─<version>
+      ├─<packageID>.<version>.nupkg
+      ├─<packageID>.<version>.nupkg.sha512
+      └─<packageID>.nuspec
+```
 
-해당 패키지에 대한 복원이나 업데이트를 할 때, 위와 같은 계층 레이아웃은 더 나은 성능을 제공합니다.
+패키지 원본에 대해 복원 하거나 업데이트 하는 경우 계층적 레이아웃을 통해 성능이 크게 향상 됩니다.
 
-원하는 패키지 소스 폴더 내부의 모든 파일을 확장하려면 `-Expand`를 사용하여 전환합니다. 일반적으로 `tools` 와 `lib`이라는 추가적인 하위폴더가 목적지 폴더 내부에 보일 수 있습니다.
+패키지의 모든 파일을 대상 패키지 원본으로 확장 하려면 스위치를 사용 `-Expand` 합니다. 이 경우 일반적으로 및와 같은 추가 하위 폴더가 대상에 나타납니다 `tools` `lib` .
 
-## <a name="usage"></a>사용
+## <a name="usage"></a>사용량
 
 ```cli
 nuget add <packagePath> -Source <sourcePath> [options]
 ```
 
-여기서 `<packagePath>`는 추가하고자 하는 패키지의 위치를, `<sourcePath>`는 추가할 패키지 소스의 위치를 의미합니다. HTTP 소스는 지원되지 않습니다.
+여기서 `<packagePath>` 는 추가할 패키지의 경로 이름 이며,는 `<sourcePath>` 패키지를 추가할 폴더 기반 패키지 원본을 지정 합니다. HTTP 원본은 지원 되지 않습니다.
 
 ## <a name="options"></a>옵션
 
-| 옵션 | 설명 |
-| --- | --- |
-| ConfigFile | 적용할 NuGet 설정 파일입니다. 지정하지 않으면 기본적으로 Windows에서는 `%AppData%\NuGet\NuGet.Config`, Mac이나 Linux에서는 `~/.nuget/NuGet/NuGet.Config`가 사용됩니다.|
-| Expand | 패키지의 원본에 있는 모든 파일을 추가합니다. |
-| ForceEnglishOutput | *(3.5 이상)*  현재 언어 설정을 무시하고 영어를 기반으로 nuget.exe를 강제로 실행합니다. |
-| Help | 명령어에 대한 도움말을 표시합니다. |
-| NonInteractive | 사용자 입력이나 확인에 대한 프롬프트를 표시하지 않습니다. |
-| Verbosity | 출력에 표시되는 세부정보의 양을 지정합니다: *정상적인*, *조용한*, *자세한*합니다. |
+- **`-ConfigFile`**
 
-또한 [환경 변수](cli-ref-environment-variables.md)에 대한 정보를 참조할 수 있습니다.
+  적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` 또는 `~/.config/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.
 
-## <a name="examples"></a>예제
+- **`-Expand`**
+
+  패키지 소스에 패키지의 모든 파일을 추가 합니다.
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5 +)* 고정 된 영어 기반 문화권을 사용 하 여 nuget.exe을 강제로 실행 합니다.
+고정 된 영어 기반 문화권을 사용 하 여 nuget.exe을 강제로 실행 합니다.
+
+- **`-?|-help`**
+
+  명령에 대 한 도움말 정보를 표시 합니다.
+
+- **`-NonInteractive`**
+
+  사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다.
+
+- **`-src|-Source`**
+
+   Nupkg이 추가 될 폴더 또는 UNC 공유 인 패키지 원본을 지정 합니다. Http 원본은 지원 되지 않습니다.
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  출력에 표시 되는 세부 정보의 양을 지정 합니다. `normal` (기본값), `quiet` 또는 `detailed` 입니다.
+
+[환경 변수](cli-ref-environment-variables.md) 참조
+
+## <a name="examples"></a>예
 
 ```cli
 nuget add foo.nupkg -Source c:\bar\
