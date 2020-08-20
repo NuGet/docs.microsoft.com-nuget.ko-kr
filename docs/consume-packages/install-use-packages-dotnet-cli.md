@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: 67cca81c48970c7f2e2cf0a64ee5ba57704a31e2
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 38455e61bd91f115df9f27df090ba47a029f6877
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "74825168"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622943"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 패키지 설치 및 관리
 
@@ -57,13 +57,13 @@ dotnet CLI는 .NET Core, .NET Standard 프로젝트(SDK 스타일 프로젝트 �
 버전이 지정되지 않은 경우 NuGet은 패키지의 최신 버전을 설치합니다. [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) 명령을 사용하여 특정 버전의 Nuget 패키지를 설치할 수도 있습니다.
 
 ```dotnetcli
-dotnet add package <PACKAGE_NAME> -v <VERSION>
+dotnet add package <PACKAGE_NAME> --version <VERSION>
 ```
 
 예를 들어 `Newtonsoft.Json` 패키지의 버전 12.0.1을 추가하려면 다음 명령을 사용합니다.
 
 ```dotnetcli
-dotnet add package Newtonsoft.Json -v 12.0.1
+dotnet add package Newtonsoft.Json --version 12.0.1
 ```
 
 ## <a name="list-package-references"></a>패키지 참조 나열

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 1c19f962dc9e42154c0f4374432548e867e9538a
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 5dda56ccd4c959bcbcbd12b7a4771ddff1fe7530
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73610710"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623008"
 ---
 # <a name="building-pre-release-packages"></a>시험판 패키지 빌드
 
@@ -24,7 +24,7 @@ ms.locfileid: "73610710"
 
 다음 방법 중 하나를 사용하여 이러한 버전을 지정할 수 있습니다.
 
-- **프로젝트에서 사용 하는 경우 [`PackageReference`](../consume-packages/package-references-in-project-files.md)** : 의미 체계 버전 접미사가 포함된 `.csproj` 파일의 [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) 요소:
+- **프로젝트에서 사용 하는 경우 [`PackageReference`](../consume-packages/package-references-in-project-files.md)** : 의미 체계 버전 접미사가 포함된 `.csproj` 파일의 [`PackageVersion`](/dotnet/core/tools/csproj#packageversion) 요소:
 
     ```xml
     <PropertyGroup>

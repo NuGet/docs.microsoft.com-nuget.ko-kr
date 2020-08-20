@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8cc990e0c9eed07c59c8dffb04d104be47051736
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 937a0083ca47ba5668059736a7e99f7ca88e8908
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "69999947"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622618"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -118,10 +118,6 @@ Visual Studio 자동화 개체 모델의 최상위 개체를 DTE(개발 도구 �
 [NuGet 패키지 대량 게시](http://jeffhandley.com/archive/2012/12/13/Bulk-Publishing-NuGet-Packages.aspx)(jeffhandly.com)를 참조하세요.
 
 ## <a name="working-with-packages"></a>패키지 작업
-
-**프로젝트 수준 패키지와 솔루션 수준 패키지의 차이점은 무엇인가요?**
-
-솔루션 수준 패키지(NuGet 3.x 이상)는 솔루션에 한 번만 설치되며 솔루션의 모든 프로젝트에서 사용할 수 있습니다. 프로젝트 수준 패키지는 이를 사용하는 각 프로젝트에 설치됩니다. 또한 솔루션 수준 패키지는 패키지 관리자 콘솔 내에서 호출할 수 있는 새 명령을 설치할 수도 있습니다.
 
 **인터넷 연결 없이 NuGet 패키지를 설치할 수 있나요?**
 

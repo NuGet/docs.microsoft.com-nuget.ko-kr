@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/03/2018
 ms.topic: conceptual
-ms.openlocfilehash: be7c10fb6ce60375f77e38f9b604ec33063e52fc
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 2dfbd793eee05169f051d9c8943bc065945b92da
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64498245"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622644"
 ---
 # <a name="packages-in-visual-studio-templates"></a>Visual Studio 템플릿의 패키지
 
@@ -93,7 +93,7 @@ VSIX 자체는 다음과 같이 템플릿에 필요한 패키지의 원본으로
 1. `.vstemplate` 파일의 `<packages>` 요소를 다음과 같이 수정합니다.
 
     ```xml
-    <packages repository="template"">
+    <packages repository="template">
         <!-- ... -->
     </packages>
     ```
@@ -119,7 +119,7 @@ MSI를 사용하여 설치된 SDK는 개발자의 컴퓨터에 NuGet 패키지�
 1. `.vstemplate` 파일의 `<packages>` 요소에 `repository="registry"` 특성을 추가하고, `keyName` 특성에 레지스트리 키 이름을 지정합니다.
 
     - 패키지의 압축을 미리 푼 경우 `isPreunzipped="true"` 특성을 사용합니다.
-    - *(NuGet 3.2 이상)*  패키지 설치의 끝에서 디자인 타임 빌드를 강제로 수행하려면 `forceDesignTimeBuild="true"` 특성을 추가합니다.
+    - *(NuGet 3.2 이상) * 패키지 설치의 끝에서 디자인 타임 빌드를 강제로 수행하려면 `forceDesignTimeBuild="true"` 특성을 추가합니다.
     - 필요한 참조가 템플릿 자체에 이미 포함되어 있으므로 최적화를 위해 `skipAssemblyReferences="true"`를 추가합니다.
 
         ```xml
