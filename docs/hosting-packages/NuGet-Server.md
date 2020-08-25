@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 098375b2bba13675ba5d80a27e0226dc2ee39e77
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7a806e6b586c63c701642c9e43865cb077d7999c
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79059558"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623047"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -26,7 +26,7 @@ NuGet.Server에 대해 추가 질문이 있으면 [https://github.com/nuget/NuGe
 
 ## <a name="create-and-deploy-an-aspnet-web-application-with-nugetserver"></a>NuGet.Server를 사용하여 ASP.NET 웹 애플리케이션 만들기 및 배포
 
-1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택하고 “ASP.NET 웹 애플리케이션(.NET Framework)”을 검색하고 C#에 대해 일치하는 템플릿을 선택합니다.
+1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택하고 “ASP.NET 웹 애플리케이션(.NET Framework)”을 검색하고 **C#** 에 대해 일치하는 템플릿을 선택합니다.
 
     ![.NET Framework 웹 프로젝트 템플릿 선택](media/Hosting_00-NuGet.Server-ProjectType.png)
 

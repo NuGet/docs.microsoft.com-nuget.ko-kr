@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 02c6c8f3018bfd063c2d16a10381f88b54cac840
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: dc20e43bfb43a4b6e47297fb3446319860034d46
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428638"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623030"
 ---
 # <a name="publishing-packages"></a>패키지 게시
 
@@ -46,7 +46,8 @@ nuget.org의 경우 계정을 Microsoft 계정으로 로그인해야 하며, 이
 
 ### <a name="command-line"></a>명령줄
 
-nuget.org에 패키지를 푸시하려면 [nuget.exe v4.1.0 이상](https://www.nuget.org/downloads)을 사용해야 합니다. 여기서는 필수 [NuGet 프로토콜](../api/nuget-protocols.md)을 구현합니다. nuget.org에서 만든 API 키도 필요합니다.
+nuget.org에 패키지를 푸시하려면 먼저 nuget.org에 만든 API 키가 필요합니다. 필수 NuGet 프로토콜을 구현하는 dotnet.exe(.NET Core) 또는 nuget.exe v4.1.0 이상을 사용해야 합니다.
+자세한 내용은 [.NET Core](https://docs.microsoft.com/dotnet/core/install/), [nuget.exe](https://www.nuget.org/downloads) 및 [NuGet 프로토콜](../api/nuget-protocols.md)을 참조하세요.
 
 #### <a name="create-api-keys"></a>API 키 만들기
 
@@ -68,7 +69,7 @@ nuget.org에 패키지를 푸시하려면 [nuget.exe v4.1.0 이상](https://www.
 
     > [!NOTE]
     > API 키는 프라이빗 피드 인증에 사용되지 않습니다. 소스 인증에 사용할 자격 증명을 관리하려면 [`nuget sources` 명령](../reference/cli-reference/cli-ref-sources.md)을 참조하세요.
-    > API 키는 개별 NuGet 서버에서 가져올 수 있습니다. nuget.org용 APIKeys를 만들고 관리하려면 [publish-api-key](../quickstart/includes/publish-api-key.md)를 참조하세요.
+    > API 키는 개별 NuGet 서버에서 가져올 수 있습니다. nuget.org용 APIKeys를 만들고 관리하려면 [API 키 만들기](#create-api-keys)를 참조하세요.
 
 1. 다음 명령을 사용하여 NuGet 갤러리에 패키지를 푸시합니다.
 
