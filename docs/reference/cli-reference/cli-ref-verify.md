@@ -13,59 +13,59 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/03/2020
 ms.locfileid: "93238142"
 ---
-# <a name="verify-command-nuget-cli"></a><span data-ttu-id="b7890-103">verify 명령 (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="b7890-103">verify command (NuGet CLI)</span></span>
+# <a name="verify-command-nuget-cli"></a><span data-ttu-id="07f44-103">verify 명령 (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="07f44-103">verify command (NuGet CLI)</span></span>
 
-<span data-ttu-id="b7890-104">**적용 대상:** 패키지 사용 &bullet; **지원 버전:** 4.6 이상</span><span class="sxs-lookup"><span data-stu-id="b7890-104">**Applies to:** package consumption &bullet; **Supported versions:** 4.6+</span></span>
+<span data-ttu-id="07f44-104">**적용 대상:** 패키지 사용 &bullet; **지원 버전:** 4.6 이상</span><span class="sxs-lookup"><span data-stu-id="07f44-104">**Applies to:** package consumption &bullet; **Supported versions:** 4.6+</span></span>
 
-<span data-ttu-id="b7890-105">패키지를 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-105">Verifies a package.</span></span>
+<span data-ttu-id="07f44-105">패키지를 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-105">Verifies a package.</span></span>
 
-<span data-ttu-id="b7890-106">서명 된 패키지의 확인은 Mono에서 아직 지원 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-106">Verification of signed packages is not yet supported under Mono.</span></span>
+<span data-ttu-id="07f44-106">서명 된 패키지의 확인은 Mono에서 아직 지원 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-106">Verification of signed packages is not yet supported under Mono.</span></span>
 
-## <a name="usage"></a><span data-ttu-id="b7890-107">사용량</span><span class="sxs-lookup"><span data-stu-id="b7890-107">Usage</span></span>
+## <a name="usage"></a><span data-ttu-id="07f44-107">사용량</span><span class="sxs-lookup"><span data-stu-id="07f44-107">Usage</span></span>
 
 ```cli
 nuget verify <-All|-Signatures> <package(s)> [options]
 ```
 
-<span data-ttu-id="b7890-108">여기서 `<package(s)>` 는 하나 이상의 `.nupkg` 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-108">where `<package(s)>` is one or more `.nupkg` files.</span></span>
+<span data-ttu-id="07f44-108">여기서 `<package(s)>` 는 하나 이상의 `.nupkg` 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-108">where `<package(s)>` is one or more `.nupkg` files.</span></span>
 
-## <a name="nuget-verify--all"></a><span data-ttu-id="b7890-109">nuget 확인-모두</span><span class="sxs-lookup"><span data-stu-id="b7890-109">nuget verify -All</span></span>
+## <a name="nuget-verify--all"></a><span data-ttu-id="07f44-109">nuget 확인-모두</span><span class="sxs-lookup"><span data-stu-id="07f44-109">nuget verify -All</span></span>
 
-<span data-ttu-id="b7890-110">패키지에 대해 가능한 모든 확인을 수행하도록 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-110">Specifies that all verifications possible should be performed on the package(s).</span></span>
+<span data-ttu-id="07f44-110">패키지에 대해 가능한 모든 확인을 수행하도록 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-110">Specifies that all verifications possible should be performed on the package(s).</span></span>
 
-## <a name="nuget-verify--signatures"></a><span data-ttu-id="b7890-111">nuget verify 서명</span><span class="sxs-lookup"><span data-stu-id="b7890-111">nuget verify -Signatures</span></span>
+## <a name="nuget-verify--signatures"></a><span data-ttu-id="07f44-111">nuget verify 서명</span><span class="sxs-lookup"><span data-stu-id="07f44-111">nuget verify -Signatures</span></span>
 
-<span data-ttu-id="b7890-112">패키지 서명 확인을 수행 하도록 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-112">Specifies that package signature verification should be performed.</span></span>
+<span data-ttu-id="07f44-112">패키지 서명 확인을 수행 하도록 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-112">Specifies that package signature verification should be performed.</span></span>
 
-## <a name="options-for-verify--signatures"></a><span data-ttu-id="b7890-113">"서명 확인"에 대 한 옵션</span><span class="sxs-lookup"><span data-stu-id="b7890-113">Options for "verify -Signatures"</span></span>
+## <a name="options-for-verify--signatures"></a><span data-ttu-id="07f44-113">"서명 확인"에 대 한 옵션</span><span class="sxs-lookup"><span data-stu-id="07f44-113">Options for "verify -Signatures"</span></span>
 
 - **`-CertificateFingerprint`**
 
-  <span data-ttu-id="b7890-114">서명 된 패키지에 서명 해야 하는 인증서의 SHA-256 인증서 지문을 하나 이상 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-114">Specifies one or more SHA-256 certificate fingerprints of certificates(s) which signed packages must be signed with.</span></span> <span data-ttu-id="b7890-115">인증서 SHA-256 지문을 인증서의 SHA-256 해시입니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-115">A certificate SHA-256 fingerprint is a SHA-256 hash of the certificate.</span></span> <span data-ttu-id="b7890-116">여러 입력은 세미콜론으로 구분 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-116">Multiple inputs should be semicolon separated.</span></span>
+  <span data-ttu-id="07f44-114">서명 된 패키지에 서명 해야 하는 인증서의 SHA-256 인증서 지문을 하나 이상 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-114">Specifies one or more SHA-256 certificate fingerprints of certificates(s) which signed packages must be signed with.</span></span> <span data-ttu-id="07f44-115">인증서 SHA-256 지문을 인증서의 SHA-256 해시입니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-115">A certificate SHA-256 fingerprint is a SHA-256 hash of the certificate.</span></span> <span data-ttu-id="07f44-116">여러 입력은 세미콜론으로 구분 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-116">Multiple inputs should be semicolon separated.</span></span>
 
-## <a name="options"></a><span data-ttu-id="b7890-117">옵션</span><span class="sxs-lookup"><span data-stu-id="b7890-117">Options</span></span>
+## <a name="options"></a><span data-ttu-id="07f44-117">옵션</span><span class="sxs-lookup"><span data-stu-id="07f44-117">Options</span></span>
 
 - **`-ConfigFile`**
 
-  <span data-ttu-id="b7890-118">적용할 NuGet 구성 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-118">The NuGet configuration file to apply.</span></span> <span data-ttu-id="b7890-119">지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` 또는 `~/.config/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-119">If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.</span></span>
+  <span data-ttu-id="07f44-118">적용할 NuGet 구성 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-118">The NuGet configuration file to apply.</span></span> <span data-ttu-id="07f44-119">지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` 또는 `~/.config/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-119">If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.</span></span>
 
 - **`-ForceEnglishOutput`**
 
-  <span data-ttu-id="b7890-120">고정 된 영어 기반 문화권을 사용 하 여 nuget.exe을 강제로 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-120">Forces nuget.exe to run using an invariant, English-based culture.</span></span>
+  <span data-ttu-id="07f44-120">고정 된 영어 기반 문화권을 사용 하 여 nuget.exe을 강제로 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-120">Forces nuget.exe to run using an invariant, English-based culture.</span></span>
 
 - **`-?|-help`**
 
-  <span data-ttu-id="b7890-121">명령에 대 한 도움말 정보를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-121">Displays help information for the command.</span></span>
+  <span data-ttu-id="07f44-121">명령에 대 한 도움말 정보를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-121">Displays help information for the command.</span></span>
 
 - **`-NonInteractive`**
 
-  <span data-ttu-id="b7890-122">사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-122">Suppresses prompts for user input or confirmations.</span></span>
+  <span data-ttu-id="07f44-122">사용자 입력 또는 확인에 대 한 프롬프트를 표시 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-122">Suppresses prompts for user input or confirmations.</span></span>
 
 - **`-Verbosity [normal|quiet|detailed]`**
 
-  <span data-ttu-id="b7890-123">출력에 표시 되는 세부 정보의 양을 지정 합니다. `normal` (기본값), `quiet` 또는 `detailed` 입니다.</span><span class="sxs-lookup"><span data-stu-id="b7890-123">Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.</span></span>
+  <span data-ttu-id="07f44-123">출력에 표시 되는 세부 정보의 양을 지정 합니다. `normal` (기본값), `quiet` 또는 `detailed` 입니다.</span><span class="sxs-lookup"><span data-stu-id="07f44-123">Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="b7890-124">예</span><span class="sxs-lookup"><span data-stu-id="b7890-124">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="07f44-124">예</span><span class="sxs-lookup"><span data-stu-id="07f44-124">Examples</span></span>
 
 ```cli
 nuget verify -Signatures .\..\MyPackage.nupkg -CertificateFingerprint "CE40881FF5F0AD3E58965DA20A9F571EF1651A56933748E1BF1C99E537C4E039;5F874AAF47BCB268A19357364E7FBB09D6BF9E8A93E1229909AC5CAC865802E2" -Verbosity detailed
