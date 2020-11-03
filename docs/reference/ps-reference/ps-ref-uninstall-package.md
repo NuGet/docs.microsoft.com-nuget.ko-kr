@@ -29,7 +29,7 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 
 ## <a name="parameters"></a>매개 변수
 
-| 매개 변수 | Description |
+| 매개 변수 | 설명 |
 | --- | --- |
 | Id | 하다 제거할 패키지의 식별자입니다. -Id 스위치 자체는 선택 사항입니다. |
 | 버전 | 제거할 패키지의 버전입니다. 기본값은 현재 설치 된 버전입니다. |

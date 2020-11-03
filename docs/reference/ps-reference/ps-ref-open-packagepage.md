@@ -27,12 +27,12 @@ Open-PackagePage [-Id] <string> [-Version] [-Source] [-License] [-ReportAbuse]
 
 ## <a name="parameters"></a>매개 변수
 
-| 매개 변수 | Description |
+| 매개 변수 | 설명 |
 | --- | --- |
 | Id | 원하는 패키지의 패키지 ID입니다. -Id 스위치 자체는 선택 사항입니다. |
 | 버전 | 패키지의 버전은 기본적으로 최신 버전을 기본값으로 합니다. |
 | 원본 | 원본 드롭다운에서 선택 된 소스를 기본값으로 하는 패키지 원본입니다. |
-| 라이선스 | 패키지의 라이선스 URL에 대 한 브라우저를 엽니다. 라이선스와-ReportAbuse 모두 지정 하지 않으면 브라우저에서 패키지의 프로젝트 URL을 엽니다. |
+| License | 패키지의 라이선스 URL에 대 한 브라우저를 엽니다. 라이선스와-ReportAbuse 모두 지정 하지 않으면 브라우저에서 패키지의 프로젝트 URL을 엽니다. |
 | ReportAbuse | 패키지의 신고 URL에 대 한 브라우저를 엽니다. 라이선스와-ReportAbuse 모두 지정 하지 않으면 브라우저에서 패키지의 프로젝트 URL을 엽니다. |
 | PassThru | URL을 표시 합니다. 브라우저를 열지 않으려면-WhatIf를 사용 합니다. |
 

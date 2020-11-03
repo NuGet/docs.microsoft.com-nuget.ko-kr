@@ -66,7 +66,7 @@ nuget list [search terms] [options]
 
 [환경 변수](cli-ref-environment-variables.md) 참조
 
-## <a name="examples"></a>예
+## <a name="examples"></a>예제
 
 구성 된 피드의 모든 패키지 나열:
 ```

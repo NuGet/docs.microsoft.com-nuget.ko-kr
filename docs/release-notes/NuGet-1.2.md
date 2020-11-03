@@ -42,8 +42,8 @@ NuGet 1.2은 2011 년 3 월 30 일에 출시 되었습니다.
 
 |attribute |설명|
 |----------------|-----------|
-|**assemblyName**|*필수* . 과 같은 어셈블리의 이름입니다 `System.Net` .|
-|**targetFramework**|*선택 사항입니다* . 이 프레임 워크 어셈블리가 적용 되는 프레임 워크 및 프로필 이름 (또는 별칭) (예: "net40" 또는 "sl4")을 지정할 수 있습니다. 에서는 [여러 대상 프레임 워크 지원](../create-packages/supporting-multiple-target-frameworks.md)에 설명 된 것과 동일한 형식을 사용 합니다.|
+|**assemblyName**|*필수*. 과 같은 어셈블리의 이름입니다 `System.Net` .|
+|**targetFramework**|*선택 사항입니다*. 이 프레임 워크 어셈블리가 적용 되는 프레임 워크 및 프로필 이름 (또는 별칭) (예: "net40" 또는 "sl4")을 지정할 수 있습니다. 에서는 [여러 대상 프레임 워크 지원](../create-packages/supporting-multiple-target-frameworks.md)에 설명 된 것과 동일한 형식을 사용 합니다.|
 
 ```xml
   <frameworkAssemblies>

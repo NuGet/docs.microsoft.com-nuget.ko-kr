@@ -31,7 +31,7 @@ Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 
 ## <a name="parameters"></a>매개 변수
 
-| 매개 변수 | Description |
+| 매개 변수 | 설명 |
 | --- | --- |
 | ProjectName | 하다 바인딩 리디렉션을 추가할 프로젝트입니다. -ProjectName 스위치 자체는 선택 사항입니다. |
 
