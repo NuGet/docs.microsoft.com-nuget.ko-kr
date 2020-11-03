@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: 28fae46a65bd4c2b7050e12568c21123fc8658c1
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 371f0d934fcd3c1f111d277131553c1eed0200be
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623164"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238103"
 ---
 # <a name="nugetconfig-reference"></a>nuget.config 참조
 
@@ -38,7 +38,7 @@ NuGet 동작은 `NuGet.Config` `nuget.config` [일반적인 nuget 구성](../con
 | http_proxy, http_proxy.user, http_proxy.password, no_proxy | 패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다. 암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다. `no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다. 이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다. 자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요. |
 | 서명 Validationmode | 패키지 설치 및 복원에 대 한 패키지 서명을 확인 하는 데 사용 되는 유효성 검사 모드를 지정 합니다. 값은 `accept` , `require` 입니다. 기본값은 `accept`입니다.
 
-**예**:
+**예** :
 
 ```xml
 <config>
@@ -58,7 +58,7 @@ NuGet 동작은 `NuGet.Config` `nuget.config` [일반적인 nuget 구성](../con
 | --- | --- |
 | skip | 자동 바인딩 리디렉션을 건너뛸지 여부를 나타내는 부울입니다. 기본값은 false입니다. |
 
-**예**:
+**예** :
 
 ```xml
 <bindingRedirects>
@@ -75,7 +75,7 @@ NuGet 동작은 `NuGet.Config` `nuget.config` [일반적인 nuget 구성](../con
 | 사용 | NuGet에서 자동 복원을 수행할 수 있는지 여부를 나타내는 부울입니다. config 파일에서 이 키를 설정하는 대신 `EnableNuGetPackageRestore` 환경 변수를 `True` 값으로 설정할 수도 있습니다. |
 | automatic | NuGet에서 빌드하는 동안 누락된 패키지를 확인해야 하는지 여부를 나타내는 부울입니다. |
 
-**예**:
+**예** :
 
 ```xml
 <packageRestore>
@@ -92,7 +92,7 @@ NuGet 동작은 `NuGet.Config` `nuget.config` [일반적인 nuget 구성](../con
 | --- | --- |
 | disableSourceControlIntegration | 원본 제어로 작업할 때 패키지 폴더를 무시할지 여부를 나타내는 부울입니다. 기본값은 false입니다. |
 
-**예**:
+**예** :
 
 ```xml
 <solution>
@@ -116,7 +116,7 @@ nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다
 | --- | --- |
 | (패키지 원본에 할당할 이름) | 패키지 원본의 경로 또는 URL입니다. |
 
-**예**:
+**예** :
 
 ```xml
 <packageSources>
@@ -213,7 +213,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 | --- | --- |
 | (원본 URL) | 암호화된 API 키입니다. |
 
-**예**:
+**예** :
 
 ```xml
 <apikeys>
@@ -250,7 +250,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 | --- | --- |
 | (원본 이름) 또는 `All` | 키가 원본의 이름이면 값은 원본 경로 또는 URL입니다. `All`이면 값은 `(Aggregate source)`여야 하며, 그렇지 않으면 사용할 수 없는 모든 패키지 원본이 결합됩니다. |
 
-**예**:
+**예** :
 
 ```xml
 <activePackageSource>
@@ -268,7 +268,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 
 이 섹션은 [ `nuget trusted-signers` 명령을](../reference/cli-reference/cli-ref-trusted-signers.md)사용 하 여 업데이트할 수 있습니다.
 
-**스키마**:
+**스키마** :
 
 신뢰할 수 있는 서명자는 지정 된 `certificate` 서명자를 식별 하는 모든 인증서를 등록 하는 항목의 컬렉션을 포함 합니다. 신뢰할 수 있는 서명자는 또는 일 수 있습니다 `Author` `Repository` .
 
@@ -278,12 +278,13 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 
 가 `certificate` `allowUntrustedRoot` `true` 서명 확인의 일부로 인증서 체인을 빌드하는 동안 지정 된 인증서를 신뢰할 수 없는 루트에 체인으로 연결할 수 있는 것으로 지정 하면입니다.
 
-**예**:
+**예** :
 
 ```xml
 <trustedSigners>
     <author name="microsoft">
         <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+        <certificate fingerprint="AA12DA22A49BCE7D5C1AE64CC1F3D892F150DA76140F210ABD2CBFFCA2C18A27" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
     </author>
     <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
         <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
@@ -310,7 +311,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 | --- | --- |
 | (대체 폴더 이름) | 대체 폴더의 경로입니다. |
 
-**예**:
+**예** :
 
 ```xml
 <fallbackPackageFolders>
@@ -324,10 +325,10 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 
 | 키 | 값 |
 | --- | --- |
-| format | 기본 패키지 관리 형식을 나타내는 부울입니다. 이면 `1` format은 PackageReference입니다. 이면 `0` format이 *packages.config*됩니다. |
+| format | 기본 패키지 관리 형식을 나타내는 부울입니다. 이면 `1` format은 PackageReference입니다. 이면 `0` format이 *packages.config* 됩니다. |
 | disabled | 첫 번째 패키지를 설치할 때 기본 패키지 형식을 선택 하 라는 메시지를 표시할지 여부를 나타내는 부울입니다. `False` 프롬프트를 숨깁니다. |
 
-**예**:
+**예** :
 
 ```xml
 <packageManagement>
@@ -353,9 +354,9 @@ Windows 스타일 환경 변수를 사용 해야 합니다 (시작 및 종료%).
 | 구문 | Dir 구분 기호 | Windows nuget.exe | Windows dotnet.exe | Mac nuget.exe (Mono) | Mac dotnet.exe |
 |---|---|---|---|---|---|
 | `%MY_VAR%` | `/`  | 예 | 예 | 예 | 예 |
-| `%MY_VAR%` | `\`  | 예 | 예 | 예 | 예 |
-| `$MY_VAR` | `/`  | 예 | 예 | 예 | 예 |
-| `$MY_VAR` | `\`  | 예 | 예 | 예 | 예 |
+| `%MY_VAR%` | `\`  | 예 | 예 | 아니요 | 아니요 |
+| `$MY_VAR` | `/`  | 아니요 | 아니요 | 아니요 | 아니요 |
+| `$MY_VAR` | `\`  | 아니요 | 아니요 | 아니요 | 아니요 |
 
 
 ## <a name="example-config-file"></a>config 파일 예제
@@ -431,6 +432,7 @@ Windows 스타일 환경 변수를 사용 해야 합니다 (시작 및 종료%).
     <trustedSigners>
         <author name="microsoft">
             <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+            <certificate fingerprint="AA12DA22A49BCE7D5C1AE64CC1F3D892F150DA76140F210ABD2CBFFCA2C18A27" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
         </author>
         <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
             <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />

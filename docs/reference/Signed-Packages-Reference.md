@@ -7,11 +7,11 @@ ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
 ms.openlocfilehash: 7384e8b30cb2ec5fe53ea0fe485858bc1f7b3c43
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79428284"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238181"
 ---
 # <a name="signed-packages"></a>서명된 패키지
 
@@ -20,13 +20,13 @@ ms.locfileid: "79428284"
 NuGet 패키지에는 변조 된 콘텐츠에 대 한 보호를 제공 하는 디지털 서명이 포함 될 수 있습니다. 이 서명은 패키지의 실제 원본에도 신뢰성 증명을 추가 하는 x.509 인증서에서 생성 됩니다.
 
 서명 된 패키지는 가장 강력한 종단 간 유효성 검사를 제공 합니다. NuGet 서명에는 다음과 같은 두 가지 유형이 있습니다.
-- **작성자 서명**. 작성자 서명은 패키지가 전송 되는 리포지토리 또는 전송 방법에 관계 없이 패키지가 서명 된 이후 패키지가 수정 되지 않았음을 보장 합니다. 또한 작성자 서명 된 패키지는 서명 인증서를 미리 등록 해야 하기 때문에 nuget.org 게시 파이프라인에 추가 인증 메커니즘을 제공 합니다. 자세한 내용은 [인증서 등록](#signature-requirements-on-nugetorg)을 참조 하세요.
-- **리포지토리 서명**. 리포지토리에 서명 되었는지 여부에 관계 없이 리포지토리의 **모든** 패키지에 대 한 무결성 보장을 제공 합니다 .이는 해당 패키지가 서명 된 원본 리포지토리와 다른 위치에서 가져오는 경우에도 마찬가지입니다.   
+- **작성자 서명** . 작성자 서명은 패키지가 전송 되는 리포지토리 또는 전송 방법에 관계 없이 패키지가 서명 된 이후 패키지가 수정 되지 않았음을 보장 합니다. 또한 작성자 서명 된 패키지는 서명 인증서를 미리 등록 해야 하기 때문에 nuget.org 게시 파이프라인에 추가 인증 메커니즘을 제공 합니다. 자세한 내용은 [인증서 등록](#signature-requirements-on-nugetorg)을 참조 하세요.
+- **리포지토리 서명** . 리포지토리에 서명 되었는지 여부에 관계 없이 리포지토리의 **모든** 패키지에 대 한 무결성 보장을 제공 합니다 .이는 해당 패키지가 서명 된 원본 리포지토리와 다른 위치에서 가져오는 경우에도 마찬가지입니다.   
 
 작성자 서명 된 패키지를 만드는 방법에 대 한 자세한 내용은 [패키지 서명](../create-packages/Sign-a-package.md) 및 [nuget sign 명령](../reference/cli-reference/cli-ref-sign.md)을 참조 하세요.
 
 > [!Important]
-> 패키지 서명은 현재 Windows에서 nuget.exe를 사용 하는 경우에만 지원 됩니다. [서명 된 패키지의 확인은 현재 Windows의 nuget.exe 또는 Visual Studio를 사용 하는 경우에만 지원 됩니다](../reference/cli-reference/cli-ref-verify.md) .
+> 패키지 서명은 현재 Windows에서 nuget.exe를 사용 하는 경우에만 지원 됩니다. [서명 된 패키지의 확인은 현재 Windows에서 nuget.exe또는 Visual Studio를 사용 하는 경우에만 지원 됩니다 ](../reference/cli-reference/cli-ref-verify.md) .
 
 ## <a name="certificate-requirements"></a>인증서 요구 사항
 
@@ -34,7 +34,7 @@ NuGet 패키지에는 변조 된 콘텐츠에 대 한 보호를 제공 하는 �
 
 ## <a name="timestamp-requirements"></a>타임 스탬프 요구 사항
 
-서명 된 패키지에는 서명 인증서의 유효 기간을 초과 하 여 서명 유효성을 보장 하기 위해 RFC 3161 타임 스탬프가 포함 되어야 합니다. 타임 스탬프에 서명 하는 데 사용 되는 인증서는 `id-kp-timeStamping` 목적 [[RFC 5280 섹션 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]에 대해 유효 해야 합니다. 또한 인증서에는 RSA 공개 키 길이가 2048 비트 이상 이어야 합니다.
+서명 된 패키지에는 서명 인증서의 유효 기간을 초과 하 여 서명 유효성을 보장 하기 위해 RFC 3161 타임 스탬프가 포함 되어야 합니다. 타임 스탬프에 서명 하는 데 사용 되는 인증서는 `id-kp-timeStamping` 용도 [[RFC 5280 section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]에 대해 유효 해야 합니다. 또한 인증서에는 RSA 공개 키 길이가 2048 비트 이상 이어야 합니다.
 
 추가 기술 세부 정보는 [패키지 서명 기술 사양](https://github.com/NuGet/Home/wiki/Package-Signatures-Technical-Details) (GitHub)에서 찾을 수 있습니다.
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 91886dbbdcdb24648289d6f6efbe1f87e4099fff
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: a6a4ee434c43ad4865dba12f039b5d545a90d3c4
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623073"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238168"
 ---
 # <a name="list-command-nuget-cli"></a>list 명령 (NuGet CLI)
 
@@ -24,7 +24,7 @@ ms.locfileid: "88623073"
 nuget list [search terms] [options]
 ```
 
-여기서 선택적 검색 용어는 표시 된 목록을 필터링 합니다. [검색 용어](/nuget/consume-packages/finding-and-choosing-packages#search-syntax) 는 nuget.org에서 사용 하는 경우와 마찬가지로 패키지, 태그 및 패키지 설명의 이름에 적용 됩니다. 
+여기서 선택적 검색 용어는 표시 된 목록을 필터링 합니다. [검색 용어](../../consume-packages/finding-and-choosing-packages.md#search-syntax) 는 nuget.org에서 사용 하는 경우와 마찬가지로 패키지, 태그 및 패키지 설명의 이름에 적용 됩니다. 
 
 ## <a name="options"></a>옵션
 
@@ -66,7 +66,7 @@ nuget list [search terms] [options]
 
 [환경 변수](cli-ref-environment-variables.md) 참조
 
-## <a name="examples"></a>예제
+## <a name="examples"></a>예
 
 구성 된 피드의 모든 패키지 나열:
 ```

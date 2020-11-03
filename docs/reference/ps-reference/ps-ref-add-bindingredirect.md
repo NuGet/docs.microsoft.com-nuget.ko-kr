@@ -1,18 +1,18 @@
 ---
-title: NuGet BindingRedirect PowerShell 참조
-description: Visual Studio의 NuGet 패키지 관리자 콘솔에서 BindingRedirect PowerShell 명령에 대 한 참조입니다.
+title: NuGet Add-BindingRedirect PowerShell 참조
+description: Visual Studio의 NuGet 패키지 관리자 콘솔에서 Add-BindingRedirect PowerShell 명령에 대 한 참조입니다.
 author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: f5ba4bd8140fa8cac7da8bf1351ad5448671b768
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 382ba9b179428c70e3eb16db86a363e095207d61
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623125"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237259"
 ---
-# <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>BindingRedirect (Visual Studio의 패키지 관리자 콘솔)
+# <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>Add-BindingRedirect (Visual Studio의 패키지 관리자 콘솔)
 
 *Windows의 Visual Studio에서 [패키지 관리자 콘솔](../../consume-packages/install-use-packages-powershell.md) 내 에서만 사용할 수 있습니다.*
 
@@ -39,7 +39,7 @@ Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 
 ## <a name="common-parameters"></a>일반 매개 변수
 
-`Add-BindingRedirect` 에서는 디버그, 오류 동작, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction 및 WarningVariable와 같은 [일반적인 PowerShell 매개 변수](https://go.microsoft.com/fwlink/?LinkID=113216)를 지원 합니다.
+`Add-BindingRedirect` 에서는 디버그, 오류 동작, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction 및 WarningVariable와 같은 [일반적인 PowerShell 매개 변수](/powershell/module/microsoft.powershell.core/about/about_commonparameters)를 지원 합니다.
 
 ## <a name="examples"></a>예
 

@@ -6,15 +6,15 @@ ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
 ms.openlocfilehash: 5d10d6bf27614980a144c30c3af6f9892a109061
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79428368"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237190"
 ---
 # <a name="nuget-12-release-notes"></a>NuGet 1.2 릴리스 정보
 
-Nuget [1.0 및 1.1 릴리스 정보](../release-notes/nuget-1.1.md) | [Nuget 1.3 릴리스 정보](../release-notes/nuget-1.3.md)
+[NuGet 1.0 및 1.1 릴리스 정보](../release-notes/nuget-1.1.md)  |  [NuGet 1.3 릴리스 정보](../release-notes/nuget-1.3.md)
 
 NuGet 1.2은 2011 년 3 월 30 일에 출시 되었습니다.
 
@@ -36,14 +36,14 @@ NuGet 1.2은 2011 년 3 월 30 일에 출시 되었습니다.
 
 ### <a name="specifying-framework-assembly-references-gac"></a>프레임 워크 어셈블리 참조 지정 (GAC)
 
-경우에 따라 패키지는 .NET Framework에 있는 어셈블리에 따라 달라질 수 있습니다. 항상 패키지의 소비자가 프레임 워크 어셈블리를 참조 해야 하는 것은 아닙니다. 그러나 일부 경우에는 개발자가 패키지를 사용 하기 위해 해당 어셈블리의 형식에 대해 코딩 해야 하는 경우와 같은 중요 합니다. 메타 데이터 요소의 자식 요소인 새 `frameworkAssemblies` 요소를 사용 하면 GAC의 프레임 워크 어셈블리를 가리키는 `frameworkAssembly` 요소 집합을 지정할 수 있습니다. 프레임 워크 어셈블리에 대 한 강조를 확인 합니다.
-이러한 어셈블리는 .NET Framework의 일부로 모든 컴퓨터에 있는 것으로 간주 되므로 패키지에 포함 되지 않습니다. 다음 표에서는 `frameworkAssembly` 요소의 특성을 보여 줍니다.
+경우에 따라 패키지는 .NET Framework에 있는 어셈블리에 따라 달라질 수 있습니다. 항상 패키지의 소비자가 프레임 워크 어셈블리를 참조 해야 하는 것은 아닙니다. 그러나 일부 경우에는 개발자가 패키지를 사용 하기 위해 해당 어셈블리의 형식에 대해 코딩 해야 하는 경우와 같은 중요 합니다. `frameworkAssemblies`메타 데이터 요소의 자식 요소인 새 요소를 사용 하면 `frameworkAssembly` GAC의 프레임 워크 어셈블리를 가리키는 요소 집합을 지정할 수 있습니다. 프레임 워크 어셈블리에 대 한 강조를 확인 합니다.
+이러한 어셈블리는 .NET Framework의 일부로 모든 컴퓨터에 있는 것으로 간주 되므로 패키지에 포함 되지 않습니다. 다음 표에서는 요소의 특성을 보여 줍니다 `frameworkAssembly` .
 
 
-|attribute |Description|
+|attribute |설명|
 |----------------|-----------|
-|**assemblyName**|*필수입니다*. `System.Net`와 같은 어셈블리의 이름입니다.|
-|**targetFramework**|*선택 사항*. 이 프레임 워크 어셈블리가 적용 되는 프레임 워크 및 프로필 이름 (또는 별칭) (예: "net40" 또는 "sl4")을 지정할 수 있습니다. 에서는 [여러 대상 프레임 워크 지원](../create-packages/supporting-multiple-target-frameworks.md)에 설명 된 것과 동일한 형식을 사용 합니다.|
+|**assemblyName**|*필수* . 과 같은 어셈블리의 이름입니다 `System.Net` .|
+|**targetFramework**|*선택 사항입니다* . 이 프레임 워크 어셈블리가 적용 되는 프레임 워크 및 프로필 이름 (또는 별칭) (예: "net40" 또는 "sl4")을 지정할 수 있습니다. 에서는 [여러 대상 프레임 워크 지원](../create-packages/supporting-multiple-target-frameworks.md)에 설명 된 것과 동일한 형식을 사용 합니다.|
 
 ```xml
   <frameworkAssemblies>
@@ -52,9 +52,9 @@ NuGet 1.2은 2011 년 3 월 30 일에 출시 되었습니다.
   </frameworkAssemblies>
 ```
 
-### <a name="nugetexe-now-is-able-to-store-api-key-credentials"></a>이제 nuget.exe는 API 키 자격 증명을 저장할 수 있습니다.
+### <a name="nugetexe-now-is-able-to-store-api-key-credentials"></a>nuget.exe 이제 API 키 자격 증명을 저장할 수 있습니다.
 
-이제 nuget.exe 명령줄 도구를 사용 하는 경우 SetApiKey 명령을 사용 하 여 API 키를 저장할 수 있습니다. 이렇게 하면 패키지를 푸시할 때마다 지정할 필요가 없습니다. Nuget.exe를 사용 하 여 API 키를 저장 하는 방법에 대 한 자세한 내용은 [패키지 게시에 대 한 설명서를 참조](../nuget-org/publish-a-package.md)하세요.
+nuget.exe 명령줄 도구를 사용 하는 경우 이제 SetApiKey 명령을 사용 하 여 API 키를 저장할 수 있습니다. 이렇게 하면 패키지를 푸시할 때마다 지정할 필요가 없습니다. nuget.exe를 사용 하 여 API 키를 저장 하는 방법에 대 한 자세한 내용은 [패키지 게시에 대 한 설명서를 참조](../nuget-org/publish-a-package.md)하세요.
 
 ### <a name="package-explorer"></a>패키지 탐색기
 NuGet 1.2을 지원 하도록 패키지 탐색기를 업데이트 했습니다. 자세한 내용은 [패키지 탐색기 릴리스 정보](http://nuget.codeplex.com/wikipage?title=New%20features%20in%20NuGet%20Package%20Explorer%201.0)를 참조 하세요.
@@ -65,6 +65,6 @@ NuGet 1.2을 지원 하도록 패키지 탐색기를 업데이트 했습니다. 
 
 ## <a name="known-issues"></a>알려진 문제
 
-* **1.2 패키지 비호환**: 최신 버전의 명령줄 도구를 사용 하 여 빌드된 패키지, nuget.exe (> 1.2)는 이전 버전의 Nuget VS 추가 기능 (예: 1.1)에서 작동 하지 않습니다. 호환 되지 않는 스키마에 대 한 정보를 나타내는 오류 메시지가 표시 되 면이 오류가 발생 합니다. NuGet을 최신 버전으로 업데이트 하세요.
-* **Nuget. 서버 비호환**: Nuget. server 프로젝트를 사용 하 여 내부 nuget 피드를 호스팅하는 경우 최신 버전의 Nuget. server로 해당 프로젝트를 업데이트 해야 합니다.
-* **서명 불일치 오류**: 서명 불일치에 대 한 메시지를 사용 하 여 업그레이드 하는 동안 오류가 발생 하는 경우 먼저 NuGet을 제거한 후 설치 해야 합니다. 자세한 내용은 [알려진 문제 페이지](../release-notes/known-issues.md) 에 나열 되어 있습니다. 이 문제는 Visual Studio 2010 s p 1을 실행 하는 경우에만 적용 되 고 잘못 서명 된 NuGet 1.0 버전이 설치 되어 있습니다. 이 버전은 CodePlex 웹 사이트에서 잠깐 동안만 사용할 수 있으므로이 문제는 너무 많은 사용자에 게 영향을 주지 않습니다.
+* **1.2 패키지 비호환** : 최신 버전의 명령줄 도구를 사용 하 여 빌드된 패키지 (nuget.exe (> 1.2)는 이전 버전의 NuGet VS 추가 기능 (예: 1.1)에서 작동 하지 않습니다. 호환 되지 않는 스키마에 대 한 정보를 나타내는 오류 메시지가 표시 되 면이 오류가 발생 합니다. NuGet을 최신 버전으로 업데이트 하세요.
+* **Nuget. 서버 비호환** : Nuget. server 프로젝트를 사용 하 여 내부 nuget 피드를 호스팅하는 경우 최신 버전의 Nuget. server로 해당 프로젝트를 업데이트 해야 합니다.
+* **서명 불일치 오류** : 서명 불일치에 대 한 메시지를 사용 하 여 업그레이드 하는 동안 오류가 발생 하는 경우 먼저 NuGet을 제거한 후 설치 해야 합니다. 자세한 내용은 [알려진 문제 페이지](../release-notes/known-issues.md) 에 나열 되어 있습니다. 이 문제는 Visual Studio 2010 s p 1을 실행 하는 경우에만 적용 되 고 잘못 서명 된 NuGet 1.0 버전이 설치 되어 있습니다. 이 버전은 CodePlex 웹 사이트에서 잠깐 동안만 사용할 수 있으므로이 문제는 너무 많은 사용자에 게 영향을 주지 않습니다.

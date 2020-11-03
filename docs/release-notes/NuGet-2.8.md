@@ -6,43 +6,43 @@ ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
 ms.openlocfilehash: 98b8b7334738306e6d40ba7c455409a87c4bb822
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79428356"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237029"
 ---
 # <a name="nuget-28-release-notes"></a>NuGet 2.8 릴리스 정보
 
-Nuget [2.7.2 릴리스 정보](../release-notes/nuget-2.7.2.md) | [Nuget 2.8.1 릴리스 정보](../release-notes/nuget-2.8.1.md)
+[NuGet 2.7.2 릴리스 정보](../release-notes/nuget-2.7.2.md)  |  [NuGet 2.8.1 릴리스 정보](../release-notes/nuget-2.8.1.md)
 
 NuGet 2.8은 2014 년 1 월 29 일에 출시 되었습니다.
 
 ## <a name="acknowledgements"></a>감사의 말
 
-1. [Llewellyn Pritchard](https://www.codeplex.com/site/users/view/leppie) ([@leppie](https://twitter.com/leppie))
+1. [Llewellyn Pritchard](https://www.codeplex.com/site/users/view/leppie) ( [@leppie](https://twitter.com/leppie) )
     - [#3466](https://nuget.codeplex.com/workitem/3466) -패키지를 압축 하는 경우 종속성 패키지의 Id를 확인 합니다.
-2. [텐 Balliauw](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
+2. [텐 Balliauw](https://www.codeplex.com/site/users/view/maartenba) ( [@maartenballiauw](https://twitter.com/maartenballiauw) )
     - [#2379](https://nuget.codeplex.com/workitem/2379) -피드 자격 증명을 persistening 때 $metadata 접미사를 제거 합니다.
-3. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
-    - [#3538](http://nuget.codeplex.com/workitem/3538) -nuget.exe 업데이트 명령에 대 한 프로젝트 파일 지정을 지원 합니다.
+3. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ( [@foxtricks](https://twitter.com/foxtricks) )
+    - [#3538](http://nuget.codeplex.com/workitem/3538) -nuget.exe update 명령에 대 한 프로젝트 파일 지정을 지원 합니다.
 4. [Juan Gonzalez](https://www.codeplex.com/site/users/view/jjgonzalez)
     - [#3536](http://nuget.codeplex.com/workitem/3536) -대체 토큰이-IncludeReferencedProjects로 전달 되지 않았습니다.
-5. [David Poole](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
+5. [David Poole](https://www.codeplex.com/site/users/view/Sarkie) ( [@Sarkie_Dave](https://twitter.com/Sarkie_Dave) )
     - [#3677](http://nuget.codeplex.com/workitem/3677) -대량 패키지를 푸시할 때 OutOfMemoryException throw를 수정 합니다.
 6. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
-    - [#3666](http://nuget.codeplex.com/workitem/3666) -프로젝트가 다른 CLI/C++ 프로젝트를 참조할 때 잘못 된 대상 경로를 수정 합니다.
-7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+    - [#3666](http://nuget.codeplex.com/workitem/3666) -프로젝트가 다른 CLI/c + + 프로젝트를 참조할 때 잘못 된 대상 경로를 수정 합니다.
+7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ( [@adamralph](https://twitter.com/adamralph) )
     - [#3639](https://nuget.codeplex.com/workitem/3639) -패키지를 기본적으로 개발 종속성으로 설치할 수 있습니다.
-8. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
+8. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ( [@davidfowl](https://twitter.com/davidfowl) )
     - [#3717](https://nuget.codeplex.com/workitem/3717) -최신 패치 버전에 대 한 암시적 업그레이드 제거
 9. [Gregory Vandenbrouck](https://www.codeplex.com/site/users/view/vdbg)
-    - NuGet. Server, nuget.exe 미러 명령 및 기타에 대 한 여러 버그 수정 및 개선 사항
+    - NuGet. 서버, nuget.exe 미러 명령 및 기타에 대 한 여러 버그 수정 및 개선 사항
     - 이러한 작업은 몇 달 이내에 수행 되었으며, Gregory를 사용 하 여 2.8에 대 한 마스터에 통합 하는 데 적합 한 타이밍에 대해 노력 하 고 있습니다.
 
 ## <a name="patch-resolution-for-dependencies"></a>종속성에 대 한 패치 확인
 
-패키지 종속성을 확인할 때 NuGet은 패키지의 종속성을 충족 하는 가장 낮은 주 및 부 패키지 버전을 선택 하는 전략을 지금 구현 했습니다. 그러나 주 버전과 부 버전이 달리 패치 버전은 항상 가장 높은 버전으로 확인 되었습니다. 이 동작은 잘 악의적 종속성이 포함 된 패키지를 설치 하는 것이 적합 하지 않습니다. 다음과 같은 예제를 참조하세요.
+패키지 종속성을 확인할 때 NuGet은 패키지의 종속성을 충족 하는 가장 낮은 주 및 부 패키지 버전을 선택 하는 전략을 지금 구현 했습니다. 그러나 주 버전과 부 버전이 달리 패치 버전은 항상 가장 높은 버전으로 확인 되었습니다. 이 동작은 잘 악의적 종속성이 포함 된 패키지를 설치 하는 것이 적합 하지 않습니다. 다음 예제를 참조하세요.
 
     PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
 
@@ -52,7 +52,7 @@ NuGet 2.8은 2014 년 1 월 29 일에 출시 되었습니다.
 
     Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
 
-이 예제에서는 Developer1 및 Developer2가 PackageA@1.0.0설치 된 경우에도 각각 다른 버전의 PackageB로 종료 됩니다. NuGet 2.8은 패치 버전에 대 한 종속성 확인 동작이 주 버전 및 부 버전의 동작과 일치 하도록이 기본 동작을 변경 합니다. 위의 예에서는 최신 패치 버전에 관계 없이 PackageA@1.0.0를 설치한 결과로 PackageB@1.0.0를 설치 합니다.
+이 예제에서 Developer1 및 Developer2가 설치 된 경우에도 PackageA@1.0.0 각는 다른 버전의 PackageB로 종료 됩니다. NuGet 2.8은 패치 버전에 대 한 종속성 확인 동작이 주 버전 및 부 버전의 동작과 일치 하도록이 기본 동작을 변경 합니다. 위의 예제에서은 PackageB@1.0.0 PackageA@1.0.0 최신 패치 버전에 관계 없이 설치의 결과로 설치 됩니다.
 
 ## <a name="-dependencyversion-switch"></a>-DependencyVersion 스위치
 
@@ -62,7 +62,7 @@ NuGet 2.8은 종속성을 확인 하는 _기본_ 동작을 변경 하지만 패�
 
 ## <a name="dependencyversion-attribute"></a>DependencyVersion 특성
 
-위에서 설명 하는-DependencyVersion 스위치 외에도 NuGet은의 호출에-DependencyVersion 스위치가 지정 되지 않은 경우 기본값을 정의 하는 Nuget 파일에 새 특성을 설정 하는 기능을 허용 합니다. 패키지를 설치 합니다. 이 값은 또한 패키지 설치 작업에 대 한 NuGet 패키지 관리자 대화 상자에서 적용 됩니다. 이 값을 설정 하려면 아래 특성을 Nuget.exe 파일에 추가 합니다.
+위에서 자세히 설명 하는-DependencyVersion 스위치 외에도 NuGet은를 호출할 때-DependencyVersion 스위치를 지정 하지 않은 경우 기본값을 정의 하는 Nuget.Config 파일에 새 특성을 설정 하는 기능을 허용 합니다. 이 값은 또한 패키지 설치 작업에 대 한 NuGet 패키지 관리자 대화 상자에서 적용 됩니다. 이 값을 설정 하려면 Nuget.Config 파일에 아래 특성을 추가 합니다.
 
     <config>
         <add key="dependencyversion" value="Highest" />
@@ -70,7 +70,7 @@ NuGet 2.8은 종속성을 확인 하는 _기본_ 동작을 변경 하지만 패�
 
 ## <a name="preview-nuget-operations-with--whatif"></a>-Whatif를 사용 하 여 NuGet 작업 미리 보기
 
-일부 NuGet 패키지에는 심층 종속성 그래프가 있을 수 있으며,이에 따라 설치, 제거 또는 업데이트 작업 중에 수행 되는 작업을 먼저 확인 하는 것이 유용할 수 있습니다. NuGet 2.8은 명령이 적용 되는 패키지의 전체 클로저를 시각화할 수 있도록 표준 PowerShell-whatif 스위치를 설치 패키지, 제거 패키지 및 업데이트 패키지 명령에 추가 합니다. 예를 들어 빈 ASP.NET 웹 응용 프로그램에서 `install-package Microsoft.AspNet.WebApi -whatif`를 실행 하면 다음과 같은 결과가 발생 합니다.
+일부 NuGet 패키지에는 심층 종속성 그래프가 있을 수 있으며,이에 따라 설치, 제거 또는 업데이트 작업 중에 수행 되는 작업을 먼저 확인 하는 것이 유용할 수 있습니다. NuGet 2.8은 명령이 적용 되는 패키지의 전체 클로저를 시각화할 수 있도록 표준 PowerShell-whatif 스위치를 설치 패키지, 제거 패키지 및 업데이트 패키지 명령에 추가 합니다. 예를 들어 `install-package Microsoft.AspNet.WebApi -whatif` 빈 ASP.NET 웹 응용 프로그램에서를 실행 하면 다음과 같은 결과가 발생 합니다.
 
     PM> install-package Microsoft.AspNet.WebApi -whatif
     Attempting to resolve dependency 'Microsoft.AspNet.WebApi.WebHost (≥ 5.0.0)'.
@@ -89,13 +89,13 @@ NuGet 2.8은 종속성을 확인 하는 _기본_ 동작을 변경 하지만 패�
 
 ## <a name="development-dependencies"></a>개발 종속성
 
-개발 프로세스를 최적화 하는 데 사용 되는 도구를 포함 하 여 다양 한 유형의 기능을 NuGet 패키지로 배달할 수 있습니다. 이러한 구성 요소는 새 패키지를 개발 하는 데 사용할 수 있는 반면 나중에 게시 될 때 새 패키지의 종속성으로 간주 되지 않아야 합니다. NuGet 2.8을 사용 하면 `.nuspec` 파일에서 패키지 자체를 developmentDependency으로 식별할 수 있습니다. 설치 된 경우이 메타 데이터는 패키지가 설치 된 프로젝트의 `packages.config` 파일에도 추가 됩니다. 이 `packages.config` 파일이 `nuget.exe pack`동안 NuGet 종속성에 대해 나중에 분석 되는 경우 개발 종속성으로 표시 된 종속성을 제외 합니다.
+개발 프로세스를 최적화 하는 데 사용 되는 도구를 포함 하 여 다양 한 유형의 기능을 NuGet 패키지로 배달할 수 있습니다. 이러한 구성 요소는 새 패키지를 개발 하는 데 사용할 수 있는 반면 나중에 게시 될 때 새 패키지의 종속성으로 간주 되지 않아야 합니다. NuGet 2.8을 사용 하면 패키지에서 파일 자체를 `.nuspec` developmentDependency로 식별할 수 있습니다. 설치 된 경우이 메타 데이터는 `packages.config` 패키지가 설치 된 프로젝트의 파일에도 추가 됩니다. 에서 해당 `packages.config` 파일이 나중에 NuGet 종속성을 분석 하는 경우 `nuget.exe pack` 개발 종속성으로 표시 된 종속성을 제외 합니다.
 
-## <a name="individual-packagesconfig-files-for-different-platforms"></a>다른 플랫폼용 개별 패키지 .config 파일
+## <a name="individual-packagesconfig-files-for-different-platforms"></a>각 플랫폼에 대 한 개별 packages.config 파일
 
-여러 대상 플랫폼용 응용 프로그램을 개발 하는 경우 각 빌드 환경에 대해 서로 다른 프로젝트 파일을 포함 하는 것이 일반적입니다. 또한 패키지 마다 다양 한 플랫폼에 대 한 다양 한 지원 수준이 있기 때문에 다양 한 프로젝트 파일에서 다른 NuGet 패키지를 사용 하는 것이 일반적입니다. NuGet 2.8은 플랫폼별 프로젝트 파일 마다 다른 `packages.config` 파일을 만들어이 시나리오에 대 한 향상 된 지원을 제공 합니다.
+여러 대상 플랫폼용 응용 프로그램을 개발 하는 경우 각 빌드 환경에 대해 서로 다른 프로젝트 파일을 포함 하는 것이 일반적입니다. 또한 패키지 마다 다양 한 플랫폼에 대 한 다양 한 지원 수준이 있기 때문에 다양 한 프로젝트 파일에서 다른 NuGet 패키지를 사용 하는 것이 일반적입니다. NuGet 2.8은 플랫폼별 프로젝트 파일 마다 다른 파일을 만들어이 시나리오에 대 한 향상 된 지원을 제공 합니다 `packages.config` .
 
-![여러 패키지 .config 파일](./media/NuGet-2.8/multiple-packageconfigs.png)
+![여러 package.config 파일](./media/NuGet-2.8/multiple-packageconfigs.png)
 
 ## <a name="fallback-to-local-cache"></a>로컬 캐시로 대체
 

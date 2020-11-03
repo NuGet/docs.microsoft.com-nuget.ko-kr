@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: aed591ceba00f1820a573eacf312112db0a1c69e
-ms.sourcegitcommit: 7e9c0630335ef9ec1e200e2ee9065f702e52a8ec
+ms.openlocfilehash: 86c9d07cf90b84fffd09b04847d41772dd633b98
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85292278"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237876"
 ---
 # <a name="search"></a>검색
 
@@ -21,11 +21,11 @@ V3 API를 사용 하 여 패키지 원본에서 사용할 수 있는 패키지�
 
 사용 되는 `@type` 값은 다음과 같습니다.
 
-@type 값                   | 참고
+@type 값                   | 메모
 ----------------------------- | -----
 SearchQueryService            | 초기 릴리스
-SearchQueryService/3.0.0-beta | 별칭`SearchQueryService`
-SearchQueryService/3.0.0   | 별칭`SearchQueryService`
+SearchQueryService/3.0.0-beta | 별칭 `SearchQueryService`
+SearchQueryService/3.0.0   | 별칭 `SearchQueryService`
 SearchQueryService/3.5.0      | 쿼리 매개 변수에 대 한 지원을 포함 합니다. `packageType`
 
 ### <a name="searchqueryservice350"></a>SearchQueryService/3.5.0
@@ -49,7 +49,7 @@ SearchQueryService/3.5.0      | 쿼리 매개 변수에 대 한 지원을 포함
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-Name        | In(다음 안에)     | 형식    | 필수 | 참고
+속성        | In(다음 안에)     | 유형    | 필수 | 메모
 ----------- | ------ | ------- | -------- | -----
 q           | URL    | 문자열  | 아니요       | 패키지를 필터링 하는 데 사용 되는 검색 용어
 skip        | URL    | integer | 아니요       | 페이지를 매길 때 건너뛸 결과의 수입니다.
@@ -80,22 +80,22 @@ packageType | URL    | 문자열  | 아니요       | 패키지를 필터링 하
 
 루트 JSON 개체에는 다음과 같은 속성이 있습니다.
 
-Name      | Type             | 필수 | 참고
+속성      | 유형             | 필수 | 메모
 --------- | ---------------- | -------- | -----
-totalHits | integer          | 예      | 총 일치 항목 수, 무시 `skip` 및`take`
-데이터      | 개체의 배열 | 예      | 요청과 일치 하는 검색 결과입니다.
+totalHits | integer          | yes      | 총 일치 항목 수, 무시 `skip` 및 `take`
+데이터      | 개체의 배열 | yes      | 요청과 일치 하는 검색 결과입니다.
 
 ### <a name="search-result"></a>검색 결과
 
 배열의 각 항목 `data` 은 동일한 패키지 ID를 공유 하는 패키지 버전 그룹으로 구성 된 JSON 개체입니다.
 개체에는 다음 속성이 있습니다.
 
-Name           | Type                       | 필수 | 참고
+속성           | 유형                       | 필수 | 메모
 -------------- | -------------------------- | -------- | -----
-id             | 문자열                     | 예      | 일치 하는 패키지의 ID입니다.
-버전        | 문자열                     | 예      | 패키지의 full SemVer 2.0.0 version 문자열 (빌드 메타 데이터를 포함할 수 있음)
+id             | 문자열                     | yes      | 일치 하는 패키지의 ID입니다.
+버전        | 문자열                     | yes      | 패키지의 full SemVer 2.0.0 version 문자열 (빌드 메타 데이터를 포함할 수 있음)
 description    | 문자열                     | 아니요       | 
-versions       | 개체의 배열           | 예      | 매개 변수와 일치 하는 패키지의 모든 버전 `prerelease`
+versions       | 개체의 배열           | yes      | 매개 변수와 일치 하는 패키지의 모든 버전 `prerelease`
 authors        | 문자열 또는 문자열 배열 | 아니요       | 
 iconUrl        | 문자열                     | 아니요       | 
 licenseUrl     | 문자열                     | 아니요       | 
@@ -107,23 +107,23 @@ tags           | 문자열 또는 문자열 배열 | 아니요       |
 title          | 문자열                     | 아니요       | 
 totalDownloads | integer                    | 아니요       | 배열의 다운로드 합으로이 값을 유추할 수 있습니다. `versions`
 확인       | boolean                    | 아니요       | 패키지가 [확인](../nuget-org/id-prefix-reservation.md) 되었는지 여부를 나타내는 JSON 부울입니다.
-packageTypes   | 개체의 배열           | 예      | 패키지 작성자가 정의한 패키지 유형 (에 추가 됨 `SearchQueryService/3.5.0` )
+packageTypes   | 개체의 배열           | yes      | 패키지 작성자가 정의한 패키지 유형 (에 추가 됨 `SearchQueryService/3.5.0` )
 
-Nuget.org에서 확인 된 패키지는 예약 된 ID 접두사와 일치 하 고 예약 된 접두사 소유자 중 하나가 소유 하 고 있는 패키지 ID입니다. 자세한 내용은 [ID 접두사 예약에 대 한 설명서](../reference/id-prefix-reservation.md)를 참조 하세요.
+Nuget.org에서 확인 된 패키지는 예약 된 ID 접두사와 일치 하 고 예약 된 접두사 소유자 중 하나가 소유 하 고 있는 패키지 ID입니다. 자세한 내용은 [ID 접두사 예약에 대 한 설명서](../nuget-org/id-prefix-reservation.md)를 참조 하세요.
 
 검색 결과 개체에 포함 된 메타 데이터는 최신 패키지 버전에서 가져옵니다. 배열의 각 항목 `versions` 은 다음 속성을 포함 하는 JSON 개체입니다.
 
-Name      | Type    | 필수 | 참고
+속성      | 유형    | 필수 | 메모
 --------- | ------- | -------- | -----
-@id       | 문자열  | 예      | 연결 된 [등록 리프](registration-base-url-resource.md#registration-leaf) 에 대 한 절대 URL입니다.
-버전   | 문자열  | 예      | 패키지의 full SemVer 2.0.0 version 문자열 (빌드 메타 데이터를 포함할 수 있음)
-다운로드 | integer | 예      | 이 특정 패키지 버전에 대 한 다운로드 수
+@id       | 문자열  | yes      | 연결 된 [등록 리프](registration-base-url-resource.md#registration-leaf) 에 대 한 절대 URL입니다.
+버전   | 문자열  | yes      | 패키지의 full SemVer 2.0.0 version 문자열 (빌드 메타 데이터를 포함할 수 있음)
+다운로드 | integer | yes      | 이 특정 패키지 버전에 대 한 다운로드 수
 
 `packageTypes`배열은 항상 하나 이상의 (1) 항목으로 구성 됩니다. 지정 된 패키지 ID의 패키지 유형은 다른 검색 매개 변수와 관련 하 여 최신 버전의 패키지에서 정의한 패키지 유형으로 간주 됩니다. 배열의 각 항목 `packageTypes` 은 다음 속성을 포함 하는 JSON 개체입니다.
 
-Name      | Type    | 필수 | 메모
+속성      | 유형    | 필수 | 메모
 --------- | ------- | -------- | -----
-name      | 문자열  | 예      | 패키지 형식의 이름입니다.
+name      | 문자열  | yes      | 패키지 형식의 이름입니다.
 
 ### <a name="sample-request"></a>샘플 요청
 

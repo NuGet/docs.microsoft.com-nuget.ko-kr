@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 84f939188ac190f6d539f8ee2b422049a274f178
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 106c4027f03d8e8c1d19545b3ca9b6cd5263830e
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622579"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93236791"
 ---
 # <a name="update-command-nuget-cli"></a>update 명령 (NuGet CLI)
 
@@ -37,6 +37,10 @@ nuget update <configPath> [options]
 - **`-ConfigFile`**
 
   적용할 NuGet 구성 파일입니다. 지정 하지 않으면 `%AppData%\NuGet\NuGet.Config` (Windows) 또는 `~/.nuget/NuGet/NuGet.Config` 또는 `~/.config/NuGet/NuGet.Config` (Mac/Linux)가 사용 됩니다.
+  
+- **`-DependencyVersion [Lowest, HighestPatch, HighestMinor, Highest, Ignore]`**
+
+  사용할 종속성 패키지의 버전을 지정 합니다. 다음 중 하나일 수 있습니다.<br/><ul><li>*가장 낮음* (기본값): 가장 낮은 버전</li><li>*HighestPatch* : 최하위 주, 최저 부, 최고 패치가 있는 버전</li><li>*HighestMinor* : 최하위 주, 가장 높은 부, 최고 패치가 있는 버전</li><li>*최고* : 최고 버전</li><li>*무시* : 종속성 패키지가 사용 되지 않습니다.</li></ul>
 
 - **`-FileConflictAction [PromptUser, Overwrite, Ignore]`**
 
