@@ -7,12 +7,12 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 42031f7b5fe4d3c1b4dbe5e1bfbf9197014e0e88
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 8b23b6cc22eff5413e317fbe619edd3d4f4716ee
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428578"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237402"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>Visual Studio에서 패키지 관리자 콘솔을 사용하여 패키지 설치 및 관리(PowerShell)
 
@@ -79,7 +79,7 @@ Install-Package Elmah -ProjectName UtilitiesLib
 콘솔에 패키지를 설치하면 [패키지를 설치하면 어떻게 되나요?](../concepts/package-installation-process.md)에 설명된 것과 동일한 단계와 다음의 추가 작업이 수행됩니다.
 
 - 콘솔 창에 해당 사용 조건과 묵시적 계약이 표시됩니다. 조건에 동의하지 않는 경우 패키지를 즉시 제거해야 합니다.
-- 또한 패키지에 대한 참조가 프로젝트 파일에 추가되고 **참조** 노드 아래의 **솔루션 탐색기**에 표시됩니다. 프로젝트 파일의 변경 내용을 직접 확인하려면 프로젝트를 저장해야 합니다.
+- 또한 패키지에 대한 참조가 프로젝트 파일에 추가되고 **참조** 노드 아래의 **솔루션 탐색기** 에 표시됩니다. 프로젝트 파일의 변경 내용을 직접 확인하려면 프로젝트를 저장해야 합니다.
 
 ## <a name="uninstall-a-package"></a>패키지 제거
 
@@ -98,7 +98,7 @@ Uninstall-Package Elmah -Force
 
 패키지를 제거하면 다음 작업이 수행됩니다.
 
-- 프로젝트에서 패키지에 대한 참조(및 사용 중인 관리 형식)를 제거합니다. 참조가 더 이상 **솔루션 탐색기**에 표시되지 않습니다. **Bin** 폴더에서 제거되었음을 확인하기 위해 프로젝트를 다시 빌드해야 할 수도 있습니다.
+- 프로젝트에서 패키지에 대한 참조(및 사용 중인 관리 형식)를 제거합니다. 참조가 더 이상 **솔루션 탐색기** 에 표시되지 않습니다. **Bin** 폴더에서 제거되었음을 확인하기 위해 프로젝트를 다시 빌드해야 할 수도 있습니다.
 - 패키지가 설치될 때 `app.config` 또는 `web.config`에 대해 수행된 변경 내용이 복귀됩니다.
 - 나머지 패키지에서 해당 종속성을 사용하지 않는 경우 이전에 설치된 종속성을 제거합니다.
 
@@ -168,7 +168,7 @@ $profile
 C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
-자세한 내용은 [Windows PowerShell 프로필 ](https://technet.microsoft.com/library/bb613488.aspx)을 참조하세요.
+자세한 내용은 [Windows PowerShell 프로필 ](/previous-versions//bb613488(v=vs.85))을 참조하세요.
 
 ## <a name="use-the-nugetexe-cli-in-the-console"></a>콘솔에서 nuget.exe CLI 사용
 

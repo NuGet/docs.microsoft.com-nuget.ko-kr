@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7166d622ef9d3975fc1c931d30caf570a765a6da
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 47a20c5566affec1cdc7772c86d8101dab162d85
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231320"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237973"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>MSBuild를 사용하여 NuGet 패키지 만들기
 
-코드에서 NuGet 패키지를 만드는 경우 해당 기능을 여러 다른 개발자가 공유하고 사용할 수 있는 구성 요소로 패키징할 수 있습니다. 이 문서에서는 MSBuild를 사용하여 패키지를 만드는 방법을 설명합니다. MSBuild는 NuGet이 포함된 모든 Visual Studio 워크로드와 함께 미리 설치되어 제공됩니다. 또한 [dotnet msbuild](https://docs.microsoft.com/dotnet/core/tools/dotnet-msbuild)가 포함된 dotnet CLI를 통해 MSBuild도 사용할 수 있습니다.
+코드에서 NuGet 패키지를 만드는 경우 해당 기능을 여러 다른 개발자가 공유하고 사용할 수 있는 구성 요소로 패키징할 수 있습니다. 이 문서에서는 MSBuild를 사용하여 패키지를 만드는 방법을 설명합니다. MSBuild는 NuGet이 포함된 모든 Visual Studio 워크로드와 함께 미리 설치되어 제공됩니다. 또한 [dotnet msbuild](/dotnet/core/tools/dotnet-msbuild)가 포함된 dotnet CLI를 통해 MSBuild도 사용할 수 있습니다.
 
 [SDK 스타일 형식](../resources/check-project-format.md)을 사용하는 .NET Core 및 .NET Standard 프로젝트와 또 다른 SDK 스타일 프로젝트의 경우, NuGet은 프로젝트 파일의 정보를 직접 사용하여 패키지를 만듭니다.  `<PackageReference>`를 사용하는 비SDK 프로젝트의 경우 NuGet에서 프로젝트 파일을 사용하여 패키지를 만들 수도 있습니다.
 
@@ -30,7 +30,7 @@ SDK 스타일 프로젝트에는 기본적으로 사용할 수 있는 pack 기�
 패키지를 만들려면 다음 속성이 필요합니다.
 
 - `PackageId`: 패키지를 호스트하는 갤러리에서 고유해야 하는 패키지 식별자. 지정하지 않으면 기본값 `AssemblyName`입니다.
-- `Version`: *Major.Minor.Patch[-Suffix]* 형식의 특정 버전 번호(여기서 *-Suffix*는 [시험판 버전](prerelease-packages.md)을 식별함). 지정하지 않으면 기본값은 1.0.0입니다.
+- `Version`: *Major.Minor.Patch[-Suffix]* 형식의 특정 버전 번호(여기서 *-Suffix* 는 [시험판 버전](prerelease-packages.md)을 식별함). 지정하지 않으면 기본값은 1.0.0입니다.
 - 호스트에 표시되어야 하는 패키지 제목(예: nuget.org)
 - `Authors`: 작성자 및 소유자 정보. 지정하지 않으면 기본값 `AssemblyName`입니다.
 - `Company`: 회사 이름. 지정하지 않으면 기본값 `AssemblyName`입니다.
@@ -39,7 +39,7 @@ SDK 스타일 프로젝트에는 기본적으로 사용할 수 있는 pack 기�
 
 - `PackageOutputPath`에서 패키지를 호출할 때 생성되는 패키지의 출력 폴더입니다.
 
-Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습니다(솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성**을 선택한 다음, **패키지** 탭 선택). 프로젝트 파일( *.csproj*)에서 직접 속성을 설정할 수도 있습니다.
+Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습니다(솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성** 을 선택한 다음, **패키지** 탭 선택). 프로젝트 파일( *.csproj* )에서 직접 속성을 설정할 수도 있습니다.
 
 ```xml
 <PropertyGroup>
@@ -96,7 +96,7 @@ Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습
    </ItemGroup>
    ```
 
-2. 개발자 명령 프롬프트를 엽니다(**검색** 상자에 **개발자 명령 프롬프트** 입력).
+2. 개발자 명령 프롬프트를 엽니다( **검색** 상자에 **개발자 명령 프롬프트** 입력).
 
    (일반적으로 **시작** 메뉴에서 “Visual Studio용 개발자 명령 프롬프트”를 시작하는 것이 좋습니다. MSBuild에 필요한 모든 경로로 구성되기 때문입니다.)
 

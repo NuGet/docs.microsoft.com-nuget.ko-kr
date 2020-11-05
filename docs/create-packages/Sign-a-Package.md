@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 00fe1d5fa81132b5d6826203a0d26e56aa8d4755
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 81f8695d7b3cec73f3e18f90ddf38dfe6c3ecf4d
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428620"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237590"
 ---
 # <a name="signing-nuget-packages"></a>NuGet 패키지 서명
 
@@ -19,7 +19,7 @@ ms.locfileid: "79428620"
 
 ## <a name="get-a-code-signing-certificate"></a>코드 서명 인증서 가져오기
 
-유효한 인증서는 [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 등의 공용 인증서 기관에서 얻을 수 있으며, Windows에서 신뢰할 수 있는 인증 기관의 전체 목록은 [http://aka.ms/trustcertpartners](https://aka.ms/trustcertpartners)에서 확인할 수 있습니다.
+유효한 인증서는 [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 등의 공용 인증서 기관에서 얻을 수 있으며, Windows에서 신뢰할 수 있는 인증 기관의 전체 목록은 [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list)에서 확인할 수 있습니다.
 
 테스트 목적으로 자체 발급된 인증서를 사용할 수 있습니다. 그러나 자체 발급된 인증서를 사용하여 서명된 패키지는 NuGet.org에서 수락되지 않습니다. [테스트 인증서 만들기](#create-a-test-certificate)에 대해 자세히 알아보세요.
 

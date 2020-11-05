@@ -10,97 +10,97 @@ metadata:
   author: karann-msft
   ms.author: karann
   ms.date: 01/13/2020
-  ms.openlocfilehash: a7a58fc8d3bb9b2e4992e606096600b8dd63cdcd
-  ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+  ms.openlocfilehash: aff64b24e5d6bee254987f1ea8f05b4aa008fbef
+  ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 04/07/2020
-  ms.locfileid: "77037521"
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "93237897"
 highlightedContent:
   items:
   - title: NuGet이란?
     itemType: overview
-    url: /nuget/what-is-nuget
+    url: ./what-is-nuget.md
   - title: NuGet 클라이언트 도구 설치
     itemType: download
-    url: /nuget/install-nuget-client-tools
+    url: ./install-nuget-client-tools.md
   - title: NuGet 알아보기
     itemType: video
     url: https://aka.ms/Nuget101
   - title: NuGet.org
     itemType: overview
-    url: /nuget/nuget-org/overview-nuget-org
+    url: ./nuget-org/overview-nuget-org.md
 conceptualContent:
   title: 패키지 사용, 만들기 및 게시
   items:
-  - title: 시작하기
+  - title: 시작
     links:
     - text: NuGet 클라이언트 도구 설치
       itemType: download
-      url: /nuget/install-nuget-client-tools
+      url: ./install-nuget-client-tools.md
     - text: 패키지 설치 및 사용 - dotnet CLI
       itemType: quickstart
-      url: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
+      url: ./quickstart/install-and-use-a-package-using-the-dotnet-cli.md
     - text: 패키지 설치 및 사용 - Visual Studio
       itemType: quickstart
-      url: /nuget/quickstart/install-and-use-a-package-in-visual-studio
+      url: ./quickstart/install-and-use-a-package-in-visual-studio.md
     - text: 패키지 만들기 - dotnet CLI
       itemType: quickstart
-      url: /nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
+      url: ./quickstart/create-and-publish-a-package-using-the-dotnet-cli.md
     - text: 패키지 만들기 - Visual Studio
       itemType: quickstart
-      url: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
+      url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
     - text: .NET Framework 패키지 만들기 - Visual Studio
       itemType: quickstart
-      url: /nuget/quickstart/create-and-publish-a-package-using-visual-studio-net-framework
+      url: ./quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md
   - title: 패키지 사용
     links:
     - text: 워크플로(개요)
       itemType: overview
-      url: /nuget/consume-packages/overview-and-workflow
+      url: ./consume-packages/overview-and-workflow.md
     - text: 패키지 찾기 및 선택
       itemType: get-started
-      url: /nuget/consume-packages/finding-and-choosing-packages
+      url: ./consume-packages/finding-and-choosing-packages.md
     - text: Visual Studio 사용
       itemType: how-to-guide
-      url: /nuget/consume-packages/install-use-packages-visual-studio
+      url: ./consume-packages/install-use-packages-visual-studio.md
     - text: dotnet CLI 사용
       itemType: how-to-guide
-      url: /nuget/consume-packages/install-use-packages-dotnet-cli
+      url: ./consume-packages/install-use-packages-dotnet-cli.md
     - text: nuget.exe CLI 사용
       itemType: how-to-guide
-      url: /nuget/consume-packages/install-use-packages-nuget-cli
+      url: ./consume-packages/install-use-packages-nuget-cli.md
     - text: 패키지 관리자 콘솔 사용
       itemType: how-to-guide
-      url: /nuget/consume-packages/install-use-packages-powershell
+      url: ./consume-packages/install-use-packages-powershell.md
   - title: 패키지 만들기
     links:
     - text: 워크플로(개요)
       itemType: overview
-      url: /nuget/create-packages/overview-and-workflow
+      url: ./create-packages/overview-and-workflow.md
     - text: Visual Studio 사용
       itemType: how-to-guide
-      url: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
+      url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
     - text: dotnet CLI 사용
       itemType: how-to-guide
-      url: /nuget/create-packages/creating-a-package-dotnet-cli
+      url: ./create-packages/creating-a-package-dotnet-cli.md
     - text: nuget.exe CLI 사용
       itemType: how-to-guide
-      url: /nuget/create-packages/creating-a-package
+      url: ./create-packages/creating-a-package.md
     - text: MSBuild 사용
       itemType: how-to-guide
-      url: /nuget/create-packages/creating-a-package-msbuild
+      url: ./create-packages/creating-a-package-msbuild.md
     - text: 여러 대상 프레임워크 지원
       itemType: reference
-      url: /nuget/create-packages/multiple-target-frameworks-project-file
+      url: ./create-packages/multiple-target-frameworks-project-file.md
   - title: 패키지 게시
     links:
     - text: NuGet.org에 게시
       itemType: overview
-      url: /nuget/nuget-org/publish-a-package
+      url: ./nuget-org/publish-a-package.md
     - text: 프라이빗 피드에 게시
       itemType: overview
-      url: /nuget/hosting-packages/overview
+      url: ./hosting-packages/overview.md
 additionalContent:
   sections:
   - title: 참조 및 리소스
@@ -108,41 +108,41 @@ additionalContent:
     - title: NuGet.org
       links:
       - text: 개요
-        url: /nuget/nuget-org/overview-nuget-org
+        url: ./nuget-org/overview-nuget-org.md
       - text: 개별 계정
-        url: /nuget/nuget-org/individual-accounts
+        url: ./nuget-org/individual-accounts.md
       - text: 조직
-        url: /nuget/nuget-org/organizations-on-nuget-org
+        url: ./nuget-org/organizations-on-nuget-org.md
       - text: API 키
-        url: /nuget/nuget-org/scoped-api-keys
+        url: ./nuget-org/scoped-api-keys.md
       - text: 패키지 게시
-        url: /nuget/nuget-org/publish-a-package
-    - title: 참조
+        url: ./nuget-org/publish-a-package.md
+    - title: 참고
       links:
       - text: dotnet CLI
-        url: /nuget/reference/dotnet-commands
+        url: ./reference/dotnet-commands.md
       - text: nuget.exe CLI
-        url: /nuget/reference/nuget-exe-cli-reference
+        url: ./reference/nuget-exe-cli-reference.md
       - text: 패키지 참조
-        url: /nuget/consume-packages/package-references-in-project-files
+        url: ./consume-packages/package-references-in-project-files.md
       - text: MSBuild 대상으로 팩 및 복원
-        url: /nuget/reference/msbuild-targets
+        url: ./reference/msbuild-targets.md
       - text: .nuspec
-        url: /nuget/reference/nuspec
+        url: ./reference/nuspec.md
       - text: nuget.config
-        url: /nuget/reference/nuget-config-file
+        url: ./reference/nuget-config-file.md
       - text: NuGet API
-        url: /nuget/api/overview
+        url: ./api/overview.md
     - title: 리소스
       links:
       - text: 정책 - NuGet
-        url: /nuget/policies/governance
+        url: ./policies/governance.md
       - text: 정책 - NuGet.org
-        url: /nuget/nuget-org/policies/data-requests
+        url: ./nuget-org/policies/data-requests.md
       - text: 릴리스 정보
-        url: /nuget/release-notes/known-issues
+        url: ./release-notes/known-issues.md
       - text: FAQ - NuGet
-        url: /nuget/resources/nuget-faq
+        url: ./resources/nuget-faq.md
       - text: FAQ - NuGet.org
-        url: /nuget/nuget-org/nuget-org-faq
+        url: ./nuget-org/nuget-org-faq.md
   footer: '[블로그](https://devblogs.microsoft.com/nuget/) - [Twitter](https://twitter.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)'

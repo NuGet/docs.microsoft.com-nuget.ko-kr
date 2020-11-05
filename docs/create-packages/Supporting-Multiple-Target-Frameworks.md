@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 34f7c6132ba6050e20114642932ccf29a5ec088d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7c0da38ab4059b89c9693ecbece2bc8ed1a775ec
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428626"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237947"
 ---
 # <a name="support-multiple-net-versions"></a>여러 .NET 버전 지원
 
@@ -71,7 +71,7 @@ NuGet은 항상 하나의 폴더에서 이러한 컴파일 또는 런타임 자�
 
 `.nuspec` 매니페스트에서 이러한 파일을 참조하는 예제는 [UWP 패키지 만들기](../guides/create-uwp-packages.md)를 참조하세요.
 
-또한 [Packing a Windows store app component with NuGet](https://blogs.msdn.microsoft.com/mim/2013/09/02/packaging-a-windows-store-apps-component-with-nuget-part-2)(NuGet으로 Windows 스토어 앱 구성 요소 압축)을 참조하세요.
+또한 [Packing a Windows store app component with NuGet](/archive/blogs/mim/packaging-a-windows-store-apps-component-with-nuget-part-2)(NuGet으로 Windows 스토어 앱 구성 요소 압축)을 참조하세요.
 
 ## <a name="matching-assembly-versions-and-the-target-framework-in-a-project"></a>프로젝트에서 어셈블리 버전 및 대상 프레임워크 일치
 
@@ -125,7 +125,7 @@ NuGet은 패키지의 단일 라이브러리 폴더에서 어셈블리를 복사
 
 프로젝트 파일을 압축하는 경우 NuGet은 프로젝트에서 종속성을 자동으로 생성하려고 합니다. *.nuspec* 파일을 사용하여 종속성을 선언하는 방법에 대한 이 섹션의 정보는 일반적으로 고급 시나리오에만 필요합니다.
 
-‘(버전 2.0 이상)’ `<dependencies>` 요소 내에서 `<group>` 요소를 사용하여 대상 프로젝트의 대상 프레임워크에 해당하는 *.nuspec*에서 패키지 종속성을 선언할 수 있습니다. 자세한 내용은 [dependencies 요소](../reference/nuspec.md#dependencies-element)를 참조하세요.
+‘(버전 2.0 이상)’ `<dependencies>` 요소 내에서 `<group>` 요소를 사용하여 대상 프로젝트의 대상 프레임워크에 해당하는 *.nuspec* 에서 패키지 종속성을 선언할 수 있습니다. 자세한 내용은 [dependencies 요소](../reference/nuspec.md#dependencies-element)를 참조하세요.
 
 각 그룹에는 `targetFramework`라는 특성이 있으며 0개 이상의 `<dependency>` 요소가 포함됩니다. 이 종속성은 대상 프레임워크가 프로젝트의 프레임워크 프로필과 호환될 때 함께 설치됩니다. 정확한 프레임워크 식별자는 [대상 프레임워크](../reference/target-frameworks.md)를 참조하세요.
 

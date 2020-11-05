@@ -6,11 +6,11 @@ ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
 ms.openlocfilehash: 7951b3db0cdcaee0a1eb955a5bf6fedce24c79c9
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428632"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237616"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>NuGet.org의 개별 계정
 
@@ -32,13 +32,13 @@ NuGet.org 계정을 만들려면 개인 MSA(Microsoft 계정) 또는 AAD(Azure A
 
 1. Microsoft 계정 또는 Azure Active Directory 계정 세부 정보를 입력합니다.
 
-1. **예**를 클릭하여 *NuGet.org* 애플리케이션에 지정된 사용 권한을 수락하세요.
+1. **예** 를 클릭하여 *NuGet.org* 애플리케이션에 지정된 사용 권한을 수락하세요.
 
    ![NuGet.org에 사용 권한 부여](media/nuget-org-permissions.png)
 
-1. *nuget.org*로 리디렉션되고 사용자 이름을 등록하라는 메시지가 표시됩니다.
+1. *nuget.org* 로 리디렉션되고 사용자 이름을 등록하라는 메시지가 표시됩니다.
 
-1. 입력 상자에서 사용자 이름을 지정합니다. 사용자 이름은 대/소문자를 구분**하며** 나중에 변경하거나 이름을 바꿀 수 없습니다.
+1. 입력 상자에서 사용자 이름을 지정합니다. 사용자 이름은 대/소문자를 구분 **하며** 나중에 변경하거나 이름을 바꿀 수 없습니다.
 
    ![NuGet.org에서 사용자 이름 지정](media/nuget-org-register.png) 
 
@@ -50,7 +50,7 @@ NuGet.org 계정을 만들려면 개인 MSA(Microsoft 계정) 또는 AAD(Azure A
 
 2FA(2단계 인증)는 웹 사이트나 앱에 로그인할 때 사용되는 추가 보안 계층입니다. 2FA를 사용하면 MSA(Microsoft 계정)로 로그인하고 사용자만 알고 있거나 액세스할 수 있는 다른 형식의 인증을 제공해야 합니다. 계정을 더 잘 보호하려면 2단계 인증을 사용하도록 설정합니다(권장).
 
-1. 계정에 로그인한 경우 프로필을 열고 **로그인 계정**에서 **사용**을 선택합니다.
+1. 계정에 로그인한 경우 프로필을 열고 **로그인 계정** 에서 **사용** 을 선택합니다.
 
    ![2FA 사용](media/nuget-org-register-2fa.png)
 
@@ -60,7 +60,7 @@ NuGet.org 계정을 만들려면 개인 MSA(Microsoft 계정) 또는 AAD(Azure A
 
 3. 로그인할 때 두 번째 인증 형식으로 문자 또는 메일을 선택합니다.
 
-   Microsoft 계정에 이미 연결되어 있는 전화 번호 또는 메일을 확인합니다. 계정의 새 전화 번호 또는 메일을 입력해야 할 수 있습니다. 필요한 경우 지침에 따라 필요한 정보를 입력하고 **다음**을 클릭합니다.
+   Microsoft 계정에 이미 연결되어 있는 전화 번호 또는 메일을 확인합니다. 계정의 새 전화 번호 또는 메일을 입력해야 할 수 있습니다. 필요한 경우 지침에 따라 필요한 정보를 입력하고 **다음** 을 클릭합니다.
 
    ![2FA 사용](media/nuget-org-sign-in-2fa.png)
 

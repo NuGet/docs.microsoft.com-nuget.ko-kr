@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 08/16/2019
 ms.topic: quickstart
 ms.openlocfilehash: 32dcc1d233154463e2950b1ce46554b1cb89956e
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428644"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237499"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>빠른 시작: Visual Studio(.NET Standard, Windows 전용)를 사용하여 NuGet 패키지 만들기 및 게시
 
@@ -36,12 +36,12 @@ Windows에서 Visual Studio의 .NET Standard 클래스 라이브러리에서 NuG
 
 패키지할 코드에 대해 기존 .NET Standard 클래스 라이브러리 프로젝트를 사용하거나 다음과 같이 간단한 프로젝트를 만듭니다.
 
-1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 차례로 선택하고, **Visual C# > .NET Standard** 노드를 펼치고, “클래스 라이브러리(.NET Standard)” 템플릿을 선택하고, 프로젝트 이름을 AppLogger로 지정한 다음, **확인**을 클릭합니다.
+1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트** 를 차례로 선택하고, **Visual C# > .NET Standard** 노드를 펼치고, “클래스 라이브러리(.NET Standard)” 템플릿을 선택하고, 프로젝트 이름을 AppLogger로 지정한 다음, **확인** 을 클릭합니다.
 
    > [!Tip]
    > 별도로 선택하지 않는 한 .NET Standard는 가장 넓은 범위의 사용하는 프로젝트와 호환되기 때문에 NuGet 패키지의 기본 대상입니다.
 
-1. 결과 프로젝트 파일을 마우스 오른쪽 단추로 클릭하고, **빌드**를 선택하여 프로젝트가 제대로 만들어졌는지 확인합니다. DLL은 Debug(또는 해당 구성을 대신 빌드하는 경우 Release) 폴더 내에 있습니다.
+1. 결과 프로젝트 파일을 마우스 오른쪽 단추로 클릭하고, **빌드** 를 선택하여 프로젝트가 제대로 만들어졌는지 확인합니다. DLL은 Debug(또는 해당 구성을 대신 빌드하는 경우 Release) 폴더 내에 있습니다.
 
 물론 실제 NuGet 패키지 내에서 다른 사람들이 애플리케이션을 빌드할 수 있는 많은 유용한 기능을 구현할 것입니다. 그러나 이 연습에서는 템플릿의 클래스 라이브러리가 패키지를 만드는 데 충분하므로 추가 코드를 작성하지 않습니다. 그러나 계속 패키지에 대한 함수형 코드를 원하는 경우 다음을 사용하세요.
 
@@ -69,22 +69,22 @@ namespace AppLogger
     > [!Note]
     > 공용으로 빌드된 패키지의 경우 **태그** 속성에 특히 주의하세요. 태그는 다른 사람들이 패키지를 찾고 그 기능을 이해하는 데 도움이 됩니다.
 
-1. 패키지에 고유 식별자를 제공하고 원하는 다른 모든 속성을 채웁니다. MSBuild 속성(SDK 스타일 프로젝트)을 *.nuspec*의 속성에 매핑하려면 [대상 압축](../reference/msbuild-targets.md#pack-target)을 참조하세요. 속성 설명은 [.nuspec 파일 참조](../reference/nuspec.md)를 참조하세요. 여기에 있는 모든 속성은 Visual Studio에서 프로젝트에 대해 만드는 `.nuspec` 매니페스트로 이동합니다.
+1. 패키지에 고유 식별자를 제공하고 원하는 다른 모든 속성을 채웁니다. MSBuild 속성(SDK 스타일 프로젝트)을 *.nuspec* 의 속성에 매핑하려면 [대상 압축](../reference/msbuild-targets.md#pack-target)을 참조하세요. 속성 설명은 [.nuspec 파일 참조](../reference/nuspec.md)를 참조하세요. 여기에 있는 모든 속성은 Visual Studio에서 프로젝트에 대해 만드는 `.nuspec` 매니페스트로 이동합니다.
 
     > [!Important]
     > nuget.org 또는 무엇이든 사용 중인 호스트에서 고유한 식별자를 패키지에 제공해야 합니다. 이 연습에서는 나중 게시 단계에서 패키지를 공개적으로 표시할 수 있도록 이름에 “샘플” 또는 “테스트”를 포함하는 것이 좋습니다(실제로 아무도 사용할 가능성이 없더라도).
     >
     > 이미 존재하는 이름으로 패키지를 게시하려고 시도하면 오류가 표시됩니다.
 
-1. (선택 사항) 프로젝트 파일에서 직접 속성을 보려면 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **AppLogger.csproj 편집**을 선택합니다.
+1. (선택 사항) 프로젝트 파일에서 직접 속성을 보려면 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **AppLogger.csproj 편집** 을 선택합니다.
 
-   이 옵션은 SDK 스타일 특성을 사용하는 프로젝트의 경우 Visual Studio 2017부터만 사용할 수 있습니다. 그렇지 않은 경우 프로젝트를 마우스 오른쪽 단추로 클릭하고 **프로젝트 언로드**를 선택합니다. 그런 다음, 언로드된 프로젝트를 마우스 오른쪽 단추로 클릭하고 **AppLogger.csproj 편집**을 선택합니다.
+   이 옵션은 SDK 스타일 특성을 사용하는 프로젝트의 경우 Visual Studio 2017부터만 사용할 수 있습니다. 그렇지 않은 경우 프로젝트를 마우스 오른쪽 단추로 클릭하고 **프로젝트 언로드** 를 선택합니다. 그런 다음, 언로드된 프로젝트를 마우스 오른쪽 단추로 클릭하고 **AppLogger.csproj 편집** 을 선택합니다.
 
 ## <a name="run-the-pack-command"></a>pack 명령 실행
 
-1. 구성을 **해제**로 설정합니다.
+1. 구성을 **해제** 로 설정합니다.
 
-1. **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **Pack** 명령을 선택합니다.
+1. **솔루션 탐색기** 에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **Pack** 명령을 선택합니다.
 
     ![Visual Studio 프로젝트 상황에 맞는 메뉴의 NuGet pack 명령](media/qs_create-vs-02-pack-command.png)
 
@@ -103,9 +103,9 @@ namespace AppLogger
 
 프로젝트를 빌드할 때 NuGet 패키지를 자동으로 생성하도록 Visual Studio를 구성할 수 있습니다.
 
-1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성**을 선택합니다.
+1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성** 을 선택합니다.
 
-2. **패키지** 탭에서 **빌드 시 NuGet 패키지 생성**을 선택합니다.
+2. **패키지** 탭에서 **빌드 시 NuGet 패키지 생성** 을 선택합니다.
 
    ![빌드 시 패키지를 자동으로 생성](media/qs_create-vs-05-generate-on-build.png)
 
@@ -130,7 +130,7 @@ namespace AppLogger
 
 ### <a name="publish-with-the-dotnet-cli-or-nugetexe-cli"></a>dotnet CLI 또는 nuget.exe CLI를 사용하여 게시
 
-**.NET Core CLI**(dotnet CLI) 또는 **NuGet**(nuget.exe CLI) 중에서 CLI 도구용 탭을 하나 선택합니다.
+**.NET Core CLI** (dotnet CLI) 또는 **NuGet** (nuget.exe CLI) 중에서 CLI 도구용 탭을 하나 선택합니다.
 
 # <a name="net-core-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 

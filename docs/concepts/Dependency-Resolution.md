@@ -6,23 +6,23 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428470"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237746"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet에서 패키지 종속성을 확인하는 방법
 
 [restore](../consume-packages/package-restore.md) 프로세스의 일부로 설치하는 것을 포함하여 패키지를 설치하거나 다시 설치할 때마다 NuGet은 첫 번째 패키지가 종속된 모든 추가 패키지도 설치합니다.
 
-그런 다음 이러한 직접적인 종속성에도 자체의 종속성이 있을 수 있으며, 이에 따라 임의의 수준까지 계속 종속될 수 있습니다. 이렇게 하면 패키지 간의 관계가 모든 수준임을 설명하는 *종속성 그래프*를 생성합니다.
+그런 다음 이러한 직접적인 종속성에도 자체의 종속성이 있을 수 있으며, 이에 따라 임의의 수준까지 계속 종속될 수 있습니다. 이렇게 하면 패키지 간의 관계가 모든 수준임을 설명하는 *종속성 그래프* 를 생성합니다.
 
 여러 패키지의 종속성이 같은 경우 동일한 패키지 ID가 그래프에 여러 번 표시될 수 있으며, 잠재적으로 서로 다른 버전 제약 조건이 있을 수 있습니다. 그러나 프로젝트에서 특정 패키지의 한 버전만 사용할 수 있으므로 NuGet은 사용할 버전을 선택해야 합니다. 정확한 프로세스는 사용되는 패키지 관리 형식에 따라 다릅니다.
 
 ## <a name="dependency-resolution-with-packagereference"></a>PackageReference를 사용하여 종속성 확인
 
-PackageReference 형식을 사용하여 패키지를 프로젝트에 설치하는 경우 NuGet은 적절한 파일에서 단순 패키지 그래프에 대한 참조를 추가하고 충돌을 미리 해결합니다. 이 프로세스는 *전이적 복원*이라고 합니다. 패키지를 다시 설치하거나 복원하면 그래프에 나열된 패키지가 다운로드되어 더 빠르고 예측 가능한 빌드가 수행됩니다. 최신 패키지 버전을 사용하도록 프로젝트를 수정하지 않으려면 부동 버전(예: 2.8.\*)을 이용할 수도 있습니다.
+PackageReference 형식을 사용하여 패키지를 프로젝트에 설치하는 경우 NuGet은 적절한 파일에서 단순 패키지 그래프에 대한 참조를 추가하고 충돌을 미리 해결합니다. 이 프로세스는 *전이적 복원* 이라고 합니다. 패키지를 다시 설치하거나 복원하면 그래프에 나열된 패키지가 다운로드되어 더 빠르고 예측 가능한 빌드가 수행됩니다. 최신 패키지 버전을 사용하도록 프로젝트를 수정하지 않으려면 부동 버전(예: 2.8.\*)을 이용할 수도 있습니다.
 
 NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리에서 종속성을 확인한 다음, 결과 그래프를 `project.assets.json`이라는 파일에 씁니다. 또한 [잠금 파일 기능을 사용하도록 설정한](../consume-packages/package-references-in-project-files.md#locking-dependencies) 경우 이름이 `packages.lock.json`인 잠금 파일에 확인된 종속성을 씁니다.
 자산 파일은 기본적으로 프로젝트의 'obj' 폴더인 `MSBuildProjectExtensionsPath`에 있습니다. 그러면 MSBuild에서 이 파일을 읽고 잠재적인 참조를 찾을 수 있는 폴더의 집합으로 해당 파일을 변환한 다음 메모리의 프로젝트 트리에 추가합니다.

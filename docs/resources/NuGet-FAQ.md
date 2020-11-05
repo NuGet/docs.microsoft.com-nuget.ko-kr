@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 937a0083ca47ba5668059736a7e99f7ca88e8908
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: aae6f0474cc6e8e8aa5c269b79be6fd949d9184c
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622618"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237999"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -41,13 +41,13 @@ UI 및 명령줄 도구에 관한 모든 정보는 [설치 가이드](../install
 - Windows에서 Visual Studio는 [패키지 관리자 UI](../consume-packages/install-use-packages-visual-studio.md)와 [패키지 관리자 콘솔](../consume-packages/install-use-packages-powershell.md)을 지원합니다.
 - Mac용 Visual Studio에는 [프로젝트에 NuGet 패키지 포함](/visualstudio/mac/nuget-walkthrough)에서 설명한 대로 NuGet 기능이 기본적으로 제공됩니다.
 - Visual Studio Code(모든 플랫폼)에는 직접적인 NuGet 통합이 없습니다. [NuGet CLI](../reference/nuget-exe-cli-reference.md) 또는 [dotnet CLI](../reference/dotnet-commands.md)를 사용하세요.
-- Azure DevOps는 [NuGet 패키지를 복원하는 빌드 단계](/vsts/build-release/tasks/package/nuget)를 제공합니다. 또한 [Azure DevOps에서 전용 NuGet 패키지 피드를 호스팅](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish)할 수도 있습니다.
+- Azure DevOps는 [NuGet 패키지를 복원하는 빌드 단계](/vsts/build-release/tasks/package/nuget)를 제공합니다. 또한 [Azure DevOps에서 전용 NuGet 패키지 피드를 호스팅](/azure/devops/artifacts/nuget/publish)할 수도 있습니다.
 
 **설치된 NuGet 도구의 정확한 버전을 확인하려면 어떻게 할까요?**
 
 Visual Studio에서 **도움말 > Microsoft Visual Studio 정보** 명령을 사용하고 **NuGet 패키지 관리자** 옆에 표시된 버전을 확인합니다.
 
-또는 패키지 관리자 콘솔(**도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔**)을 시작하고, `$host`를 입력하여 버전을 포함한 NuGet 관련 정보를 확인합니다.
+또는 패키지 관리자 콘솔( **도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔** )을 시작하고, `$host`를 입력하여 버전을 포함한 NuGet 관련 정보를 확인합니다.
 
 **NuGet에서 지원하는 프로그래밍 언어는 무엇인가요?**
 
@@ -61,7 +61,7 @@ NuGet은 Windows, 웹, 클라우드, SharePoint, Wix 등과 같은 다양한 프
 
 **Visual Studio 템플릿의 일부인 패키지를 업데이트하려면 어떻게 할까요?**
 
-패키지 관리자 UI에서 **업데이트** 탭으로 이동하여 **모두 업데이트**를 선택하거나, 패키지 관리자 콘솔에서 [`Update-Package` 명령](../reference/ps-reference/ps-ref-update-package.md)을 사용합니다.
+패키지 관리자 UI에서 **업데이트** 탭으로 이동하여 **모두 업데이트** 를 선택하거나, 패키지 관리자 콘솔에서 [`Update-Package` 명령](../reference/ps-reference/ps-ref-update-package.md)을 사용합니다.
 
 템플릿 자체를 업데이트하려면 템플릿 리포지토리를 수동으로 업데이트해야 합니다. 이 주제에 대한 [Xavier Decoster의 블로그](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages)를 참조하세요. 모든 종속성의 최신 버전이 서로 호환되지 않을 경우 수동으로 업데이트하면 템플릿이 손상될 수 있으므로 이 작업은 사용자의 책임 하에 수행해야 합니다.
 
@@ -103,7 +103,7 @@ Visual Studio 자동화 개체 모델의 최상위 개체를 DTE(개발 도구 �
 
 **내 패키지를 피드에 나열하려면 어떻게 할까요?**
 
-[패키지 만들기 및 게시](../quickstart/create-and-publish-a-package.md)를 참조하세요.
+[패키지 만들기 및 게시](../quickstart/create-and-publish-a-package-using-visual-studio.md)를 참조하세요.
 
 **다른 버전의 .NET Framework를 대상으로 하는 여러 버전의 라이브러리가 있습니다. 이를 지원하는 단일 패키지를 빌드하려면 어떻게 할까요?**
 

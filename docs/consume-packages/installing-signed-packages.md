@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
 ms.openlocfilehash: 034b9dd9699af529e4d82d6ee5b1c42214673341
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428602"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237629"
 ---
 # <a name="manage-package-trust-boundaries"></a>패키지 트러스트 영역 관리
 

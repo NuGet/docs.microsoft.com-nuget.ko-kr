@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 31243076f36f6ff274c4377c1773ea59dda8c834
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 165587fb64be5a5f4dbfdece7dc3a1e6402b733e
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64495497"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237428"
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>NuGet 에코시스템 개요
 
@@ -68,7 +68,7 @@ NuGet에 기반한 도구 및 유틸리티는 다음과 같습니다.
 
 ## <a name="training-materials-and-references"></a>교육 자료 및 참조
 
-일반적으로 새로운 도구 또는 기술을 사용하면 학습 곡선이 함께 제공됩니다. 다행히 NuGet의 학습 곡선은 가파르지 않습니다. 실제로 신속하게 [패키지를 사용하기 시작](../quickstart/use-a-package.md)할 수 있습니다.
+일반적으로 새로운 도구 또는 기술을 사용하면 학습 곡선이 함께 제공됩니다. 다행히 NuGet의 학습 곡선은 가파르지 않습니다. 실제로 신속하게 [패키지를 사용하기 시작](../quickstart/install-and-use-a-package-in-visual-studio.md)할 수 있습니다.
 
 즉, 자동화된 빌드 및 배포 프로세스에서 NuGet과 함께 패키지를 작성하려면(특히 양호한 패키지) 다음 리소스에 좀 더 많은 시간을 들여야 합니다.
 

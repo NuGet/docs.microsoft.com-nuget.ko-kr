@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 915f6e4cfc0b21d2b10006c62e8230720d07ce74
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7076378b53c439eef51a243fa6efcfb01b8cfa73
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428536"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237908"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>NuGet.org 질문과 대답
 
@@ -81,7 +81,7 @@ NuGet은 HTTP를 사용하여 패키지를 다운로드하므로, 큰 패키지�
 *MTR을 캡처하려면:*
 
 - [WinMTR](https://sourceforge.net/projects/winmtr/files/WinMTR-v092.zip/download)을 다운로드합니다.
-- 호스트 이름으로 `api.nuget.org`를 입력하고 **시작**을 클릭합니다.
+- 호스트 이름으로 `api.nuget.org`를 입력하고 **시작** 을 클릭합니다.
 - **보냄** 열이 100개 이상이 될 때까지 기다립니다.
 
     ![캡처 중인 MTR](media/mtr.png)
@@ -93,11 +93,11 @@ NuGet은 HTTP를 사용하여 패키지를 다운로드하므로, 큰 패키지�
 - 최신 버전의 [Fiddler](https://www.telerik.com/download/fiddler)를 설치합니다.
 - Fiddler를 시작하고 **파일 > 트래픽 캡처** 메뉴를 사용하여 트래픽 캡처를 사용하지 않도록 설정합니다.
 - 모든 세션을 제거합니다(목록에서 모든 항목을 선택하고 **삭제** 키를 누름).
-- **도구 > Fiddler 옵션...** 메뉴의 **HTTPS** 탭에서 **HTTPS 트래픽 해독**을 선택하여 HTTPS 트래픽을 캡처하도록 Fiddler를 구성합니다.
+- **도구 > Fiddler 옵션...** 메뉴의 **HTTPS** 탭에서 **HTTPS 트래픽 해독** 을 선택하여 HTTPS 트래픽을 캡처하도록 Fiddler를 구성합니다.
 - Visual Studio를 닫습니다.
 - **파일 > 트래픽 캡처** 메뉴를 활성화합니다.
 - Visual Studio 또는 nuget.exe .exe를 시작하고 작동하지 않는 작업을 수행합니다. 이러한 작업으로 생성된 트래픽이 Fiddler에 표시됩니다.
-- 작업이 실행되면 **파일 > 저장 > 모든 세션**을 사용하여 캡처된 세션을 저장합니다.
+- 작업이 실행되면 **파일 > 저장 > 모든 세션** 을 사용하여 캡처된 세션을 저장합니다.
 
 참고: Fiddler를 통해 NuGet 트래픽을 라우팅하기 위해 `HTTP_PROXY` 환경 변수를 `http://127.0.0.1:8888`로 설정해야 할 수도 있습니다.
 
@@ -124,10 +124,10 @@ NuGet.org 계정과 연결된 Microsoft 계정을 잊어버린 경우 아래 단
 
 ### <a name="how-to-change-the-microsoft-account-i-use-for-nugetorg-login"></a>NuGet.org 로그인에 사용된 Microsoft 계정을 변경하려면 어떻게 하나요?
 NuGet.org 사용자에 대한 Microsoft 계정을 변경하려는 경우 다음 단계를 따릅니다. `account1@outlook.com` 전자 메일을 사용한 Microsoft 계정이 사용자 이름을 사용한 NuGet.org 계정 `MyNuGetAccount`와 연결되어 있다고 가정합니다. `account2@outlook.com` 이메일을 사용하여 다른 Microsoft 계정으로 로그인을 변경하려면
-1. **Microsoft로 로그인**을 클릭한 후 [로그인 페이지](https://www.nuget.org/users/account/LogOn)에서 **현재 연결된 Microsoft 계정** 즉, `account1@outlook.com`을 사용하여 로그인하세요.
+1. **Microsoft로 로그인** 을 클릭한 후 [로그인 페이지](https://www.nuget.org/users/account/LogOn)에서 **현재 연결된 Microsoft 계정** 즉, `account1@outlook.com`을 사용하여 로그인하세요.
 1. 로그인하면 [계정 설정](https://www.nuget.org/account) 페이지로 이동합니다.
-1. **로그인 계정**의 섹션을 확장합니다. **계정 변경** 단추를 클릭합니다.
-1. 이제 Microsoft 로그인 페이지로 리디렉션됩니다. 연결을 `account2@outlook.com`으로 변경하려는 계정을 사용하여 로그인하세요. **참고**: 다른 Microsoft 계정으로 로그인할 수 있으려면 로그인 흐름 중에 **다른 계정으로 로그인 및 로그아웃**을 클릭해야 할 수 있습니다.
+1. **로그인 계정** 의 섹션을 확장합니다. **계정 변경** 단추를 클릭합니다.
+1. 이제 Microsoft 로그인 페이지로 리디렉션됩니다. 연결을 `account2@outlook.com`으로 변경하려는 계정을 사용하여 로그인하세요. **참고** : 다른 Microsoft 계정으로 로그인할 수 있으려면 로그인 흐름 중에 **다른 계정으로 로그인 및 로그아웃** 을 클릭해야 할 수 있습니다.
 1. 아래와 같은 오류가 표시되는 경우 자세한 내용은 [Microsoft 계정이 다른 NuGet.org 계정과 연결되어 있습니다](#microsoft-account-is-linked-with-another-nugetorg-account)를 참조하세요.
     >_'account2 <account2@outlook.com>'을 사용하여 Microsoft 계정을 업데이트하지 못했습니다. 다른 NuGet 계정에 이미 연결되어 있는 경우 이런 오류가 발생할 수 있습니다. 자세한 내용은 고객 지원팀에 문의하세요._
 
@@ -188,11 +188,11 @@ NuGet.org에서 계정을 만드는 경우 해당 계정과 연결된 통신 전
 ### <a name="unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account"></a>Microsoft 로그인을 사용할 수 없는 경우 내 NuGet.org 계정을 복구하려면 어떻게 하나요?
 
 [로그인 지원](#which-microsoft-account-is-linked-to-my-nugetorg-account)을 사용하려는데 NuGet.org 계정과 연결된 Microsoft 계정에 액세스할 수 없는 경우 NuGet.org 계정에 새 Microsoft 계정을 연결하려면 다음 단계를 따르세요.
-1. **요구 사항**: 기존의 모든 NuGet.org 계정과 연결되지 않은 Microsoft 계정에 액세스해야 합니다. 없는 경우 계정을 [만들](https://signup.live.com) 수 있습니다.
+1. **요구 사항** : 기존의 모든 NuGet.org 계정과 연결되지 않은 Microsoft 계정에 액세스해야 합니다. 없는 경우 계정을 [만들](https://signup.live.com) 수 있습니다.
 2. NuGet.org 계정의 사용자 이름 및 암호를 잊은 경우 [암호 로그인을 복구하는 단계](#how-to-recover-nugetorg-password-login)를 수행하세요.
 3. 사용자 이름/암호 로그인을 사용하여 [NuGet.org에 로그인](https://www.nuget.org/users/account/LogOnNuGetAccount)합니다.
 4. 로그인하면 아래와 같은 팝업 대화 상자가 표시됩니다. 이 대화 상자는 암호 중지 대화 상자입니다.
-5. **참고**: 지정된 Microsoft 계정으로 로그인하라는 지침을 무시하세요. 이제 기타 모든 Microsoft 로그인에 NuGet.org 계정을 연결할 수 있습니다.
+5. **참고** : 지정된 Microsoft 계정으로 로그인하라는 지침을 무시하세요. 이제 기타 모든 Microsoft 로그인에 NuGet.org 계정을 연결할 수 있습니다.
 6. 1단계에서 설명한 것처럼 **Microsoft로 로그인** 단추를 클릭하고 액세스 권한이 있는 Microsoft 계정으로 로그인합니다.
 7. 이제 사용자 계정은 앞으로 NuGet.org에 로그인하는 데 사용할 수 있는 새 Microsoft 계정에 연결됩니다.
 
@@ -203,7 +203,7 @@ NuGet.org에서 계정을 만드는 경우 해당 계정과 연결된 통신 전
 사용자 계정을 조직 계정으로 변환하려는 경우 이 계정이 이미 Microsoft 계정 로그인과 연결되어 있으면 [nuget.org의 조직](organizations-on-nuget-org.md)에 대한 설명서에 표시된 단계를 따릅니다.
 
 그러나 NuGet.org 계정이 Microsoft 계정과 연결되어 있지 않은 경우 이 계정을 조직 계정으로 변환하려면 다음 단계를 따르면 됩니다.
-1. **요구 사항**: 조직 계정의 관리자로 사용할 NuGet.org에서 처음 만든 개별 계정이 있어야 합니다. 없으면 [새 NuGet.org 계정을 만듭니다](individual-accounts.md).
+1. **요구 사항** : 조직 계정의 관리자로 사용할 NuGet.org에서 처음 만든 개별 계정이 있어야 합니다. 없으면 [새 NuGet.org 계정을 만듭니다](individual-accounts.md).
 2. NuGet.org 계정에 대한 암호 로그인이 없는 경우 해당 계정에 대한 [암호 로그인 복구 단계](#how-to-recover-nugetorg-password-login)를 따릅니다. 그러나 있는 경우 이 단계를 건너뜁니다.
 3. 사용자 이름/암호 로그인을 사용하여 [NuGet.org에 로그인](https://www.nuget.org/users/account/LogOnNuGetAccount)합니다.
 4. 로그인하면 아래와 같은 팝업 대화 상자가 표시됩니다. 이 대화 상자는 암호 중지 대화 상자입니다. 
@@ -228,23 +228,23 @@ NuGet.org에서 계정을 만드는 경우 해당 계정과 연결된 통신 전
 
 사용자 계정이 이전에 개인 Microsoft 계정으로 등록된 것으로 보이고 문제 없이 작동했지만, 지금은 해당 계정이 Azure Active Directory에 "관리되지 않는" 테넌트로 등록된 것으로 보입니다(Microsoft 계정을 인증하는 데 사용하는 ID 서비스). 
 
-@yourdomain.com 이메일 주소를 사용하는 조직의 누군가 또는 사용자가 AAD 통합 서비스에 등록했거나, [Azure Active Directory에 셀프 서비스 등록](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-self-service-signup)하여 사용한 Microsoft 계정 도메인에 이러한 "관리되지 않는" 테넌트를 만든 경우 이런 일이 발생할 수 있습니다(사용자의 경우 @yourdomain.com). 
+@yourdomain.com 이메일 주소를 사용하는 조직의 누군가 또는 사용자가 AAD 통합 서비스에 등록했거나, [Azure Active Directory에 셀프 서비스 등록](/azure/active-directory/users-groups-roles/directory-self-service-signup)하여 사용한 Microsoft 계정 도메인에 이러한 "관리되지 않는" 테넌트를 만든 경우 이런 일이 발생할 수 있습니다(사용자의 경우 @yourdomain.com). 
 
 **내 계정을 복구하려면 어떻게 해야 하나요?**
 
 현재 NuGet.org에는 Azure Active Directory에서 이러한 “관리되지 않는” 테넌트 계정을 사용하여 계정을 인증하는 방법이 없습니다. 지금은 이러한 계정을 인증하는 더 나은 방법을 찾아보고 있습니다.
 
-Microsoft 계정(@yourdomain.com)으로 NuGet.org에 로그인하려는 경우 사용자(또는 사용자 회사의 관리자)는 “@yourdomain.com” 전자 메일 주소를 사용하여 사용자를 인증하려면 DNS 유효성 검사를 수행하여 AAD의 소유권을 주장해야 합니다. Azure Active Directory에서 설명된 [도메인 관리자 인수](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover)에 대한 단계를 따릅니다. 이 작업이 완료되면 일반적인 로그인으로 작업이 시작되어야 합니다.
+Microsoft 계정(@yourdomain.com)으로 NuGet.org에 로그인하려는 경우 사용자(또는 사용자 회사의 관리자)는 “@yourdomain.com” 전자 메일 주소를 사용하여 사용자를 인증하려면 DNS 유효성 검사를 수행하여 AAD의 소유권을 주장해야 합니다. Azure Active Directory에서 설명된 [도메인 관리자 인수](/azure/active-directory/users-groups-roles/domains-admin-takeover)에 대한 단계를 따릅니다. 이 작업이 완료되면 일반적인 로그인으로 작업이 시작되어야 합니다.
 
 **이상 모든 작업을 수행하지 않으려는 경우 내 계정을 복구하는 다른 방법은?**
 
-@yourdomain.com과 연결**되지 않은** 이메일을 사용하여 새 Microsoft 계정을 [만들](https://www.microsoft.com/account) 수 있습니다. [NuGet.org 계정 복구](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account) 섹션에 설명된 단계를 따릅니다.
+@yourdomain.com과 연결 **되지 않은** 이메일을 사용하여 새 Microsoft 계정을 [만들](https://www.microsoft.com/account) 수 있습니다. [NuGet.org 계정 복구](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account) 섹션에 설명된 단계를 따릅니다.
 
 ### <a name="how-do-i-change-my-nugetorg-account-username"></a>내 NuGet.org 계정 사용자 이름을 변경하려면 어떻게 하나요?
 
 변경할 수 없습니다. 정책상 사용자 이름 변경이 허용되지 않습니다. 또한 이름 변경은 [패키지 소유자를 기준으로 패키지 신뢰 정책](../consume-packages/installing-signed-packages.md#trust-package-owners)을 정의했을 수 있는 사용자의 호환성이 손상되는 변경입니다. 사용자 이름을 변경하는 유일한 방법은 원하는 사용자 이름으로 새 계정을 만드는 것입니다. 새 계정을 만들기 전에 기존 계정을 삭제하는 것이 좋습니다. 그렇지 않은 경우 등록된 Microsoft 계정을 다시 사용할 수 없습니다.
 > [!Important]
-> 사용자를 삭제하면 여전히 `username`을 **예약**할 수 있습니다. 다시 동일한 사용자 이름을 재사용할 수 없습니다. **여기에는 대/소문자 변경도 포함됩니다**. 예를 들어 `mycoolname` 사용자 이름으로 사용자를 만든 다음, `MyCoolName`(대/소문자 변경)으로 변경하려는 경우 사용자를 삭제한 후에는 변경할 수 없습니다.
+> 사용자를 삭제하면 여전히 `username`을 **예약** 할 수 있습니다. 다시 동일한 사용자 이름을 재사용할 수 없습니다. **여기에는 대/소문자 변경도 포함됩니다**. 예를 들어 `mycoolname` 사용자 이름으로 사용자를 만든 다음, `MyCoolName`(대/소문자 변경)으로 변경하려는 경우 사용자를 삭제한 후에는 변경할 수 없습니다.
 
 올바른 사용자 이름으로 [새 계정을 등록](individual-accounts.md)하려면 [NuGet.org 계정 삭제](#how-to-delete-my-nugetorg-account) 섹션에서 설명된 단계를 따릅니다.
 

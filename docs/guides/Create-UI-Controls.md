@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: e1ebf5042597693ee55d986a4f93e797c27ad30a
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 17062d83349fe1b8cd28e57dd888686a226ac9cb
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622709"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238025"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>NuGet 패키지인 UI 컨트롤 만들기
 
@@ -59,11 +59,11 @@ Visual Studio 및 Blend의 자산 창에 있는 XAML 디자이너의 도구 상�
 
 다음은 각 문자에 대한 설명입니다.
 
-- *your_package_file*: `ManagedPackage.winmd`와 같은 컨트롤 파일의 이름입니다("ManagedPackage"는 이 예제에 사용되고 다른 의미가 없음).
-- *vs_category*: Visual Studio 디자이너의 도구 상자에서 컨트롤이 표시되어야 하는 그룹의 레이블입니다. `VSCategory`는 컨트롤을 도구 상자에 표시하기 위해 필요합니다.
+- *your_package_file* : `ManagedPackage.winmd`와 같은 컨트롤 파일의 이름입니다("ManagedPackage"는 이 예제에 사용되고 다른 의미가 없음).
+- *vs_category* : Visual Studio 디자이너의 도구 상자에서 컨트롤이 표시되어야 하는 그룹의 레이블입니다. `VSCategory`는 컨트롤을 도구 상자에 표시하기 위해 필요합니다.
 ‘ui_framework’: 프레임워크의 이름(예: ‘WPF’)입니다. `UIFramework` 특성은 컨트롤을 도구 상자에 표시하기 위해 Visual Studio 16.7 미리 보기 3 이상의 ToolboxItems 노드에 필요합니다.
-- *blend_category*: Blend 디자이너의 자산 창에서 컨트롤이 표시되어야 하는 그룹의 레이블입니다. `BlendCategory`는 컨트롤을 자산에 표시하기 위해 필요합니다.
-- *type_full_name_n*: `ManagedPackage.MyCustomControl`과 같은 네임스페이스를 포함하여 각 컨트롤의 정규화된 이름입니다. 점 양식은 관리 및 네이티브 형식에 사용됩니다.
+- *blend_category* : Blend 디자이너의 자산 창에서 컨트롤이 표시되어야 하는 그룹의 레이블입니다. `BlendCategory`는 컨트롤을 자산에 표시하기 위해 필요합니다.
+- *type_full_name_n* : `ManagedPackage.MyCustomControl`과 같은 네임스페이스를 포함하여 각 컨트롤의 정규화된 이름입니다. 점 양식은 관리 및 네이티브 형식에 사용됩니다.
 
 고급 시나리오에서 단일 패키지에 여러 컨트롤 어셈블리가 포함되는 경우 `<FileList>` 내에 여러 `<File>` 요소가 포함될 수도 있습니다. 컨트롤을 별도 범주로 구성하려는 경우 단일 `<File>` 내에 여러 `<ToolboxItems>` 노드가 있을 수도 있습니다.
 
@@ -94,7 +94,7 @@ Visual Studio 및 Blend의 자산 창에 있는 XAML 디자이너의 도구 상�
 
 ![도구 상자 아이콘 샘플](https://raw.githubusercontent.com/NuGet/docs.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
 
-분홍색 배경은 런타임에 바뀝니다. 아이콘은 Visual Studio 테마를 변경하고 배경색이 예상되면 다시 그려집니다. 자세한 내용은 [Visual Studio용 이미지 및 아이콘](https://docs.microsoft.com/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)을 참조하세요.
+분홍색 배경은 런타임에 바뀝니다. 아이콘은 Visual Studio 테마를 변경하고 배경색이 예상되면 다시 그려집니다. 자세한 내용은 [Visual Studio용 이미지 및 아이콘](/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)을 참조하세요.
 
 아래 예제에서 프로젝트에는 "ManagedPackage.MyCustomControl.png"라는 이미지 파일이 있습니다.
 
@@ -147,7 +147,7 @@ WPF의 경우 .NET Framework v4.6.1 이상을 대상으로 하는 프로젝트�
 
 ## <a name="use-strings-and-resources"></a>문자열 및 리소스 사용
 
-패키지에 문자열 리소스(`.resw`)를 포함할 수 있으며 해당 리소스를 컨트롤 또는 사용 중인 UWP 프로젝트에서 사용할 수 있습니다. `.resw` 파일의 **빌드 작업** 속성을 **PRIResource**로 설정합니다.
+패키지에 문자열 리소스(`.resw`)를 포함할 수 있으며 해당 리소스를 컨트롤 또는 사용 중인 UWP 프로젝트에서 사용할 수 있습니다. `.resw` 파일의 **빌드 작업** 속성을 **PRIResource** 로 설정합니다.
 
 예를 들어 ExtensionSDKasNuGetPackage 샘플에서 [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs)를 참조하세요.
 

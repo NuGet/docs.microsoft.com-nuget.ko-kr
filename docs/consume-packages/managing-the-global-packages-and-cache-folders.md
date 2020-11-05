@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
 ms.openlocfilehash: e2672aa0bf57242526364639f0df74f9d1adb934
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428590"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237324"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>전역 패키지, 캐시 및 임시 폴더 관리
 
@@ -24,11 +24,11 @@ ms.locfileid: "79428590"
 | plugins-cache **4.8+** | NuGet이 작업 클레임 요청의 결과를 저장하는 폴더입니다.<br/><ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>NUGET_PLUGINS_CACHE_PATH 환경 변수를 사용하여 재정의합니다.</li></ul> |
 
 > [!Note]
-> NuGet 3.5 이전에서는 `%localappdata%\NuGet\Cache`에 있는 *http-cache* 대신 *packages-cache*를 사용합니다.
+> NuGet 3.5 이전에서는 `%localappdata%\NuGet\Cache`에 있는 *http-cache* 대신 *packages-cache* 를 사용합니다.
 
 NuGet은 캐시 및 *global-packages* 폴더를 사용하여 일반적으로 컴퓨터에 있는 이미 있는 패키지 다운로드를 방지하여 설치, 업데이트 및 복원 작업의 성능을 개선합니다. PackageReference를 사용하는 경우 *global-packages* 폴더는 다운로드한 패키지를 프로젝트 폴더 내에 보관하는 것도 막아 이러한 패키지가 소스 제어에 실수로 추가될 수 있는 문제를 방지하고 NuGet이 컴퓨터 스토리지에 미치는 전반적인 영향도 줄입니다.
 
-패키지를 검색하라는 요청을 받으면 NuGet은 먼저 *global-packages* 폴더를 찾습니다. 정확한 버전의 패키지가 없는 경우 NuGet은 모든 비 HTTP 패키지 소스를 확인합니다. 그래도 패키지를 못 찾으면 NuGet은 `dotnet.exe` 명령에 `--no-cache` 또는 `nuget.exe` 명령에 `-NoCache`를 지정하지 않은 경우 *http-cache*에서 패키지를 찾습니다. 패키지가 캐시에 없거나 캐시가 사용되지 않는 경우에는 NuGet은 HTTP를 통해 패키지를 검색합니다.
+패키지를 검색하라는 요청을 받으면 NuGet은 먼저 *global-packages* 폴더를 찾습니다. 정확한 버전의 패키지가 없는 경우 NuGet은 모든 비 HTTP 패키지 소스를 확인합니다. 그래도 패키지를 못 찾으면 NuGet은 `dotnet.exe` 명령에 `--no-cache` 또는 `nuget.exe` 명령에 `-NoCache`를 지정하지 않은 경우 *http-cache* 에서 패키지를 찾습니다. 패키지가 캐시에 없거나 캐시가 사용되지 않는 경우에는 NuGet은 HTTP를 통해 패키지를 검색합니다.
 
 자세한 내용은 [패키지를 설치하면 어떻게 되나요?](../concepts/package-installation-process.md)를 참조하세요.
 
@@ -100,7 +100,7 @@ nuget locals all -clear
 
 현재 Visual Studio에서 열려 있는 프로젝트에서 사용되는 모든 패키지는 *global-packages* 폴더에서 지워지지 않습니다.
 
-Visual Studio 2017부터 **도구 > NuGet 패키지 관리자 > 패키지 관리자 설정** 메뉴 명령을 사용한 다음, **모든 NuGet 캐시 지우기**를 선택합니다. 캐시 관리는 현재 패키지 관리자 콘솔을 통해 사용할 수 없습니다. Visual Studio 2015에서 CLI 명령을 대신 사용합니다.
+Visual Studio 2017부터 **도구 > NuGet 패키지 관리자 > 패키지 관리자 설정** 메뉴 명령을 사용한 다음, **모든 NuGet 캐시 지우기** 를 선택합니다. 캐시 관리는 현재 패키지 관리자 콘솔을 통해 사용할 수 없습니다. Visual Studio 2015에서 CLI 명령을 대신 사용합니다.
 
 ![캐시를 지우기 위한 NuGet 옵션 명령](media/options-clear-caches.png)
 
@@ -108,7 +108,7 @@ Visual Studio 2017부터 **도구 > NuGet 패키지 관리자 > 패키지 관리
 
 `nuget locals` 또는 `dotnet nuget locals`를 사용하는 경우 다음과 같은 오류가 발생할 수 있습니다.
 
-- ‘오류: *이 프로세스는 <package>다른 프로세스에서 사용 중* 또는 *로컬 리소스 지우기 실패: 하나 이상의 파일을 삭제할 수 없음*으로 인해 파일에 액세스할 수 없습니다.
+- ‘오류: *이 프로세스는 <package>다른 프로세스에서 사용 중* 또는 *로컬 리소스 지우기 실패: 하나 이상의 파일을 삭제할 수 없음* 으로 인해 파일에 액세스할 수 없습니다.
 
     폴더에 있는 하나 이상의 파일이 다른 프로세스에서 사용 중입니다. 예를 들어 *global-packages* 폴더의 패키지를 참조하는 Visual Studio 프로젝트가 열려 있습니다. 해당 프로세스를 닫고 다시 시도합니다.
 
