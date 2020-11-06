@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 11d0a7c321e6cd12c82b83054ec85d5f05755434
-ms.sourcegitcommit: 0a63956bf12aaf1b1b45e680bc8e90f97347988c
+ms.openlocfilehash: 0edfa1f61e6b18ef38689ed2272b2c5992a46ae6
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83367923"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237850"
 ---
 # <a name="restore-packages-using-package-restore"></a>패키지 복원을 사용하여 패키지 복원
 
-더 정돈된 개발 환경을 촉진하고 리포지토리 크기를 줄이기 위해 NuGet **패키지 복원**은 프로젝트 파일 또는 `packages.config`에 나열된 프로젝트의 종속성을 모두 설치합니다. .NET Core 2.0+ `dotnet build` 및 `dotnet run` 명령은 자동 패키지 복원을 수행합니다. Visual Studio는 프로젝트를 빌드할 때 패키지를 자동으로 복원할 수 있으며 Visual Studio, `nuget restore`, `dotnet restore` 및 Mono의 xbuild를 통해 언제든지 패키지를 복원할 수 있습니다.
+더 정돈된 개발 환경을 촉진하고 리포지토리 크기를 줄이기 위해 NuGet **패키지 복원** 은 프로젝트 파일 또는 `packages.config`에 나열된 프로젝트의 종속성을 모두 설치합니다. .NET Core 2.0+ `dotnet build` 및 `dotnet run` 명령은 자동 패키지 복원을 수행합니다. Visual Studio는 프로젝트를 빌드할 때 패키지를 자동으로 복원할 수 있으며 Visual Studio, `nuget restore`, `dotnet restore` 및 Mono의 xbuild를 통해 언제든지 패키지를 복원할 수 있습니다.
 
 패키지 복원은 모든 프로젝트의 종속성을 소스 제어에 저장하지 않고 사용할 수 있도록 합니다. 패키지 이진 파일을 제외하도록 소스 제어 리포지토리를 구성하려면 [패키지 및 소스 제어](../consume-packages/packages-and-source-control.md)를 참조하세요. 
 
@@ -22,14 +22,14 @@ ms.locfileid: "83367923"
 
 패키지 복원은 먼저 필요에 따라 프로젝트의 직접 종속성을 설치한 다음, 전체 종속성 그래프에서 해당 패키지의 종속성을 설치합니다.
 
-패키지가 아직 설치되지 않은 경우 NuGet은 먼저 [캐시](../consume-packages/managing-the-global-packages-and-cache-folders.md)에서 검색을 시도합니다. 패키지가 캐시에 없는 경우 NuGet은 Visual Studio에서 **도구** > **옵션** > **NuGet 패키지 관리자** > **패키지 원본**의 목록에 있는 사용 가능한 모든 소스에서 패키지를 다운로드하려고 시도합니다. 복원하는 동안 NuGet은 패키지 소스의 순서를 무시하고, 소스가 요청에 응답하는 순서대로 패키지를 사용합니다. NuGet 동작 방식에 대한 자세한 내용은 [일반적인 NuGet 구성](Configuring-NuGet-Behavior.md)을 참조하세요. 
+패키지가 아직 설치되지 않은 경우 NuGet은 먼저 [캐시](../consume-packages/managing-the-global-packages-and-cache-folders.md)에서 검색을 시도합니다. 패키지가 캐시에 없는 경우 NuGet은 Visual Studio에서 **도구** > **옵션** > **NuGet 패키지 관리자** > **패키지 원본** 의 목록에 있는 사용 가능한 모든 소스에서 패키지를 다운로드하려고 시도합니다. 복원하는 동안 NuGet은 패키지 소스의 순서를 무시하고, 소스가 요청에 응답하는 순서대로 패키지를 사용합니다. NuGet 동작 방식에 대한 자세한 내용은 [일반적인 NuGet 구성](Configuring-NuGet-Behavior.md)을 참조하세요. 
 
 > [!Note]
 > NuGet은 모든 소스가 확인될 때까지 패키지 복원 실패를 표시하지 않습니다. 이때 NuGet은 목록의 마지막 소스에 대한 실패만 보고합니다. 이러한 오류는 각 소스에 대한 오류가 개별적으로 표시되지 않았더라도 패키지가 다른 *어떤* 소스에도 존재하지 않음을 암시합니다.
 
 ## <a name="restore-packages"></a>패키지 복원
 
-패키지 복원은 프로젝트 파일( *.csproj*) 또는 *packages.config* 파일에서 패키지 참조와 일치하는 올바른 상태에 대한 모든 패키지 종속성을 설치하려고 합니다. (Visual Studio에서 참조는 솔루션 탐색기의 **종속성 \ NuGet** 또는 **참조** 노드 아래에 표시됩니다.)
+패키지 복원은 프로젝트 파일( *.csproj* ) 또는 *packages.config* 파일에서 패키지 참조와 일치하는 올바른 상태에 대한 모든 패키지 종속성을 설치하려고 합니다. (Visual Studio에서 참조는 솔루션 탐색기의 **종속성 \ NuGet** 또는 **참조** 노드 아래에 표시됩니다.)
 
 1. 프로젝트 파일의 패키지 참조가 올바른 경우 기본 설정 도구를 사용하여 패키지를 복원합니다.
 
@@ -40,7 +40,7 @@ ms.locfileid: "83367923"
    - [Azure Pipelines](#restore-using-azure-pipelines)
    - [Azure DevOps Server](#restore-using-azure-devops-server)
 
-   프로젝트 파일( *.csproj*) 또는 *packages.config* 파일의 패키지 참조가 잘못된 경우(패키지 복원 이후 원하는 상태와 일치하지 않는 경우) 패키지를 설치하거나 업데이트해야 합니다.
+   프로젝트 파일( *.csproj* ) 또는 *packages.config* 파일의 패키지 참조가 잘못된 경우(패키지 복원 이후 원하는 상태와 일치하지 않는 경우) 패키지를 설치하거나 업데이트해야 합니다.
 
    PackageReference를 사용하는 프로젝트의 경우 성공적으로 복원된 후 패키지는 *global-packages* 폴더에 있어야 하며 `obj/project.assets.json` 파일이 다시 만들어집니다. `packages.config`를 사용하는 프로젝트의 경우 패키지는 프로젝트의 `packages` 폴더에 표시되어야 합니다. 이제 프로젝트가 성공적으로 빌드됩니다. 
 
@@ -60,33 +60,33 @@ Windows의 Visual Studio에서 다음 중 하나를 수행합니다.
 
 패키지 복원은 [패키지 복원 사용 및 사용 안 함](#enable-and-disable-package-restore-in-visual-studio) 옵션에 따라 템플릿에서 프로젝트를 만들거나 프로젝트를 빌드할 때 자동으로 수행됩니다. NuGet 4.0 이상에서는 SDK 스타일 프로젝트(일반적으로 .NET Core 또는 .NET Standard 프로젝트)가 변경되면 자동으로 복원됩니다.
 
-1. **도구** > **옵션** > **NuGet 패키지 관리자**를 선택한 후 **패키지 복원**에서 **Visual Studio에서 빌드 시 누락된 패키지를 자동으로 확인**을 선택하여 자동 패키지 복원을 사용하도록 설정합니다.
+1. **도구** > **옵션** > **NuGet 패키지 관리자** 를 선택한 후 **패키지 복원** 에서 **Visual Studio에서 빌드 시 누락된 패키지를 자동으로 확인** 을 선택하여 자동 패키지 복원을 사용하도록 설정합니다.
 
-   비 SDK 스타일 프로젝트의 경우 먼저 **NuGet이 누락된 패키지를 다운로드하도록 허용**을 선택하여 자동 복원 옵션을 사용하도록 설정해야 합니다.
+   비 SDK 스타일 프로젝트의 경우 먼저 **NuGet이 누락된 패키지를 다운로드하도록 허용** 을 선택하여 자동 복원 옵션을 사용하도록 설정해야 합니다.
 
 1. 프로젝트를 빌드합니다.
 
-   하나 이상의 개별 패키지가 아직 제대로 설치되지 않은 경우 **솔루션 탐색기**에 오류 아이콘이 표시됩니다. 마우스 오른쪽 단추를 클릭하고 **NuGet 패키지 관리**를 선택하고 **패키지 관리자**를 사용하여 영향을 받은 패키지를 제거하고 다시 설치합니다. 자세한 내용은 [패키지 다시 설치 및 업데이트](../consume-packages/reinstalling-and-updating-packages.md)를 참조하세요.
+   하나 이상의 개별 패키지가 아직 제대로 설치되지 않은 경우 **솔루션 탐색기** 에 오류 아이콘이 표시됩니다. 마우스 오른쪽 단추를 클릭하고 **NuGet 패키지 관리** 를 선택하고 **패키지 관리자** 를 사용하여 영향을 받은 패키지를 제거하고 다시 설치합니다. 자세한 내용은 [패키지 다시 설치 및 업데이트](../consume-packages/reinstalling-and-updating-packages.md)를 참조하세요.
 
    "이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다." 또는 "하나 이상의 NuGet 패키지를 복원해야 하지만 동의하지 않아 복원할 수 없습니다."라는 오류 메시지가 표시되면 [자동 복원을 사용하도록 설정](#enable-and-disable-package-restore-in-visual-studio)하세요. 이전 프로젝트의 경우 [자동 패키지 복원으로 마이그레이션](#migrate-to-automatic-package-restore-visual-studio)을 참조하세요. [패키지 복원 문제 해결](Package-restore-troubleshooting.md)도 참조하세요.
 
 ### <a name="restore-packages-manually-using-visual-studio"></a>Visual Studio를 사용하여 수동으로 패키지 복원
 
-1. **도구** > **옵션** > **NuGet 패키지 관리자**를 선택하여 패키지 복원을 사용하도록 설정합니다. **패키지 복원** 옵션에서 **NuGet이 누락된 패키지를 다운로드하도록 허용**을 선택합니다.
+1. **도구** > **옵션** > **NuGet 패키지 관리자** 를 선택하여 패키지 복원을 사용하도록 설정합니다. **패키지 복원** 옵션에서 **NuGet이 누락된 패키지를 다운로드하도록 허용** 을 선택합니다.
 
-1. **솔루션 탐색기**에서 솔루션을 마우스 오른쪽 단추로 클릭하고 **NuGet 패키지 복원**을 선택합니다.
+1. **솔루션 탐색기** 에서 솔루션을 마우스 오른쪽 단추로 클릭하고 **NuGet 패키지 복원** 을 선택합니다.
 
-   하나 이상의 개별 패키지가 아직 제대로 설치되지 않은 경우 **솔루션 탐색기**에 오류 아이콘이 표시됩니다. 마우스 오른쪽 단추를 클릭하고 **NuGet 패키지 관리**를 선택한 후 **패키지 관리자**를 사용하여 영향을 받은 패키지를 제거하고 다시 설치합니다. 자세한 내용은 [패키지 다시 설치 및 업데이트](../consume-packages/reinstalling-and-updating-packages.md)를 참조하세요.
+   하나 이상의 개별 패키지가 아직 제대로 설치되지 않은 경우 **솔루션 탐색기** 에 오류 아이콘이 표시됩니다. 마우스 오른쪽 단추를 클릭하고 **NuGet 패키지 관리** 를 선택한 후 **패키지 관리자** 를 사용하여 영향을 받은 패키지를 제거하고 다시 설치합니다. 자세한 내용은 [패키지 다시 설치 및 업데이트](../consume-packages/reinstalling-and-updating-packages.md)를 참조하세요.
 
    "이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다." 또는 "하나 이상의 NuGet 패키지를 복원해야 하지만 동의하지 않아 복원할 수 없습니다."라는 오류 메시지가 표시되면 [자동 복원을 사용하도록 설정](#enable-and-disable-package-restore-in-visual-studio)하세요. 이전 프로젝트의 경우 [자동 패키지 복원으로 마이그레이션](#migrate-to-automatic-package-restore-visual-studio)을 참조하세요. [패키지 복원 문제 해결](Package-restore-troubleshooting.md)도 참조하세요.
 
 ### <a name="enable-and-disable-package-restore-in-visual-studio"></a>Visual Studio에서 패키지 복원 사용 및 사용 안 함
 
-Visual Studio에서 주로 **도구** > **옵션** > **NuGet 패키지 관리자**를 통해 패키지 복원을 제어합니다.
+Visual Studio에서 주로 **도구** > **옵션** > **NuGet 패키지 관리자** 를 통해 패키지 복원을 제어합니다.
 
 ![NuGet 패키지 관리자 옵션을 통한 패키지 복원 제어](media/Restore-01-AutoRestoreOptions.png)
 
-- **NuGet이 누락된 패키지를 다운로드하도록 허용**은 `NuGet.Config` 파일(Windows의 경우 `%AppData%\NuGet\`, Mac/Linux의 경우 `~/.nuget/NuGet/`)의 [packageRestore 섹션](../reference/nuget-config-file.md#packagerestore-section)에서 `packageRestore/enabled` 설정을 변경하여 모든 형태의 패키지 복원을 제어합니다. 이 설정을 사용하면 Visual Studio의 솔루션 컨텍스트 메뉴에서 **NuGet 패키지 복원** 명령을 사용할 수도 있습니다.
+- **NuGet이 누락된 패키지를 다운로드하도록 허용** 은 `NuGet.Config` 파일(Windows의 경우 `%AppData%\NuGet\`, Mac/Linux의 경우 `~/.nuget/NuGet/`)의 [packageRestore 섹션](../reference/nuget-config-file.md#packagerestore-section)에서 `packageRestore/enabled` 설정을 변경하여 모든 형태의 패키지 복원을 제어합니다. 이 설정을 사용하면 Visual Studio의 솔루션 컨텍스트 메뉴에서 **NuGet 패키지 복원** 명령을 사용할 수도 있습니다.
 
     ```xml
     <configuration>
@@ -99,9 +99,9 @@ Visual Studio에서 주로 **도구** > **옵션** > **NuGet 패키지 관리자
     ```
     
   > [!Note]
-  > `packageRestore/enabled` 설정을 전역적으로 재정의하려면 Visual Studio를 시작하거나 빌드를 시작하기 전에 환경 변수 **EnableNuGetPackageRestore**를 True 또는 False 값으로 설정합니다.
+  > `packageRestore/enabled` 설정을 전역적으로 재정의하려면 Visual Studio를 시작하거나 빌드를 시작하기 전에 환경 변수 **EnableNuGetPackageRestore** 를 True 또는 False 값으로 설정합니다.
 
-- **Visual Studio에서 빌드 시 누락된 패키지를 자동으로 확인**은 `NuGet.Config` 파일의 [packageRestore 섹션](../reference/nuget-config-file.md#packagerestore-section)에서 `packageRestore/automatic` 설정을 변경하여 자동 복원을 제어합니다. 이 옵션을 True로 설정하면 Visual Studio에서 빌드를 실행할 경우 누락된 모든 패키지가 자동으로 복원됩니다. 이 설정은 MSBuild 명령줄에서 실행되는 빌드에 영향을 주지 않습니다.
+- **Visual Studio에서 빌드 시 누락된 패키지를 자동으로 확인** 은 `NuGet.Config` 파일의 [packageRestore 섹션](../reference/nuget-config-file.md#packagerestore-section)에서 `packageRestore/automatic` 설정을 변경하여 자동 복원을 제어합니다. 이 옵션을 True로 설정하면 Visual Studio에서 빌드를 실행할 경우 누락된 모든 패키지가 자동으로 복원됩니다. 이 설정은 MSBuild 명령줄에서 실행되는 빌드에 영향을 주지 않습니다.
 
     ```xml
     ...
@@ -143,13 +143,13 @@ NuGet에는 프로젝트에서 패키지를 사용할 수 있는 두 가지 형�
 [!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
 
 > [!IMPORTANT]
-> `restore` 명령은 프로젝트 파일 또는 *packages.config*를 수정하지 않습니다. 종속성을 추가하려면 패키지 관리자 UI 또는 Visual Studio의 콘솔을 통해 패키지를 추가하거나 *packages.config*를 수정한 다음, `install` 또는 `restore` 중 하나를 실행합니다.
+> `restore` 명령은 프로젝트 파일 또는 *packages.config* 를 수정하지 않습니다. 종속성을 추가하려면 패키지 관리자 UI 또는 Visual Studio의 콘솔을 통해 패키지를 추가하거나 *packages.config* 를 수정한 다음, `install` 또는 `restore` 중 하나를 실행합니다.
 
 ## <a name="restore-using-msbuild"></a>MSBuild를 사용하여 복원
 
 프로젝트 파일에 나열된 패키지를 PackageReference로 복원하려면 [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 명령을 사용합니다. 이 명령은 Visual Studio 2017 이상 버전에 포함된 NuGet 4.x 이상 및 MSBuild 15.1 이상에서만 사용할 수 있습니다. `nuget restore` 및 `dotnet restore`는 모두 해당 프로젝트에 대해 이 명령을 사용합니다.
 
-1. 개발자 명령 프롬프트를 엽니다(**검색** 상자에 **개발자 명령 프롬프트** 입력).
+1. 개발자 명령 프롬프트를 엽니다( **검색** 상자에 **개발자 명령 프롬프트** 입력).
 
    (일반적으로 **시작** 메뉴에서 “Visual Studio용 개발자 명령 프롬프트”를 시작하는 것이 좋습니다. MSBuild에 필요한 모든 경로로 구성되기 때문입니다.)
 
@@ -167,6 +167,14 @@ NuGet에는 프로젝트에서 패키지를 사용할 수 있는 두 가지 형�
    ```
 
    MSBuild 출력이 빌드가 성공적으로 완료되었음을 나타냅니다.
+   
+> [!Note]
+> msbuild에는 `Restore`를 실행하고 프로젝트를 다시 로드한 다음 빌드하는 `-restore` 전환이 있습니다. [한 가지 MSBuild 명령으로 복원 및 빌드](/nuget/reference/msbuild-targets#restoring-and-building-with-one-msbuild-command)를 참조하세요.
+
+```cmd
+# Will restore the project, then build, since build is the default target.
+msbuild -restore
+```
 
 ## <a name="restore-using-azure-pipelines"></a>Azure Pipelines를 사용하여 복원
 
@@ -214,15 +222,15 @@ Azure DevOps Server 및 TFS 2013 이상에서는 TFS 2013 이상 팀 빌드 템�
 
 ## <a name="migrate-to-automatic-package-restore-visual-studio"></a>자동 패키지 복원으로 마이그레이션(Visual Studio)
 
-NuGet 2.6 이하 버전의 경우 이전에는 MSBuild 통합 패키지 복원이 지원되었지만 더 이상은 지원되지 않습니다. 일반적으로 Visual Studio에서 솔루션을 마우스 오른쪽 단추로 클릭하고 **NuGet 패키지 복원 사용**을 선택하여 사용하도록 설정했습니다. 프로젝트에서 더 이상 지원되지 않는 MSBuild 통합 패키지 복원을 사용하는 경우 자동 패키지 복원으로 마이그레이션하세요.
+NuGet 2.6 이하 버전의 경우 이전에는 MSBuild 통합 패키지 복원이 지원되었지만 더 이상은 지원되지 않습니다. 일반적으로 Visual Studio에서 솔루션을 마우스 오른쪽 단추로 클릭하고 **NuGet 패키지 복원 사용** 을 선택하여 사용하도록 설정했습니다. 프로젝트에서 더 이상 지원되지 않는 MSBuild 통합 패키지 복원을 사용하는 경우 자동 패키지 복원으로 마이그레이션하세요.
 
-MSBuild 통합 패키지 복원을 사용하는 프로젝트에는 일반적으로 *.nuget* 폴더가 있으며 이 폴더에는 3개의 파일 *NuGet.config*, *nuget.exe* 및 *NuGet.targets*가 포함되어 있습니다. *Nuget.targets* 파일의 존재 여부에 따라 NuGet에서 MSBuild 통합 방법을 계속 사용하는지가 결정되므로 마이그레이션 동안 이 파일을 제거해야 합니다.
+MSBuild 통합 패키지 복원을 사용하는 프로젝트에는 일반적으로 *.nuget* 폴더가 있으며 이 폴더에는 3개의 파일 *NuGet.config* , *nuget.exe* 및 *NuGet.targets* 가 포함되어 있습니다. *NuGet.targets* 파일의 존재 여부에 따라 NuGet에서 MSBuild 통합 방법을 계속 사용하는지가 결정되므로 마이그레이션 동안 이 파일을 제거해야 합니다.
 
 자동 패키지 복원으로 마이그레이션하려면(Visual Studio)
 
 1. Visual Studio를 닫습니다.
-2. *.nuget/nuget.exe* 및 *.nuget/NuGet.targets*를 삭제합니다.
-3. 각 프로젝트 파일에 대해 `<RestorePackages>` 요소를 제거하고 *NuGet.targets*에 대한 참조를 제거합니다.
+2. *.nuget/nuget.exe* 및 *.nuget/NuGet.targets* 를 삭제합니다.
+3. 각 프로젝트 파일에 대해 `<RestorePackages>` 요소를 제거하고 *NuGet.targets* 에 대한 참조를 제거합니다.
 
 자동 패키지 복원을 테스트하려면
 

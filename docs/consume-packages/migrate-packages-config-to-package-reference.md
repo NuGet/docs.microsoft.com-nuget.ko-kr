@@ -1,16 +1,16 @@
 ---
-title: package.config에서 PackageReference 형식으로 마이그레이션
-description: 프로젝트를 package.config 관리 형식에서 NuGet 4.0 이상, VS2017, .NET Core 2.0이 지원하는 PackageReference 형식으로 마이그레이션하는 방법에 대한 세부 정보
+title: packages.config에서 PackageReference 형식으로 마이그레이션
+description: 프로젝트를 packages.config 관리 형식에서 NuGet 4.0 이상, VS2017, .NET Core 2.0이 지원하는 PackageReference 형식으로 마이그레이션하는 방법에 대한 세부 정보
 author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8e825410d621ff2946e23e80173292f24f9d21f2
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 23bd936707173f49a651a8ba432fa8773fa53881
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428524"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237837"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>packages.config를 PackageReference로 마이그레이션
 
@@ -18,11 +18,11 @@ Visual Studio 2017 버전 15.7 이상은 프로젝트를 [packages.config](../re
 
 ## <a name="benefits-of-using-packagereference"></a>PackageReference 사용 혜택
 
-* **모든 프로젝트 종속성을 한 곳에서 관리**: 프로젝트 간 참조나 어셈블리 참조처럼 NuGet 패키지 참조(`PackageReference` 노드 사용)는 별도의 packages.config 파일을 사용하지 않고 프로젝트 파일 내에서 직접 관리됩니다.
-* **최상위 종속성의 정리된 보기**: packages.config와 다르게 PackageReference는 프로젝트에 직접 설치한 NuGet 패키지만 나열합니다. 따라서 NuGet 패키지 관리자 UI 및 프로젝트 파일은 하위 수준 종속성으로 인해 복잡하게 보이지 않습니다.
-* **향상된 성능**: PackageReference를 사용하는 경우, 패키지는 솔루션 내 `packages` 폴더에서보다는 *전역 패키지* 폴더([전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)에 대해 설명된 대로)에 유지됩니다. 따라서 PackageReference는 처리 속도가 더 빠르고 디스크 공간을 더 적게 사용합니다.
-* **종속성 및 콘텐츠 흐름을 세밀하게 제어**: MSBuild의 기존 기능을 사용하면 [조건부로 NuGet 패키지를 참조](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition)하고 대상 프레임워크, 구성, 플랫폼 또는 기타 피벗당 패키지 참조를 선택할 수 있습니다.
-* **현재 개발 중인 PackageReference**: [GitHub의 PackageReference 문제](https://aka.ms/nuget-pr-improvements)를 참조하세요. packages.config는 더 이상 활발하게 개발하지 않습니다.
+* **모든 프로젝트 종속성을 한 곳에서 관리** : 프로젝트 간 참조나 어셈블리 참조처럼 NuGet 패키지 참조(`PackageReference` 노드 사용)는 별도의 packages.config 파일을 사용하지 않고 프로젝트 파일 내에서 직접 관리됩니다.
+* **최상위 종속성의 정리된 보기** : packages.config와 다르게 PackageReference는 프로젝트에 직접 설치한 NuGet 패키지만 나열합니다. 따라서 NuGet 패키지 관리자 UI 및 프로젝트 파일은 하위 수준 종속성으로 인해 복잡하게 보이지 않습니다.
+* **향상된 성능** : PackageReference를 사용하는 경우, 패키지는 솔루션 내 `packages` 폴더에서보다는 *전역 패키지* 폴더( [전역 패키지 및 캐시 폴더 관리](../consume-packages/managing-the-global-packages-and-cache-folders.md)에 대해 설명된 대로)에 유지됩니다. 따라서 PackageReference는 처리 속도가 더 빠르고 디스크 공간을 더 적게 사용합니다.
+* **종속성 및 콘텐츠 흐름을 세밀하게 제어** : MSBuild의 기존 기능을 사용하면 [조건부로 NuGet 패키지를 참조](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition)하고 대상 프레임워크, 구성, 플랫폼 또는 기타 피벗당 패키지 참조를 선택할 수 있습니다.
+* **현재 개발 중인 PackageReference** : [GitHub의 PackageReference 문제](https://aka.ms/nuget-pr-improvements)를 참조하세요. packages.config는 더 이상 활발하게 개발하지 않습니다.
 
 ### <a name="limitations"></a>제한 사항
 
@@ -57,9 +57,9 @@ Visual Studio 2017 버전 15.7 이상은 프로젝트를 [packages.config](../re
 
 1. `packages.config`를 사용하여 프로젝트가 포함된 솔루션을 엽니다.
 
-1. **솔루션 탐색기**에서 **참조** 노드 또는 `packages.config` 파일을 마우스 오른쪽 단추로 클릭하고 **packages.config에서 PackageReference로 마이그레이션**을 선택합니다.
+1. **솔루션 탐색기** 에서 **참조** 노드 또는 `packages.config` 파일을 마우스 오른쪽 단추로 클릭하고 **packages.config에서 PackageReference로 마이그레이션** 을 선택합니다.
 
-1. 마이그레이터는 프로젝트의 NuGet 패키지 참조를 분석하여 **최상위 종속성**(직접 설치한 NuGet 패키지) 및 **전이적 종속성**(최상위 패키지의 종속성으로 설치된 패키지)으로 분류하려고 시도합니다.
+1. 마이그레이터는 프로젝트의 NuGet 패키지 참조를 분석하여 **최상위 종속성** (직접 설치한 NuGet 패키지) 및 **전이적 종속성** (최상위 패키지의 종속성으로 설치된 패키지)으로 분류하려고 시도합니다.
 
    > [!Note]
    > PackageReference는 전이적 패키지 복원을 지원하고 종속성을 동적으로 확인합니다. 즉, 전이적 종속성을 명시적으로 설치할 필요가 없습니다.
@@ -68,7 +68,7 @@ Visual Studio 2017 버전 15.7 이상은 프로젝트를 [packages.config](../re
 
 1. 모든 [패키지 호환성 문제](#package-compatibility-issues)를 검토합니다.
 
-1. **확인**을 선택하여 마이그레이션을 시작합니다.
+1. **확인** 을 선택하여 마이그레이션을 시작합니다.
 
 1. 마이그레이션이 끝나면 Microsoft Visual Studio는 백업 파일 경로, 설치한 패키지 목록(최상위 종속성), 전이적 종속성으로 참조되는 패키지 목록, 마이그레이션 시작 시 식별되는 호환성 문제 목록이 포함된 보고서를 제공합니다. 보고서는 백업 폴더에 저장됩니다.
 

@@ -6,16 +6,16 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: c79976c2f4ded2fba3796fb847d3c90807d7b86c
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 4cb12f439d796d583f52d657225c39418d5a4836
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80147450"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237363"
 ---
 # <a name="package-versioning"></a>패키지 버전 관리
 
-특정 패키지는 항상 패키지 식별자와 정확한 버전 번호를 사용하여 참조됩니다. 예를 들어, nuget.org의 [Entity Framework](https://www.nuget.org/packages/EntityFramework/)에는 버전 *4.1.10311*에서 버전 *6.1.3*(안정적인 최신 릴리스)과 *6.2.0-beta1*과 같은 다양한 시험판 버전에 이르기까지 수십 개의 특정 패키지가 있습니다.
+특정 패키지는 항상 패키지 식별자와 정확한 버전 번호를 사용하여 참조됩니다. 예를 들어, nuget.org의 [Entity Framework](https://www.nuget.org/packages/EntityFramework/)에는 버전 *4.1.10311* 에서 버전 *6.1.3* (안정적인 최신 릴리스)과 *6.2.0-beta1* 과 같은 다양한 시험판 버전에 이르기까지 수십 개의 특정 패키지가 있습니다.
 
 패키지를 만들 때 선택적 시험판 문자 접미사를 사용하여 특정 버전 번호를 할당합니다. 반면, 패키지를 사용할 때는 정확한 버전 번호 또는 허용 가능한 버전 범위를 지정할 수 있습니다.
 
@@ -29,10 +29,10 @@ ms.locfileid: "80147450"
 
 특정 버전 번호는 *주.부.패치[-접미사]* 형식으로 되어 있으며, 해당 구성 요소의 의미는 다음과 같습니다.
 
-- *주*: 호환성이 손상되는 변경
-- *부*: 이전 버전과 호환되는 새로운 기능
-- *패치*: 이전 버전과 호환되는 버그 수정에만 해당
-- *-접미사*(선택 사항): 하이픈 다음에는 시험판 버전을 나타내는 문자열([유의적 버전 또는 SemVer 1.0 규칙](https://semver.org/spec/v1.0.0.html)을 따름)이 옵니다.
+- *주* : 호환성이 손상되는 변경
+- *부* : 이전 버전과 호환되는 새로운 기능
+- *패치* : 이전 버전과 호환되는 버그 수정에만 해당
+- *-접미사* (선택 사항): 하이픈 다음에는 시험판 버전을 나타내는 문자열( [유의적 버전 또는 SemVer 1.0 규칙](https://semver.org/spec/v1.0.0.html)을 따름)이 옵니다.
 
 **예:**
 
@@ -55,7 +55,7 @@ ms.locfileid: "80147450"
 - `-rc`: 일반적으로 심각한 버그가 발생하지 않는 한 잠재적으로 최종적(안정적)인 릴리스인 릴리스 후보입니다.
 
 > [!Note]
-> NuGet 4.3.0 이상은 *1.0.1-build.23*에서와 같이 시험판 번호에 점 표기법을 지원하는 [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html)을 지원합니다. NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다. *1.0.1-build23*과 같은 형식을 사용할 수 있습니다.
+> NuGet 4.3.0 이상은 *1.0.1-build.23* 에서와 같이 시험판 번호에 점 표기법을 지원하는 [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html)을 지원합니다. NuGet 4.3.0 이전 버전에서는 점 표기법이 지원되지 않습니다. *1.0.1-build23* 과 같은 형식을 사용할 수 있습니다.
 
 패키지 참조를 확인할 때 패키지 버전 여러 개가 접미사만 다른 경우 NuGet은 먼저 접미사가 없는 버전을 선택한 다음, 알파벳 역순으로 시험판 버전에 우선 순위를 적용합니다. 예를 들어, 다음 버전은 정확히 표시된 순서대로 선택됩니다.
 
@@ -74,8 +74,8 @@ NuGet은 NuGet 4.3.0 이상 및 Visual Studio 2017 버전 15.3 이상을 통해 
 
 SemVer v2.0.0의 특정 의미 체계는 이전 클라이언트에서 지원되지 않습니다. NuGet은 다음 문 중 하나라도 참인 경우 패키지 버전이 SemVer v2.0.0에 해당한다고 간주합니다.
 
-- 시험판 레이블이 점으로 구분됩니다(예: *1.0.0-alpha.1*).
-- 버전에 빌드-메타데이터(예: *1.0.0+githash*)가 있습니다.
+- 시험판 레이블이 점으로 구분됩니다(예: *1.0.0-alpha.1* ).
+- 버전에 빌드-메타데이터(예: *1.0.0+githash* )가 있습니다.
 
 nuget.org의 경우 패키지는 다음 문 중 하나가 참인 경우 SemVer v2.0.0 패키지로 정의됩니다.
 
@@ -114,40 +114,55 @@ SemVer v2.0.0 특정 패키지를 nuget.org에 업로드하는 경우 패키지�
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | 최소 포함 및 최대 제외 혼합 버전 |
 | (1.0)    | 잘못된 | 잘못된 |
 
-PackageReference 형식을 사용하는 경우 NuGet은 버전 번호의 주, 부, 패치, 시험판 접미사 부분에 부동 표기법(\*)도 사용할 수 있도록 지원합니다. `packages.config` 형식에서는 부동 버전이 지원되지 않습니다.
+PackageReference 형식을 사용하는 경우 NuGet은 버전 번호의 주, 부, 패치, 시험판 접미사 부분에 부동 표기법(\*)도 사용할 수 있도록 지원합니다. `packages.config` 형식에서는 부동 버전이 지원되지 않습니다. 부동 버전이 지정된 경우, 규칙은 버전 설명과 일치하는 기존의 최상 버전을 확인합니다. 부동 버전 및 해상도의 예는 아래와 같습니다.
 
 > [!Note]
 > PackageReference의 버전 범위에는 시험판 버전이 포함됩니다. 부동 버전은 옵트인되지 않는 한 의도적으로 시험판 버전을 확인하지 않도록 설계되었습니다. 관련 기능 요청 상태는 [문제 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297)를 참조하세요.
 
-### <a name="examples"></a>예
+### <a name="examples"></a>예제
 
 프로젝트 파일, `packages.config` 파일, `.nuspec` 파일에서 패키지 종속성의 버전 또는 버전 범위를 항상 지정합니다. 버전 또는 버전 범위가 없으면, 종속성을 확인할 때 NuGet 2.8.x 이하는 사용 가능한 최신 패키지 버전을 선택하는 반면, NuGet 3.x 이상은 가장 낮은 패키지 버전을 선택합니다. 버전 또는 버전 범위를 지정하면 이러한 불확실성을 피할 수 있습니다.
 
 #### <a name="references-in-project-files-packagereference"></a>프로젝트 파일의 참조(PackageReference)
 
 ```xml
-<!-- Accepts any version 6.1 and above. -->
+<!-- Accepts any version 6.1 and above.
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.1" />
 
-<!-- Accepts any 6.x.y version. -->
+<!-- Accepts any 6.x.y version.
+     Will resolve to the highest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.*" />
-<PackageReference Include="ExamplePackage" Version="[6,7)" />
 
 <!-- Accepts any version above, but not including 4.1.3. Could be
-     used to guarantee a dependency with a specific bug fix. -->
+     used to guarantee a dependency with a specific bug fix. 
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="(4.1.3,)" />
 
 <!-- Accepts any version up below 5.x, which might be used to prevent pulling in a later
      version of a dependency that changed its interface. However, this form is not
-     recommended because it can be difficult to determine the lowest version. -->
+     recommended because it can be difficult to determine the lowest version. 
+     Will resolve to the smallest acceptable stable version.
+     -->
 <PackageReference Include="ExamplePackage" Version="(,5.0)" />
 
-<!-- Accepts any 1.x or 2.x version, but not 0.x or 3.x and higher. -->
+<!-- Accepts any 1.x or 2.x version, but not 0.x or 3.x and higher.
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="[1,3)" />
 
-<!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
+<!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher.
+     Will resolve to the smallest acceptable stable version. -->
 <PackageReference Include="ExamplePackage" Version="[1.3.2,1.5)" />
 ```
+
+#### <a name="floating-version-resolutions"></a>부동 버전 해상도 
+
+| 버전 | 서버에 표시되는 버전 | 해결 방법 | 이유 | 참고 |
+|----------|--------------|-------------|-------------|-------------|
+| * | 1.1.0 <br> 1.1.1 <br> 1.2.0 <br> 1.3.0-alpha  | 1.2.0 | 안정적인 최상 버전입니다. |
+| 1.1.* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.2.0-alpha | 1.1.1 | 지정된 패턴을 따르는 안정적인 최상 버전입니다.|
+| * - * | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.3.0-beta  | 1.3.0-beta | 불안정한 버전을 포함하는 최상 버전입니다. | Visual Studio 버전 16.6, NuGet 버전 5.6, .NET Core SDK 버전 3.1.300에서 사용 가능 |
+| 1.1.* - * | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.1.2-beta <br> 1.3.0-beta  | 1.1.2-beta | 불안정한 버전을 포함하며 패턴을 따르는 최상 버전입니다. | Visual Studio 버전 16.6, NuGet 버전 5.6, .NET Core SDK 버전 3.1.300에서 사용 가능 |
 
 **`packages.config`에서의 참조:**
 
@@ -228,4 +243,4 @@ PackageReference 형식을 사용하는 경우 NuGet은 버전 번호의 주, �
 
 `pack` 및 `restore` 작업은 가능한 경우 항상 버전을 정규화합니다. 이미 빌드된 패키지의 경우, 이 정규화 작업이 패키지 자체의 버전 번호에 영향을 주지는 않습니다. NuGet이 종속성을 확인할 때 버전과 일치시키는 방식에만 영향을 줍니다.
 
-그러나 패키지 버전 중복을 방지하기 위해서는 NuGet 패키지 리포지토리에서 이러한 값을 NuGet과 동일한 방식으로 처리해야 합니다. 따라서 패키지 버전 *1.0*을 포함하는 리포지토리는 버전 *1.0.0*도 별도의 다른 패키지로 호스트해서는 안 됩니다.
+그러나 패키지 버전 중복을 방지하기 위해서는 NuGet 패키지 리포지토리에서 이러한 값을 NuGet과 동일한 방식으로 처리해야 합니다. 따라서 패키지 버전 *1.0* 을 포함하는 리포지토리는 버전 *1.0.0* 도 별도의 다른 패키지로 호스트해서는 안 됩니다.
