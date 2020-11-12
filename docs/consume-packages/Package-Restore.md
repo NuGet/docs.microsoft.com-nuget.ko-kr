@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 0edfa1f61e6b18ef38689ed2272b2c5992a46ae6
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 05fa68ad3a0b353117a14e2b3e1cdf13dc806127
+ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237850"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94550390"
 ---
 # <a name="restore-packages-using-package-restore"></a>패키지 복원을 사용하여 패키지 복원
 
@@ -169,7 +169,7 @@ NuGet에는 프로젝트에서 패키지를 사용할 수 있는 두 가지 형�
    MSBuild 출력이 빌드가 성공적으로 완료되었음을 나타냅니다.
    
 > [!Note]
-> msbuild에는 `Restore`를 실행하고 프로젝트를 다시 로드한 다음 빌드하는 `-restore` 전환이 있습니다. [한 가지 MSBuild 명령으로 복원 및 빌드](/nuget/reference/msbuild-targets#restoring-and-building-with-one-msbuild-command)를 참조하세요.
+> msbuild에는 `Restore`를 실행하고 프로젝트를 다시 로드한 다음 빌드하는 `-restore` 전환이 있습니다. [한 가지 MSBuild 명령으로 복원 및 빌드](../reference/msbuild-targets.md#restoring-and-building-with-one-msbuild-command)를 참조하세요.
 
 ```cmd
 # Will restore the project, then build, since build is the default target.
