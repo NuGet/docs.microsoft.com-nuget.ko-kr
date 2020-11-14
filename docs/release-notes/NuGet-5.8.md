@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 86e173b9d760578454df8f5f817533f64e193996
-ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
+ms.openlocfilehash: 09fb98eec79ee4ed08d85a1c557a420d6b265f11
+ms.sourcegitcommit: f4b74b500e3db9e468f11142df48d87880382267
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550745"
+ms.locfileid: "94572833"
 ---
 # <a name="nuget-58-release-notes"></a>NuGet 5.8 릴리스 정보
 
@@ -28,6 +28,8 @@ NuGet 배포 차량:
 
 ## <a name="summary-whats-new-in-58"></a>요약: 5.8의 새로운 기능
 🎉 **.net 5.0를 대상으로 하는 NuGet 패키지에 대 한 전체 작성 및 복원 지원을 제공 하기 위한 첫 번째 릴리스입니다** 🎉
+
+* Mmap/Createfilemapping에서 [#9807](https://github.com/NuGet/Home/issues/9807) 를 사용 하 여 nupkg 추출 가속화
 
 * 패키지 관리자 UI 패키지 정보 창에서 패키지 취약성 세부 정보 표시- [#9850](https://github.com/NuGet/Home/issues/9850)
 
