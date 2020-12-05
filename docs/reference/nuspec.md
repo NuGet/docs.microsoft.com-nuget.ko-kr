@@ -6,18 +6,18 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: f91d47bdf9b957b512d3d83434693ee93de07afb
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 6e5107ac05046ea46cc819ebe2a504ba6b030634
+ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623138"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96738944"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
 `.nuspec` 파일은 패키지 메타데이터가 포함된 XML 매니페스트입니다. 이 매니페스트는 패키지를 빌드하고 소비자에게 정보를 제공하는 데 사용됩니다. 매니페스트는 항상 패키지에 포함됩니다.
 
-이 항목의 내용:
+항목 내용
 
 - [일반 형식 및 스키마](#general-form-and-schema)
 - [대체 토큰](#replacement-tokens)(Visual Studio 프로젝트에서 사용하는 경우)
@@ -61,7 +61,7 @@ ms.locfileid: "88623138"
 </package>
 ```
 
-스키마를 시각적으로 명확하게 표시하려면, Visual Studio에서 디자인 모드로 스키마 파일을 열고 **XML 스키마 탐색기** 링크를 클릭합니다. 또는 파일을 코드로 열고, 편집기에서 마우스 오른쪽 단추를 클릭한 다음, **XML 스키마 탐색기 표시**를 선택합니다. 어느 방법이든 아래와 같은 보기가 표시됩니다(대부분의 경우 펼쳐져 있음).
+스키마를 시각적으로 명확하게 표시하려면, Visual Studio에서 디자인 모드로 스키마 파일을 열고 **XML 스키마 탐색기** 링크를 클릭합니다. 또는 파일을 코드로 열고, 편집기에서 마우스 오른쪽 단추를 클릭한 다음, **XML 스키마 탐색기 표시** 를 선택합니다. 어느 방법이든 아래와 같은 보기가 표시됩니다(대부분의 경우 펼쳐져 있음).
 
 ![nuspec.xsd가 열려 있는 Visual Studio 스키마 탐색기](media/SchemaExplorer.png)
 
@@ -96,6 +96,9 @@ Nuget.org에 패키지를 업로드 하는 경우 `authors` 이 필드는 4000 �
 ### <a name="optional-metadata-elements"></a>선택적 metadata 요소
 
 #### <a name="owners"></a>owners
+> [!Important]
+> 소유자는 사용 되지 않습니다. 작성자를 대신 사용 합니다.
+
 Nuget.org에서 프로필 이름을 사용 하 여 쉼표로 구분 된 패키지 작성자 목록입니다. 이는 일반적으로와 동일한 목록 이며 `authors` nuget.org에 패키지를 업로드할 때 무시 됩니다. [Nuget.org에서 패키지 소유자 관리](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)를 참조 하세요. 
 
 #### <a name="projecturl"></a>projectUrl
@@ -115,18 +118,18 @@ Nuget.org에 패키지를 업로드 하는 경우 `licenseUrl` 이 필드는 400
 
 ***NuGet 4.9.0** 이상에서 지원 됨*
 
-Nuget.org와 같은 Ui에 표시 되는 패키지 내 라이선스 파일의 SPDX 라이선스 식 또는 경로입니다. MIT 또는 BSD-2 절과 같은 일반적인 라이선스를 사용 하 여 패키지에 라이선스를 부여 하는 경우 연결 된 [Spdx 라이선스 식별자](https://spdx.org/licenses/)를 사용 합니다. 다음은 그 예입니다. 
+Nuget.org와 같은 Ui에 표시 되는 패키지 내 라이선스 파일의 SPDX 라이선스 식 또는 경로입니다. MIT 또는 BSD-2 절과 같은 일반적인 라이선스를 사용 하 여 패키지에 라이선스를 부여 하는 경우 연결 된 [Spdx 라이선스 식별자](https://spdx.org/licenses/)를 사용 합니다. 예를 들면 다음과 같습니다.
 
 `<license type="expression">MIT</license>`
 
 > [!Note]
 > NuGet.org는 오픈 소스 이니셔티브 또는 무료 Software Foundation에서 승인한 라이선스 식만 허용 합니다.
 
-패키지가 여러 일반적인 라이선스에서 사용이 허가 된 경우 [Spdx 식 구문 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)을 사용 하 여 복합 라이선스를 지정할 수 있습니다. 다음은 그 예입니다. 
+패키지가 여러 일반적인 라이선스에서 사용이 허가 된 경우 [Spdx 식 구문 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)을 사용 하 여 복합 라이선스를 지정할 수 있습니다. 예를 들면 다음과 같습니다.
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-라이선스 식에서 지원 하지 않는 사용자 지정 라이선스를 사용 하는 경우 `.txt` 라이선스의 텍스트를 사용 하 여 또는 파일을 패키지할 수 있습니다 `.md` . 다음은 그 예입니다. 
+라이선스 식에서 지원 하지 않는 사용자 지정 라이선스를 사용 하는 경우 `.txt` 라이선스의 텍스트를 사용 하 여 또는 파일을 패키지할 수 있습니다 `.md` . 예를 들면 다음과 같습니다.
 
 ```xml
 <package>
@@ -167,7 +170,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 > [!Important]
 > iconUrl은 더 이상 사용 되지 않습니다. 대신 아이콘을 사용 합니다.
 
-UI 표시에서 패키지에 대 한 아이콘으로 사용할 투명도 배경을 포함 하는 128x128 이미지의 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL*이 포함되어야 합니다. 예를 들어 GitHub의 이미지를 사용 하려면 <em> https://github.com/ \<username\> / \<repository\> /raw/ \<branch\> / \<logo.png\> </em>와 같은 원시 파일 URL을 사용 합니다. 
+UI 표시에서 패키지에 대 한 아이콘으로 사용할 투명도 배경을 포함 하는 128x128 이미지의 URL입니다. 이 요소에는 이미지가 포함된 웹 페이지의 URL이 아니라 *직접 이미지 URL* 이 포함되어야 합니다. 예를 들어 GitHub의 이미지를 사용 하려면 <em> https://github.com/ \<username\> / \<repository\> /raw/ \<branch\> / \<logo.png\> </em>와 같은 원시 파일 URL을 사용 합니다. 
    
 Nuget.org에 패키지를 업로드 하는 경우 `iconUrl` 이 필드는 4000 자로 제한 됩니다.
 
@@ -205,7 +208,7 @@ MSBuild에 해당 하는 경우 [아이콘 이미지 파일 압축](msbuild-targ
 패키지를 설치하기 전에 클라이언트에서 소비자가 패키지 라이선스에 동의하도록 요구하는 메시지를 표시해야 할지 여부를 지정하는 부울 값입니다.
 
 #### <a name="developmentdependency"></a>developmentDependency
-*(2.8 이상)* 패키지가 다른 패키지의 종속성으로 포함되지 않도록 패키지를 개발 전용 종속성으로 표시할지 여부를 지정 하는 부울 값입니다. PackageReference(NuGet 4.8 이상)를 사용하는 경우 이 플래그는 컴파일 시간 자산을 컴파일에서 제외한다는 의미이기도 합니다. [PackageReference에 대 한 DevelopmentDependency 지원을](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference) 참조 하세요.
+*(2.8 이상)* 패키지가 다른 패키지의 종속성으로 포함되지 않도록 패키지를 개발 전용 종속성으로 표시할지 여부를 지정 하는 부울 값입니다. PackageReference (NuGet 4.8 이상) 를 사용하는 경우 이 플래그는 컴파일 시간 자산을 컴파일에서 제외한다는 의미이기도 합니다. [PackageReference에 대 한 DevelopmentDependency 지원을](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference) 참조 하세요.
 
 #### <a name="summary"></a>요약
 > [!Important]
@@ -239,7 +242,7 @@ Nuget.org에 패키지를 업로드 하는 경우 `tags` 이 필드는 4000 자�
 #### <a name="repository"></a>리포지토리
 저장소 메타 데이터는 `type` 및 `url` *(4.0 +)*, 및 `branch` 및 `commit` *(4.6 +)* 의 네 가지 선택적 특성으로 구성 됩니다. 이러한 특성을 사용 하 여를 `.nupkg` 빌드한 리포지토리에 매핑할 수 있으며, 패키지를 작성 하는 개별 분기 이름 또는 커밋 sha-1 해시를 자세히 파악할 수 있습니다. 이 url은 버전 제어 소프트웨어에서 직접 호출할 수 있는 공개적으로 사용할 수 있는 url 이어야 합니다. 이는 컴퓨터에 대 한 것 이므로 html 페이지가 되어서는 안 됩니다. 프로젝트 페이지에 연결 하려면 `projectUrl` 필드를 대신 사용 합니다.
 
-다음은 그 예입니다. 
+예를 들면 다음과 같습니다.
 ```xml
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
@@ -349,7 +352,7 @@ nuget pack MyProject.csproj
 
 `<metadata>` 내의 `<dependencies>` 요소에는 최상위 패키지가 종속되는 다른 패키지를 식별하는 임의 개수의 `<dependency>` 요소가 포함됩니다. 각 `<dependency>`에 대한 특성은 다음과 같습니다.
 
-| attribute | Description |
+| attribute | 설명 |
 | --- | --- |
 | `id` | (필수) 패키지 페이지에서 “EntityFramework” 및 “NUnit” 패키지 nuget.org의 이름인 같은 종속성의 패키지 ID를 보여 줍니다. |
 | `version` | (필수) 종속성으로 허용되는 버전 범위입니다. 정확한 구문은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges)를 참조하세요. 부동 버전은 지원 되지 않습니다. |
@@ -360,10 +363,10 @@ Nuget.org에 패키지를 업로드 하는 경우 각 종속성의 `id` 특성�
 
 | include/exclude 태그 | 영향을 받는 대상 폴더 |
 | --- | --- |
-| contentFiles | 콘텐츠 |
+| contentFiles | Content |
 | 런타임 | Runtime, Resources 및 FrameworkAssemblies |
 | compile | lib |
-| build | build(MSBuild props 및 targets) |
+| 빌드 | build(MSBuild props 및 targets) |
 | native | native |
 | 없음 | 영향을 받는 폴더 없음 |
 | 모두 | 모든 폴더 |
@@ -499,7 +502,7 @@ Nuget.org에 패키지를 업로드 하는 경우 각 종속성의 `id` 특성�
 > [!Important]
 > 패키지가 프로젝트에 설치되면 어셈블리 참조가 지역화된 위성 어셈블리로 간주되므로 NuGet은 `.resources.dll`이라는 DLL을 *제외한* 패키지의 DLL에 해당 어셈블리 참조를 자동으로 추가합니다. 이러한 이유로 다른 경우에 필수 패키지 코드가 포함되는 파일에는 `.resources.dll`을 사용하지 마세요.
 
-이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 다음은 그 예입니다. 
+이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들면 다음과 같습니다.
 
 ```xml
 <files>
@@ -515,11 +518,11 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 
 각 `<file>` 요소는 다음과 같은 특성을 지정합니다.
 
-| attribute | Description |
+| attribute | 설명 |
 | --- | --- |
 | **src** | `exclude` 특성으로 지정된 제외에 따라 포함할 파일의 위치입니다. 절대 경로가 지정되지 않으면 경로는 `.nuspec` 파일에 대한 상대 경로입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 | **대상** | 원본 파일이 있는 패키지 내의 폴더에 대한 상대 경로이며, `lib`, `content`, `build` 또는 `tools`로 시작해야 합니다. [규칙 기반 작업 디렉터리에서 .nuspec 만들기](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)를 참조하세요. |
-| **제외** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
+| **시키고** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 
 ### <a name="examples"></a>예제
 
@@ -720,10 +723,10 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 
 이러한 파일은 프로젝트 시스템 내에서 사용되는 방법을 설명하는 일단의 특성으로 지정됩니다.
 
-| attribute | Description |
+| attribute | 설명 |
 | --- | --- |
 | **되어야** | (필수) `exclude` 특성으로 지정된 제외에 따라 포함할 파일의 위치입니다. `contentFiles`절대 경로를 지정 하지 않으면 폴더에 대 한 상대 경로입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
-| **제외** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
+| **시키고** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 | **buildAction** | ,,, 등의 MSBuild에 대 한 콘텐츠 항목에 할당할 빌드 `Content` 작업 `None` `Embedded Resource` `Compile` 입니다. 기본값은 `Compile` 입니다. |
 | **copyToOutput** | 콘텐츠 항목을 빌드 (또는 게시) 출력 폴더에 복사할지 여부를 나타내는 부울 값입니다. 기본값은 false입니다. |
 | **flatten** | 빌드 출력의 단일 폴더에 콘텐츠 항목을 복사할지(true), 아니면 패키지의 폴더 구조를 유지할지(false) 여부를 나타내는 부울 값입니다. 이 플래그는 copyToOutput 플래그가 true로 설정된 경우에만 작동합니다. 기본값은 false입니다. |
@@ -740,7 +743,7 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 - `TxM`은 NuGet에서 지원하는 모든 법적 대상 프레임워크 모니커입니다([대상 프레임워크](../reference/target-frameworks.md) 참조).
 - 모든 폴더 구조는 이 구문의 끝에 추가될 수 있습니다.
 
-다음은 그 예입니다. 
+예를 들면 다음과 같습니다.
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml

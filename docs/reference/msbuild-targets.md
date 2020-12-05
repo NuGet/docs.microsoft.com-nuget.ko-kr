@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 16fd7b9103ef5ac335f0b2e5493dd2983b182f50
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 4a04c6dd7993fc47bcf7a6fe46236ed700a0d105
+ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623177"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96738931"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -42,7 +42,7 @@ MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `res
 
 PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우를 사용 하 여 `msbuild -t:pack` NuGet 패키지를 만드는 데 사용할 프로젝트 파일의 입력을 그립니다.
 
-아래 표에서는 첫 번째 `<PropertyGroup>` 노드 내에서 프로젝트 파일에 추가할 수 있는 MSBuild 속성을 설명합니다. Visual Studio 2017 이상에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **{project_name} 편집**을 선택하여 이러한 편집 작업을 쉽게 수행할 수 있습니다. 편의상 테이블은 [ `.nuspec` 파일](../reference/nuspec.md)의 해당 속성을 기준으로 구성 됩니다.
+아래 표에서는 첫 번째 `<PropertyGroup>` 노드 내에서 프로젝트 파일에 추가할 수 있는 MSBuild 속성을 설명합니다. Visual Studio 2017 이상에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **{project_name} 편집** 을 선택하여 이러한 편집 작업을 쉽게 수행할 수 있습니다. 편의상 테이블은 [ `.nuspec` 파일](../reference/nuspec.md)의 해당 속성을 기준으로 구성 됩니다.
 
 `.nuspec`의 `Owners` 및 `Summary` 속성은 MSBuild에서 지원되지 않습니다.
 
@@ -52,7 +52,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우를
 | 버전 | PackageVersion | 버전 | "1.0.0", "1.0.0-beta" 또는 "1.0.0-beta-00345"와 같이 semver와 호환됩니다. |
 | VersionPrefix | PackageVersionPrefix | 비어 있음 | PackageVersion을 설정하면 PackageVersionPrefix를 덮어씁니다. |
 | VersionSuffix | PackageVersionSuffix | 비어 있음 | MSBuild의 $(VersionSuffix)입니다. PackageVersion을 설정하면 PackageVersionSuffix를 덮어씁니다. |
-| 만든 이 | 만든 이 | 현재 사용자의 사용자 이름 | |
+| Authors | Authors | 현재 사용자의 사용자 이름 | |
 | 소유자 | 해당 없음 | NuSpec에는 없음 | |
 | 제목 | 제목 | PackageId| |
 | Description | Description | "패키지 설명" | |
@@ -64,7 +64,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우를
 | ProjectUrl | PackageProjectUrl | 비어 있음 | |
 | 아이콘 | PackageIcon | 비어 있음 | 참조 된 아이콘 이미지 파일을 명시적으로 압축 해야 합니다.|
 | IconUrl | PackageIconUrl | 비어 있음 | 최상의 하위 환경에서는를 `PackageIconUrl` 추가로 지정 해야 `PackageIcon` 합니다. 장기적으로 `PackageIconUrl` 는 더 이상 사용 되지 않습니다. |
-| 태그 | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
+| 태그들 | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
 | ReleaseNotes | PackageReleaseNotes | 비어 있음 | |
 | 리포지토리/u r l | RepositoryUrl | 비어 있음 | 소스 코드를 복제 하거나 검색 하는 데 사용 되는 리포지토리 URL입니다. 예 들어 *https://github.com/NuGet/NuGet.Client.git* |
 | 리포지토리/유형 | RepositoryType | 비어 있음 | 리포지토리 유형입니다. 예: *git*, *tfs*. |
@@ -79,8 +79,8 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우를
 - SuppressDependenciesWhenPacking
 - PackageVersion
 - PackageId
-- 만든 이
-- Description
+- Authors
+- 설명
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -131,7 +131,7 @@ NuGet 5.3 & Visual Studio 2019 버전 16.3부터 `pack` 패키지 메타 데이�
 
 아이콘 이미지 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageIcon` 의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 128x128 이미지를 확인 하는 것이 좋습니다.
 
-다음은 그 예입니다. 
+예를 들면 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -242,7 +242,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 [NuGet.org에서 허용 하는 라이선스 식 및 라이선스에 대해 자세히 알아보세요](nuspec.md#license).
 
-라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 다음은 그 예입니다. 
+라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들면 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -313,7 +313,7 @@ Nuspec 파일을 압축 하는 *.csproj* 파일의 예는 다음과 같습니다
 - `FinalOutputPath`: 파일의 절대 경로입니다. 제공 하지 않으면 Id가 원본 경로를 평가 하는 데 사용 됩니다.
 - `TargetPath`: (선택 사항) `lib\<TargetFramework>` 해당 문화권 폴더 아래에 있는 위성 어셈블리와 같이 파일을 내 하위 폴더로 이동 해야 하는 경우에 설정 합니다. 기본값은 파일의 이름입니다.
 
-예:
+예제:
 
 ```xml
 <PropertyGroup>
@@ -365,13 +365,14 @@ Nuspec 파일을 압축 하는 *.csproj* 파일의 예는 다음과 같습니다
 1. 패키지를 다운로드합니다.
 1. 자산, targets 및 props 파일을 작성합니다.
 
-`restore`대상은 PackageReference 형식을 사용 하는 프로젝트에 **만** 적용 됩니다. 형식을 사용 하는 프로젝트에 대해서는 작동 **하지** 않습니다. `packages.config` 대신 [nuget 복원을](../reference/cli-reference/cli-ref-restore.md) 사용 하십시오.
+`restore`대상은 PackageReference 형식을 사용 하는 프로젝트에 대해 작동 합니다.
+`MSBuild 16.5+` 또한에서는 형식에 대 한 [옵트인 지원도 제공](#restoring-packagereference-and-packages.config-with-msbuild) `packages.config` 합니다.
 
 ### <a name="restore-properties"></a>restore 속성
 
 추가 restore 설정은 프로젝트 파일의 MSBuild 속성에서 가져올 수 있습니다. 또한 값은 `-p:` 스위치를 사용하여 명령줄에서 설정할 수 있습니다(아래 예제 참조).
 
-| 속성 | Description |
+| 속성 | 설명 |
 |--------|--------|
 | RestoreSources | 세미콜론으로 구분된 패키지 원본의 목록입니다. |
 | RestorePackagesPath | 사용자 패키지 폴더에 대한 경로입니다. |
@@ -391,7 +392,8 @@ Nuspec 파일을 압축 하는 *.csproj* 파일의 예는 다음과 같습니다
 | RestorePackagesWithLockFile | 잠금 파일을 사용합니다. |
 | RestoreLockedMode | 잠금 모드에서 복원을 실행 합니다. 즉, 복원은 종속성을 다시 평가 하지 않습니다. |
 | NuGetLockFilePath | 잠금 파일의 사용자 지정 위치입니다. 기본 위치는 프로젝트 옆에 있고 이름은 `packages.lock.json` 입니다. |
-| RestoreForceEvaluate | 강제로 복원 하 여 종속성을 다시 계산 하 고 경고 없이 잠금 파일을 업데이트 합니다. | 
+| RestoreForceEvaluate | 강제로 복원 하 여 종속성을 다시 계산 하 고 경고 없이 잠금 파일을 업데이트 합니다. |
+| RestorePackagesConfig | packages.config를 사용 하 여 프로젝트를 복원 하는 옵트인 스위치입니다. 만 지원 `MSBuild -t:restore` 합니다. |
 
 #### <a name="examples"></a>예제
 
@@ -413,7 +415,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 restore는 `obj` 빌드 폴더에 다음 파일을 만듭니다.
 
-| 파일 | Description |
+| 파일 | 설명 |
 |--------|--------|
 | `project.assets.json` | 모든 패키지 참조의 종속성 그래프를 포함 합니다. |
 | `{projectName}.projectFileExtension.nuget.g.props` | 패키지에 포함된 MSBuild props 파일에 대한 참조 |
@@ -435,6 +437,17 @@ msbuild -t:build -restore
 ```
 
 같은 논리는와 유사한 다른 대상에도 적용 됩니다 `build` .
+
+### <a name="restoring-packagereference-and-packagesconfig-with-msbuild"></a>MSBuild를 사용 하 여 PackageReference 및 packages.config 복원
+
+MSBuild 16.5 +를 사용 하는 경우에도 packages.config 지원 됩니다 `msbuild -t:restore` .
+
+```cli
+msbuild -t:restore -p:RestorePackagesConfig=true
+```
+
+> [!NOTE]
+> `packages.config` restore는와 함께 사용할 수 `MSBuild 16.5+` 없습니다. `dotnet.exe`
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 
