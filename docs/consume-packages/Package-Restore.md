@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 05fa68ad3a0b353117a14e2b3e1cdf13dc806127
-ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
+ms.openlocfilehash: be68d3bd1c7dfcc5661276c0b62d46722af61a00
+ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550390"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96738957"
 ---
 # <a name="restore-packages-using-package-restore"></a>패키지 복원을 사용하여 패키지 복원
 
@@ -29,7 +29,7 @@ ms.locfileid: "94550390"
 
 ## <a name="restore-packages"></a>패키지 복원
 
-패키지 복원은 프로젝트 파일( *.csproj* ) 또는 *packages.config* 파일에서 패키지 참조와 일치하는 올바른 상태에 대한 모든 패키지 종속성을 설치하려고 합니다. (Visual Studio에서 참조는 솔루션 탐색기의 **종속성 \ NuGet** 또는 **참조** 노드 아래에 표시됩니다.)
+패키지 복원은 프로젝트 파일( *.csproj*) 또는 *packages.config* 파일에서 패키지 참조와 일치하는 올바른 상태에 대한 모든 패키지 종속성을 설치하려고 합니다. (Visual Studio에서 참조는 솔루션 탐색기의 **종속성 \ NuGet** 또는 **참조** 노드 아래에 표시됩니다.)
 
 1. 프로젝트 파일의 패키지 참조가 올바른 경우 기본 설정 도구를 사용하여 패키지를 복원합니다.
 
@@ -40,7 +40,7 @@ ms.locfileid: "94550390"
    - [Azure Pipelines](#restore-using-azure-pipelines)
    - [Azure DevOps Server](#restore-using-azure-devops-server)
 
-   프로젝트 파일( *.csproj* ) 또는 *packages.config* 파일의 패키지 참조가 잘못된 경우(패키지 복원 이후 원하는 상태와 일치하지 않는 경우) 패키지를 설치하거나 업데이트해야 합니다.
+   프로젝트 파일( *.csproj*) 또는 *packages.config* 파일의 패키지 참조가 잘못된 경우(패키지 복원 이후 원하는 상태와 일치하지 않는 경우) 패키지를 설치하거나 업데이트해야 합니다.
 
    PackageReference를 사용하는 프로젝트의 경우 성공적으로 복원된 후 패키지는 *global-packages* 폴더에 있어야 하며 `obj/project.assets.json` 파일이 다시 만들어집니다. `packages.config`를 사용하는 프로젝트의 경우 패키지는 프로젝트의 `packages` 폴더에 표시되어야 합니다. 이제 프로젝트가 성공적으로 빌드됩니다. 
 
@@ -147,9 +147,12 @@ NuGet에는 프로젝트에서 패키지를 사용할 수 있는 두 가지 형�
 
 ## <a name="restore-using-msbuild"></a>MSBuild를 사용하여 복원
 
-프로젝트 파일에 나열된 패키지를 PackageReference로 복원하려면 [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 명령을 사용합니다. 이 명령은 Visual Studio 2017 이상 버전에 포함된 NuGet 4.x 이상 및 MSBuild 15.1 이상에서만 사용할 수 있습니다. `nuget restore` 및 `dotnet restore`는 모두 해당 프로젝트에 대해 이 명령을 사용합니다.
+[msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 명령을 사용하여 프로젝트 파일([PackageReference](../../consume-packages/package-references-in-project-files.md) 참조) 및 MSBuild 16.5 이상부터 `packages.config` 프로젝트에 나열된 패키지를 복원합니다.
 
-1. 개발자 명령 프롬프트를 엽니다( **검색** 상자에 **개발자 명령 프롬프트** 입력).
+ 이 명령은 Visual Studio 2017 이상 버전에 포함된 NuGet 4.x 이상 및 MSBuild 15.1 이상에서만 사용할 수 있습니다.
+MSBuild 16.5 이상부터 이 명령은 `-p:RestorePackagesConfig=true`를 사용하여 실행할 때 `packages.config` 기반 프로젝트도 복원합니다.
+
+1. 개발자 명령 프롬프트를 엽니다(**검색** 상자에 **개발자 명령 프롬프트** 입력).
 
    (일반적으로 **시작** 메뉴에서 “Visual Studio용 개발자 명령 프롬프트”를 시작하는 것이 좋습니다. MSBuild에 필요한 모든 경로로 구성되기 때문입니다.)
 
@@ -224,7 +227,7 @@ Azure DevOps Server 및 TFS 2013 이상에서는 TFS 2013 이상 팀 빌드 템�
 
 NuGet 2.6 이하 버전의 경우 이전에는 MSBuild 통합 패키지 복원이 지원되었지만 더 이상은 지원되지 않습니다. 일반적으로 Visual Studio에서 솔루션을 마우스 오른쪽 단추로 클릭하고 **NuGet 패키지 복원 사용** 을 선택하여 사용하도록 설정했습니다. 프로젝트에서 더 이상 지원되지 않는 MSBuild 통합 패키지 복원을 사용하는 경우 자동 패키지 복원으로 마이그레이션하세요.
 
-MSBuild 통합 패키지 복원을 사용하는 프로젝트에는 일반적으로 *.nuget* 폴더가 있으며 이 폴더에는 3개의 파일 *NuGet.config* , *nuget.exe* 및 *NuGet.targets* 가 포함되어 있습니다. *NuGet.targets* 파일의 존재 여부에 따라 NuGet에서 MSBuild 통합 방법을 계속 사용하는지가 결정되므로 마이그레이션 동안 이 파일을 제거해야 합니다.
+MSBuild 통합 패키지 복원을 사용하는 프로젝트에는 일반적으로 *.nuget* 폴더가 있으며 이 폴더에는 3개의 파일 *NuGet.config*, *nuget.exe* 및 *NuGet.targets* 가 포함되어 있습니다. *NuGet.targets* 파일의 존재 여부에 따라 NuGet에서 MSBuild 통합 방법을 계속 사용하는지가 결정되므로 마이그레이션 동안 이 파일을 제거해야 합니다.
 
 자동 패키지 복원으로 마이그레이션하려면(Visual Studio)
 
