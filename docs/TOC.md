@@ -1,4 +1,3 @@
-# [문서 개요](index.yml)
 # [NuGet이란?](what-is-nuget.md)
 # 시작
 ## [NuGet 클라이언트 도구 설치](install-nuget-client-tools.md)
