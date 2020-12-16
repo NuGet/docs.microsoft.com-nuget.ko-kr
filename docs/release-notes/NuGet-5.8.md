@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 09fb98eec79ee4ed08d85a1c557a420d6b265f11
-ms.sourcegitcommit: f4b74b500e3db9e468f11142df48d87880382267
+ms.openlocfilehash: 329fdf6479d0799ae4b15cc3493848ba2d999853
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94572833"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523435"
 ---
 # <a name="nuget-58-release-notes"></a>NuGet 5.8 릴리스 정보
 
@@ -84,7 +84,7 @@ NuGet 배포 차량:
 
 * XPlat에는 공용 Api를 사용할 수 없습니다.- [#9821](https://github.com/NuGet/Home/issues/9821)
 
-* #9822로 스레드 풀 스레드를 차단 하 여 발생 하는 솔루션 로드 시간에 리소스 경합을 줄입니다. `BlockingCollection.Take()`  -  [#9822](https://github.com/NuGet/Home/issues/9822)
+* #9822로 스레드 풀 스레드를 차단 하 여 발생 하는 솔루션 로드 시간에 리소스 경합을 줄입니다. `BlockingCollection.Take()`  -  [](https://github.com/NuGet/Home/issues/9822)
 
 * 다중 대상 프로젝트를 사용 하는 명령줄 복원에서는 NuGet이 내부 빌드에서 대상 프레임 워크 관련 정보를 읽어야 [#9869](https://github.com/NuGet/Home/issues/9869)
 
@@ -144,5 +144,5 @@ NuGet 배포 차량:
 
 ## <a name="feedback-welcome"></a>사용자 의견 환영
 
-Microsoft는 사용자의 의견을 소중하게 생각합니다.  이 릴리스에 문제가 있는 경우 [GitHub 문제](https://github.com/NuGet/Home/issues) 및 [Visual Studio 개발자 커뮤니티](https://developercommunity.visualstudio.com/) 에서 기존 문제를 확인 하세요.  NuGet 내의 새로운 문제에 대 한 자세한 내용은 [GitHub 문제](hhttps://github.com/NuGet/Home/issues/new)를 보고 하세요.
+Microsoft는 사용자의 의견을 소중하게 생각합니다.  이 릴리스에 문제가 있는 경우 [GitHub 문제](https://github.com/NuGet/Home/issues) 및 [Visual Studio 개발자 커뮤니티](https://developercommunity.visualstudio.com/) 에서 기존 문제를 확인 하세요.  NuGet 내의 새로운 문제에 대 한 자세한 내용은 [GitHub 문제](https://github.com/NuGet/Home/issues/new)를 보고 하세요.
 일반적인 NuGet 환경 문제에 대 한 자세한 내용은 **문제 보고 > 도움말** 에서 즐겨 사용 하는 IDE의 [문제 보고](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio) 옵션을 통해 알려주세요.
