@@ -1,20 +1,20 @@
 ---
 title: NuGet용 .NET Compiler Platform 분석기 형식
 description: API 또는 라이브러리를 구현하는 NuGet 패키지를 포함하여 패키지되고 배포되는 .NET 분석기 규칙입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 9de890d14747a74a13a660109a3b6812a5e08acc
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: f1e9bb96fc7acc73ec37cebcdc8015081fafb307
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237921"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523408"
 ---
 # <a name="analyzer-nuget-formats"></a>NuGet 분석기 형식
 
-개발자는 .NET Compiler Platform("Roslyn"이라고도 함)으로 [분석기](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix)를 만들어, 코드 작성 시 구문 트리와 코드 의미 체계를 검사할 수 있습니다. 개발자는 이를 통해 특정 API 또는 라이브러리의 사용을 안내하는 데 도움이 되는 도구 등 도메인 특정 분석 도구를 만들 수 있습니다. 자세한 내용은 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub Wiki에서 찾을 수 있습니다. 또한 MSDN Magazine의 [Roslyn을 사용하여 API에 대한 라이브 코드 분석기 작성](/archive/msdn-magazine/2014/special-issue/csharp-and-visual-basic-use-roslyn-to-write-a-live-code-analyzer-for-your-api) 문서도 참조하세요.
+개발자는 .NET Compiler Platform("Roslyn"이라고도 함)으로 [분석기](https://github.com/dotnet/roslyn/blob/master/docs/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix.md)를 만들어, 코드 작성 시 구문 트리와 코드 의미 체계를 검사할 수 있습니다. 개발자는 이를 통해 특정 API 또는 라이브러리의 사용을 안내하는 데 도움이 되는 도구 등 도메인 특정 분석 도구를 만들 수 있습니다. 자세한 내용은 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub Wiki에서 찾을 수 있습니다. 또한 MSDN Magazine의 [Roslyn을 사용하여 API에 대한 라이브 코드 분석기 작성](/archive/msdn-magazine/2014/special-issue/csharp-and-visual-basic-use-roslyn-to-write-a-live-code-analyzer-for-your-api) 문서도 참조하세요.
 
 분석기 자체는 일반적으로 문제의 API 또는 라이브러리를 구현하는 NuGet 패키지의 일부로 패키지되어 배포됩니다.
 
@@ -45,9 +45,9 @@ ms.locfileid: "93237921"
 
     $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
 
-- **framework_name** 및 **version** : 포함된 DLL에서 실행해야 하는 .NET Framework의 *선택적* API 노출 영역입니다. Roslyn은 분석기를 실행할 수 있는 유일한 호스트이므로 `dotnet`은 현재 유효한 값입니다. 대상을 지정하지 않으면 DLL이 *모든* 대상에 적용된다고 가정합니다.
-- **supported_language** : DLL이 적용되는 언어로서 `cs`(C#), `vb`(Visual Basic) 및 `fs`(F#) 중 하나입니다. 언어는 해당 언어를 사용하는 프로젝트에만 분석기가 로드되어야 함을 나타냅니다. 언어를 지정하지 않으면 분석기를 지원하는 *모든* 언어에 DLL이 적용되는 것으로 간주됩니다.
-- **analyzer_name** : 분석기의 DLL을 지정합니다. DLL 이외의 추가 파일이 필요하며 대상 또는 속성 파일을 통해 포함되어야 합니다.
+- **framework_name** 및 **version**: 포함된 DLL에서 실행해야 하는 .NET Framework의 *선택적* API 노출 영역입니다. Roslyn은 분석기를 실행할 수 있는 유일한 호스트이므로 `dotnet`은 현재 유효한 값입니다. 대상을 지정하지 않으면 DLL이 *모든* 대상에 적용된다고 가정합니다.
+- **supported_language**: DLL이 적용되는 언어로서 `cs`(C#), `vb`(Visual Basic) 및 `fs`(F#) 중 하나입니다. 언어는 해당 언어를 사용하는 프로젝트에만 분석기가 로드되어야 함을 나타냅니다. 언어를 지정하지 않으면 분석기를 지원하는 *모든* 언어에 DLL이 적용되는 것으로 간주됩니다.
+- **analyzer_name**: 분석기의 DLL을 지정합니다. DLL 이외의 추가 파일이 필요하며 대상 또는 속성 파일을 통해 포함되어야 합니다.
 
 
 ## <a name="install-and-uninstall-scripts"></a>스크립트 설치 및 제거
