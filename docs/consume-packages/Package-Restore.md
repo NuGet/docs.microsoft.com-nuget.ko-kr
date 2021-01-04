@@ -1,16 +1,16 @@
 ---
 title: NuGet 패키지 복원
 description: 복원을 사용하지 않도록 설정하고 버전을 제한하는 방법을 포함하여 NuGet에서 프로젝트가 종속된 패키지를 복원하는 방법을 간략히 설명합니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: be68d3bd1c7dfcc5661276c0b62d46722af61a00
-ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
+ms.openlocfilehash: bac4d88c29539f9fbe7b33b44ce11d350920d365
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738957"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523527"
 ---
 # <a name="restore-packages-using-package-restore"></a>패키지 복원을 사용하여 패키지 복원
 
@@ -147,7 +147,7 @@ NuGet에는 프로젝트에서 패키지를 사용할 수 있는 두 가지 형�
 
 ## <a name="restore-using-msbuild"></a>MSBuild를 사용하여 복원
 
-[msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 명령을 사용하여 프로젝트 파일([PackageReference](../../consume-packages/package-references-in-project-files.md) 참조) 및 MSBuild 16.5 이상부터 `packages.config` 프로젝트에 나열된 패키지를 복원합니다.
+[msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 명령을 사용하여 프로젝트 파일([PackageReference](package-references-in-project-files.md) 참조) 및 MSBuild 16.5 이상부터 `packages.config` 프로젝트에 나열된 패키지를 복원합니다.
 
  이 명령은 Visual Studio 2017 이상 버전에 포함된 NuGet 4.x 이상 및 MSBuild 15.1 이상에서만 사용할 수 있습니다.
 MSBuild 16.5 이상부터 이 명령은 `-p:RestorePackagesConfig=true`를 사용하여 실행할 때 `packages.config` 기반 프로젝트도 복원합니다.
