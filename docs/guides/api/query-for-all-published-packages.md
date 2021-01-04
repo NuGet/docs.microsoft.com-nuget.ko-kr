@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
-ms.openlocfilehash: 0bd21c427b5b89ae9e5f1500d75e1bf63a96e828
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 749d9466976d51c7cb65332c8b149e3a30862e63
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64498228"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523402"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>nuget.org에 게시된 모든 패키지에 대한 쿼리
 
@@ -32,7 +32,7 @@ ms.locfileid: "64498228"
 
 ## <a name="overview"></a>개요
 
-이 지침의 중심에는 **카탈로그**라는 [NuGet API](../../api/overview.md)의 리소스가 있습니다. 카탈로그는 호출자가 nuget.org에서 추가, 수정 및 삭제된 패키지에 대한 전체 기록을 볼 수 있게 하는 추가 전용 API입니다. nuget.org에 게시된 패키지의 전체 또는 일부에 관심이 있는 경우 카탈로그는 시간이 지남에 따라 현재 사용 가능한 패키지의 집합을 최신 상태로 유지할 수 있는 좋은 방법입니다.
+이 지침의 중심에는 **카탈로그** 라는 [NuGet API](../../api/overview.md)의 리소스가 있습니다. 카탈로그는 호출자가 nuget.org에서 추가, 수정 및 삭제된 패키지에 대한 전체 기록을 볼 수 있게 하는 추가 전용 API입니다. nuget.org에 게시된 패키지의 전체 또는 일부에 관심이 있는 경우 카탈로그는 시간이 지남에 따라 현재 사용 가능한 패키지의 집합을 최신 상태로 유지할 수 있는 좋은 방법입니다.
 
 이 지침은 상위 수준 연습을 위한 것이지만, 카탈로그에 대해 매우 자세한 정보에 관심이 있는 경우 [API 참조 문서](../../api/catalog-resource.md)를 참조하세요.
 
@@ -110,7 +110,7 @@ git clone https://github.com/NuGet/Samples.git
 
 ### <a name="catalog-sdk"></a>카탈로그 SDK
 
-카탈로그를 사용하는 가장 쉬운 방법은 [NuGet.Protocol.Catalog](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog) 시험판 .NET 카탈로그 SDK 패키지를 사용하는 것입니다. 이 패키지는`https://dotnet.myget.org/F/nuget-build/api/v3/index.json` NuGet 패키지 원본 URL을 사용하는 `nuget-build` MyGet 피드에서 사용할 수 있습니다.
+카탈로그를 사용하는 가장 쉬운 방법은 다음 NuGet 패키지 원본 URL을 사용하여 Azure Artifacts에서 사용할 수 있는 시험판 .NET 카탈로그 SDK 패키지 `NuGet.Protocol.Catalog`를 사용 하는 것입니다. `https://pkgs.dev.azure.com/dnceng/public/_packaging/nuget-build/nuget/v3/index.json`
 
 이 패키지는 `netstandard1.3` 이상과 호환되는 프로젝트(예: .NET Framework 4.6)에 설치할 수 있습니다.
 
