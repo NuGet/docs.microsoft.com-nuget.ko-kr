@@ -1,16 +1,16 @@
 ---
 title: MSBuild 대상으로서의 NuGet pack 및 restore
 description: NuGet pack 및 restore는 NuGet 4.0 이상에서 MSBuild 대상으로 직접 작동할 수 있습니다.
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4a04c6dd7993fc47bcf7a6fe46236ed700a0d105
-ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
+ms.openlocfilehash: 66df4e0e4739300608fd5f9e44eea5bcd00079c8
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738931"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699889"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -64,7 +64,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우를
 | ProjectUrl | PackageProjectUrl | 비어 있음 | |
 | 아이콘 | PackageIcon | 비어 있음 | 참조 된 아이콘 이미지 파일을 명시적으로 압축 해야 합니다.|
 | IconUrl | PackageIconUrl | 비어 있음 | 최상의 하위 환경에서는를 `PackageIconUrl` 추가로 지정 해야 `PackageIcon` 합니다. 장기적으로 `PackageIconUrl` 는 더 이상 사용 되지 않습니다. |
-| 태그들 | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
+| 태그 | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
 | ReleaseNotes | PackageReleaseNotes | 비어 있음 | |
 | 리포지토리/u r l | RepositoryUrl | 비어 있음 | 소스 코드를 복제 하거나 검색 하는 데 사용 되는 리포지토리 URL입니다. 예 들어 *https://github.com/NuGet/NuGet.Client.git* |
 | 리포지토리/유형 | RepositoryType | 비어 있음 | 리포지토리 유형입니다. 예: *git*, *tfs*. |
@@ -256,6 +256,23 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 [라이선스 파일 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
+### <a name="packing-a-file-without-an-extension"></a>확장명 없이 파일 압축
+
+라이선스 파일을 압축 하는 경우와 같은 일부 시나리오에서는 확장명이 없는 파일을 포함 하는 것이 좋습니다.
+기록을 위해 NuGet & MSBuild는 확장 없이 경로를 디렉터리로 처리 합니다.
+
+```xml
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath=""/>
+  </ItemGroup>  
+```
+
+[확장명 샘플이 없는 파일](https://github.com/NuGet/Samples/blob/master/PackageLicenseFileExtensionlessExample/)입니다.
 ### <a name="istool"></a>IsTool
 
 `MSBuild -t:pack -p:IsTool=true`를 사용하면 [출력 어셈블리](#output-assemblies) 시나리오에서 지정한 대로 모든 출력 파일이 `lib` 폴더 대신 `tools` 폴더에 복사됩니다. 이는 `.csproj` 파일에서 `PackageType`을 설정하여 지정된 `DotNetCliTool`과 다릅니다.
@@ -366,7 +383,10 @@ Nuspec 파일을 압축 하는 *.csproj* 파일의 예는 다음과 같습니다
 1. 자산, targets 및 props 파일을 작성합니다.
 
 `restore`대상은 PackageReference 형식을 사용 하는 프로젝트에 대해 작동 합니다.
-`MSBuild 16.5+` 또한에서는 형식에 대 한 [옵트인 지원도 제공](#restoring-packagereference-and-packages.config-with-msbuild) `packages.config` 합니다.
+`MSBuild 16.5+` 또한에서는 형식에 대 한 [옵트인 지원도 제공](#restoring-packagereference-and-packagesconfig-with-msbuild) `packages.config` 합니다.
+
+> [!NOTE]
+> 대상은 `restore` 대상과 함께 [실행 해서는](#restoring-and-building-with-one-msbuild-command) 안 됩니다 `build` .
 
 ### <a name="restore-properties"></a>restore 속성
 
@@ -395,7 +415,7 @@ Nuspec 파일을 압축 하는 *.csproj* 파일의 예는 다음과 같습니다
 | RestoreForceEvaluate | 강제로 복원 하 여 종속성을 다시 계산 하 고 경고 없이 잠금 파일을 업데이트 합니다. |
 | RestorePackagesConfig | packages.config를 사용 하 여 프로젝트를 복원 하는 옵트인 스위치입니다. 만 지원 `MSBuild -t:restore` 합니다. |
 
-#### <a name="examples"></a>예제
+#### <a name="examples"></a>예
 
 명령줄:
 
