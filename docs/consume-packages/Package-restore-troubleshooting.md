@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: b162990eae2160961f560b6c6ee73e47cb4121d6
-ms.sourcegitcommit: f29fa9b93fd59e679fab50d7413bbf67da3ea5b3
+ms.openlocfilehash: 9f680a714717d1bde0472f2e1266cacfd8bd4d5f
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86451153"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699724"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>패키지 복원 오류 문제 해결
 
@@ -25,8 +25,8 @@ ms.locfileid: "86451153"
 Visual Studio를 사용하는 경우 먼저 다음과 같이 패키지 복원을 활성화합니다. 그러지 않을 경우 다음에 나오는 섹션으로 이동합니다.
 
 1. **도구 > NuGet 패키지 관리자 > 패키지 관리자 설정** 메뉴 명령을 선택합니다.
-1. **패키지 복원**에서 두 옵션을 설정합니다.
-1. **확인**을 선택합니다.
+1. **패키지 복원** 에서 두 옵션을 설정합니다.
+1. **확인** 을 선택합니다.
 1. 프로젝트를 다시 빌드합니다.
 
 ![도구/옵션에서 NuGet 패키지 복원 활성화](../consume-packages/media/restore-01-autorestoreoptions.png)
@@ -46,7 +46,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 이 오류는 하나 이상의 NuGet 패키지에 대한 참조를 포함하는 프로젝트를 빌드하려고 시도할 때 해당 패키지가 컴퓨터 또는 프로젝트에 현재 설치되지 않은 경우에 발생합니다.
 
-- [PackageReference](package-references-in-project-files.md) 관리 형식을 사용할 경우 이 오류는 [전역 패키지 및 캐시 폴더 관리](managing-the-global-packages-and-cache-folders.md)에 설명된 대로 패키지가 *global-packages* 폴더에 설치되지 않았음을 나타냅니다.
+- [PackageReference](package-references-in-project-files.md) 관리 형식을 사용할 경우 이 오류는 packages.config에서 PackageReference로 마이그레이션한 결과일 수 있으며 프로젝트 파일에서 [수동으로 제거](../resources/NuGet-FAQ.md#working-with-packages)해야 합니다.
 - [packages.config](../reference/packages-config.md)를 사용할 경우 이 오류는 패키지가 솔루션 루트의 `packages` 폴더에 설치되어 있지 않음을 의미합니다.
 
 이러한 상황은 일반적으로 소스 제어 또는 다른 다운로드에서 프로젝트의 소스 코드를 가져올 때 발생합니다. 패키지는 nuget.org 같은 패키지 피드에서 복원할 수 있으므로 일반적으로 소스 제어 또는 다운로드에는 패키지가 없습니다([패키지 및 소스 제어](Packages-and-Source-Control.md) 참조). 그렇지 않고 이를 포함할 경우 리포지토리가 블로트되거나 불필요하게 큰 .zip 파일이 생성됩니다.

@@ -1,16 +1,16 @@
 ---
 title: nuget.exe CLI를 사용하여 NuGet 패키지 만들기
-description: 파일 및 버전 관리와 같은 주요 결정 사항을 포함하여 NuGet 패키지를 디자인하고 만드는 과정을 자세히 안내합니다.
+description: 파일, 버전 관리 등을 비롯해 NuGet 패키지를 설계하고 만드는 방법을 자세히 안내합니다.
 author: karann-msft
-ms.author: karann
+ms.author: feaguila
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: b3e6f0efc9e2e12de186ffd4ce29d496d07d5fc4
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: ec06a8f721b7b67ddc5d72323305b9b22f292de6
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428572"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699797"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>nuget.exe CLI를 사용하여 패키지 만들기
 
@@ -56,7 +56,7 @@ ms.locfileid: "79428572"
 필수 속성:
 
 - 패키지를 호스팅하는 갤러리에서 고유해야 하는 패키지 식별자
-- *Major.Minor.Patch[-Suffix]* 형식의 특정 버전 번호(여기서 *-Suffix*는 [시험판 버전](prerelease-packages.md)을 식별함)
+- *Major.Minor.Patch[-Suffix]* 형식의 특정 버전 번호(여기서 *-Suffix* 는 [시험판 버전](prerelease-packages.md)을 식별함)
 - 호스트에 표시되어야 하는 패키지 제목(예: nuget.org)
 - 작성자 및 소유자 정보
 - 패키지에 대한 자세한 설명
@@ -68,8 +68,8 @@ ms.locfileid: "79428572"
 - [Visual Studio의 패키지 관리자 UI](../consume-packages/install-use-packages-visual-studio.md)에 대한 간단한 설명
 - 로캘 ID
 - 프로젝트 URL
-- 라이선스(식 또는 파일로 사용)(`licenseUrl`은 사용되지 않으며, [`license`nusec 메타데이터 요소](../reference/nuspec.md#license)를 사용함)
-- 아이콘 URL
+- 라이선스(식 또는 파일로 사용)(`licenseUrl`은 사용되지 않으며 대신 [`license` nuspec 메타데이터 요소](../reference/nuspec.md#license)를 사용함)
+- 아이콘 파일(`iconUrl`은 사용되지 않으며 대신 [`icon` nuspec 메타데이터 요소](../reference/nuspec.md#icon)를 사용함)
 - 종속성 및 참조 목록
 - 갤러리 검색을 지원하는 태그
 
@@ -79,11 +79,11 @@ ms.locfileid: "79428572"
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <!-- The identifier that must be unique within the hosting gallery -->
+        <!-- Identifier that must be unique within the hosting gallery -->
         <id>Contoso.Utility.UsefulStuff</id>
 
-        <!-- The package version number that is used when resolving dependencies -->
-        <version>1.8.3-beta</version>
+        <!-- Package version number that is used when resolving dependencies -->
+        <version>1.8.3</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Dejana Tesic, Rajeev Dey</authors>
@@ -101,8 +101,8 @@ ms.locfileid: "79428572"
         <license type="expression">Apache-2.0</license>
         
 
-        <!-- The icon is used in Visual Studio's package manager UI -->
-        <iconUrl>http://github.com/contoso/UsefulStuff/nuget_icon.png</iconUrl>
+        <!-- Icon is used in Visual Studio's package manager UI -->
+        <icon>icon.png</icon>
 
         <!-- 
             If true, this value prompts the user to accept the license when
@@ -134,6 +134,7 @@ ms.locfileid: "79428572"
     <!-- A readme.txt to display when the package is installed -->
     <files>
         <file src="readme.txt" target="" />
+        <file src="icon.png" target="" />
     </files>
 </package>
 ```
@@ -218,9 +219,9 @@ nuget spec <assembly-name>.dll
 nuget spec
 ```
 
-결과 `<project-name>.nuspec` 파일에는 패키지 시간에 프로젝트의 값(이미 설치된 다른 패키지에 대한 참조 포함)으로 대체되는 *토큰*이 포함됩니다.
+결과 `<project-name>.nuspec` 파일에는 패키지 시간에 프로젝트의 값(이미 설치된 다른 패키지에 대한 참조 포함)으로 대체되는 *토큰* 이 포함됩니다.
 
-*.nuspec*에 포함할 패키지 종속성이 있는 경우 `nuget pack`을 대신 사용하고 생성된 *.nupkg* 파일 내에서 *.nuspec* 파일을 가져옵니다. 예를 들어 다음 명령을 사용합니다.
+*.nuspec* 에 포함할 패키지 종속성이 있는 경우 `nuget pack`을 대신 사용하고 생성된 *.nupkg* 파일 내에서 *.nuspec* 파일을 가져옵니다. 예를 들어 다음 명령을 사용합니다.
 
 ```cli
 # Use in a folder containing a project file <project-name>.csproj or <project-name>.vbproj
@@ -316,6 +317,7 @@ nuget spec [<package-name>]
 
 루트 `\build` 폴더의 파일은 모든 대상 프레임워크에 적합한 파일로 간주됩니다. 프레임워크별 파일을 제공하려면 먼저 다음과 같이 적절한 하위 폴더 내에 배치합니다.
 
+```
     \build
         \netstandard1.4
             \Contoso.Utility.UsefulStuff.props
@@ -323,6 +325,7 @@ nuget spec [<package-name>]
         \net462
             \Contoso.Utility.UsefulStuff.props
             \Contoso.Utility.UsefulStuff.targets
+```
 
 그런 다음 `.nuspec` 파일의 `<files>` 노드에서 이러한 파일을 참조합니다.
 
@@ -392,7 +395,7 @@ NuGet은 매니페스트의 자리 표시자 값을 변경하지 않은 경우�
 
     참조된 프로젝트에 자체의 `.nuspec` 파일이 포함되어 있으면 NuGet은 참조된 프로젝트를 종속성으로 대신 추가합니다.  해당 프로젝트를 별도로 패키지하고 게시해야 합니다.
 
-- **빌드 구성**: 기본적으로 NuGet은 프로젝트 파일에 설정된 기본 빌드 구성(일반적으로 *Debug*)을 사용합니다. *Release*와 같은 다른 빌드 구성의 파일을 압축하려면 다음과 같이 구성에 `-properties` 옵션을 사용합니다.
+- **빌드 구성**: 기본적으로 NuGet은 프로젝트 파일에 설정된 기본 빌드 구성(일반적으로 *Debug*)을 사용합니다. *Release* 와 같은 다른 빌드 구성의 파일을 압축하려면 다음과 같이 구성에 `-properties` 옵션을 사용합니다.
 
     ```cli
     nuget pack MyProject.csproj -properties Configuration=Release

@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: aae6f0474cc6e8e8aa5c269b79be6fd949d9184c
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: be24660d05f34242e45f223e2248b943ecc38616
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237999"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699654"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 질문과 대답
 
@@ -47,7 +47,7 @@ UI 및 명령줄 도구에 관한 모든 정보는 [설치 가이드](../install
 
 Visual Studio에서 **도움말 > Microsoft Visual Studio 정보** 명령을 사용하고 **NuGet 패키지 관리자** 옆에 표시된 버전을 확인합니다.
 
-또는 패키지 관리자 콘솔( **도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔** )을 시작하고, `$host`를 입력하여 버전을 포함한 NuGet 관련 정보를 확인합니다.
+또는 패키지 관리자 콘솔(**도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔**)을 시작하고, `$host`를 입력하여 버전을 포함한 NuGet 관련 정보를 확인합니다.
 
 **NuGet에서 지원하는 프로그래밍 언어는 무엇인가요?**
 
@@ -149,3 +149,10 @@ Visual Studio 자동화 개체 모델의 최상위 개체를 DTE(개발 도구 �
 
 - 원본 목록에 `https://api.nuget.org/v3/index.json`을 추가합니다. 또는
 - `%appdata%\.nuget\NuGet.Config`(Windows) 또는 `~/.nuget/NuGet/NuGet.Config`(Mac/Linux)를 삭제하고 NuGet에서 다시 만들도록 합니다.
+
+**PackageReference로 마이그레이션했는데, 빌드에 실패하는 이유는 무엇인가요(오류: `This project references NuGet package(s) that are missing on this computer.`)?**
+
+packages.config 프로젝트에서 `build` 속성 또는 대상이 포함된 패키지가 설치된 경우 NuGet은 `EnsureNuGetPackageBuildImports` 대상을 추가하여 빌드 전에 패키지 MSBuild 콘텐츠를 가져왔는지 확인합니다.
+`target`이 수동으로 수정된 경우 NuGet에서 마이그레이션할 때 대상이 제거되어야 함을 감지하지 못할 수도 있습니다.
+
+프로젝트가 `PackageReference`이고 이 대상이 프로젝트 파일에 계속 있는 경우 해당 대상을 제거해도 안전합니다.

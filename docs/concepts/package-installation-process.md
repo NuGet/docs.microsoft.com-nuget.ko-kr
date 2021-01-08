@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1ae030c308b14b8884fb608c1683c8c46000b0bd
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 634c421499b06f6b62d88a95f8703614dec5ace8
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "77036905"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699763"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>NuGet 패키지를 설치하면 어떻게 되나요?
 
@@ -26,6 +26,9 @@ ms.locfileid: "77036905"
    - [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md)(전역 패키지 및 캐시 폴더 관리)에 설명된 대로 정확한 식별자 및 버전 번호로 패키지가 *global-packages* 폴더에 이미 설치되어 있는지 확인합니다.
 
    - 패키지가 *global-packages* 폴더에 없으면 [구성 파일](../consume-packages/Configuring-NuGet-Behavior.md)에 나열된 소스에서 검색하려고 합니다. 온라인 소스의 경우 `-NoCache`가 `nuget.exe` 명령에 지정되거나 `--no-cache`가 `dotnet restore`에 지정된 경우 외에는 먼저 HTTP 캐시에서 패키지를 검색하려고 합니다. (Visual Studio 및 `dotnet add package`는 항상 캐시를 사용합니다.) 패키지가 캐시에서 사용되는 경우 출력에 “CACHE”가 나타납니다. 캐시의 만료 시간은 30분입니다.
+
+   - [유동적인 버전](../consume-packages/Package-References-in-Project-Files.md#floating-versions)을 사용하거나 최소 버전 없이 패키지를 지정한 경우 NuGet에서는 모든 소스에 ‘연결하여’ 가장 일치하는 항목을 확인합니다.
+   예: `1.*`, `(, 2.0.0]`
 
    - 패키지가 HTTP 캐시에 없으면 구성 파일에 나열된 소스에서 패키지를 다운로드하려고 합니다. 패키지가 다운로드되면 출력에 “GET” 및 “OK”가 나타납니다. NuGet은 보통 자세한 정도에 http 트래픽을 기록합니다.
 

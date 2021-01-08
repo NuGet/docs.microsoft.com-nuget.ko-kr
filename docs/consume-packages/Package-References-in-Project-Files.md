@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 1127e7aee27d57abd5f14dd3bea82dfff3ba6d93
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237642"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699785"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -201,10 +201,42 @@ PackageReference 프로젝트에서 전이 종속성 버전은 복원 시간에 
   <Target Name="TakeAction" AfterTargets="Build">
     <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
   </Target>
-````
+```
 
 MSBuild 속성과 패키지 ID에는 동일한 제한이 없기 때문에 패키지 ID를 MSBuild 이름으로 변경하고 `Pkg` 단어를 앞에 추가해야 합니다.
 생성된 속성의 정확한 이름을 확인하려면 생성된 [nuget.exe](../reference/msbuild-targets.md#restore-outputs) 파일을 확인합니다.
+
+## <a name="packagereference-aliases"></a>PackageReference 별칭
+
+드문 경우이지만 서로 다른 패키지에 동일한 네임스페이스의 클래스가 포함되기도 합니다. NuGet 5.7 및 Visual Studio 2019 업데이트 7부터 ProjectReference에 해당하는 PackageReference는 [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases)를 지원합니다.
+기본적으로 별칭은 제공되지 않습니다. 별칭을 지정하는 경우 주석을 단 패키지에서 제공되는 ‘모든’ 어셈블리를 별칭과 함께 참조해야 합니다.
+
+[NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample)에서 샘플 사용법을 확인할 수 있습니다.
+
+프로젝트 파일에서 다음과 같이 별칭을 지정합니다.
+
+```xml
+  <ItemGroup>
+    <PackageReference Include="NuGet.Versioning" Version="5.8.0" Aliases="ExampleAlias" />
+  </ItemGroup>
+```
+
+그리고 코드에서 다음과 같이 사용합니다.
+
+```cs
+extern alias ExampleAlias;
+
+namespace PackageReferenceAliasesExample
+{
+...
+        {
+            var version = ExampleAlias.NuGet.Versioning.NuGetVersion.Parse("5.0.0");
+            Console.WriteLine($"Version : {version}");
+        }
+...
+}
+
+```
 
 ## <a name="nuget-warnings-and-errors"></a>NuGet 경고 및 오류
 

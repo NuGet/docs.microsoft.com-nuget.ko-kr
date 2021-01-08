@@ -7,18 +7,21 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 8b23b6cc22eff5413e317fbe619edd3d4f4716ee
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 31fa51bc017eaaf9306d5f267e5d4b0d7a15ec9c
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237402"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699834"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>Visual Studio에서 패키지 관리자 콘솔을 사용하여 패키지 설치 및 관리(PowerShell)
 
 Nuget 패키지 관리자 콘솔에서는 [NuGet PowerShell 명령](../reference/powershell-reference.md)을 사용하여 NuGet 패키지를 찾고, 설치하고, 제거하고, 업데이트할 수 있습니다. 패키지 관리자 UI에서 작업을 수행하는 방법을 제공하지 않는 경우에는 콘솔을 사용해야 합니다. 콘솔에서 `nuget.exe` CLI 명령을 사용하려면 [콘솔에서 nuget.exe CLI 사용](#use-the-nugetexe-cli-in-the-console)을 참조하세요.
 
 콘솔은 Windows의 Visual Studio에 기본 제공됩니다. Mac용 Visual Studio 또는 Visual Studio Code에는 포함되어 있지 않습니다.
+
+> [!Important]
+> 여기에 나열된 명령은 Visual Studio의 패키지 관리자 콘솔과 관련이 있으며 일반 PowerShell 환경에서 사용할 수 있는 [패키지 관리 모듈 명령](/powershell/module/packagemanagement/)과 다릅니다. 특히, 각 환경은 다른 환경에서 사용할 수 없는 명령이 있으며 명령의 이름이 같더라도 특정 인수가 다를 수도 있습니다. Visual Studio에서 패키지 관리 콘솔을 사용하는 경우 이 문서에 설명된 명령과 인수가 적용됩니다.
 
 ## <a name="find-and-install-a-package"></a>패키지 찾기 및 설치
 
