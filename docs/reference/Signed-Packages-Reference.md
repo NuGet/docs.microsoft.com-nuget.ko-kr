@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 7384e8b30cb2ec5fe53ea0fe485858bc1f7b3c43
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: ac9efadc1d29bec86ca9b7821d5587e0171613aa
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238181"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235713"
 ---
 # <a name="signed-packages"></a>서명된 패키지
 
@@ -23,10 +23,10 @@ NuGet 패키지에는 변조 된 콘텐츠에 대 한 보호를 제공 하는 �
 - **작성자 서명**. 작성자 서명은 패키지가 전송 되는 리포지토리 또는 전송 방법에 관계 없이 패키지가 서명 된 이후 패키지가 수정 되지 않았음을 보장 합니다. 또한 작성자 서명 된 패키지는 서명 인증서를 미리 등록 해야 하기 때문에 nuget.org 게시 파이프라인에 추가 인증 메커니즘을 제공 합니다. 자세한 내용은 [인증서 등록](#signature-requirements-on-nugetorg)을 참조 하세요.
 - **리포지토리 서명**. 리포지토리에 서명 되었는지 여부에 관계 없이 리포지토리의 **모든** 패키지에 대 한 무결성 보장을 제공 합니다 .이는 해당 패키지가 서명 된 원본 리포지토리와 다른 위치에서 가져오는 경우에도 마찬가지입니다.   
 
-작성자 서명 된 패키지를 만드는 방법에 대 한 자세한 내용은 [패키지 서명](../create-packages/Sign-a-package.md) 및 [nuget sign 명령](../reference/cli-reference/cli-ref-sign.md)을 참조 하세요.
+작성자 서명 된 패키지를 만드는 방법에 대 한 자세한 내용은 [패키지 서명](../create-packages/Sign-a-package.md) 및 [nuget sign 명령](../reference/cli-reference/cli-ref-sign.md)을 참조 하세요. [Dotnet nuget verify](/dotnet/core/tools/dotnet-nuget-verify.md) 또는 [nuget verify](../reference/cli-reference/cli-ref-verify.md) 명령을 사용 하 여 패키지의 서명을 확인할 수 있습니다.
 
 > [!Important]
-> 패키지 서명은 현재 Windows에서 nuget.exe를 사용 하는 경우에만 지원 됩니다. [서명 된 패키지의 확인은 현재 Windows에서 nuget.exe또는 Visual Studio를 사용 하는 경우에만 지원 됩니다 ](../reference/cli-reference/cli-ref-verify.md) .
+> 작성자 서명 패키지는 현재 Windows의 nuget.exe 에서만 지원 됩니다. 그러나 nuget.org에 업로드 된 모든 패키지는 자동으로 리포지토리에 서명 됩니다.
 
 ## <a name="certificate-requirements"></a>인증서 요구 사항
 
@@ -54,7 +54,9 @@ nuget.org에는 서명 된 패키지를 수락 하기 위한 추가 요구 사�
   - 서명 시 해지 해서는 안 됩니다. (이는 제출 시 knowable 되지 않을 수 있으므로 nuget.org는 주기적으로 해지 상태를 재확인 합니다.)
   
   
-## <a name="related-articles"></a>관련 문서
+## <a name="related-articles"></a>관련된 문서
 
 - [NuGet 패키지 서명](../create-packages/Sign-a-Package.md)
+- [Dotnet CLI를 사용 하 여 서명 된 패키지 확인](/dotnet/core/tools/dotnet-nuget-verify.md)
+- [nuget.exe를 사용 하 여 서명 된 패키지 확인 ](../reference/cli-reference/cli-ref-verify.md)
 - [패키지 트러스트 영역 관리](../consume-packages/installing-signed-packages.md)

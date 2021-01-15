@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 66df4e0e4739300608fd5f9e44eea5bcd00079c8
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 7de3f0f1133a89848e9268d489751293fb3cbf25
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699889"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235700"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -46,7 +46,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우를
 
 `.nuspec`의 `Owners` 및 `Summary` 속성은 MSBuild에서 지원되지 않습니다.
 
-| 특성/NuSpec 값 | MSBuild 속성 | 기본값 | 메모 |
+| 특성/NuSpec 값 | MSBuild 속성 | 기본값 | 참고 |
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | MSBuild의 $(AssemblyName)입니다. |
 | 버전 | PackageVersion | 버전 | "1.0.0", "1.0.0-beta" 또는 "1.0.0-beta-00345"와 같이 semver와 호환됩니다. |
@@ -71,7 +71,7 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우를
 | 리포지토리/분기 | RepositoryBranch | 비어 있음 | 선택적 리포지토리 분기 정보입니다. 이 속성을 포함 하려면 *RepositoryUrl* 도 지정 해야 합니다. 예: *master* (NuGet 4.7.0 +) |
 | 리포지토리/커밋 | RepositoryCommit | 비어 있음 | 패키지가 빌드된 소스를 나타내는 선택적 리포지토리 커밋 또는 변경 집합입니다. 이 속성을 포함 하려면 *RepositoryUrl* 도 지정 해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
-| 요약 | 지원되지 않음 | | |
+| 요약 | 지원 안 함 | | |
 
 ### <a name="pack-target-inputs"></a>pack 대상 입력
 
@@ -131,7 +131,7 @@ NuGet 5.3 & Visual Studio 2019 버전 16.3부터 `pack` 패키지 메타 데이�
 
 아이콘 이미지 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageIcon` 의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 128x128 이미지를 확인 하는 것이 좋습니다.
 
-예를 들면 다음과 같습니다.
+예를 들어 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -242,7 +242,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 [NuGet.org에서 허용 하는 라이선스 식 및 라이선스에 대해 자세히 알아보세요](nuspec.md#license).
 
-라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들면 다음과 같습니다.
+라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들어 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -413,9 +413,10 @@ Nuspec 파일을 압축 하는 *.csproj* 파일의 예는 다음과 같습니다
 | RestoreLockedMode | 잠금 모드에서 복원을 실행 합니다. 즉, 복원은 종속성을 다시 평가 하지 않습니다. |
 | NuGetLockFilePath | 잠금 파일의 사용자 지정 위치입니다. 기본 위치는 프로젝트 옆에 있고 이름은 `packages.lock.json` 입니다. |
 | RestoreForceEvaluate | 강제로 복원 하 여 종속성을 다시 계산 하 고 경고 없이 잠금 파일을 업데이트 합니다. |
-| RestorePackagesConfig | packages.config를 사용 하 여 프로젝트를 복원 하는 옵트인 스위치입니다. 만 지원 `MSBuild -t:restore` 합니다. |
+| RestorePackagesConfig | packages.config를 사용 하 여 프로젝트를 복원 하는 옵트인 스위치. 만 지원 `MSBuild -t:restore` 합니다. |
+| RestoreUseStaticGraphEvaluation | 표준 평가 대신 정적 그래프 MSBuild 평가를 사용 하는 옵트인 스위치입니다. 정적 그래프 평가는 큰 리포지토리 및 솔루션에 대해 훨씬 더 빠른 실험적 기능입니다. |
 
-#### <a name="examples"></a>예
+#### <a name="examples"></a>예제
 
 명령줄:
 
@@ -469,25 +470,40 @@ msbuild -t:restore -p:RestorePackagesConfig=true
 > [!NOTE]
 > `packages.config` restore는와 함께 사용할 수 `MSBuild 16.5+` 없습니다. `dotnet.exe`
 
-### <a name="packagetargetfallback"></a>PackageTargetFallback
+### <a name="restoring-with-msbuild-static-graph-evaluation"></a>MSBuild 정적 그래프 평가를 사용 하 여 복원
 
-`PackageTargetFallback` 요소를 사용하면 패키지를 복원할 때 사용할 호환 가능한 대상 집합을 지정할 수 있습니다. dotnet [TxM](../reference/target-frameworks.md)을 사용하는 패키지가 dotnet TxM을 선언하지 않은 호환 패키지와 함께 작동하도록 설계되었습니다. 즉 프로젝트에서 dotnet TxM을 사용하는 경우, 비dotnet 플랫폼이 dotnet과 호환될 수 있도록 이상 프로젝트에 `<PackageTargetFallback>`을 추가하지 않는 한, 종속되는 모든 패키지에도 dotnet TxM이 있어야 합니다.
+> [!NOTE]
+> MSBuild 16.6 +를 사용 하는 경우 NuGet은 큰 리포지토리의 복원 시간을 크게 개선 하는 명령줄에서 정적 그래프 평가를 사용 하는 실험적 기능을 추가 했습니다.
 
-예를 들어 프로젝트에서 `netstandard1.6` TxM을 사용하고 종속 패키지에 `lib/net45/a.dll` 및 `lib/portable-net45+win81/a.dll`만 포함되어 있으면 프로젝트 빌드에 실패합니다. 가져오려는 항목이 후자의 DLL이면 다음과 같이 `PackageTargetFallback`을 추가하여 `portable-net45+win81` DLL이 호환 가능하다고 나타낼 수 있습니다.
-
-```xml
-<PackageTargetFallback Condition="'$(TargetFramework)'=='netstandard1.6'">
-    portable-net45+win81
-</PackageTargetFallback>
+```cli
+msbuild -t:restore -p:RestoreUseStaticGraphEvaluation=true
 ```
 
-프로젝트의 모든 대상에 대해 대체(fallback)를 선언하려면 `Condition` 특성을 해제합니다. 또한 다음과 같이 `$(PackageTargetFallback)`을 포함하여 기존 `PackageTargetFallback`을 확장할 수도 있습니다.
+또는 디렉터리에 속성을 설정 하 여 사용 하도록 설정할 수 있습니다.
 
 ```xml
-<PackageTargetFallback>
-    $(PackageTargetFallback);portable-net45+win81
-</PackageTargetFallback >
+<Project>
+  <PropertyGroup>
+    <RestoreUseStaticGraphEvaluation>true</RestoreUseStaticGraphEvaluation>
+  </PropertyGroup>
+</Project>
 ```
+
+> [!NOTE]
+> Visual Studio 2019. x 및 NuGet 5.x를 기반으로이 기능은 실험적이 고 옵트인 (opt in) 된 것으로 간주 됩니다. 이 기능이 기본적으로 사용 되는 경우에 대 한 자세한 내용은 [NuGet/Home # 9803](https://github.com/NuGet/Home/issues/9803) 를 따르세요.
+
+정적 그래프 복원은 복원, 프로젝트 읽기 및 평가의 msbuild 부분을 변경 하지만 복원 알고리즘은 변경 하지 않습니다. 복원 알고리즘은 모든 NuGet 도구 (NuGet.exe, MSBuild.exe, dotnet.exe 및 Visual Studio)에서 동일 합니다.
+
+거의 모든 시나리오에서 정적 그래프 복원은 현재 복원과 다르게 동작할 수 있으며 선언 된 특정 PackageReferences 또는 ProjectReferences가 누락 될 수 있습니다.
+
+정적 그래프 복원으로 마이그레이션할 때를 한 번만 확인 하는 것이 좋습니다.
+
+```cli
+msbuild.exe -t:restore -p:RestoreUseStaticGraphEvaluation
+msbuild.exe -t:restore
+```
+
+NuGet은 어떠한 변경 내용도 보고 *하지 않습니다* . 불일치가 표시 되는 경우 [NuGet/Home](https://github.com/nuget/home/issues/new)에서 문제를 파일에 입력 하세요.
 
 ### <a name="replacing-one-library-from-a-restore-graph"></a>복원 그래프에서 단일 라이브러리 대체
 

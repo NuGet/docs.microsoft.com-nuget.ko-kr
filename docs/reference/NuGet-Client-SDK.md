@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 39a4de4071eec70c88a2add158f2a3a734f7d7b7
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 0eca8478b4d6509dbc1407560d2c86069c7575dd
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622930"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235739"
 ---
 # <a name="nuget-client-sdk"></a>NuGet 클라이언트 SDK
 
@@ -20,23 +20,18 @@ ms.locfileid: "88622930"
 * [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) -NuGet 패키지와 상호 작용 하는 데 사용 됩니다. `NuGet.Protocol` 이 패키지에 종속
 
 [Nuget/nuget. 클라이언트](https://github.com/NuGet/NuGet.Client) GitHub 리포지토리에서 이러한 패키지에 대 한 소스 코드를 찾을 수 있습니다.
+GitHub의 [NuGet. Samples](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) 프로젝트에서 이러한 예제에 대 한 소스 코드를 찾을 수 있습니다.
 
 > [!Note]
 > NuGet 서버 프로토콜에 대 한 설명서는 [Nuget 서버 API](~/api/overview.md)를 참조 하세요.
 
-## <a name="getting-started"></a>시작
+## <a name="nugetprotocol"></a>NuGet. 프로토콜
 
-### <a name="install-the-packages"></a>패키지 설치
+`NuGet.Protocol`HTTP 및 폴더 기반 NuGet 패키지 피드를 사용 하 여 상호 작용 하는 패키지를 설치 합니다.
 
 ```ps1
-dotnet add package NuGet.Protocol  # interact with HTTP and folder-based NuGet package feeds, includes NuGet.Packaging
-
-dotnet add package NuGet.Packaging # interact with .nupkg and .nuspec files from a stream
+dotnet add package NuGet.Protocol
 ```
-
-## <a name="examples"></a>예제
-
-GitHub의 [nuget.exe](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) 프로젝트에서 이러한 예제를 찾을 수 있습니다.
 
 ### <a name="list-package-versions"></a>패키지 버전 나열
 
@@ -61,6 +56,36 @@ GitHub의 [nuget.exe](https://github.com/NuGet/Samples/tree/master/NuGetProtocol
 [NuGet V3 검색 API](../api/search-query-service-resource.md)를 사용 하 여 "json" 패키지를 검색 합니다.
 
 [!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
+
+### <a name="push-a-package"></a>패키지 푸시
+
+[NuGet V3 push 및 DELETE API](../api/package-publish-resource.md)를 사용 하 여 패키지를 푸시합니다.
+
+[!code-csharp[PushPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=PushPackage)]
+
+### <a name="delete-a-package"></a>패키지 삭제
+
+[NuGet V3 Push 및 DELETE API](../api/package-publish-resource.md)를 사용 하 여 패키지를 삭제 합니다.
+
+> [!Note]
+> NuGet 서버는 패키지 삭제 요청을 "하드 삭제", "일시 삭제" 또는 "unlist"로 자유롭게 해석할 수 있습니다.
+> 예를 들어 nuget.org는 패키지 삭제 요청을 "unlist"로 해석 합니다. 이 방법에 대 한 자세한 내용은 [패키지 삭제](../nuget-org/policies/deleting-packages.md) 정책을 참조 하세요.
+
+[!code-csharp[DeletePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DeletePackage)]
+
+### <a name="work-with-authenticated-feeds"></a>인증 된 피드에 대 한 작업
+
+[`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol)인증 된 피드에 대 한 작업을 수행 하는 데 사용 합니다.
+
+[!code-csharp[AuthenticatedFeed](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=AuthenticatedFeed)]
+
+## <a name="nugetpackaging"></a>NuGet. 패키징
+
+`NuGet.Packaging`스트림에서 및 파일과 상호 작용 하는 패키지를 설치 합니다 `.nupkg` `.nuspec` .
+
+```ps1
+dotnet add package NuGet.Packaging
+```
 
 ### <a name="create-a-package"></a>패키지 만들기
 

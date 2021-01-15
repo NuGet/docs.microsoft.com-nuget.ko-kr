@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 329fdf6479d0799ae4b15cc3493848ba2d999853
-ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
+ms.openlocfilehash: 7f641c669cdb0cc979d698f6b219cbb4f2692a2e
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97523435"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235752"
 ---
 # <a name="nuget-58-release-notes"></a>NuGet 5.8 릴리스 정보
 
@@ -19,6 +19,7 @@ NuGet 배포 차량:
 | NuGet 버전 | Visual Studio 버전에서 사용 가능 | .NET SDK에서 사용 가능 |
 |:---|:---|:---|
 | [**5.8**](https://nuget.org/downloads) | [Visual Studio 2019 버전 16.8](https://visualstudio.microsoft.com/downloads/) | [5.0](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.8.1**](https://nuget.org/downloads) | [Visual Studio 2019 버전 16.8.4](https://visualstudio.microsoft.com/downloads/) | |
 
 <sup>1</sup> .net Core 워크 로드와 함께 Visual Studio 2019와 함께 설치 됨
   
@@ -125,7 +126,7 @@ NuGet 배포 차량:
 
 **[이 릴리스에서 해결 된 모든 문제 목록-5.8](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f03519b777e78b4ffb2edeb)**
 
-**[이 릴리스에서 수정 된 문제/커밋 목록-5.8](https://github.com/NuGet/NuGet.Client/compare/5.7.0.6726...5.8.0.6930)**
+**[이 릴리스의 문제 목록-5.8](https://github.com/NuGet/NuGet.Client/compare/5.7.0.6726...5.8.0.6930)**
 
 ### <a name="community-contributions"></a>커뮤니티 기여
 
@@ -141,6 +142,15 @@ NuGet 배포 차량:
 [Zzok](https://github.com/Therzok) | [3636](https://github.com/NuGet/NuGet.Client/pull/3636) | `RuntimeEnvironmentHelper.IsRunningOnVisualStudio`Mono- [#9989](https://github.com/NuGet/Home/issues/9989) 의 성능 문제
 [thomaslevesque](https://github.com/thomaslevesque) | [3442](https://github.com/NuGet/NuGet.Client/pull/3442) | SemanticVersion 클래스에 대 한 TypeConverter 추가- [#9125](https://github.com/NuGet/Home/issues/9125)
 
+## <a name="summary-whats-new-in-581"></a>요약: 5.8.1의 새로운 기능
+
+* package.lock.jspackages.config 5.8- [#10257](https://github.com/NuGet/Home/issues/10257) 에서 잘못 된 대상 프레임 워크를 사용 합니다.
+
+* 5.8 + 16.8 PackageReference 및 packages.config를 혼합할 때 전이적 프로젝트 종속성을 확인할 수 없습니다 [#10326](https://github.com/NuGet/Home/issues/10326)
+
+**[이 릴리스에서 수정 된 모든 문제 목록-5.8.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5ff7aeae16150e3b19910391)**
+
+**[이 릴리스의 커밋 목록-5.8.1](https://github.com/NuGet/NuGet.Client/compare/5.8.0.6930...5.8.1.7021)**
 
 ## <a name="feedback-welcome"></a>사용자 의견 환영
 
