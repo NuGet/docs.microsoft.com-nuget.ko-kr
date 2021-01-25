@@ -1,44 +1,32 @@
 ---
 title: NuGet PackageReference 형식(프로젝트 파일의 패키지 참조)
 description: NuGet 4.0 이상, VS2017 및 .NET Core 2.0에서 지원되는 프로젝트 파일에 있는 NuGet PackageReference에 대한 세부 정보
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1127e7aee27d57abd5f14dd3bea82dfff3ba6d93
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: dcaed83ca54e3234702e963ffc2ebbde4cd75b28
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699785"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235765"
 ---
-# <a name="package-references-packagereference-in-project-files"></a><span data-ttu-id="d9486-103">프로젝트 파일의 패키지 참조(PackageReference)</span><span class="sxs-lookup"><span data-stu-id="d9486-103">Package references (PackageReference) in project files</span></span>
+# <a name="package-references-packagereference-in-project-files"></a><span data-ttu-id="cda22-103">프로젝트 파일의 패키지 참조(PackageReference)</span><span class="sxs-lookup"><span data-stu-id="cda22-103">Package references (PackageReference) in project files</span></span>
 
-<span data-ttu-id="d9486-104">`PackageReference` 노드를 사용하는 패키지 참조는 별도의 `packages.config` 파일이 아닌 프로젝트 파일 내에서 직접 NuGet 종속성을 관리합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-104">Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file).</span></span> <span data-ttu-id="d9486-105">PackageReference를 사용하면 NuGet의 다른 측면이 영향을 받지 않습니다. 예를 들어 `NuGet.config` 파일의 설정(패키지 소스 포함)은 [일반적인 NuGet 구성](configuring-nuget-behavior.md)에 설명된 대로 계속 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-105">Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).</span></span>
+<span data-ttu-id="cda22-104">`PackageReference` 노드를 사용하는 패키지 참조는 별도의 `packages.config` 파일이 아닌 프로젝트 파일 내에서 직접 NuGet 종속성을 관리합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-104">Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file).</span></span> <span data-ttu-id="cda22-105">PackageReference를 사용하면 NuGet의 다른 측면이 영향을 받지 않습니다. 예를 들어 `NuGet.config` 파일의 설정(패키지 소스 포함)은 [일반적인 NuGet 구성](configuring-nuget-behavior.md)에 설명된 대로 계속 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-105">Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).</span></span>
 
-<span data-ttu-id="d9486-106">또한 PackageReference를 사용하면 MSBuild 조건을 사용하여 대상 프레임워크 또는 기타 그룹화당 패키지 참조를 선택할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-106">With PackageReference, you can also use MSBuild conditions to choose package references per target framework, or other groupings.</span></span> <span data-ttu-id="d9486-107">종속성과 콘텐츠 흐름을 세밀하게 제어할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-107">It also allows for fine-grained control over dependencies and content flow.</span></span> <span data-ttu-id="d9486-108">(자세한 내용은 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.)</span><span class="sxs-lookup"><span data-stu-id="d9486-108">(See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)</span></span>
+<span data-ttu-id="cda22-106">또한 PackageReference를 사용하면 MSBuild 조건을 사용하여 대상 프레임워크 또는 기타 그룹화당 패키지 참조를 선택할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-106">With PackageReference, you can also use MSBuild conditions to choose package references per target framework, or other groupings.</span></span> <span data-ttu-id="cda22-107">종속성과 콘텐츠 흐름을 세밀하게 제어할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-107">It also allows for fine-grained control over dependencies and content flow.</span></span> <span data-ttu-id="cda22-108">(자세한 내용은 [MSBuild 대상으로서의 NuGet pack 및 restore](../reference/msbuild-targets.md)를 참조하세요.)</span><span class="sxs-lookup"><span data-stu-id="cda22-108">(See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)</span></span>
 
-## <a name="project-type-support"></a><span data-ttu-id="d9486-109">프로젝트 형식 지원</span><span class="sxs-lookup"><span data-stu-id="d9486-109">Project type support</span></span>
+## <a name="project-type-support"></a><span data-ttu-id="cda22-109">프로젝트 형식 지원</span><span class="sxs-lookup"><span data-stu-id="cda22-109">Project type support</span></span>
 
-<span data-ttu-id="d9486-110">기본적으로 PackageReference는 Windows 10 빌드 15063(크리에이터스 업데이트) 이상을 대상으로 하는 .NET Core 프로젝트, .NET Standard 프로젝트 및 UWP 프로젝트에 사용됩니다(C++ UWP 프로젝트는 제외).</span><span class="sxs-lookup"><span data-stu-id="d9486-110">By default, PackageReference is used for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later, with the exception of C++ UWP projects.</span></span> <span data-ttu-id="d9486-111">.NET Framework 프로젝트는 PackageReference를 지원하지만 현재 기본값은 `packages.config`입니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-111">.NET Framework projects support PackageReference, but currently default to `packages.config`.</span></span> <span data-ttu-id="d9486-112">PackageReference를 사용하려면 종속성을 `packages.config`에서 프로젝트 파일로 [마이그레이션](../consume-packages/migrate-packages-config-to-package-reference.md)한 후 packages.config를 제거하세요.</span><span class="sxs-lookup"><span data-stu-id="d9486-112">To use PackageReference, [migrate](../consume-packages/migrate-packages-config-to-package-reference.md) the dependencies from `packages.config` into your project file, then remove packages.config.</span></span>
+<span data-ttu-id="cda22-110">기본적으로 PackageReference는 Windows 10 빌드 15063(크리에이터스 업데이트) 이상을 대상으로 하는 .NET Core 프로젝트, .NET Standard 프로젝트 및 UWP 프로젝트에 사용됩니다(C++ UWP 프로젝트는 제외).</span><span class="sxs-lookup"><span data-stu-id="cda22-110">By default, PackageReference is used for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later, with the exception of C++ UWP projects.</span></span> <span data-ttu-id="cda22-111">.NET Framework 프로젝트는 PackageReference를 지원하지만 현재 기본값은 `packages.config`입니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-111">.NET Framework projects support PackageReference, but currently default to `packages.config`.</span></span> <span data-ttu-id="cda22-112">PackageReference를 사용하려면 종속성을 `packages.config`에서 프로젝트 파일로 [마이그레이션](../consume-packages/migrate-packages-config-to-package-reference.md)한 후 packages.config를 제거하세요.</span><span class="sxs-lookup"><span data-stu-id="cda22-112">To use PackageReference, [migrate](../consume-packages/migrate-packages-config-to-package-reference.md) the dependencies from `packages.config` into your project file, then remove packages.config.</span></span>
 
-<span data-ttu-id="d9486-113">전체 .NET Framework를 대상으로 하는 ASP.NET 앱은 PackageReference에 대한 [제한적 지원](https://github.com/NuGet/Home/issues/5877)만 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-113">ASP.NET apps targeting the full .NET Framework include only [limited support](https://github.com/NuGet/Home/issues/5877) for PackageReference.</span></span> <span data-ttu-id="d9486-114">C++ 및 JavaScript 프로젝트 형식은 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-114">C++ and JavaScript project types are unsupported.</span></span>
+<span data-ttu-id="cda22-113">전체 .NET Framework를 대상으로 하는 ASP.NET 앱은 PackageReference에 대한 [제한적 지원](https://github.com/NuGet/Home/issues/5877)만 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-113">ASP.NET apps targeting the full .NET Framework include only [limited support](https://github.com/NuGet/Home/issues/5877) for PackageReference.</span></span> <span data-ttu-id="cda22-114">C++ 및 JavaScript 프로젝트 형식은 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-114">C++ and JavaScript project types are unsupported.</span></span>
 
-## <a name="adding-a-packagereference"></a><span data-ttu-id="d9486-115">PackageReference 추가</span><span class="sxs-lookup"><span data-stu-id="d9486-115">Adding a PackageReference</span></span>
+## <a name="adding-a-packagereference"></a><span data-ttu-id="cda22-115">PackageReference 추가</span><span class="sxs-lookup"><span data-stu-id="cda22-115">Adding a PackageReference</span></span>
 
-<span data-ttu-id="d9486-116">다음 구문을 사용하여 프로젝트 파일에서 종속성을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-116">Add a dependency in your project file using the following syntax:</span></span>
-
-```xml
-<ItemGroup>
-    <!-- ... -->
-    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
-    <!-- ... -->
-</ItemGroup>
-```
-
-## <a name="controlling-dependency-version"></a><span data-ttu-id="d9486-117">종속성 버전 제어</span><span class="sxs-lookup"><span data-stu-id="d9486-117">Controlling dependency version</span></span>
-
-<span data-ttu-id="d9486-118">패키지의 버전을 지정하는 규칙은 `packages.config`를 사용하는 경우와 동일합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-118">The convention for specifying the version of a package is the same as when using `packages.config`:</span></span>
+<span data-ttu-id="cda22-116">다음 구문을 사용하여 프로젝트 파일에서 종속성을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-116">Add a dependency in your project file using the following syntax:</span></span>
 
 ```xml
 <ItemGroup>
@@ -48,11 +36,23 @@ ms.locfileid: "97699785"
 </ItemGroup>
 ```
 
-<span data-ttu-id="d9486-119">위의 예에서 3.6.0은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges)에 설명된 대로 가장 낮은 버전의 기본 설정으로 >=3.6.0인 버전을 가르킵니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-119">In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges).</span></span>
+## <a name="controlling-dependency-version"></a><span data-ttu-id="cda22-117">종속성 버전 제어</span><span class="sxs-lookup"><span data-stu-id="cda22-117">Controlling dependency version</span></span>
 
-## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a><span data-ttu-id="d9486-120">PackageReferences가 없는 프로젝트에 대해 PackageReference 사용</span><span class="sxs-lookup"><span data-stu-id="d9486-120">Using PackageReference for a project with no PackageReferences</span></span>
+<span data-ttu-id="cda22-118">패키지의 버전을 지정하는 규칙은 `packages.config`를 사용하는 경우와 동일합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-118">The convention for specifying the version of a package is the same as when using `packages.config`:</span></span>
 
-<span data-ttu-id="d9486-121">고급: 프로젝트에 설치된 패키지가 없지만(프로젝트 파일에 PackageReferences가 없고 packages.config 파일이 없음) 프로젝트를 PackageReference 스타일로 복원하려는 경우 프로젝트 속성 RestoreProjectStyle을 프로젝트 파일의 PackageReference로 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-121">Advanced: If you have no packages installed in a project (no PackageReferences in project file and no packages.config file), but want the project to be restored as PackageReference style, you can set a Project property RestoreProjectStyle to PackageReference in your project file.</span></span>
+```xml
+<ItemGroup>
+    <!-- ... -->
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
+    <!-- ... -->
+</ItemGroup>
+```
+
+<span data-ttu-id="cda22-119">위의 예에서 3.6.0은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges)에 설명된 대로 가장 낮은 버전의 기본 설정으로 >=3.6.0인 버전을 가르킵니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-119">In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges).</span></span>
+
+## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a><span data-ttu-id="cda22-120">PackageReferences가 없는 프로젝트에 대해 PackageReference 사용</span><span class="sxs-lookup"><span data-stu-id="cda22-120">Using PackageReference for a project with no PackageReferences</span></span>
+
+<span data-ttu-id="cda22-121">고급: 프로젝트에 설치된 패키지가 없지만(프로젝트 파일에 PackageReferences가 없고 packages.config 파일이 없음) 프로젝트를 PackageReference 스타일로 복원하려는 경우 프로젝트 속성 RestoreProjectStyle을 프로젝트 파일의 PackageReference로 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-121">Advanced: If you have no packages installed in a project (no PackageReferences in project file and no packages.config file), but want the project to be restored as PackageReference style, you can set a Project property RestoreProjectStyle to PackageReference in your project file.</span></span>
 
 ```xml
 <PropertyGroup>
@@ -62,15 +62,15 @@ ms.locfileid: "97699785"
 </PropertyGroup>    
 ```
 
-<span data-ttu-id="d9486-122">PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 프로젝트)를 참조하는 경우에 유용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-122">This may be useful, if you reference projects which are PackageReference styled (existing csproj or SDK-style projects).</span></span> <span data-ttu-id="d9486-123">이렇게 하면 해당 프로젝트가 참조하는 패키지는 프로젝트에서 "전이적으로" 참조합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-123">This will enable packages that those projects refer to, to be "transitively" referenced by your project.</span></span>
+<span data-ttu-id="cda22-122">PackageReference 스타일인 프로젝트(기존 csproj 또는 SDK 스타일 프로젝트)를 참조하는 경우에 유용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-122">This may be useful, if you reference projects which are PackageReference styled (existing csproj or SDK-style projects).</span></span> <span data-ttu-id="cda22-123">이렇게 하면 해당 프로젝트가 참조하는 패키지는 프로젝트에서 "전이적으로" 참조합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-123">This will enable packages that those projects refer to, to be "transitively" referenced by your project.</span></span>
 
-## <a name="packagereference-and-sources"></a><span data-ttu-id="d9486-124">PackageReference 및 소스</span><span class="sxs-lookup"><span data-stu-id="d9486-124">PackageReference and sources</span></span>
+## <a name="packagereference-and-sources"></a><span data-ttu-id="cda22-124">PackageReference 및 소스</span><span class="sxs-lookup"><span data-stu-id="cda22-124">PackageReference and sources</span></span>
 
-<span data-ttu-id="d9486-125">PackageReference 프로젝트에서 전이 종속성 버전은 복원 시간에 확인됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-125">In PackageReference projects, the transitive dependency versions are resolved at restore time.</span></span> <span data-ttu-id="d9486-126">따라서 PackageReference 프로젝트에서 모든 복원에 대해 모든 소스를 사용할 수 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-126">As such, in PackageReference projects all sources need to be available for all restores.</span></span> 
+<span data-ttu-id="cda22-125">PackageReference 프로젝트에서 전이 종속성 버전은 복원 시간에 확인됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-125">In PackageReference projects, the transitive dependency versions are resolved at restore time.</span></span> <span data-ttu-id="cda22-126">따라서 PackageReference 프로젝트에서 모든 복원에 대해 모든 소스를 사용할 수 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-126">As such, in PackageReference projects all sources need to be available for all restores.</span></span> 
 
-## <a name="floating-versions"></a><span data-ttu-id="d9486-127">부동 버전</span><span class="sxs-lookup"><span data-stu-id="d9486-127">Floating Versions</span></span>
+## <a name="floating-versions"></a><span data-ttu-id="cda22-127">부동 버전</span><span class="sxs-lookup"><span data-stu-id="cda22-127">Floating Versions</span></span>
 
-<span data-ttu-id="d9486-128">[부동 버전](../concepts/dependency-resolution.md#floating-versions)은 `PackageReference`에서 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-128">[Floating versions](../concepts/dependency-resolution.md#floating-versions) are supported with `PackageReference`:</span></span>
+<span data-ttu-id="cda22-128">[부동 버전](../concepts/dependency-resolution.md#floating-versions)은 `PackageReference`에서 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-128">[Floating versions](../concepts/dependency-resolution.md#floating-versions) are supported with `PackageReference`:</span></span>
 
 ```xml
 <ItemGroup>
@@ -81,9 +81,9 @@ ms.locfileid: "97699785"
 </ItemGroup>
 ```
 
-## <a name="controlling-dependency-assets"></a><span data-ttu-id="d9486-129">종속성 자산 제어</span><span class="sxs-lookup"><span data-stu-id="d9486-129">Controlling dependency assets</span></span>
+## <a name="controlling-dependency-assets"></a><span data-ttu-id="cda22-129">종속성 자산 제어</span><span class="sxs-lookup"><span data-stu-id="cda22-129">Controlling dependency assets</span></span>
 
-<span data-ttu-id="d9486-130">종속성을 개발 도구로서 전적으로 사용하면 패키지를 사용하는 프로젝트에 노출하지 않을 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-130">You might be using a dependency purely as a development harness and might not want to expose that to projects that will consume your package.</span></span> <span data-ttu-id="d9486-131">이 시나리오에서는 `PrivateAssets` 메타데이터를 사용하여 이 동작을 제어할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-131">In this scenario, you can use the `PrivateAssets` metadata to control this behavior.</span></span>
+<span data-ttu-id="cda22-130">종속성을 개발 도구로서 전적으로 사용하면 패키지를 사용하는 프로젝트에 노출하지 않을 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-130">You might be using a dependency purely as a development harness and might not want to expose that to projects that will consume your package.</span></span> <span data-ttu-id="cda22-131">이 시나리오에서는 `PrivateAssets` 메타데이터를 사용하여 이 동작을 제어할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-131">In this scenario, you can use the `PrivateAssets` metadata to control this behavior.</span></span>
 
 ```xml
 <ItemGroup>
@@ -97,30 +97,30 @@ ms.locfileid: "97699785"
 </ItemGroup>
 ```
 
-<span data-ttu-id="d9486-132">다음 메타데이터 태그는 종속성 자산을 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-132">The following metadata tags control dependency assets:</span></span>
+<span data-ttu-id="cda22-132">다음 메타데이터 태그는 종속성 자산을 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-132">The following metadata tags control dependency assets:</span></span>
 
-| <span data-ttu-id="d9486-133">태그</span><span class="sxs-lookup"><span data-stu-id="d9486-133">Tag</span></span> | <span data-ttu-id="d9486-134">설명</span><span class="sxs-lookup"><span data-stu-id="d9486-134">Description</span></span> | <span data-ttu-id="d9486-135">기본값</span><span class="sxs-lookup"><span data-stu-id="d9486-135">Default Value</span></span> |
+| <span data-ttu-id="cda22-133">태그</span><span class="sxs-lookup"><span data-stu-id="cda22-133">Tag</span></span> | <span data-ttu-id="cda22-134">설명</span><span class="sxs-lookup"><span data-stu-id="cda22-134">Description</span></span> | <span data-ttu-id="cda22-135">기본값</span><span class="sxs-lookup"><span data-stu-id="cda22-135">Default Value</span></span> |
 | --- | --- | --- |
-| <span data-ttu-id="d9486-136">IncludeAssets</span><span class="sxs-lookup"><span data-stu-id="d9486-136">IncludeAssets</span></span> | <span data-ttu-id="d9486-137">이러한 자산을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-137">These assets will be consumed</span></span> | <span data-ttu-id="d9486-138">모두</span><span class="sxs-lookup"><span data-stu-id="d9486-138">all</span></span> |
-| <span data-ttu-id="d9486-139">ExcludeAssets</span><span class="sxs-lookup"><span data-stu-id="d9486-139">ExcludeAssets</span></span> | <span data-ttu-id="d9486-140">이러한 자산을 사용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-140">These assets will not be consumed</span></span> | <span data-ttu-id="d9486-141">없음</span><span class="sxs-lookup"><span data-stu-id="d9486-141">none</span></span> |
-| <span data-ttu-id="d9486-142">PrivateAssets</span><span class="sxs-lookup"><span data-stu-id="d9486-142">PrivateAssets</span></span> | <span data-ttu-id="d9486-143">이러한 자산을 사용하지만 부모 프로젝트로 흐르지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-143">These assets will be consumed but won't flow to the parent project</span></span> | <span data-ttu-id="d9486-144">contentfiles;analyzers;build</span><span class="sxs-lookup"><span data-stu-id="d9486-144">contentfiles;analyzers;build</span></span> |
+| <span data-ttu-id="cda22-136">IncludeAssets</span><span class="sxs-lookup"><span data-stu-id="cda22-136">IncludeAssets</span></span> | <span data-ttu-id="cda22-137">이러한 자산을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-137">These assets will be consumed</span></span> | <span data-ttu-id="cda22-138">모두</span><span class="sxs-lookup"><span data-stu-id="cda22-138">all</span></span> |
+| <span data-ttu-id="cda22-139">ExcludeAssets</span><span class="sxs-lookup"><span data-stu-id="cda22-139">ExcludeAssets</span></span> | <span data-ttu-id="cda22-140">이러한 자산을 사용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-140">These assets will not be consumed</span></span> | <span data-ttu-id="cda22-141">없음</span><span class="sxs-lookup"><span data-stu-id="cda22-141">none</span></span> |
+| <span data-ttu-id="cda22-142">PrivateAssets</span><span class="sxs-lookup"><span data-stu-id="cda22-142">PrivateAssets</span></span> | <span data-ttu-id="cda22-143">이러한 자산을 사용하지만 부모 프로젝트로 흐르지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-143">These assets will be consumed but won't flow to the parent project</span></span> | <span data-ttu-id="cda22-144">contentfiles;analyzers;build</span><span class="sxs-lookup"><span data-stu-id="cda22-144">contentfiles;analyzers;build</span></span> |
 
-<span data-ttu-id="d9486-145">이러한 태그에 허용 가능한 값은 단독으로 표시해야 하는 `all` 및 `none`를 제외하고 세미콜론으로 구분된 값이 여러 개인 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-145">Allowable values for these tags are as follows, with multiple values separated by a semicolon except with `all` and `none` which must appear by themselves:</span></span>
+<span data-ttu-id="cda22-145">이러한 태그에 허용 가능한 값은 단독으로 표시해야 하는 `all` 및 `none`를 제외하고 세미콜론으로 구분된 값이 여러 개인 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-145">Allowable values for these tags are as follows, with multiple values separated by a semicolon except with `all` and `none` which must appear by themselves:</span></span>
 
-| <span data-ttu-id="d9486-146">값</span><span class="sxs-lookup"><span data-stu-id="d9486-146">Value</span></span> | <span data-ttu-id="d9486-147">설명</span><span class="sxs-lookup"><span data-stu-id="d9486-147">Description</span></span> |
+| <span data-ttu-id="cda22-146">값</span><span class="sxs-lookup"><span data-stu-id="cda22-146">Value</span></span> | <span data-ttu-id="cda22-147">설명</span><span class="sxs-lookup"><span data-stu-id="cda22-147">Description</span></span> |
 | --- | ---
-| <span data-ttu-id="d9486-148">compile</span><span class="sxs-lookup"><span data-stu-id="d9486-148">compile</span></span> | <span data-ttu-id="d9486-149">`lib` 폴더의 콘텐츠이며 프로젝트에서 폴더 내의 어셈블리를 컴파일할 수 있는지 여부 제어</span><span class="sxs-lookup"><span data-stu-id="d9486-149">Contents of the `lib` folder and controls whether your project can compile against the assemblies within the folder</span></span> |
-| <span data-ttu-id="d9486-150">런타임</span><span class="sxs-lookup"><span data-stu-id="d9486-150">runtime</span></span> | <span data-ttu-id="d9486-151">`lib` 및 `runtimes` 폴더의 콘텐츠이며 이러한 어셈블리가 빌드 출력 디렉터리에 복사되는지 여부 제어</span><span class="sxs-lookup"><span data-stu-id="d9486-151">Contents of the `lib` and `runtimes` folder and controls whether these assemblies will be copied out to the build output directory</span></span> |
-| <span data-ttu-id="d9486-152">contentFiles</span><span class="sxs-lookup"><span data-stu-id="d9486-152">contentFiles</span></span> | <span data-ttu-id="d9486-153">`contentfiles` 폴더의 콘텐츠</span><span class="sxs-lookup"><span data-stu-id="d9486-153">Contents of the `contentfiles` folder</span></span> |
-| <span data-ttu-id="d9486-154">빌드</span><span class="sxs-lookup"><span data-stu-id="d9486-154">build</span></span> | <span data-ttu-id="d9486-155">`build` 폴더의 `.props` 및 `.targets`</span><span class="sxs-lookup"><span data-stu-id="d9486-155">`.props` and `.targets` in the `build` folder</span></span> |
-| <span data-ttu-id="d9486-156">buildMultitargeting</span><span class="sxs-lookup"><span data-stu-id="d9486-156">buildMultitargeting</span></span> | <span data-ttu-id="d9486-157">*(4.0)* 프레임워크 간 타기팅을 위한 `buildMultitargeting` 폴더의 `.props` 및 `.targets`</span><span class="sxs-lookup"><span data-stu-id="d9486-157">*(4.0)* `.props` and `.targets` in the `buildMultitargeting` folder, for cross-framework targeting</span></span> |
-| <span data-ttu-id="d9486-158">buildTransitive</span><span class="sxs-lookup"><span data-stu-id="d9486-158">buildTransitive</span></span> | <span data-ttu-id="d9486-159">‘(5.0 이상)’ 사용하는 프로젝트로 전이적으로 흐르는 자산을 위한 `buildTransitive` 폴더의 `.props` 및 `.targets` </span><span class="sxs-lookup"><span data-stu-id="d9486-159">*(5.0+)* `.props` and `.targets` in the `buildTransitive` folder, for assets that flow transitively to any consuming project.</span></span> <span data-ttu-id="d9486-160">[기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="d9486-160">See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page.</span></span> |
-| <span data-ttu-id="d9486-161">분석기</span><span class="sxs-lookup"><span data-stu-id="d9486-161">analyzers</span></span> | <span data-ttu-id="d9486-162">.NET 분석기</span><span class="sxs-lookup"><span data-stu-id="d9486-162">.NET analyzers</span></span> |
-| <span data-ttu-id="d9486-163">native</span><span class="sxs-lookup"><span data-stu-id="d9486-163">native</span></span> | <span data-ttu-id="d9486-164">`native` 폴더의 콘텐츠</span><span class="sxs-lookup"><span data-stu-id="d9486-164">Contents of the `native` folder</span></span> |
-| <span data-ttu-id="d9486-165">없음</span><span class="sxs-lookup"><span data-stu-id="d9486-165">none</span></span> | <span data-ttu-id="d9486-166">위의 항목을 사용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-166">None of the above are used.</span></span> |
-| <span data-ttu-id="d9486-167">모두</span><span class="sxs-lookup"><span data-stu-id="d9486-167">all</span></span> | <span data-ttu-id="d9486-168">위 모두 해당(`none` 제외)</span><span class="sxs-lookup"><span data-stu-id="d9486-168">All of the above (except `none`)</span></span> |
+| <span data-ttu-id="cda22-148">compile</span><span class="sxs-lookup"><span data-stu-id="cda22-148">compile</span></span> | <span data-ttu-id="cda22-149">`lib` 폴더의 콘텐츠이며 프로젝트에서 폴더 내의 어셈블리를 컴파일할 수 있는지 여부 제어</span><span class="sxs-lookup"><span data-stu-id="cda22-149">Contents of the `lib` folder and controls whether your project can compile against the assemblies within the folder</span></span> |
+| <span data-ttu-id="cda22-150">런타임</span><span class="sxs-lookup"><span data-stu-id="cda22-150">runtime</span></span> | <span data-ttu-id="cda22-151">`lib` 및 `runtimes` 폴더의 콘텐츠이며 이러한 어셈블리가 빌드 출력 디렉터리에 복사되는지 여부 제어</span><span class="sxs-lookup"><span data-stu-id="cda22-151">Contents of the `lib` and `runtimes` folder and controls whether these assemblies will be copied out to the build output directory</span></span> |
+| <span data-ttu-id="cda22-152">contentFiles</span><span class="sxs-lookup"><span data-stu-id="cda22-152">contentFiles</span></span> | <span data-ttu-id="cda22-153">`contentfiles` 폴더의 콘텐츠</span><span class="sxs-lookup"><span data-stu-id="cda22-153">Contents of the `contentfiles` folder</span></span> |
+| <span data-ttu-id="cda22-154">빌드</span><span class="sxs-lookup"><span data-stu-id="cda22-154">build</span></span> | <span data-ttu-id="cda22-155">`build` 폴더의 `.props` 및 `.targets`</span><span class="sxs-lookup"><span data-stu-id="cda22-155">`.props` and `.targets` in the `build` folder</span></span> |
+| <span data-ttu-id="cda22-156">buildMultitargeting</span><span class="sxs-lookup"><span data-stu-id="cda22-156">buildMultitargeting</span></span> | <span data-ttu-id="cda22-157">*(4.0)* 프레임워크 간 타기팅을 위한 `buildMultitargeting` 폴더의 `.props` 및 `.targets`</span><span class="sxs-lookup"><span data-stu-id="cda22-157">*(4.0)* `.props` and `.targets` in the `buildMultitargeting` folder, for cross-framework targeting</span></span> |
+| <span data-ttu-id="cda22-158">buildTransitive</span><span class="sxs-lookup"><span data-stu-id="cda22-158">buildTransitive</span></span> | <span data-ttu-id="cda22-159">‘(5.0 이상)’ 사용하는 프로젝트로 전이적으로 흐르는 자산을 위한 `buildTransitive` 폴더의 `.props` 및 `.targets` </span><span class="sxs-lookup"><span data-stu-id="cda22-159">*(5.0+)* `.props` and `.targets` in the `buildTransitive` folder, for assets that flow transitively to any consuming project.</span></span> <span data-ttu-id="cda22-160">[기능](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) 페이지를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="cda22-160">See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page.</span></span> |
+| <span data-ttu-id="cda22-161">분석기</span><span class="sxs-lookup"><span data-stu-id="cda22-161">analyzers</span></span> | <span data-ttu-id="cda22-162">.NET 분석기</span><span class="sxs-lookup"><span data-stu-id="cda22-162">.NET analyzers</span></span> |
+| <span data-ttu-id="cda22-163">native</span><span class="sxs-lookup"><span data-stu-id="cda22-163">native</span></span> | <span data-ttu-id="cda22-164">`native` 폴더의 콘텐츠</span><span class="sxs-lookup"><span data-stu-id="cda22-164">Contents of the `native` folder</span></span> |
+| <span data-ttu-id="cda22-165">없음</span><span class="sxs-lookup"><span data-stu-id="cda22-165">none</span></span> | <span data-ttu-id="cda22-166">위의 항목을 사용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-166">None of the above are used.</span></span> |
+| <span data-ttu-id="cda22-167">모두</span><span class="sxs-lookup"><span data-stu-id="cda22-167">all</span></span> | <span data-ttu-id="cda22-168">위 모두 해당(`none` 제외)</span><span class="sxs-lookup"><span data-stu-id="cda22-168">All of the above (except `none`)</span></span> |
 
-<span data-ttu-id="d9486-169">다음 예제에서는 패키지의 콘텐츠 파일을 제외한 모든 항목을 프로젝트에서 사용할 수 있으며 콘텐츠 파일과 분석기를 제외한 모든 항목이 부모 프로젝트로 전달됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-169">In the following example, everything except the content files from the package would be consumed by the project and everything except content files and analyzers would flow to the parent project.</span></span>
+<span data-ttu-id="cda22-169">다음 예제에서는 패키지의 콘텐츠 파일을 제외한 모든 항목을 프로젝트에서 사용할 수 있으며 콘텐츠 파일과 분석기를 제외한 모든 항목이 부모 프로젝트로 전달됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-169">In the following example, everything except the content files from the package would be consumed by the project and everything except content files and analyzers would flow to the parent project.</span></span>
 
 ```xml
 <ItemGroup>
@@ -136,16 +136,16 @@ ms.locfileid: "97699785"
 </ItemGroup>
 ```
 
-<span data-ttu-id="d9486-170">`build`가 `PrivateAssets`에 포함되지 않기 때문에 대상 및 props은 부모 프로젝트로 전달되게 *됩니다*.</span><span class="sxs-lookup"><span data-stu-id="d9486-170">Note that because `build` is not included with `PrivateAssets`, targets and props *will* flow to the parent project.</span></span> <span data-ttu-id="d9486-171">예를 들어 위의 참조가 AppLogger라는 NuGet 패키지를 빌드하는 프로젝트에서 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-171">Consider, for example, that the reference above is used in a project that builds a NuGet package called AppLogger.</span></span> <span data-ttu-id="d9486-172">프로젝트가 AppLogger를 사용할 수 있는 것처럼 AppLogger는 `Contoso.Utility.UsefulStuff`의 대상 및 props을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-172">AppLogger can consume the targets and props from `Contoso.Utility.UsefulStuff`, as can projects that consume AppLogger.</span></span>
+<span data-ttu-id="cda22-170">`build`가 `PrivateAssets`에 포함되지 않기 때문에 대상 및 props은 부모 프로젝트로 전달되게 *됩니다*.</span><span class="sxs-lookup"><span data-stu-id="cda22-170">Note that because `build` is not included with `PrivateAssets`, targets and props *will* flow to the parent project.</span></span> <span data-ttu-id="cda22-171">예를 들어 위의 참조가 AppLogger라는 NuGet 패키지를 빌드하는 프로젝트에서 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-171">Consider, for example, that the reference above is used in a project that builds a NuGet package called AppLogger.</span></span> <span data-ttu-id="cda22-172">프로젝트가 AppLogger를 사용할 수 있는 것처럼 AppLogger는 `Contoso.Utility.UsefulStuff`의 대상 및 props을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-172">AppLogger can consume the targets and props from `Contoso.Utility.UsefulStuff`, as can projects that consume AppLogger.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d9486-173">`.nuspec` 파일에서 `developmentDependency`가 `true`로 설정되면 패키지가 개발 전용 종속성으로 표시되므로 해당 패키지가 다른 패키지의 종속성으로 포함되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-173">When `developmentDependency` is set to `true` in a `.nuspec` file, this marks a package as a development-only dependency, which prevents the package from being included as a dependency in other packages.</span></span> <span data-ttu-id="d9486-174">PackageReference *(NuGet 4.8 이상)* 를 사용하는 경우 이 플래그는 컴파일 시간 자산을 컴파일에서 제외한다는 의미이기도 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-174">With PackageReference *(NuGet 4.8+)*, this flag also means that it will exclude compile-time assets from compilation.</span></span> <span data-ttu-id="d9486-175">자세한 내용은 [PackageReference에 대한 DevelopmentDependency 지원](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="d9486-175">For more information, see [DevelopmentDependency support for PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference).</span></span>
+> <span data-ttu-id="cda22-173">`.nuspec` 파일에서 `developmentDependency`가 `true`로 설정되면 패키지가 개발 전용 종속성으로 표시되므로 해당 패키지가 다른 패키지의 종속성으로 포함되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-173">When `developmentDependency` is set to `true` in a `.nuspec` file, this marks a package as a development-only dependency, which prevents the package from being included as a dependency in other packages.</span></span> <span data-ttu-id="cda22-174">PackageReference *(NuGet 4.8 이상)* 를 사용하는 경우 이 플래그는 컴파일 시간 자산을 컴파일에서 제외한다는 의미이기도 합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-174">With PackageReference *(NuGet 4.8+)*, this flag also means that it will exclude compile-time assets from compilation.</span></span> <span data-ttu-id="cda22-175">자세한 내용은 [PackageReference에 대한 DevelopmentDependency 지원](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="cda22-175">For more information, see [DevelopmentDependency support for PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference).</span></span>
 
-## <a name="adding-a-packagereference-condition"></a><span data-ttu-id="d9486-176">PackageReference 조건 추가</span><span class="sxs-lookup"><span data-stu-id="d9486-176">Adding a PackageReference condition</span></span>
+## <a name="adding-a-packagereference-condition"></a><span data-ttu-id="cda22-176">PackageReference 조건 추가</span><span class="sxs-lookup"><span data-stu-id="cda22-176">Adding a PackageReference condition</span></span>
 
-<span data-ttu-id="d9486-177">조건이 모든 MSBuild 변수 또는 대상이나 props 파일에 정의된 변수를 사용할 수 있는 경우에 패키지가 포함되어 있는지를 제어하는 조건을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-177">You can use a condition to control whether a package is included, where conditions can use any MSBuild variable or a variable defined in the targets or props file.</span></span> <span data-ttu-id="d9486-178">그러나 현재는 `TargetFramework` 변수만이 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-178">However, at presently, only the `TargetFramework` variable is supported.</span></span>
+<span data-ttu-id="cda22-177">조건이 모든 MSBuild 변수 또는 대상이나 props 파일에 정의된 변수를 사용할 수 있는 경우에 패키지가 포함되어 있는지를 제어하는 조건을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-177">You can use a condition to control whether a package is included, where conditions can use any MSBuild variable or a variable defined in the targets or props file.</span></span> <span data-ttu-id="cda22-178">그러나 현재는 `TargetFramework` 변수만이 지원됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-178">However, at presently, only the `TargetFramework` variable is supported.</span></span>
 
-<span data-ttu-id="d9486-179">예를 들어 `net452`뿐만 아니라 `netstandard1.4`를 대상으로 지정했지만 `net452`에만 적용할 수 있는 종속성이 있다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-179">For example, say you're targeting `netstandard1.4` as well as `net452` but have a dependency that is applicable only for `net452`.</span></span> <span data-ttu-id="d9486-180">이 경우에 불필요한 해당 종속성을 추가하는 패키지를 사용하는 `netstandard1.4` 프로젝트를 사용하지 않으려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-180">In this case you don't want a `netstandard1.4` project that's consuming your package to add that unnecessary dependency.</span></span> <span data-ttu-id="d9486-181">이를 방지하려면 다음과 같이 `PackageReference`에 대한 조건을 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-181">To prevent this, you specify a condition on the `PackageReference` as follows:</span></span>
+<span data-ttu-id="cda22-179">예를 들어 `net452`뿐만 아니라 `netstandard1.4`를 대상으로 지정했지만 `net452`에만 적용할 수 있는 종속성이 있다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-179">For example, say you're targeting `netstandard1.4` as well as `net452` but have a dependency that is applicable only for `net452`.</span></span> <span data-ttu-id="cda22-180">이 경우에 불필요한 해당 종속성을 추가하는 패키지를 사용하는 `netstandard1.4` 프로젝트를 사용하지 않으려고 합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-180">In this case you don't want a `netstandard1.4` project that's consuming your package to add that unnecessary dependency.</span></span> <span data-ttu-id="cda22-181">이를 방지하려면 다음과 같이 `PackageReference`에 대한 조건을 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-181">To prevent this, you specify a condition on the `PackageReference` as follows:</span></span>
 
 ```xml
 <ItemGroup>
@@ -155,11 +155,11 @@ ms.locfileid: "97699785"
 </ItemGroup>
 ```
 
-<span data-ttu-id="d9486-182">이 프로젝트를 사용하여 빌드한 패키지는 Newtonsoft.Json이 `net452` 대상에서만 종속성으로 포함되어 있다고 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-182">A package built using this project will show that Newtonsoft.Json is included as a dependency only for a `net452` target:</span></span>
+<span data-ttu-id="cda22-182">이 프로젝트를 사용하여 빌드한 패키지는 Newtonsoft.Json이 `net452` 대상에서만 종속성으로 포함되어 있다고 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-182">A package built using this project will show that Newtonsoft.Json is included as a dependency only for a `net452` target:</span></span>
 
 ![VS2017에서 PackageReference에 대한 조건을 적용한 결과](media/PackageReference-Condition.png)
 
-<span data-ttu-id="d9486-184">조건은 `ItemGroup` 수준에도 적용될 수 있고 모든 자식 `PackageReference` 요소에 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-184">Conditions can also be applied at the `ItemGroup` level and will apply to all children `PackageReference` elements:</span></span>
+<span data-ttu-id="cda22-184">조건은 `ItemGroup` 수준에도 적용될 수 있고 모든 자식 `PackageReference` 요소에 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-184">Conditions can also be applied at the `ItemGroup` level and will apply to all children `PackageReference` elements:</span></span>
 
 ```xml
 <ItemGroup Condition = "'$(TargetFramework)' == 'net452'">
@@ -170,16 +170,16 @@ ms.locfileid: "97699785"
 </ItemGroup>
 ```
 
-## <a name="generatepathproperty"></a><span data-ttu-id="d9486-185">GeneratePathProperty</span><span class="sxs-lookup"><span data-stu-id="d9486-185">GeneratePathProperty</span></span>
+## <a name="generatepathproperty"></a><span data-ttu-id="cda22-185">GeneratePathProperty</span><span class="sxs-lookup"><span data-stu-id="cda22-185">GeneratePathProperty</span></span>
 
-<span data-ttu-id="d9486-186">이 기능은 NuGet **5.0** 이상 및 Visual Studio 2019 **16.0** 이상에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-186">This feature is available with NuGet **5.0** or above and with Visual Studio 2019 **16.0** or above.</span></span>
+<span data-ttu-id="cda22-186">이 기능은 NuGet **5.0** 이상 및 Visual Studio 2019 **16.0** 이상에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-186">This feature is available with NuGet **5.0** or above and with Visual Studio 2019 **16.0** or above.</span></span>
 
-<span data-ttu-id="d9486-187">경우에 따라 MSBuild 대상의 패키지 파일을 참조하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-187">Sometimes it is desirable to reference files in a package from an MSBuild target.</span></span>
-<span data-ttu-id="d9486-188">`packages.config` 기반 프로젝트에서 패키지는 프로젝트 파일의 상대 폴더에 설치됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-188">In `packages.config` based projects, the packages are installed in a folder relative to the project file.</span></span> <span data-ttu-id="d9486-189">그러나 PackageReference에서는 머신마다 다를 수 있는 *global-packages* 폴더의 패키지가 [사용](../concepts/package-installation-process.md)됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-189">However in PackageReference, the packages are [consumed](../concepts/package-installation-process.md) from the *global-packages* folder, which can vary from machine to machine.</span></span>
+<span data-ttu-id="cda22-187">경우에 따라 MSBuild 대상의 패키지 파일을 참조하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-187">Sometimes it is desirable to reference files in a package from an MSBuild target.</span></span>
+<span data-ttu-id="cda22-188">`packages.config` 기반 프로젝트에서 패키지는 프로젝트 파일의 상대 폴더에 설치됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-188">In `packages.config` based projects, the packages are installed in a folder relative to the project file.</span></span> <span data-ttu-id="cda22-189">그러나 PackageReference에서는 머신마다 다를 수 있는 *global-packages* 폴더의 패키지가 [사용](../concepts/package-installation-process.md)됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-189">However in PackageReference, the packages are [consumed](../concepts/package-installation-process.md) from the *global-packages* folder, which can vary from machine to machine.</span></span>
 
-<span data-ttu-id="d9486-190">이 문제를 해결하기 위해 NuGet은 사용할 패키지의 위치를 가리키는 속성을 도입했습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-190">To bridge that gap, NuGet introduced a property that points to the location from which the package will be consumed.</span></span>
+<span data-ttu-id="cda22-190">이 문제를 해결하기 위해 NuGet은 사용할 패키지의 위치를 가리키는 속성을 도입했습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-190">To bridge that gap, NuGet introduced a property that points to the location from which the package will be consumed.</span></span>
 
-<span data-ttu-id="d9486-191">예:</span><span class="sxs-lookup"><span data-stu-id="d9486-191">Example:</span></span>
+<span data-ttu-id="cda22-191">예:</span><span class="sxs-lookup"><span data-stu-id="cda22-191">Example:</span></span>
 
 ```xml
   <ItemGroup>
@@ -191,7 +191,7 @@ ms.locfileid: "97699785"
   </Target>
 ````
 
-<span data-ttu-id="d9486-192">또한 NuGet은 tools 폴더를 포함하는 패키지의 속성을 자동으로 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-192">Additionally NuGet will automatically generate properties for packages containing a tools folder.</span></span>
+<span data-ttu-id="cda22-192">또한 NuGet은 tools 폴더를 포함하는 패키지의 속성을 자동으로 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-192">Additionally NuGet will automatically generate properties for packages containing a tools folder.</span></span>
 
 ```xml
   <ItemGroup>
@@ -203,17 +203,17 @@ ms.locfileid: "97699785"
   </Target>
 ```
 
-<span data-ttu-id="d9486-193">MSBuild 속성과 패키지 ID에는 동일한 제한이 없기 때문에 패키지 ID를 MSBuild 이름으로 변경하고 `Pkg` 단어를 앞에 추가해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-193">MSBuild properties and package identities do not have the same restrictions so the package identity needs to be changed to an MSBuild friendly name, prefixed by the word `Pkg`.</span></span>
-<span data-ttu-id="d9486-194">생성된 속성의 정확한 이름을 확인하려면 생성된 [nuget.exe](../reference/msbuild-targets.md#restore-outputs) 파일을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-194">To verify the exact name of the property generated, look at the generated [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) file.</span></span>
+<span data-ttu-id="cda22-193">MSBuild 속성과 패키지 ID에는 동일한 제한이 없기 때문에 패키지 ID를 MSBuild 이름으로 변경하고 `Pkg` 단어를 앞에 추가해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-193">MSBuild properties and package identities do not have the same restrictions so the package identity needs to be changed to an MSBuild friendly name, prefixed by the word `Pkg`.</span></span>
+<span data-ttu-id="cda22-194">생성된 속성의 정확한 이름을 확인하려면 생성된 [nuget.exe](../reference/msbuild-targets.md#restore-outputs) 파일을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-194">To verify the exact name of the property generated, look at the generated [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) file.</span></span>
 
-## <a name="packagereference-aliases"></a><span data-ttu-id="d9486-195">PackageReference 별칭</span><span class="sxs-lookup"><span data-stu-id="d9486-195">PackageReference Aliases</span></span>
+## <a name="packagereference-aliases"></a><span data-ttu-id="cda22-195">PackageReference 별칭</span><span class="sxs-lookup"><span data-stu-id="cda22-195">PackageReference Aliases</span></span>
 
-<span data-ttu-id="d9486-196">드문 경우이지만 서로 다른 패키지에 동일한 네임스페이스의 클래스가 포함되기도 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-196">In some rare instances different packages will contain classes in the same namespace.</span></span> <span data-ttu-id="d9486-197">NuGet 5.7 및 Visual Studio 2019 업데이트 7부터 ProjectReference에 해당하는 PackageReference는 [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases)를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-197">Starting with NuGet 5.7 & Visual Studio 2019 Update 7, equivalent to ProjectReference, PackageReference supports [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases).</span></span>
-<span data-ttu-id="d9486-198">기본적으로 별칭은 제공되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-198">By default no aliases are provided.</span></span> <span data-ttu-id="d9486-199">별칭을 지정하는 경우 주석을 단 패키지에서 제공되는 ‘모든’ 어셈블리를 별칭과 함께 참조해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-199">When an alias is specified, *all* assemblies coming from the annotated package with need to be referenced with an alias.</span></span>
+<span data-ttu-id="cda22-196">드문 경우이지만 서로 다른 패키지에 동일한 네임스페이스의 클래스가 포함되기도 합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-196">In some rare instances different packages will contain classes in the same namespace.</span></span> <span data-ttu-id="cda22-197">NuGet 5.7 및 Visual Studio 2019 업데이트 7부터 ProjectReference에 해당하는 PackageReference는 [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases)를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-197">Starting with NuGet 5.7 & Visual Studio 2019 Update 7, equivalent to ProjectReference, PackageReference supports [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases).</span></span>
+<span data-ttu-id="cda22-198">기본적으로 별칭은 제공되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-198">By default no aliases are provided.</span></span> <span data-ttu-id="cda22-199">별칭을 지정하는 경우 주석을 단 패키지에서 제공되는 ‘모든’ 어셈블리를 별칭과 함께 참조해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-199">When an alias is specified, *all* assemblies coming from the annotated package with need to be referenced with an alias.</span></span>
 
-<span data-ttu-id="d9486-200">[NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample)에서 샘플 사용법을 확인할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-200">You can look at sample usage at [NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample)</span></span>
+<span data-ttu-id="cda22-200">[NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample)에서 샘플 사용법을 확인할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-200">You can look at sample usage at [NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample)</span></span>
 
-<span data-ttu-id="d9486-201">프로젝트 파일에서 다음과 같이 별칭을 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-201">In the project file, specify the aliases as follows:</span></span>
+<span data-ttu-id="cda22-201">프로젝트 파일에서 다음과 같이 별칭을 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-201">In the project file, specify the aliases as follows:</span></span>
 
 ```xml
   <ItemGroup>
@@ -221,7 +221,7 @@ ms.locfileid: "97699785"
   </ItemGroup>
 ```
 
-<span data-ttu-id="d9486-202">그리고 코드에서 다음과 같이 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-202">and in the code use it as follows:</span></span>
+<span data-ttu-id="cda22-202">그리고 코드에서 다음과 같이 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-202">and in the code use it as follows:</span></span>
 
 ```cs
 extern alias ExampleAlias;
@@ -238,19 +238,19 @@ namespace PackageReferenceAliasesExample
 
 ```
 
-## <a name="nuget-warnings-and-errors"></a><span data-ttu-id="d9486-203">NuGet 경고 및 오류</span><span class="sxs-lookup"><span data-stu-id="d9486-203">NuGet warnings and errors</span></span>
+## <a name="nuget-warnings-and-errors"></a><span data-ttu-id="cda22-203">NuGet 경고 및 오류</span><span class="sxs-lookup"><span data-stu-id="cda22-203">NuGet warnings and errors</span></span>
 
-<span data-ttu-id="d9486-204">‘이 기능은 NuGet **4.3** 이상 및 Visual Studio 2017 **15.3** 이상에서 사용할 수 있습니다.’</span><span class="sxs-lookup"><span data-stu-id="d9486-204">*This feature is available with NuGet **4.3** or above and with Visual Studio 2017 **15.3** or above.*</span></span>
+<span data-ttu-id="cda22-204">‘이 기능은 NuGet **4.3** 이상 및 Visual Studio 2017 **15.3** 이상에서 사용할 수 있습니다.’</span><span class="sxs-lookup"><span data-stu-id="cda22-204">*This feature is available with NuGet **4.3** or above and with Visual Studio 2017 **15.3** or above.*</span></span>
 
-<span data-ttu-id="d9486-205">많은 패키지 및 복원 시나리오에서는 모든 NuGet 경고 및 오류가 코딩되고 `NU****`로 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-205">For many pack and restore scenarios, all NuGet warnings and errors are coded, and start with `NU****`.</span></span> <span data-ttu-id="d9486-206">모든 NuGet 경고 및 오류는 [참조](../reference/errors-and-warnings.md) 문서에 나와 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-206">All NuGet warnings and errors are listed in the [reference](../reference/errors-and-warnings.md) documentation.</span></span>
+<span data-ttu-id="cda22-205">많은 패키지 및 복원 시나리오에서는 모든 NuGet 경고 및 오류가 코딩되고 `NU****`로 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-205">For many pack and restore scenarios, all NuGet warnings and errors are coded, and start with `NU****`.</span></span> <span data-ttu-id="cda22-206">모든 NuGet 경고 및 오류는 [참조](../reference/errors-and-warnings.md) 문서에 나와 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-206">All NuGet warnings and errors are listed in the [reference](../reference/errors-and-warnings.md) documentation.</span></span>
 
-<span data-ttu-id="d9486-207">NuGet은 다음과 같은 경고 속성을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-207">NuGet observes the following warning properties:</span></span>
+<span data-ttu-id="cda22-207">NuGet은 다음과 같은 경고 속성을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-207">NuGet observes the following warning properties:</span></span>
 
-- <span data-ttu-id="d9486-208">`TreatWarningsAsErrors` - 모든 경고를 오류로 처리</span><span class="sxs-lookup"><span data-stu-id="d9486-208">`TreatWarningsAsErrors`, treat all warnings as errors</span></span>
-- <span data-ttu-id="d9486-209">`WarningsAsErrors` - 특정 경고를 오류로 처리</span><span class="sxs-lookup"><span data-stu-id="d9486-209">`WarningsAsErrors`, treat specific warnings as errors</span></span>
-- <span data-ttu-id="d9486-210">`NoWarn` - 프로젝트 수준 또는 패키지 수준에서 특정 경고 숨기기</span><span class="sxs-lookup"><span data-stu-id="d9486-210">`NoWarn`, hide specific warnings, either project-wide or package-wide.</span></span>
+- <span data-ttu-id="cda22-208">`TreatWarningsAsErrors` - 모든 경고를 오류로 처리</span><span class="sxs-lookup"><span data-stu-id="cda22-208">`TreatWarningsAsErrors`, treat all warnings as errors</span></span>
+- <span data-ttu-id="cda22-209">`WarningsAsErrors` - 특정 경고를 오류로 처리</span><span class="sxs-lookup"><span data-stu-id="cda22-209">`WarningsAsErrors`, treat specific warnings as errors</span></span>
+- <span data-ttu-id="cda22-210">`NoWarn` - 프로젝트 수준 또는 패키지 수준에서 특정 경고 숨기기</span><span class="sxs-lookup"><span data-stu-id="cda22-210">`NoWarn`, hide specific warnings, either project-wide or package-wide.</span></span>
 
-<span data-ttu-id="d9486-211">예:</span><span class="sxs-lookup"><span data-stu-id="d9486-211">Examples:</span></span>
+<span data-ttu-id="cda22-211">예:</span><span class="sxs-lookup"><span data-stu-id="cda22-211">Examples:</span></span>
 
 ```xml
 <PropertyGroup>
@@ -270,10 +270,10 @@ namespace PackageReferenceAliasesExample
 </ItemGroup>
 ```
 
-### <a name="suppressing-nuget-warnings"></a><span data-ttu-id="d9486-212">NuGet 경고 표시 안 함</span><span class="sxs-lookup"><span data-stu-id="d9486-212">Suppressing NuGet warnings</span></span>
+### <a name="suppressing-nuget-warnings"></a><span data-ttu-id="cda22-212">NuGet 경고 표시 안 함</span><span class="sxs-lookup"><span data-stu-id="cda22-212">Suppressing NuGet warnings</span></span>
 
-<span data-ttu-id="d9486-213">패키지 및 복원 작업 중에 발생하는 모든 NuGet 경고를 해결하는 것이 좋지만, 특정 상황에서는 경고를 표시하지 않을 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-213">While it is recommended that you resolve all NuGet warnings during your pack and restore operations, in certain situations suppressing them is warranted.</span></span>
-<span data-ttu-id="d9486-214">프로젝트 수준에서 경고를 표시하지 않으려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-214">To suppress a warning project wide, consider doing:</span></span>
+<span data-ttu-id="cda22-213">패키지 및 복원 작업 중에 발생하는 모든 NuGet 경고를 해결하는 것이 좋지만, 특정 상황에서는 경고를 표시하지 않을 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-213">While it is recommended that you resolve all NuGet warnings during your pack and restore operations, in certain situations suppressing them is warranted.</span></span>
+<span data-ttu-id="cda22-214">프로젝트 수준에서 경고를 표시하지 않으려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-214">To suppress a warning project wide, consider doing:</span></span>
 
 ```xml
 <PropertyGroup>
@@ -285,7 +285,7 @@ namespace PackageReferenceAliasesExample
 </ItemGroup>
 ```
 
-<span data-ttu-id="d9486-215">경고가 그래프의 특정 패키지에만 적용되는 경우도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-215">Sometimes warnings apply only to a certain package in the graph.</span></span> <span data-ttu-id="d9486-216">PackageReference 항목에 `NoWarn`을 추가하면 보다 선택적으로 경고 표시를 해제할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-216">We can choose to suppress that warning more selectively by adding a `NoWarn` on the PackageReference item.</span></span> 
+<span data-ttu-id="cda22-215">경고가 그래프의 특정 패키지에만 적용되는 경우도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-215">Sometimes warnings apply only to a certain package in the graph.</span></span> <span data-ttu-id="cda22-216">PackageReference 항목에 `NoWarn`을 추가하면 보다 선택적으로 경고 표시를 해제할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-216">We can choose to suppress that warning more selectively by adding a `NoWarn` on the PackageReference item.</span></span> 
 
 ```xml
 <PropertyGroup>
@@ -296,30 +296,30 @@ namespace PackageReferenceAliasesExample
 </ItemGroup>
 ```
 
-#### <a name="suppressing-nuget-package-warnings-in-visual-studio"></a><span data-ttu-id="d9486-217">Visual Studio에서 NuGet 패키지 경고 표시 안 함</span><span class="sxs-lookup"><span data-stu-id="d9486-217">Suppressing NuGet package warnings in Visual Studio</span></span>
+#### <a name="suppressing-nuget-package-warnings-in-visual-studio"></a><span data-ttu-id="cda22-217">Visual Studio에서 NuGet 패키지 경고 표시 안 함</span><span class="sxs-lookup"><span data-stu-id="cda22-217">Suppressing NuGet package warnings in Visual Studio</span></span>
 
-<span data-ttu-id="d9486-218">Visual Studio에서 IDE를 통해 [경고 표시를 해제](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages
-)할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-218">When in Visual Studio, you can also [suppress warnings](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages
+<span data-ttu-id="cda22-218">Visual Studio에서 IDE를 통해 [경고 표시를 해제](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages
+)할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-218">When in Visual Studio, you can also [suppress warnings](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages
 ) through the IDE.</span></span>
 
-## <a name="locking-dependencies"></a><span data-ttu-id="d9486-219">종속성 잠금</span><span class="sxs-lookup"><span data-stu-id="d9486-219">Locking dependencies</span></span>
+## <a name="locking-dependencies"></a><span data-ttu-id="cda22-219">종속성 잠금</span><span class="sxs-lookup"><span data-stu-id="cda22-219">Locking dependencies</span></span>
 
-<span data-ttu-id="d9486-220">이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-220">*This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9** or above.*</span></span>
+<span data-ttu-id="cda22-220">이 기능은 NuGet **4.9** 이상 및 Visual Studio 2017 **15.9** 이상에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-220">*This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9** or above.*</span></span>
 
-<span data-ttu-id="d9486-221">NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 세트이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-221">Input to NuGet restore is a set of Package References from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies.</span></span> <span data-ttu-id="d9486-222">입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-222">NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed.</span></span> <span data-ttu-id="d9486-223">그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-223">However, there are some scenarios where it is unable to do so.</span></span> <span data-ttu-id="d9486-224">예를 들어:</span><span class="sxs-lookup"><span data-stu-id="d9486-224">For example:</span></span>
+<span data-ttu-id="cda22-221">NuGet 복원의 입력은 프로젝트 파일(최상위 또는 직접 종속성)의 패키지 참조 세트이며, 출력은 전이 종속성을 포함한 모든 패키지 종속성의 전체 클로저입니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-221">Input to NuGet restore is a set of Package References from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies.</span></span> <span data-ttu-id="cda22-222">입력 PackageReference 목록이 변경되지 않은 경우 NuGet은 항상 패키지 종속성의 동일한 전체 클로저를 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-222">NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed.</span></span> <span data-ttu-id="cda22-223">그러나 이렇게 할 수 없는 몇 가지 경우가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-223">However, there are some scenarios where it is unable to do so.</span></span> <span data-ttu-id="cda22-224">예를 들어:</span><span class="sxs-lookup"><span data-stu-id="cda22-224">For example:</span></span>
 
-* <span data-ttu-id="d9486-225">`<PackageReference Include="My.Sample.Lib" Version="4.*"/>` 같은 부동 버전을 사용하는 경우.</span><span class="sxs-lookup"><span data-stu-id="d9486-225">When you use floating versions like `<PackageReference Include="My.Sample.Lib" Version="4.*"/>`.</span></span> <span data-ttu-id="d9486-226">여기서 의도는 패키지의 모든 복원에서 최신 버전으로 이동하는 것이지만, 사용자가 그래프를 특정 최신 버전으로 잠그고 명시적 제스처에 따라 이후 버전(사용 가능한 경우)으로 이동하는 경우가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-226">While the intention here is to float to the latest version on every restore of packages, there are scenarios where users require the graph to be locked to a certain latest version and float to a later version, if available, upon an explicit gesture.</span></span>
-* <span data-ttu-id="d9486-227">PackageReference 버전 요구 사항과 일치하는 패키지의 최신 버전이 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-227">A newer version of the package matching PackageReference version requirements is published.</span></span> <span data-ttu-id="d9486-228">예:</span><span class="sxs-lookup"><span data-stu-id="d9486-228">E.g.</span></span> 
+* <span data-ttu-id="cda22-225">`<PackageReference Include="My.Sample.Lib" Version="4.*"/>` 같은 부동 버전을 사용하는 경우.</span><span class="sxs-lookup"><span data-stu-id="cda22-225">When you use floating versions like `<PackageReference Include="My.Sample.Lib" Version="4.*"/>`.</span></span> <span data-ttu-id="cda22-226">여기서 의도는 패키지의 모든 복원에서 최신 버전으로 이동하는 것이지만, 사용자가 그래프를 특정 최신 버전으로 잠그고 명시적 제스처에 따라 이후 버전(사용 가능한 경우)으로 이동하는 경우가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-226">While the intention here is to float to the latest version on every restore of packages, there are scenarios where users require the graph to be locked to a certain latest version and float to a later version, if available, upon an explicit gesture.</span></span>
+* <span data-ttu-id="cda22-227">PackageReference 버전 요구 사항과 일치하는 패키지의 최신 버전이 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-227">A newer version of the package matching PackageReference version requirements is published.</span></span> <span data-ttu-id="cda22-228">예:</span><span class="sxs-lookup"><span data-stu-id="cda22-228">E.g.</span></span> 
 
-  * <span data-ttu-id="d9486-229">1일: `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>`을 지정하지만 NuGet 리포지토리에서 사용 가능한 버전이 4.1.0, 4.2.0, 4.3.0인 경우.</span><span class="sxs-lookup"><span data-stu-id="d9486-229">Day 1: if you specified `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>` but the versions available on the NuGet repositories were 4.1.0, 4.2.0 and 4.3.0.</span></span> <span data-ttu-id="d9486-230">이 경우 NuGet은 4.1.0(가장 가까운 최소 버전)으로 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-230">In this case, NuGet would have resolved to  4.1.0 (nearest minimum version)</span></span>
+  * <span data-ttu-id="cda22-229">1일: `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>`을 지정하지만 NuGet 리포지토리에서 사용 가능한 버전이 4.1.0, 4.2.0, 4.3.0인 경우.</span><span class="sxs-lookup"><span data-stu-id="cda22-229">Day 1: if you specified `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>` but the versions available on the NuGet repositories were 4.1.0, 4.2.0 and 4.3.0.</span></span> <span data-ttu-id="cda22-230">이 경우 NuGet은 4.1.0(가장 가까운 최소 버전)으로 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-230">In this case, NuGet would have resolved to  4.1.0 (nearest minimum version)</span></span>
 
-  * <span data-ttu-id="d9486-231">2일: 버전 4.0.0이 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-231">Day 2: Version 4.0.0 gets published.</span></span> <span data-ttu-id="d9486-232">NuGet은 이제 정확한 일치 항목을 찾고 4.0.0으로 확인을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-232">NuGet will now find the exact match and start resolving to 4.0.0</span></span>
+  * <span data-ttu-id="cda22-231">2일: 버전 4.0.0이 게시됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-231">Day 2: Version 4.0.0 gets published.</span></span> <span data-ttu-id="cda22-232">NuGet은 이제 정확한 일치 항목을 찾고 4.0.0으로 확인을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-232">NuGet will now find the exact match and start resolving to 4.0.0</span></span>
 
-* <span data-ttu-id="d9486-233">지정된 패키지 버전이 리포지토리에서 제거됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-233">A given package version is removed from the repository.</span></span> <span data-ttu-id="d9486-234">nuget.org에서는 패키지 삭제를 허용하지 않지만 일부 패키지 리포지토리에는 이 제약 조건이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-234">Though nuget.org does not allow package deletions, not all package repositories have this constraints.</span></span> <span data-ttu-id="d9486-235">따라서 NuGet은 삭제된 버전으로 확인할 수 없는 경우 가장 일치하는 항목을 찾습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-235">This results in NuGet finding the best match when it cannot resolve to the deleted version.</span></span>
+* <span data-ttu-id="cda22-233">지정된 패키지 버전이 리포지토리에서 제거됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-233">A given package version is removed from the repository.</span></span> <span data-ttu-id="cda22-234">nuget.org에서는 패키지 삭제를 허용하지 않지만 일부 패키지 리포지토리에는 이 제약 조건이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-234">Though nuget.org does not allow package deletions, not all package repositories have this constraints.</span></span> <span data-ttu-id="cda22-235">따라서 NuGet은 삭제된 버전으로 확인할 수 없는 경우 가장 일치하는 항목을 찾습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-235">This results in NuGet finding the best match when it cannot resolve to the deleted version.</span></span>
 
-### <a name="enabling-lock-file"></a><span data-ttu-id="d9486-236">잠금 파일 사용</span><span class="sxs-lookup"><span data-stu-id="d9486-236">Enabling lock file</span></span>
+### <a name="enabling-lock-file"></a><span data-ttu-id="cda22-236">잠금 파일 사용</span><span class="sxs-lookup"><span data-stu-id="cda22-236">Enabling lock file</span></span>
 
-<span data-ttu-id="d9486-237">패키지 종속성의 전체 클로저를 유지하기 위해 프로젝트의 MSBuild 속성 `RestorePackagesWithLockFile`을 설정하여 잠금 파일 기능을 옵트인할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-237">In order to persist the full closure of package dependencies you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:</span></span>
+<span data-ttu-id="cda22-237">패키지 종속성의 전체 클로저를 유지하기 위해 프로젝트의 MSBuild 속성 `RestorePackagesWithLockFile`을 설정하여 잠금 파일 기능을 옵트인할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-237">In order to persist the full closure of package dependencies you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:</span></span>
 
 ```xml
 <PropertyGroup>
@@ -329,31 +329,31 @@ namespace PackageReferenceAliasesExample
 </PropertyGroup>    
 ```
 
-<span data-ttu-id="d9486-238">이 속성을 설정하면 NuGet 복원은 모든 패키지 종속성을 나열하는 프로젝트 루트 디렉터리에 잠금 파일인 `packages.lock.json` 파일을 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-238">If this property is set, NuGet restore will generate a lock file - `packages.lock.json` file at the project root directory that lists all the package dependencies.</span></span> 
+<span data-ttu-id="cda22-238">이 속성을 설정하면 NuGet 복원은 모든 패키지 종속성을 나열하는 프로젝트 루트 디렉터리에 잠금 파일인 `packages.lock.json` 파일을 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-238">If this property is set, NuGet restore will generate a lock file - `packages.lock.json` file at the project root directory that lists all the package dependencies.</span></span> 
 
 > [!Note]
-> <span data-ttu-id="d9486-239">프로젝트의 루트 디렉터리에 `packages.lock.json` 파일이 있으면 `RestorePackagesWithLockFile` 속성이 설정되지 않은 경우에도 복원에는 항상 잠금 파일이 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-239">Once a project has `packages.lock.json` file in its root directory, the lock file is always used with restore even if the property `RestorePackagesWithLockFile` is not set.</span></span> <span data-ttu-id="d9486-240">따라서 이 기능을 옵트인하는 또 다른 방법은 프로젝트의 루트 디렉터리에 더미 공백 `packages.lock.json` 파일을 만드는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-240">So another way to opt-in to this feature is to create a dummy blank `packages.lock.json` file in the project's root directory.</span></span>
+> <span data-ttu-id="cda22-239">프로젝트의 루트 디렉터리에 `packages.lock.json` 파일이 있으면 `RestorePackagesWithLockFile` 속성이 설정되지 않은 경우에도 복원에는 항상 잠금 파일이 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-239">Once a project has `packages.lock.json` file in its root directory, the lock file is always used with restore even if the property `RestorePackagesWithLockFile` is not set.</span></span> <span data-ttu-id="cda22-240">따라서 이 기능을 옵트인하는 또 다른 방법은 프로젝트의 루트 디렉터리에 더미 공백 `packages.lock.json` 파일을 만드는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-240">So another way to opt-in to this feature is to create a dummy blank `packages.lock.json` file in the project's root directory.</span></span>
 
-### <a name="restore-behavior-with-lock-file"></a><span data-ttu-id="d9486-241">잠금 파일을 사용한 `restore` 동작</span><span class="sxs-lookup"><span data-stu-id="d9486-241">`restore` behavior with lock file</span></span>
-<span data-ttu-id="d9486-242">프로젝트에 대한 잠금 파일이 있으면 NuGet은 이 잠금 파일을 사용하여 `restore`를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-242">If a lock file is present for project, NuGet uses this lock file to run `restore`.</span></span> <span data-ttu-id="d9486-243">NuGet은 프로젝트 파일(또는 종속 프로젝트 파일)에 언급된 패키지 종속성에 변경 내용이 있는지 빠르게 확인하고, 변경 내용이 없으면 잠금 파일에 언급된 패키지를 복원합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-243">NuGet does a quick check to see if there were any changes in the package dependencies as mentioned in the project file (or dependent projects' files) and if there were no changes it just restores the packages mentioned in the lock file.</span></span> <span data-ttu-id="d9486-244">패키지 종속성은 다시 평가되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-244">There is no re-evaluation of package dependencies.</span></span>
+### <a name="restore-behavior-with-lock-file"></a><span data-ttu-id="cda22-241">잠금 파일을 사용한 `restore` 동작</span><span class="sxs-lookup"><span data-stu-id="cda22-241">`restore` behavior with lock file</span></span>
+<span data-ttu-id="cda22-242">프로젝트에 대한 잠금 파일이 있으면 NuGet은 이 잠금 파일을 사용하여 `restore`를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-242">If a lock file is present for project, NuGet uses this lock file to run `restore`.</span></span> <span data-ttu-id="cda22-243">NuGet은 프로젝트 파일(또는 종속 프로젝트 파일)에 언급된 패키지 종속성에 변경 내용이 있는지 빠르게 확인하고, 변경 내용이 없으면 잠금 파일에 언급된 패키지를 복원합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-243">NuGet does a quick check to see if there were any changes in the package dependencies as mentioned in the project file (or dependent projects' files) and if there were no changes it just restores the packages mentioned in the lock file.</span></span> <span data-ttu-id="cda22-244">패키지 종속성은 다시 평가되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-244">There is no re-evaluation of package dependencies.</span></span>
 
-<span data-ttu-id="d9486-245">NuGet은 프로젝트 파일에 언급된 정의된 종속성에서 변경을 발견하면 패키지 그래프를 다시 평가하고 잠금 파일을 업데이트하여 프로젝트의 새 패키지 클로저를 반영합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-245">If NuGet detects a change in the defined dependencies as mentioned in the project file(s), it re-evaluates the package graph and updates the lock file to reflect the new package closure for the project.</span></span>
+<span data-ttu-id="cda22-245">NuGet은 프로젝트 파일에 언급된 정의된 종속성에서 변경을 발견하면 패키지 그래프를 다시 평가하고 잠금 파일을 업데이트하여 프로젝트의 새 패키지 클로저를 반영합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-245">If NuGet detects a change in the defined dependencies as mentioned in the project file(s), it re-evaluates the package graph and updates the lock file to reflect the new package closure for the project.</span></span>
 
-<span data-ttu-id="d9486-246">CI/CD 및 기타 시나리오의 경우 패키지 종속성을 즉시 변경하지 않으려면 `lockedmode`를 `true`로 설정하면 됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-246">For CI/CD and other scenarios, where you would not want to change the package dependencies on the fly, you can do so by setting the `lockedmode` to `true`:</span></span>
+<span data-ttu-id="cda22-246">CI/CD 및 기타 시나리오의 경우 패키지 종속성을 즉시 변경하지 않으려면 `lockedmode`를 `true`로 설정하면 됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-246">For CI/CD and other scenarios, where you would not want to change the package dependencies on the fly, you can do so by setting the `lockedmode` to `true`:</span></span>
 
-<span data-ttu-id="d9486-247">dotnet.exe의 경우 다음을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-247">For dotnet.exe, run:</span></span>
+<span data-ttu-id="cda22-247">dotnet.exe의 경우 다음을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-247">For dotnet.exe, run:</span></span>
 
 ```
 > dotnet.exe restore --locked-mode
 ```
 
-<span data-ttu-id="d9486-248">msbuild.exe의 경우 다음을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-248">For msbuild.exe, run:</span></span>
+<span data-ttu-id="cda22-248">msbuild.exe의 경우 다음을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-248">For msbuild.exe, run:</span></span>
 
 ```
 > msbuild.exe -t:restore -p:RestoreLockedMode=true
 ```
 
-<span data-ttu-id="d9486-249">프로젝트 파일에서 이 조건부 MSBuild 속성을 설정할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-249">You may also set this conditional MSBuild property in your project file:</span></span>
+<span data-ttu-id="cda22-249">프로젝트 파일에서 이 조건부 MSBuild 속성을 설정할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-249">You may also set this conditional MSBuild property in your project file:</span></span>
 
 ```xml
 <PropertyGroup>
@@ -363,14 +363,14 @@ namespace PackageReferenceAliasesExample
 </PropertyGroup> 
 ```
 
-<span data-ttu-id="d9486-250">잠김 모드가 `true`인 경우 잠금 파일에 나열된 정확한 패키지가 복원되거나, 잠금 파일이 생성된 후 프로젝트의 정의된 패키지 종속성을 업데이트한 경우 복원에 실패합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-250">If locked mode is `true`, restore will either restore the exact packages as listed in the lock file or fail if you updated the defined package dependencies for the project after lock file was created.</span></span>
+<span data-ttu-id="cda22-250">잠김 모드가 `true`인 경우 잠금 파일에 나열된 정확한 패키지가 복원되거나, 잠금 파일이 생성된 후 프로젝트의 정의된 패키지 종속성을 업데이트한 경우 복원에 실패합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-250">If locked mode is `true`, restore will either restore the exact packages as listed in the lock file or fail if you updated the defined package dependencies for the project after lock file was created.</span></span>
 
-### <a name="make-lock-file-part-of-your-source-repository"></a><span data-ttu-id="d9486-251">소스 리포지토리의 잠금 파일 파트 만들기</span><span class="sxs-lookup"><span data-stu-id="d9486-251">Make lock file part of your source repository</span></span>
-<span data-ttu-id="d9486-252">애플리케이션, 실행 파일을 빌드하는 동안 원하는 프로젝트가 종속성 체인의 시작 부분에 있으면 NuGet이 복원 중에 사용할 수 있도록 소스 코드 리포지토리에 잠금 파일을 체크 인합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-252">If you are building an application, an executable and the project in question is at the start of the dependency chain then do check in the lock file to the source code repository so that NuGet can make use of it during restore.</span></span>
+### <a name="make-lock-file-part-of-your-source-repository"></a><span data-ttu-id="cda22-251">소스 리포지토리의 잠금 파일 파트 만들기</span><span class="sxs-lookup"><span data-stu-id="cda22-251">Make lock file part of your source repository</span></span>
+<span data-ttu-id="cda22-252">애플리케이션, 실행 파일을 빌드하는 동안 원하는 프로젝트가 종속성 체인의 시작 부분에 있으면 NuGet이 복원 중에 사용할 수 있도록 소스 코드 리포지토리에 잠금 파일을 체크 인합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-252">If you are building an application, an executable and the project in question is at the start of the dependency chain then do check in the lock file to the source code repository so that NuGet can make use of it during restore.</span></span>
 
-<span data-ttu-id="d9486-253">그러나 프로젝트가 사용자가 제공하지 않는 라이브러리 프로젝트이거나 다른 프로젝트가 사용하는 공통 코드 프로젝트인 경우에는 잠금 파일을 소스 코드의 일부로 체크 인하면 **안 됩니다**.</span><span class="sxs-lookup"><span data-stu-id="d9486-253">However, if your project is a library project that you do not ship or a common code project on which other projects depend upon, you **should not** check in the lock file as part of your source code.</span></span> <span data-ttu-id="d9486-254">잠금 파일을 보존해도 문제가 되지 않지만, 공통 코드 프로젝트의 잠긴 패키지 종속성은 이 공통 코드 프로젝트를 사용하는 프로젝트의 복원/빌드 중에 잠금 파일에 나열된 대로 사용되지 않을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-254">There is no harm in keeping the lock file but the locked package dependencies for the common code project may not be used, as listed in the lock file, during the restore/build of a project that depends on this common-code project.</span></span>
+<span data-ttu-id="cda22-253">그러나 프로젝트가 사용자가 제공하지 않는 라이브러리 프로젝트이거나 다른 프로젝트가 사용하는 공통 코드 프로젝트인 경우에는 잠금 파일을 소스 코드의 일부로 체크 인하면 **안 됩니다**.</span><span class="sxs-lookup"><span data-stu-id="cda22-253">However, if your project is a library project that you do not ship or a common code project on which other projects depend upon, you **should not** check in the lock file as part of your source code.</span></span> <span data-ttu-id="cda22-254">잠금 파일을 보존해도 문제가 되지 않지만, 공통 코드 프로젝트의 잠긴 패키지 종속성은 이 공통 코드 프로젝트를 사용하는 프로젝트의 복원/빌드 중에 잠금 파일에 나열된 대로 사용되지 않을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-254">There is no harm in keeping the lock file but the locked package dependencies for the common code project may not be used, as listed in the lock file, during the restore/build of a project that depends on this common-code project.</span></span>
 
-<span data-ttu-id="d9486-255">예:</span><span class="sxs-lookup"><span data-stu-id="d9486-255">Eg.</span></span>
+<span data-ttu-id="cda22-255">예:</span><span class="sxs-lookup"><span data-stu-id="cda22-255">Eg.</span></span>
 
 ```
 ProjectA
@@ -379,15 +379,46 @@ ProjectA
              |------>PackageX 1.0.0
 ```
 
-<span data-ttu-id="d9486-256">`ProjectA`가 `PackageX` 버전 `2.0.0`에 대한 종속성을 포함하고 `PackageX` 버전 `1.0.0`을 사용하는 `ProjectB`를 참조하는 경우 `ProjectB`의 잠금 파일은 `PackageX` 버전 `1.0.0`에 대한 종속성을 나열합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-256">If `ProjectA` has a dependency on a `PackageX` version `2.0.0` and also references `ProjectB` that depends on `PackageX` version `1.0.0`, then the lock file for `ProjectB` will list a dependency on `PackageX` version `1.0.0`.</span></span> <span data-ttu-id="d9486-257">그러나 `ProjectA`를 빌드하면 해당 잠금 파일에는 `ProjectB`의 잠금 파일에 나열된 대로 `PackageX` 버전 `1.0.0`이 **아닌** **`2.0.0`** 에 대한 종속성이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-257">However, when `ProjectA` is built, its lock file will contain a dependency on `PackageX` version **`2.0.0`** and **not** `1.0.0` as listed in the lock file for `ProjectB`.</span></span> <span data-ttu-id="d9486-258">따라서 공통 코드 프로젝트의 잠금 파일에는 이 파일을 사용하는 프로젝트에 대해 확인된 패키지가 거의 언급되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-258">Thus, the lock file of a common code project has little say over the packages resolved for projects that depend on it.</span></span>
+<span data-ttu-id="cda22-256">`ProjectA`가 `PackageX` 버전 `2.0.0`에 대한 종속성을 포함하고 `PackageX` 버전 `1.0.0`을 사용하는 `ProjectB`를 참조하는 경우 `ProjectB`의 잠금 파일은 `PackageX` 버전 `1.0.0`에 대한 종속성을 나열합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-256">If `ProjectA` has a dependency on a `PackageX` version `2.0.0` and also references `ProjectB` that depends on `PackageX` version `1.0.0`, then the lock file for `ProjectB` will list a dependency on `PackageX` version `1.0.0`.</span></span> <span data-ttu-id="cda22-257">그러나 `ProjectA`를 빌드하면 해당 잠금 파일에는 `ProjectB`의 잠금 파일에 나열된 대로 `PackageX` 버전 `1.0.0`이 **아닌** **`2.0.0`** 에 대한 종속성이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-257">However, when `ProjectA` is built, its lock file will contain a dependency on `PackageX` version **`2.0.0`** and **not** `1.0.0` as listed in the lock file for `ProjectB`.</span></span> <span data-ttu-id="cda22-258">따라서 공통 코드 프로젝트의 잠금 파일에는 이 파일을 사용하는 프로젝트에 대해 확인된 패키지가 거의 언급되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-258">Thus, the lock file of a common code project has little say over the packages resolved for projects that depend on it.</span></span>
 
-### <a name="lock-file-extensibility"></a><span data-ttu-id="d9486-259">잠금 파일 확장성</span><span class="sxs-lookup"><span data-stu-id="d9486-259">Lock file extensibility</span></span>
+### <a name="lock-file-extensibility"></a><span data-ttu-id="cda22-259">잠금 파일 확장성</span><span class="sxs-lookup"><span data-stu-id="cda22-259">Lock file extensibility</span></span>
 
-<span data-ttu-id="d9486-260">다음 설명과 같이 잠금 파일을 사용하여 다양한 복원 동작을 제어할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-260">You can control various behaviors of restore with lock file as described below:</span></span>
+<span data-ttu-id="cda22-260">다음 설명과 같이 잠금 파일을 사용하여 다양한 복원 동작을 제어할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-260">You can control various behaviors of restore with lock file as described below:</span></span>
 
-| <span data-ttu-id="d9486-261">NuGet.exe 옵션</span><span class="sxs-lookup"><span data-stu-id="d9486-261">NuGet.exe option</span></span> | <span data-ttu-id="d9486-262">dotnet 옵션</span><span class="sxs-lookup"><span data-stu-id="d9486-262">dotnet option</span></span> | <span data-ttu-id="d9486-263">MSBuild 해당 옵션</span><span class="sxs-lookup"><span data-stu-id="d9486-263">MSBuild equivalent option</span></span> | <span data-ttu-id="d9486-264">설명</span><span class="sxs-lookup"><span data-stu-id="d9486-264">Description</span></span> |
+| <span data-ttu-id="cda22-261">NuGet.exe 옵션</span><span class="sxs-lookup"><span data-stu-id="cda22-261">NuGet.exe option</span></span> | <span data-ttu-id="cda22-262">dotnet 옵션</span><span class="sxs-lookup"><span data-stu-id="cda22-262">dotnet option</span></span> | <span data-ttu-id="cda22-263">MSBuild 해당 옵션</span><span class="sxs-lookup"><span data-stu-id="cda22-263">MSBuild equivalent option</span></span> | <span data-ttu-id="cda22-264">설명</span><span class="sxs-lookup"><span data-stu-id="cda22-264">Description</span></span> |
 |:--- |:--- |:--- |:--- |
-| `-UseLockFile` |`--use-lock-file` | <span data-ttu-id="d9486-265">RestorePackagesWithLockFile</span><span class="sxs-lookup"><span data-stu-id="d9486-265">RestorePackagesWithLockFile</span></span> | <span data-ttu-id="d9486-266">잠금 파일을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-266">Opts into the usage of a lock file.</span></span> |
-| `-LockedMode` | `--locked-mode` | <span data-ttu-id="d9486-267">RestoreLockedMode</span><span class="sxs-lookup"><span data-stu-id="d9486-267">RestoreLockedMode</span></span> | <span data-ttu-id="d9486-268">복원에 잠금 모드를 사용하도록 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-268">Enables locked mode for restore.</span></span> <span data-ttu-id="d9486-269">이는 반복 가능한 빌드를 원하는 CI/CD 시나리오에서 유용합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-269">This is useful in CI/CD scenarios where you want repeatable builds.</span></span>|   
-| `-ForceEvaluate` | `--force-evaluate` | <span data-ttu-id="d9486-270">RestoreForceEvaluate</span><span class="sxs-lookup"><span data-stu-id="d9486-270">RestoreForceEvaluate</span></span> | <span data-ttu-id="d9486-271">이 옵션은 프로젝트에 정의된 부동 버전의 패키지에 유용합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-271">This option is useful with packages with floating version defined in the project.</span></span> <span data-ttu-id="d9486-272">기본적으로 NuGet 복원은 이 옵션으로 복원을 실행하지 않는 한 각 복원에서 패키지 버전을 자동으로 업데이트하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-272">By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with this option.</span></span> |
-| `-LockFilePath` | `--lock-file-path` | <span data-ttu-id="d9486-273">NuGetLockFilePath</span><span class="sxs-lookup"><span data-stu-id="d9486-273">NuGetLockFilePath</span></span> | <span data-ttu-id="d9486-274">프로젝트의 사용자 지정 잠금 파일 위치를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-274">Defines a custom lock file location for a project.</span></span> <span data-ttu-id="d9486-275">기본적으로 NuGet은 루트 디렉터리에서 `packages.lock.json`을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-275">By default, NuGet supports `packages.lock.json` at the root directory.</span></span> <span data-ttu-id="d9486-276">같은 디렉터리에 여러 프로젝트가 있는 경우 NuGet은 프로젝트별 잠금 파일 `packages.<project_name>.lock.json`을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="d9486-276">If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json`</span></span> |
+| `-UseLockFile` |`--use-lock-file` | <span data-ttu-id="cda22-265">RestorePackagesWithLockFile</span><span class="sxs-lookup"><span data-stu-id="cda22-265">RestorePackagesWithLockFile</span></span> | <span data-ttu-id="cda22-266">잠금 파일을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-266">Opts into the usage of a lock file.</span></span> |
+| `-LockedMode` | `--locked-mode` | <span data-ttu-id="cda22-267">RestoreLockedMode</span><span class="sxs-lookup"><span data-stu-id="cda22-267">RestoreLockedMode</span></span> | <span data-ttu-id="cda22-268">복원에 잠금 모드를 사용하도록 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-268">Enables locked mode for restore.</span></span> <span data-ttu-id="cda22-269">이는 반복 가능한 빌드를 원하는 CI/CD 시나리오에서 유용합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-269">This is useful in CI/CD scenarios where you want repeatable builds.</span></span>|   
+| `-ForceEvaluate` | `--force-evaluate` | <span data-ttu-id="cda22-270">RestoreForceEvaluate</span><span class="sxs-lookup"><span data-stu-id="cda22-270">RestoreForceEvaluate</span></span> | <span data-ttu-id="cda22-271">이 옵션은 프로젝트에 정의된 부동 버전의 패키지에 유용합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-271">This option is useful with packages with floating version defined in the project.</span></span> <span data-ttu-id="cda22-272">기본적으로 NuGet 복원은 이 옵션으로 복원을 실행하지 않는 한 각 복원에서 패키지 버전을 자동으로 업데이트하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-272">By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with this option.</span></span> |
+| `-LockFilePath` | `--lock-file-path` | <span data-ttu-id="cda22-273">NuGetLockFilePath</span><span class="sxs-lookup"><span data-stu-id="cda22-273">NuGetLockFilePath</span></span> | <span data-ttu-id="cda22-274">프로젝트의 사용자 지정 잠금 파일 위치를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-274">Defines a custom lock file location for a project.</span></span> <span data-ttu-id="cda22-275">기본적으로 NuGet은 루트 디렉터리에서 `packages.lock.json`을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-275">By default, NuGet supports `packages.lock.json` at the root directory.</span></span> <span data-ttu-id="cda22-276">같은 디렉터리에 여러 프로젝트가 있는 경우 NuGet은 프로젝트별 잠금 파일 `packages.<project_name>.lock.json`을 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-276">If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json`</span></span> |
+
+## <a name="assettargetfallback"></a><span data-ttu-id="cda22-277">AssetTargetFallback</span><span class="sxs-lookup"><span data-stu-id="cda22-277">AssetTargetFallback</span></span>
+
+<span data-ttu-id="cda22-278">`AssetTargetFallback` 속성을 사용하여 프로젝트에서 참조하는 프로젝트 및 프로젝트에서 사용하는 NuGet 패키지에 대해 호환되는 추가 프레임워크 버전을 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-278">The `AssetTargetFallback` property lets you specify additional compatible framework versions for projects that your project references and NuGet packages that your project consumes.</span></span>
+
+<span data-ttu-id="cda22-279">`PackageReference`를 사용하여 패키지 종속성을 지정하지만 해당 패키지에 프로젝트의 대상 프레임워크와 호환되는 자산이 포함되지 않은 경우 `AssetTargetFallback` 속성이 작동합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-279">If you specify a package dependency using `PackageReference` but that package doesn't contain assets that are compatible with your projects's target framework, the `AssetTargetFallback` property comes into play.</span></span> <span data-ttu-id="cda22-280">참조된 패키지의 호환성은 `AssetTargetFallback`에 지정된 각 대상 프레임워크를 사용하여 다시 확인됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-280">The compatibility of the referenced package is rechecked using each target framework that's specified in `AssetTargetFallback`.</span></span>
+<span data-ttu-id="cda22-281">`project` 또는 `package`가 `AssetTargetFallback`을 통해 참조되는 경우 [NU1701](../reference/errors-and-warnings/NU1701.md) 경고가 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-281">When a `project` or a `package` is referenced through `AssetTargetFallback`, the [NU1701](../reference/errors-and-warnings/NU1701.md) warning will be raised.</span></span>
+
+<span data-ttu-id="cda22-282">`AssetTargetFallback`이 호환성에 영향을 주는 방식에 관한 예제는 아래 표를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="cda22-282">Refer to the table below for examples of how `AssetTargetFallback` affects compatibility.</span></span>
+
+| <span data-ttu-id="cda22-283">프로젝트 프레임워크</span><span class="sxs-lookup"><span data-stu-id="cda22-283">Project framework</span></span> | <span data-ttu-id="cda22-284">AssetTargetFallback</span><span class="sxs-lookup"><span data-stu-id="cda22-284">AssetTargetFallback</span></span> | <span data-ttu-id="cda22-285">패키지 프레임워크</span><span class="sxs-lookup"><span data-stu-id="cda22-285">Package frameworks</span></span> | <span data-ttu-id="cda22-286">결과</span><span class="sxs-lookup"><span data-stu-id="cda22-286">Result</span></span> |
+|-------------------|---------------------|--------------------|--------|
+| <span data-ttu-id="cda22-287">.NET Framework 4.7.2</span><span class="sxs-lookup"><span data-stu-id="cda22-287">.NET Framework 4.7.2</span></span> | | <span data-ttu-id="cda22-288">.NET Standard 2.0</span><span class="sxs-lookup"><span data-stu-id="cda22-288">.NET Standard 2.0</span></span> | <span data-ttu-id="cda22-289">.NET Standard 2.0</span><span class="sxs-lookup"><span data-stu-id="cda22-289">.NET Standard 2.0</span></span> |
+| <span data-ttu-id="cda22-290">.NET Core App 3.1</span><span class="sxs-lookup"><span data-stu-id="cda22-290">.NET Core App 3.1</span></span> | | <span data-ttu-id="cda22-291">.NET Standard 2.0, .NET Framework 4.7.2</span><span class="sxs-lookup"><span data-stu-id="cda22-291">.NET Standard 2.0, .NET Framework 4.7.2</span></span> | <span data-ttu-id="cda22-292">.NET Standard 2.0</span><span class="sxs-lookup"><span data-stu-id="cda22-292">.NET Standard 2.0</span></span> |
+| <span data-ttu-id="cda22-293">.NET Core App 3.1</span><span class="sxs-lookup"><span data-stu-id="cda22-293">.NET Core App 3.1</span></span> | | <span data-ttu-id="cda22-294">.NET Framework 4.7.2</span><span class="sxs-lookup"><span data-stu-id="cda22-294">.NET Framework 4.7.2</span></span> | <span data-ttu-id="cda22-295">호환되지 않음, [`NU1202`](../reference/errors-and-warnings/NU1202.md)로 인해 실패</span><span class="sxs-lookup"><span data-stu-id="cda22-295">Incompatible, fail with [`NU1202`](../reference/errors-and-warnings/NU1202.md)</span></span> |
+| <span data-ttu-id="cda22-296">.NET Core App 3.1</span><span class="sxs-lookup"><span data-stu-id="cda22-296">.NET Core App 3.1</span></span> | <span data-ttu-id="cda22-297">net472;net471</span><span class="sxs-lookup"><span data-stu-id="cda22-297">net472;net471</span></span> | <span data-ttu-id="cda22-298">.NET Framework 4.7.2</span><span class="sxs-lookup"><span data-stu-id="cda22-298">.NET Framework 4.7.2</span></span> | <span data-ttu-id="cda22-299">.NET Framework 4.7.2([`NU1701`](../reference/errors-and-warnings/NU1701.md) 발생)</span><span class="sxs-lookup"><span data-stu-id="cda22-299">.NET Framework 4.7.2 with [`NU1701`](../reference/errors-and-warnings/NU1701.md)</span></span> |
+
+<span data-ttu-id="cda22-300">`;`을 구분 기호로 사용하여 여러 프레임워크를 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-300">Multiple frameworks can be specified using `;` as a delimiter.</span></span> <span data-ttu-id="cda22-301">대체 프레임워크를 추가하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-301">To add a fallback framework you can do the following:</span></span>
+
+```xml
+<AssetTargetFallback Condition=" '$(TargetFramework)'=='netcoreapp3.1' ">
+    $(AssetTargetFallback);net472;net471
+</AssetTargetFallback>
+```
+
+<span data-ttu-id="cda22-302">기존 `AssetTargetFallback` 값에 추가하는 대신 덮어쓰려는 경우 `$(AssetTargetFallback)`를 제외할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-302">You can leave off `$(AssetTargetFallback)` if you wish to overwrite, instead of add to the existing `AssetTargetFallback` values.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="cda22-303">[.NET SDK 기반 프로젝트](/dotnet/core/sdk)를 사용하는 경우 적절한 `$(AssetTargetFallback)` 값이 구성되며 해당 값을 수동으로 설정하지 않아도 됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-303">If you are using a [.NET SDK based project](/dotnet/core/sdk), appropriate `$(AssetTargetFallback)` values are configured and you do not need to set them manually.</span></span>
+>
+> <span data-ttu-id="cda22-304">`$(PackageTargetFallback)`는 해당 과제를 해결하려고 시도한 초기 기능이었지만, 기본적으로 중단되며 사용하지 ‘않아야’ 합니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-304">`$(PackageTargetFallback)` was an earlier feature that attempted to address this challenge, but it is fundamentally broken and *should* not be used.</span></span> <span data-ttu-id="cda22-305">`$(PackageTargetFallback)`에서 `$(AssetTargetFallback)`로 마이그레이션하려면 속성 이름을 변경하면 됩니다.</span><span class="sxs-lookup"><span data-stu-id="cda22-305">To migrate from `$(PackageTargetFallback)` to `$(AssetTargetFallback)`, simply change the property name.</span></span>
