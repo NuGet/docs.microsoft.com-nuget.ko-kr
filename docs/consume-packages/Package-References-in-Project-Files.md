@@ -1,16 +1,16 @@
 ---
 title: NuGet PackageReference 형식(프로젝트 파일의 패키지 참조)
 description: NuGet 4.0 이상, VS2017 및 .NET Core 2.0에서 지원되는 프로젝트 파일에 있는 NuGet PackageReference에 대한 세부 정보
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1127e7aee27d57abd5f14dd3bea82dfff3ba6d93
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: dcaed83ca54e3234702e963ffc2ebbde4cd75b28
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699785"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235765"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
 
@@ -390,3 +390,34 @@ ProjectA
 | `-LockedMode` | `--locked-mode` | RestoreLockedMode | 복원에 잠금 모드를 사용하도록 설정합니다. 이는 반복 가능한 빌드를 원하는 CI/CD 시나리오에서 유용합니다.|   
 | `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | 이 옵션은 프로젝트에 정의된 부동 버전의 패키지에 유용합니다. 기본적으로 NuGet 복원은 이 옵션으로 복원을 실행하지 않는 한 각 복원에서 패키지 버전을 자동으로 업데이트하지 않습니다. |
 | `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | 프로젝트의 사용자 지정 잠금 파일 위치를 정의합니다. 기본적으로 NuGet은 루트 디렉터리에서 `packages.lock.json`을 지원합니다. 같은 디렉터리에 여러 프로젝트가 있는 경우 NuGet은 프로젝트별 잠금 파일 `packages.<project_name>.lock.json`을 지원합니다. |
+
+## <a name="assettargetfallback"></a>AssetTargetFallback
+
+`AssetTargetFallback` 속성을 사용하여 프로젝트에서 참조하는 프로젝트 및 프로젝트에서 사용하는 NuGet 패키지에 대해 호환되는 추가 프레임워크 버전을 지정할 수 있습니다.
+
+`PackageReference`를 사용하여 패키지 종속성을 지정하지만 해당 패키지에 프로젝트의 대상 프레임워크와 호환되는 자산이 포함되지 않은 경우 `AssetTargetFallback` 속성이 작동합니다. 참조된 패키지의 호환성은 `AssetTargetFallback`에 지정된 각 대상 프레임워크를 사용하여 다시 확인됩니다.
+`project` 또는 `package`가 `AssetTargetFallback`을 통해 참조되는 경우 [NU1701](../reference/errors-and-warnings/NU1701.md) 경고가 발생합니다.
+
+`AssetTargetFallback`이 호환성에 영향을 주는 방식에 관한 예제는 아래 표를 참조하세요.
+
+| 프로젝트 프레임워크 | AssetTargetFallback | 패키지 프레임워크 | 결과 |
+|-------------------|---------------------|--------------------|--------|
+| .NET Framework 4.7.2 | | .NET Standard 2.0 | .NET Standard 2.0 |
+| .NET Core App 3.1 | | .NET Standard 2.0, .NET Framework 4.7.2 | .NET Standard 2.0 |
+| .NET Core App 3.1 | | .NET Framework 4.7.2 | 호환되지 않음, [`NU1202`](../reference/errors-and-warnings/NU1202.md)로 인해 실패 |
+| .NET Core App 3.1 | net472;net471 | .NET Framework 4.7.2 | .NET Framework 4.7.2([`NU1701`](../reference/errors-and-warnings/NU1701.md) 발생) |
+
+`;`을 구분 기호로 사용하여 여러 프레임워크를 지정할 수 있습니다. 대체 프레임워크를 추가하려면 다음을 수행합니다.
+
+```xml
+<AssetTargetFallback Condition=" '$(TargetFramework)'=='netcoreapp3.1' ">
+    $(AssetTargetFallback);net472;net471
+</AssetTargetFallback>
+```
+
+기존 `AssetTargetFallback` 값에 추가하는 대신 덮어쓰려는 경우 `$(AssetTargetFallback)`를 제외할 수 있습니다.
+
+> [!NOTE]
+> [.NET SDK 기반 프로젝트](/dotnet/core/sdk)를 사용하는 경우 적절한 `$(AssetTargetFallback)` 값이 구성되며 해당 값을 수동으로 설정하지 않아도 됩니다.
+>
+> `$(PackageTargetFallback)`는 해당 과제를 해결하려고 시도한 초기 기능이었지만, 기본적으로 중단되며 사용하지 ‘않아야’ 합니다. `$(PackageTargetFallback)`에서 `$(AssetTargetFallback)`로 마이그레이션하려면 속성 이름을 변경하면 됩니다.

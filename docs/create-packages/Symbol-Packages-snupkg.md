@@ -12,12 +12,12 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: c42032f1869f4be0af44ffa8fbd5ad522f73c459
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: fbcc035a6b800617f995d3bcebd7e1764aa467b0
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80380420"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235726"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
@@ -63,7 +63,7 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) 속성은 `symbols.nupkg`(기본값) 또는 `snupkg`의 두 값 중 하나를 가질 수 있습니다. 이 속성을 지정하지 않으면 레거시 기호 패키지가 생성됩니다.
 
 > [!Note]
-> 레거시 형식 `.symbols.nupkg`는 여전히 호환성 문제에서만 지원됩니다([레거시 기호 패키지](Symbol-Packages.md) 참조). NuGet.org의 기호 서버는 새 기호 패키지 형식(`.snupkg`)만 허용합니다.
+> 레거시 형식 `.symbols.nupkg`는 네이티브 패키지와 같이 여전히 호환성 이유로만 지원됩니다([레거시 기호 패키지](Symbol-Packages.md) 참조). NuGet.org의 기호 서버는 새 기호 패키지 형식(`.snupkg`)만 허용합니다.
 
 ## <a name="publishing-a-symbol-package"></a>기호 패키지 게시
 
@@ -103,6 +103,9 @@ NuGet.org에는 기호 패키지에 대한 다음과 같은 제약 조건이 있
 - PDB 및 관련 .nupkg DLL은 Visual Studio 버전 15.9 이상의 컴파일러로 빌드해야 합니다([PDB crypto 해시](https://github.com/dotnet/roslyn/issues/24429) 참조).
 
 이러한 제약 조건이 충족되지 않으면 NuGet.org에 게시된 기호 패키지가 유효성 검사에 실패합니다. 
+
+> [!NOTE]
+> C++ 프로젝트와 같은 네이티브 프로젝트는 이식 가능한 PDB 대신 Windows PDB를 생성합니다. 해당 기능은 NuGet.org의 기호 서버에서 지원되지 않습니다. 대신 [레거시 기호 패키지](Symbol-Packages.md)를 사용하세요.
 
 ### <a name="symbol-package-validation-and-indexing"></a>기호 패키지 유효성 검사 및 인덱싱
 
