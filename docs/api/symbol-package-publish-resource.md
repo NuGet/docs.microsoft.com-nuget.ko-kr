@@ -10,12 +10,12 @@ ms.technology: ''
 description: 게시 서비스를 사용 하면 클라이언트가 새 기호 패키지를 게시할 수 있습니다.
 keywords: NuGet API 푸시 기호 패키지
 ms.reviewer: karann
-ms.openlocfilehash: bd4a10cc976c9d0775a63cfe61c35327c196065c
-ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
+ms.openlocfilehash: 91bb4c9ca77fd7f1ff35831e02eb4f9d65d641c5
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738879"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98773897"
 ---
 # <a name="push-symbol-packages"></a>기호 패키지 푸시
 
@@ -42,7 +42,9 @@ NuGet V3 API를 사용 하 여 기호 패키지 ([snupkg](../create-packages/Sym
 
 nuget.org은 다음 API를 사용 하 여 새 기호 패키지 형식 ([snupkg](../create-packages/Symbol-Packages-snupkg.md))을 푸시하는 것을 지원 합니다. 
 
-    PUT https://www.nuget.org/api/v2/symbolpackage
+```
+PUT https://www.nuget.org/api/v2/symbolpackage
+```
 
 ID와 버전이 같은 기호 패키지는 여러 번 제출할 수 있습니다. 기호 패키지는 다음과 같은 경우에 거부 됩니다.
 - ID와 버전이 같은 패키지가 없습니다.
@@ -51,9 +53,9 @@ ID와 버전이 같은 기호 패키지는 여러 번 제출할 수 있습니다
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-이름           | In(다음 안에)     | 형식   | 필수 | 메모
+Name           | In(다음 안에)     | Type   | 필수 | 메모
 -------------- | ------ | ------ | -------- | -----
-X NuGet-ApiKey | 헤더 | 문자열 | 예      | 예, `X-NuGet-ApiKey: {USER_API_KEY}`
+X NuGet-ApiKey | 헤더 | 문자열 | 예      | 예를 들어 `X-NuGet-ApiKey: {USER_API_KEY}`
 
 API 키는 사용자가 패키지 원본에서 가져온 불투명 문자열이 며 클라이언트에 구성 됩니다. 특정 문자열 형식은 지정 되지 않지만 API 키의 길이는 HTTP 헤더 값에 대 한 적절 한 크기를 초과 하면 안 됩니다.
 

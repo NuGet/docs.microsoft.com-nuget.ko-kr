@@ -1,20 +1,20 @@
 ---
 title: NuGet CLI 구성 명령
 description: nuget.exe config 명령에 대 한 참조
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 7d0c1c51f40cba9a5b69f209ffbd995451bfeb9f
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 3d50c12e34f71d7a62fe177da1dbb33eb702347a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622878"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775961"
 ---
 # <a name="config-command-nuget-cli"></a>config 명령 (NuGet CLI)
 
-**적용 대상:** &bullet; **지원 되**는 모든 버전: 모두
+**적용 대상:** &bullet; **지원 되** 는 모든 버전: 모두
 
 NuGet 구성 값을 가져오거나 설정 합니다. 추가 사용에 대해서는 [일반적인 NuGet 구성](../../consume-packages/configuring-nuget-behavior.md)을 참조 하세요. 허용 되는 키 이름에 대 한 자세한 내용은 [NuGet 구성 파일 참조](../nuget-config-file.md)를 참조 하세요.
 

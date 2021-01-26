@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: ffbcb8dc18542f39c32a6d84b279c8eccaf98fc3
-ms.sourcegitcommit: 7e9c0630335ef9ec1e200e2ee9065f702e52a8ec
+ms.openlocfilehash: 11485f583d6993919f6bb8acabcc87d9e4261975
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85292317"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774161"
 ---
 # <a name="catalog"></a>카탈로그
 
@@ -27,7 +27,7 @@ ms.locfileid: "85292317"
 
 사용 되는 `@type` 값은 다음과 같습니다.
 
-@type 값   | 참고
+@type 값   | 메모
 ------------- | -----
 Catalog/3.0.0 | 초기 릴리스
 
@@ -63,15 +63,17 @@ Catalog/3.0.0 | 초기 릴리스
 
 다음 요청은 카탈로그 인덱스를 인출 합니다.
 
-    GET {@id}
+```
+GET {@id}
+```
 
 카탈로그 인덱스는 다음 속성을 포함 하는 개체를 포함 하는 JSON 문서입니다.
 
-Name            | Type             | 필수 | 참고
+Name            | Type             | 필수 | 메모
 --------------- | ---------------- | -------- | -----
 commitId        | 문자열           | 예      | 가장 최근 커밋에 연결 된 고유 ID입니다.
 commitTimeStamp | 문자열           | 예      | 가장 최근 커밋의 타임 스탬프입니다.
-count           | integer          | 예      | 인덱스의 페이지 수입니다.
+count           | 정수          | 예      | 인덱스의 페이지 수입니다.
 items           | 개체의 배열 | 예      | 개체의 배열입니다. 각 개체는 페이지를 나타냅니다.
 
 배열의 각 요소 `items` 는 각 페이지에 대 한 최소한의 세부 정보를 포함 하는 개체입니다. 이러한 페이지 개체는 카탈로그 리프 (항목)을 포함 하지 않습니다. 이 배열에 있는 요소의 순서는 정의 되지 않습니다. 클라이언트는 해당 속성을 사용 하 여 페이지를 메모리에 정렬할 수 있습니다 `commitTimeStamp` .
@@ -84,18 +86,20 @@ items           | 개체의 배열 | 예      | 개체의 배열입니다. 각 �
 
 카탈로그 인덱스의 속성에 있는 카탈로그 페이지 개체의 `items` 속성은 다음과 같습니다.
 
-Name            | Type    | 필수 | 참고
+Name            | Type    | 필수 | 메모
 --------------- | ------- | -------- | -----
 @id             | 문자열  | 예      | 카탈로그를 가져올 URL 페이지
 commitId        | 문자열  | 예      | 이 페이지의 가장 최근 커밋에 연결 된 고유 ID입니다.
 commitTimeStamp | 문자열  | 예      | 이 페이지에서 가장 최근의 커밋 타임 스탬프
-count           | integer | 예      | 카탈로그 페이지의 항목 수
+count           | 정수 | 예      | 카탈로그 페이지의 항목 수
 
 일부 경우에는 인덱스에 inlines 된 [패키지 메타 데이터 리소스](registration-base-url-resource.md) 와 달리 카탈로그 리프는 인덱스에 인라인되지 않으며 항상 페이지 URL을 사용 하 여 인출 되어야 합니다 `@id` .
 
 ### <a name="sample-request"></a>샘플 요청
 
-    GET https://api.nuget.org/v3/catalog0/index.json
+```
+GET https://api.nuget.org/v3/catalog0/index.json
+```
 
 ### <a name="sample-response"></a>샘플 응답
 
@@ -109,11 +113,11 @@ count           | integer | 예      | 카탈로그 페이지의 항목 수
 
 카탈로그 페이지 문서는 다음 속성을 포함 하는 JSON 개체입니다.
 
-Name            | Type             | 필수 | 참고
+Name            | Type             | 필수 | 메모
 --------------- | ---------------- | -------- | -----
 commitId        | 문자열           | 예      | 이 페이지의 가장 최근 커밋에 연결 된 고유 ID입니다.
 commitTimeStamp | 문자열           | 예      | 이 페이지에서 가장 최근의 커밋 타임 스탬프
-count           | integer          | 예      | 페이지의 항목 수입니다.
+count           | 정수          | 예      | 페이지의 항목 수입니다.
 items           | 개체의 배열 | 예      | 이 페이지의 카탈로그 항목
 부모(parent)          | 문자열           | 예      | 카탈로그 인덱스에 대 한 URL입니다.
 
@@ -129,7 +133,7 @@ items           | 개체의 배열 | 예      | 이 페이지의 카탈로그 �
 
 카탈로그 페이지의 속성에 있는 카탈로그 항목 개체의 `items` 속성은 다음과 같습니다.
 
-Name            | Type    | 필수 | 참고
+Name            | Type    | 필수 | 메모
 --------------- | ------- | -------- | -----
 @id             | 문자열  | 예      | 카탈로그 항목을 페치할 URL입니다.
 @type           | 문자열  | 예      | 카탈로그 항목의 유형입니다.
@@ -147,7 +151,9 @@ nuget: 버전   | 문자열  | 예      | 이 리프가 관련 된 패키지 버
 
 ### <a name="sample-request"></a>샘플 요청
 
-    GET https://api.nuget.org/v3/catalog0/page2926.json
+```
+GET https://api.nuget.org/v3/catalog0/page2926.json
+```
 
 ### <a name="sample-response"></a>샘플 응답
 
@@ -159,7 +165,7 @@ nuget: 버전   | 문자열  | 예      | 이 리프가 관련 된 패키지 버
 
 카탈로그 리프 문서는 다음 속성을 포함 하는 JSON 개체입니다.
 
-Name                    | Type                       | 필수 | 참고
+Name                    | Type                       | 필수 | 메모
 ----------------------- | -------------------------- | -------- | -----
 @type                   | 문자열 또는 문자열 배열 | 예      | 카탈로그 항목의 유형입니다.
 카탈로그: commitId        | 문자열                     | 예      | 이 카탈로그 항목과 연결 된 커밋 ID입니다.
@@ -180,9 +186,9 @@ published               | 문자열                     | 예      | 패키지 �
 유형이 있는 카탈로그 항목 `PackageDetails` 에는 특정 패키지에 대 한 패키지 메타 데이터의 스냅숏 (ID 및 버전 조합)이 포함 됩니다. 패키지 정보 카탈로그 항목은 패키지 원본에서 다음 시나리오 중 하나가 발생할 때 생성 됩니다.
 
 1. 패키지가 **푸시됩니다**.
-1. 패키지가 **나열**됩니다.
-1. 패키지는 **나열**되지 않습니다.
-1. 패키지는 **reflowed**입니다.
+1. 패키지가 **나열** 됩니다.
+1. 패키지는 **나열** 되지 않습니다.
+1. 패키지는 **reflowed** 입니다.
 
 패키지 리플로우는 기본적으로 패키지 자체를 변경 하지 않고 기존 패키지의 가짜 푸시를 생성 하는 관리 제스처입니다. Nuget.org에서 카탈로그를 사용 하는 백그라운드 작업 중 하나에서 버그를 수정 하 고 나 서 리플로우를 사용 합니다.
 
@@ -190,7 +196,7 @@ published               | 문자열                     | 예      | 패키지 �
 
 패키지 정보 카탈로그 항목에는 [모든 카탈로그에 포함 된](#catalog-leaf)항목 외에 다음과 같은 속성이 있습니다.
 
-Name                    | Type                       | 필수 | 참고
+Name                    | Type                       | 필수 | 메모
 ----------------------- | -------------------------- | -------- | -----
 authors                 | 문자열                     | 아니요       |
 created                 | 문자열                     | 아니요       | 패키지를 처음 만들 때의 타임 스탬프입니다. 대체 `published` (Fallback) 속성:
@@ -199,13 +205,13 @@ dependencyGroups        | 개체의 배열           | 아니요       | 대상 
 description             | 문자열                     | 아니요       |
 iconUrl                 | 문자열                     | 아니요       |
 isPrerelease            | boolean                    | 아니요       | 패키지 버전이 시험판 인지 여부입니다. 에서 검색할 수 있습니다 `version` .
-language                | 문자열                     | 아니요       |
+언어                | 문자열                     | 아니요       |
 licenseUrl              | 문자열                     | 아니요       |
 나열                  | boolean                    | 아니요       | 패키지가 나열 되는지 여부
 minClientVersion        | 문자열                     | 아니요       |
 packageHash             | 문자열                     | 예      | 패키지의 해시, [표준 기본 64](https://tools.ietf.org/html/rfc4648#section-4) 를 사용 하 여 인코딩
 packageHashAlgorithm    | 문자열                     | 예      |
-packageSize             | integer                    | 예      | Nupkg의 크기 (바이트)입니다.
+packageSize             | 정수                    | 예      | Nupkg의 크기 (바이트)입니다.
 packageTypes            | 개체의 배열           | 아니요       | 작성자가 지정한 패키지 유형입니다.
 projectUrl              | 문자열                     | 아니요       |
 releaseNotes            | 문자열                     | 아니요       |
@@ -235,7 +241,9 @@ name      | 문자열  | 예      | 패키지 형식의 이름입니다.
 
 #### <a name="sample-request"></a>샘플 요청
 
+```
 GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+```
 
 #### <a name="sample-response"></a>샘플 응답
 
@@ -256,7 +264,9 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 #### <a name="sample-request"></a>샘플 요청
 
+```
 GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
+```
 
 #### <a name="sample-response"></a>샘플 응답
 

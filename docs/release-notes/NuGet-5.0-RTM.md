@@ -1,16 +1,16 @@
 ---
 title: NuGet 5.0 RTM 릴리스 정보
 description: 알려진 문제, 버그 수정, 새로운 기능 및 Ecrs를 비롯 한 NuGet 5.0에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 04/02/2019
 ms.topic: conceptual
-ms.openlocfilehash: e4a6be7fb26e3cc4bd297eaf02999f6ac1389b77
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 637db1ae128ce020c33e54e56148c848a5f905a5
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236804"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776223"
 ---
 # <a name="nuget-50-release-notes"></a>NuGet 5.0 릴리스 정보
 
@@ -159,7 +159,7 @@ NuGet 배포 차량:
 
 * 보안 (dotnet.exe 또는 mono.exe를 통해 실행)-올바른 권한을 사용 하 여 obj 폴더를 만들어야 [#7908](https://github.com/NuGet/Home/issues/7908)
 
-* 사용자 지정 nuget.config 및 #8011에서 mono/MacOS에 대 한 nuget.exe 복원이 실패 함 `PackageSignatureValidity: False` [#8011](https://github.com/NuGet/Home/issues/8011)
+* 사용자 지정 nuget.config 및 #8011에서 mono/MacOS에 대 한 nuget.exe 복원이 실패 함 `PackageSignatureValidity: False` [](https://github.com/NuGet/Home/issues/8011)
 
 
 ## <a name="known-issues"></a>알려진 문제

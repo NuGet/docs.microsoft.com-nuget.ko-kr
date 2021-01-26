@@ -1,16 +1,16 @@
 ---
 title: NuGet 5.4 릴리스 정보
 description: 새 기능, 버그 수정 및 Ecrs를 비롯 한 NuGet 5.4에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: c7fb9c1e587b6603abe63581c662571abfd4506b
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: dd4c10672db3a65b68f18636105ee55ab09da7ef
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384113"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776180"
 ---
 # <a name="nuget-54-release-notes"></a>NuGet 5.4 릴리스 정보
 
@@ -28,7 +28,7 @@ NuGet 배포 차량:
 
 * 새 도우미 함수-패키지 id 및 버전 목록이 제공 될 경우 최상위 패키지를 가져옵니다. - [#8316](https://github.com/NuGet/Home/issues/8316)
 
-* [GitHub 작업](https://github.com/features/actions)에서 nuget.exe를 설치 하 고 구성 하기 위한 새로운 [`nuget/setup-nuget`](https://github.com/marketplace/actions/setup-nuget-exe-for-use-with-actions) 동작입니다. - [#8818](https://github.com/NuGet/Home/issues/8818)
+* [`nuget/setup-nuget`](https://github.com/marketplace/actions/setup-nuget-exe-for-use-with-actions) [GitHub 작업](https://github.com/features/actions)에 NuGet.exe를 설치 하 고 구성 하기 위한 새로운 작업입니다. - [#8818](https://github.com/NuGet/Home/issues/8818)
 
 ### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
 
@@ -42,13 +42,13 @@ NuGet 배포 차량:
 
 * 잠금 파일이 제대로 생성 되지 않음-lockedmode로 복원에 영향을 주지 않습니다.- [#8645](https://github.com/NuGet/Home/issues/8645)
 
-* SDK 3.0.100에 <RuntimeIdentifiers> 집합이 설정 된 프로젝트에 대해 LockFile 유효성 검사가 실패 합니다.- [#8639](https://github.com/NuGet/Home/issues/8639)
+* SDK 3.0.100에서 집합이 인 프로젝트에 대 한 LockFile 유효성 검사가 실패 합니다. <RuntimeIdentifiers> - [#8639](https://github.com/NuGet/Home/issues/8639)
 
 * 서명 유효성 검사는 이제 동일한 OID에 2 개의 값이 있는 타임 스탬프를 사용 하 여 서명을 올바르게 거부 합니다. [#8629](https://github.com/NuGet/Home/issues/8629)
 
 * 라이선스 목록 업데이트- [#8544](https://github.com/NuGet/Home/issues/8544)
 
-**DCRs**
+**DCR**
 
 * IFeedbackDiagnosticFileProvider에 진단 파일 온 보 딩- [#8535](https://github.com/NuGet/Home/issues/8535)
 

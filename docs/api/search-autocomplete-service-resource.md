@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: f574849bf99cd4da4eefd55c3dd5a0648042f0c1
-ms.sourcegitcommit: 7e9c0630335ef9ec1e200e2ee9065f702e52a8ec
+ms.openlocfilehash: 2893e13ff7b070844a2bdd5722da3aa1f123538d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85292295"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98773960"
 ---
 # <a name="autocomplete"></a>자동 완성
 
@@ -21,11 +21,11 @@ V3 API를 사용 하 여 패키지 ID 및 버전 자동 완성 환경을 빌드�
 
 사용 되는 `@type` 값은 다음과 같습니다.
 
-@type 값                          | 참고
+@type 값                          | 메모
 ------------------------------------ | -----
 SearchAutocompleteService            | 초기 릴리스
-SearchAutocompleteService/3.0.0-beta | 별칭`SearchAutocompleteService`
-SearchAutocompleteService/3.0.0   | 별칭`SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-beta | 별칭 `SearchAutocompleteService`
+SearchAutocompleteService/3.0.0   | 별칭 `SearchAutocompleteService`
 SearchAutocompleteService/3.5.0      | 쿼리 매개 변수에 대 한 지원을 포함 합니다. `packageType`
 
 ### <a name="searchautocompleteservice350"></a>SearchAutocompleteService/3.5.0
@@ -45,15 +45,17 @@ SearchAutocompleteService/3.5.0      | 쿼리 매개 변수에 대 한 지원을
 
 목록에 없는 버전만 포함 된 패키지는 결과에 표시 되지 않습니다.
 
-    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
+GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-Name        | In(다음 안에)     | 형식    | 필수 | 참고
+Name        | In(다음 안에)     | Type    | 필수 | 메모
 ----------- | ------ | ------- | -------- | -----
 q           | URL    | 문자열  | 아니요       | 패키지 Id와 비교할 문자열입니다.
-skip        | URL    | integer | 아니요       | 페이지를 매길 때 건너뛸 결과의 수입니다.
-take        | URL    | integer | 아니요       | 페이지를 매길 때 반환할 결과의 수입니다.
+skip        | URL    | 정수 | 아니요       | 페이지를 매길 때 건너뛸 결과의 수입니다.
+take        | URL    | 정수 | 아니요       | 페이지를 매길 때 반환할 결과의 수입니다.
 prerelease  | URL    | boolean | 아니요       | `true`또는 `false` [시험판 패키지](../create-packages/prerelease-packages.md) 를 포함할지 여부를 결정 합니다.
 semVerLevel | URL    | 문자열  | 아니요       | SemVer 1.0.0 버전 문자열 
 packageType | URL    | 문자열  | 아니요       | 패키지를 필터링 하는 데 사용할 패키지 유형 (에 추가 됨 `SearchAutocompleteService/3.5.0` )
@@ -80,14 +82,16 @@ packageType | URL    | 문자열  | 아니요       | 패키지를 필터링 하
 
 루트 JSON 개체에는 다음과 같은 속성이 있습니다.
 
-Name      | Type             | 필수 | 참고
+Name      | Type             | 필수 | 메모
 --------- | ---------------- | -------- | -----
-totalHits | integer          | 예      | 총 일치 항목 수, 무시 `skip` 및`take`
+totalHits | 정수          | 예      | 총 일치 항목 수, 무시 `skip` 및 `take`
 데이터      | 문자열 배열 | 예      | 요청과 일치 하는 패키지 Id
 
 ### <a name="sample-request"></a>샘플 요청
 
-    GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+```
+GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+```
 
 ### <a name="sample-response"></a>샘플 응답
 
@@ -99,11 +103,13 @@ totalHits | integer          | 예      | 총 일치 항목 수, 무시 `skip` �
 
 나열 되지 않은 패키지 버전은 결과에 표시 되지 않습니다.
 
-    GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+```
+GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+```
 
 ### <a name="request-parameters"></a>요청 매개 변수
 
-Name        | In(다음 안에)     | 형식    | 필수 | 참고
+Name        | In(다음 안에)     | Type    | 필수 | 메모
 ----------- | ------ | ------- | -------- | -----
 id          | URL    | 문자열  | 예      | 버전을 가져올 패키지 ID
 prerelease  | URL    | boolean | 아니요       | `true`또는 `false` [시험판 패키지](../create-packages/prerelease-packages.md) 를 포함할지 여부를 결정 합니다.
@@ -119,7 +125,7 @@ semVerLevel | URL    | 문자열  | 아니요       | SemVer 2.0.0 version 문�
 
 루트 JSON 개체에는 다음과 같은 속성이 있습니다.
 
-Name      | Type             | 필수 | 참고
+Name      | Type             | 필수 | 메모
 --------- | ---------------- | -------- | -----
 데이터      | 문자열 배열 | 예      | 요청과 일치 하는 패키지 버전
 
@@ -127,7 +133,9 @@ Name      | Type             | 필수 | 참고
 
 ### <a name="sample-request"></a>샘플 요청
 
-    GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
+```
+GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
+```
 
 ### <a name="sample-response"></a>샘플 응답
 

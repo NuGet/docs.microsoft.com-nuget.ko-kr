@@ -1,22 +1,22 @@
 ---
 title: NuGet CLI add 명령
 description: nuget.exe add 명령에 대 한 참조
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 89d268946243e8eae07e482db48e809a15260c38
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 096d2f7a61a3c861ce2084368500ab8e8b21f212
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622904"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776098"
 ---
 # <a name="add-command-nuget-cli"></a>add 명령 (NuGet CLI)
 
 **적용 대상**: 패키지 게시 &bullet; **지원 버전**: 3.3 이상
 
-패키지 ID 및 버전 번호에 대 한 폴더를 만드는 계층적 레이아웃에서 HTTP가 아닌 패키지 원본 (폴더 또는 UNC 경로)에 지정 된 패키지를 추가 합니다. 다음은 그 예입니다. 
+패키지 ID 및 버전 번호에 대 한 폴더를 만드는 계층적 레이아웃에서 HTTP가 아닌 패키지 원본 (폴더 또는 UNC 경로)에 지정 된 패키지를 추가 합니다. 예를 들면 다음과 같습니다.
 
 ```
 \\myserver\packages

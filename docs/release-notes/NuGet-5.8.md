@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7f641c669cdb0cc979d698f6b219cbb4f2692a2e
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 550971d77ed4b15129fdc58fef95e0cceda8d8d1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235752"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776171"
 ---
 # <a name="nuget-58-release-notes"></a>NuGet 5.8 릴리스 정보
 
@@ -34,13 +34,13 @@ NuGet 배포 차량:
 
 * 패키지 관리자 UI 패키지 정보 창에서 패키지 취약성 세부 정보 표시- [#9850](https://github.com/NuGet/Home/issues/9850)
 
-* 새 명령으로 서명 된 NuGet 패키지 확인 [`dotnet nuget verify`](https://docs.microsoft.com/dotnet/core/tools/dotnet-nuget-verify) - [#8051](https://github.com/NuGet/Home/issues/8051)
+* 새 명령으로 서명 된 NuGet 패키지 확인 [`dotnet nuget verify`](/dotnet/core/tools/dotnet-nuget-verify) - [#8051](https://github.com/NuGet/Home/issues/8051)
 
-* [`dotnet add package`](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package#:~:text=dotnet%20add%20package%201%20Name%202%20Synopsis%203,when%20targeting%20a%20specific%20framework.%20...%206%20Examples)`--prerelease`시험판 버전을 포함 하 여 최신 버전의 패키지를 추가 하는 옵션을 지원 [#4699](https://github.com/NuGet/Home/issues/4699)
+* [`dotnet add package`](/dotnet/core/tools/dotnet-add-package#:~:text=dotnet%20add%20package%201%20Name%202%20Synopsis%203,when%20targeting%20a%20specific%20framework.%20...%206%20Examples)`--prerelease`시험판 버전을 포함 하 여 최신 버전의 패키지를 추가 하는 옵션을 지원 [#4699](https://github.com/NuGet/Home/issues/4699)
 
-* CLI에서 명령을 사용 하 여 패키지 검색 [`nuget.exe search`](https://docs.microsoft.com/nuget/reference/cli-reference/cli-ref-search) [#9704](https://github.com/NuGet/Home/issues/9704)
+* CLI에서 명령을 사용 하 여 패키지 검색 [`nuget.exe search`](../reference/cli-reference/cli-ref-search.md) [#9704](https://github.com/NuGet/Home/issues/9704)
 
-* [`dotnet list package`](https://docs.microsoft.com/dotnet/core/tools/dotnet-list-package) 명령에서 `--verbosity` 옵션을 지원 [#9600](https://github.com/NuGet/Home/issues/9600)
+* [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) 명령에서 `--verbosity` 옵션을 지원 [#9600](https://github.com/NuGet/Home/issues/9600)
 
 * Visual Studio에서 .csproj 스타일의 PackageReference 기반 프로젝트에 대 한 빠른 No-Op 복원 최적화를 사용 합니다.- [#9565](https://github.com/NuGet/Home/issues/9565)
 
@@ -155,4 +155,4 @@ NuGet 배포 차량:
 ## <a name="feedback-welcome"></a>사용자 의견 환영
 
 Microsoft는 사용자의 의견을 소중하게 생각합니다.  이 릴리스에 문제가 있는 경우 [GitHub 문제](https://github.com/NuGet/Home/issues) 및 [Visual Studio 개발자 커뮤니티](https://developercommunity.visualstudio.com/) 에서 기존 문제를 확인 하세요.  NuGet 내의 새로운 문제에 대 한 자세한 내용은 [GitHub 문제](https://github.com/NuGet/Home/issues/new)를 보고 하세요.
-일반적인 NuGet 환경 문제에 대 한 자세한 내용은 **문제 보고 > 도움말** 에서 즐겨 사용 하는 IDE의 [문제 보고](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio) 옵션을 통해 알려주세요.
+일반적인 NuGet 환경 문제에 대 한 자세한 내용은 **문제 보고 > 도움말** 에서 즐겨 사용 하는 IDE의 [문제 보고](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) 옵션을 통해 알려주세요.

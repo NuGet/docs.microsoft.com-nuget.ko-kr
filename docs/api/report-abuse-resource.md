@@ -1,60 +1,64 @@
 ---
-title: 보고서 남용 URL 템플릿을 NuGet API
-description: 보고서 남용 URL 템플릿은 클라이언트를 UI에 신고 링크를 표시할 수 있습니다.
+title: 신고 URL 템플릿, NuGet API 보고
+description: 보고서 신고 URL 템플릿을 사용 하면 클라이언트는 자신의 UI에 신고 링크를 표시할 수 있습니다.
 author: joelverhagen
 ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: d0ff41b08eeba5a6e4bc7c44722b6bc57f502047
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: b36058c9c841e2cca6eb61121ada8275f1525a8f
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549341"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775234"
 ---
-# <a name="report-abuse-url-template"></a>보고서 남용 URL 템플릿
+# <a name="report-abuse-url-template"></a>신고 URL 템플릿 신고
 
-특정 패키지에 대 한 신고 하기 위해 사용자가 사용할 수 있는 URL을 작성 하는 클라이언트는 것이 가능 합니다. 패키지 소스를 남용 보고서 패키지 원본에 위임 하려면 모든 클라이언트 환경을 (도 제 3 자)를 사용 하도록 설정 하려는 경우에 유용 합니다.
+클라이언트는 사용자가 특정 패키지에 대 한 불건전 사용자를 보고 하는 데 사용할 수 있는 URL을 작성할 수 있습니다. 이 기능은 패키지 원본에서 모든 클라이언트 환경 (타사)을 사용 하도록 설정 하 여 불건전 보고서를 패키지 원본에 위임 하려는 경우에 유용 합니다.
 
-이 URL을 작성에 사용 되는 리소스를 `ReportAbuseUriTemplate` 에서 리소스를 찾을 합니다 [서비스 인덱스](service-index.md)합니다.
+이 URL을 작성 하는 데 사용 되는 리소스는 `ReportAbuseUriTemplate` [서비스 인덱스](service-index.md)에 있는 리소스입니다.
 
 ## <a name="versioning"></a>버전 관리
 
-다음 `@type` 값이 사용 됩니다.
+사용 되는 `@type` 값은 다음과 같습니다.
 
-@type 값                       | 노트
+@type 값                       | 메모
 --------------------------------- | -----
 ReportAbuseUriTemplate/3.0.0-beta | 초기 릴리스
-ReportAbuseUriTemplate/3.0.0-rc   | 별칭 `ReportAbuseUriTemplate/3.0.0-beta`
+ReportAbuseUriTemplate/3.0.0   | 별칭 `ReportAbuseUriTemplate/3.0.0-beta`
 
 ## <a name="url-template"></a>URL 템플릿
 
-다음 API에 대 한 URL의 값은는 `@id` 앞에서 언급 한 리소스 중 하나를 사용 하 여 연결 된 속성 `@type` 값입니다.
+다음 API에 대 한 URL은 `@id` 앞서 언급 한 리소스 값 중 하 나와 연결 된 속성의 값입니다 `@type` .
 
 ## <a name="http-methods"></a>HTTP 메서드
 
-웹 페이지를 지원 해야 하지는 않지만 클라이언트는 사용자 대신 보고서 남용 URL로 요청을를 `GET` 쉽게 웹 브라우저에서 열 수를 클릭 한 URL을 허용 하는 방법입니다.
+클라이언트가 사용자를 대신 하 여 신고 URL에 대 한 요청을 수행 하기 위한 것은 아니지만 웹 페이지는 `GET` 클릭 된 URL을 웹 브라우저에서 쉽게 열도록 허용 하는 메서드를 지원 해야 합니다.
 
 ## <a name="construct-the-url"></a>URL 생성
 
-알려진된 패키지 ID 및 버전을 지정 하 여 클라이언트 구현 웹 인터페이스에 액세스 하는 데 사용 하는 URL을 생성할 수 있습니다. 클라이언트 구현 선택 수 있게 하는 사용자가 URL로 웹 브라우저를 열고 필요한 남용 보고서에이 구성 된 URL (또는 클릭 가능한 링크가) 표시 됩니다. 남용 보고서 양식 구현의 서버 구현에 의해 결정 됩니다.
+알려진 패키지 ID 및 버전이 제공 되 면 클라이언트 구현에서 웹 인터페이스에 액세스 하는 데 사용 되는 URL을 생성할 수 있습니다. 클라이언트 구현에서는이 생성 된 URL (또는 클릭 가능한 링크)을 사용자에 게 표시 하 여 URL에 대 한 웹 브라우저를 열고 필요한 불건전 보고서를 만들 수 있도록 합니다. 불건전 보고서 양식의 구현은 서버 구현에 의해 결정 됩니다.
 
-값은 `@id` 다음 자리 표시자 토큰 중 하나를 포함 하는 URL 문자열:
+의 값은 `@id` 다음 자리 표시자 토큰 중 하나를 포함 하는 URL 문자열입니다.
 
 ### <a name="url-placeholders"></a>URL 자리 표시자
 
-이름        | 형식    | 필수 | 노트
+Name        | Type    | 필수 | 메모
 ----------- | ------- | -------- | -----
-`{id}`      | string  | 아니요       | 패키지 ID에 대해 신고
-`{version}` | string  | 아니요       | 패키지 버전에 대해 신고를
+`{id}`      | 문자열  | 아니요       | 신고를 보고할 패키지 ID
+`{version}` | 문자열  | 아니요       | 신고를 보고할 패키지 버전
 
-합니다 `{id}` 고 `{version}` 서버 구현에 의해 해석 되는 값은 대/소문자 구분 및 버전 정규화 되 고 있는지 여부에 민감 하지 이어야 합니다.
+`{id}` `{version}` 서버 구현에서 해석 되는 및 값은 대/소문자를 구분 하지 않고 버전이 정규화 되었는지 여부를 구분 하지 않아야 합니다.
 
-예를 들어, nuget.org의 보고서 남용 서식 파일은 다음과 같습니다.
+예를 들어, nuget.exe의 신고는 다음과 같습니다.
 
-    https://www.nuget.org/packages/{id}/{version}/ReportAbuse
+```
+https://www.nuget.org/packages/{id}/{version}/ReportAbuse
+```
 
-클라이언트 구현 NuGet.Versioning 4.3.0에 대 한 보고서 남용 폼에 링크를 표시 하는 경우는 다음 URL을 생성 하 고 사용자에 게 제공:
+클라이언트 구현에서 NuGet에 대 한 보고서 불건전 폼의 링크를 표시 해야 하는 경우 다음 URL을 생성 하 여 사용자에 게 제공 합니다. 4.3.0.
 
-    https://www.nuget.org/packages/NuGet.Versioning/4.3.0/ReportAbuse
+```
+https://www.nuget.org/packages/NuGet.Versioning/4.3.0/ReportAbuse
+```
