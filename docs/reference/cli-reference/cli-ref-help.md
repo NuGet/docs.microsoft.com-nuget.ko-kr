@@ -1,20 +1,20 @@
 ---
 title: NuGet CLI 도움말 명령
 description: nuget.exe 도움말 명령에 대 한 참조
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 12776b7c16aeef223a0b682ee2468edec8ea3295
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 5d91638c4a6f167ea8a04e5dfa2905cb55084ddd
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623112"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779356"
 ---
 # <a name="help-or--command-nuget-cli"></a>help or ? command (NuGet CLI)
 
-**적용 대상:** &bullet; **지원 되**는 모든 버전: 모두
+**적용 대상:** &bullet; **지원 되** 는 모든 버전: 모두
 
 일반 도움말 정보 및 특정 명령에 대 한 도움말 정보를 표시 합니다.
 
@@ -28,7 +28,7 @@ nuget ? [command] [options]
 여기서 [command]는 도움말을 표시할 특정 명령을 식별 합니다.
 
 > [!Warning]
-> *help* `nuget help install` Nuget.org에 "help" 라는 패키지가 있기 때문에 몇 가지 명령을 사용 하 여에 대 한 도움말을 먼저 지정 하는 것에 유의 해야 합니다. 명령을 지정 하면 `nuget install help` install 명령에 대 한 도움말을 볼 수 없지만 대신 help 라는 이름의 패키지를 설치 합니다.
+>  `nuget help install` Nuget.org에 "help" 라는 패키지가 있기 때문에 몇 가지 명령을 사용 하 여에 대 한 도움말을 먼저 지정 하는 것에 유의 해야 합니다. 명령을 지정 하면 `nuget install help` install 명령에 대 한 도움말을 볼 수 없지만 대신 help 라는 이름의 패키지를 설치 합니다.
 
 ## <a name="options"></a>옵션
 

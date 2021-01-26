@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI 지역 명령
 description: nuget.exe 지역 명령에 대 한 참조
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/19/2018
 ms.topic: reference
-ms.openlocfilehash: cdc2b760021ffc4a9e02edacb45beac01cc99bf1
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 25feb29c7b96c47681cedd8208b8595952d3ca49
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623060"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779196"
 ---
 # <a name="locals-command-nuget-cli"></a>로컬 명령 (NuGet CLI)
 
@@ -46,7 +46,7 @@ nuget locals <folder> [options]
 
 - **`-List`**
 
-  지정 된 폴더의 위치 또는 모든 폴더의 위치를 *모두*함께 사용할 경우 나열 합니다.
+  지정 된 폴더의 위치 또는 모든 폴더의 위치를 *모두* 함께 사용할 경우 나열 합니다.
 
 - **`-NonInteractive`**
 

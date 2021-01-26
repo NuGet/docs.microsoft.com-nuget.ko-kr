@@ -1,16 +1,16 @@
 ---
 title: NuGet 5.5 릴리스 정보
 description: 새 기능, 버그 수정 및 Ecrs를 비롯 한 NuGet 5.5에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/19/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0e8ab66c937058e84420bc3e3a5031cbc133aad7
-ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
+ms.openlocfilehash: 0fde67dd03c31e986ed89f2f8627608e279ef908
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80148284"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780115"
 ---
 # <a name="nuget-55-release-notes"></a>NuGet 5.5 릴리스 정보
 
@@ -32,23 +32,23 @@ NuGet 배포 차량:
 
 * 로컬 피드에 호스트 되는 패키지에 대 한 Visual Studio 패키지 관리자 UI의 자동 포함 아이콘에 대 한 지원- [#8189](https://github.com/NuGet/Home/issues/8189)
 
-* MSBuild 정적 Graph Api- [8791](https://github.com/NuGet/Home/issues/8791) 를 호출 하 여 계산 속도를 향상 시키는 `RestoreUseStaticGraphEvaluation`를 사용 하는 op 복원 성능이 크게 향상 됨
+* `RestoreUseStaticGraphEvaluation`MSBuild 정적 Graph api- [8791](https://github.com/NuGet/Home/issues/8791) 를 호출 하 여 계산 속도를 높일 때 사용 하는 op 복원 성능이 크게 향상 됨
 
-* 플랫폼 간 인증 플러그인을 사용 하 여 dotnet 안정성 향상
+* 플랫폼 간 인증 플러그인을 사용 하 여 dotnet.exe 안정성이 향상 됨
     * TaskCanceledException를 사용 하 여 dotnet restore 실패- [#7842](https://github.com/NuGet/Home/issues/7842)
     * 플러그 인: "작업이 취소 되었습니다."-이로 인해 ADO 인증에 문제가 있습니다. - [#8528](https://github.com/NuGet/Home/issues/8528)
 
-* `dotnet nuget <add|remove|update|disable|enable|list> source` 명령 추가- [#4126](https://github.com/NuGet/Home/issues/4126)
+* `dotnet nuget <add|remove|update|disable|enable|list> source`명령 추가- [#4126](https://github.com/NuGet/Home/issues/4126)
 
-* Dotnet nuget 푸시 [#8778](https://github.com/NuGet/Home/issues/8778) 를 사용 하는 `--skip-duplicate`에 대 한 지원을
+* `--skip-duplicate`Dotnet nuget 푸시 [#8778](https://github.com/NuGet/Home/issues/8778) 사용에 대 한 지원을
 
-* Msbuild/restore를 사용 하 `packages.config` 지원- [#8506](https://github.com/NuGet/Home/issues/8506)
+* `packages.config`Msbuild/restore- [#8506](https://github.com/NuGet/Home/issues/8506) 지원
 
 ### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
 
 **버그**
 
-* V3 Api를 사용 하 여 자체 업데이트 프로그램 재작업- [#4197](https://github.com/NuGet/Home/issues/4197)
+* V3 Api를 사용 하 여 Self-Updater 재작업- [#4197](https://github.com/NuGet/Home/issues/4197)
 
 * 패키지 종속성 버전이 ' * '로 설정 된 경우 패키지 종속성 버전이 잘못 되었습니다.- [#6697](https://github.com/NuGet/Home/issues/6697)
 
@@ -56,7 +56,7 @@ NuGet 배포 차량:
 
 * 잠금 파일은 "*" 시나리오에서 적용 되지 않습니다.- [#8073](https://github.com/NuGet/Home/issues/8073)
 
-* PackageReference에서 *를 사용 하는 경우 Nuget.exe는 최신 버전의 패키지로 확인 되지 않습니다 (MSBuild/Dotnet/VS restore do).- [#8432](https://github.com/NuGet/Home/issues/8432)
+* PackageReference에서 *를 사용 하는 경우 (MSBuild/Dotnet/VS restore do)에서 NuGet.exe는 최신 버전의 패키지로 확인 되지 않습니다 [#8432](https://github.com/NuGet/Home/issues/8432)
 
 * 다중 대상 WPF 프로젝트를 사용 하는 dotnet list 패키지- [#8463](https://github.com/NuGet/Home/issues/8463)
 
@@ -92,11 +92,11 @@ NuGet 배포 차량:
 
 * 복원: LOH (large object heap)에 생성 되는 긴 문자열 [#9031](https://github.com/NuGet/Home/issues/9031)
 
-* MSBuild SDK 확인자- [8848](https://github.com/NuGet/Home/issues/8848) 로 인해 최신 mono의 사용자 지정 nuget.exe가 중단 될 수 있습니다.
+* MSBuild SDK 확인자- [8848](https://github.com/NuGet/Home/issues/8848) 로 인해 최신 mono의 사용자 지정 nuget.exe 중단 될 수 있음
 
-* dgspec이 "다른 프로세스에서 사용 되었습니다."- [8692](https://github.com/NuGet/Home/issues/8692) 인 경우 복원이 실패 합니다.
+* nuget.dgspec.js에서 "다른 프로세스에서 사용" 하는 경우 복원이 실패 합니다.- [8692](https://github.com/NuGet/Home/issues/8692)
 
-**Dcr**
+**DCR**
 
 * _GetRestoreProjectStyle의 논리는 작업에 있어야 합니다. [#8804](https://github.com/NuGet/Home/issues/8804)
 

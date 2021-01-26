@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI pack 명령
 description: nuget.exe pack 명령에 대 한 참조
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 0483a75c7ee1fd851f935f44d96a417e2e86bf20
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: e2906d53119cb8c922df7d177cd686836ac50a5a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622956"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780047"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 명령 (NuGet CLI)
 
@@ -105,7 +105,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 - **`-p|-Properties`**
 
-  다른 옵션 다음에 오는 명령줄에서 마지막에 표시 되어야 합니다. 프로젝트 파일의 값을 재정의 하는 속성의 목록을 지정 합니다. 속성 이름에 대 한 [일반적인 MSBuild 프로젝트 속성](/visualstudio/msbuild/common-msbuild-project-properties) 을 참조 하세요. 여기에 있는 Properties 인수는 세미콜론으로 구분 된 토큰 = 값 쌍의 목록이 며,이 목록은 파일의 각 항목이 `$token$` `.nuspec` 지정 된 값으로 대체 됩니다. 값은 따옴표로 묶인 문자열일 수 있습니다. "구성" 속성의 경우 기본값은 "Debug"입니다. 릴리스 구성으로 변경 하려면를 사용 `-Properties Configuration=Release` 합니다. **일반적**으로 이러한 속성은 비정상적인 동작을 방지 하기 위해 해당 프로젝트 빌드 중에 사용 된 것과 동일 해야 합니다.
+  다른 옵션 다음에 오는 명령줄에서 마지막에 표시 되어야 합니다. 프로젝트 파일의 값을 재정의 하는 속성의 목록을 지정 합니다. 속성 이름에 대 한 [일반적인 MSBuild 프로젝트 속성](/visualstudio/msbuild/common-msbuild-project-properties) 을 참조 하세요. 여기에 있는 Properties 인수는 세미콜론으로 구분 된 토큰 = 값 쌍의 목록이 며,이 목록은 파일의 각 항목이 `$token$` `.nuspec` 지정 된 값으로 대체 됩니다. 값은 따옴표로 묶인 문자열일 수 있습니다. "구성" 속성의 경우 기본값은 "Debug"입니다. 릴리스 구성으로 변경 하려면를 사용 `-Properties Configuration=Release` 합니다. **일반적** 으로 이러한 속성은 비정상적인 동작을 방지 하기 위해 해당 프로젝트 빌드 중에 사용 된 것과 동일 해야 합니다.
 
 - **`-SolutionDirectory`**
 

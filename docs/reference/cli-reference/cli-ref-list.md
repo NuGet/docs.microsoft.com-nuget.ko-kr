@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI 목록 명령
 description: nuget.exe list 명령에 대 한 참조
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: d8e5c8574b44375e651f3ff1a4868681b3ce6d66
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 55ccf0d86ad6df8001e7401d430ec29cd7a154c3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699844"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780058"
 ---
 # <a name="list-command-nuget-cli"></a>list 명령 (NuGet CLI)
 
@@ -66,7 +66,7 @@ nuget list [search terms] [options]
 
 [환경 변수](cli-ref-environment-variables.md) 참조
 
-## <a name="examples"></a>예
+## <a name="examples"></a>예제
 
 구성 된 피드의 모든 패키지 나열:
 ```

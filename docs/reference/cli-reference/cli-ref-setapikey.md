@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI setapikey 명령
 description: nuget.exe setapikey 명령에 대 한 참조
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: b84d4257c580f6e734c26ebfc589be27bea10c82
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 3e0c2f84e336e0a642b1b5e815e74a1fb0878467
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622813"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780019"
 ---
 # <a name="setapikey-command-nuget-cli"></a>setapikey 명령 (NuGet CLI)
 
@@ -27,7 +27,7 @@ nuget setapikey <key> -Source <url> [options]
 여기서는 `<source>` 서버를 식별 하 고 `<key>` 는 저장할 키입니다. `<source>`을 생략 하면 nuget.org이 가정 됩니다. 
 
 > [!NOTE]
-> API 키는 개인 피드에 인증 하는 데 사용 되지 않습니다. 원본으로 인증 하기 위한 자격 증명을 관리 하려면 [ `nuget sources` 명령을](../cli-reference/cli-ref-sources.md) 참조 하세요.
+> API 키는 프라이빗 피드 인증에 사용되지 않습니다. 소스 인증에 사용할 자격 증명을 관리하려면 [`nuget sources` 명령](../cli-reference/cli-ref-sources.md)을 참조하세요.
 > API 키는 개별 NuGet 서버에서 가져올 수 있습니다. Nuget.org에 대 한 APIKeys를 만들고 관리 하려면- [api 키](../../nuget-org/scoped-api-keys.md#acquire-an-api-key) 를 참조 하세요.
 
 ## <a name="options"></a>옵션

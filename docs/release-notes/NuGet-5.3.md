@@ -1,16 +1,16 @@
 ---
 title: NuGet 5.3 릴리스 정보
 description: 새 기능, 버그 수정 및 Ecrs를 비롯 한 NuGet 5.3에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: ca71c5b9ef546f3ea92e55763d5059466ac3a930
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 009a219139a767ee6453305be68ccce478b0ec75
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813756"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780122"
 ---
 # <a name="nuget-53-release-notes"></a>NuGet 5.3 릴리스 정보
 
@@ -27,17 +27,17 @@ NuGet 배포 차량:
 
 * 패키지 아이콘은 외부 URL이 필요 하지 않고 [패키지에 포함 될 수 있습니다](../reference/msbuild-targets.md#packing-an-icon-image-file). - [#352](https://github.com/NuGet/Home/issues/352)
 
-* 패키지에 대 한 SHA 추적 및 적용을 통한 보안 향상- [#7281](https://github.com/NuGet/Home/issues/7281)
+* Packages.Config에 대 한 SHA 추적 및 적용을 통해 보안이 향상 되었습니다. [#7281](https://github.com/NuGet/Home/issues/7281)
 
-* 사용 되지 않는/레거시 NuGet 패키지의 사용 중단을 사용 하도록 설정 [#2867](https://github.com/NuGet/Home/issues/2867) | [블로그 게시물](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/) | [문서](../nuget-org/deprecate-packages.md)
+* 사용 되지 않는/레거시 NuGet 패키지의 사용 중단을 사용 하도록 설정 [#2867](https://github.com/NuGet/Home/issues/2867)  |  [블로그 게시물](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/)  |  [문서](../nuget-org/deprecate-packages.md)
 
 ### <a name="issues-fixed-in-this-release"></a>이번 릴리스에서 수정된 문제
 
 **버그**
 
-* 3\.0.100-preview9 SDK로 생성 된 NuGet 패키지는 2.2 SDK 사용자가 사용할 수 없습니다. 표준 시간대에 따라 [#8603](https://github.com/NuGet/Home/issues/8603)
+* 3.0.100-preview9 SDK로 생성 된 NuGet 패키지는 2.2 SDK 사용자가 사용할 수 없습니다. 표준 시간대에 따라 [#8603](https://github.com/NuGet/Home/issues/8603)
 
-* "경로에 문자가 있습니다." 오류가 발생 하면 `nuget restore` [#8168](https://github.com/NuGet/Home/issues/8168) 에서 "경로에 잘못 된 문자가 있습니다.
+* "경로에 문자가 있습니다." 오류가 발생 하면 #8168의 "경로에 잘못 된 문자가 있습니다. `nuget restore` [](https://github.com/NuGet/Home/issues/8168)
 
 * VS: 어셈블리는 부분적으로 ngen 되지 않고 완전히 ngen 됩니다 [#8513](https://github.com/NuGet/Home/issues/8513)
 
@@ -47,7 +47,7 @@ NuGet 배포 차량:
 
 * NU1403 개선-모든 패키지의 유효성을 검사 하 고 예상/실제 sha 값을 포함 합니다.- [#8424](https://github.com/NuGet/Home/issues/8424)
 
-* `NuGetPackageManager.PreviewUpdatePackagesAsync` - 의 여러 열거형 [#8401](https://github.com/NuGet/Home/issues/8401)
+* #8401의 여러 `NuGetPackageManager.PreviewUpdatePackagesAsync`  -  [](https://github.com/NuGet/Home/issues/8401) 열거형
 
 * PluginProcess에서 "공용-> 내부" 변경 내용 되돌리기- [#8390](https://github.com/NuGet/Home/issues/8390)
 
@@ -71,7 +71,7 @@ NuGet 배포 차량:
 
 * VS 지연- [#8156](https://github.com/NuGet/Home/issues/8156) 에서 설정을 읽습니다.
 
-* `Nuget sources add`의 회귀로 인해 "': ' 문자, 16 진수 값 0x3A를 이름" 오류- [#7948](https://github.com/NuGet/Home/issues/7948) 에 포함할 수 없습니다.
+* 의 회귀 `Nuget sources add` 로 인해 "': ' 문자, 16 진수 값 0x3A를 이름" 오류- [#7948](https://github.com/NuGet/Home/issues/7948) 에 포함할 수 없습니다.
 
 * NuGet 플러그 인 자격 증명 공급자-프로세스 창을 숨깁니다.- [#7511](https://github.com/NuGet/Home/issues/7511)
 
@@ -87,11 +87,11 @@ NuGet 배포 차량:
 
 * Proj 파일에서 복원 사용- [#8212](https://github.com/NuGet/Home/issues/8212)
 
-* `NUGET_NETFX_PLUGIN_PATHS` 및 `NUGET_NETCORE_PLUGIN_PATHS`를 도입 하 여 같은 시간에 두 구성을 모두 지원 [#8151](https://github.com/NuGet/Home/issues/8151)
+* `NUGET_NETFX_PLUGIN_PATHS` `NUGET_NETCORE_PLUGIN_PATHS` 같은 시간에 및의 구성을 모두 지원 하기 위해 및를 도입 [#8151](https://github.com/NuGet/Home/issues/8151)
 
 * 버전 특성을 통해 PackageDownload에 여러 버전 사용- [#8074](https://github.com/NuGet/Home/issues/8074)
 
-* Nuget.exe 디렉터리 및-PackageDirectory 옵션을 nuget.exe pack에 추가- [#7163](https://github.com/NuGet/Home/issues/7163)
+* nuget.exe 팩- [#7163](https://github.com/NuGet/Home/issues/7163) 에-솔루션 디렉터리 및-packagedirectory 옵션을 추가 합니다.
 
 **[이 릴리스에서 해결 된 모든 문제 목록-5.3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
 

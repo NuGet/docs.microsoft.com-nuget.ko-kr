@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI push 명령
 description: nuget.exe push 명령에 대 한 참조
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: d53a2e7f41219e68e59b195d1d5a9d1f62ad7c63
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 54a09361173ae10040433b05fcfae7304e39452e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622848"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779192"
 ---
 # <a name="push-command-nuget-cli"></a>push 명령 (NuGet CLI)
 
@@ -67,7 +67,7 @@ nuget push <packagePath> [options]
 
 - **`-src|-Source`**
 
-  서버 URL을 지정합니다. NuGet은 UNC 또는 로컬 폴더 원본을 식별 하 고 HTTP를 사용 하 여 파일을 푸시하는 대신 파일을 복사 합니다.  또한 NuGet 3.4.2 부터는이 `NuGet.Config` 파일이 *Defaultpushsource* 값을 지정 하지 않는 한 필수 매개 변수입니다 ( [NuGet 동작 구성](../../consume-packages/configuring-nuget-behavior.md)참조).
+  서버 URL을 지정합니다. NuGet은 UNC 또는 로컬 폴더 소스를 식별하며, HTTP를 사용하여 파일을 푸시하는 대신 단순히 파일을 복사합니다.  또한 NuGet 3.4.2 부터는이 `NuGet.Config` 파일이 *Defaultpushsource* 값을 지정 하지 않는 한 필수 매개 변수입니다 ( [NuGet 동작 구성](../../consume-packages/configuring-nuget-behavior.md)참조).
 
 - **`-SkipDuplicate`**
 

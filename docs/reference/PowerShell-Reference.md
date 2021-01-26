@@ -1,16 +1,16 @@
 ---
 title: NuGet PowerShell 참조
 description: Visual Studio의 NuGet 패키지 관리자 콘솔에서 사용할 수 있는 PowerShell 명령에 대 한 전체 참조입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 4f8b42847cbc155393fe6d2afbe2e0857b619da3
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 98bea8a225f4864953f898ef57b26e9093f7c2e9
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236882"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779370"
 ---
 # <a name="powershell-reference"></a>PowerShell 참조
 
@@ -20,7 +20,7 @@ ms.locfileid: "93236882"
 > 모든 PowerShell 명령은 패키지 사용량과만 관련 됩니다. 패키지를 만들고 게시 하는 것과 관련 된 PowerShell 명령은 없습니다. 단, 패키지가 다른 패키지의 소비자 일 수도 있습니다.
 
 > [!Important]
-> 여기에 나열 된 명령은 Visual Studio의 패키지 관리자 콘솔과 다르며 일반 PowerShell 환경에서 사용할 수 있는 [패키지 관리 모듈 명령과](/powershell/module/packagemanagement/?view=powershell-6) 다릅니다. 특히, 각 환경에는 사용할 수 없는 명령이 있으며 동일한 이름의 명령은 특정 인수에서 다를 수 있습니다. Visual Studio에서 패키지 관리 콘솔을 사용 하는 경우이 현재 항목에 설명 된 명령 및 인수를 적용 합니다.
+> 여기에 나열된 명령은 Visual Studio의 패키지 관리자 콘솔과 관련이 있으며 일반 PowerShell 환경에서 사용할 수 있는 [패키지 관리 모듈 명령](/powershell/module/packagemanagement/?view=powershell-6)과 다릅니다. 특히, 각 환경은 다른 환경에서 사용할 수 없는 명령이 있으며 명령의 이름이 같더라도 특정 인수가 다를 수도 있습니다. Visual Studio에서 패키지 관리 콘솔을 사용하는 경우 이 문서에 설명된 명령과 인수가 적용됩니다.
 
 | 일반 명령 | Description | NuGet 버전 |
 | --- | --- | --- |
