@@ -1,48 +1,48 @@
 ---
-title: 3.4.2 NuGet 릴리스 정보
-description: 다음을 포함 하 여 NuGet 3.4.2에 대 한 릴리스 정보는 문제, 버그 수정, 추가 된 기능 및 Dcr 알려져 있습니다.
-author: karann-msft
-ms.author: karann
+title: NuGet 3.4.2 릴리스 정보
+description: 알려진 문제, 버그 수정, 추가 된 기능 및 3.4.2를 포함 하는 NuGet에 대 한 릴리스 정보입니다.
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 4c8aa75df822ca5b2f1c4bd274272218f16ad917
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6e6aa174582d059faa5bef9469cd83b19da51cf3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549153"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780253"
 ---
-# <a name="nuget-342-release-notes"></a><span data-ttu-id="fab2e-103">3.4.2 NuGet 릴리스 정보</span><span class="sxs-lookup"><span data-stu-id="fab2e-103">NuGet 3.4.2 Release Notes</span></span>
+# <a name="nuget-342-release-notes"></a><span data-ttu-id="1d2c7-103">NuGet 3.4.2 릴리스 정보</span><span class="sxs-lookup"><span data-stu-id="1d2c7-103">NuGet 3.4.2 Release Notes</span></span>
 
-<span data-ttu-id="fab2e-104">[3.4.1 NuGet 릴리스 정보](../release-notes/nuget-3.4.1.md) | [NuGet 3.4.3 릴리스 정보](../release-notes/nuget-3.4.3.md)</span><span class="sxs-lookup"><span data-stu-id="fab2e-104">[NuGet 3.4.1 Release Notes](../release-notes/nuget-3.4.1.md) | [NuGet 3.4.3 Release Notes](../release-notes/nuget-3.4.3.md)</span></span>
+<span data-ttu-id="1d2c7-104">[NuGet 3.4.1 릴리스 정보](../release-notes/nuget-3.4.1.md)  |  [NuGet 3.4.3 릴리스 정보](../release-notes/nuget-3.4.3.md)</span><span class="sxs-lookup"><span data-stu-id="1d2c7-104">[NuGet 3.4.1 Release Notes](../release-notes/nuget-3.4.1.md) | [NuGet 3.4.3 Release Notes](../release-notes/nuget-3.4.3.md)</span></span>
 
-<span data-ttu-id="fab2e-105">NuGet 3.4.2는 3.4 및 3.4.1에서 식별 된 여러 문제를 해결 하 2016 년 4 월 8 일에 발표 된 릴리스 합니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-105">NuGet 3.4.2 was released on April 8, 2016 to address several issues that were identified in the 3.4 and 3.4.1 release.</span></span>
+<span data-ttu-id="1d2c7-105">NuGet 3.4.2는 3.4 및 3.4.1 릴리스에서 식별 된 몇 가지 문제를 해결 하기 위해 2016 년 4 월 8 일에 릴리스 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-105">NuGet 3.4.2 was released on April 8, 2016 to address several issues that were identified in the 3.4 and 3.4.1 release.</span></span>
 
-## <a name="nugetexe-342-rc-is-now-available"></a><span data-ttu-id="fab2e-106">nuget.exe 3.4.2 RC 출시 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-106">nuget.exe 3.4.2 RC is now available</span></span>
+## <a name="nugetexe-342-rc-is-now-available"></a><span data-ttu-id="1d2c7-106">이제 nuget.exe 3.4.2 RC를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-106">nuget.exe 3.4.2 RC is now available</span></span>
 
-<span data-ttu-id="fab2e-107">Nuget.exe 3.4.2의 릴리스 후보를 다운로드할 수 있습니다 [여기](https://dist.nuget.org/index.html)합니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-107">You can download the release candidate of nuget.exe 3.4.2 [here](https://dist.nuget.org/index.html).</span></span>
+<span data-ttu-id="1d2c7-107">nuget.exe 3.4.2의 릴리스 후보는 [여기](https://dist.nuget.org/index.html)에서 다운로드할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-107">You can download the release candidate of nuget.exe 3.4.2 [here](https://dist.nuget.org/index.html).</span></span>
 
-## <a name="updates-and-improvements"></a><span data-ttu-id="fab2e-108">업데이트 및 향상 된 기능</span><span class="sxs-lookup"><span data-stu-id="fab2e-108">Updates and Improvements</span></span>
+## <a name="updates-and-improvements"></a><span data-ttu-id="1d2c7-108">업데이트 및 개선 사항</span><span class="sxs-lookup"><span data-stu-id="1d2c7-108">Updates and Improvements</span></span>
 
-* <span data-ttu-id="fab2e-109">특정 시나리오에서는 전체 종속성 그래프를 사용 하 여 패키지에서 업데이트 시간이 매우 오래 걸렸 및 Visual Studio를 중지 합니다. 여기서는 업데이트의 성능을 개선 현저 하 게 했습니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-109">We have significantly improved the performance of updates in a specific scenario, where updates on packages with deep dependency graphs took a really long time and hung Visual Studio.</span></span>
-* <span data-ttu-id="fab2e-110">네트워크 트래픽 없이 nuget 복원 2.5 x-3 배 Visual Studio 내에서 더 빠르게 됩니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-110">nuget restore without network traffic is 2.5x – 3x faster within Visual Studio.</span></span>
-* <span data-ttu-id="fab2e-111">이 변경 외에도 있는 문제를 해결 했습니다 있는 VS UI의 수 업데이트를 가져오는 경우에 두 번 네트워크 적중 된 것입니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-111">In addition to this change, we have fixed an issue where we were hitting the network twice when fetching the update count in the VS UI.</span></span> <span data-ttu-id="fab2e-112">이 일부 시간 제한 문제 고객 경험이 3.4/3.4.1 부분적으로 담당 했습니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-112">This was partially responsible for some timeout issues customers experienced in 3.4/3.4.1.</span></span>
-* <span data-ttu-id="fab2e-113">No_proxy 설정에 대 한 지원 추가</span><span class="sxs-lookup"><span data-stu-id="fab2e-113">Added support for no_proxy setting</span></span>
+* <span data-ttu-id="1d2c7-109">심층 종속성 그래프가 포함 된 패키지에 대 한 업데이트는 매우 긴 시간이 소요 되 고 Visual Studio가 중단 되는 특정 시나리오의 업데이트 성능이 크게 향상 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-109">We have significantly improved the performance of updates in a specific scenario, where updates on packages with deep dependency graphs took a really long time and hung Visual Studio.</span></span>
+* <span data-ttu-id="1d2c7-110">네트워크 트래픽이 없는 nuget 복원은 Visual Studio 내에서 2.5 x – 3 배 빠릅니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-110">nuget restore without network traffic is 2.5x – 3x faster within Visual Studio.</span></span>
+* <span data-ttu-id="1d2c7-111">이와 같이 변경 하는 것 외에도 VS UI에서 업데이트 횟수를 가져올 때 네트워크를 두 번 적중 하는 문제를 해결 했습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-111">In addition to this change, we have fixed an issue where we were hitting the network twice when fetching the update count in the VS UI.</span></span> <span data-ttu-id="1d2c7-112">이는 3.4/3.4.1에서 발생 하는 몇 가지 제한 시간 문제를 부분적으로 담당 했습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-112">This was partially responsible for some timeout issues customers experienced in 3.4/3.4.1.</span></span>
+* <span data-ttu-id="1d2c7-113">No_proxy 설정에 대 한 지원 추가</span><span class="sxs-lookup"><span data-stu-id="1d2c7-113">Added support for no_proxy setting</span></span>
 
-## <a name="fixes"></a><span data-ttu-id="fab2e-114">수정</span><span class="sxs-lookup"><span data-stu-id="fab2e-114">Fixes</span></span>
+## <a name="fixes"></a><span data-ttu-id="1d2c7-114">수정 프로그램</span><span class="sxs-lookup"><span data-stu-id="1d2c7-114">Fixes</span></span>
 
-* <span data-ttu-id="fab2e-115">문제를 해결 하 고 3.4.1으로 업데이트 한 후 nuget.org 원본 NuGet 설정 또는 구성에서 누락 된 키를 누릅니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-115">Fixed an issue where nuget.org source was missing in NuGet settings or config after updating to 3.4.1.</span></span>
-* <span data-ttu-id="fab2e-116">3.4.1에서 대/소문자 변경 FindPackagesById Artifactory를 중단 하는 위치는 문제가 해결 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-116">Fixed an issue where a casing change to FindPackagesById in 3.4.1 breaks Artifactory.</span></span>
-* <span data-ttu-id="fab2e-117">Nuget.exe 사용 하 여 NuGet 복원을 사용 하 여 실패를 야기 하는 FIPS 사용 하 여 문제를 수정 했습니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-117">Corrected an issue with FIPS that caused failures with NuGet restore with nuget.exe.</span></span>
-* <span data-ttu-id="fab2e-118">잘못 된 아이콘 URL 사용 하 여 원본을 검색할 때 충돌을 해결 했습니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-118">Fixed a crash when browsing sources with invalid icon URL.</span></span>
-* <span data-ttu-id="fab2e-119">버전 및 원본의' 모든' 항목을 병합 된 문제가 해결 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-119">Fixed issues with merging versions and entries from 'All Sources'.</span></span>
+* <span data-ttu-id="1d2c7-115">3.4.1로 업데이트 한 후 NuGet 설정 또는 구성에 nuget.org 원본이 없는 문제를 해결 했습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-115">Fixed an issue where nuget.org source was missing in NuGet settings or config after updating to 3.4.1.</span></span>
+* <span data-ttu-id="1d2c7-116">3.4.1의 FindPackagesById에 대 한 대/소문자 변경이 Artifactory를 중단 하는 문제를 해결 했습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-116">Fixed an issue where a casing change to FindPackagesById in 3.4.1 breaks Artifactory.</span></span>
+* <span data-ttu-id="1d2c7-117">nuget.exe를 사용 하 여 NuGet 복원에 실패 한 FIPS 문제를 수정 했습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-117">Corrected an issue with FIPS that caused failures with NuGet restore with nuget.exe.</span></span>
+* <span data-ttu-id="1d2c7-118">잘못 된 아이콘 URL을 사용 하 여 소스를 검색할 때 충돌이 해결 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-118">Fixed a crash when browsing sources with invalid icon URL.</span></span>
+* <span data-ttu-id="1d2c7-119">' 모든 원본 '의 병합 버전 및 항목과 관련 된 문제를 해결 했습니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-119">Fixed issues with merging versions and entries from 'All Sources'.</span></span>
 
-## <a name="known-issues-in-342-windows-x86-commandline-rc"></a><span data-ttu-id="fab2e-120">알려진 문제 3.4.2에 Windows x86 명령줄 (RC)</span><span class="sxs-lookup"><span data-stu-id="fab2e-120">Known Issues in 3.4.2 Windows x86 Commandline (RC)</span></span>
+## <a name="known-issues-in-342-windows-x86-commandline-rc"></a><span data-ttu-id="1d2c7-120">3.4.2 Windows x86 Commandline (RC)의 알려진 문제</span><span class="sxs-lookup"><span data-stu-id="1d2c7-120">Known Issues in 3.4.2 Windows x86 Commandline (RC)</span></span>
 
-<span data-ttu-id="fab2e-121">이러한 문제는 RTM 도달 하기 전에 초기 다음 주 수정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-121">These issues will be fixed early next week before we hit RTM.</span></span>
+<span data-ttu-id="1d2c7-121">이러한 문제는 RTM에 도달 하기 전에 다음 주 이전에 수정 될 예정입니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-121">These issues will be fixed early next week before we hit RTM.</span></span>
 
-*  <span data-ttu-id="fab2e-122">솔루션 파일은 프로젝트 파일 보다 낮은 폴더 계층 구조에 저장 하는 경우 솔루션에서 실행 중인 nuget 복원이 실패 합니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-122">Running nuget restore on a solution will fail if the solution file is placed in a lower folder hierarchy than the project files.</span></span>
-*  <span data-ttu-id="fab2e-123">Nuget delete 명령 V2 피드를 사용 하 여 패키지 실행이 실패 합니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-123">Running nuget delete command on a package using the V2 feed will fail.</span></span> <span data-ttu-id="fab2e-124">V3 피드를 대신 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-124">Use V3 feed instead.</span></span>
+*  <span data-ttu-id="1d2c7-122">솔루션 파일이 프로젝트 파일 보다 하위 폴더 계층 구조에 배치 되 면 솔루션에 대해 nuget 복원 실행이 실패 합니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-122">Running nuget restore on a solution will fail if the solution file is placed in a lower folder hierarchy than the project files.</span></span>
+*  <span data-ttu-id="1d2c7-123">V2 피드를 사용 하 여 패키지에서 nuget delete 명령을 실행 하는 것은 실패 합니다.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-123">Running nuget delete command on a package using the V2 feed will fail.</span></span> <span data-ttu-id="1d2c7-124">대신 V3 피드를 사용 하십시오.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-124">Use V3 feed instead.</span></span>
 
 
-<span data-ttu-id="fab2e-125">수정 및 개선 사항이이 릴리스에서 전체 목록은 문제 목록을 보려면 [여기](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.4.2++is%3Aclosed+)합니다.</span><span class="sxs-lookup"><span data-stu-id="fab2e-125">For the complete list of fixes and improvements in this release, check out the list of issues [here](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.4.2++is%3Aclosed+).</span></span>
+<span data-ttu-id="1d2c7-125">이 릴리스의 수정 사항 및 개선 사항에 대 한 전체 목록은 [여기](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.4.2++is%3Aclosed+)에서 문제 목록을 확인 하세요.</span><span class="sxs-lookup"><span data-stu-id="1d2c7-125">For the complete list of fixes and improvements in this release, check out the list of issues [here](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.4.2++is%3Aclosed+).</span></span>
