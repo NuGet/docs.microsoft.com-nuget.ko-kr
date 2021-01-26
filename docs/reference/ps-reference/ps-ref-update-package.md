@@ -1,16 +1,16 @@
 ---
 title: NuGet Update-Package PowerShell 참조
 description: Visual Studio의 NuGet 패키지 관리자 콘솔에서 Update-Package PowerShell 명령에 대 한 참조입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: af918d11e8f976be962d52084c5eda4d53e382c6
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 159817e56d978d6432e989d2027907c0d2445222
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238038"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777374"
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Update-Package (Visual Studio의 패키지 관리자 콘솔)
 
@@ -18,7 +18,7 @@ ms.locfileid: "93238038"
 
 패키지와 해당 종속성 또는 프로젝트의 모든 패키지를 최신 버전으로 업데이트 합니다.
 
-## <a name="syntax"></a>구문
+## <a name="syntax"></a>Syntax
 
 ```ps
 Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>]
@@ -45,7 +45,7 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | IncludePrerelease | 업데이트를 위한 시험판 패키지를 포함 합니다. |
 | 다시 설치 | 현재 설치 된 버전을 사용 하 여 패키지를 Resintalls 합니다. [패키지 다시 설치 및 업데이트를](../../consume-packages/reinstalling-and-updating-packages.md)참조 하세요. |
 | FileConflictAction | 프로젝트에서 참조 하는 기존 파일을 덮어쓰거나 무시 하도록 요청 된 경우 수행할 작업입니다. 가능한 값은 *Overwrite, Ignore, None, OverwriteAll* 및 *ignoreall* (3.0 +)입니다. |
-| DependencyVersion | 사용할 종속성 패키지의 버전은 다음 중 하나일 수 있습니다.<br/><ul><li>*가장 낮음* (기본값): 가장 낮은 버전</li><li>*HighestPatch* : 최하위 주, 최저 부, 최고 패치가 있는 버전</li><li>*HighestMinor* : 최하위 주, 가장 높은 부, 최고 패치가 있는 버전</li><li>*가장 높음* (매개 변수가 없는 Update-Package에 대 한 기본값): 가장 높은 버전</li></ul>파일의 설정을 사용 하 여 기본값을 설정할 수 있습니다 [`dependencyVersion`](../nuget-config-file.md#config-section) `Nuget.Config` . |
+| DependencyVersion | 사용할 종속성 패키지의 버전은 다음 중 하나일 수 있습니다.<br/><ul><li>*가장 낮음* (기본값): 가장 낮은 버전</li><li>*HighestPatch*: 최하위 주, 최저 부, 최고 패치가 있는 버전</li><li>*HighestMinor*: 최하위 주, 가장 높은 부, 최고 패치가 있는 버전</li><li>*가장 높음* (매개 변수가 없는 Update-Package에 대 한 기본값): 가장 높은 버전</li></ul>파일의 설정을 사용 하 여 기본값을 설정할 수 있습니다 [`dependencyVersion`](../nuget-config-file.md#config-section) `Nuget.Config` . |
 | ToHighestPatch | -Safe와 동일 합니다. |
 | ToHighestMinor | 업그레이드를 현재 설치 된 패키지와 동일한 주 버전의 버전 으로만 제한 합니다. |
 | WhatIf | 실제로 업데이트를 수행 하지 않고 명령을 실행할 때 발생 하는 상황을 보여 줍니다. |

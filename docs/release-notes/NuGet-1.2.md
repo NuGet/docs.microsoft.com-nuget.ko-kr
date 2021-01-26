@@ -1,16 +1,16 @@
 ---
 title: NuGet 1.2 릴리스 정보
 description: 알려진 문제, 버그 수정, 추가 된 기능 및 Ecrs를 비롯 한 NuGet 1.2에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 5d10d6bf27614980a144c30c3af6f9892a109061
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: af2248a41800f7641be9b77d7bb72e2a94d4ce47
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237190"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777192"
 ---
 # <a name="nuget-12-release-notes"></a>NuGet 1.2 릴리스 정보
 
@@ -65,6 +65,6 @@ NuGet 1.2을 지원 하도록 패키지 탐색기를 업데이트 했습니다. 
 
 ## <a name="known-issues"></a>알려진 문제
 
-* **1.2 패키지 비호환** : 최신 버전의 명령줄 도구를 사용 하 여 빌드된 패키지 (nuget.exe (> 1.2)는 이전 버전의 NuGet VS 추가 기능 (예: 1.1)에서 작동 하지 않습니다. 호환 되지 않는 스키마에 대 한 정보를 나타내는 오류 메시지가 표시 되 면이 오류가 발생 합니다. NuGet을 최신 버전으로 업데이트 하세요.
-* **Nuget. 서버 비호환** : Nuget. server 프로젝트를 사용 하 여 내부 nuget 피드를 호스팅하는 경우 최신 버전의 Nuget. server로 해당 프로젝트를 업데이트 해야 합니다.
-* **서명 불일치 오류** : 서명 불일치에 대 한 메시지를 사용 하 여 업그레이드 하는 동안 오류가 발생 하는 경우 먼저 NuGet을 제거한 후 설치 해야 합니다. 자세한 내용은 [알려진 문제 페이지](../release-notes/known-issues.md) 에 나열 되어 있습니다. 이 문제는 Visual Studio 2010 s p 1을 실행 하는 경우에만 적용 되 고 잘못 서명 된 NuGet 1.0 버전이 설치 되어 있습니다. 이 버전은 CodePlex 웹 사이트에서 잠깐 동안만 사용할 수 있으므로이 문제는 너무 많은 사용자에 게 영향을 주지 않습니다.
+* **1.2 패키지 비호환**: 최신 버전의 명령줄 도구를 사용 하 여 빌드된 패키지 (nuget.exe (> 1.2)는 이전 버전의 NuGet VS 추가 기능 (예: 1.1)에서 작동 하지 않습니다. 호환 되지 않는 스키마에 대 한 정보를 나타내는 오류 메시지가 표시 되 면이 오류가 발생 합니다. NuGet을 최신 버전으로 업데이트 하세요.
+* **Nuget. 서버 비호환**: Nuget. server 프로젝트를 사용 하 여 내부 nuget 피드를 호스팅하는 경우 최신 버전의 Nuget. server로 해당 프로젝트를 업데이트 해야 합니다.
+* **서명 불일치 오류**: 서명 불일치에 대 한 메시지를 사용 하 여 업그레이드 하는 동안 오류가 발생 하는 경우 먼저 NuGet을 제거한 후 설치 해야 합니다. 자세한 내용은 [알려진 문제 페이지](../release-notes/known-issues.md) 에 나열 되어 있습니다. 이 문제는 Visual Studio 2010 s p 1을 실행 하는 경우에만 적용 되 고 잘못 서명 된 NuGet 1.0 버전이 설치 되어 있습니다. 이 버전은 CodePlex 웹 사이트에서 잠깐 동안만 사용할 수 있으므로이 문제는 너무 많은 사용자에 게 영향을 주지 않습니다.

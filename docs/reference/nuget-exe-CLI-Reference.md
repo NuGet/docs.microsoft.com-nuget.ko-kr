@@ -1,16 +1,16 @@
 ---
-title: NuGet CLI (명령줄 인터페이스) 참조
+title: CLI (NuGet Command-Line 인터페이스) 참조
 description: nuget.exe CLI에 대 한 명령줄 참조 인덱스
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/23/2018
 ms.topic: reference
-ms.openlocfilehash: e9343f1fdddcf839322849925372587e685aef4a
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: a9a5fc4d3b1e0f19fa3ea249ca7759c8ebc2d12e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623151"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777703"
 ---
 # <a name="nuget-cli-reference"></a>NuGet CLI 참조
 
@@ -47,14 +47,14 @@ NuGet CLI (명령줄 인터페이스)는 `nuget.exe` 프로젝트 파일을 변�
 | [push](cli-reference/cli-ref-push.md) | 게시 | 모두 | 패키지 원본에 패키지를 게시 합니다. |
 | [config](cli-reference/cli-ref-config.md) | 모두 | 모두 | NuGet 구성 값을 가져오거나 설정 합니다. |
 | [help or ?](cli-reference/cli-ref-help.md) | 모두 | 모두 | 명령에 대 한 도움말 정보나 도움말을 표시 합니다. |
-| [locals](cli-reference/cli-ref-locals.md) | Consumption | 3.3 이상 | *전역 패키지*, *http 캐시*및 *임시* 폴더의 위치를 나열 하 고 해당 폴더의 내용을 지웁니다. |
+| [locals](cli-reference/cli-ref-locals.md) | Consumption | 3.3 이상 | *전역 패키지*, *http 캐시* 및 *임시* 폴더의 위치를 나열 하 고 해당 폴더의 내용을 지웁니다. |
 | [restore](cli-reference/cli-ref-restore.md) | Consumption | 2.7 이상 | 사용 중인 패키지 관리 형식에서 참조 하는 모든 패키지를 복원 합니다. Mono에서 실행 하는 경우 PackageReference 형식을 사용 하 여 패키지를 복원 하는 것은 지원 되지 않습니다. |
 | [setapikey](cli-reference/cli-ref-setapikey.md) | 게시, 소비 | 모두 | 패키지 원본에 액세스 하기 위한 키가 필요한 경우 지정 된 패키지 원본에 대 한 API 키를 저장 합니다. |
 | [spec](cli-reference/cli-ref-spec.md) | 만들기 | 모두 | `.nuspec`Visual Studio 프로젝트에서 파일을 생성 하는 경우 토큰을 사용 하 여 파일을 생성 합니다. |
 
 | 보조 명령 | 적용 가능한 역할 | NuGet 버전 | Description |
 | --- | --- | --- | --- |
-| [add](cli-reference/cli-ref-add.md) | 게시 | 3.3 이상 | 계층적 레이아웃을 사용 하 여 HTTP가 아닌 패키지 원본에 패키지를 추가 합니다. HTTP 원본의 경우 *push*를 사용 합니다. |
+| [add](cli-reference/cli-ref-add.md) | 게시 | 3.3 이상 | 계층적 레이아웃을 사용 하 여 HTTP가 아닌 패키지 원본에 패키지를 추가 합니다. HTTP 원본의 경우 *push* 를 사용 합니다. |
 | [delete](cli-reference/cli-ref-delete.md) | 게시 | 모두 | 패키지 원본에서 패키지를 제거 하거나 나열 취소 합니다. |
 | [init](cli-reference/cli-ref-init.md) | 만들기 | 3.3 이상 | 계층적 레이아웃을 사용 하 여 폴더의 패키지를 패키지 원본에 추가 합니다. |
 | [install](cli-reference/cli-ref-install.md) | Consumption | 모두 | 패키지를 현재 프로젝트에 설치 하지만 프로젝트 또는 참조 파일을 수정 하지는 않습니다. |

@@ -1,16 +1,16 @@
 ---
 title: NuGet Add-BindingRedirect PowerShell 참조
 description: Visual Studio의 NuGet 패키지 관리자 콘솔에서 Add-BindingRedirect PowerShell 명령에 대 한 참조입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 382ba9b179428c70e3eb16db86a363e095207d61
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 62edf1bf8995a4e1ffb83acc7a7621a786cc53e4
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237259"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777618"
 ---
 # <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>Add-BindingRedirect (Visual Studio의 패키지 관리자 콘솔)
 
@@ -31,7 +31,7 @@ Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 
 ## <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 설명 |
+| 매개 변수 | Description |
 | --- | --- |
 | ProjectName | 하다 바인딩 리디렉션을 추가할 프로젝트입니다. -ProjectName 스위치 자체는 선택 사항입니다. |
 

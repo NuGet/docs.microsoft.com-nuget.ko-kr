@@ -1,16 +1,16 @@
 ---
 title: NuGet Uninstall-Package PowerShell 참조
 description: Visual Studio의 NuGet 패키지 관리자 콘솔에서 Uninstall-Package PowerShell 명령에 대 한 참조입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: d164176355e32e5bbe0a017fc2b291cbc9ef326a
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 961a9d68e5cba09030401fc871a93bf1145b23a3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237129"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777398"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package (Visual Studio의 패키지 관리자 콘솔)
 
@@ -18,7 +18,7 @@ ms.locfileid: "93237129"
 
 프로젝트에서 패키지를 제거 하 고 필요에 따라 해당 종속성을 제거 합니다. 이 패키지에 다른 패키지가 종속된 경우 –Force 옵션을 지정하지 않으면 명령이 실패합니다.
 
-## <a name="syntax"></a>구문
+## <a name="syntax"></a>Syntax
 
 ```ps
 Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [-Force]
@@ -29,7 +29,7 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 
 ## <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 설명 |
+| 매개 변수 | Description |
 | --- | --- |
 | Id | 하다 제거할 패키지의 식별자입니다. -Id 스위치 자체는 선택 사항입니다. |
 | 버전 | 제거할 패키지의 버전입니다. 기본값은 현재 설치 된 버전입니다. |

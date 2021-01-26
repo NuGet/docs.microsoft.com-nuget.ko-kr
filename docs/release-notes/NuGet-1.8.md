@@ -1,16 +1,16 @@
 ---
 title: NuGet 1.8 릴리스 정보
 description: 알려진 문제, 버그 수정, 추가 된 기능 및 Ecrs를 비롯 한 NuGet 1.8에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 9d55534ffe765137731b7fbf4be4bbaa618c769c
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 8dd0fff88424c516d8b894412d07dcc53af19265
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236847"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777104"
 ---
 # <a name="nuget-18-release-notes"></a>NuGet 1.8 릴리스 정보
 
@@ -72,6 +72,6 @@ NuGet 1.8에서는 사용자 개인 정보를 보호 하기 위해 패키지 복
 ### <a name="nugetexe-performance-improvements"></a>nuget.exe 성능 향상
 설치 명령을 수정 하 여 동시에 패키지를 다운로드 하 고 설치 하면 NuGet 1.8은 확장 패키지 복원을 통해 nuget.exe 및의 성능을 크게 향상 시킬 수 있습니다.  높은 수준의 테스트는 프로젝트에 6 개의 패키지를 설치 하는 성능이 NuGet 1.8에서 약 35%까지 향상 됨을 보여 줍니다.  패키지 수를 25로 늘려도 약 60%의 성능 향상이 표시 됩니다.
 
-## <a name="bug-fixes"></a>버그 수정
+## <a name="bug-fixes"></a>버그 픽스
 NuGet 1.8에는 패키지 복원 동의 및 Windows 8 Express 통합과 관련 하 여 특히 패키지 관리자 콘솔과 패키지 복원 워크플로를 강조 하는 몇 가지 버그 수정이 포함 되어 있습니다.
 NuGet 1.8에서 수정 된 작업 항목의 전체 목록은 [이 릴리스에 대 한 Nuget 문제 추적기](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.8&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0)를 확인 하세요.

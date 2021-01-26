@@ -1,16 +1,16 @@
 ---
 title: 자격 증명 공급자 nuget.exe
 description: nuget.exe 자격 증명 공급자는 피드를 사용 하 여 인증 하며, 특정 규칙을 따르는 명령줄 실행 파일로 구현 됩니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 41e3e63138351bafd5e3a56080268faef10d85a3
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 285504508fa88c96f5c7a23f15ef14d81ebc21e1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238116"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777772"
 ---
 # <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>nuget.exe 자격 증명 공급자를 사용 하 여 피드 인증
 
@@ -24,7 +24,7 @@ nuget.exe 자격 증명 공급자는 다음과 같은 세 가지 방법으로 �
 
 - **전역적** 으로: 모든 인스턴스에서 현재 사용자의 프로필로 자격 증명 공급자를 사용할 수 있도록 하려면 `nuget.exe` 에 추가 `%LocalAppData%\NuGet\CredentialProviders` 합니다. 폴더를 만들어야 할 수도 있습니다 `CredentialProviders` . 자격 증명 공급자는 폴더의 루트 또는 하위 폴더에 설치할 수 있습니다 `CredentialProviders`  . 자격 증명 공급자가 여러 파일/어셈블리를 사용 하는 경우 하위 폴더를 사용 하 여 공급자를 구성 된 상태로 유지할 수 있습니다.
 
-- **환경 변수에서** : 자격 증명 공급자를 어디에 든 저장 하 고 `nuget.exe` 환경 변수를 공급자 위치로 설정 하 여에 액세스할 수 있습니다 `%NUGET_CREDENTIALPROVIDERS_PATH%` . 여러 위치가 있는 경우이 변수는 세미콜론으로 구분 된 목록 (예:) 일 수 있습니다 `path1;path2` .
+- **환경 변수에서**: 자격 증명 공급자를 어디에 든 저장 하 고 `nuget.exe` 환경 변수를 공급자 위치로 설정 하 여에 액세스할 수 있습니다 `%NUGET_CREDENTIALPROVIDERS_PATH%` . 여러 위치가 있는 경우이 변수는 세미콜론으로 구분 된 목록 (예:) 일 수 있습니다 `path1;path2` .
 
 - **nuget.exe와 함께** nuget.exe 자격 증명 공급자를와 동일한 폴더에 배치할 수 있습니다 `nuget.exe` .
 
@@ -70,9 +70,11 @@ nuget.exe 자격 증명 공급자는 다음과 같은 세 가지 방법으로 �
 
 예 stdout:
 
-    { "Username" : "freddy@example.com",
-      "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
-      "Message"  : "" }
+```
+{ "Username" : "freddy@example.com",
+    "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
+    "Message"  : "" }
+```
 
 ## <a name="troubleshooting-a-credential-provider"></a>자격 증명 공급자 문제 해결
 

@@ -1,20 +1,20 @@
 ---
 title: NuGet 1.6 릴리스 정보
 description: 알려진 문제, 버그 수정, 추가 된 기능 및 Ecrs를 비롯 한 NuGet 1.6에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 2878d3809b2be4fb71f4e7b1a1e08e405ead44b9
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 08b1cb3736e645d6efcc33f920f521c9c0fc7507
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384139"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777010"
 ---
  # <a name="nuget-16-release-notes"></a>NuGet 1.6 릴리스 정보
 
-Nuget [1.5 릴리스 정보](../release-notes/nuget-1.5.md) | [Nuget 1.7 릴리스 정보](../release-notes/nuget-1.7.md)
+[NuGet 1.5 릴리스 정보](../release-notes/nuget-1.5.md)  |  [NuGet 1.7 릴리스 정보](../release-notes/nuget-1.7.md)
 
 NuGet 1.6은 2011 년 12 월 13 일에 출시 되었습니다.
 
@@ -47,7 +47,7 @@ NuGet 1.6은 패키지 원본에 대 한 선택을 취소 하 여 사용 하지 
 
 ![패키지 비활성화](./media/package-source-with-disabled-source.png)
 
-## <a name="bug-fixes"></a>버그 수정
+## <a name="bug-fixes"></a>버그 픽스
 NuGet 1.6에는 총 106 개의 작업 항목이 수정 되었습니다. 이러한 중 95는 버그로 분류 되었으며 그 중 10 개는 기능 이었습니다.
 
 NuGet 1.6에서 수정 된 작업 항목의 전체 목록은 [이 릴리스에 대 한 Nuget 문제 추적기](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.6&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0)를 확인 하세요.

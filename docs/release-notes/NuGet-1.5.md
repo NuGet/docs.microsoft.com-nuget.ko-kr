@@ -1,20 +1,20 @@
 ---
 title: NuGet 1.5 릴리스 정보
 description: 알려진 문제, 버그 수정, 추가 된 기능 및 Ecrs를 비롯 한 NuGet 1.5에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 940a19cdc485d611d03b52ee3102bc95a78a36bb
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: c9946f3d8cf545ec14f842c40105743c231b4b72
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75383351"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777096"
 ---
 # <a name="nuget-15-release-notes"></a>NuGet 1.5 릴리스 정보
 
-Nuget [1.4 릴리스 정보](../release-notes/nuget-1.4.md) | [Nuget 1.6 릴리스 정보](../release-notes/nuget-1.6.md)
+[NuGet 1.4 릴리스 정보](../release-notes/nuget-1.4.md)  |  [NuGet 1.6 릴리스 정보](../release-notes/nuget-1.6.md)
 
 NuGet 1.5은 2011 년 8 월 30 일에 출시 되었습니다.
 
@@ -29,7 +29,7 @@ ASP.NET MVC 3 프로젝트 템플릿에는 프로젝트 템플릿이 호출 될 
 
 ### <a name="explicit-assembly-references"></a>명시적 어셈블리 참조
 
-패키지 내에서 참조할 어셈블리를 명시적으로 지정 하는 데 사용 되는 새로운 `<references />` 요소를 추가 했습니다.
+`<references />`패키지 내에서 참조할 어셈블리를 명시적으로 지정 하는 데 사용 되는 새 요소를 추가 했습니다.
 
 예를 들어 다음을 추가 합니다.
 
@@ -40,18 +40,18 @@ ASP.NET MVC 3 프로젝트 템플릿에는 프로젝트 템플릿이 호출 될 
 </references>
 ```
 
-그런 다음 폴더에 다른 어셈블리가 있는 경우에도 `xunit.dll` 및 `xunit.extensions.dll` `lib` 폴더의 해당 [프레임 워크/프로필 하위 폴더](../reference/nuspec.md#explicit-assembly-references) 에서 참조 됩니다.
+그런 다음 `xunit.dll` `xunit.extensions.dll` 폴더에 다른 어셈블리가 있더라도 및만 폴더의 해당 [프레임 워크/프로필 하위](../reference/nuspec.md#explicit-assembly-references) 폴더에서 참조 됩니다 `lib` .
 
-이 요소를 생략 하면 `lib` 폴더의 모든 어셈블리를 참조 하는 일반적인 동작이 적용 됩니다.
+이 요소를 생략 하면 일반적인 동작이 적용 되 고 폴더의 모든 어셈블리를 참조 `lib` 합니다.
 
 __이 기능은 어떻게 사용 되나요?__
 
-이 기능은 디자인 타임 전용 어셈블리를 지원 합니다. 예를 들어 코드 계약을 사용 하는 경우 Visual Studio에서 해당 계약 어셈블리를 찾을 수 있도록 확장 하는 런타임 어셈블리 옆에 계약 어셈블리가 있어야 하지만, 계약 어셈블리는 실제로 프로젝트에서 참조 되지 않으므로 `bin` 폴더에 복사 하면 안 됩니다.
+이 기능은 디자인 타임 전용 어셈블리를 지원 합니다. 예를 들어 코드 계약을 사용 하는 경우 Visual Studio에서 해당 계약 어셈블리를 찾을 수 있도록이 어셈블리는 확장 하는 런타임 어셈블리 옆에 있어야 하지만 계약 어셈블리는 실제로 프로젝트에서 참조 되어서는 안 되며 폴더에 복사 되어서는 안 됩니다 `bin` .
 
 마찬가지로, 기능을 XUnit과 같은 단위 테스트 프레임 워크에 사용할 수 있습니다 .이 경우 도구 어셈블리는 런타임 어셈블리 옆에 배치 해야 하지만 프로젝트 참조에서는 제외 됩니다.
 
 ### <a name="added-ability-to-exclude-files-in-the-nuspec"></a>Nuspec에서 파일을 제외 하는 기능이 추가 되었습니다.
-`.nuspec` 파일 내의 `<file>` 요소는 와일드 카드를 사용 하 여 특정 파일이 나 파일 집합을 포함 하는 데 사용할 수 있습니다. 와일드 카드를 사용 하는 경우 포함 된 파일의 특정 하위 집합을 제외할 수 있는 방법이 없습니다. 예를 들어 특정 폴더에 있는 모든 텍스트 파일을 제외 하 고 모든 텍스트 파일을 사용할 수 있습니다.
+`<file>`파일 내의 요소는 `.nuspec` 와일드 카드를 사용 하 여 특정 파일이 나 파일 집합을 포함 하는 데 사용할 수 있습니다. 와일드 카드를 사용 하는 경우 포함 된 파일의 특정 하위 집합을 제외할 수 있는 방법이 없습니다. 예를 들어 특정 폴더에 있는 모든 텍스트 파일을 제외 하 고 모든 텍스트 파일을 사용할 수 있습니다.
 
 ```xml
 <files>
@@ -82,9 +82,11 @@ __이 기능은 어떻게 사용 되나요?__
 
 
 ### <a name="get-package-command-improvement"></a>`Get-Package` 명령 향상
-`Get-Package` 명령은 이제 `-ProjectName` 매개 변수를 지원 합니다. 따라서 명령
+`Get-Package`이제 명령이 `-ProjectName` 매개 변수를 지원 합니다. 따라서 명령
 
-    Get-Package –ProjectName A
+```
+Get-Package –ProjectName A
+```
 
 프로젝트 A에 설치 된 모든 패키지를 나열 합니다.
 
@@ -107,18 +109,18 @@ Nuget.org 갤러리에 대 한 몇 가지 성능 향상으로 패키지 목록 �
 
 ![업데이트 탭 내 릴리스 정보](./media/manage-nuget-packages-release-notes.png)
 
-패키지에 릴리스 정보를 추가 하려면 NuSpec 파일에 새 `<releaseNotes />` metadata 요소를 사용 합니다.
+패키지에 릴리스 정보를 추가 하려면 `<releaseNotes />` NuSpec 파일의 새 메타 데이터 요소를 사용 합니다.
 
-### <a name="nuspec-ltfiles-gt-improvement"></a>. nuspec & ltfiles/&gt; 개선
-이제 `.nuspec` 파일에 빈 `<files />` 요소가 허용 됩니다. 그러면 nuget.exe는 패키지에 파일을 포함 하지 않도록 합니다.
+### <a name="nuspec-ltfiles-gt-improvement"></a>. nuspec &ltfiles/ &gt; 개선
+`.nuspec`이제 파일에서 빈 `<files />` 요소를 허용 합니다 .이 요소는 패키지에 파일을 포함 하지 nuget.exe에 알려 줍니다.
 
-## <a name="bug-fixes"></a>버그 수정
+## <a name="bug-fixes"></a>버그 픽스
 NuGet 1.5에는 총 107 개의 작업 항목이 수정 되었습니다. 103는 버그로 표시 되어 있습니다.
 
 NuGet 1.5에서 수정 된 작업 항목의 전체 목록은 [이 릴리스에 대 한 Nuget 문제 추적기](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.5&assignedTo=All&component=All&sortField=Summary&sortDirection=Descending&page=0)를 확인 하세요.
 
 ## <a name="bug-fixes-worth-noting"></a>버그가 수정 될 만한 문제:
 
-* [문제 1273](http://nuget.codeplex.com/workitem/1273): 패키지를 사전순으로 정렬 하 고 추가 공백을 제거 하 여 더 많은 버전 제어를 `packages.config` 했습니다.
-* [문제 844](http://nuget.codeplex.com/workitem/844): 버전이 `1.0.0`인 패키지에서 `Install-Package 1.0` 작동 하도록 버전 번호가 정규화 되었습니다.
-* [문제 1060](http://nuget.codeplex.com/workitem/1060): nuget.exe를 사용 하 여 패키지를 만들 때 `-Version` 플래그가 `<version />` 요소를 재정의 합니다.
+* [문제 1273](http://nuget.codeplex.com/workitem/1273): `packages.config` 패키지를 사전순으로 정렬 하 고 추가 공백을 제거 하 여 더 많은 버전 제어를 만들 수 있습니다.
+* [문제 844](http://nuget.codeplex.com/workitem/844): 이제 버전이 `Install-Package 1.0` 인 패키지에서 작동 하도록 버전 번호가 정규화 `1.0.0` 되었습니다.
+* [문제 1060](http://nuget.codeplex.com/workitem/1060): nuget.exe를 사용 하 여 패키지를 만들 때 `-Version` 플래그가 요소를 재정의 합니다 `<version />` .

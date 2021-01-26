@@ -1,16 +1,16 @@
 ---
 title: NuGet 2.8 릴리스 정보
 description: 알려진 문제, 버그 수정, 추가 된 기능 및 Ecrs를 비롯 한 NuGet 2.8에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 98b8b7334738306e6d40ba7c455409a87c4bb822
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: cb77cf0f049b5b3cfe1039d83ab58e33457674bf
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237029"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776716"
 ---
 # <a name="nuget-28-release-notes"></a>NuGet 2.8 릴리스 정보
 
@@ -44,13 +44,15 @@ NuGet 2.8은 2014 년 1 월 29 일에 출시 되었습니다.
 
 패키지 종속성을 확인할 때 NuGet은 패키지의 종속성을 충족 하는 가장 낮은 주 및 부 패키지 버전을 선택 하는 전략을 지금 구현 했습니다. 그러나 주 버전과 부 버전이 달리 패치 버전은 항상 가장 높은 버전으로 확인 되었습니다. 이 동작은 잘 악의적 종속성이 포함 된 패키지를 설치 하는 것이 적합 하지 않습니다. 다음 예제를 참조하세요.
 
-    PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
+```
+PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
 
-    Developer1 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.0
+Developer1 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.0
 
-    PackageB@1.0.1 is published
+PackageB@1.0.1 is published
 
-    Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
+Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
+```
 
 이 예제에서 Developer1 및 Developer2가 설치 된 경우에도 PackageA@1.0.0 각는 다른 버전의 PackageB로 종료 됩니다. NuGet 2.8은 패치 버전에 대 한 종속성 확인 동작이 주 버전 및 부 버전의 동작과 일치 하도록이 기본 동작을 변경 합니다. 위의 예제에서은 PackageB@1.0.0 PackageA@1.0.0 최신 패치 버전에 관계 없이 설치의 결과로 설치 됩니다.
 
@@ -64,24 +66,28 @@ NuGet 2.8은 종속성을 확인 하는 _기본_ 동작을 변경 하지만 패�
 
 위에서 자세히 설명 하는-DependencyVersion 스위치 외에도 NuGet은를 호출할 때-DependencyVersion 스위치를 지정 하지 않은 경우 기본값을 정의 하는 Nuget.Config 파일에 새 특성을 설정 하는 기능을 허용 합니다. 이 값은 또한 패키지 설치 작업에 대 한 NuGet 패키지 관리자 대화 상자에서 적용 됩니다. 이 값을 설정 하려면 Nuget.Config 파일에 아래 특성을 추가 합니다.
 
-    <config>
-        <add key="dependencyversion" value="Highest" />
-    </config>
+```xml
+<config>
+    <add key="dependencyversion" value="Highest" />
+</config>
+```
 
 ## <a name="preview-nuget-operations-with--whatif"></a>-Whatif를 사용 하 여 NuGet 작업 미리 보기
 
 일부 NuGet 패키지에는 심층 종속성 그래프가 있을 수 있으며,이에 따라 설치, 제거 또는 업데이트 작업 중에 수행 되는 작업을 먼저 확인 하는 것이 유용할 수 있습니다. NuGet 2.8은 명령이 적용 되는 패키지의 전체 클로저를 시각화할 수 있도록 표준 PowerShell-whatif 스위치를 설치 패키지, 제거 패키지 및 업데이트 패키지 명령에 추가 합니다. 예를 들어 `install-package Microsoft.AspNet.WebApi -whatif` 빈 ASP.NET 웹 응용 프로그램에서를 실행 하면 다음과 같은 결과가 발생 합니다.
 
-    PM> install-package Microsoft.AspNet.WebApi -whatif
-    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.WebHost (≥ 5.0.0)'.
-    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Core (≥ 5.0.0)'.
-    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Client (≥ 5.0.0)'.
-    Attempting to resolve dependency 'Newtonsoft.Json (≥ 4.5.11)'.
-    Install Newtonsoft.Json 4.5.11
-    Install Microsoft.AspNet.WebApi.Client 5.0.0
-    Install Microsoft.AspNet.WebApi.Core 5.0.0
-    Install Microsoft.AspNet.WebApi.WebHost 5.0.0
-    Install Microsoft.AspNet.WebApi 5.0.0
+```
+PM> install-package Microsoft.AspNet.WebApi -whatif
+Attempting to resolve dependency 'Microsoft.AspNet.WebApi.WebHost (≥ 5.0.0)'.
+Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Core (≥ 5.0.0)'.
+Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Client (≥ 5.0.0)'.
+Attempting to resolve dependency 'Newtonsoft.Json (≥ 4.5.11)'.
+Install Newtonsoft.Json 4.5.11
+Install Microsoft.AspNet.WebApi.Client 5.0.0
+Install Microsoft.AspNet.WebApi.Core 5.0.0
+Install Microsoft.AspNet.WebApi.WebHost 5.0.0
+Install Microsoft.AspNet.WebApi 5.0.0
+```
 
 ## <a name="downgrade-package"></a>패키지 다운 그레이드
 
@@ -101,12 +107,14 @@ NuGet 2.8은 종속성을 확인 하는 _기본_ 동작을 변경 하지만 패�
 
 NuGet 패키지는 일반적으로 네트워크 연결을 사용 하 여 [nuget 갤러리](http://www.nuget.org/) 와 같은 원격 갤러리에서 사용 되지만 클라이언트가 연결 되지 않은 많은 시나리오가 있습니다. 네트워크에 연결 되지 않은 경우 NuGet 클라이언트는 패키지를 성공적으로 설치할 수 없습니다. 해당 패키지는 로컬 NuGet 캐시의 클라이언트 컴퓨터에 이미 있는 경우에도 마찬가지입니다. NuGet 2.8은 패키지 관리자 콘솔에 자동 캐시 대체를 추가 합니다. 예를 들어 네트워크 어댑터의 연결을 끊고 jQuery를 설치 하면 콘솔에 다음이 표시 됩니다.
 
-    PM> Install-Package jquery
-    The source at nuget.org [https://www.nuget.org/api/v2/] is unreachable. Falling back to NuGet Local Cache at C:\Users\me\AppData\Local\NuGet\Cache
-    Installing 'jQuery 2.0.3'.
-    Successfully installed 'jQuery 2.0.3'.
-    Adding 'jQuery 2.0.3' to WebApplication18.
-    Successfully added 'jQuery 2.0.3' to WebApplication18.
+```
+PM> Install-Package jquery
+The source at nuget.org [https://www.nuget.org/api/v2/] is unreachable. Falling back to NuGet Local Cache at C:\Users\me\AppData\Local\NuGet\Cache
+Installing 'jQuery 2.0.3'.
+Successfully installed 'jQuery 2.0.3'.
+Adding 'jQuery 2.0.3' to WebApplication18.
+Successfully added 'jQuery 2.0.3' to WebApplication18.
+```
 
 캐시 대체 (fallback) 기능에는 특정 명령 인수가 필요 하지 않습니다. 또한 cache fallback은 현재 패키지 관리자 콘솔 에서만 작동 합니다 .이 동작은 현재 패키지 관리자 대화 상자에서 작동 하지 않습니다.
 
@@ -124,7 +132,7 @@ WebMatrix 3에서 NuGet 패키지 관리자 확장을 업데이트 하려면 다
 
 WebMatrix 용 nuget 패키지 관리자 확장의 첫 번째 릴리스입니다.  이 코드는 최근에 Microsoft에서 오픈 소스 NuGet 프로젝트에 참여 했습니다. 이전에는 NuGet 통합이 WebMatrix에 내장 되었으며 WebMatrix에서 대역 외로 업데이트 되지 않았습니다.  이제 나머지 NuGet 클라이언트 도구와 함께이를 추가로 업데이트할 수 있는 기능이 있습니다.
 
-## <a name="bug-fixes"></a>버그 수정
+## <a name="bug-fixes"></a>버그 픽스
 
 중요 한 버그 수정 사항 중 하나는 업데이트-패키지-다시 설치 명령에서 성능 향상입니다.
 

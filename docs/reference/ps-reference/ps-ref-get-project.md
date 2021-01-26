@@ -1,16 +1,16 @@
 ---
 title: NuGet Get-Project PowerShell 참조
 description: Visual Studio의 NuGet 패키지 관리자 콘솔에 있는 GetProject PowerShell 명령에 대 한 참조입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 6d9e1d48c8e1838f193878cab3483b1bfba7d7f0
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 16b3ffc0a375b8027c615020243a7289520715f8
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238077"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777467"
 ---
 # <a name="get-project-package-manager-console-in-visual-studio"></a>Get-Project (Visual Studio의 패키지 관리자 콘솔)
 
@@ -28,7 +28,7 @@ Get-Project [[-Name] <string>] [-All] [<CommonParameters>]
 
 | 매개 변수 | Description |
 | --- | --- |
-| 속성 | 패키지 관리자 콘솔에서 선택 된 기본 프로젝트를 기본값으로 지정 하 여 표시할 프로젝트를 지정 합니다. -Name 스위치는 자체 선택적입니다. |
+| Name | 패키지 관리자 콘솔에서 선택 된 기본 프로젝트를 기본값으로 지정 하 여 표시할 프로젝트를 지정 합니다. -Name 스위치는 자체 선택적입니다. |
 | 모두 | 솔루션의 모든 프로젝트에 대 한 정보를 표시 합니다. 프로젝트의 순서는 결정적이 지 않습니다. |
 
 이러한 매개 변수는 파이프라인 입력 또는 와일드 카드 문자를 허용 하지 않습니다.

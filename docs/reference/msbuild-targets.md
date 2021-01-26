@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7de3f0f1133a89848e9268d489751293fb3cbf25
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 0c32978baf6146f10c262ba7af94f61fee22272d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235700"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777712"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>MSBuild 대상으로서의 NuGet pack 및 restore
 
@@ -40,75 +40,79 @@ MSBuild 15.1 이상에서 NuGet은 아래에서 설명한 대로 `pack` 및 `res
 
 ## <a name="pack-target"></a>pack 대상
 
-PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우를 사용 하 여 `msbuild -t:pack` NuGet 패키지를 만드는 데 사용할 프로젝트 파일의 입력을 그립니다.
+형식을 사용 하는 .NET 프로젝트의 경우 `PackageReference` 를 사용 하 여 `msbuild -t:pack` NuGet 패키지를 만드는 데 사용할 프로젝트 파일의 입력을 그립니다.
 
-아래 표에서는 첫 번째 `<PropertyGroup>` 노드 내에서 프로젝트 파일에 추가할 수 있는 MSBuild 속성을 설명합니다. Visual Studio 2017 이상에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **{project_name} 편집** 을 선택하여 이러한 편집 작업을 쉽게 수행할 수 있습니다. 편의상 테이블은 [ `.nuspec` 파일](../reference/nuspec.md)의 해당 속성을 기준으로 구성 됩니다.
+다음 표에서는 첫 번째 노드 내에서 프로젝트 파일에 추가할 수 있는 MSBuild 속성을 설명 합니다 `<PropertyGroup>` . Visual Studio 2017 이상에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **{project_name} 편집** 을 선택하여 이러한 편집 작업을 쉽게 수행할 수 있습니다. 편의상 테이블은 [ `.nuspec` 파일](../reference/nuspec.md)의 해당 속성을 기준으로 구성 됩니다.
 
 `.nuspec`의 `Owners` 및 `Summary` 속성은 MSBuild에서 지원되지 않습니다.
 
-| 특성/NuSpec 값 | MSBuild 속성 | 기본값 | 참고 |
+| 특성/NuSpec 값 | MSBuild 속성 | 기본값 | 메모 |
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | MSBuild의 $(AssemblyName)입니다. |
 | 버전 | PackageVersion | 버전 | "1.0.0", "1.0.0-beta" 또는 "1.0.0-beta-00345"와 같이 semver와 호환됩니다. |
 | VersionPrefix | PackageVersionPrefix | 비어 있음 | PackageVersion을 설정하면 PackageVersionPrefix를 덮어씁니다. |
 | VersionSuffix | PackageVersionSuffix | 비어 있음 | MSBuild의 $(VersionSuffix)입니다. PackageVersion을 설정하면 PackageVersionSuffix를 덮어씁니다. |
-| Authors | Authors | 현재 사용자의 사용자 이름 | |
+| Authors | Authors | 현재 사용자의 사용자 이름 | nuget.org에서 프로필 이름과 일치하는, 세미콜론으로 구분된 패키지 작성자 목록입니다. 이러한 목록은 nuget.org의 NuGet 갤러리에 표시되고 동일한 작성자가 패키지를 상호 참조하는 데 사용됩니다. |
 | 소유자 | 해당 없음 | NuSpec에는 없음 | |
-| 제목 | 제목 | PackageId| |
-| Description | Description | "패키지 설명" | |
-| Copyright | Copyright | 비어 있음 | |
-| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
-| license | PackageLicenseExpression | 비어 있음 | `<license type="expression">`에 해당합니다. |
-| license | PackageLicenseFile | 비어 있음 | `<license type="file">`에 해당합니다. 참조 된 라이선스 파일을 명시적으로 압축 해야 합니다. |
-| LicenseUrl | PackageLicenseUrl | 비어 있음 | `PackageLicenseUrl` 는 사용 되지 않습니다. PackageLicenseExpression 또는 PackageLicenseFile 속성을 사용 하십시오. |
+| title | title | PackageId| 사람들에게 친숙한 패키지 제목이며 보통 nuget.org 및 Visual Studio의 패키지 관리자에서 UI 표시에 사용됩니다. |
+| Description | Description | "패키지 설명" | 어셈블리에 대한 자세한 설명입니다. `PackageDescription`을 지정하지 않으면 이 속성이 패키지 설명으로도 사용됩니다. |
+| Copyright | Copyright | 비어 있음 | 패키지에 대한 저작권 정보입니다. |
+| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | 클라이언트에서, 소비자가 패키지를 설치하기 전에 패키지 라이선스에 동의하도록 물어야 할지 여부를 지정하는 부울 값입니다. |
+| license | PackageLicenseExpression | 비어 있음 | `<license type="expression">`에 해당합니다. [라이선스 식 또는 라이선스 파일 압축을](#packing-a-license-expression-or-a-license-file)참조 하세요. |
+| license | PackageLicenseFile | 비어 있음 | 사용자 지정 라이선스 또는 SPDX 식별자가 할당 되지 않은 라이선스를 사용 하는 경우 패키지 내의 라이선스 파일 경로입니다. 참조 된 라이선스 파일을 명시적으로 압축 해야 합니다. `<license type="file">`에 해당합니다. [라이선스 식 또는 라이선스 파일 압축을](#packing-a-license-expression-or-a-license-file)참조 하세요. |
+| LicenseUrl | PackageLicenseUrl | 비어 있음 | `PackageLicenseUrl`는 사용되지 않습니다. 대신 `PackageLicenseExpression` 또는 `PackageLicenseFile`를 사용하십시오. |
 | ProjectUrl | PackageProjectUrl | 비어 있음 | |
-| 아이콘 | PackageIcon | 비어 있음 | 참조 된 아이콘 이미지 파일을 명시적으로 압축 해야 합니다.|
-| IconUrl | PackageIconUrl | 비어 있음 | 최상의 하위 환경에서는를 `PackageIconUrl` 추가로 지정 해야 `PackageIcon` 합니다. 장기적으로 `PackageIconUrl` 는 더 이상 사용 되지 않습니다. |
-| 태그 | PackageTags | 비어 있음 | 세미콜론으로 구분합니다. |
-| ReleaseNotes | PackageReleaseNotes | 비어 있음 | |
-| 리포지토리/u r l | RepositoryUrl | 비어 있음 | 소스 코드를 복제 하거나 검색 하는 데 사용 되는 리포지토리 URL입니다. 예 들어 *https://github.com/NuGet/NuGet.Client.git* |
-| 리포지토리/유형 | RepositoryType | 비어 있음 | 리포지토리 유형입니다. 예: *git*, *tfs*. |
-| 리포지토리/분기 | RepositoryBranch | 비어 있음 | 선택적 리포지토리 분기 정보입니다. 이 속성을 포함 하려면 *RepositoryUrl* 도 지정 해야 합니다. 예: *master* (NuGet 4.7.0 +) |
-| 리포지토리/커밋 | RepositoryCommit | 비어 있음 | 패키지가 빌드된 소스를 나타내는 선택적 리포지토리 커밋 또는 변경 집합입니다. 이 속성을 포함 하려면 *RepositoryUrl* 도 지정 해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) |
+| 아이콘 | PackageIcon | 비어 있음 | 패키지 아이콘으로 사용할 패키지의 이미지에 대한 경로입니다. 참조 된 아이콘 이미지 파일을 명시적으로 압축 해야 합니다. 자세한 내용은 [아이콘 이미지 파일](#packing-an-icon-image-file) 및 [ `icon` 메타 데이터](/nuget/reference/nuspec#icon)압축을 참조 하세요. |
+| IconUrl | PackageIconUrl | 비어 있음 | `PackageIconUrl` 는를 위해 더 이상 사용 되지 않습니다 `PackageIcon` . 그러나 최상의 하위 환경에서는 이외에를 지정 해야 `PackageIconUrl` `PackageIcon` 합니다. |
+| 태그들 | PackageTags | 비어 있음 | 패키지를 지정하는 세미콜론으로 구분된 태그 목록입니다. |
+| ReleaseNotes | PackageReleaseNotes | 비어 있음 | 패키지에 대한 릴리스 정보입니다. |
+| 리포지토리/u r l | RepositoryUrl | 비어 있음 | 소스 코드를 복제 하거나 검색 하는 데 사용 되는 리포지토리 URL입니다. 예: *https://github.com/NuGet/NuGet.Client.git* . |
+| 리포지토리/유형 | RepositoryType | 비어 있음 | 리포지토리 유형입니다. 예: `git` (기본값), `tfs` . |
+| 리포지토리/분기 | RepositoryBranch | 비어 있음 | 선택적 리포지토리 분기 정보입니다. `RepositoryUrl`도 이 속성을 포함하도록 지정해야 합니다. 예: *master* (NuGet 4.7.0 +). |
+| 리포지토리/커밋 | RepositoryCommit | 비어 있음 | 패키지가 빌드된 소스를 나타내는 선택적 리포지토리 커밋 또는 변경 집합입니다. `RepositoryUrl`도 이 속성을 포함하도록 지정해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +). |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
-| 요약 | 지원 안 함 | | |
+| 요약 | 지원되지 않음 | | |
 
 ### <a name="pack-target-inputs"></a>pack 대상 입력
 
-- IsPackable
-- SuppressDependenciesWhenPacking
-- PackageVersion
-- PackageId
-- Authors
-- 설명
-- Copyright
-- PackageRequireLicenseAcceptance
-- DevelopmentDependency
-- PackageLicenseExpression
-- PackageLicenseFile
-- PackageLicenseUrl
-- PackageProjectUrl
-- PackageIconUrl
-- PackageReleaseNotes
-- PackageTags
-- PackageOutputPath
-- IncludeSymbols
-- IncludeSource
-- PackageTypes
-- IsTool
-- RepositoryUrl
-- RepositoryType
-- RepositoryBranch
-- RepositoryCommit
-- NoPackageAnalysis
-- MinClientVersion
-- IncludeBuildOutput
-- IncludeContentInPack
-- BuildOutputTargetFolder
-- ContentTargetFolders
-- NuspecFile
-- NuspecBasePath
-- NuspecProperties
+| 속성 | Description |
+| - | - |
+| IsPackable | 프로젝트를 압축할 수 있는지 여부를 지정하는 부울 값입니다. 기본값은 `true`입니다. |
+| SuppressDependenciesWhenPacking | 생성 된 `true` NuGet 패키지에서 패키지 종속성을 표시 하지 않으려면로 설정 합니다. |
+| PackageVersion | 결과 패키지의 버전을 지정합니다. 모든 형식의 NuGet 버전 문자열을 수락합니다. 기본값은 `$(Version)`의 값입니다. 즉 프로젝트에서 `Version` 속성의 값입니다. |
+| PackageId | 결과 패키지의 이름을 지정합니다. 지정하지 않으면 `pack` 작업에서 기본값으로 `AssemblyName`을 사용하거나 패키지 이름으로 디렉터리 이름을 사용합니다. |
+| PackageDescription | UI 표시를 위한 패키지에 대한 자세한 설명입니다. |
+| 만든 이 | nuget.org에서 프로필 이름과 일치하는, 세미콜론으로 구분된 패키지 작성자 목록입니다. 이러한 목록은 nuget.org의 NuGet 갤러리에 표시되고 동일한 작성자가 패키지를 상호 참조하는 데 사용됩니다. |
+| 설명 | 어셈블리에 대한 자세한 설명입니다. `PackageDescription`을 지정하지 않으면 이 속성이 패키지 설명으로도 사용됩니다. |
+| Copyright | 패키지에 대한 저작권 정보입니다. |
+| PackageRequireLicenseAcceptance | 클라이언트에서, 소비자가 패키지를 설치하기 전에 패키지 라이선스에 동의하도록 물어야 할지 여부를 지정하는 부울 값입니다. 기본값은 `false`입니다. |
+| DevelopmentDependency | 패키지가 다른 패키지의 종속성으로 포함되지 않도록 패키지를 개발 전용 종속성으로 표시할지 여부를 지정하는 부울 값입니다. `PackageReference`(NuGet 4.8 +)를 사용 하는 경우이 플래그는 컴파일 타임 자산이 컴파일에서 제외 됨을 의미 하기도 합니다. 자세한 내용은 [PackageReference에 대한 DevelopmentDependency 지원](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)을 참조하세요. |
+| PackageLicenseExpression | [Spdx 라이선스 식별자](https://spdx.org/licenses/) 또는 식입니다 (예:) `Apache-2.0` . 자세한 내용은 [라이선스 식 또는 라이선스 파일 압축](#packing-a-license-expression-or-a-license-file)을 참조 하세요. |
+| PackageLicenseFile | 사용자 지정 라이선스 또는 SPDX 식별자가 할당 되지 않은 라이선스를 사용 하는 경우 패키지 내의 라이선스 파일 경로입니다. |
+| PackageLicenseUrl | `PackageLicenseUrl`는 사용되지 않습니다. 대신 `PackageLicenseExpression` 또는 `PackageLicenseFile`를 사용하십시오. |
+| PackageProjectUrl | |
+| PackageIcon | 패키지의 루트에 상대적인 패키지 아이콘 경로를 지정 합니다. 자세한 내용은 [아이콘 이미지 파일 압축](#packing-an-icon-image-file)을 참조 하세요. |
+| PackageReleaseNotes| 패키지에 대한 릴리스 정보입니다. |
+| PackageTags | 패키지를 지정하는 세미콜론으로 구분된 태그 목록입니다. |
+| PackageOutputPath | 압축된 패키지가 삭제되는 출력 경로를 결정합니다. 기본값은 `$(OutputPath)`입니다. |
+| IncludeSymbols | 이 부울 값은 프로젝트가 압축될 때 패키지에서 추가 기호 패키지를 만들어야 하는지 여부를 나타냅니다. 기호 패키지의 형식은 `SymbolPackageFormat` 속성으로 제어됩니다. 자세한 내용은 [includesymbols](#includesymbols)을 참조 하세요. |
+| IncludeSource | 이 부울 값은 팩 프로세스에서 소스 패키지를 만들어야 하는지 여부를 나타냅니다. 소스 패키지에는 PDB 파일뿐만 아니라 라이브러리의 소스 코드가 포함되어 있습니다. 소스 파일은 결과 패키지 파일의 `src/ProjectName` 디렉터리 아래에 놓입니다. 자세한 내용은 [Includesource](#includesource)를 참조 하세요. |
+| PackageTypes
+| IsTool | 모든 출력 파일이 *lib* 폴더 대신 *tools* 폴더에 복사되는지 여부를 지정합니다. 자세한 내용은 [IsTool](#istool)를 참조 하세요. |
+| RepositoryUrl | 소스 코드를 복제 하거나 검색 하는 데 사용 되는 리포지토리 URL입니다. 예: *https://github.com/NuGet/NuGet.Client.git* . |
+| RepositoryType | 리포지토리 유형입니다. 예: `git` (기본값), `tfs` . |
+| RepositoryBranch | 선택적 리포지토리 분기 정보입니다. `RepositoryUrl`도 이 속성을 포함하도록 지정해야 합니다. 예: *master* (NuGet 4.7.0 +). |
+| RepositoryCommit | 패키지가 빌드된 소스를 나타내는 선택적 리포지토리 커밋 또는 변경 집합입니다. `RepositoryUrl`도 이 속성을 포함하도록 지정해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +). |
+| SymbolPackageFormat | 기호 패키지의 형식을 지정합니다. "Nupkg" 인 경우 Pdb, Dll 및 기타 출력 파일을 포함 하는 *nupkg* 확장을 사용 하 여 레거시 기호 패키지를 만듭니다. "Snupkg" 인 경우 이식 가능한 Pdb를 포함 하는 snupkg 기호 패키지가 생성 됩니다. 기본값은 "nupkg"입니다. |
+| NoPackageAnalysis | `pack`에서 패키지를 빌드한 후 패키지 분석을 실행 하지 않도록 지정 합니다. |
+| MinClientVersion | nuget.exe 및 Visual Studio 패키지 관리자에 의해 적용되는, 이 패키지를 설치할 수 있는 NuGet 클라이언트의 최소 버전을 지정합니다. |
+| IncludeBuildOutput | 이 부울 값은 빌드 출력 어셈블리를 *.nupkg* 파일에 압축해야 할지 여부를 지정합니다. |
+| IncludeContentInPack | 이 부울 값은 형식이 인 항목이 `Content` 자동으로 결과 패키지에 포함 되는지 여부를 지정 합니다. 기본값은 `true`입니다. |
+| BuildOutputTargetFolder | 출력 어셈블리를 배치할 폴더를 지정합니다. 출력 어셈블리(및 기타 출력 파일)는 해당 프레임워크 폴더에 복사됩니다. 자세한 내용은 [출력 어셈블리](#output-assemblies)를 참조 하세요. |
+| ContentTargetFolders | 가 지정 되지 않은 경우 모든 콘텐츠 파일이 이동 해야 하는 기본 위치를 지정 합니다 `PackagePath` . 기본값은 "content;contentFiles"입니다. 자세한 내용은 [패키지에 콘텐츠 포함](#including-content-in-a-package)을 참조하세요. |
+| NuspecFile | 압축에 사용되는 *.nuspec* 파일에 대한 상대 또는 절대 경로입니다. 지정 된 경우 패키징 정보에 **만** 사용 되며 프로젝트의 정보는 사용 되지 않습니다. 자세한 내용은 [nuspec를 사용 하 여 압축](#packing-using-a-nuspec)을 참조 하세요. |
+| NuspecBasePath | *.nuspec* 파일에 대한 기본 경로입니다. 자세한 내용은 [nuspec를 사용 하 여 압축](#packing-using-a-nuspec)을 참조 하세요. |
+| NuspecProperties | key=value 쌍의 세미콜론으로 구분된 목록입니다. 자세한 내용은 [nuspec를 사용 하 여 압축](#packing-using-a-nuspec)을 참조 하세요. |
 
 ## <a name="pack-scenarios"></a>pack 시나리오
 
@@ -118,20 +122,18 @@ PackageReference 형식을 사용 하는 .NET Standard 프로젝트의 경우를
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-`PackageIconUrl` 는 새로운 속성을 위해 더 이상 사용 되지 않습니다 [`PackageIcon`](#packageicon) .
-
-NuGet 5.3 & Visual Studio 2019 버전 16.3부터 `pack` 패키지 메타 데이터에서만 지정 하는 경우 [NU5048](./errors-and-warnings/nu5048.md) 경고가 발생 합니다 `PackageIconUrl` .
+`PackageIconUrl` 는 속성을 위해 더 이상 사용 되지 않습니다 [`PackageIcon`](#packageicon) . NuGet 5.3 및 Visual Studio 2019 버전 16.3부터 `pack` 패키지 메타 데이터는만 지정 하는 경우 [NU5048](./errors-and-warnings/nu5048.md) 경고를 발생 시킵니다 `PackageIconUrl` .
 
 ### <a name="packageicon"></a>PackageIcon
 
 > [!Tip]
-> `PackageIcon` `PackageIconUrl` 아직 지원 하지 않는 클라이언트 및 원본과의 호환성을 유지 하려면 및를 둘 다 지정 해야 `PackageIcon` 합니다. Visual Studio는 `PackageIcon` 이후 릴리스에서 폴더 기반 소스에서 가져온 패키지를 지원 합니다.
+> 아직 지원 되지 않는 클라이언트 및 원본에 대 한 이전 버전과의 호환성을 유지 하려면 `PackageIcon` 및를 모두 지정 `PackageIcon` `PackageIconUrl` 합니다. Visual Studio `PackageIcon` 는 폴더 기반 소스에서 가져온 패키지를 지원 합니다.
 
 #### <a name="packing-an-icon-image-file"></a>아이콘 이미지 파일 압축
 
-아이콘 이미지 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageIcon` 의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 128x128 이미지를 확인 하는 것이 좋습니다.
+아이콘 이미지 파일을 압축 하는 경우 `PackageIcon` 속성을 사용 하 여 패키지의 루트에 상대적인 아이콘 파일 경로를 지정 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 합니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 128x128 이미지를 확인 하는 것이 좋습니다.
 
-예를 들어 다음과 같습니다.
+예를 들면 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -231,8 +233,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 ### <a name="packing-a-license-expression-or-a-license-file"></a>라이선스 식 또는 라이선스 파일 압축
 
-라이선스 식을 사용할 때 PackageLicenseExpression 속성을 사용 해야 합니다. 
-[라이선스 식 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample)입니다.
+라이선스 식을 사용 하는 경우 속성을 사용 `PackageLicenseExpression` 합니다. 샘플은 [라이선스 식 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample)을 참조 하세요.
 
 ```xml
 <PropertyGroup>
@@ -240,9 +241,9 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 </PropertyGroup>
 ```
 
-[NuGet.org에서 허용 하는 라이선스 식 및 라이선스에 대해 자세히 알아보세요](nuspec.md#license).
+NuGet.org에서 허용 하는 라이선스 식 및 라이선스에 대 한 자세한 내용은 [라이선스 메타 데이터](nuspec.md#license)를 참조 하세요.
 
-라이선스 파일을 압축 하는 경우 PackageLicenseFile 속성을 사용 하 여 패키지의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 예를 들어 다음과 같습니다.
+라이선스 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageLicenseFile` 의 루트에 상대적인 패키지 경로를 지정 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 합니다. 예를 들면 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -254,7 +255,10 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 </ItemGroup>
 ```
 
-[라이선스 파일 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
+샘플은 [라이선스 파일 샘플](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample)을 참조 하세요.
+
+> [!NOTE]
+> , 및 중 하나만 한 `PackageLicenseExpression` `PackageLicenseFile` `PackageLicenseUrl` 번에 지정할 수 있습니다.
 
 ### <a name="packing-a-file-without-an-extension"></a>확장명 없이 파일 압축
 
@@ -392,7 +396,7 @@ Nuspec 파일을 압축 하는 *.csproj* 파일의 예는 다음과 같습니다
 
 추가 restore 설정은 프로젝트 파일의 MSBuild 속성에서 가져올 수 있습니다. 또한 값은 `-p:` 스위치를 사용하여 명령줄에서 설정할 수 있습니다(아래 예제 참조).
 
-| 속성 | 설명 |
+| 속성 | Description |
 |--------|--------|
 | RestoreSources | 세미콜론으로 구분된 패키지 원본의 목록입니다. |
 | RestorePackagesPath | 사용자 패키지 폴더에 대한 경로입니다. |
@@ -436,7 +440,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 restore는 `obj` 빌드 폴더에 다음 파일을 만듭니다.
 
-| 파일 | 설명 |
+| 파일 | Description |
 |--------|--------|
 | `project.assets.json` | 모든 패키지 참조의 종속성 그래프를 포함 합니다. |
 | `{projectName}.projectFileExtension.nuget.g.props` | 패키지에 포함된 MSBuild props 파일에 대한 참조 |

@@ -1,16 +1,16 @@
 ---
 title: NuGet Get-Package PowerShell 참조
 description: Visual Studio의 NuGet 패키지 관리자 콘솔에서 Get-Package PowerShell 명령에 대 한 참조입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 1576e3f20eba1ecdd099b1e7c23aef6b1a1a0a4f
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 8394f888ec3d5e57eacd351a4867173da1070ead
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237233"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777494"
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (Visual Studio의 패키지 관리자 콘솔)
 
@@ -18,7 +18,7 @@ ms.locfileid: "93237233"
 
 로컬 리포지토리에 설치 된 패키지 목록을 검색 하 고-ListAvailable 스위치와 함께 사용 하는 경우 패키지 원본에서 사용할 수 있는 패키지를 나열 하거나-Update 스위치와 함께 사용 하는 경우 사용 가능한 업데이트를 나열 합니다.
 
-## <a name="syntax"></a>구문
+## <a name="syntax"></a>Syntax
 
 ```ps
 Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]

@@ -1,16 +1,16 @@
 ---
 title: NuGet Register-TabExpansion PowerShell 참조
 description: Visual Studio의 NuGet 패키지 관리자 콘솔에서 Register-TabExpansion PowerShell 명령에 대 한 참조입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 9d5bae2878cb6bf0848bca9a5ed9af0fee61bb85
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 6ad0da0e84fc2e31499c06bde013d2a256987d9a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237155"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777461"
 ---
 # <a name="register-tabexpansion-package-manager-console-in-visual-studio"></a>Register-TabExpansion (Visual Studio의 패키지 관리자 콘솔)
 
@@ -26,7 +26,7 @@ Register-TabExpansion [-Name] <String> [-Definition] <Object> [<CommonParameters
 
 ## <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 설명 |
+| 매개 변수 | Description |
 | --- | --- |
 | Name | 하다 확장을 등록할 명령입니다. -Name 스위치 자체는 선택 사항입니다. |
 | 정의 | 하다 구문에서 인수를 설명 하는 개체 `@{'<parameter>' = {'<value1>', '<value2>', ...}}` `<parameter>` 입니다. 여기서는 수정할 매개 변수의 이름이 고 각각은 `<value>` 특정 확장을 제공 합니다. 작은따옴표와 큰따옴표가 모두 허용 됩니다. |

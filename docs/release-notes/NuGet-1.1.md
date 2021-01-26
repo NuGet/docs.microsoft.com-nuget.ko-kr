@@ -1,16 +1,16 @@
 ---
 title: NuGet 1.0 및 1.1 릴리스 정보
 description: 알려진 문제, 버그 수정, 추가 된 기능 및 Ecrs를 비롯 한 NuGet 1.1에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 4f90888eae4d039c99d6f6879a06107ec5a31a82
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: cdd4bad54b08d956dbfdaf54220971492fd3ab02
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384699"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777213"
 ---
 # <a name="nuget-10-and-11-release-notes"></a>NuGet 1.0 및 1.1 릴리스 정보
 
@@ -31,7 +31,7 @@ NuGet에는 다음 구성 요소가 포함 됩니다.
 
 NuGet Tools Visual Studio 확장 (*nuget.exe*)에는 다음이 필요 합니다.
 
-* Visual Studio 2010 또는 Visual Web Developer 2010 Express
+* Visual Studio 2010 또는 Visual Web Developer 2010 Express
 
 NuGet 명령줄 도구를 사용 하려면 다음이 필요 합니다.
 
@@ -43,7 +43,7 @@ NuGet 명령줄 도구를 사용 하려면 다음이 필요 합니다.
 
 * 먼저 이전 빌드를 제거 합니다. 이렇게 하려면 VS를 관리자 권한으로 실행 해야 합니다.
 * 보유 하 고 있는 기존 피드를 모두 제거 합니다.
-* <https://go.microsoft.com/fwlink/?LinkId=206669>를 가리키는 새 피드를 추가 합니다.
+* 을 가리키는 새 피드를 추가 <https://go.microsoft.com/fwlink/?LinkId=206669> 합니다.
 
 ## <a name="nuget-11"></a>NuGet 1.1
 
@@ -110,14 +110,14 @@ RC 이후 RTM에 대 한 문제 하나를 해결 했습니다.
 * [강력한 이름의 어셈블리에 대 한 바인딩 리디렉션 지원](http://nuget.codeplex.com/workitem/238)
 * [패키지 참조 추가 ... 패키지 원본에 대 한 드롭다운을 포함할 UI](http://nuget.codeplex.com/workitem/226)
 * [NuPack는 구성 파일 이름의 구성 변환 agnostically을 지원 해야 합니다.](http://nuget.codeplex.com/workitem/224)
-* [NuPack .exe에서 BasePath을 재정의할 수 있습니다.](http://nuget.codeplex.com/workitem/222)
+* [BasePath을 재정의할 수 있습니다 NuPack.exe](http://nuget.codeplex.com/workitem/222)
 * [패키지 원본 대체 동작](http://nuget.codeplex.com/workitem/204)
 * [GUI에서 충돌](http://nuget.codeplex.com/workitem/201)
 * [패키지 추가 대화 상자에 정렬 옵션 추가](http://nuget.codeplex.com/workitem/179)
 * [패키지 관리자 콘솔을 지우기 위한 바로 가기 키](http://nuget.codeplex.com/workitem/174)
 * [PowerConsole로 인해 NuPack 콘솔이 실패 함](http://nuget.codeplex.com/workitem/166)
 * [콘솔 및 패키지 추가 대화 상자는 요청에서 사용자 에이전트를 설정 해야 합니다.](http://nuget.codeplex.com/workitem/141)
-* [빌드에서 VSIX의 버전 번호 및 NuPack를 설정 합니다.](http://nuget.codeplex.com/workitem/134)
+* [VSIX의 버전 번호를 설정 하 고 빌드에 NuPack.exe 합니다.](http://nuget.codeplex.com/workitem/134)
 * [-?에서 일반적인 PowerShell 매개 변수를 숨깁니다.](http://nuget.codeplex.com/workitem/118)
 * [콘솔 명령에 대 한 자세한 도움말 추가 정보](http://nuget.codeplex.com/workitem/110)
 * [패키지 추가 대화 상자에서 현재 패키지 원본 선택을 허용 해야 함](http://nuget.codeplex.com/workitem/88)
@@ -129,17 +129,17 @@ RC 이후 RTM에 대 한 문제 하나를 해결 했습니다.
 
 다음은 CTP 2에서 가장 중요 한 변경 내용입니다.
 
-* ATOM에서 OData 서비스 끝점으로 패키지 피드 전환: CTP2 버전의 NuGet으로 업그레이드 하는 경우 패키지 원본으로 다음 URL을 추가 해야 합니다. `https://feed.nuget.org/ctp2/odata/v1/`.
-* 패키지 추가 명령이 패키지를 *설치*하도록 변경 되었습니다.
-* `.nuspec` 형식을 업데이트 했습니다. 이제 `.nuspec` 형식에는 패키지 추가 대화 상자에 표시 되는 32x32 png 아이콘을 지정 하기 위한 *Iconurl* 필드가 포함 됩니다. 따라서 패키지를 구분할 수 있도록 설정 해야 합니다. `.nuspec` 형식에는 패키지에 대 한 자세한 정보를 제공 하는 웹 페이지를 가리키는 데 사용할 수 있는 새 *projectUrl* 필드도 포함 됩니다.
+* ATOM에서 OData 서비스 끝점으로 패키지 피드 전환: NuGet의 CTP2 버전으로 업그레이드 하는 경우 패키지 원본으로 다음 URL을 추가 해야 `https://feed.nuget.org/ctp2/odata/v1/` 합니다.
+* Add-Package 명령의 이름을 *Install-Package* 로 바꾸었습니다.
+* 형식이 업데이트 되었습니다 `.nuspec` . `.nuspec`이제 형식에는 패키지 추가 대화 상자에 표시 되는 32x32 png 아이콘을 지정 하기 위한 *iconurl* 필드가 포함 됩니다. 따라서 패키지를 구분할 수 있도록 설정 해야 합니다. `.nuspec`이 형식에는 패키지에 대 한 자세한 정보를 제공 하는 웹 페이지를 가리키는 데 사용할 수 있는 새 *projectUrl* 필드도 포함 됩니다.
 
-이 빌드는 이전 `.nupkg` 파일에서 작동 하지 않습니다. Null 참조 예외가 발생 하면 이전 `.nupkg` 파일을 사용 하 고 업데이트 된 [NuGet 명령줄 도구](http://nuget.codeplex.com/releases/52017/download/165468)를 사용 하 여 다시 빌드해야 합니다.
+이 빌드는 이전 파일에서 작동 하지 않습니다 `.nupkg` . Null 참조 예외가 발생 하면 이전 파일을 사용 하 `.nupkg` 고 업데이트 된 [NuGet 명령줄 도구](http://nuget.codeplex.com/releases/52017/download/165468)를 사용 하 여 다시 빌드해야 합니다.
 
 다음은 NuGet CTP 2에 대해 수정 된 기능 및 버그의 목록입니다 (사소한 코드 정리 간격 등에 대 한 버그는 포함 하지 않음).
 
 * [어셈블리의 TargetFramework가 지정 때 패키지 어셈블리의 압축을 푸는 동안 오류가 발생 했습니다.](http://nuget.codeplex.com/workitem/10)
 * [NuPack 콘솔 창을 검색 가능 하 게 만들기](http://nuget.codeplex.com/workitem/14)
-* [Nupack .exe 릴리스 ILMerge](http://nuget.codeplex.com/workitem/19)
+* [nupack.exe 릴리스 ILMerge](http://nuget.codeplex.com/workitem/19)
 * [더 나은 오류/예외 처리](http://nuget.codeplex.com/workitem/24)
 * [[Nupack. Core]: PackageManager는 피드 관련 오류를 정상적으로 처리 해야 합니다.](http://nuget.codeplex.com/workitem/28)
 * [콘솔에 대 한 새 아이콘이 필요 합니다.](http://nuget.codeplex.com/workitem/29)
@@ -147,26 +147,26 @@ RC 이후 RTM에 대 한 문제 하나를 해결 했습니다.
 * [NuPack 캐시가 다운로드 되었습니다. nupack 파일을 메모리에](http://nuget.codeplex.com/workitem/40)
 * [NuPack 콘솔: 콘솔 표시를 위한 기본 바로 가기 변경](http://nuget.codeplex.com/workitem/48)
 * [ProjectSystem은 공용 속성에 대 한 기본값을 지원 해야 합니다.](http://nuget.codeplex.com/workitem/49)
-* [하나의 nuspec 파일만 사용 하 여 폴더에서 nupack .exe를 실행 하려면 해당 nuspec를 사용 해야 합니다.](http://nuget.codeplex.com/workitem/52)
+* [Nuspec 파일을 하나만 포함 하는 폴더에서 nupack.exe를 실행 하려면 해당 nuspec를 사용 해야 합니다.](http://nuget.codeplex.com/workitem/52)
 * [프로젝트/솔루션을 로드 하지 않은 경우에도 프로젝트 메뉴가 나타납니다.](http://nuget.codeplex.com/workitem/54)
 * [코드 베이스의 클린 클론에 대 한 빌드. cmd 실패](http://nuget.codeplex.com/workitem/56)
 * [업데이트 사용 가능 기능](http://nuget.codeplex.com/workitem/57)
-* [콘솔에서 메시지를 제거 대화 상자를 통해 대화 상자:](http://nuget.codeplex.com/workitem/73)
+* [대화 상자: 대화 상자를 통해 패키지를 추가 하면 콘솔에서 프롬프트가 제거 됩니다.](http://nuget.codeplex.com/workitem/73)
 * [' 설치 '를 클릭 하 여 패키지를 추가 하는 것은 시각적 피드백 없이 느리게 표시 되는 경우가 많습니다.](http://nuget.codeplex.com/workitem/80)
 * [설치 된 패키지 중 업데이트 된 패키지를 검색할 수 있는 방법은 없습니다.](http://nuget.codeplex.com/workitem/82)
 * [대화 상자에서 설치 된 패키지를 업데이트할 수 있는 방법은 없습니다.](http://nuget.codeplex.com/workitem/83)
 * [대화 상자에서 설치 된 패키지를 제거할 수 있는 방법은 없습니다.](http://nuget.codeplex.com/workitem/84)
-* [&ldquo;패키지 참조 추가&hellip;&rdquo; 설치 된 참조의 상황에 맞는 메뉴에 표시 됩니다.](http://nuget.codeplex.com/workitem/85)
+* [&ldquo;패키지 참조 추가 &hellip; &rdquo; 는 설치 된 참조의 상황에 맞는 메뉴에 표시 됩니다.](http://nuget.codeplex.com/workitem/85)
 * [콘솔에서 패키지를 업데이트 한 후에는 이전 버전과 새 버전이 설치 된 것으로 모두 표시 됩니다.](http://nuget.codeplex.com/workitem/86)
 * [콘솔의 작업은 대화 상자를 사용할 때 사용 후 사라집니다.](http://nuget.codeplex.com/workitem/87)
-* [Nupack .exe에서 정리 명령줄 구문 분석](http://nuget.codeplex.com/workitem/89)
+* [nupack.exe에서 명령줄 구문 분석 정리 ](http://nuget.codeplex.com/workitem/89)
 * [패키지 소스에 이름 추가](http://nuget.codeplex.com/workitem/98)
 * [패키지 아이콘 포함을 지원 하기 위한 nuspec](http://nuget.codeplex.com/workitem/103)
 * [피드 UI에서 URL 복사를 허용 하지 않습니다.](http://nuget.codeplex.com/workitem/105)
 * [더 나은 제거 패키지 오류 처리.](http://nuget.codeplex.com/workitem/107)
 * [콘솔 창에서 입력은 커서 포커스에 따라 다릅니다.](http://nuget.codeplex.com/workitem/112)
 * [오류 메시지가 보입니다.](http://nuget.codeplex.com/workitem/116)
-* [설치 되지 않은 패키지에 대 한 패키지 제거의 성능이 잘못 되었습니다.](http://nuget.codeplex.com/workitem/117)
+* [설치 되지 않은 패키지에 대 한 Remove-Package의 성능이 잘못 되었습니다.](http://nuget.codeplex.com/workitem/117)
 * [패키지 소스가 없으면 패키지를 제거 하지 못합니다.](http://nuget.codeplex.com/workitem/119)
 * [패키지 원본을 사용할 수 없을 때 패키지 제거 실패](http://nuget.codeplex.com/workitem/120)
 * [패키지 메타 데이터 및 피드에 제목을 추가 합니다.](http://nuget.codeplex.com/workitem/125)
@@ -175,14 +175,14 @@ RC 이후 RTM에 대 한 문제 하나를 해결 했습니다.
 * [Nupack 서버를 업데이트 하 여 NuPack 사용자 에이전트가 패키지를 다운로드 하도록 요청](http://nuget.codeplex.com/workitem/142)
 * [승인 해야 하는 모든 종속성에 대 한 라이선스를 표시 하는 라이선스 승인 대화 상자](http://nuget.codeplex.com/workitem/145)
 * [피드에서 패키지가 throw 될 때 오류 기록](http://nuget.codeplex.com/workitem/150)
-* [NuPack는 빈 &lt;licenseurl&gt; 요소를 허용 하지 않아야 합니다.](http://nuget.codeplex.com/workitem/152)
-* [목록 이름 바꾸기-패키지-패키지에 패키지 추가, 패키지를 설치-패키지에 추가 및 제거-패키지](http://nuget.codeplex.com/workitem/155)
+* [NuPack.exe 빈 &lt; licenseurl 요소를 허용 하면 안 됩니다. &gt;](http://nuget.codeplex.com/workitem/152)
+* [List-Package 이름을 Get 패키지로, Add-Package을 설치-패키지로, Remove-Package를 제거 하려면](http://nuget.codeplex.com/workitem/155)
 * [솔루션 탐색기에서 패키지 참조 추가 메뉴 항목을 사용 하면 Visual Studio가 충돌 함](http://nuget.codeplex.com/workitem/158)
 * ["사용 가능한 패키지 소스" 레이블에 콜론이 없습니다.](http://nuget.codeplex.com/workitem/160)
 * [Nuspec xml 요소와 대/소문자를 일관 되 게 대/소문자 구분](http://nuget.codeplex.com/workitem/161)
 * [NuPack VSIX의 매니페스트는 ' 관리 비트 '를 설정 해야 합니다.](http://nuget.codeplex.com/workitem/162)
-* [피드 없이 목록 패키지를 실행 하면 null ref 오류가 발생 합니다.](http://nuget.codeplex.com/workitem/164)
-* [nuget.exe: 대상 경로를 지정 합니다.](http://nuget.codeplex.com/workitem/171)
+* [피드 없이 List-Package를 실행 하는 경우 null 참조 오류가 발생 합니다.](http://nuget.codeplex.com/workitem/164)
+* [nuget.exe: 대상 경로 지정](http://nuget.codeplex.com/workitem/171)
 * [WinXP에서 패키지 관리 콘솔을 여는 Powershell 오류](http://nuget.codeplex.com/workitem/175)
 * [패키지 목록을 로드 하는 동안 VS가 충돌 합니다.](http://nuget.codeplex.com/workitem/176)
 * [메타 패키지 허용 (파일 없음, 종속성만)](http://nuget.codeplex.com/workitem/180)
@@ -190,7 +190,7 @@ RC 이후 RTM에 대 한 문제 하나를 해결 했습니다.
 * [Target이 지정 된 경우 PathResolver는 와일드 카드 문자를 앞 경로 부분을 삭제 해야 합니다.](http://nuget.codeplex.com/workitem/183)
 * [종속성 없음](http://nuget.codeplex.com/workitem/186)
 * [Elmah 설치 오류](http://nuget.codeplex.com/workitem/192)
-* [구성 변환은 &lt;configsections에서 제대로 작동 하지 않습니다&gt;](http://nuget.codeplex.com/workitem/194)
+* [구성 변환이 configsections에서 제대로 작동 하지 않음 &lt;&gt;](http://nuget.codeplex.com/workitem/194)
 * [' $Global:p rojectCache ' 변수는 설정 되지 않았기 때문에 검색할 수 없습니다.](http://nuget.codeplex.com/workitem/203)
 * [NuPack 패키지를 만들기 위한 MSBuild 작업 추가](http://nuget.codeplex.com/workitem/205)
 * [목록-패키지 검색/필터링을 지원 해야 함](http://nuget.codeplex.com/workitem/206)
@@ -200,12 +200,12 @@ RC 이후 RTM에 대 한 문제 하나를 해결 했습니다.
 * [특정 framework 버전을 찾을 수 없는 경우 대체/기본 파일 집합을 허용 합니다.](http://nuget.codeplex.com/workitem/223)
 * [패키지 참조 추가 ... UI에서 패키지를 제거할 수 없습니다.](http://nuget.codeplex.com/workitem/225)
 * [하나 이상의 프로젝트가 언로드될 때 패키지 참조 충돌 스튜디오 추가](http://nuget.codeplex.com/workitem/228)
-* [구성 변환이 web.config 파일에서 작동 하지 않는 것 같습니다.](http://nuget.codeplex.com/workitem/229)
-* [init. ps1 사용자 지정 패키지에서 발생 하지 않음](http://nuget.codeplex.com/workitem/237)
+* [구성 변환이 web.debug.config 파일에서 작동 하지 않는 것 같습니다.](http://nuget.codeplex.com/workitem/229)
+* [ 사용자 지정 패키지에서 발생 하는init.ps1](http://nuget.codeplex.com/workitem/237)
 * [Feedlist에 경로를 추가 하는 경우 기본 단추가 확인으로 설정 되어 있으므로 ENTER 키를 누르면 자동으로 닫힙니다.](http://nuget.codeplex.com/workitem/240)
 * [종속성을 제거 하려고 하면 행에서 2 번 시도 하면 VS가 중단 됩니다.](http://nuget.codeplex.com/workitem/241)
 * [패키지 추가 대화 상자에 프로젝트 URL 표시](http://nuget.codeplex.com/workitem/253)
-* [설치 된 패키지에 대 한 기본 패키지 추가 대화 상자](http://nuget.codeplex.com/workitem/254)
+* [설치 된 패키지에 대 한 Add-Package 대화 상자 기본값](http://nuget.codeplex.com/workitem/254)
 * [패키지 추가 대화 상자 메뉴 항목을 변경 합니다.](http://nuget.codeplex.com/workitem/261)
 * [네임 스페이스 및 어셈블리 이름 바꾸기](http://nuget.codeplex.com/workitem/274)
 * [NuPack 프로젝트의 이름을 NuGet으로 바꿉니다.](http://nuget.codeplex.com/workitem/282)
@@ -214,7 +214,7 @@ RC 이후 RTM에 대 한 문제 하나를 해결 했습니다.
 * [패키지 목록 위의 라이선스 승인 대화 상자에서 텍스트를 변경 합니다.](http://nuget.codeplex.com/workitem/292)
 * [OData가 fwlink URL을 사용 하지 않습니다.](http://nuget.codeplex.com/workitem/304)
 * [패키지 관리자 UI: 페이징에 사용 되는 패키지 수의 적극적인 캐싱](http://nuget.codeplex.com/workitem/317)
-* [NuPack/NuGet-&gt; 패키지 관리자 콘솔 오류](http://nuget.codeplex.com/workitem/335)
+* [NuPack/NuGet- &gt; 패키지 관리자 콘솔 오류](http://nuget.codeplex.com/workitem/335)
 * [패키지 추가 대화 상자에 이미 설치 된 패키지에 대 한 라이선스 동의가 표시 됨](http://nuget.codeplex.com/workitem/336)
 
 ## <a name="ctp-1"></a>CTP 1
@@ -223,8 +223,8 @@ RC 이후 RTM에 대 한 문제 하나를 해결 했습니다.
 
 * [패키지 확장의 이름을로 변경 해야 합니다. nupack](http://nuget.codeplex.com/workitem/1)
 * [패키지 파일을 폴더로 이동](http://nuget.codeplex.com/workitem/2)
-* [병합 설치 &amp; PS 명령 추가](http://nuget.codeplex.com/workitem/3)
-* [동사-명사 cmdlet에 대 한 별칭 만들기](http://nuget.codeplex.com/workitem/4)
+* [Merge install &amp; PS 명령 추가](http://nuget.codeplex.com/workitem/3)
+* [Verb-Noun cmdlet에 대 한 별칭 만들기](http://nuget.codeplex.com/workitem/4)
 * [VS에서 솔루션을 전환할 때 NuPack가 혼동 됨](http://nuget.codeplex.com/workitem/6)
 * [기본적으로 ' 패키지 ' 솔루션 폴더를 숨겨야 합니다.](http://nuget.codeplex.com/workitem/11)
 * [콘텐츠 항목에서 토큰 바꾸기에 대 한 지원을 추가 합니다.](http://nuget.codeplex.com/workitem/12)
@@ -233,10 +233,10 @@ RC 이후 RTM에 대 한 문제 하나를 해결 했습니다.
 * [솔루션에서 기본 프로젝트를 삭제 해도 삭제 된 프로젝트가 기본값으로 표시 됩니다.](http://nuget.codeplex.com/workitem/30)
 * [새 패키지는 "지정 된 URI가 이미 패키지에 있기 때문에 파트를 추가할 수 없습니다."와 함께 실패 합니다.](http://nuget.codeplex.com/workitem/32)
 * [Visual Studio GUI에서 "NuPack" 문자열을 제거 합니다.](http://nuget.codeplex.com/workitem/35)
-* [COPYRIGHT .txt 파일에 Apache 헤더 추가](http://nuget.codeplex.com/workitem/36)
-* [Register-packagesource 명령 제거](http://nuget.codeplex.com/workitem/37)
+* [COPYRIGHT.txt 파일에 Apache 헤더 추가](http://nuget.codeplex.com/workitem/36)
+* [Update-PackageSource 명령 제거](http://nuget.codeplex.com/workitem/37)
 * [프로필을 로드할 때 패키지 관리자를 사용할 수 없습니다. 예외 발생](http://nuget.codeplex.com/workitem/39)
-* [init. p s 1을 설치 하 고. p s 1을 제거 하 고 추가 상태를 받아야 합니다.](http://nuget.codeplex.com/workitem/41)
+* [init.ps1, install.ps1 및 uninstall.ps1 추가 상태를 받아야 합니다.](http://nuget.codeplex.com/workitem/41)
 * [콘솔과 GUI 패키지를 하나의 패키지로 결합](http://nuget.codeplex.com/workitem/42)
 * [루트에 있지 않은 XML에 적용 하는 경우 xml 변환 논리가 작동 하지 않습니다.](http://nuget.codeplex.com/workitem/43)
 * [패키지 원본 설정 관리 대화 상자가 NuPack 콘솔을 업데이트 하지 않음](http://nuget.codeplex.com/workitem/44)
@@ -262,8 +262,8 @@ RC 이후 RTM에 대 한 문제 하나를 해결 했습니다.
 * [제거 패키지에 대 한 버전](http://nuget.codeplex.com/workitem/113)
 * [대화 상자 UI의 최근 탭 제거](http://nuget.codeplex.com/workitem/115)
 * [대화 상자 UI를 하나 이상 연 후 솔루션 폴더를 마우스 오른쪽 단추로 클릭 하면 VS가 충돌 합니다.](http://nuget.codeplex.com/workitem/126)
-* [목록 패키지의-Local 매개 변수를-Installed로 변경 합니다.](http://nuget.codeplex.com/workitem/129)
-* [패키지 .xml에서 NuPack로 이름 바꾸기](http://nuget.codeplex.com/workitem/132)
+* [List-Package의-Local 매개 변수를-Installed로 변경 합니다.](http://nuget.codeplex.com/workitem/129)
+* [NuPack.configpackages.xml 이름 바꾸기 ](http://nuget.codeplex.com/workitem/132)
 * [콘솔이 줄의 끝에 커서를 강제로 적용 합니다.](http://nuget.codeplex.com/workitem/135)
 * [제거-패키지 intellisense가 손상 되었습니다.](http://nuget.codeplex.com/workitem/136)
 * [Nuspec 및 피드에 RequireLicenseAcceptance 플래그 추가](http://nuget.codeplex.com/workitem/137)

@@ -1,24 +1,24 @@
 ---
 title: NuGet 1.3 릴리스 정보
 description: 알려진 문제, 버그 수정, 추가 된 기능 및 Ecrs를 비롯 한 NuGet 1.3에 대 한 릴리스 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 45d5caa46d532670e370b81f675663b3c5aaaa95
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: 54eda149352810eacc1d6340ad16cec1b03194e3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825257"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777124"
 ---
 # <a name="nuget-13-release-notes"></a>NuGet 1.3 릴리스 정보
 
-Nuget [1.2 릴리스 정보](../release-notes/nuget-1.2.md) | [Nuget 1.4 릴리스 정보](../release-notes/nuget-1.4.md)
+[NuGet 1.2 릴리스 정보](../release-notes/nuget-1.2.md)  |  [NuGet 1.4 릴리스 정보](../release-notes/nuget-1.4.md)
 
 NuGet 1.3은 2011 년 4 월 25 일에 출시 되었습니다.
 
-## <a name="new-features"></a>새 기능
+## <a name="new-features"></a>새로운 기능
 
 ### <a name="streamlined-package-creation-with-symbol-server-integration"></a>기호 서버 통합으로 간소화 된 패키지 만들기
 
@@ -29,25 +29,35 @@ NuGet 팀은 [SymbolSource.org](http://www.symbolsource.org/) 의 담당자와 �
 이 명령을 사용 하면 패키지 관리자 콘솔 내에서 패키지에 대 한 프로젝트 페이지를 쉽게 가져올 수 있습니다. 또한 패키지에 대 한 라이선스 URL 및 보고서 신고 페이지를 여는 옵션을 제공 합니다.
 명령의 구문은 다음과 같습니다.
 
-    Open-PackagePage -Id <string> [-Version] [-Source] [-License] [-ReportAbuse] [-PassThru]
+```
+Open-PackagePage -Id <string> [-Version] [-Source] [-License] [-ReportAbuse] [-PassThru]
+```
 
-`-PassThru` 옵션은 지정 된 URL의 값을 반환 하는 데 사용 됩니다.
+`-PassThru`옵션은 지정 된 URL의 값을 반환 하는 데 사용 됩니다.
 
-예:
+예제:
 
-    PM> Open-PackagePage Ninject
+```
+PM> Open-PackagePage Ninject
+```
 
 Ninject 패키지에 지정 된 프로젝트 URL에 대 한 브라우저를 엽니다.
 
-    PM> Open-PackagePage Ninject -License
+```
+PM> Open-PackagePage Ninject -License
+```
 
 Ninject 패키지에 지정 된 라이선스 URL에 대 한 브라우저를 엽니다.
 
-    PM> Open-PackagePage Ninject -ReportAbuse
+```
+PM> Open-PackagePage Ninject -ReportAbuse
+```
 
 지정 된 패키지에 대 한 남용을 보고 하는 데 사용 되는 현재 패키지 원본에서 URL에 대 한 브라우저를 엽니다.
 
-    PM> $url = Open-PackagePage Ninject -License -WhatIf -PassThru
+```
+PM> $url = Open-PackagePage Ninject -License -WhatIf -PassThru
+```
 
 브라우저에서 URL을 열지 않고 $url 변수에 라이선스 URL을 할당 합니다.
 
@@ -61,11 +71,11 @@ NuGet 1.3에는 다양 한 성능 향상이 도입 되었습니다. NuGet 1.3은
 
 ### <a name="visual-studio-and-nugetexe-uses-the-same-list-of-package-sources"></a>Visual Studio 및 nuget.exe는 동일한 패키지 소스 목록을 사용 합니다.
 
-NuGet 1.3 이전에는 nuget.exe 및 NuGet Visual Studio 추가 기능에서 사용 하는 패키지 소스 목록이 동일한 장소에 저장 되지 않았습니다. 이제 NuGet 1.3은 두 위치에서 동일한 목록을 사용 합니다. 이 목록은 `NuGet.Config` 저장 되며 AppData 폴더에 저장 됩니다.
+NuGet 1.3 이전에는 nuget.exe 및 NuGet Visual Studio Add-In에서 사용 하는 패키지 소스 목록이 동일한 장소에 저장 되지 않았습니다. 이제 NuGet 1.3은 두 위치에서 동일한 목록을 사용 합니다. 목록은 AppData 폴더에 저장 되어 `NuGet.Config` 저장 됩니다.
 
-### <a name="nugetexe-ignores-files-and-folders-that-start-with--by-default"></a>nuget.exe는 기본적으로 '. '로 시작 하는 파일 및 폴더를 무시 합니다.
+### <a name="nugetexe-ignores-files-and-folders-that-start-with--by-default"></a>nuget.exe은 기본적으로 '. '로 시작 하는 파일 및 폴더를 무시 합니다.
 
-Subversion 및 Mercurial와 같은 소스 제어 시스템에서 NuGet이 잘 작동 하도록 하려면 nuget.exe는 패키지를 만들 때 '. ' 문자로 시작 하는 폴더와 파일을 무시 합니다. 이는 두 개의 새 플래그를 사용 하 여 재정의할 수 있습니다.
+Subversion 및 Mercurial와 같은 소스 제어 시스템에서 NuGet이 잘 작동 하도록 하기 위해 패키지를 만들 때 '. ' 문자로 시작 하는 폴더와 파일은 무시 nuget.exe. 이는 두 개의 새 플래그를 사용 하 여 재정의할 수 있습니다.
 
 * __-NoDefaultExcludes__ 는이 설정을 재정의 하 고 모든 파일을 포함 하는 데 사용 됩니다.
 * __-Exclude__ 는 패턴을 사용 하 여 제외할 다른 파일/폴더를 추가 하는 데 사용 됩니다. 예를 들어 ' .bak ' 파일 확장명을 가진 모든 파일을 제외 하려면
@@ -80,11 +90,11 @@ _참고: 기본적으로이 패턴은 재귀적이 아닙니다._
 
 커뮤니티 참여 덕분에 NuGet은 .NET 마이크로 프레임 워크 뿐만 아니라 WiX 프로젝트 형식에 대 한 지원도 포함 합니다.
 
-## <a name="bug-fixes"></a>버그 수정
+## <a name="bug-fixes"></a>버그 픽스
 
 버그 수정의 전체 목록은 [이 릴리스에 대 한 NuGet 문제 추적기](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.3&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0)를 확인 하세요.
 
 ## <a name="bug-fixes-worth-noting"></a>버그 수정 가치가 있습니다.
 
 * 원본 파일이 포함 된 패키지는 웹 사이트와 웹 응용 프로그램 프로젝트 모두에서 작동 합니다.
-웹 사이트의 경우 원본 파일이 `App_Code` 폴더로 복사 됩니다.
+웹 사이트의 경우 원본 파일이 폴더로 복사 됩니다. `App_Code`
