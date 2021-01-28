@@ -1,16 +1,16 @@
 ---
 title: 유니버설 Windows 플랫폼용 NuGet 패키지 만들기
 description: 유니버설 Windows 플랫폼용 Windows 런타임 구성 요소를 사용하여 NuGet 패키지를 만드는 엔드투엔드 연습입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/21/2017
 ms.topic: tutorial
-ms.openlocfilehash: 77aa186291122a8d05018ecacd1329da459badad
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: c077645508cb10e86b3ed1e1f2bf61adcd2013d9
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "72380757"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774240"
 ---
 # <a name="create-uwp-packages"></a>UWP 패키지 만들기
 
@@ -26,23 +26,23 @@ ms.locfileid: "72380757"
 
 ## <a name="create-a-uwp-windows-runtime-component"></a>UWP Windows 런타임 구성 요소 만들기
 
-1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 차례로 선택하고, **Visual C++ > Windows> 유니버설** 노드를 차례로 펼치고, **Windows 런타임 구성 요소(유니버설 Windows)** 템플릿을 선택하고, 이름을 ImageEnhancer로 변경한 다음, [확인]을 클릭합니다. 메시지가 표시되면 대상 버전 및 최소 버전에 대한 기본값을 적용합니다.
+1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트** 를 차례로 선택하고, **Visual C++ > Windows> 유니버설** 노드를 차례로 펼치고, **Windows 런타임 구성 요소(유니버설 Windows)** 템플릿을 선택하고, 이름을 ImageEnhancer로 변경한 다음, [확인]을 클릭합니다. 메시지가 표시되면 대상 버전 및 최소 버전에 대한 기본값을 적용합니다.
 
     ![새 UWP Windows 런타임 구성 요소 프로젝트 만들기](media/UWP-NewProject.png)
 
-1. [솔루션 탐색기]에서 프로젝트를 마우스 오른쪽 단추로 클릭하고, **추가 > 새 항목**을 차례로 선택하고, **Visual C++ > XAML** 노드를 차례로 클릭하고, **템플릿 기반 컨트롤**을 선택하고, 이름을 AwesomeImageControl.cpp로 변경한 다음, **추가**를 클릭합니다.
+1. [솔루션 탐색기]에서 프로젝트를 마우스 오른쪽 단추로 클릭하고, **추가 > 새 항목** 을 차례로 선택하고, **Visual C++ > XAML** 노드를 차례로 클릭하고, **템플릿 기반 컨트롤** 을 선택하고, 이름을 AwesomeImageControl.cpp로 변경한 다음, **추가** 를 클릭합니다.
 
     ![프로젝트에 새 XAML 템플릿 기반 컨트롤 항목 추가](media/UWP-NewXAMLControl.png)
 
-1. [솔루션 탐색기]에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성**을 선택합니다. [속성] 페이지에서 **구성 속성 > C/C++** 를 차례로 펼치고 **출력 파일**을 클릭합니다. 오른쪽 창에서 **XML 문서 파일 생성**의 값을 Yes로 변경합니다.
+1. [솔루션 탐색기]에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성** 을 선택합니다. [속성] 페이지에서 **구성 속성 > C/C++** 를 차례로 펼치고 **출력 파일** 을 클릭합니다. 오른쪽 창에서 **XML 문서 파일 생성** 의 값을 Yes로 변경합니다.
 
     ![XML 문서 파일 생성을 Yes로 설정](media/UWP-GenerateXMLDocFiles.png)
 
-1. 이제 *솔루션*을 마우스 오른쪽 단추로 클릭하고, **일괄 빌드**를 선택하고, 아래 그림과 같이 대화 상자에서 세 개의 [디버그] 확인란을 선택합니다. 이렇게 하면 빌드를 수행할 때 Windows에서 지원하는 각 대상 시스템에 대한 전체 아티팩트 집합이 생성됩니다.
+1. 이제 *솔루션* 을 마우스 오른쪽 단추로 클릭하고, **일괄 빌드** 를 선택하고, 아래 그림과 같이 대화 상자에서 세 개의 [디버그] 확인란을 선택합니다. 이렇게 하면 빌드를 수행할 때 Windows에서 지원하는 각 대상 시스템에 대한 전체 아티팩트 집합이 생성됩니다.
 
     ![일괄 빌드](media/UWP-BatchBuild.png)
 
-1. [일괄 빌드] 대화 상자에서 **빌드**를 클릭하여 프로젝트를 확인하고, NuGet 패키지에 필요한 출력 파일을 만듭니다.
+1. [일괄 빌드] 대화 상자에서 **빌드** 를 클릭하여 프로젝트를 확인하고, NuGet 패키지에 필요한 출력 파일을 만듭니다.
 
 > [!Note]
 > 이 연습에서는 패키지에 대한 [디버그] 아티팩트를 사용합니다. 디버그가 아닌 패키지의 경우 [일괄 빌드] 대화 상자에서 [릴리스] 옵션을 대신 선택하고 다음 단계에서 나오는 결과 [Release] 폴더를 참조하세요.
