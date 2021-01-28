@@ -1,16 +1,16 @@
 ---
 title: NuGet에서 UI 컨트롤을 패키지하는 방법
 description: Visual Studio 및 Blend 디자이너에 필요한 메타데이터 및 지원되는 파일을 포함하여 UWP 또는 WPF 컨트롤을 포함하는 NuGet 패키지를 만드는 방법입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: 17062d83349fe1b8cd28e57dd888686a226ac9cb
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 317937b4d9d773d74384b8ebfcd2146062236ac1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238025"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774322"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>NuGet 패키지인 UI 컨트롤 만들기
 
@@ -36,10 +36,12 @@ Visual Studio 2017부터 NuGet 패키지에서 제공하는 UWP 및 WPF 컨트�
 
 Visual Studio 및 Blend의 자산 창에 있는 XAML 디자이너의 도구 상자에 XAML 컨트롤을 표시하려면 패키지 프로젝트의 `tools` 폴더 루트에 `VisualStudioToolsManifest.xml` 파일을 만듭니다. 컨트롤을 도구 상자 또는 자산 창에서 표시하지 않아도 되는 경우 이 파일이 필요하지 않습니다.
 
-    \build
-    \lib
-    \tools
-        VisualStudioToolsManifest.xml
+```
+\build
+\lib
+\tools
+    VisualStudioToolsManifest.xml
+```
 
 파일의 구조는 다음과 같습니다.
 
@@ -59,11 +61,11 @@ Visual Studio 및 Blend의 자산 창에 있는 XAML 디자이너의 도구 상�
 
 다음은 각 문자에 대한 설명입니다.
 
-- *your_package_file* : `ManagedPackage.winmd`와 같은 컨트롤 파일의 이름입니다("ManagedPackage"는 이 예제에 사용되고 다른 의미가 없음).
-- *vs_category* : Visual Studio 디자이너의 도구 상자에서 컨트롤이 표시되어야 하는 그룹의 레이블입니다. `VSCategory`는 컨트롤을 도구 상자에 표시하기 위해 필요합니다.
+- *your_package_file*: `ManagedPackage.winmd`와 같은 컨트롤 파일의 이름입니다("ManagedPackage"는 이 예제에 사용되고 다른 의미가 없음).
+- *vs_category*: Visual Studio 디자이너의 도구 상자에서 컨트롤이 표시되어야 하는 그룹의 레이블입니다. `VSCategory`는 컨트롤을 도구 상자에 표시하기 위해 필요합니다.
 ‘ui_framework’: 프레임워크의 이름(예: ‘WPF’)입니다. `UIFramework` 특성은 컨트롤을 도구 상자에 표시하기 위해 Visual Studio 16.7 미리 보기 3 이상의 ToolboxItems 노드에 필요합니다.
-- *blend_category* : Blend 디자이너의 자산 창에서 컨트롤이 표시되어야 하는 그룹의 레이블입니다. `BlendCategory`는 컨트롤을 자산에 표시하기 위해 필요합니다.
-- *type_full_name_n* : `ManagedPackage.MyCustomControl`과 같은 네임스페이스를 포함하여 각 컨트롤의 정규화된 이름입니다. 점 양식은 관리 및 네이티브 형식에 사용됩니다.
+- *blend_category*: Blend 디자이너의 자산 창에서 컨트롤이 표시되어야 하는 그룹의 레이블입니다. `BlendCategory`는 컨트롤을 자산에 표시하기 위해 필요합니다.
+- *type_full_name_n*: `ManagedPackage.MyCustomControl`과 같은 네임스페이스를 포함하여 각 컨트롤의 정규화된 이름입니다. 점 양식은 관리 및 네이티브 형식에 사용됩니다.
 
 고급 시나리오에서 단일 패키지에 여러 컨트롤 어셈블리가 포함되는 경우 `<FileList>` 내에 여러 `<File>` 요소가 포함될 수도 있습니다. 컨트롤을 별도 범주로 구성하려는 경우 단일 `<File>` 내에 여러 `<ToolboxItems>` 노드가 있을 수도 있습니다.
 
@@ -109,38 +111,45 @@ UWP 패키지에는 앱을 설치할 수 있는 OS 버전의 상한 및 하한 �
 
 예를 들어 TPMinV 컨트롤 패키지를 Windows 10 Anniversary Edition(10.0, 빌드 14393)으로 설정했다고 가정해 보겠습니다. 따라서 패키지가 낮은 해당 범위와 일치하는 UWP 프로젝트에서만 사용되는지 확인합니다. 패키지를 UWP 프로젝트에서 사용할 수 있도록 허용하려면 다음 폴더 이름을 가진 컨트롤을 패키지해야 합니다.
 
-    \lib\uap10.0.14393\*
-    \ref\uap10.0.14393\*
+```
+\lib\uap10.0.14393\*
+\ref\uap10.0.14393\*
+```
 
 NuGet은 사용하는 프로젝트의 TPMinV를 자동으로 확인하고 Windows 10 Anniversary Edition(10.0, 빌드 14393)보다 이전 버전인 경우 설치에 실패합니다.
 
 WPF의 경우 .NET Framework v4.6.1 이상을 대상으로 하는 프로젝트에서 WPF 컨트롤 패키지를 사용한다고 가정합니다. 이를 적용하려면 다음 폴더 이름으로 컨트롤을 패키지해야 합니다.
 
-    \lib\net461\*
-    \ref\net461\*
+```
+\lib\net461\*
+\ref\net461\*
+```
 
 ## <a name="add-design-time-support"></a>디자인 타임 지원 추가
 
 속성 검사자에서 컨트롤 속성이 표시되는 위치를 구성하려면 사용자 지정 표시기 등을 추가하고, `design.dll` 파일을 `lib\uap10.0.14393\Design` 폴더에 대상 플랫폼에 적합하도록 배치합니다. 또한 **[템플릿 편집 > 복사본 편집](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** 기능이 작동하도록 하려면 `<your_assembly_name>\Themes` 폴더에서 병합되는 `Generic.xaml` 및 리소스가 포함되어야 합니다(실제 어셈블리 이름 사용). (이 파일은 컨트롤의 런타임 동작에 아무런 영향을 주지 않습니다.) 따라서 폴더 구조는 다음과 같이 나타납니다.
 
-    \lib
-      \uap10.0.14393
-        \Design
-          \MyControl.design.dll
-        \your_assembly_name
-          \Themes
-            Generic.xaml
-
+```
+\lib
+  \uap10.0.14393
+    \Design
+      \MyControl.design.dll
+    \your_assembly_name
+      \Themes
+        Generic.xaml
+```
 
 WPF의 경우 .NET Framework v4.6.1 이상을 대상으로 하는 프로젝트에서 WPF 컨트롤 패키지를 사용하는 예를 계속합니다.
 
-    \lib
-      \net461
-        \Design
-          \MyControl.design.dll
-        \your_assembly_name
-          \Themes
-            Generic.xaml
+```
+\lib
+  \net461
+    \Design
+      \MyControl.design.dll
+    \your_assembly_name
+      \Themes
+        Generic.xaml
+```
 
 > [!Note]
 > 기본적으로 컨트롤 속성은 속성 검사자의 기타 범주에 표시됩니다.

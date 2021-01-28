@@ -1,17 +1,17 @@
 ---
 title: ID 접두사 예약
 description: 패키지 ID 접두사 예약 기능 설명 및 작성자 가이드.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann
-ms.openlocfilehash: da464cc44d8c874e13c0cdfab871f31e643b577f
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: af9969df33c6bf7a62709e6e3535b8b886376e3e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73610508"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775926"
 ---
 # <a name="package-id-prefix-reservation"></a>패키지 ID 접두사 예약
 

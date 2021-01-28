@@ -1,16 +1,16 @@
 ---
 title: NuGet 패키지 종속성 확인
 description: NuGet 패키지의 종속성을 확인하여 NuGet 2.x 및 NuGet 3.x 이상에 모두 설치하는 프로세스를 자세히 설명합니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 0ef309d95c6ef5437765c02791da6dab13794678
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237746"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775268"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet에서 패키지 종속성을 확인하는 방법
 

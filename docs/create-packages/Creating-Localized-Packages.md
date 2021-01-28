@@ -1,16 +1,16 @@
 ---
 title: 지역화된 NuGet 패키지를 만드는 방법
 description: 단일 패키지에서 모든 어셈블리를 포함하거나 별도 어셈블리를 게시하여 지역화된 NuGet 패키지를 만드는 두 가지 방법에 대한 자세한 내용입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 83414a824676844f9e44eab874e5eac788d50583
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: cb3f8a9df66f259b130996822f102c27636d5d2c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73610948"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774750"
 ---
 # <a name="creating-localized-nuget-packages"></a>지역화된 NuGet 패키지 만들기
 
@@ -27,34 +27,36 @@ ms.locfileid: "73610948"
 
 예를 들어 다음 폴더 구조는 독일어(de), 이탈리아어(it), 일본어(ja), 러시아어(ru), 중국어(간체)(zh-Hans) 및 중국어(번체)(zh-Hant)를 지원합니다.
 
-    lib
-    └───net40
-        │   Contoso.Utilities.dll
-        │   Contoso.Utilities.xml
-        │
-        ├───de
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───it
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───ja
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───ru
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───zh-Hans
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        └───zh-Hant
-                Contoso.Utilities.resources.dll
-                Contoso.Utilities.xml
+```
+lib
+└───net40
+    │   Contoso.Utilities.dll
+    │   Contoso.Utilities.xml
+    │
+    ├───de
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───it
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───ja
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───ru
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───zh-Hans
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    └───zh-Hant
+            Contoso.Utilities.resources.dll
+            Contoso.Utilities.xml
+```
 
 언어가 모두 `net40` 대상 프레임워크 폴더 아래에 나열됩니다. 사용자가 [여러 프레임워크를 지원하는](../create-packages/supporting-multiple-target-frameworks.md) 경우 `lib` 아래에 각 변형에 대한 폴더가 있습니다.
 
@@ -92,28 +94,32 @@ ms.locfileid: "73610948"
 
 이렇게 하려면 기본 패키지는 `{identifier}.{version}.nupkg` 명명 규칙을 사용하고 기본 언어(예: en-US)에 대한 어셈블리를 포함합니다. 예를 들어 `ContosoUtilities.1.0.0.nupkg`에는 다음과 같은 구조가 포함됩니다.
 
-    lib
-    └───net40
-            ContosoUtilities.dll
-            ContosoUtilities.xml
+```
+lib
+└───net40
+        ContosoUtilities.dll
+        ContosoUtilities.xml
+```
 
-그런 다음 위성 어셈블리는 `{identifier}.{language}.{version}.nupkg` 명명 규칙(예: `ContosoUtilities.de.1.0.0.nupkg`)을 사용합니다. 식별자는 기본 패키지의 식별자와 정확하게 일치**해야** 합니다.
+그런 다음 위성 어셈블리는 `{identifier}.{language}.{version}.nupkg` 명명 규칙(예: `ContosoUtilities.de.1.0.0.nupkg`)을 사용합니다. 식별자는 기본 패키지의 식별자와 정확하게 일치 **해야** 합니다.
 
 이것이 별도 패키지이기 때문에 지역화된 메타데이터가 포함된 고유의 `.nuspec` 파일이 있습니다. `.nuspec`의 언어는 파일 이름에서 사용되는 언어와 **반드시** 일치해야 합니다.
 
-또한 위성 어셈블리는 [] 버전 표기법을 사용하여 정확한 버전의 기본 패키지를 종속성으로 선언**해야** 합니다([패키지 버전 관리](../concepts/package-versioning.md) 참조). 예를 들어 `ContosoUtilities.de.1.0.0.nupkg`는 `ContosoUtilities.1.0.0.nupkg`에서 `[1.0.0]` 표기법을 사용하여 종속성을 선언해야 합니다. 물론 위성 패키지에는 기본 패키지와 다른 버전 번호가 있습니다.
+또한 위성 어셈블리는 [] 버전 표기법을 사용하여 정확한 버전의 기본 패키지를 종속성으로 선언 **해야** 합니다([패키지 버전 관리](../concepts/package-versioning.md) 참조). 예를 들어 `ContosoUtilities.de.1.0.0.nupkg`는 `ContosoUtilities.1.0.0.nupkg`에서 `[1.0.0]` 표기법을 사용하여 종속성을 선언해야 합니다. 물론 위성 패키지에는 기본 패키지와 다른 버전 번호가 있습니다.
 
 그런 다음 위성 패키지의 구조에는 패키지 파일 이름에서 `{language}`와 일치하는 하위 폴더에 있는 리소스 어셈블리 및 XML IntelliSense 파일이 포함되어야 합니다.
 
-    lib
-    └───net40
-        └───de
-                ContosoUtilities.resources.dll
-                ContosoUtilities.xml
+```
+lib
+└───net40
+    └───de
+            ContosoUtilities.resources.dll
+            ContosoUtilities.xml
+```
 
 **참고**: `ja-JP`와 같은 특정 하위 문화권이 필요하지 않으면 항상 `ja`와 같은 개략적인 언어 식별자를 사용합니다.
 
-위성 어셈블리에서 NuGet은 파일 이름에서 `{language}`와 일치하는 해당 폴더에 있는 해당 파일**만**을 인식합니다. 다른 특성은 모두 무시됩니다.
+위성 어셈블리에서 NuGet은 파일 이름에서 `{language}`와 일치하는 해당 폴더에 있는 해당 파일 **만** 을 인식합니다. 다른 특성은 모두 무시됩니다.
 
 이러한 규칙을 모두 충족할 경우 NuGet은 패키지를 위성 패키지로 인식하고, 원래 번들되었던 것처럼 기본 패키지의 `lib` 폴더에 지역화된 파일을 설치합니다. 위성 패키지를 제거하면 동일한 폴더에서 해당 파일이 제거됩니다.
 

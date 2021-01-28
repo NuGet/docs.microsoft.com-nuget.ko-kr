@@ -1,16 +1,16 @@
 ---
 title: 일반적인 NuGet 구성
 description: NuGet.Config 파일은 NuGet의 동작을 전역 및 프로젝트별로 제어하며 nuget config 명령으로 수정됩니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: e81c380eab3f1a8635e50e62811c7ae463ec3653
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 35339626b0a20ccfceafa89fef94fb3187013fd7
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699768"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774858"
 ---
 # <a name="common-nuget-configurations"></a>일반적인 NuGet 구성
 
@@ -120,14 +120,16 @@ NuGet은 이러한 파일에서 설정을 찾으면 다음과 같이 적용합�
 
 두 개의 개별 드라이브에 다음과 같은 폴더 구조가 있다고 가정해 보겠습니다.
 
-    disk_drive_1
-        User
-    disk_drive_2
-       Project1
-         Source
-       Project2
-         Source
-       tmp
+```
+disk_drive_1
+    User
+disk_drive_2
+    Project1
+        Source
+    Project2
+        Source
+    tmp
+```
 
 다음으로, 지정된 내용이 포함된 4개의 `NuGet.Config` 파일이 다음 위치에 있습니다. (컴퓨터 수준 파일은 이 예제에 포함되어 있지 않지만 사용자 수준 파일과 비슷하게 작동합니다.)
 

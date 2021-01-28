@@ -1,16 +1,16 @@
 ---
 title: Visual Studio 2017 또는 2019를 사용하여 Xamarin용 NuGet 패키지 만들기(iOS, Android 및 Windows용)
 description: iOS, Android 및 Windows에서 네이티브 API를 사용하는 Xamarin에 대한 NuGet 패키지를 만드는 엔드투엔드 연습입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/05/2019
 ms.topic: tutorial
-ms.openlocfilehash: 0cb653bad9e853d908039b3f7a94e1dd7eefdde5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: fdabeeac57ca12716f6ed2614d036f1623407b20
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78230904"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774224"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2017-or-2019"></a>Visual Studio 2017 또는 2019를 사용하여 Xamarin용 패키지 만들기
 
@@ -36,11 +36,11 @@ Xamarin용 패키지에는 런타임 운영 체제에 따라 iOS, Android 및 Wi
 ## <a name="create-the-project-structure-and-abstraction-code"></a>프로젝트 구조 및 추상화 코드 만들기
 
 1. Visual Studio용 [플랫폼 간 .NET 표준 플러그 인 템플릿 확장](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates)을 다운로드하여 실행합니다. 이러한 템플릿을 사용하면 이 연습에 필요한 프로젝트 구조를 쉽게 만들 수 있습니다.
-1. Visual Studio 2017의 **파일 > 새로 만들기 > 프로젝트**에서 `Plugin`을(를) 검색하고, **플랫폼 간 .NET 표준 라이브러리 플러그 인** 템플릿을 선택하고, 이름을 LoggingLibrary로 변경한 다음, 확인을 클릭합니다.
+1. Visual Studio 2017의 **파일 > 새로 만들기 > 프로젝트** 에서 `Plugin`을(를) 검색하고, **플랫폼 간 .NET 표준 라이브러리 플러그 인** 템플릿을 선택하고, 이름을 LoggingLibrary로 변경한 다음, 확인을 클릭합니다.
 
     ![VS 2017에서 비어 있는 새 앱(이식 가능한 Xamarin.Forms) 프로젝트](media/CrossPlatform-NewProject.png)
 
-    Visual Studio 2019의 **파일 > 새로 만들기 > 프로젝트**에서 `Plugin`을(를) 검색하고, **플랫폼 간 .NET 표준 라이브러리 플러그 인** 템플릿을 선택하고, 다음을 클릭합니다.
+    Visual Studio 2019의 **파일 > 새로 만들기 > 프로젝트** 에서 `Plugin`을(를) 검색하고, **플랫폼 간 .NET 표준 라이브러리 플러그 인** 템플릿을 선택하고, 다음을 클릭합니다.
 
     ![VS 2019에서 비어 있는 새 앱(이식 가능한 Xamarin.Forms) 프로젝트](media/CrossPlatform-NewProject19-Part1.png)
 
@@ -106,10 +106,10 @@ namespace Plugin.LoggingLibrary
     ```
 
 1. 지원하려는 각 플랫폼에 대한 프로젝트에서 이 구현을 반복합니다.
-1. 솔루션을 마우스 오른쪽 단추로 클릭하고, **솔루션 빌드**를 선택하여 작업을 확인하고, 다음에 패키지할 아티팩트를 생성합니다. 누락된 참조에 대한 오류가 발생하면 솔루션을 마우스 오른쪽 단추로 클릭하고, **NuGet 패키지 복원**을 선택하여 종속성을 설치한 다음, 다시 빌드합니다.
+1. 솔루션을 마우스 오른쪽 단추로 클릭하고, **솔루션 빌드** 를 선택하여 작업을 확인하고, 다음에 패키지할 아티팩트를 생성합니다. 누락된 참조에 대한 오류가 발생하면 솔루션을 마우스 오른쪽 단추로 클릭하고, **NuGet 패키지 복원** 을 선택하여 종속성을 설치한 다음, 다시 빌드합니다.
 
 > [!Note]
-> Visual Studio 2019를 사용하는 경우 **NuGet 패키지 복원**을 선택하고 다시 빌드를 시도하기 전에 `LoggingLibrary.csproj`에서 버전을 `MSBuild.Sdk.Extras`에서 `2.0.54`로 변경해야 합니다. 이 파일은 먼저 프로젝트를 마우스 오른쪽 단추로 클릭하고 `Unload Project`을(를) 선택해야만 액세스할 수 있습니다. 그런 다음 언로드된 프로젝트를 마우스 오른쪽 단추로 클릭하고 `Edit LoggingLibrary.csproj`을(를) 선택합니다.
+> Visual Studio 2019를 사용하는 경우 **NuGet 패키지 복원** 을 선택하고 다시 빌드를 시도하기 전에 `LoggingLibrary.csproj`에서 버전을 `MSBuild.Sdk.Extras`에서 `2.0.54`로 변경해야 합니다. 이 파일은 먼저 프로젝트를 마우스 오른쪽 단추로 클릭하고 `Unload Project`을(를) 선택해야만 액세스할 수 있습니다. 그런 다음 언로드된 프로젝트를 마우스 오른쪽 단추로 클릭하고 `Edit LoggingLibrary.csproj`을(를) 선택합니다.
 
 > [!Note]
 > iOS용으로 빌드하려면 [Visual Studio용 Xamarin.iOS 소개](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/)에서 설명한 대로 네트워크에서 Visual Studio에 연결된 Mac이 필요합니다. Mac을 사용할 수 없는 경우 구성 관리자에서 iOS 프로젝트를 선택 취소합니다(위 3단계).

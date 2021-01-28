@@ -1,16 +1,16 @@
 ---
 title: NuGet 패키지 및 원본 제어
 description: 버전 제어와 소스 제어 시스템 내에서 NuGet 패키지를 처리하는 방법 및 Git과 TFVC를 사용하여 패키지를 생략하는 방법에 대한 고려 사항입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9d9ea10ccd32bb65ad0d62b591f5e2cb58ea3427
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 9bae65573ca49c68d07250228c1923890e0f14ac
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "69019984"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775009"
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>소스 제어 시스템에서 NuGet 패키지 생략
 

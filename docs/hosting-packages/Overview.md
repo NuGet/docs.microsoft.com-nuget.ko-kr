@@ -1,17 +1,17 @@
 ---
 title: 사용자 고유의 NuGet 피드 호스팅 개요
 description: 로컬 또는 원격으로 사용자 고유의 NuGet 패키지 피드 또는 갤러리를 호스팅하기 위한 개요입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 81acf15ac69d78d39d2784e77c18ba38bfea126d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 1b7bad6bcd897b746ea9eb6e89b80a88ee5e891a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "75385544"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774048"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>사용자 고유의 NuGet 피드 호스팅
 

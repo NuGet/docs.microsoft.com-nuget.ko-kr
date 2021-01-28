@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
-ms.openlocfilehash: 749d9466976d51c7cb65332c8b149e3a30862e63
-ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
+ms.openlocfilehash: 7e611b568538e0acfcbad2e5d986a0f9382ac8fd
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97523402"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774112"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>nuget.org에 게시된 모든 패키지에 대한 쿼리
 
@@ -54,7 +54,9 @@ DateTime cursor = DateTime.UtcNow.AddHours(-1);
 
 NuGet API의 모든 리소스(엔드포인트)에 대한 위치는 [서비스 인덱스](../../api/service-index.md)를 사용하여 검색해야 합니다. 이 지침은 nuget.org에 초점을 맞추고 있으므로 nuget.org의 서비스 인덱스를 사용합니다.
 
-    GET https://api.nuget.org/v3/index.json
+```
+GET https://api.nuget.org/v3/index.json
+```
 
 서비스 문서는 nuget.org의 모든 리소스가 포함된 JSON 문서입니다. `@type` 속성 값이 `Catalog/3.0.0`인 리소스를 찾습니다. 연결된 `@id` 속성 값은 카탈로그 인덱스 자체에 대한 URL입니다. 
 
@@ -62,13 +64,17 @@ NuGet API의 모든 리소스(엔드포인트)에 대한 위치는 [서비스 �
 
 이전 단계에서 찾은 `@id` 속성 값을 사용하여 카탈로그 인덱스를 다운로드합니다.
 
-    GET https://api.nuget.org/v3/catalog0/index.json
+```
+GET https://api.nuget.org/v3/catalog0/index.json
+```
 
 [카탈로그 인덱스](../../api/catalog-resource.md#catalog-index)를 역직렬화합니다. 현재 커서 값보다 작거나 같은 `commitTimeStamp`을 사용하여 [카탈로그 페이지 개체](../../api/catalog-resource.md#catalog-page-object-in-the-index)를 모두 필터링합니다.
 
 나머지 카탈로그 페이지마다 `@id` 속성을 사용하여 전체 문서를 다운로드합니다.
 
-    GET https://api.nuget.org/v3/catalog0/page2926.json
+```
+GET https://api.nuget.org/v3/catalog0/page2926.json
+```
 
 [카탈로그 페이지](../../api/catalog-resource.md#catalog-page)를 역직렬화합니다. 현재 커서 값보다 작거나 같은 `commitTimeStamp`로 모든 [카탈로그 리프 개체](../../api/catalog-resource.md#catalog-item-object-in-a-page)를 필터링합니다.
 
@@ -80,7 +86,9 @@ NuGet API의 모든 리소스(엔드포인트)에 대한 위치는 [서비스 �
 
 패키지에 대한 메타데이터(예: 설명, 종속성, .nupkg 크기 등)에 관심이 있으면 `@id` 속성을 사용하여 [카탈로그 리프 문서](../../api/catalog-resource.md#catalog-leaf)를 페치할 수 있습니다.
 
-    GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+```
+GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+```
 
 이 문서에는 [패키지 메타데이터 리소스](../../api/registration-base-url-resource.md) 등에 포함된 모든 메타데이터가 포함되어 있습니다.
 

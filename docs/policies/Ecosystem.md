@@ -1,16 +1,16 @@
 ---
 title: NuGet 에코시스템 개요
 description: NuGet 소스, 비 Microsoft NuGet 프로젝트, 유틸리티 및 교육 자료를 포함하여 NuGet 에코시스템에 있는 포괄적인 리소스입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 165587fb64be5a5f4dbfdece7dc3a1e6402b733e
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 57fa8e5683e687aab3022ebc77d7e69a61615877
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237428"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775604"
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>NuGet 에코시스템 개요
 

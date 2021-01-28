@@ -1,16 +1,16 @@
 ---
 title: UWP 프로젝트가 있는 NuGet project.json 파일
 description: project.json 파일을 사용하여 UWP(유니버설 Windows 플랫폼) 프로젝트에서 NuGet 종속성을 추적하는 방법을 설명합니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/17/2017
 ms.topic: conceptual
-ms.openlocfilehash: ac3c137dd0ba50571737093eef11c8ab0ef932b2
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 30e2272aafb5d2ea8d932e3cb0209d97c30b3209
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64494363"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98773807"
 ---
 # <a name="projectjson-and-uwp"></a>project.json 및 UWP
 
@@ -65,7 +65,7 @@ ms.locfileid: "64494363"
 
 NuGet 패키지에는 패키지가 설치된 MSBuild 프로젝트에 가져오는 `.targets` 및 `.props` 파일이 포함될 수 있습니다. NuGet 2.x에서는 `<Import>` 문을 `.csproj` 파일에 삽입하여 수행했지만, NuGet 3.0에서는 특정 "프로젝트에 설치" 작업이 없습니다. 대신 패키지 복원 프로세스는 두 파일, `[projectname].nuget.props`과 `[projectname].NuGet.targets`를 씁니다.
 
-MSBuild는 이러한 두 파일을 찾고 프로젝트 빌드 프로세스의 시작과 끝 무렵에 자동으로 해당 파일을 가져옵니다. 이는 NuGet 2.x와 매우 비슷한 동작을 제공하지만, 주요 차이점 중 하나는 *이 경우 targets/props 파일의 순서가 보장되지 않는다*는 것입니다. 그러나 MSBuild는 `<Target>` 정의의 `BeforeTargets` 및 `AfterTargets` 특성을 통해 대상의 순서를 지정하는 방법을 제공합니다([Target 요소(MSBuild)](/visualstudio/msbuild/target-element-msbuild) 참조).
+MSBuild는 이러한 두 파일을 찾고 프로젝트 빌드 프로세스의 시작과 끝 무렵에 자동으로 해당 파일을 가져옵니다. 이는 NuGet 2.x와 매우 비슷한 동작을 제공하지만, 주요 차이점 중 하나는 *이 경우 targets/props 파일의 순서가 보장되지 않는다* 는 것입니다. 그러나 MSBuild는 `<Target>` 정의의 `BeforeTargets` 및 `AfterTargets` 특성을 통해 대상의 순서를 지정하는 방법을 제공합니다([Target 요소(MSBuild)](/visualstudio/msbuild/target-element-msbuild) 참조).
 
 ## <a name="lib-and-ref"></a>Lib 및 Ref
 
@@ -73,11 +73,13 @@ NuGet v3에서는 `lib` 폴더의 동작이 크게 변경되지 않았습니다.
 
 lib 구조의 예:
 
-    lib
-    ├───net40
-    │       MyLibrary.dll
-    └───wp81
-            MyLibrary.dll
+```
+lib
+├───net40
+│       MyLibrary.dll
+└───wp81
+        MyLibrary.dll
+```
 
 `lib` 폴더에는 런타임에 사용되는 어셈블리가 포함되어 있습니다. 대부분의 패키지에는 각 대상 TxM에 대한 `lib` 아래의 폴더만 있으면 됩니다.
 
@@ -91,23 +93,25 @@ lib 구조의 예:
 
 `ref` 폴더의 구조는 `lib`와 같습니다. 예를 들어 다음과 같습니다.
 
-    └───MyImageProcessingLib
-         ├───lib
-         │   ├───net40
-         │   │       MyImageProcessingLibrary.dll
-         │   │
-         │   ├───net451
-         │   │       MyImageProcessingLibrary.dll
-         │   │
-         │   └───win81
-         │           MyImageProcessingLibrary.dll
-         │
-         └───ref
-             ├───net40
-             │       MyImageProcessingLibrary.dll
-             │
-             └───portable-net451-win81
-                     MyImageProcessingLibrary.dll
+```
+└───MyImageProcessingLib
+        ├───lib
+        │   ├───net40
+        │   │       MyImageProcessingLibrary.dll
+        │   │
+        │   ├───net451
+        │   │       MyImageProcessingLibrary.dll
+        │   │
+        │   └───win81
+        │           MyImageProcessingLibrary.dll
+        │
+        └───ref
+            ├───net40
+            │       MyImageProcessingLibrary.dll
+            │
+            └───portable-net451-win81
+                    MyImageProcessingLibrary.dll
+```
 
 이 예에서 `ref` 디렉터리의 어셈블리는 모두 동일합니다.
 
@@ -119,27 +123,29 @@ runtimes 폴더는 일반적으로 운영 체제 및 CPU 아키텍처에서 정�
 
 다음 예에서는 여러 플랫폼에 대해 전적으로 관리되는 구현이 있지만 Windows 8 특정 네이티브 API를 호출할 수 있는 네이티브 도우미를 Windows 8에서 사용하는 패키지를 보여줍니다.
 
-    └───MyLibrary
-         ├───lib
-         │   └───net40
-         │           MyLibrary.dll
-         │
-         └───runtimes
-             ├───win8-x64
-             │   ├───lib
-             │   │   └───net40
-             │   │           MyLibrary.dll
-             │   │
-             │   └───native
-             │           MyNativeLibrary.dll
-             │
-             └───win8-x86
-                 ├───lib
-                 │   └───net40
-                 │           MyLibrary.dll
-                 │
-                 └───native
-                         MyNativeLibrary.dll
+```
+└───MyLibrary
+        ├───lib
+        │   └───net40
+        │           MyLibrary.dll
+        │
+        └───runtimes
+            ├───win8-x64
+            │   ├───lib
+            │   │   └───net40
+            │   │           MyLibrary.dll
+            │   │
+            │   └───native
+            │           MyNativeLibrary.dll
+            │
+            └───win8-x86
+                ├───lib
+                │   └───net40
+                │           MyLibrary.dll
+                │
+                └───native
+                        MyNativeLibrary.dll
+```
 
 위 패키지가 제공되면 다음과 같은 상황이 발생합니다.
 
@@ -155,23 +161,25 @@ runtimes 폴더는 일반적으로 운영 체제 및 CPU 아키텍처에서 정�
 
 런타임을 사용하는 또 다른 방법은 전적으로 관리되는 래퍼인 패키지를 네이티브 어셈블리를 통해 제공하는 것입니다. 이 시나리오에서는 다음과 같은 패키지를 만듭니다.
 
-    └───MyLibrary
-         └───runtimes
-             ├───win8-x64
-             │   ├───lib
-             │   │   └───net451
-             │   │           MyLibrary.dll
-             │   │
-             │   └───native
-             │           MyImplementation.dll
-             │
-             └───win8-x86
-                 ├───lib
-                 │   └───net451
-                 │           MyLibrary.dll
-                 │
-                 └───native
-                         MyImplementation.dll
+```
+└───MyLibrary
+        └───runtimes
+            ├───win8-x64
+            │   ├───lib
+            │   │   └───net451
+            │   │           MyLibrary.dll
+            │   │
+            │   └───native
+            │           MyImplementation.dll
+            │
+            └───win8-x86
+                ├───lib
+                │   └───net451
+                │           MyLibrary.dll
+                │
+                └───native
+                        MyImplementation.dll
+```
 
 이 경우 해당 네이티브 어셈블리에 종속되지 않는 이 패키지의 구현이 없으므로 해당 폴더와 같은 최상위 `lib` 폴더가 없습니다. 두 경우 모두에서 `MyLibrary.dll` 관리되는 어셈블리가 정확히 동일한 경우 최상위 `lib` 폴더에 넣을 수 있습니다. 그러나 win-x86 또는 win-x64가 아닌 플랫폼에 설치되어 있으면, 네이티브 어셈블리의 부족으로 인해 패키지 설치가 실패하지 않으며, 최상위 lib가 사용되지만 네이티브 어셈블리는 복사되지 않습니다.
 

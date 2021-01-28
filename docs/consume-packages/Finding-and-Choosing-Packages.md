@@ -1,16 +1,16 @@
 ---
 title: NuGet 패키지 찾기 및 선택
 description: NuGet 검색 구문에 대한 세부 정보를 포함하여 프로젝트에 가장 적합한 NuGet 패키지를 찾아 선택하는 방법을 간략히 설명합니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: feb21ae1e70144491a5c0fe8f6a7be36e61d9b32
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 4ba51028c1a69a3466cec655db19c2c498e29d9b
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622990"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775176"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>프로젝트에 대한 NuGet 패키지 찾기 및 평가
 
@@ -110,11 +110,11 @@ NuGet은 Visual Studio의 C++ 프로젝트에서 사용할 수 있는 네이티�
     > [!Note]
     > 패키지의 사용 대상 섹션은 사람이 개별 리포지토리를 검토하는 과정 없이 주기적으로 자동으로 생성되며, 패키지에 종속되는 NuGet.org 패키지와 인기 있는 GitHub 리포지토리를 표시하기 위해 정보를 제공하는 목적으로만 제공됩니다.
 
-- **버전 기록**: 패키지 페이지의 **정보** 아래에서 최신 업데이트 날짜를 확인하고 **버전 기록**을 검사합니다. 잘 유지 관리된 패키지에는 최신 업데이트와 풍부한 버전 기록이 있습니다. 방치한 패키지에는 업데이트가 거의 없으며, 일정 기간 동안 업데이트되지 않은 경우가 많습니다.
+- **버전 기록**: 패키지 페이지의 **정보** 아래에서 최신 업데이트 날짜를 확인하고 **버전 기록** 을 검사합니다. 잘 유지 관리된 패키지에는 최신 업데이트와 풍부한 버전 기록이 있습니다. 방치한 패키지에는 업데이트가 거의 없으며, 일정 기간 동안 업데이트되지 않은 경우가 많습니다.
 
     ![패키지 목록 페이지의 버전 기록](media/Finding-04-VersionHistory.png)
 
-- **최근 설치**: 패키지 페이지의 **통계** 아래에서 **전체 통계 보기**를 선택합니다. 전체 통계 페이지에서는 지난 6주 동안 버전 번호별로 설치된 패키지를 보여줍니다. 일반적으로 다른 개발자가 적극적으로 사용하는 패키지는 그렇지 않은 패키지보다 더 나은 선택입니다.
+- **최근 설치**: 패키지 페이지의 **통계** 아래에서 **전체 통계 보기** 를 선택합니다. 전체 통계 페이지에서는 지난 6주 동안 버전 번호별로 설치된 패키지를 보여줍니다. 일반적으로 다른 개발자가 적극적으로 사용하는 패키지는 그렇지 않은 패키지보다 더 나은 선택입니다.
 
 - **지원**: 패키지 페이지의 **정보** 아래에서 **프로젝트 사이트**(사용 가능한 경우)를 선택하여 만든 이가 제공하는 지원 옵션을 확인합니다. 일반적으로 전용 사이트가 있는 프로젝트가 더 잘 지원됩니다.
 
@@ -127,7 +127,7 @@ NuGet은 Visual Studio의 C++ 프로젝트에서 사용할 수 있는 네이티�
 - **예약된 패키지 ID 접두사**: 많은 패키지 소유자가 [예약된 패키지 ID 접두사](../nuget-org/id-prefix-reservation.md)에 지원했으며 허가되었습니다. [nuget.org](https://www.nuget.org/) 또는 Visual Studio에서 패키지 ID 옆에 있는 시각적 개체 확인 표시가 나타나면 패키지 소유자가 ID 접두사 예약에 대한 [조건](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria)을 충족한다는 의미입니다. 즉, 패키지 소유자가 자체 및 해당 패키지를 식별하기에 명확합니다.
 
 > [!Note]
-> nuget.org의 패키지 목록 페이지에서 **라이선스 정보**를 선택하면 볼 수 있는 패키지의 사용 조건에 항상 유의해야 합니다. 패키지에서 사용 조건을 지정하지 않은 경우 패키지 페이지의 **연락처 소유자** 링크를 사용하여 패키지 소유자에게 직접 문의해 보세요. Microsoft는 타사 패키지 공급자로부터 사용자에게 지적 재산권을 부여하지 않으며 타사에서 제공한 정보에 대해 책임을 지지 않습니다.
+> nuget.org의 패키지 목록 페이지에서 **라이선스 정보** 를 선택하면 볼 수 있는 패키지의 사용 조건에 항상 유의해야 합니다. 패키지에서 사용 조건을 지정하지 않은 경우 패키지 페이지의 **연락처 소유자** 링크를 사용하여 패키지 소유자에게 직접 문의해 보세요. Microsoft는 타사 패키지 공급자로부터 사용자에게 지적 재산권을 부여하지 않으며 타사에서 제공한 정보에 대해 책임을 지지 않습니다.
 
 ## <a name="license-url-deprecation"></a>라이선스 URL 사용 중단
 [licenseUrl](../reference/nuspec.md#licenseurl)에서 [license](../reference/nuspec.md#license)로 전환하면서 일부 NuGet 클라이언트 및 NuGet 피드에 몇몇 경우에 라이선싱 정보를 표시하는 기능이 아직 없을 수 있습니다. 이전 버전과의 호환성을 유지하기 위해 라이선스 URL은 그러한 경우 라이선스 정보를 검색하는 방법을 설명하는 이 문서를 가리킵니다.

@@ -1,16 +1,16 @@
 ---
 title: NuGet에서 전역 패키지, 캐시, 임시 폴더를 관리하는 방법
 description: 패키지를 설치, 복원 및 업데이트할 때 사용되는 컴퓨터에 있는 전역 패키지 설치 폴더, 패키지 캐시 및 임시 폴더를 관리하는 방법입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: e2672aa0bf57242526364639f0df74f9d1adb934
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: e5585267d4ce2563d77ff30ec5c31e196d98686a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237324"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774799"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>전역 패키지, 캐시 및 임시 폴더 관리
 

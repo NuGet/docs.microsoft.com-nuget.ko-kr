@@ -1,16 +1,16 @@
 ---
 title: NuGet 4.9 RTM 릴리스 정보
 description: NuGet 4.9에 대한 릴리스 정보(알려진 문제, 버그 수정, 새 기능 및 DCR 포함)
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: e0dea74fe179c0dce4996f3e498185bb3a491856
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 429218fa4968d572ef187ef1dbfacac8a3bde2b4
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64496458"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780146"
 ---
 # <a name="nuget-49-release-notes"></a>NuGet 4.9 릴리스 정보
 

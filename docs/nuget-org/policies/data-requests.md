@@ -1,16 +1,16 @@
 ---
 title: 사용자 데이터 요청
 description: 사용자 데이터 내보내기 및 삭제 요청에 대한 정책
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: ef054f741755bccf56eedfd462915b8e9fd6931a
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e0ec429469a992c9558d1635890fd568398206a1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "67426988"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775718"
 ---
 # <a name="user-data-requests"></a>사용자 데이터 요청
 

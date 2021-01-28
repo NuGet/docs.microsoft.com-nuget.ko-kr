@@ -1,16 +1,16 @@
 ---
 title: 패키지 트러스트 영역 관리
 description: 서명된 NuGet 패키지를 설치하고 패키지 서명 신뢰 설정을 구성하는 프로세스를 설명합니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 034b9dd9699af529e4d82d6ee5b1c42214673341
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 596ce330e434253e6fb200aa59ae4e14d47779ed
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237629"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774812"
 ---
 # <a name="manage-package-trust-boundaries"></a>패키지 트러스트 영역 관리
 

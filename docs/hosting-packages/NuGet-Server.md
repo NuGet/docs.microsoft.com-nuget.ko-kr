@@ -1,16 +1,16 @@
 ---
 title: NuGet.Server를 사용하여 NuGet 피드 호스트
 description: NuGet.Server를 사용하여 IIS를 실행하는 모든 서버에서 NuGet 패키지 피드를 만들고 호스트하는 방법입니다. OData 및 HTTP를 통해 패키지를 사용할 수 있습니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7a806e6b586c63c701642c9e43865cb077d7999c
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 3a9fb843f071eda72b9469292a7276ad81f8c24d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623047"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774076"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -26,19 +26,19 @@ NuGet.Server에 대해 추가 질문이 있으면 [https://github.com/nuget/NuGe
 
 ## <a name="create-and-deploy-an-aspnet-web-application-with-nugetserver"></a>NuGet.Server를 사용하여 ASP.NET 웹 애플리케이션 만들기 및 배포
 
-1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택하고 “ASP.NET 웹 애플리케이션(.NET Framework)”을 검색하고 **C#** 에 대해 일치하는 템플릿을 선택합니다.
+1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트** 를 선택하고 “ASP.NET 웹 애플리케이션(.NET Framework)”을 검색하고 **C#** 에 대해 일치하는 템플릿을 선택합니다.
 
     ![.NET Framework 웹 프로젝트 템플릿 선택](media/Hosting_00-NuGet.Server-ProjectType.png)
 
-1. **Framework**를 “.NET Framework 4.6”으로 설정합니다.
+1. **Framework** 를 “.NET Framework 4.6”으로 설정합니다.
 
     ![새 프로젝트의 대상 프레임워크 설정](media/Hosting_01-NuGet.Server-Set4.6.png)
 
-1. 애플리케이션에 NuGet.Server가 *아닌* 적합한 이름을 입력하고, 확인을 선택하고, 다음 대화 상자에서 **빈** 템플릿을 선택한 다음, **확인**을 선택합니다.
+1. 애플리케이션에 NuGet.Server가 *아닌* 적합한 이름을 입력하고, 확인을 선택하고, 다음 대화 상자에서 **빈** 템플릿을 선택한 다음, **확인** 을 선택합니다.
 
     ![빈 웹 프로젝트 선택](media/Hosting_02-NuGet.Server-Empty.png)
 
-1. 프로젝트를 마우스 오른쪽 단추로 클릭하고 **NuGet 패키지 관리**를 선택합니다.
+1. 프로젝트를 마우스 오른쪽 단추로 클릭하고 **NuGet 패키지 관리** 를 선택합니다.
 
 1. .NET Framework 4.6을 대상으로 하는 경우 패키지 관리자 UI에서 **찾아보기** 탭을 선택한 후, 최신 버전의 NuGet.Server 패키지를 검색하고 설치합니다. (`Install-Package NuGet.Server`를 사용하여 패키지 관리자 콘솔에서 설치할 수도 있습니다.) 메시지가 표시되면 사용 약관에 동의합니다.
 
@@ -114,7 +114,7 @@ NuGet.Server에서 [nuget delete](../reference/cli-reference/cli-ref-delete.md) 
 
 ## <a name="making-packages-available-when-you-publish-the-web-app"></a>웹앱을 게시할 때 패키지를 사용할 수 있도록 설정
 
-서버에 애플리케이션을 게시할 때 피드에서 패키지를 사용하려면 각 `.nupkg` 파일을 Visual Studio의 `Packages` 폴더에 추가한 다음, **빌드 작업**을 **콘텐츠**로 설정하고, **출력 디렉터리로 복사**를 **항상 복사**로 설정합니다.
+서버에 애플리케이션을 게시할 때 피드에서 패키지를 사용하려면 각 `.nupkg` 파일을 Visual Studio의 `Packages` 폴더에 추가한 다음, **빌드 작업** 을 **콘텐츠** 로 설정하고, **출력 디렉터리로 복사** 를 **항상 복사** 로 설정합니다.
 
 ![프로젝트의 패키지 폴더에 패키지 복사](media/Hosting_05-NuGet.Server-Package-Folder.png)
 

@@ -1,17 +1,17 @@
 ---
 title: 레거시 기호 패키지 만들기(.symbols.nupkg)
 description: 기호를 포함하는 NuGet 패키지를 만들어서 Visual Studio에서 다른 NuGet 패키지의 디버깅을 지원하는 방법입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 374e9ccfc01cd06508e76529765db3f849342222
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: d9a96986bf80aa15423d7dcee6ea3fe59255252b
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "77476271"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774549"
 ---
 # <a name="creating-legacy-symbol-packages-symbolsnupkg"></a>레거시 기호 패키지 만들기(.symbols.nupkg)
 
@@ -46,42 +46,48 @@ nuget pack MyProject.csproj -Symbols
 
 예를 들어 .NET 4.0 및 Silverlight 4를 대상으로 하는 레거시 기호 패키지의 레이아웃은 다음과 같습니다.
 
-    \lib
-        \net40
-            \MyAssembly.dll
-            \MyAssembly.pdb
-        \sl40
-            \MyAssembly.dll
-            \MyAssembly.pdb
+```
+\lib
+    \net40
+        \MyAssembly.dll
+        \MyAssembly.pdb
+    \sl40
+        \MyAssembly.dll
+        \MyAssembly.pdb
+```
 
 그런 다음 소스 파일은 `src`라는 별도 특수 폴더에 저장됩니다. 이 항목은 소스 리포지토리의 상대 구조에 따라야 합니다. PDB에는 일치하는 DLL을 컴파일하는 데 사용되는 소스 파일에 대한 절대 경로가 포함되기 때문이며, 게시 프로세스 중에 찾을 수 있어야 합니다. 기본 경로(공통 경로 접두사)가 제거될 수 있습니다. 예를 들어 이러한 파일에서 빌드된 라이브러리를 고려하세요.
 
-    C:\Projects
-        \MyProject
-            \Common
-                \MyClass.cs
-            \Full
-                \Properties
-                    \AssemblyInfo.cs
-                \MyAssembly.csproj (producing \lib\net40\MyAssembly.dll)
-            \Silverlight
-                \Properties
-                    \AssemblyInfo.cs
-                \MySilverlightExtensions.cs
-                \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
-
-`lib` 폴더와 별개로 레거시 기호 패키지에 이 레이아웃이 포함되어야 합니다.
-
-    \src
+```
+C:\Projects
+    \MyProject
         \Common
             \MyClass.cs
         \Full
             \Properties
                 \AssemblyInfo.cs
+            \MyAssembly.csproj (producing \lib\net40\MyAssembly.dll)
         \Silverlight
             \Properties
                 \AssemblyInfo.cs
             \MySilverlightExtensions.cs
+            \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
+```
+
+`lib` 폴더와 별개로 레거시 기호 패키지에 이 레이아웃이 포함되어야 합니다.
+
+```
+\src
+    \Common
+        \MyClass.cs
+    \Full
+        \Properties
+            \AssemblyInfo.cs
+    \Silverlight
+        \Properties
+            \AssemblyInfo.cs
+        \MySilverlightExtensions.cs
+```
 
 ## <a name="referring-to-files-in-the-nuspec"></a>nuspec에서 파일 참조
 

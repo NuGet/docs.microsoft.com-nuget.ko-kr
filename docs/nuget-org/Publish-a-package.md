@@ -1,17 +1,17 @@
 ---
 title: NuGet 패키지를 게시하는 방법
 description: NuGet 패키지를 nuget.org 또는 개인 피드에 게시하는 방법 및 nuget.org에서 패키지 소유권을 관리하는 방법에 대한 자세한 지침입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: fe5625247dca51c10d82fffe82022c40a4716069
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 5be7a4d4c31df9f2f4bda7bdb1ff9f4887108578
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237934"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775994"
 ---
 # <a name="publishing-packages"></a>패키지 게시
 

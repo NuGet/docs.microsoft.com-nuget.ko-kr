@@ -1,16 +1,16 @@
 ---
 title: Windows에서 Visual Studio를 사용하여 .NET Framework NuGet 패키지 만들기 및 게시
 description: Windows에서 Visual Studio를 사용하여 .NET Framework NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: e00aac83a710e2f745d5e4bb9aec741ee686e595
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7c030db769973e3b3c41da6523d57ab2cd769a9d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "72380640"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775746"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>빠른 시작: Visual Studio(.NET Framework, Windows)를 사용하여 패키지 만들기 및 게시
 
@@ -31,9 +31,9 @@ ms.locfileid: "72380640"
 
 패키지할 코드에 대해 기존 .NET Framework 클래스 라이브러리 프로젝트를 사용하거나 다음과 같이 간단한 프로젝트를 만듭니다.
 
-1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 차례로 선택하고, **Visual C#** 노드를 선택하고, "클래스 라이브러리(.NET Framework)" 템플릿을 선택하고, 프로젝트 이름을 AppLogger로 지정한 다음, **확인**을 클릭합니다.
+1. Visual Studio에서 **파일 > 새로 만들기 > 프로젝트** 를 차례로 선택하고, **Visual C#** 노드를 선택하고, "클래스 라이브러리(.NET Framework)" 템플릿을 선택하고, 프로젝트 이름을 AppLogger로 지정한 다음, **확인** 을 클릭합니다.
 
-1. 결과 프로젝트 파일을 마우스 오른쪽 단추로 클릭하고, **빌드**를 선택하여 프로젝트가 제대로 만들어졌는지 확인합니다. DLL은 Debug(또는 해당 구성을 대신 빌드하는 경우 Release) 폴더 내에 있습니다.
+1. 결과 프로젝트 파일을 마우스 오른쪽 단추로 클릭하고, **빌드** 를 선택하여 프로젝트가 제대로 만들어졌는지 확인합니다. DLL은 Debug(또는 해당 구성을 대신 빌드하는 경우 Release) 폴더 내에 있습니다.
 
 물론 실제 NuGet 패키지 내에서 다른 사람들이 애플리케이션을 빌드할 수 있는 많은 유용한 기능을 구현할 것입니다. 원하는 대상 프레임워크를 설정할 수도 있습니다. 예를 들어 [UWP](../guides/create-uwp-packages.md) 및 [Xamarin](../guides/create-packages-for-xamarin.md)에 대한 가이드를 참조하세요.
 
@@ -70,13 +70,13 @@ namespace AppLogger
     >
     > 이미 존재하는 이름으로 패키지를 게시하려고 시도하면 오류가 표시됩니다.
 
-1. **어셈블리 정보...** 단추를 선택합니다. 그러면 매니페스트에 전달되는 다른 속성을 입력할 수 있는 대화 상자가 표시됩니다([.nuspec 파일 - 교체 토큰 참조](../reference/nuspec.md#replacement-tokens)). 가장 일반적으로 사용되는 필드는 **제목**, **설명**, **회사**, **저작권** 및 **어셈블리 버전**입니다. 이러한 속성은 최종적으로 nuget.org 같은 호스트에서 패키지와 함께 표시되므로 자세한 설명을 제공하는지 확인합니다.
+1. **어셈블리 정보...** 단추를 선택합니다. 그러면 매니페스트에 전달되는 다른 속성을 입력할 수 있는 대화 상자가 표시됩니다([.nuspec 파일 - 교체 토큰 참조](../reference/nuspec.md#replacement-tokens)). 가장 일반적으로 사용되는 필드는 **제목**, **설명**, **회사**, **저작권** 및 **어셈블리 버전** 입니다. 이러한 속성은 최종적으로 nuget.org 같은 호스트에서 패키지와 함께 표시되므로 자세한 설명을 제공하는지 확인합니다.
 
     ![Visual Studio에서 .NET Framework 프로젝트의 어셈블리 정보](media/qs_create-vs-01b-project-properties.png)
 
 1. 옵션: 속성을 직접 보고 편집하려면 프로젝트의 `Properties/AssemblyInfo.cs` 파일을 엽니다.
 
-1. 속성이 설정되면 프로젝트 구성을 **릴리스**로 설정하고 프로젝트를 다시 빌드하여 업데이트된 DLL을 생성합니다.
+1. 속성이 설정되면 프로젝트 구성을 **릴리스** 로 설정하고 프로젝트를 다시 빌드하여 업데이트된 DLL을 생성합니다.
 
 ## <a name="generate-the-initial-manifest"></a>초기 매니페스트 생성
 

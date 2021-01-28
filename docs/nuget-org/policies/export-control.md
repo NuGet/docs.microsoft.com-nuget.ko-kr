@@ -1,16 +1,16 @@
 ---
 title: 수출통제 정책
 description: 수출통제법 관리 정책
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/27/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4ea2d2f23a02088b54982b825a5be3c872e27c37
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 9d8ba7043d3b855f43bee9b45d7316d1aaaa7985
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73611316"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775637"
 ---
 # <a name="export-control-policy"></a>수출통제 정책
 

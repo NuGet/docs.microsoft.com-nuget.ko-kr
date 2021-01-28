@@ -7,15 +7,15 @@ metadata:
   titleSuffix: ''
   description: NuGet은 .NET을 포함한 Microsoft 개발 플랫폼에 대한 패키지 관리자입니다. NuGet 클라이언트 도구는 패키지를 만들고 사용하는 기능을 제공합니다.
   ms.topic: hub-page
-  author: karann-msft
-  ms.author: karann
+  author: JonDouglas
+  ms.author: jodou
   ms.date: 01/13/2020
-  ms.openlocfilehash: aff64b24e5d6bee254987f1ea8f05b4aa008fbef
-  ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+  ms.openlocfilehash: 2a7d847f59f646b5a460f6233b721dcaf26e3fb5
+  ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 11/03/2020
-  ms.locfileid: "93237897"
+  ms.lasthandoff: 01/26/2021
+  ms.locfileid: "98775889"
 highlightedContent:
   items:
   - title: NuGet이란?

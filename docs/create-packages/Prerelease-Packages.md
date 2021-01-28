@@ -1,16 +1,16 @@
 ---
 title: NuGet 패키지의 시험판 버전
 description: 시험판 패키지를 빌드하기 위한 지침
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 5dda56ccd4c959bcbcbd12b7a4771ddff1fe7530
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: ae6628efa6d97ff5ba2c4c359b9565a3214cb346
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623008"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774663"
 ---
 # <a name="building-pre-release-packages"></a>시험판 패키지 빌드
 
@@ -77,15 +77,17 @@ ms.locfileid: "88623008"
 
 그러나 어떤 접미사를 사용하든지 NuGet은 알파벳 역순으로 우선 순위를 적용합니다.
 
-    1.0.1
-    1.0.1-zzz
-    1.0.1-rc
-    1.0.1-open
-    1.0.1-beta.12
-    1.0.1-beta.5
-    1.0.1-beta
-    1.0.1-alpha.2
-    1.0.1-alpha
+```
+1.0.1
+1.0.1-zzz
+1.0.1-rc
+1.0.1-open
+1.0.1-beta.12
+1.0.1-beta.5
+1.0.1-beta
+1.0.1-alpha.2
+1.0.1-alpha
+```
 
 표시된 대로 접미사가 없는 버전은 항상 시험판 버전보다 우선합니다.
 

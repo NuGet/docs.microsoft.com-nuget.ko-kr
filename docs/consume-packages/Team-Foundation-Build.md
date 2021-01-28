@@ -1,16 +1,16 @@
 ---
 title: Team Foundation 빌드를 사용하여 NuGet 패키지 복원 연습
 description: Team Foundation Build(TFS 및 Visual Studio Team Services)에서 NuGet 패키지를 복원하는 방법의 연습입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 8b993106d439dc137fbe040b51fda373539de81a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73610997"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774984"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Team Foundation 빌드를 사용하여 패키지 복원 설정
 
@@ -54,26 +54,28 @@ nuget restore path\to\solution.sln
 
 리포지토리의 구조는 다음과 같습니다.
 
-    <Project>
-        │   .gitignore
-        │   .tfignore
-        │   build.proj
-        │
-        ├───src
-        │   │   BingSearcher.sln
-        │   │
-        │   └───BingSearcher
-        │       │   App.config
-        │       │   BingSearcher.csproj
-        │       │   packages.config
-        │       │   Program.cs
-        │       │
-        │       └───Properties
-        │               AssemblyInfo.cs
-        │
-        └───tools
-            └───NuGet
-                    nuget.exe
+```
+<Project>
+    │   .gitignore
+    │   .tfignore
+    │   build.proj
+    │
+    ├───src
+    │   │   BingSearcher.sln
+    │   │
+    │   └───BingSearcher
+    │       │   App.config
+    │       │   BingSearcher.csproj
+    │       │   packages.config
+    │       │   Program.cs
+    │       │
+    │       └───Properties
+    │               AssemblyInfo.cs
+    │
+    └───tools
+        └───NuGet
+                nuget.exe
+```
 
 `packages` 폴더나 `.targets` 파일을 아직 체크 인하지 않은 것을 확인할 수 있습니다.
 
@@ -98,33 +100,39 @@ nuget restore path\to\solution.sln
 
 `.gitignore` 파일은 다음과 같습니다.
 
-    syntax: glob
-    *.user
-    *.suo
-    bin
-    obj
-    packages
-    *.nupkg
-    project.lock.json
-    project.assets.json
+```
+syntax: glob
+*.user
+*.suo
+bin
+obj
+packages
+*.nupkg
+project.lock.json
+project.assets.json
+```
 
 `.gitignore` 파일은 [매우 강력](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html)합니다. 예를 들어, 일반적으로 `packages` 폴더의 콘텐츠를 체크 인하지 않지만 `.targets` 파일을 체크인하는 이전 지침으로 이동하려는 경우 대신 다음 규칙이 있을 수 있습니다.
 
-    packages
-    !packages/**/*.targets
+```
+packages
+!packages/**/*.targets
+```
 
 이렇게 하면 모든 `packages` 폴더를 제외하지만 포함된 모든 `.targets` 파일을 다시 포함합니다. Visual Studio 개발자의 요구를 위해 특별히 조정된 `.gitignore` 파일의 템플릿을 [여기](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore)에서 찾을 수 있습니다.
 
 TF 버전 제어는 [.tfignore](/vsts/tfvc/add-files-server#customize-which-files-are-ignored-by-version-control) 파일을 통해 매우 유사한 메커니즘을 지원합니다. 구문은 거의 동일합니다.
 
-    *.user
-    *.suo
-    bin
-    obj
-    packages
-    *.nupkg
-    project.lock.json
-    project.assets.json
+```
+*.user
+*.suo
+bin
+obj
+packages
+*.nupkg
+project.lock.json
+project.assets.json
+```
 
 ## <a name="buildproj"></a>build.proj
 

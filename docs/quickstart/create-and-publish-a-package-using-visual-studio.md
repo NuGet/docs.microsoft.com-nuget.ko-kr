@@ -1,16 +1,16 @@
 ---
 title: Windows의 Visual Studio에서 .NET Standard NuGet 패키지 만들기 및 게시
 description: Windows에서 Visual Studio를 사용하여 .NET Standard NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/16/2019
 ms.topic: quickstart
-ms.openlocfilehash: 32dcc1d233154463e2950b1ce46554b1cb89956e
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 53f54f6723ad10fca2ed6f75290ba3829dfb9a5e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237499"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775682"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>빠른 시작: Visual Studio(.NET Standard, Windows 전용)를 사용하여 NuGet 패키지 만들기 및 게시
 
@@ -130,7 +130,7 @@ namespace AppLogger
 
 ### <a name="publish-with-the-dotnet-cli-or-nugetexe-cli"></a>dotnet CLI 또는 nuget.exe CLI를 사용하여 게시
 
-**.NET Core CLI** (dotnet CLI) 또는 **NuGet** (nuget.exe CLI) 중에서 CLI 도구용 탭을 하나 선택합니다.
+**.NET Core CLI**(dotnet CLI) 또는 **NuGet**(nuget.exe CLI) 중에서 CLI 도구용 탭을 하나 선택합니다.
 
 # <a name="net-core-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 

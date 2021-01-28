@@ -1,16 +1,16 @@
 ---
 title: Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework NuGet 패키지 만들기
 description: NuGet 3.x 및 Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework NuGet 패키지를 만드는 엔드투엔드 연습입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: b16bf422e2627be3b8516a875d749639734064a9
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: d55228bbbd238d8930404ea52c5a80383bc9e0a3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "72380716"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774397"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Visual Studio 2015를 사용하여 .NET Standard 및 .NET Framework 패키지 만들기
 
@@ -31,17 +31,17 @@ ms.locfileid: "72380716"
 
 ## <a name="create-the-class-library-project"></a>클래스 라이브러리 프로젝트 만들기
 
-1. Visual Studio의 **파일> 새로 만들기> 프로젝트**에서 **Visual C# > Windows** 노드를 확장하고, **클래스 라이브러리(이식 가능)** 를 선택하고, 이름을 AppLogger로 변경한 다음, **확인**을 클릭합니다.
+1. Visual Studio의 **파일> 새로 만들기> 프로젝트** 에서 **Visual C# > Windows** 노드를 확장하고, **클래스 라이브러리(이식 가능)** 를 선택하고, 이름을 AppLogger로 변경한 다음, **확인** 을 클릭합니다.
 
     ![새 클래스 라이브러리 프로젝트 만들기](media/NetStandard-NewProject.png)
 
 1. **이식 가능한 클래스 라이브러리 추가** 대화 상자가 표시되면 `.NET Framework 4.6` 및 `ASP.NET Core 1.0`에 대한 옵션을 선택합니다. (.NET Framework를 대상으로 하는 경우에는 원하는 적절한 옵션을 선택할 수 있습니다.)
 
-1. .NET Standard를 대상으로 지정하는 경우 솔루션 탐색기에서 `AppLogger (Portable)`을 마우스 오른쪽 단추로 클릭하고, **속성**을 선택하고, **라이브러리** 탭을 선택한 다음, **대상 지정** 섹션에서 **.NET 플랫폼 표준을 대상으로 지정**을 선택합니다. 그러면 확인을 묻는 메시지가 표시되며, 확인하면 드롭다운에서 `.NET Standard 1.4`(또는 다른 사용 가능한 버전)를 선택할 수 있습니다.
+1. .NET Standard를 대상으로 지정하는 경우 솔루션 탐색기에서 `AppLogger (Portable)`을 마우스 오른쪽 단추로 클릭하고, **속성** 을 선택하고, **라이브러리** 탭을 선택한 다음, **대상 지정** 섹션에서 **.NET 플랫폼 표준을 대상으로 지정** 을 선택합니다. 그러면 확인을 묻는 메시지가 표시되며, 확인하면 드롭다운에서 `.NET Standard 1.4`(또는 다른 사용 가능한 버전)를 선택할 수 있습니다.
 
     ![대상을 .NET Standard 1.4로 설정](media/NetStandard-ChangeTarget.png)
 
-1. **빌드** 탭을 클릭하고, **구성**을 `Release`로 변경하고, **XML 문서 파일** 확인란을 선택합니다.
+1. **빌드** 탭을 클릭하고, **구성** 을 `Release`로 변경하고, **XML 문서 파일** 확인란을 선택합니다.
 
 1. 구성 요소에 다음과 같은 코드를 추가합니다.
 
@@ -110,7 +110,7 @@ ms.locfileid: "72380716"
     </files>
     ```
 
-1. 솔루션을 마우스 오른쪽 단추로 클릭하고 **솔루션 빌드**를 선택하여 패키지에 대한 모든 파일을 생성합니다.
+1. 솔루션을 마우스 오른쪽 단추로 클릭하고 **솔루션 빌드** 를 선택하여 패키지에 대한 모든 파일을 생성합니다.
 
 ### <a name="declaring-dependencies"></a>종속성 선언
 

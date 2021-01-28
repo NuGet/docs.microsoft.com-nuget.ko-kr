@@ -1,16 +1,16 @@
 ---
 title: dotnet CLI를 사용하여 NuGet 패키지 만들기
 description: 파일 및 버전 관리와 같은 주요 결정 사항을 포함하여 NuGet 패키지를 디자인하고 만드는 과정을 자세히 안내합니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 87b38d7a707d6175eb3347280784d9dfefd9c17d
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 4771a30ee2ff73e68154d05f1c84efd90b584162
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "89359653"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774485"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 NuGet 패키지 만들기
 
@@ -28,12 +28,12 @@ ms.locfileid: "89359653"
 패키지를 만들려면 다음 속성이 필요합니다.
 
 - `PackageId`: 패키지를 호스트하는 갤러리에서 고유해야 하는 패키지 식별자. 지정하지 않으면 기본값 `AssemblyName`입니다.
-- `Version`: *Major.Minor.Patch[-Suffix]* 형식의 특정 버전 번호(여기서 *-Suffix*는 [시험판 버전](prerelease-packages.md)을 식별함). 지정하지 않으면 기본값은 1.0.0입니다.
+- `Version`: *Major.Minor.Patch[-Suffix]* 형식의 특정 버전 번호(여기서 *-Suffix* 는 [시험판 버전](prerelease-packages.md)을 식별함). 지정하지 않으면 기본값은 1.0.0입니다.
 - 호스트에 표시되어야 하는 패키지 제목(예: nuget.org)
 - `Authors`: 작성자 및 소유자 정보. 지정하지 않으면 기본값 `AssemblyName`입니다.
 - `Company`: 회사 이름. 지정하지 않으면 기본값 `AssemblyName`입니다.
 
-Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습니다(솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성**을 선택한 다음, **패키지** 탭 선택). 프로젝트 파일(`.csproj`)에서 직접 이러한 속성을 설정할 수도 있습니다.
+Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습니다(솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성** 을 선택한 다음, **패키지** 탭 선택). 프로젝트 파일(`.csproj`)에서 직접 이러한 속성을 설정할 수도 있습니다.
 
 ```xml
 <PropertyGroup>

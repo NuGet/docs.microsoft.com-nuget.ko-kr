@@ -1,20 +1,20 @@
 ---
 title: NuGet 패키지 유형 선택
 description: 패키지 유형을 설명하여 패키지의 용도를 나타냅니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1d869f616ce0291cf1c0a17b7ff20fc61e6a3bd5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 990ac580f4031615566d78e359a24eaedaaf3e07
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78230826"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774370"
 ---
 # <a name="set-a-nuget-package-type"></a>NuGet 패키지 유형 선택
 
-NuGet 3.5 이상을 사용하면 의도한 용도를 나타내기 위해 패키지를 특정 *패키지 유형*으로 표시할 수 있습니다. 이전 버전의 NuGet으로 만든 모든 패키지를 포함하여 유형으로 표시되지 않은 패키지의 기본값은 `Dependency` 유형입니다.
+NuGet 3.5 이상을 사용하면 의도한 용도를 나타내기 위해 패키지를 특정 *패키지 유형* 으로 표시할 수 있습니다. 이전 버전의 NuGet으로 만든 모든 패키지를 포함하여 유형으로 표시되지 않은 패키지의 기본값은 `Dependency` 유형입니다.
 
 - `Dependency` 유형 패키지는 라이브러리 또는 애플리케이션에 빌드 시간 자산 또는 런타임 자산을 추가하며, 모든 프로젝트 형식에 설치할 수 있습니다(호환된다고 가정할 경우).
 

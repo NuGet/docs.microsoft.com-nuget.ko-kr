@@ -1,16 +1,16 @@
 ---
 title: dotnet CLI를 사용하여 NuGet 패키지 만들기 및 게시
 description: .NET Core CLI, dotnet을 사용하여 NuGet 패키지를 만들고 게시하는 방법에 대한 연습 자습서입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: a67c8cd92304c6c4abcffbb79ddbe964664d08fb
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: cb63257c874fc4752f3b3d59db4be5996d5ab81d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237486"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775764"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>빠른 시작: 패키지 만들기 및 게시(dotnet CLI)
 
@@ -124,7 +124,7 @@ NuGet에서 제공하는 다른 기능을 탐색하려면 아래 링크를 선�
 - [시험판 패키지](../create-packages/Prerelease-Packages.md)
 - [여러 대상 프레임워크 지원](../create-packages/multiple-target-frameworks-project-file.md)
 - [패키지 버전 관리](../concepts/package-versioning.md)
-- [라이선스 식 또는 파일 추가](../reference/msbuild-targets#packing-a-license-expression-or-a-license-file)
+- [라이선스 식 또는 파일 추가](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file)
 - [지역화된 패키지 만들기](../create-packages/creating-localized-packages.md)
 - [기호 패키지 만들기](../create-packages/symbol-packages-snupkg.md)
 - [패키지 서명](../create-packages/Sign-a-package.md)

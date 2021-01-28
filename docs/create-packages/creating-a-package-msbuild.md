@@ -1,16 +1,16 @@
 ---
 title: MSBuild를 사용하여 NuGet 패키지 만들기
 description: 파일 및 버전 관리와 같은 주요 결정 사항을 포함하여 NuGet 패키지를 디자인하고 만드는 과정을 자세히 안내합니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 47a20c5566affec1cdc7772c86d8101dab162d85
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 48741668af932a532240f2796a9bf5d490ee8e35
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237973"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774442"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>MSBuild를 사용하여 NuGet 패키지 만들기
 
@@ -39,7 +39,7 @@ SDK 스타일 프로젝트에는 기본적으로 사용할 수 있는 pack 기�
 
 - `PackageOutputPath`에서 패키지를 호출할 때 생성되는 패키지의 출력 폴더입니다.
 
-Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습니다(솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성** 을 선택한 다음, **패키지** 탭 선택). 프로젝트 파일( *.csproj* )에서 직접 속성을 설정할 수도 있습니다.
+Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습니다(솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성** 을 선택한 다음, **패키지** 탭 선택). 프로젝트 파일( *.csproj*)에서 직접 속성을 설정할 수도 있습니다.
 
 ```xml
 <PropertyGroup>
@@ -96,7 +96,7 @@ Visual Studio의 프로젝트 속성에서 이러한 값을 설정할 수 있습
    </ItemGroup>
    ```
 
-2. 개발자 명령 프롬프트를 엽니다( **검색** 상자에 **개발자 명령 프롬프트** 입력).
+2. 개발자 명령 프롬프트를 엽니다(**검색** 상자에 **개발자 명령 프롬프트** 입력).
 
    (일반적으로 **시작** 메뉴에서 “Visual Studio용 개발자 명령 프롬프트”를 시작하는 것이 좋습니다. MSBuild에 필요한 모든 경로로 구성되기 때문입니다.)
 
