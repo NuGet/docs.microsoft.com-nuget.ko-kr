@@ -1,25 +1,25 @@
 ---
 title: Visual Studio에서 NuGet 패키지 설치 및 사용
 description: Visual Studio 프로젝트에서 NuGet 패키지를 설치하고 사용하는 프로세스에 대한 연습 자습서입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 10bc34653d294cf70b5c91ce79a79cf6532fba1b
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 55f6a64d90ce8ca628d1ac5c68f8133872a214e0
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80147489"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775526"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>빠른 시작: Visual Studio에서 패키지 설치 및 사용(Windows만 해당)
 
-NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 제공하는 다시 사용할 수 있는 코드를 포함합니다. 배경 지식은 [NuGet이란?](../What-is-NuGet.md)을 참조하세요. 패키지는 NuGet 패키지 관리자, [패키지 관리자 콘솔](../consume-packages/install-use-packages-powershell) 또는 [dotnet CLI](install-and-use-a-package-using-the-dotnet-cli.md)를 사용하여 Visual Studio 프로젝트에 설치됩니다. 이 문서에서는 널리 사용되는 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 패키지 및 WPF(Windows Presentation Foundation) 프로젝트를 사용하는 프로세스를 보여줍니다. 같은 프로세스가 다른 .NET 또는 .NET Core 프로젝트에 모두에 적용됩니다.
+NuGet 패키지는 다른 개발자가 프로젝트에서 사용하기 위해 제공하는 다시 사용할 수 있는 코드를 포함합니다. 배경 지식은 [NuGet이란?](../What-is-NuGet.md)을 참조하세요. 패키지는 NuGet 패키지 관리자, [패키지 관리자 콘솔](../consume-packages/install-use-packages-powershell.md) 또는 [dotnet CLI](install-and-use-a-package-using-the-dotnet-cli.md)를 사용하여 Visual Studio 프로젝트에 설치됩니다. 이 문서에서는 널리 사용되는 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 패키지 및 WPF(Windows Presentation Foundation) 프로젝트를 사용하는 프로세스를 보여줍니다. 같은 프로세스가 다른 .NET 또는 .NET Core 프로젝트에 모두에 적용됩니다.
 
-패키지가 설치되면 `using <namespace>`를 사용하여 코드에서 패키지를 참조합니다. 여기서 \<네임스페이스\>는 사용 중인 패키지에 특정됩니다. 일단 참조를 만들면 해당 API를 통해 패키지를 호출할 수 있습니다.
+패키지가 설치되면 `using <namespace>`를 사용하여 코드에서 패키지를 참조합니다. 여기서 \<namespace\>는 사용 중인 패키지에 특정됩니다. 일단 참조를 만들면 해당 API를 통해 패키지를 호출할 수 있습니다.
 
 > [!Tip]
-> **nuget.org 시작**: *nuget.org* 검색은 일반적으로 .NET 개발자가 고유의 애플리케이션에서 다시 사용할 수 있는 구성 요소를 찾는 방법입니다. *nuget.org*를 직접 검색하거나 이 문서에 표시된 대로 Visual Studio 내에서 패키지를 설치할 수 있습니다. 일반 정보는 [NuGet 패키지 찾기 및 평가](../consume-packages/finding-and-choosing-packages.md)를 참조하세요.
+> **nuget.org 시작**: *nuget.org* 검색은 일반적으로 .NET 개발자가 고유의 애플리케이션에서 다시 사용할 수 있는 구성 요소를 찾는 방법입니다. *nuget.org* 를 직접 검색하거나 이 문서에 표시된 대로 Visual Studio 내에서 패키지를 설치할 수 있습니다. 일반 정보는 [NuGet 패키지 찾기 및 평가](../consume-packages/finding-and-choosing-packages.md)를 참조하세요.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -33,7 +33,7 @@ Mac용 Visual Studio를 사용하는 경우 [Mac용 Visual Studio에서 패키�
 
 NuGet 패키지는 패키지가 프로젝트와 동일한 대상 프레임워크를 지원하는 경우 어느 .NET 프로젝트에나 설치할 수 있습니다.
 
-이 연습에서는 단순 WPF 앱을 사용합니다. **파일** > **새 프로젝트**를 사용하고 검색 상자에 **.NET**을 입력한 후 **WPF 앱(.NET Framework)** 을 선택하여 Visual Studio에서 프로젝트를 만듭니다. **다음**을 클릭합니다. 메시지가 표시되면 **프레임워크**의 기본값을 그대로 적용합니다.
+이 연습에서는 단순 WPF 앱을 사용합니다. **파일** > **새 프로젝트** 를 사용하고 검색 상자에 **.NET** 을 입력한 후 **WPF 앱(.NET Framework)** 을 선택하여 Visual Studio에서 프로젝트를 만듭니다. **다음** 을 클릭합니다. 메시지가 표시되면 **프레임워크** 의 기본값을 그대로 적용합니다.
 
 Visual Studio에서 프로젝트를 만들고 솔루션 탐색기에서 열립니다.
 
@@ -43,11 +43,11 @@ Visual Studio에서 프로젝트를 만들고 솔루션 탐색기에서 열립�
 
 ### <a name="nuget-package-manager"></a>NuGet 패키지 관리자
 
-1. 솔루션 탐색기에서 **참조**를 마우스 오른쪽 단추로 클릭하고 **NuGet 패키지 관리**를 선택합니다.
+1. 솔루션 탐색기에서 **참조** 를 마우스 오른쪽 단추로 클릭하고 **NuGet 패키지 관리** 를 선택합니다.
 
     ![프로젝트 참조에 대한 NuGet 패키지 관리 명령](media/QS_Use-02-ManageNuGetPackages.png)
 
-1. "nuget.org"를 **패키지 원본**으로 선택하고, **찾아보기** 탭을 선택하고, **Newtonsoft.Json**을 검색하고, 목록에서 해당 패키지를 선택하고, **설치**를 선택합니다.
+1. "nuget.org"를 **패키지 원본** 으로 선택하고, **찾아보기** 탭을 선택하고, **Newtonsoft.Json** 을 검색하고, 목록에서 해당 패키지를 선택하고, **설치** 를 선택합니다.
 
     ![Newtonsoft.Json 패키지 찾기](media/QS_Use-03-NewtonsoftJson.png)
 
@@ -55,11 +55,11 @@ Visual Studio에서 프로젝트를 만들고 솔루션 탐색기에서 열립�
 
 1. 라이선스 프롬프트를 수락합니다.
 
-1. (Visual Studio 2017만 해당) 패키지 관리 형식을 선택하라는 메시지가 표시되면 **프로젝트 파일에서 PackageReference**를 선택합니다.
+1. (Visual Studio 2017만 해당) 패키지 관리 형식을 선택하라는 메시지가 표시되면 **프로젝트 파일에서 PackageReference** 를 선택합니다.
 
     ![패키지 관리 형식 선택](media/QS_Use-03b-SelectFormat.png)
 
-1. 변경 내용을 검토하라는 메시지가 표시되면 **확인**을 선택합니다.
+1. 변경 내용을 검토하라는 메시지가 표시되면 **확인** 을 선택합니다.
 
 ### <a name="package-manager-console"></a>패키지 관리자 콘솔
 
@@ -67,7 +67,7 @@ Visual Studio에서 프로젝트를 만들고 솔루션 탐색기에서 열립�
 
 1. 콘솔이 열리면 **기본 프로젝트** 드롭다운 목록에 패키지를 설치할 프로젝트가 표시되는지 확인합니다. 솔루션에 단일 프로젝트가 있는 경우 이미 선택되어 있습니다.
 
-    ![Newtonsoft.Json 패키지 찾기](media/QS_Use-08-Console1.png)
+    ![패키지에 대한 프로젝트 선택](media/QS_Use-08-Console1.png)
 
 1. `Install-Package Newtonsoft.Json` 명령을 입력합니다([Install-Package](../reference/ps-reference/ps-ref-install-package.md) 참조). 콘솔 창은 명령에 대한 출력을 표시합니다. 일반적으로 오류는 패키지가 프로젝트의 대상 프레임워크와 호환되지 않음을 나타냅니다.
 
@@ -117,7 +117,7 @@ Visual Studio에서 프로젝트를 만들고 솔루션 탐색기에서 열립�
     using Newtonsoft.Json;
     ```
 
-1. F5 키를 누르거나 **디버그** > **디버깅 시작**을 선택하여 앱을 빌드하고 실행합니다.
+1. F5 키를 누르거나 **디버그** > **디버깅 시작** 을 선택하여 앱을 빌드하고 실행합니다.
 
     ![WPF 앱의 초기 출력](media/QS_Use-06-AppStart.png)
 

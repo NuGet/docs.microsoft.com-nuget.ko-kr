@@ -1,22 +1,22 @@
 ---
 title: NuGet 정의 및 기능
 description: NuGet의 정의와 기능에 대해 포괄적으로 소개합니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: c326cf184ff20fb798a5770f0a4cf9bf42bed3f5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 446a1ad4d07d0338a996ad93823ac20386620c0d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78230696"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780092"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 소개
 
 모든 최신 개발 플랫폼에 필수적인 도구는 개발자가 유용한 코드를 작성, 공유 및 사용할 수 있는 메커니즘입니다. 대부분 이러한 코드는 이러한 패키지를 사용하는 프로젝트에 필요한 다른 내용과 함께 컴파일된 코드를 포함하는(DLL로) “패키지”로 제공됩니다.
 
-.NET(.NET Core 포함)의 경우 코드를 공유하는 Microsoft 지원 메커니즘은 **NuGet**입니다. 이는 .NET용 패키지를 만들고 호스트하고 사용하는 방법을 정의하고 각 역할에 대한 [도구를 제공](install-nuget-client-tools.md)합니다.
+.NET(.NET Core 포함)의 경우 코드를 공유하는 Microsoft 지원 메커니즘은 **NuGet** 입니다. 이는 .NET용 패키지를 만들고 호스트하고 사용하는 방법을 정의하고 각 역할에 대한 [도구를 제공](install-nuget-client-tools.md)합니다.
 
 간단히 말해, NuGet 패키지는 컴파일된 코드(DLL), 해당 코드와 관련된 다른 파일 및 패키지의 버전 번호와 같은 정보를 포함한 설명적 매니페스트가 포함된 `.nupkg` 확장명의 단일 ZIP 파일입니다. 공유할 코드를 가진 개발자는 패키지 파일을 만들어 공용 또는 전용 호스트에 게시합니다. 패키지 소비자는 적합한 호스트에서 이러한 패키지를 받고, 프로젝트에 추가한 다음, 프로젝트 코드에서 패키지 기능을 호출합니다. 그런 다음 NuGet 자체에서 모든 중간 세부 정보를 처리합니다.
 
@@ -26,7 +26,7 @@ NuGet은 공용 nuget.org 호스트와 함께 전용 호스트를 지원하기 �
 
 공용 호스트로서의 역할에서 NuGet 자체는 [nuget.org](https://www.nuget.org)에 100,000개가 넘는 고유한 패키지의 중앙 리포지토리를 유지 관리합니다. 이러한 패키지는 매일 수백만 명의 .NET/.NET Core 개발자가 사용합니다. 또한 NuGet을 사용하면 클라우드(예:Azure DevOps), 사설 네트워크 또는 로컬 파일 시스템에서도 패키지를 전용으로 호스팅할 수 있습니다. 이렇게 하면 호스트에 액세스할 수 있는 개발자만 해당 패키지를 사용할 수 있으므로 특정 소비자 그룹이 패키지를 사용할 수 있도록 설정하는 기능이 제공됩니다. 옵션은 [자체 NuGet 피드 호스팅](hosting-packages/overview.md)에서 설명하고 있습니다. 구성 옵션을 통해 주어진 컴퓨터에서 액세스할 수 있는 호스트를 정확히 제어할 수 있으므로 nuget.org 같은 공용 리포지토리가 아닌 특정 소스에서 패키지를 가져오게 됩니다.
 
-특성이 무엇이든 간에 호스트는 패키지 *작성자*와 패키지 *소비자* 사이의 연결 지점 역할을 합니다. 작성자는 유용한 NuGet 패키지를 빌드하고 호스트에 게시합니다. 그런 다음 소비자는 액세스할 수 있는 호스트에서 유용하고 호환 가능한 패키지를 검색하고 해당 패키지를 다운로드하여 프로젝트에 포함합니다. 프로젝트에 설치되면 패키지의 API는 프로젝트 코드의 나머지 부분에서 사용할 수 있습니다.
+특성이 무엇이든 간에 호스트는 패키지 *작성자* 와 패키지 *소비자* 사이의 연결 지점 역할을 합니다. 작성자는 유용한 NuGet 패키지를 빌드하고 호스트에 게시합니다. 그런 다음 소비자는 액세스할 수 있는 호스트에서 유용하고 호환 가능한 패키지를 검색하고 해당 패키지를 다운로드하여 프로젝트에 포함합니다. 프로젝트에 설치되면 패키지의 API는 프로젝트 코드의 나머지 부분에서 사용할 수 있습니다.
 
 ![패키지 작성자, 패키지 호스트 및 패키지 소비자 간의 관계](media/nuget-roles.png)
 
@@ -76,7 +76,7 @@ NuGet에서 이 서비스를 수행하는 방법에 대한 자세한 내용은 [
 
 ![NuGet 참조 목록은 패키지 설치 시 만들어지며, 다른 위치에서 패키지를 복원하는 데 사용할 수 있습니다.](media/nuget-restore.png)
 
-NuGet은 나중에 언제든지 참조 목록만 사용하여 공용 및/또는 사설 호스트에서 해당 패키지 모두를 다시 설치, 즉 *복원*할 수 있습니다.&mdash;&mdash; 프로젝트를 소스 제어에 커밋하거나 다른 방식으로 공유하는 경우, 참조 목록만 포함하고 패키지 이진 파일은 제외합니다([패키지 및 소스 제어](consume-packages/packages-and-source-control.md) 참조).
+NuGet은 나중에 언제든지 참조 목록만 사용하여 공용 및/또는 사설 호스트에서 해당 패키지 모두를 다시 설치, 즉 *복원* 할 수 있습니다.&mdash;&mdash; 프로젝트를 소스 제어에 커밋하거나 다른 방식으로 공유하는 경우, 참조 목록만 포함하고 패키지 이진 파일은 제외합니다([패키지 및 소스 제어](consume-packages/packages-and-source-control.md) 참조).
 
 자동화된 배포 시스템의 일부로 프로젝트의 복사본을 얻는 빌드 서버와 같이 프로젝트를 받는 컴퓨터는 필요할 때마다 NuGet에서 종속성을 복원하도록 요청하기만 하면 됩니다. Azure DevOps와 같은 빌드 시스템은 이와 같은 정확한 목적을 위해 "NuGet restore" 단계를 제공합니다. 마찬가지로 개발자가 프로젝트의 복사본을 얻는 경우(예: 리포지토리 복제 시) `nuget restore`(NuGet CLI), `dotnet restore`(dotnet CLI) 또는 `Install-Package`(패키지 관리자 콘솔) 같은 명령을 호출하여 모든 필요한 패키지를 얻습니다. Visual Studio 자체로서는 [패키지 복원](consume-packages/package-restore.md)에 설명된 대로 자동 복원을 사용하도록 설정한 경우 프로젝트를 빌드할 때 패키지를 자동으로 복원합니다.
 

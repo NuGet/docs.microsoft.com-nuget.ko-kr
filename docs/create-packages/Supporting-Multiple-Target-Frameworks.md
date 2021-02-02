@@ -1,16 +1,16 @@
 ---
 title: NuGet 패키지의 멀티 타기팅
 description: 단일 NuGet 패키지 내에서 여러 .NET Framework 버전을 대상으로 하는 다양한 방법에 대한 설명입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 7c0da38ab4059b89c9693ecbece2bc8ed1a775ec
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: e919b11670589900d9e588db33fd68b8df592ac2
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237947"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774559"
 ---
 # <a name="support-multiple-net-versions"></a>여러 .NET 버전 지원
 
@@ -24,7 +24,9 @@ ms.locfileid: "93237947"
 
 하나의 라이브러리 버전을 포함하거나 여러 프레임워크를 대상으로 하는 패키지를 빌드하는 경우 항상 다음 규칙으로 다른 대/소문자 구분 프레임워크 이름을 사용하여 `lib` 아래에서 하위 폴더를 만듭니다.
 
-    lib\{framework name}[{version}]
+```
+lib\{framework name}[{version}]
+```
 
 지원되는 이름의 전체 목록은 [대상 프레임워크 참조](../reference/target-frameworks.md#supported-frameworks)를 참조하세요.
 
@@ -32,15 +34,17 @@ ms.locfileid: "93237947"
 
 예를 들어 다음 폴더 구조는 프레임워크에 관련된 4개 버전의 어셈블리를 지원합니다.
 
-    \lib
-        \net46
-            \MyAssembly.dll
-        \net461
-            \MyAssembly.dll
-        \uap
-            \MyAssembly.dll
-        \netcore
-            \MyAssembly.dll
+```
+\lib
+    \net46
+        \MyAssembly.dll
+    \net461
+        \MyAssembly.dll
+    \uap
+        \MyAssembly.dll
+    \netcore
+        \MyAssembly.dll
+```
 
 패키지를 빌드할 때 이러한 파일 중 일부를 쉽게 포함하려면 `.nuspec`의 `<files>` 섹션에서 재귀 `**` 와일드 카드를 사용합니다.
 
@@ -54,16 +58,18 @@ ms.locfileid: "93237947"
 
 아키텍처 관련 어셈블리, 즉, ARM, x86 및 x64를 대상으로 하는 별도 어셈블리가 있는 경우 `{platform}-{architecture}\lib\{framework}` 또는 `{platform}-{architecture}\native`라는 하위 폴더 내에서 `runtimes`라는 폴더에 배치해야 합니다. 예를 들어 다음 폴더 구조는 Windows 10 및 `uap10.0` 프레임워크를 대상으로 하는 네이티브 및 관리 DLL을 모두 수용합니다.
 
-    \runtimes
-        \win10-arm
-            \native
-            \lib\uap10.0
-        \win10-x86
-            \native
-            \lib\uap10.0
-        \win10-x64
-            \native
-            \lib\uap10.0
+```
+\runtimes
+    \win10-arm
+        \native
+        \lib\uap10.0
+    \win10-x86
+        \native
+        \lib\uap10.0
+    \win10-x64
+        \native
+        \lib\uap10.0
+```
 
 이러한 어셈블리는 런타임에만 사용할 수 있으므로 해당 컴파일 시간 어셈블리도 제공하려면 `AnyCPU` 어셈블리를 `/ref/{tfm}` 폴더에 포함합니다. 
 
@@ -81,11 +87,13 @@ NuGet이 여러 어셈블리 버전을 포함하는 패키지를 설치하면 �
 
 예를 들어 패키지에 다음과 같은 폴더 구조가 있다고 가정합니다.
 
-    \lib
-        \net45
-            \MyAssembly.dll
-        \net461
-            \MyAssembly.dll
+```
+\lib
+    \net45
+        \MyAssembly.dll
+    \net461
+        \MyAssembly.dll
+```
 
 .NET Framework 4.6을 대상으로 하는 프로젝트에서 이 패키지를 설치하는 경우 NuGet은 `net45` 폴더에 어셈블리를 설치합니다. 4.6 이전에 릴리스된 사용 가능한 가장 높은 버전이기 때문입니다.
 
@@ -97,12 +105,14 @@ NuGet이 여러 어셈블리 버전을 포함하는 패키지를 설치하면 �
 
 NuGet은 패키지의 단일 라이브러리 폴더에서 어셈블리를 복사합니다. 예를 들어 패키지에 다음과 같은 폴더 구조가 있다고 가정합니다.
 
-    \lib
-        \net40
-            \MyAssembly.dll (v1.0)
-            \MyAssembly.Core.dll (v1.0)
-        \net45
-            \MyAssembly.dll (v2.0)
+```
+\lib
+    \net40
+        \MyAssembly.dll (v1.0)
+        \MyAssembly.Core.dll (v1.0)
+    \net45
+        \MyAssembly.dll (v2.0)
+```
 
 .NET Framework 4.5를 대상으로 하는 프로젝트에서 패키지를 설치할 때 `MyAssembly.dll`(v2.0)이 설치된 유일한 어셈블리입니다. `MyAssembly.Core.dll`(v1.0)이 `net45` 폴더에 나열되지 않기 때문에 설치되지 않습니다. `MyAssembly.Core.dll`이 2.0 버전의 `MyAssembly.dll`에 병합되기 때문에 NuGet은 이런 방식으로 작동합니다.
 
@@ -112,7 +122,7 @@ NuGet은 패키지의 단일 라이브러리 폴더에서 어셈블리를 복사
 
 또한 NuGet은 대시와 프로필 이름을 폴더의 끝에 추가하여 특정 프레임워크 프로필을 대상으로 하도록 지원합니다.
 
-    lib\{framework name}-{profile}
+lib\{framework name}-{profile}
 
 지원되는 프로필은 다음과 같습니다.
 
@@ -160,24 +170,26 @@ NuGet은 패키지의 단일 라이브러리 폴더에서 어셈블리를 복사
 > [!Warning]
 > 변경할 수 있는 콘텐츠 파일 및 스크립트 실행은 `packages.config` 형식에서만 제공됩니다. 모든 다른 형식과 함께 더 이상 사용되지 않으며 새 패키지에서 사용하면 안 됩니다.
 
-`packages.config`에서 `content` 및 `tools` 폴더 내의 동일한 폴더 규칙을 사용하는 대상 프레임워크에서 콘텐츠 파일 및 PowerShell 스크립트를 그룹화할 수 있습니다. 다음은 그 예입니다.
+`packages.config`에서 `content` 및 `tools` 폴더 내의 동일한 폴더 규칙을 사용하는 대상 프레임워크에서 콘텐츠 파일 및 PowerShell 스크립트를 그룹화할 수 있습니다. 예를 들면 다음과 같습니다.
 
-    \content
-        \net46
-            \MyContent.txt
-        \net461
-            \MyContent461.txt
-        \uap
-            \MyUWPContent.html
-        \netcore
-    \tools
-        init.ps1
-        \net46
-            install.ps1
-            uninstall.ps1
-        \uap
-            install.ps1
-            uninstall.ps1
+```
+\content
+    \net46
+        \MyContent.txt
+    \net461
+        \MyContent461.txt
+    \uap
+        \MyUWPContent.html
+    \netcore
+\tools
+    init.ps1
+    \net46
+        install.ps1
+        uninstall.ps1
+    \uap
+        install.ps1
+        uninstall.ps1
+```
 
 프레임워크 폴더를 비워 두면 NuGet은 어셈블리 참조 또는 콘텐츠 파일을 추가하거나 해당 프레임워크에서 PowerShell 스크립트를 실행하지 않습니다.
 

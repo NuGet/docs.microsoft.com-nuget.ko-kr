@@ -1,16 +1,16 @@
 ---
 title: NuGet 패키지 사용에 대한 개요 및 워크플로
 description: 프로젝트에서 NuGet 패키지를 사용하는 프로세스를 간략히 설명하며, 프로세스의 다른 특정 부분에 대한 링크가 포함되어 있습니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: ddd1d163e18ed4ce1e7cbf41ed152acc40c1c423
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 5f1856940a988e0585c29ccfd581d823e4f69921
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428518"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775066"
 ---
 # <a name="package-consumption-workflow"></a>패키지 사용 워크플로
 

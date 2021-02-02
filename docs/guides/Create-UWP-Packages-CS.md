@@ -1,16 +1,16 @@
 ---
-title: 유니버설 Windows 플랫폼용 NuGet 패키지 만들기
+title: UWP 플랫폼용 NuGet 패키지 만들기(C#)
 description: C#에서 유니버설 Windows 플랫폼용 Windows 런타임 구성 요소를 사용하여 NuGet 패키지를 만드는 엔드투엔드 연습입니다.
 author: rrelyea
 ms.author: rrelyea
 ms.date: 02/28/2020
 ms.topic: tutorial
-ms.openlocfilehash: 6f8037f439d627af158b6d5b7746a633b053e514
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 22df2cd6dc374ba265c79a019747191e797b774c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238012"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774290"
 ---
 # <a name="create-uwp-packages-c"></a>UWP 패키지 만들기(C#)
 

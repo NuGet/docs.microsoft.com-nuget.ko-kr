@@ -1,16 +1,16 @@
 ---
 title: 프로젝트 파일에서 NuGet 패키지의 멀티 타기팅
-description: 단일 NuGet 패키지 내에서 여러 .NET Framework 버전을 대상으로 하는 다양한 방법에 대한 설명입니다.
-author: karann-msft
-ms.author: karann
+description: 프로젝트 파일의 단일 NuGet 패키지 내에서 여러 .NET Framework 버전을 대상으로 하는 다양한 방법에 대한 설명입니다.
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1d23759433efb405fa5f0035049befced2c43d6b
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: a05d053340bb2fe795991dfa5a2b95d8625dfd44
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "72380682"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774379"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>프로젝트 파일에서 여러 .NET Framework 버전 지원
 
@@ -53,13 +53,13 @@ SDK 스타일 프로젝트의 경우 프로젝트 파일에서 여러 대상 프
    }
    ```
 
-4. *.csproj*에 원하는 NuGet 메타데이터를 MSBuild 속성으로 추가합니다.
+4. *.csproj* 에 원하는 NuGet 메타데이터를 MSBuild 속성으로 추가합니다.
 
    사용 가능한 패키지 메타데이터 및 MSBuild 속성 이름 목록은 [pack 대상](../reference/msbuild-targets.md#pack-target)을 참조하세요. [종속성 자산 제어](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)도 참조하세요.
 
    Nuget 메타데이터에서 빌드 관련 속성을 분리하려는 경우 다른 `PropertyGroup`을 사용하거나 NuGet 속성을 다른 파일에 넣고 MSBuild의 `Import` 지시문을 사용하여 포함시킬 수 있습니다. MSBuild 15.0부터 `Directory.Build.Props` 및 `Directory.Build.Targets`도 지원됩니다.
 
-5. 이제 `dotnet pack`을 사용합니다. 그러면 결과 *.nupkg*는 .NET Standard 2.0 및 .NET Framework 4.5 둘 다를 대상으로 합니다.
+5. 이제 `dotnet pack`을 사용합니다. 그러면 결과 *.nupkg* 는 .NET Standard 2.0 및 .NET Framework 4.5 둘 다를 대상으로 합니다.
 
 다음은 이전 단계 및 .NET Core SDK 2.2를 사용하여 생성한 *.csproj* 파일입니다.
 

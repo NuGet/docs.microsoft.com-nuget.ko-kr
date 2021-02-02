@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 7076378b53c439eef51a243fa6efcfb01b8cfa73
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: aa845464dbe939260d5fca3e4b89bd846df471a7
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237908"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775938"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>NuGet.org 질문과 대답
 
@@ -127,7 +127,7 @@ NuGet.org 사용자에 대한 Microsoft 계정을 변경하려는 경우 다음 
 1. **Microsoft로 로그인** 을 클릭한 후 [로그인 페이지](https://www.nuget.org/users/account/LogOn)에서 **현재 연결된 Microsoft 계정** 즉, `account1@outlook.com`을 사용하여 로그인하세요.
 1. 로그인하면 [계정 설정](https://www.nuget.org/account) 페이지로 이동합니다.
 1. **로그인 계정** 의 섹션을 확장합니다. **계정 변경** 단추를 클릭합니다.
-1. 이제 Microsoft 로그인 페이지로 리디렉션됩니다. 연결을 `account2@outlook.com`으로 변경하려는 계정을 사용하여 로그인하세요. **참고** : 다른 Microsoft 계정으로 로그인할 수 있으려면 로그인 흐름 중에 **다른 계정으로 로그인 및 로그아웃** 을 클릭해야 할 수 있습니다.
+1. 이제 Microsoft 로그인 페이지로 리디렉션됩니다. 연결을 `account2@outlook.com`으로 변경하려는 계정을 사용하여 로그인하세요. **참고**: 다른 Microsoft 계정으로 로그인할 수 있으려면 로그인 흐름 중에 **다른 계정으로 로그인 및 로그아웃** 을 클릭해야 할 수 있습니다.
 1. 아래와 같은 오류가 표시되는 경우 자세한 내용은 [Microsoft 계정이 다른 NuGet.org 계정과 연결되어 있습니다](#microsoft-account-is-linked-with-another-nugetorg-account)를 참조하세요.
     >_'account2 <account2@outlook.com>'을 사용하여 Microsoft 계정을 업데이트하지 못했습니다. 다른 NuGet 계정에 이미 연결되어 있는 경우 이런 오류가 발생할 수 있습니다. 자세한 내용은 고객 지원팀에 문의하세요._
 
@@ -188,11 +188,11 @@ NuGet.org에서 계정을 만드는 경우 해당 계정과 연결된 통신 전
 ### <a name="unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account"></a>Microsoft 로그인을 사용할 수 없는 경우 내 NuGet.org 계정을 복구하려면 어떻게 하나요?
 
 [로그인 지원](#which-microsoft-account-is-linked-to-my-nugetorg-account)을 사용하려는데 NuGet.org 계정과 연결된 Microsoft 계정에 액세스할 수 없는 경우 NuGet.org 계정에 새 Microsoft 계정을 연결하려면 다음 단계를 따르세요.
-1. **요구 사항** : 기존의 모든 NuGet.org 계정과 연결되지 않은 Microsoft 계정에 액세스해야 합니다. 없는 경우 계정을 [만들](https://signup.live.com) 수 있습니다.
+1. **요구 사항**: 기존의 모든 NuGet.org 계정과 연결되지 않은 Microsoft 계정에 액세스해야 합니다. 없는 경우 계정을 [만들](https://signup.live.com) 수 있습니다.
 2. NuGet.org 계정의 사용자 이름 및 암호를 잊은 경우 [암호 로그인을 복구하는 단계](#how-to-recover-nugetorg-password-login)를 수행하세요.
 3. 사용자 이름/암호 로그인을 사용하여 [NuGet.org에 로그인](https://www.nuget.org/users/account/LogOnNuGetAccount)합니다.
 4. 로그인하면 아래와 같은 팝업 대화 상자가 표시됩니다. 이 대화 상자는 암호 중지 대화 상자입니다.
-5. **참고** : 지정된 Microsoft 계정으로 로그인하라는 지침을 무시하세요. 이제 기타 모든 Microsoft 로그인에 NuGet.org 계정을 연결할 수 있습니다.
+5. **참고**: 지정된 Microsoft 계정으로 로그인하라는 지침을 무시하세요. 이제 기타 모든 Microsoft 로그인에 NuGet.org 계정을 연결할 수 있습니다.
 6. 1단계에서 설명한 것처럼 **Microsoft로 로그인** 단추를 클릭하고 액세스 권한이 있는 Microsoft 계정으로 로그인합니다.
 7. 이제 사용자 계정은 앞으로 NuGet.org에 로그인하는 데 사용할 수 있는 새 Microsoft 계정에 연결됩니다.
 
@@ -203,7 +203,7 @@ NuGet.org에서 계정을 만드는 경우 해당 계정과 연결된 통신 전
 사용자 계정을 조직 계정으로 변환하려는 경우 이 계정이 이미 Microsoft 계정 로그인과 연결되어 있으면 [nuget.org의 조직](organizations-on-nuget-org.md)에 대한 설명서에 표시된 단계를 따릅니다.
 
 그러나 NuGet.org 계정이 Microsoft 계정과 연결되어 있지 않은 경우 이 계정을 조직 계정으로 변환하려면 다음 단계를 따르면 됩니다.
-1. **요구 사항** : 조직 계정의 관리자로 사용할 NuGet.org에서 처음 만든 개별 계정이 있어야 합니다. 없으면 [새 NuGet.org 계정을 만듭니다](individual-accounts.md).
+1. **요구 사항**: 조직 계정의 관리자로 사용할 NuGet.org에서 처음 만든 개별 계정이 있어야 합니다. 없으면 [새 NuGet.org 계정을 만듭니다](individual-accounts.md).
 2. NuGet.org 계정에 대한 암호 로그인이 없는 경우 해당 계정에 대한 [암호 로그인 복구 단계](#how-to-recover-nugetorg-password-login)를 따릅니다. 그러나 있는 경우 이 단계를 건너뜁니다.
 3. 사용자 이름/암호 로그인을 사용하여 [NuGet.org에 로그인](https://www.nuget.org/users/account/LogOnNuGetAccount)합니다.
 4. 로그인하면 아래와 같은 팝업 대화 상자가 표시됩니다. 이 대화 상자는 암호 중지 대화 상자입니다. 
@@ -220,9 +220,7 @@ NuGet.org에서 계정을 만드는 경우 해당 계정과 연결된 통신 전
 
 전자 메일 계정 도메인(@yourdomain.com)으로 로그인 흐름 도중 아래와 같은 오류가 표시되는 경우 NuGet.org 계정을 복구하려면 다음 단계를 참조하세요.
 
-<p align="center">
-    <img src="media/unmanaged-aad-tenant.png" />
-</p>
+![AAD 계정 로그인 중 오류](media/unmanaged-aad-tenant.png)
 
 **로그인 도중 이 관리되지 않는 상태란? 이런 일이 일어나는 이유는 무엇인가요?** 
 
