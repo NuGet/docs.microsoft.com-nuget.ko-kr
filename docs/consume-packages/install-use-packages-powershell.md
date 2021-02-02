@@ -1,18 +1,18 @@
 ---
 title: Visual Studio에서 콘솔을 사용하여 NuGet 패키지 설치 및 관리
 description: 패키지 작업을 위해 Visual Studio에서 NuGet 패키지 관리자 콘솔을 사용하는 방법에 대한 지침입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 31fa51bc017eaaf9306d5f267e5d4b0d7a15ec9c
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 119bf32426e5cbc179c3713e60688c691e133c5d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699834"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774895"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>Visual Studio에서 패키지 관리자 콘솔을 사용하여 패키지 설치 및 관리(PowerShell)
 
@@ -162,7 +162,7 @@ Visual Studio 2017부터 .NET 관련 워크로드를 선택하면 NuGet 및 NuGe
 
 Powershell 프로필을 사용하면 PowerShell을 사용할 때마다 일반적으로 사용되는 명령을 사용할 수 있습니다. NuGet은 일반적으로 다음 위치에 있는 NuGet 특정 프로필을 지원합니다.
 
-    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
+*%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*
 
 프로필을 찾으려면 콘솔에 `$profile`을 입력합니다.
 

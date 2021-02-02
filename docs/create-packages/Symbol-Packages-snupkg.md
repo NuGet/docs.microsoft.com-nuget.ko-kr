@@ -1,7 +1,7 @@
 ---
 title: 새 기호 패키지 형식 '.snupkg'를 사용하여 NuGet 기호 패키지를 게시하는 방법 | Microsoft Docs
-author: cristinamanu
-ms.author: cristinamanu
+author: JonDouglas
+ms.author: jodou
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
@@ -12,16 +12,18 @@ keywords: NuGet 기호 패키지, NuGet 패키지 디버깅, NuGet 디버깅 지
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: fbcc035a6b800617f995d3bcebd7e1764aa467b0
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 001637348fdd435e4ffd3a5a55e8128d1eab453c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235726"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774568"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>기호 패키지(.snupkg) 만들기
 
 디버깅 환경이 제대로 작동하려면 컴파일된 코드와 소스 코드 간의 연결, 지역 변수 이름, 스택 추적 등의 중요한 정보를 제공하는 디버그 기호가 있어야 합니다. 기호 패키지(.snupkg)를 사용하여 이러한 기호를 배포하고 NuGet 패키지의 디버깅 환경을 개선할 수 있습니다.
+
+> 기호 패키지는 라이브러리의 소비자가 디버그 기호를 사용할 수 있도록 하는 유일한 전략은 아닙니다. `dll` 또는 `exe`에서 다음 프로젝트 속성을 사용하여 [`embed`](https://docs.microsoft.com/dotnet/core/deploying/single-file#include-pdb-files-inside-the-bundle)할 수도 있습니다. `<DebugType>embedded</DebugType>`
 
 ## <a name="prerequisites"></a>사전 요구 사항
 

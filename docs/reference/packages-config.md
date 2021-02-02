@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/21/2018
 ms.topic: reference
-ms.openlocfilehash: 3e5db779f735cd42aa331f9f8a93496d32c8df54
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: da682197d4a156f9dff8ce169aab449a5392ef41
+ms.sourcegitcommit: c19d398cecee3cad2d79a8b22650fc1988d41a3f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777630"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260305"
 ---
 # <a name="packagesconfig-reference"></a>packages.config 참조
 
-`packages.config` 파일은 프로젝트에서 참조하는 패키지 목록을 유지하기 위해 일부 프로젝트 형식에서 사용합니다. 이를 통해 해당하는 모든 패키지 없이 빌드 서버와 같은 다른 컴퓨터에 NuGet 때 프로젝트를 전송할 때 쉽게 프로젝트의 종속성을 복원할 수 있습니다.
+`packages.config` 파일은 프로젝트에서 참조하는 패키지 목록을 유지하기 위해 일부 프로젝트 형식에서 사용합니다. 이렇게 하면 모든 패키지를 포함 하지 않고 빌드 서버와 같은 다른 컴퓨터에 프로젝트를 전송할 때 NuGet에서 프로젝트의 종속성을 쉽게 복원할 수 있습니다.
 
 를 사용 하는 경우 `packages.config` 일반적으로 프로젝트 루트에 있습니다. 첫 번째 NuGet 작업이 실행 될 때 자동으로 생성 되지만와 같은 명령을 실행 하기 전에 수동으로 만들 수도 있습니다 `nuget restore` .
 
@@ -28,9 +28,9 @@ ms.locfileid: "98777630"
 | --- | --- | --- |
 | id | 예 | Newtonsoft.json 또는 Microsoft.AspNet.Mvc와 같은 패키지의 식별자입니다. | 
 | 버전 | 예 | 3.1.1 또는 4.2.5.11-beta 등 설치할 정확한 버전의 패키지입니다. 버전 문자열에는 3개 이상의 번호가 있어야 합니다. 네 번째는 시험판 접미사로써 선택 사항입니다. 범위는 허용되지 않습니다. | 
-| targetFramework | 예 | 패키지를 설치하는 경우 적용할 [TFM(대상 프레임워크 모니커)](target-frameworks.md)입니다. 패키지를 설치할 때 처음부터 프로젝트의 대상으로 설정됩니다. 결과적으로 다른 `<package>` 요소에는 다른 TFM가 있을 수 있습니다. 예를 들어 .NET 4.5.2를 대상으로 하는 프로젝트를 만드는 경우 해당 시점에 설치된 패키지는 net452라는 TFM을 사용합니다. 나중에 프로젝트 대상을 .NET 4.6으로 다시 지정하고 추가 패키지를 추가하는 경우 net46이라는 TFM를 사용합니다. 프로젝트의 대상과 `targetFramework` 특성 간에 불일치는 경고를 생성합니다. 이 경우에 영향을 받는 패키지를 다시 설치할 수 있습니다. | 
-| allowedVersions | 예 | 패키지 업데이트 중에 적용되는 이 패키지에 허용된 버전의 범위입니다([업그레이드 버전 포함](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions) 참조). 설치 또는 복원 작업 중에 설치할 패키지에 영향을 주지 *않습니다*. 구문은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges)를 참조하세요. 또한 PackageManager UI는 허용되지 않는 모든 버전을 사용하지 않습니다. | 
-| developmentDependency | 예 | 사용 중인 프로젝트 자체에서 NuGet 패키지를 만드는 경우 종속성을 위해 이 값을 `true`로 설정하면 사용 중인 패키지를 만들 때 해당 패키지를 포함하지 않도록 방지합니다. 기본값은 `false`입니다. | 
+| targetFramework | 아니요 | 패키지를 설치하는 경우 적용할 [TFM(대상 프레임워크 모니커)](target-frameworks.md)입니다. 패키지를 설치할 때 처음부터 프로젝트의 대상으로 설정됩니다. 결과적으로 다른 `<package>` 요소에는 다른 TFM가 있을 수 있습니다. 예를 들어 .NET 4.5.2를 대상으로 하는 프로젝트를 만드는 경우 해당 시점에 설치된 패키지는 net452라는 TFM을 사용합니다. 나중에 프로젝트 대상을 .NET 4.6으로 다시 지정하고 추가 패키지를 추가하는 경우 net46이라는 TFM를 사용합니다. 프로젝트의 대상과 `targetFramework` 특성 간에 불일치는 경고를 생성합니다. 이 경우에 영향을 받는 패키지를 다시 설치할 수 있습니다. | 
+| allowedVersions | 아니요 | 패키지 업데이트 중에 적용되는 이 패키지에 허용된 버전의 범위입니다([업그레이드 버전 포함](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions) 참조). 설치 또는 복원 작업 중에 설치할 패키지에 영향을 주지 *않습니다*. 구문은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges)를 참조하세요. 또한 PackageManager UI는 허용되지 않는 모든 버전을 사용하지 않습니다. | 
+| developmentDependency | 아니요 | 사용 중인 프로젝트 자체에서 NuGet 패키지를 만드는 경우 종속성을 위해 이 값을 `true`로 설정하면 사용 중인 패키지를 만들 때 해당 패키지를 포함하지 않도록 방지합니다. 기본값은 `false`입니다. | 
 
 ## <a name="examples"></a>예
 

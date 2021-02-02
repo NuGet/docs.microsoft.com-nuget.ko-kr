@@ -1,21 +1,21 @@
 ---
 title: NuGet 패키지 버전 참조
 description: NuGet 패키지가 종속된 다른 패키지의 버전 번호 및 범위 지정과 종속성 설치 방법에 대한 정확한 세부 정보입니다.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 4cb12f439d796d583f52d657225c39418d5a4836
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 5ba7860fae1037c0c0eb4c55d2df12d98b1d77cf
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237363"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775120"
 ---
 # <a name="package-versioning"></a>패키지 버전 관리
 
-특정 패키지는 항상 패키지 식별자와 정확한 버전 번호를 사용하여 참조됩니다. 예를 들어, nuget.org의 [Entity Framework](https://www.nuget.org/packages/EntityFramework/)에는 버전 *4.1.10311* 에서 버전 *6.1.3* (안정적인 최신 릴리스)과 *6.2.0-beta1* 과 같은 다양한 시험판 버전에 이르기까지 수십 개의 특정 패키지가 있습니다.
+특정 패키지는 항상 패키지 식별자와 정확한 버전 번호를 사용하여 참조됩니다. 예를 들어, nuget.org의 [Entity Framework](https://www.nuget.org/packages/EntityFramework/)에는 버전 *4.1.10311* 에서 버전 *6.1.3*(안정적인 최신 릴리스)과 *6.2.0-beta1* 과 같은 다양한 시험판 버전에 이르기까지 수십 개의 특정 패키지가 있습니다.
 
 패키지를 만들 때 선택적 시험판 문자 접미사를 사용하여 특정 버전 번호를 할당합니다. 반면, 패키지를 사용할 때는 정확한 버전 번호 또는 허용 가능한 버전 범위를 지정할 수 있습니다.
 
@@ -29,17 +29,19 @@ ms.locfileid: "93237363"
 
 특정 버전 번호는 *주.부.패치[-접미사]* 형식으로 되어 있으며, 해당 구성 요소의 의미는 다음과 같습니다.
 
-- *주* : 호환성이 손상되는 변경
-- *부* : 이전 버전과 호환되는 새로운 기능
-- *패치* : 이전 버전과 호환되는 버그 수정에만 해당
-- *-접미사* (선택 사항): 하이픈 다음에는 시험판 버전을 나타내는 문자열( [유의적 버전 또는 SemVer 1.0 규칙](https://semver.org/spec/v1.0.0.html)을 따름)이 옵니다.
+- *주*: 호환성이 손상되는 변경
+- *부*: 이전 버전과 호환되는 새로운 기능
+- *패치*: 이전 버전과 호환되는 버그 수정에만 해당
+- *-접미사*(선택 사항): 하이픈 다음에는 시험판 버전을 나타내는 문자열([유의적 버전 또는 SemVer 1.0 규칙](https://semver.org/spec/v1.0.0.html)을 따름)이 옵니다.
 
 **예:**
 
-    1.0.1
-    6.11.1231
-    4.3.1-rc
-    2.2.44-beta1
+```
+1.0.1
+6.11.1231
+4.3.1-rc
+2.2.44-beta1
+```
 
 > [!Important]
 > nuget.org는 정확한 버전 번호가 없는 패키지 업로드를 모두 거부합니다. 버전은 패키지를 만드는 데 사용되는 `.nuspec` 또는 프로젝트 파일에 지정해야 합니다.
@@ -59,14 +61,16 @@ ms.locfileid: "93237363"
 
 패키지 참조를 확인할 때 패키지 버전 여러 개가 접미사만 다른 경우 NuGet은 먼저 접미사가 없는 버전을 선택한 다음, 알파벳 역순으로 시험판 버전에 우선 순위를 적용합니다. 예를 들어, 다음 버전은 정확히 표시된 순서대로 선택됩니다.
 
-    1.0.1
-    1.0.1-zzz
-    1.0.1-rc
-    1.0.1-open
-    1.0.1-beta
-    1.0.1-alpha2
-    1.0.1-alpha
-    1.0.1-aaa
+```
+1.0.1
+1.0.1-zzz
+1.0.1-rc
+1.0.1-open
+1.0.1-beta
+1.0.1-alpha2
+1.0.1-alpha
+1.0.1-aaa
+```
 
 ## <a name="semantic-versioning-200"></a>유의적 버전 2.0.0
 
@@ -74,8 +78,8 @@ NuGet은 NuGet 4.3.0 이상 및 Visual Studio 2017 버전 15.3 이상을 통해 
 
 SemVer v2.0.0의 특정 의미 체계는 이전 클라이언트에서 지원되지 않습니다. NuGet은 다음 문 중 하나라도 참인 경우 패키지 버전이 SemVer v2.0.0에 해당한다고 간주합니다.
 
-- 시험판 레이블이 점으로 구분됩니다(예: *1.0.0-alpha.1* ).
-- 버전에 빌드-메타데이터(예: *1.0.0+githash* )가 있습니다.
+- 시험판 레이블이 점으로 구분됩니다(예: *1.0.0-alpha.1*).
+- 버전에 빌드-메타데이터(예: *1.0.0+githash*)가 있습니다.
 
 nuget.org의 경우 패키지는 다음 문 중 하나가 참인 경우 SemVer v2.0.0 패키지로 정의됩니다.
 
@@ -228,18 +232,15 @@ PackageReference 형식을 사용하는 경우 NuGet은 버전 번호의 주, �
 
 - 버전 번호 앞에 있는 0을 제거합니다.
 
-        1.00 is treated as 1.0
-        1.01.1 is treated as 1.1.1
-        1.00.0.1 is treated as 1.0.0.1
+  1.00은 1.0으로 처리됩니다. 1.01.1은 1.1.1로 처리됩니다. 1.00.0.1은 1.0.0.1로 처리됩니다.
 
 - 버전 번호의 네 번째 파트에서 0을 생략합니다.
 
-        1.0.0.0 is treated as 1.0.0
-        1.0.01.0 is treated as 1.0.1
-        
+  1.0.0.0은 1.0.0으로 처리됩니다. 1.0.01.0은 1.0.1로 처리됩니다.
+
 - SemVer 2.0.0 빌드 메타데이터가 제거됨
 
-        1.0.7+r3456 is treated as 1.0.7
+  1.0.7+r3456은 1.0.7로 처리됩니다.
 
 `pack` 및 `restore` 작업은 가능한 경우 항상 버전을 정규화합니다. 이미 빌드된 패키지의 경우, 이 정규화 작업이 패키지 자체의 버전 번호에 영향을 주지는 않습니다. NuGet이 종속성을 확인할 때 버전과 일치시키는 방식에만 영향을 줍니다.
 
