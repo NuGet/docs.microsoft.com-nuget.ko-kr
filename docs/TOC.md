@@ -35,9 +35,10 @@
 ## [패키지 만들기(dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
 ## [패키지 만들기(nuget.exe CLI)](create-packages/creating-a-package.md)
 ## [패키지 만들기(MSBuild)](create-packages/creating-a-package-msbuild.md)
-## [프로젝트 파일에서 여러 대상 프레임워크 지원](create-packages/multiple-target-frameworks-project-file.md)
+## [패키지 제작 모범 사례](create-packages/Package-authoring-best-practices.md)
 ## [시험판 패키지 빌드](create-packages/prerelease-packages.md)
 ## [기호 패키지 만들기](create-packages/symbol-packages-snupkg.md)
+## [프로젝트 파일에서 여러 대상 프레임워크 지원](create-packages/multiple-target-frameworks-project-file.md)
 ## 고급 작업
 ### [여러 대상 프레임워크 지원](create-packages/supporting-multiple-target-frameworks.md)
 ### [소스 코드 및 구성 파일 수정](create-packages/source-and-config-file-transformations.md)
