@@ -6,12 +6,12 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 9e25f439617a76d30880bea3c10a5d063e681a41
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 4b6a1c3b6eb0fefd9a78c78233f974eb0db19e93
+ms.sourcegitcommit: aeb9072f2fcaca73dc9de05b7fd643f1aa7c5821
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238155"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101101370"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a>trusted-서명자 명령 (NuGet CLI)
 
@@ -90,7 +90,7 @@ nuget trusted-signers add <package(s)> -Name <name> [options]
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_참고_ :이 옵션은 신뢰할 수 있는 리포지토리만 추가 합니다. 
+_참고_:이 옵션은 신뢰할 수 있는 리포지토리만 추가 합니다. 
 
 - **`-AllowUntrustedRoot`**
 
@@ -110,7 +110,7 @@ _참고_ :이 옵션은 신뢰할 수 있는 리포지토리만 추가 합니다
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_참고_ : 지정 된 이름의 신뢰할 수 있는 서명자가 이미 있는 경우 해당 서명자에 게 인증서 항목이 추가 됩니다. 그렇지 않으면 지정 된 인증서 정보에서 인증서 항목을 사용 하 여 신뢰할 수 있는 작성자가 만들어집니다.
+_참고_: 지정 된 이름의 신뢰할 수 있는 서명자가 이미 있는 경우 해당 서명자에 게 인증서 항목이 추가 됩니다. 그렇지 않으면 지정 된 인증서 정보에서 인증서 항목을 사용 하 여 신뢰할 수 있는 작성자가 만들어집니다.
 
 
 - **`-AllowUntrustedRoot`**
@@ -133,7 +133,7 @@ _참고_ : 지정 된 이름의 신뢰할 수 있는 서명자가 이미 있는 
 
 현재 신뢰할 수 있는 리포지토리에서 사용 되는 인증서의 최신 목록을 요청 하 여 신뢰할 수 있는 서명자의 기존 인증서 목록을 업데이트 합니다.
 
-_참고_ :이 제스처는 현재 인증서 목록을 삭제 하 고 리포지토리의 최신 목록으로 바꿉니다.
+_참고_:이 제스처는 현재 인증서 목록을 삭제 하 고 리포지토리의 최신 목록으로 바꿉니다.
 
 ## <a name="options"></a>옵션
 
@@ -175,7 +175,7 @@ nuget trusted-signers Add -Name author1 -CertificateFingerprint CE40881FF5F0AD3E
 
 nuget trusted-signers Add -Repository .\..\MyRepositorySignedPackage.nupkg -Name TrustedRepo
 
-nuget-trusted-signers Remove -Name TrustedRepo
+nuget trusted-signers Remove -Name TrustedRepo
 
-nuget-trusted-signers Sync -Name TrustedRepo
+nuget trusted-signers Sync -Name TrustedRepo
 ```

@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: 9b15550d0e6e8aec4d526391d77c654a756f343e
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 60626a5a2a261241e0dce34421f73a86d815e454
+ms.sourcegitcommit: aeb9072f2fcaca73dc9de05b7fd643f1aa7c5821
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777665"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101101349"
 ---
 # <a name="nugetconfig-reference"></a>nuget.config 참조
 
@@ -32,8 +32,8 @@ NuGet 동작은 `NuGet.Config` `nuget.config` [일반적인 nuget 구성](../con
 | 키 | 값 |
 | --- | --- |
 | dependencyVersion(`packages.config`만) | `-DependencyVersion` 스위치가 직접 지정되지 않은 경우 패키지 설치, 복원 및 업데이트에 대한 기본 `DependencyVersion` 값입니다. 이 값은 NuGet 패키지 관리자 UI에서도 사용됩니다. 값은 `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`입니다. |
-| globalPackagesFolder (PackageReference만 사용 하는 프로젝트) | 기본 전역 패키지 폴더의 위치입니다. 기본값은 `%userprofile%\.nuget\packages`(Windows) 또는 `~/.nuget/packages`(Mac/Linux)입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. 이 설정은 NUGET_PACKAGES 환경 변수에 의해 재정의 되며이는 우선적으로 적용 됩니다. |
-| repositoryPath(`packages.config`만) | 기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. 이 설정은 NUGET_PACKAGES 환경 변수에 의해 재정의 되며이는 우선적으로 적용 됩니다. |
+| globalPackagesFolder (PackageReference만 사용 하는 프로젝트) | 기본 전역 패키지 폴더의 위치입니다. 기본값은 `%userprofile%\.nuget\packages`(Windows) 또는 `~/.nuget/packages`(Mac/Linux)입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. 이 설정은 환경 변수에 의해 재정의 되며이 `NUGET_PACKAGES` 는 우선적으로 적용 됩니다. |
+| repositoryPath(`packages.config`만) | 기본 `$(Solutiondir)/packages` 폴더 대신 NuGet 패키지를 설치할 위치입니다. 상대 경로는 프로젝트별 `nuget.config` 파일에서 사용할 수 있습니다. 이 설정은 환경 변수에 의해 재정의 되며이 `NUGET_PACKAGES` 는 우선적으로 적용 됩니다. |
 | defaultPushSource | 작업에 대한 다른 패키지 원본이 없을 때 기본값으로 사용해야 하는 패키지 원본의 URL 또는 경로를 식별합니다. |
 | http_proxy, http_proxy.user, http_proxy.password, no_proxy | 패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다. 암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다. `no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다. 이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다. 자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요. |
 | 서명 Validationmode | 패키지 설치 및 복원에 대 한 패키지 서명을 확인 하는 데 사용 되는 유효성 검사 모드를 지정 합니다. 값은 `accept` , `require` 입니다. 기본값은 `accept`입니다.
@@ -351,7 +351,7 @@ Windows 스타일 환경 변수를 사용 해야 합니다 (시작 및 종료%).
 
 ### <a name="nugetconfig-environment-variable-support"></a>NuGet.Config 환경 변수 지원
 
-| Syntax | Dir 구분 기호 | Windows nuget.exe | Windows dotnet.exe | Mac nuget.exe (Mono) | Mac dotnet.exe |
+| 구문 | Dir 구분 기호 | Windows nuget.exe | Windows dotnet.exe | Mac nuget.exe (Mono) | Mac dotnet.exe |
 |---|---|---|---|---|---|
 | `%MY_VAR%` | `/`  | 예 | 예 | 예 | 예 |
 | `%MY_VAR%` | `\`  | 예 | 예 | 예 | 예 |
