@@ -69,6 +69,7 @@
 ## [패키지 설치 프로세스](concepts/package-installation-process.md)
 ## [패키지 버전 관리](concepts/package-versioning.md)
 ## [종속성 확인](concepts/dependency-resolution.md)
+## [보안 소프트웨어 공급망에 대한 모범 사례](concepts/Security-Best-Practices.md)
 # 참고
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config 파일](reference/nuget-config-file.md)
