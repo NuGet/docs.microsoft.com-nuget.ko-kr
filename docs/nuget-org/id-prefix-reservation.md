@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann
-ms.openlocfilehash: af9969df33c6bf7a62709e6e3535b8b886376e3e
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 428fd3d7b324f6eb825b17e4a87a662fbd84a2f0
+ms.sourcegitcommit: af059dc776cfdcbad20baab2919b5d6dc1e9022d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775926"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99990106"
 ---
 # <a name="package-id-prefix-reservation"></a>패키지 ID 접두사 예약
 
@@ -73,23 +73,25 @@ ms.locfileid: "98775926"
 
 ### <a name="id-prefix-reservation-criteria"></a>ID 접두사 예약 조건
 
-ID 접두사 예약에 대한 모든 애플리케이션을 검토할 때 [nuget.org](https://www.nuget.org/) 팀은 아래 기준에 따라 애플리케이션을 평가합니다. 접두사를 예약하기 위해 모든 기준을 충족해야 하는 것은 아니지만, 충족되는 기준에 대한 실질적인 증거가 없는 경우 애플리케이션은 거부될 수 있습니다(지정된 설명 포함).
+ID 접두사 예약에 대한 모든 애플리케이션을 검토할 때 [NuGet.org](https://www.nuget.org) 팀은 아래 기준에 따라 애플리케이션을 평가합니다. 접두사를 예약하기 위해 모든 기준을 충족해야 하는 것은 아니지만, 충족되는 기준에 대한 실질적인 증거가 없는 경우 애플리케이션은 거부될 수 있습니다(지정된 설명 포함).
 
-1. 패키지 ID 접두사가 제대로 되어 있으며 패키지 소유자를 명확하게 식별하나요?
+1. 패키지 ID 접두사가 제대로 되어 있으며 예약 소유자를 명확하게 식별하나요?
 
-1. 패키지 소유자가 [NuGet.org 계정에서 2FA를 활성화했나요](individual-accounts.md#enable-two-factor-authentication-2fa)?
-
-1. 소유자가 이미 제출한 패키지의 상당수가 패키지 ID 접두사 아래에 있나요?
+1. 소유자가 [NuGet.org 계정에서 2FA를 활성화했나요](individual-accounts.md#enable-two-factor-authentication-2fa)?
 
 1. 패키지 ID 접두사는 개별 소유자 또는 조직에 속하면 안되는 공통적인 것인가요?
 
-1. 패키지 ID 접두사를 예약하지 *않으면* 커뮤니티에 모호함과 혼동을 일으키나요?
+1. 패키지 ID 접두사를 예약하지 않으면 커뮤니티에 모호함과 혼동 또는 다른 피해를 유발하나요?
+
+ID 접두사 예약 내에서 NuGet.org에 패키지를 게시하는 경우 다음과 같은 모범 사례를 고려해야 합니다.
 
 1. 패키지 ID 접두사와 일치하는 패키지의 식별 속성이 명확하고 일관적인가요(특히 패키지 작성자)?
 
 1. 패키지에 라이선스가 있나요([라이선스](../reference/nuspec.md#license) 메타데이터 요소를 사용하고 사용이 중단된 licenseUrl은 사용하지 않음)?
 
-1. 패키지에 아이콘이 있는 경우, [아이콘](../reference/nuspec.md#icon) 메타데이터 요소(iconUrl을 제거하는 데 필수 요소 아님)를 사용하고 있나요?
+1. 패키지에 아이콘이 있는 경우, [아이콘](../reference/nuspec.md#icon) 메타데이터 요소를 사용하고 있나요? iconUrl을 제거할 필요는 없지만 반드시 포함된 아이콘을 사용해야 합니다.
+ 
+위의 요소 외에도 전체 [패키지 제작 모범 사례 가이드](../create-packages/package-authoring-best-practices.md)를 검토하는 것이 좋습니다.
 
 ## <a name="third-party-feed-provider-scenarios"></a>타사 피드 공급자 시나리오
 
