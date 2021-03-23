@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 7671b50b84bf1447fe94e02896786d1f309425dd
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 9172aefb48ab3e542498f5a144f1d4f381ad55bd
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777313"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859488"
 ---
 # <a name="target-frameworks"></a>대상 프레임워크
 
@@ -23,13 +23,17 @@ NuGet은 다양한 위치에서 대상 프레임워크 참조를 사용하여 �
 - [packages.config](../reference/packages-config.md): 종속성의 `targetframework` 특성은 설치할 패키지의 변형을 지정합니다.
 
 > [!Note]
-> 아래 표를 계산하는 NuGet 클라이언트 소스 코드는 다음 위치에 있습니다.
-> - 지원되는 프레임워크 이름: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> - 프레임워크 우선 순위 및 매핑: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> NuGet은 모든 최신 .NET 대상 프레임 워크를 지원 합니다.
+> - 최신 대상 프레임 워크의 목록은 [SDK 스타일 프로젝트 설명서의 대상 프레임 워크](/dotnet/standard/frameworks) 를 참조 하세요.
 
 ## <a name="supported-frameworks"></a>지원되는 프레임워크
 
 프레임워크는 일반적으로 짧은 대상 프레임워크 모니커 또는 TFM에서 참조됩니다. .NET Standard 여러 프레임 워크에 대 한 단일 참조를 *허용 하기 위해이를 트랜잭션* 으로 일반화 합니다.
+
+> [!Note]
+> 아래 표를 계산하는 NuGet 클라이언트 소스 코드는 다음 위치에 있습니다.
+> - 지원되는 프레임워크 이름: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> - 프레임워크 우선 순위 및 매핑: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 NuGet 클라이언트는 아래 표의 프레임워크를 지원합니다. 대괄호([]) 안에 표시된 항목은 동등한 항목입니다. `dotnet`과 같은 일부 도구는 일부 파일에서 정식 TFM의 변형을 사용할 수 있습니다. 예를 들어 `dotnet pack`은 `.nuspec` 파일에서 `netcoreapp2.0` 대신 `.NETCoreApp2.0`을 사용합니다. 다양한 NuGet 클라이언트 도구에서 이러한 변형을 적절하게 처리하지만, 파일을 직접 편집할 때는 항상 정식 TFM을 사용해야 합니다.
 

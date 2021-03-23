@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: e89b50601deb204892536406b4ddabf7005e0642
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: f9e08d37b30dfea83fd9b61f168c1e20f530ff9f
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98776137"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859410"
 ---
 # <a name="nuget-client-sdk"></a>NuGet 클라이언트 SDK
 
@@ -20,7 +20,7 @@ ms.locfileid: "98776137"
 * [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) -NuGet 패키지와 상호 작용 하는 데 사용 됩니다. `NuGet.Protocol` 이 패키지에 종속
 
 [Nuget/nuget. 클라이언트](https://github.com/NuGet/NuGet.Client) GitHub 리포지토리에서 이러한 패키지에 대 한 소스 코드를 찾을 수 있습니다.
-GitHub의 [NuGet. Samples](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) 프로젝트에서 이러한 예제에 대 한 소스 코드를 찾을 수 있습니다.
+GitHub의 [NuGet. Samples](https://github.com/NuGet/Samples/tree/main/NuGetProtocolSamples) 프로젝트에서 이러한 예제에 대 한 소스 코드를 찾을 수 있습니다.
 
 > [!Note]
 > NuGet 서버 프로토콜에 대 한 설명서는 [Nuget 서버 API](~/api/overview.md)를 참조 하세요.

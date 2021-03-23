@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: 60626a5a2a261241e0dce34421f73a86d815e454
-ms.sourcegitcommit: aeb9072f2fcaca73dc9de05b7fd643f1aa7c5821
+ms.openlocfilehash: afc06c81bf0344f2086efd19111cc60d24d7f723
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101101349"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859514"
 ---
 # <a name="nugetconfig-reference"></a>nuget.config 참조
 
@@ -38,7 +38,7 @@ NuGet 동작은 `NuGet.Config` `nuget.config` [일반적인 nuget 구성](../con
 | http_proxy, http_proxy.user, http_proxy.password, no_proxy | 패키지 원본에 연결할 때 사용할 프록시 설정입니다. `http_proxy`는 `http://<username>:<password>@<domain>` 형식이어야 합니다. 암호는 암호화되어 있으며, 수동으로 추가할 수 없습니다. `no_proxy`의 경우 값은 프록시 서버를 우회하는 도메인의 쉼표로 구분된 목록입니다. 이러한 값에 대해 http_proxy 및 no_proxy 환경 변수를 번갈아 사용할 수 있습니다. 자세한 내용은 [NuGet 프록시 설정](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html)(skolima.blogspot.com)을 참조하세요. |
 | 서명 Validationmode | 패키지 설치 및 복원에 대 한 패키지 서명을 확인 하는 데 사용 되는 유효성 검사 모드를 지정 합니다. 값은 `accept` , `require` 입니다. 기본값은 `accept`입니다.
 
-**예제**:
+**예**:
 
 ```xml
 <config>
@@ -58,7 +58,7 @@ NuGet 동작은 `NuGet.Config` `nuget.config` [일반적인 nuget 구성](../con
 | --- | --- |
 | skip | 자동 바인딩 리디렉션을 건너뛸지 여부를 나타내는 부울입니다. 기본값은 false입니다. |
 
-**예제**:
+**예**:
 
 ```xml
 <bindingRedirects>
@@ -75,7 +75,7 @@ NuGet 동작은 `NuGet.Config` `nuget.config` [일반적인 nuget 구성](../con
 | 사용 | NuGet에서 자동 복원을 수행할 수 있는지 여부를 나타내는 부울입니다. config 파일에서 이 키를 설정하는 대신 `EnableNuGetPackageRestore` 환경 변수를 `True` 값으로 설정할 수도 있습니다. |
 | automatic | NuGet에서 빌드하는 동안 누락된 패키지를 확인해야 하는지 여부를 나타내는 부울입니다. |
 
-**예제**:
+**예**:
 
 ```xml
 <packageRestore>
@@ -92,7 +92,7 @@ NuGet 동작은 `NuGet.Config` `nuget.config` [일반적인 nuget 구성](../con
 | --- | --- |
 | disableSourceControlIntegration | 원본 제어로 작업할 때 패키지 폴더를 무시할지 여부를 나타내는 부울입니다. 기본값은 false입니다. |
 
-**예제**:
+**예**:
 
 ```xml
 <solution>
@@ -116,7 +116,7 @@ nuget.org에 대한 원본 URL은 `https://api.nuget.org/v3/index.json`입니다
 | --- | --- |
 | (패키지 원본에 할당할 이름) | 패키지 원본의 경로 또는 URL입니다. |
 
-**예제**:
+**예**:
 
 ```xml
 <packageSources>
@@ -213,7 +213,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 | --- | --- |
 | (원본 URL) | 암호화된 API 키입니다. |
 
-**예제**:
+**예**:
 
 ```xml
 <apikeys>
@@ -250,7 +250,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 | --- | --- |
 | (원본 이름) 또는 `All` | 키가 원본의 이름이면 값은 원본 경로 또는 URL입니다. `All`이면 값은 `(Aggregate source)`여야 하며, 그렇지 않으면 사용할 수 없는 모든 패키지 원본이 결합됩니다. |
 
-**예제**:
+**예**:
 
 ```xml
 <activePackageSource>
@@ -278,7 +278,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 
 가 `certificate` `allowUntrustedRoot` `true` 서명 확인의 일부로 인증서 체인을 빌드하는 동안 지정 된 인증서를 신뢰할 수 없는 루트에 체인으로 연결할 수 있는 것으로 지정 하면입니다.
 
-**예제**:
+**예**:
 
 ```xml
 <trustedSigners>
@@ -288,6 +288,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
     </author>
     <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
         <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+        <certificate fingerprint="5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
         <owners>microsoft;aspnet;nuget</owners>
     </repository>
 </trustedSigners>
@@ -311,7 +312,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 | --- | --- |
 | (대체 폴더 이름) | 대체 폴더의 경로입니다. |
 
-**예제**:
+**예**:
 
 ```xml
 <fallbackPackageFolders>
@@ -328,7 +329,7 @@ config 파일에서 `<packageSourceCredentials>` 요소에는 적용 가능한 �
 | format | 기본 패키지 관리 형식을 나타내는 부울입니다. 이면 `1` format은 PackageReference입니다. 이면 `0` format이 *packages.config* 됩니다. |
 | disabled | 첫 번째 패키지를 설치할 때 기본 패키지 형식을 선택 하 라는 메시지를 표시할지 여부를 나타내는 부울입니다. `False` 프롬프트를 숨깁니다. |
 
-**예제**:
+**예**:
 
 ```xml
 <packageManagement>
@@ -351,7 +352,7 @@ Windows 스타일 환경 변수를 사용 해야 합니다 (시작 및 종료%).
 
 ### <a name="nugetconfig-environment-variable-support"></a>NuGet.Config 환경 변수 지원
 
-| 구문 | Dir 구분 기호 | Windows nuget.exe | Windows dotnet.exe | Mac nuget.exe (Mono) | Mac dotnet.exe |
+| Syntax | Dir 구분 기호 | Windows nuget.exe | Windows dotnet.exe | Mac nuget.exe (Mono) | Mac dotnet.exe |
 |---|---|---|---|---|---|
 | `%MY_VAR%` | `/`  | 예 | 예 | 예 | 예 |
 | `%MY_VAR%` | `\`  | 예 | 예 | 예 | 예 |
@@ -436,6 +437,7 @@ Windows 스타일 환경 변수를 사용 해야 합니다 (시작 및 종료%).
         </author>
         <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
             <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+            <certificate fingerprint="5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
             <owners>microsoft;aspnet;nuget</owners>
         </repository>
     </trustedSigners>

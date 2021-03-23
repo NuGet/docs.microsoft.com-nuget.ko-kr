@@ -5,19 +5,19 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: f324f1e27e0d718571525152fcf16b55b900dbaa
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: ab3bde0d320375f854a8f0a98fb90acfecf54aa3
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777751"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859098"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>NuGet 자격 증명 공급자를 사용 하 여 Visual Studio에서 피드 인증
 
 NuGet Visual Studio 확장 3.6 +는 NuGet이 인증 된 피드에 사용할 수 있도록 하는 자격 증명 공급자를 지원 합니다.
 Visual Studio 용 NuGet 자격 증명 공급자를 설치 하면 NuGet Visual Studio 확장에서 필요한 경우 인증 된 피드에 대 한 자격 증명을 자동으로 획득 하 고 새로 고칩니다.
 
-샘플 구현은 [VsCredentialProvider 샘플](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)에서 찾을 수 있습니다.
+샘플 구현은 [VsCredentialProvider 샘플](https://github.com/NuGet/Samples/tree/main/VsCredentialProvider)에서 찾을 수 있습니다.
 
 Visual Studio 내에서 NuGet은 플러그 인 `VsCredentialProviderImporter` 자격 증명 공급자도 검색 하는 내부를 사용 합니다. 이러한 플러그 인 자격 증명 공급자는 형식의 MEF 내보내기로 검색할 수 있어야 합니다 `IVsCredentialProvider` .
 
@@ -58,7 +58,7 @@ public interface IVsCredentialProvider
 }
 ```
 
-샘플 구현은 [VsCredentialProvider 샘플](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)에서 찾을 수 있습니다.
+샘플 구현은 [VsCredentialProvider 샘플](https://github.com/NuGet/Samples/tree/main/VsCredentialProvider)에서 찾을 수 있습니다.
 
 각 Visual Studio 용 NuGet 자격 증명 공급자는 다음을 수행 해야 합니다.
 
@@ -78,4 +78,4 @@ Visual Studio 용 사용자 지정 NuGet 자격 증명 공급자는 `IVsCredenti
 | bool 비 대화형 | True 이면 자격 증명 공급자가 모든 사용자 프롬프트를 표시 하지 않고 대신 기본값을 사용 해야 합니다. |
 | CancellationToken cancellationToken | 자격 증명을 요청 하는 작업이 취소 되었는지 확인 하려면이 취소 토큰을 확인 해야 합니다. |
 
-**반환 값**: [ `System.Net.ICredentials` 인터페이스](/dotnet/api/system.net.icredentials?view=netstandard-2.0)를 구현 하는 자격 증명 개체입니다.
+**반환 값**: [ `System.Net.ICredentials` 인터페이스](/dotnet/api/system.net.icredentials)를 구현 하는 자격 증명 개체입니다.
