@@ -291,6 +291,7 @@
 ## 릴리스 정보
 ### [알려진 문제](release-notes/known-issues.md)
 ### NuGet 5.x
+#### [NuGet 5.9](release-notes/NuGet-5.9.md)
 #### [NuGet 5.8](release-notes/NuGet-5.8.md)
 #### [NuGet 5.7](release-notes/NuGet-5.7.md)
 #### [NuGet 5.6](release-notes/NuGet-5.6.md)
