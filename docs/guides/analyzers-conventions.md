@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 63880b6b9bbfe6aac9cc6419d6a972062eea3495
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: ef1a2e68714618ac0195874996acd8263a3a6eb1
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774132"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859358"
 ---
 # <a name="analyzer-nuget-formats"></a>NuGet 분석기 형식
 
-개발자는 .NET Compiler Platform("Roslyn"이라고도 함)으로 [분석기](https://github.com/dotnet/roslyn/blob/master/docs/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix.md)를 만들어, 코드 작성 시 구문 트리와 코드 의미 체계를 검사할 수 있습니다. 개발자는 이를 통해 특정 API 또는 라이브러리의 사용을 안내하는 데 도움이 되는 도구 등 도메인 특정 분석 도구를 만들 수 있습니다. 자세한 내용은 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub Wiki에서 찾을 수 있습니다. 또한 MSDN Magazine의 [Roslyn을 사용하여 API에 대한 라이브 코드 분석기 작성](/archive/msdn-magazine/2014/special-issue/csharp-and-visual-basic-use-roslyn-to-write-a-live-code-analyzer-for-your-api) 문서도 참조하세요.
+개발자는 .NET Compiler Platform("Roslyn"이라고도 함)으로 [분석기](https://github.com/dotnet/roslyn/blob/main/docs/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix.md)를 만들어, 코드 작성 시 구문 트리와 코드 의미 체계를 검사할 수 있습니다. 개발자는 이를 통해 특정 API 또는 라이브러리의 사용을 안내하는 데 도움이 되는 도구 등 도메인 특정 분석 도구를 만들 수 있습니다. 자세한 내용은 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub Wiki에서 찾을 수 있습니다. 또한 MSDN Magazine의 [Roslyn을 사용하여 API에 대한 라이브 코드 분석기 작성](/archive/msdn-magazine/2014/special-issue/csharp-and-visual-basic-use-roslyn-to-write-a-live-code-analyzer-for-your-api) 문서도 참조하세요.
 
 분석기 자체는 일반적으로 문제의 API 또는 라이브러리를 구현하는 NuGet 패키지의 일부로 패키지되어 배포됩니다.
 

@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: 317937b4d9d773d74384b8ebfcd2146062236ac1
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 7660203ec44db75b7764767b519c9ff10dd1122e
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774322"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859085"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>NuGet 패키지인 UI 컨트롤 만들기
 
-Visual Studio 2017부터 NuGet 패키지에서 제공하는 UWP 및 WPF 컨트롤에 추가된 기능을 활용할 수 있습니다. 이 가이드는 [ExtensionSDKasNuGetPackage 샘플](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)을 사용하여 UWP 컨트롤의 컨텍스트에서 이러한 기능을 설명합니다. 달리 언급하지 않는 한 WPF 컨트롤에도 동일한 내용이 적용됩니다.
+Visual Studio 2017부터 NuGet 패키지에서 제공하는 UWP 및 WPF 컨트롤에 추가된 기능을 활용할 수 있습니다. 이 가이드는 [ExtensionSDKasNuGetPackage 샘플](https://github.com/NuGet/Samples/tree/main/ExtensionSDKasNuGetPackage)을 사용하여 UWP 컨트롤의 컨텍스트에서 이러한 기능을 설명합니다. 달리 언급하지 않는 한 WPF 컨트롤에도 동일한 내용이 적용됩니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -90,7 +90,7 @@ Visual Studio 및 Blend의 자산 창에 있는 XAML 디자이너의 도구 상�
 
 ## <a name="add-custom-icons-to-your-controls"></a>컨트롤에 사용자 지정 아이콘 추가
 
-도구 상자/자산 창에서 사용자 지정 아이콘을 표시하려면 이미지를 프로젝트 또는 "Namespace.ControlName.extension"이라는 해당 `design.dll` 프로젝트에 추가하고 빌드 작업을 "포함 리소스"로 설정합니다. 또한 연결된 `AssemblyInfo.cs`가 ProvideMetadata 특성(`[assembly: ProvideMetadata(typeof(RegisterMetadata))]`)을 지정하는지 확인해야 합니다. 이 [샘플](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20)을 참조합니다.
+도구 상자/자산 창에서 사용자 지정 아이콘을 표시하려면 이미지를 프로젝트 또는 "Namespace.ControlName.extension"이라는 해당 `design.dll` 프로젝트에 추가하고 빌드 작업을 "포함 리소스"로 설정합니다. 또한 연결된 `AssemblyInfo.cs`가 ProvideMetadata 특성(`[assembly: ProvideMetadata(typeof(RegisterMetadata))]`)을 지정하는지 확인해야 합니다. 이 [샘플](https://github.com/NuGet/Samples/blob/main/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20)을 참조합니다.
 
 지원되는 형식은 `.png`, `.jpg`, `.jpeg`, `.gif` 및 `.bmp`입니다. 권장 형식은 16픽셀 x 16픽셀의 BMP24입니다.
 
@@ -158,7 +158,7 @@ WPF의 경우 .NET Framework v4.6.1 이상을 대상으로 하는 프로젝트�
 
 패키지에 문자열 리소스(`.resw`)를 포함할 수 있으며 해당 리소스를 컨트롤 또는 사용 중인 UWP 프로젝트에서 사용할 수 있습니다. `.resw` 파일의 **빌드 작업** 속성을 **PRIResource** 로 설정합니다.
 
-예를 들어 ExtensionSDKasNuGetPackage 샘플에서 [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs)를 참조하세요.
+예를 들어 ExtensionSDKasNuGetPackage 샘플에서 [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/main/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs)를 참조하세요.
 
 > [!Note]
 > 이 내용은 UWP 컨트롤에만 적용됩니다.
@@ -166,4 +166,4 @@ WPF의 경우 .NET Framework v4.6.1 이상을 대상으로 하는 프로젝트�
 ## <a name="see-also"></a>참조
 
 - [UWP 패키지 만들기](create-uwp-packages.md)
-- [ExtensionSDKasNuGetPackage 샘플](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)
+- [ExtensionSDKasNuGetPackage 샘플](https://github.com/NuGet/Samples/tree/main/ExtensionSDKasNuGetPackage)

@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
-ms.openlocfilehash: 7e611b568538e0acfcbad2e5d986a0f9382ac8fd
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 8f21aad93eb952035683314c10cd964f265ec4fd
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774112"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859345"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>nuget.org에 게시된 모든 패키지에 대한 쿼리
 
@@ -110,7 +110,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 카탈로그는 HTTP를 통해 사용할 수 있는 JSON 문서의 집합이므로, HTTP 클라이언트 및 JSON 역직렬 변환기가 있는 프로그래밍 언어를 사용하여 상호 작용할 수 있습니다.
 
-C# 샘플은 [NuGet/샘플 리포지토리](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample)에서 사용할 수 있습니다.
+C# 샘플은 [NuGet/샘플 리포지토리](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample)에서 사용할 수 있습니다.
 
 ```cli
 git clone https://github.com/NuGet/Samples.git
@@ -122,7 +122,7 @@ git clone https://github.com/NuGet/Samples.git
 
 이 패키지는 `netstandard1.3` 이상과 호환되는 프로젝트(예: .NET Framework 4.6)에 설치할 수 있습니다.
 
-이 패키지를 사용하는 샘플은 GitHub의 [NuGet.Protocol.Catalog.Sample 프로젝트](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/NuGet.Protocol.Catalog.Sample)에서 사용할 수 있습니다.
+이 패키지를 사용하는 샘플은 GitHub의 [NuGet.Protocol.Catalog.Sample 프로젝트](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample/NuGet.Protocol.Catalog.Sample)에서 사용할 수 있습니다.
 
 #### <a name="sample-output"></a>샘플 출력
 
@@ -160,9 +160,9 @@ warn: NuGet.Protocol.Catalog.CatalogProcessor[0]
 
 ### <a name="minimal-sample"></a>최소 샘플
 
-카탈로그와의 상호 작용을 더 자세히 보여 주는 종속성이 적은 예제는 [CatalogReaderExample 샘플 프로젝트](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/CatalogReaderExample)를 참조하세요. 프로젝트는 `netcoreapp2.0`을 대상으로 하며, [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0)(서비스 인덱스 확인용) 및 [Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1)(JSON 역직렬화용)에 따라 다릅니다.
+카탈로그와의 상호 작용을 더 자세히 보여 주는 종속성이 적은 예제는 [CatalogReaderExample 샘플 프로젝트](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample/CatalogReaderExample)를 참조하세요. 프로젝트는 `netcoreapp2.0`을 대상으로 하며, [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0)(서비스 인덱스 확인용) 및 [Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1)(JSON 역직렬화용)에 따라 다릅니다.
 
-코드의 주요 논리는 [Program.cs 파일](https://github.com/NuGet/Samples/blob/master/CatalogReaderExample/CatalogReaderExample/Program.cs)에 표시됩니다.
+코드의 주요 논리는 [Program.cs 파일](https://github.com/NuGet/Samples/blob/main/CatalogReaderExample/CatalogReaderExample/Program.cs)에 표시됩니다.
 
 #### <a name="sample-output"></a>샘플 출력
 

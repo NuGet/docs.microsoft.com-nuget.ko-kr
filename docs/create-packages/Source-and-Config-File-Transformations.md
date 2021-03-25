@@ -6,16 +6,16 @@ ms.author: jodou
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 5bd0e409f527fb668008204fb16ad002f4784c46
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 76c589b5ad034127675fb2bbf79ea97992883ebe
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774583"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859111"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>소스 코드 및 구성 파일 변환
 
-**소스 코드 변환** 은 패키지를 설치할 때 단방향 토큰 교체를 패키지의 `content` 또는 `contentFiles` 폴더(`packages.config`를 사용하는 고객의 경우 `content`, `PackageReference`의 경우 `contentFiles`)에 있는 파일에 적용합니다. 여기서 토큰은 Visual Studio [프로젝트 속성](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)을 참조합니다. 이렇게 하면 프로젝트의 네임스페이스에 파일을 삽입하거나 일반적으로 ASP.NET 프로젝트에서 `global.asax`로 이동하는 코드를 사용자 지정할 수 있습니다.
+**소스 코드 변환** 은 패키지를 설치할 때 단방향 토큰 교체를 패키지의 `content` 또는 `contentFiles` 폴더(`packages.config`를 사용하는 고객의 경우 `content`, `PackageReference`의 경우 `contentFiles`)에 있는 파일에 적용합니다. 여기서 토큰은 Visual Studio [프로젝트 속성](/dotnet/api/vslangproj.projectproperties)을 참조합니다. 이렇게 하면 프로젝트의 네임스페이스에 파일을 삽입하거나 일반적으로 ASP.NET 프로젝트에서 `global.asax`로 이동하는 코드를 사용자 지정할 수 있습니다.
 
 **구성 파일 변환** 을 사용하면 `web.config` 및 `app.config`와 같은 대상 프로젝트에 있는 파일을 수정할 수 있습니다. 예를 들어 패키지가 구성 파일의 `modules` 섹션에 항목을 추가해야 합니다. 구성 파일에 추가할 섹션을 설명하는 패키지에서 특별한 파일을 포함하여 이 변환을 수행합니다. 패키지를 제거하는 경우 동일한 변경 내용을 되돌려서 양방향 변환으로 만듭니다.
 
@@ -45,7 +45,7 @@ ms.locfileid: "98774583"
 
     설치 시 NuGet은 `$rootnamespace$`를 `Fabrikam`으로 바꾸어 루트 네임스페이스가 `Fabrikam`인 대상 프로젝트를 가정합니다.
 
-`$rootnamespace$` 토큰은 가장 일반적으로 사용되는 프로젝트 속성입니다. 다른 모든 토큰은 [프로젝트 속성](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)에 나열됩니다. 물론 일부 속성은 프로젝트 형식에 특정될 수 있습니다.
+`$rootnamespace$` 토큰은 가장 일반적으로 사용되는 프로젝트 속성입니다. 다른 모든 토큰은 [프로젝트 속성](/dotnet/api/vslangproj.projectproperties)에 나열됩니다. 물론 일부 속성은 프로젝트 형식에 특정될 수 있습니다.
 
 ## <a name="specifying-config-file-transformations"></a>구성 파일 변환 지정
 
@@ -113,9 +113,9 @@ NuGet이 `modules` 섹션을 대체하지 않았습니다. 새 요소 및 특성
 ### <a name="xdt-transforms"></a>XDT 변환
 
 > [!Note]
-> [`packages.config`에서 `PackageReference`로 마이그레이션하는 방법에 대한 문서의 패키지 호환성 이슈 섹션](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues)에 설명된 대로, 아래에서 설명하는 XDT 변환은 `packages.config`에서만 지원됩니다. 패키지에 아래 파일을 추가하는 경우 `PackageReference`와 함께 패키지를 사용하는 고객에 대해서는 변환이 적용되지 않습니다(`PackageReference`에서 XDT 변환을 사용하려면 [이 샘플](https://github.com/NuGet/Samples/tree/master/XDTransformExample) 참조).
+> [`packages.config`에서 `PackageReference`로 마이그레이션하는 방법에 대한 문서의 패키지 호환성 이슈 섹션](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues)에 설명된 대로, 아래에서 설명하는 XDT 변환은 `packages.config`에서만 지원됩니다. 패키지에 아래 파일을 추가하는 경우 `PackageReference`와 함께 패키지를 사용하는 고객에 대해서는 변환이 적용되지 않습니다(`PackageReference`에서 XDT 변환을 사용하려면 [이 샘플](https://github.com/NuGet/Samples/tree/main/XDTransformExample) 참조).
 
-[XDT 구문](/previous-versions/aspnet/dd465326(v=vs.110))을 사용하여 구성 파일을 수정할 수 있습니다. `$` 구분 기호(대/소문자 구분) 내에서 속성 이름을 포함하여 NuGet에서 토큰을 [프로젝트 속성](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)으로 바꿀 수도 있습니다.
+[XDT 구문](/previous-versions/aspnet/dd465326(v=vs.110))을 사용하여 구성 파일을 수정할 수 있습니다. `$` 구분 기호(대/소문자 구분) 내에서 속성 이름을 포함하여 NuGet에서 토큰을 [프로젝트 속성](/dotnet/api/vslangproj.projectproperties)으로 바꿀 수도 있습니다.
 
 예를 들어 다음 `app.config.install.xdt` 파일은 프로젝트의 `FullPath`, `FileName` 및 `ActiveConfigurationSettings` 값을 포함하는 `app.config`에 `appSettings` 요소를 삽입합니다.
 

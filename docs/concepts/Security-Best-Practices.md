@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: 125579832db2ac32217d24f6fc6fc1b555f54350
-ms.sourcegitcommit: aeb9072f2fcaca73dc9de05b7fd643f1aa7c5821
+ms.openlocfilehash: e0f235d99e41e23a4551fbf7577f6c42e3381f5b
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101101399"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859228"
 ---
 # <a name="best-practices-for-a-secure-software-supply-chain"></a>보안 소프트웨어 공급망에 대한 모범 사례
 
@@ -75,7 +75,7 @@ ms.locfileid: "101101399"
 -   [`packages.config`](../reference/packages-config.md) – 프로젝트 루트에 있습니다.
 -   [`<PackageReference>`](../consume-packages/package-references-in-project-files.md) – 프로젝트 파일에 있습니다. 
 
-NuGet 종속성을 관리하는 데 사용하는 방법에 따라 Visual Studio를 사용하여 [솔루션 탐색기](/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#solution-explorer) 또는 [NuGet 패키지 관리자](../consume-packages/install-use-packages-visual-studio.md)에서 직접 종속성을 확인할 수도 있습니다.
+NuGet 종속성을 관리하는 데 사용하는 방법에 따라 Visual Studio를 사용하여 [솔루션 탐색기](/visualstudio/ide/solutions-and-projects-in-visual-studio#solution-explorer) 또는 [NuGet 패키지 관리자](../consume-packages/install-use-packages-visual-studio.md)에서 직접 종속성을 확인할 수도 있습니다.
 
 CLI 환경의 경우 [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) 명령을 사용하여 프로젝트 또는 솔루션의 종속성을 나열할 수 있습니다. 
 
@@ -140,7 +140,7 @@ Dependabot 경고 및 보안 업데이트에 관한 자세한 내용은 [다음 
 
 잠금 파일은 패키지 콘텐츠의 해시를 저장합니다. 설치하려는 패키지의 콘텐츠 해시가 잠금 파일과 일치하는 경우 패키지 반복성을 보장합니다.
 
-잠금 파일을 사용하도록 설정하려면 [다음 설명서를 참조](../consume-packages/package-references-in-project-files#locking-dependencies)하세요.
+잠금 파일을 사용하도록 설정하려면 [다음 설명서를 참조](../consume-packages/package-references-in-project-files.md#locking-dependencies)하세요.
 
 ## <a name="monitor-your-supply-chain"></a>공급망 모니터링
 

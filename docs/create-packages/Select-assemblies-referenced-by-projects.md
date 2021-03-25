@@ -5,12 +5,12 @@ author: zivkan
 ms.author: zivkan
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: b32075c3f2c06c15c07d36602bdabdaee8b9405a
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: b2202946d0060e09828250d240f931044d1bf485
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "67427478"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859033"
 ---
 # <a name="select-assemblies-referenced-by-projects"></a>프로젝트에서 참조하는 어셈블리 선택
 
@@ -21,7 +21,7 @@ ms.locfileid: "67427478"
 
 ## <a name="packagereference-support"></a>`PackageReference` 지원
 
-프로젝트가 `PackageReference`가 있는 패키지를 사용하고 패키지에 `ref\<tfm>\` 디렉터리가 포함된 경우, NuGet은 해당 어셈블리를 컴파일 타임 자산으로 분류하고 `lib\<tfm>\` 어셈블리는 런타임 자산으로 분류합니다. `ref\<tfm>\`의 어셈블리는 런타임 시 사용되지 않습니다. 즉, `ref\<tfm>\`의 모든 어셈블리에는 `lib\<tfm>\` 또는 관련 `runtime\` 디렉터리에 일치하는 어셈블리가 있어야 합니다. 그렇지 않으면 런타임 오류가 발생할 수 있습니다. `ref\<tfm>\`의 어셈블리는 런타임에 사용되지 않으므로 패키지 크기를 줄이기 위한 [메타데이터 전용 어셈블리](https://github.com/dotnet/roslyn/blob/master/docs/features/refout.md)일 수 있습니다.
+프로젝트가 `PackageReference`가 있는 패키지를 사용하고 패키지에 `ref\<tfm>\` 디렉터리가 포함된 경우, NuGet은 해당 어셈블리를 컴파일 타임 자산으로 분류하고 `lib\<tfm>\` 어셈블리는 런타임 자산으로 분류합니다. `ref\<tfm>\`의 어셈블리는 런타임 시 사용되지 않습니다. 즉, `ref\<tfm>\`의 모든 어셈블리에는 `lib\<tfm>\` 또는 관련 `runtime\` 디렉터리에 일치하는 어셈블리가 있어야 합니다. 그렇지 않으면 런타임 오류가 발생할 수 있습니다. `ref\<tfm>\`의 어셈블리는 런타임에 사용되지 않으므로 패키지 크기를 줄이기 위한 [메타데이터 전용 어셈블리](https://github.com/dotnet/roslyn/blob/main/docs/features/refout.md)일 수 있습니다.
 
 > [!Important]
 > 패키지에 nuspec `<references>` 요소(`packages.config`에서 사용됨, 아래 참조)가 있고 `ref\<tfm>\`의 어셈블리가 포함되어 있지 않은 경우, NuGet은 nuspec `<references>` 요소에 나열된 어셈블리를 컴파일 및 런타임 자산으로 보급합니다. 이는 참조된 어셈블리가 `lib\<tfm>\` 디렉터리에 다른 어셈블리를 로드해야 하는 경우 런타임 예외가 있음을 의미합니다.
@@ -31,7 +31,7 @@ ms.locfileid: "67427478"
 
 ## <a name="packagesconfig-support"></a>`packages.config` 지원
 
-`packages.config`를 사용하여 NuGet 패키지를 관리하는 프로젝트는 일반적으로 `lib\<tfm>\` 디렉터리의 모든 어셈블리에 참조를 추가합니다. `ref\` 디렉터리는 `PackageReference`를 지원하기 위해 추가되었으므로 `packages.config` 사용 시 고려되지 않습니다. `packages.config`를 사용하는 프로젝트에 대해 참조되는 어셈블리를 명시적으로 설정하려면 패키지에서 [nuspec 파일의 `<references>` 요소](../reference/nuspec.md#explicit-assembly-references)를 사용해야 합니다. 다음은 그 예입니다.
+`packages.config`를 사용하여 NuGet 패키지를 관리하는 프로젝트는 일반적으로 `lib\<tfm>\` 디렉터리의 모든 어셈블리에 참조를 추가합니다. `ref\` 디렉터리는 `PackageReference`를 지원하기 위해 추가되었으므로 `packages.config` 사용 시 고려되지 않습니다. `packages.config`를 사용하는 프로젝트에 대해 참조되는 어셈블리를 명시적으로 설정하려면 패키지에서 [nuspec 파일의 `<references>` 요소](../reference/nuspec.md#explicit-assembly-references)를 사용해야 합니다. 예를 들면 다음과 같습니다.
 
 ```xml
 <references>
@@ -42,7 +42,7 @@ ms.locfileid: "67427478"
 ```
 
 > [!Note]
-> `packages.config` 프로젝트는 [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md)라는 프로세스를 사용하여 어셈블리를 `bin\<configuration>\` 출력 디렉터리에 복사합니다. 프로젝트의 어셈블리가 복사된 다음, 빌드 시스템이 참조된 어셈블리에 대한 어셈블리 매니페스트를 살펴본 후, 해당 어셈블리를 복사하고 모든 어셈블리에 대해 재귀적으로 반복합니다. 즉, `lib\<tfm>\` 디렉터리에 있는 어셈블리가 다른 어셈블리의 매니페스트에 종속성으로 나열되지 않은 경우(`Assembly.Load`, MEF 또는 다른 종속성 주입 프레임워크를 사용하여 런타임 시 어셈블리가 로드된 경우), `bin\<tfm>\`에 있더라도 프로젝트의 `bin\<configuration>\` 출력 디렉터리에 복사되지 않을 수 있습니다.
+> `packages.config` 프로젝트는 [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/main/documentation/wiki/ResolveAssemblyReference.md)라는 프로세스를 사용하여 어셈블리를 `bin\<configuration>\` 출력 디렉터리에 복사합니다. 프로젝트의 어셈블리가 복사된 다음, 빌드 시스템이 참조된 어셈블리에 대한 어셈블리 매니페스트를 살펴본 후, 해당 어셈블리를 복사하고 모든 어셈블리에 대해 재귀적으로 반복합니다. 즉, `lib\<tfm>\` 디렉터리에 있는 어셈블리가 다른 어셈블리의 매니페스트에 종속성으로 나열되지 않은 경우(`Assembly.Load`, MEF 또는 다른 종속성 주입 프레임워크를 사용하여 런타임 시 어셈블리가 로드된 경우), `bin\<tfm>\`에 있더라도 프로젝트의 `bin\<configuration>\` 출력 디렉터리에 복사되지 않을 수 있습니다.
 
 ## <a name="example"></a>예제
 

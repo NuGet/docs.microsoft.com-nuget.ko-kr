@@ -5,12 +5,12 @@ author: chgill-MSFT
 ms.author: chgill
 ms.date: 09/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 35eb000bddaa58726857cd3c1fd2362917f83196
-ms.sourcegitcommit: c19d398cecee3cad2d79a8b22650fc1988d41a3f
+ms.openlocfilehash: 7475cf655876f2c127e79a16ccf67c0c723d164f
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99420772"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859072"
 ---
 # <a name="package-authoring-best-practices"></a>패키지 제작 모범 사례
 
@@ -59,7 +59,7 @@ Visual Studio에서 패키지 메타데이터 지정에 권장되는 방법은 �
 다음은 사용 가능한 패키지 메타데이터 요소를 매핑 및 설명하는 표입니다.
 
 | Visual Studio 속성 이름                   | [프로젝트 파일/MSBuild 속성 이름](https://docs.microsoft.com/dotnet/core/tools/csproj#packagereleasenotes)                          | [Nuspec 속성 이름](https://docs.microsoft.com/nuget/reference/nuspec#general-form-and-schema) | Description                                                                                                       |
-|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | [`Package id`](#package-id)                   | [`PackageId`](https://docs.microsoft.com/dotnet/core/tools/csproj#packageid)                                                            | [`id`](https://docs.microsoft.com/nuget/reference/nuspec#id)                                      | 패키지 이름 또는 ID입니다.                    |
 | [`Package version`](#package-version)         | [`PackageVersion`](https://docs.microsoft.com/dotnet/core/tools/csproj#packageversion)                                                  | [`version`](https://docs.microsoft.com/nuget/reference/nuspec#version)                            | NuGet 패키지 버전입니다.                                           |
 | [`Authors`](#authors)                         | [`Authors`](https://docs.microsoft.com/dotnet/core/tools/csproj#authors)                                                                | [`authors`](https://docs.microsoft.com/nuget/reference/nuspec#authors)                            | 쉼표로 구분된 패키지 작성자 목록으로, 주로 개인 또는 조직의 특정 이름을 사용합니다.                             |
@@ -70,9 +70,9 @@ Visual Studio에서 패키지 메타데이터 지정에 권장되는 방법은 �
 | [`Project URL`](#project-url)                 | `PackageProjectUrl`                                                                                                                     | [`projectUrl`](https://docs.microsoft.com/nuget/reference/nuspec#projecturl)                      | 프로젝트 홈페이지의 URL입니다.                                                                                   |
 | [`Icon File`](#icon)                          | [`PackageIcon`](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-an-icon-image-file)                                  | [`icon`](https://docs.microsoft.com/nuget/reference/nuspec#icon)                                  | 패키지 아이콘 이미지 파일의 경로입니다.                                                                      |
 | [`Repository URL`](#repository-type-and-url)  | [`RepositoryUrl`](https://docs.microsoft.com/dotnet/core/tools/csproj#repositoryurl)                                                    | [`repository url`](https://docs.microsoft.com/nuget/reference/nuspec#repository)               | 패키지가 빌드된 리포지토리의 URL입니다.                                                           |
-| [`Repository type`](#repository-type-and-url) | [`RespositoryType`](https://docs.microsoft.com/dotnet/core/tools/csproj#repositorytype)                                                 | [`repository type`](https://docs.microsoft.com/nuget/reference/nuspec#repository)              | 리포지토리 URL이 가리키는 리포지토리의 유형입니다(예: "git").                                                   |
+| [`Repository type`](#repository-type-and-url) | [`RepositoryType`](https://docs.microsoft.com/dotnet/core/tools/csproj#repositorytype)                                                 | [`repository type`](https://docs.microsoft.com/nuget/reference/nuspec#repository)              | 리포지토리 URL이 가리키는 리포지토리의 유형입니다(예: "git").                                                   |
 | [`Tags`](#tags)                               | [`PackageTags`](https://docs.microsoft.com/dotnet/core/tools/csproj#packagetags)                                                        | [`tags`](https://docs.microsoft.com/nuget/reference/nuspec#tags)                                  | 패키지를 설명하는 태그 및 키워드의 공백으로 구분된 목록입니다. 태그는 패키지를 검색할 때 사용됩니다. |
-| [`Release notes`](#release-notes)             | [`PackageReleaseNotes`](https://docs.microsoft.com/dotnet/core/tools/csproj#packagereleasenotes)                                          | [`releaseNotes`](https://docs.microsoft.com/nuget/reference/nuspec#releasenotes)                  | 이 패키지 릴리스의 변경 내용에 대한 설명입니다.                                                 |  |
+| [`Release notes`](#release-notes)             | [`PackageReleaseNotes`](https://docs.microsoft.com/dotnet/core/tools/csproj#packagereleasenotes)                                          | [`releaseNotes`](https://docs.microsoft.com/nuget/reference/nuspec#releasenotes)                  | 이 패키지 릴리스의 변경 내용에 대한 설명입니다.                                                 |
 
 ### <a name="package-id"></a>패키지 ID
 
