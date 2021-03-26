@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 5ba7860fae1037c0c0eb4c55d2df12d98b1d77cf
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 77b96e83f8fc7afd391537d16120d037585dd379
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775120"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859202"
 ---
 # <a name="package-versioning"></a>패키지 버전 관리
 
@@ -116,7 +116,7 @@ SemVer v2.0.0 특정 패키지를 nuget.org에 업로드하는 경우 패키지�
 | [1.0,2.0] | 1.0 ≤ x ≤ 2.0 | 정확한 범위(포함) |
 | (1.0,2.0) | 1.0 < x < 2.0 | 정확한 범위(제외) |
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | 최소 포함 및 최대 제외 혼합 버전 |
-| (1.0)    | 잘못된 | 잘못된 |
+| (1.0)    | 잘못됨 | 잘못된 |
 
 PackageReference 형식을 사용하는 경우 NuGet은 버전 번호의 주, 부, 패치, 시험판 접미사 부분에 부동 표기법(\*)도 사용할 수 있도록 지원합니다. `packages.config` 형식에서는 부동 버전이 지원되지 않습니다. 부동 버전이 지정된 경우, 규칙은 버전 설명과 일치하는 기존의 최상 버전을 확인합니다. 부동 버전 및 해상도의 예는 아래와 같습니다.
 
@@ -245,3 +245,13 @@ PackageReference 형식을 사용하는 경우 NuGet은 버전 번호의 주, �
 `pack` 및 `restore` 작업은 가능한 경우 항상 버전을 정규화합니다. 이미 빌드된 패키지의 경우, 이 정규화 작업이 패키지 자체의 버전 번호에 영향을 주지는 않습니다. NuGet이 종속성을 확인할 때 버전과 일치시키는 방식에만 영향을 줍니다.
 
 그러나 패키지 버전 중복을 방지하기 위해서는 NuGet 패키지 리포지토리에서 이러한 값을 NuGet과 동일한 방식으로 처리해야 합니다. 따라서 패키지 버전 *1.0* 을 포함하는 리포지토리는 버전 *1.0.0* 도 별도의 다른 패키지로 호스트해서는 안 됩니다.
+
+## <a name="where-nugetversion-diverges-from-semantic-versioning"></a>NuGetVersion이 유의적 버전과 구분되는 부분
+
+NuGet 패키지 버전을 프로그래밍 방식으로 사용하려면 [NuGet.Versioning 패키지](https://www.nuget.org/packages/NuGet.Versioning)를 사용하는 것이 좋습니다. 정적 메서드 `NuGetVersion.Parse(string)`는 버전 문자열을 구문 분석하는 데 사용할 수 있으며 `VersionComparer`는 `NuGetVersion` 인스턴스를 정렬하는 데 사용할 수 있습니다.
+
+다음은 .NET에서 실행되지 않는 언어로 NuGet 기능을 구현할 경우 `NuGetVersion`과 유의적 버전 간의 알려진 차이점 목록과 nuget.org에 이미 게시된 패키지에서 기존 유의적 버전 라이브러리가 작동하지 않을 수 있는 이유입니다.
+
+1. `NuGetVersion`은 네 번째 버전 세그먼트 `Revision`이 [`System.Version`](/dotnet/api/system.version)과 호환되거나 상위 집합이 되도록 지원합니다. 따라서 시험판 및 메타데이터 레이블을 제외한 버전 문자열은 `Major.Minor.Patch.Revision`입니다. 위에서 설명한 버전 정규화에 따라 `Revision`이 0인 경우 정규화된 버전 문자열에서 생략됩니다.
+2. `NuGetVersion`에서는 주 세그먼트만 정의해야 합니다. 다른 모든 세그먼트는 선택 사항이며 0과 같습니다. 즉, `1`, `1.0`, `1.0.0`, `1.0.0.0`은 모두 허용되고 동일합니다.
+3. `NuGetVersion`은 시험판 구성 요소에 대해 대/소문자를 구분하지 않는 비교를 사용합니다. 즉, `1.0.0-alpha`와 `1.0.0-Alpha`가 동일합니다.

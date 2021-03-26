@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8161f4a39d4adfdb9efb25bcb840b20b85a58e07
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: fabfd76a46a38ff26acbc6439406d99eb3f85bf4
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774776"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859163"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>packages.config를 PackageReference로 마이그레이션
 
@@ -100,31 +100,27 @@ packages.config에서 지원되던 일부 요소가 PackageReference에서는 �
 
 ### <a name="installps1-scripts-are-ignored-when-the-package-is-installed-after-the-migration"></a>패키지가 마이그레이션 후에 설치되면 "install.ps1" 스크립트가 무시됩니다.
 
-| | |
-| --- | --- |
-| **설명** | PackageReference를 사용하면 패키지를 설치하거나 제거하는 동안 install.ps1 및 uninstall.ps1 PowerShell 스크립트가 실행되지 않습니다. |
-| **잠재적 영향** | 대상 프로젝트에서 일부 동작을 구성하기 위해 이러한 스크립트에 의존하는 패키지가 예상대로 작동하지 않을 수 있습니다. |
+* **설명**: PackageReference를 사용하면 패키지를 설치하거나 제거하는 동안 install.ps1 및 uninstall.ps1 PowerShell 스크립트가 실행되지 않습니다.
+
+* **잠재적 영향**: 대상 프로젝트에서 일부 동작을 구성하기 위해 이러한 스크립트에 의존하는 패키지가 예상대로 작동하지 않을 수 있습니다.
 
 ### <a name="content-assets-are-not-available-when-the-package-is-installed-after-the-migration"></a>패키지가 마이그레이션 후에 설치되면 "콘텐츠" 자산을 사용할 수 없습니다.
 
-| | |
-| --- | --- |
-| **설명** | 패키지의 `content` 폴더에 있는 자산은 PackageReference를 통해 지원되지 않으며 무시됩니다. PackageReference는 `contentFiles`에 대한 지원을 추가하여 더 나은 전이적 지원 및 공유 콘텐츠를 제공합니다.  |
-| **잠재적 영향** | `content`의 자산은 프로젝트에 복사되지 않고, 이러한 자산의 존재에 영향을 받는 프로젝트 코드에는 리팩터링이 필요합니다.  |
+* **설명**: 패키지의 `content` 폴더에 있는 자산이 PackageReference에서 지원되지 않고 무시됩니다. PackageReference는 `contentFiles`에 대한 지원을 추가하여 더 나은 전이적 지원 및 공유 콘텐츠를 제공합니다.
+
+* **잠재적 영향**: `content`의 자산이 프로젝트 폴더에 복사되지 않으며 해당 자산의 존재에 영향을 받는 프로젝트 코드는 리팩터링해야 합니다.
 
 ### <a name="xdt-transforms-are-not-applied-when-the-package-is-installed-after-the-upgrade"></a>패키지가 업그레이드 후에 설치되면 XDT 변환이 적용되지 않습니다.
 
-| | |
-| --- | --- |
-| **설명** | PackageReference는 XDT 변환을 지원하지 않으며 패키지를 설치하거나 제거하는 경우 `.xdt` 파일이 무시됩니다.   |
-| **잠재적 영향** | XDT 변환은 모든 프로젝트 XML 파일(가장 일반적으로 `web.config.install.xdt` 및 `web.config.uninstall.xdt`)에 적용되지 않습니다. 즉, 패키지를 설치하거나 제거할 때 프로젝트의 ` web.config` 파일이 업데이트되지 않습니다. |
+* **설명**: XDT 변환이 PackageReference에서 지원되지 않으며 패키지를 설치하거나 제거할 때 `.xdt` 파일이 무시됩니다.
+
+* **잠재적 영향**: XDT 변환이 프로젝트 XML 파일(가장 일반적으로 `web.config.install.xdt` 및 `web.config.uninstall.xdt`)에 적용되지 않습니다. 즉, 패키지를 설치하거나 제거할 때 프로젝트의 ` web.config` 파일이 업데이트되지 않습니다.
 
 ### <a name="assemblies-in-the-lib-root-are-ignored-when-the-package-is-installed-after-the-migration"></a>패키지가 마이그레이션 후에 설치되면 lib 루트의 어셈블리가 무시됩니다.
 
-| | |
-| --- | --- |
-| **설명** | PackageReference를 사용하면 대상 프레임워크 특정 하위 폴더가 없는 `lib` 폴더의 루트에 있는 어셈블리가 무시됩니다. NuGet은 프로젝트의 대상 프레임워크에 해당하는 TFM(대상 프레임워크 모니커)과 일치하는 하위 폴더를 찾은 다음, 프로젝트에 일치하는 어셈블리를 설치합니다. |
-| **잠재적 영향** | 프로젝트의 대상 프레임워크에 해당하는 TFM(대상 프레임워크 모니커)과 일치하는 하위 폴더가 없는 패키지는 전환 후 예상대로 작동하지 않거나 마이그레이션 도중 설치에 실패할 수 있습니다. |
+* **설명**: PackageReference를 사용하면 대상 프레임워크 관련 하위 폴더가 없는 `lib` 폴더의 루트에 있는 어셈블리가 무시됩니다. NuGet은 프로젝트의 대상 프레임워크에 해당하는 TFM(대상 프레임워크 모니커)과 일치하는 하위 폴더를 찾은 다음, 프로젝트에 일치하는 어셈블리를 설치합니다.
+
+* **잠재적 영향**: 프로젝트의 대상 프레임워크에 해당하는 TFM(대상 프레임워크 모니커)과 일치하는 하위 폴더가 없는 패키지는 전환 후 예상대로 작동하지 않거나 마이그레이션 도중 설치에 실패할 수 있습니다.
 
 ## <a name="found-an-issue-report-it"></a>문제를 발견했나요? 그렇다면 보고해주세요.
 

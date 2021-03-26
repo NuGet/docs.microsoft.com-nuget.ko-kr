@@ -5,14 +5,14 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: dcaed83ca54e3234702e963ffc2ebbde4cd75b28
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: df7c793d115622f04a148cbbc3ebf396a3e4ab69
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235765"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859189"
 ---
-# <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(PackageReference)
+# <a name="package-references-packagereference-in-project-files"></a>프로젝트 파일의 패키지 참조(`PackageReference`)
 
 `PackageReference` 노드를 사용하는 패키지 참조는 별도의 `packages.config` 파일이 아닌 프로젝트 파일 내에서 직접 NuGet 종속성을 관리합니다. PackageReference를 사용하면 NuGet의 다른 측면이 영향을 받지 않습니다. 예를 들어 `NuGet.config` 파일의 설정(패키지 소스 포함)은 [일반적인 NuGet 구성](configuring-nuget-behavior.md)에 설명된 대로 계속 적용됩니다.
 
@@ -211,7 +211,7 @@ MSBuild 속성과 패키지 ID에는 동일한 제한이 없기 때문에 패키
 드문 경우이지만 서로 다른 패키지에 동일한 네임스페이스의 클래스가 포함되기도 합니다. NuGet 5.7 및 Visual Studio 2019 업데이트 7부터 ProjectReference에 해당하는 PackageReference는 [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases)를 지원합니다.
 기본적으로 별칭은 제공되지 않습니다. 별칭을 지정하는 경우 주석을 단 패키지에서 제공되는 ‘모든’ 어셈블리를 별칭과 함께 참조해야 합니다.
 
-[NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample)에서 샘플 사용법을 확인할 수 있습니다.
+[NuGet\Samples](https://github.com/NuGet/Samples/tree/main/PackageReferenceAliasesExample)에서 샘플 사용법을 확인할 수 있습니다.
 
 프로젝트 파일에서 다음과 같이 별칭을 지정합니다.
 

@@ -5,18 +5,18 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: e5c62177b40162cb8b6b37b0d272fb7a945156c1
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 574ee874e2d6555a2e3e0a0643962e33b7ec1b09
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775708"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859449"
 ---
 # <a name="deleting-packages"></a>패키지 삭제
 
 nuget.org에서는 패키지를 영구적으로 삭제하도록 지원하지 않습니다. 이렇게 하면 특히 패키지 복원을 포함하는 빌드 워크플로를 사용하여 패키지의 사용 가능성에 따라 모든 프로젝트를 중단합니다.
 
-nuget.org에서는 [패키지를 제외](#unlisting-a-package)하도록 지원합니다. 이 기능은 웹 사이트의 패키지 관리 페이지에서 수행될 수 있습니다. 제외된 패키지는 nuget.org 또는 Visual Studio UI에 표시되지 않으며 검색 결과에도 표시되지 않습니다. 그러나 패키지 복원을 지원하는 정확한 버전 번호를 사용하여 제외된 패키지를 다운로드하고 설치할 수 있습니다. 또한 다음과 같은 특정 시나리오에서 제외된 패키지를 계속 검색할 수 있습니다.
+nuget.org에서는 [패키지 제외](#unlisting-a-package)를 지원합니다. 이 기능은 웹 사이트의 패키지 관리 페이지에서 수행할 수 있습니다. 제외된 패키지는 nuget.org 또는 Visual Studio UI에 표시되지 않으며 검색 결과에도 표시되지 않습니다. 그러나 패키지 복원을 지원하는 정확한 버전 번호를 사용하여 제외된 패키지를 다운로드하고 설치할 수 있습니다. 또한 다음과 같은 특정 시나리오에서 제외된 패키지를 계속 검색할 수 있습니다.
 
 - 버전 또는 종속성 제약 조건과 일치하는 최신 사용 가능한 패키지가 제외된 패키지인 경우 부동 버전을 사용하는 패키지 복원(예: `1.0.0-*`)
 - 카탈로그를 통한 패키지의 복제(카탈로그에 제외된 패키지가 포함된 경우)
