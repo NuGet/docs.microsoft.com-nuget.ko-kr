@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: f9e08d37b30dfea83fd9b61f168c1e20f530ff9f
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 6417c971dc13cf9ed05dcec4e4156af94c0ea058
+ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859410"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387389"
 ---
 # <a name="nuget-client-sdk"></a>NuGet 클라이언트 SDK
 
@@ -32,6 +32,9 @@ GitHub의 [NuGet. Samples](https://github.com/NuGet/Samples/tree/main/NuGetProto
 ```ps1
 dotnet add package NuGet.Protocol
 ```
+
+> [!Tip]
+> `Repository.Factory` 는 네임 스페이스에 정의 되 `NuGet.Protocol.Core.Types` 고 `GetCoreV3` 메서드는 네임 스페이스에 정의 된 확장 메서드입니다 `NuGet.Protocol` . 따라서 `using` 두 네임 스페이스에 대 한 문을 추가 해야 합니다.
 
 ### <a name="list-package-versions"></a>패키지 버전 나열
 

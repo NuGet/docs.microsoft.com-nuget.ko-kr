@@ -10,12 +10,12 @@ no-loc:
 - MSBuild
 - .nuspec
 - nuspec
-ms.openlocfilehash: 9d40d43d972537ee1cb11d54194ed6450ccd0b6e
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 47411641db47884f79f2bc9a4aa00035fc79993b
+ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104858968"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387376"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>NuGet대상으로 팩 및 복원 MSBuild
 
@@ -68,8 +68,9 @@ ms.locfileid: "104858968"
 | `license` | `PackageLicenseFile` | 비어 있음 | 사용자 지정 라이선스 또는 SPDX 식별자가 할당 되지 않은 라이선스를 사용 하는 경우 패키지 내의 라이선스 파일 경로입니다. 참조 된 라이선스 파일을 명시적으로 압축 해야 합니다. `<license type="file">`에 해당합니다. [라이선스 식 또는 라이선스 파일 압축을](#packing-a-license-expression-or-a-license-file)참조 하세요. |
 | `LicenseUrl` | `PackageLicenseUrl` | 비어 있음 | `PackageLicenseUrl`는 사용되지 않습니다. 대신 `PackageLicenseExpression` 또는 `PackageLicenseFile`를 사용하십시오. |
 | `ProjectUrl` | `PackageProjectUrl` | 비어 있음 | |
-| `Icon` | `PackageIcon` | 비어 있음 | 패키지 아이콘으로 사용할 패키지의 이미지에 대한 경로입니다. 참조 된 아이콘 이미지 파일을 명시적으로 압축 해야 합니다. 자세한 내용은 [아이콘 이미지 파일](#packing-an-icon-image-file) 및 [ `icon` 메타 데이터](/nuget/reference/nuspec#icon)압축을 참조 하세요. |
+| `Icon` | `PackageIcon` | 비어 있음 | 패키지 아이콘으로 사용할 패키지의 이미지에 대한 경로입니다. 참조 된 아이콘 이미지 파일을 명시적으로 압축 해야 합니다. 자세한 내용은 [아이콘 이미지 파일](#packing-an-icon-image-file) 및 [ `icon` 메타 데이터](./nuspec.md#icon)압축을 참조 하세요. |
 | `IconUrl` | `PackageIconUrl` | 비어 있음 | `PackageIconUrl` 는를 위해 더 이상 사용 되지 않습니다 `PackageIcon` . 그러나 최상의 하위 환경에서는 이외에를 지정 해야 `PackageIconUrl` `PackageIcon` 합니다. |
+| `Readme` | `PackageReadmeFile` | 비어 있음 | 참조 된 추가 정보 파일을 명시적으로 압축 해야 합니다.|
 | `Tags` | `PackageTags` | 비어 있음 | 패키지를 지정하는 세미콜론으로 구분된 태그 목록입니다. |
 | `ReleaseNotes` | `PackageReleaseNotes` | 비어 있음 | 패키지에 대한 릴리스 정보입니다. |
 | `Repository/Url` | `RepositoryUrl` | 비어 있음 | 소스 코드를 복제 하거나 검색 하는 데 사용 되는 리포지토리 URL입니다. 예: *https://github.com/ NuGet / NuGet . 클라이언트. git*. |
@@ -81,7 +82,7 @@ ms.locfileid: "104858968"
 
 ### <a name="pack-target-inputs"></a>pack 대상 입력
 
-| 속성 | Description |
+| 속성 | 설명 |
 | - | - |
 | `IsPackable` | 프로젝트를 압축할 수 있는지 여부를 지정하는 부울 값입니다. 기본값은 `true`입니다. |
 | `SuppressDependenciesWhenPacking` | 생성 된 `true` 패키지에서 패키지 종속성을 표시 하지 않으려면로 설정 NuGet 합니다. |
@@ -99,6 +100,7 @@ ms.locfileid: "104858968"
 | `PackageProjectUrl` | |
 | `PackageIcon` | 패키지의 루트에 상대적인 패키지 아이콘 경로를 지정 합니다. 자세한 내용은 [아이콘 이미지 파일 압축](#packing-an-icon-image-file)을 참조 하세요. |
 | `PackageReleaseNotes` | 패키지에 대한 릴리스 정보입니다. |
+| `PackageReadmeFile` | 패키지에 대 한 추가 정보입니다. |
 | `PackageTags` | 패키지를 지정하는 세미콜론으로 구분된 태그 목록입니다. |
 | `PackageOutputPath` | 압축된 패키지가 삭제되는 출력 경로를 결정합니다. 기본값은 `$(OutputPath)`입니다. |
 | `IncludeSymbols` | 이 부울 값은 프로젝트가 압축될 때 패키지에서 추가 기호 패키지를 만들어야 하는지 여부를 나타냅니다. 기호 패키지의 형식은 `SymbolPackageFormat` 속성으로 제어됩니다. 자세한 내용은 [includesymbols](#includesymbols)을 참조 하세요. |
@@ -139,7 +141,7 @@ ms.locfileid: "104858968"
 
 아이콘 이미지 파일을 압축 하는 경우 `PackageIcon` 속성을 사용 하 여 패키지의 루트에 상대적인 아이콘 파일 경로를 지정 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 합니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 128x128 이미지를 확인 하는 것이 좋습니다.
 
-예를 들어:
+예를 들어 다음과 같은 가치를 제공해야 합니다.
 
 ```xml
 <PropertyGroup>
@@ -159,6 +161,28 @@ ms.locfileid: "104858968"
 
 이에 대 한 nuspec [ nuspec 참조는 아이콘에 대 한 참조](nuspec.md#icon)를 살펴보겠습니다.
 
+### <a name="packagereadmefile"></a>PackageReadmeFile
+
+추가 정보 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageReadmeFile` 의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 이 외에도 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 지원 되는 파일 형식에는 Markdown (*md*)만 포함 됩니다.
+
+예를 들어 다음과 같은 가치를 제공해야 합니다.
+
+```xml
+<PropertyGroup>
+    ...
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    ...
+</PropertyGroup>
+
+<ItemGroup>
+    ...
+    <None Include="docs\readme.md" Pack="true" PackagePath="\"/>
+    ...
+</ItemGroup>
+```
+
+nuspec이와 동등한 경우 [ nuspec 추가 정보에 대 한 참조](nuspec.md#readme)를 살펴보세요.
+
 ### <a name="output-assemblies"></a>출력 어셈블리
 
 `nuget pack`은 `.exe`, `.dll`, `.xml`, `.winmd`, `.json` 및 `.pri` 확장명의 출력 파일을 복사합니다. 복사 된 출력 파일은 대상의에서 제공 하는 내용에 따라 달라 집니다 MSBuild `BuiltOutputProjectGroup` .
@@ -174,7 +198,7 @@ MSBuild출력 어셈블리의 이동 위치를 제어 하기 위해 프로젝트
 
 ### <a name="project-to-project-references"></a>프로젝트 간 참조
 
-프로젝트 간 참조는 기본적으로 패키지 참조로 간주 됩니다 NuGet . 예를 들어:
+프로젝트 간 참조는 기본적으로 패키지 참조로 간주 됩니다 NuGet . 예를 들어 다음과 같은 가치를 제공해야 합니다.
 
 ```xml
 <ProjectReference Include="..\UwpLibrary2\UwpLibrary2.csproj"/>
@@ -249,7 +273,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 . 조직에서 허용 하는 라이선스 식 및 라이선스에 대 한 자세한 NuGet 내용은 [라이선스 메타 데이터](nuspec.md#license)를 참조 하세요.
 
-라이선스 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageLicenseFile` 의 루트에 상대적인 패키지 경로를 지정 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 합니다. 예를 들어:
+라이선스 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageLicenseFile` 의 루트에 상대적인 패키지 경로를 지정 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 합니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
 
 ```xml
 <PropertyGroup>
@@ -341,7 +365,7 @@ nuspecdotnet.exe 또는 msbuild를 사용 하 여를 압축 하면 기본적으�
 - `FinalOutputPath`: 파일의 절대 경로입니다. 제공 하지 않으면 Id가 원본 경로를 평가 하는 데 사용 됩니다.
 - `TargetPath`: (선택 사항) `lib\<TargetFramework>` 해당 문화권 폴더 아래에 있는 위성 어셈블리와 같이 파일을 내 하위 폴더로 이동 해야 하는 경우에 설정 합니다. 기본값은 파일의 이름입니다.
 
-예제:
+예:
 
 ```xml
 <PropertyGroup>
@@ -403,7 +427,7 @@ nuspecdotnet.exe 또는 msbuild를 사용 하 여를 압축 하면 기본적으�
 
 추가 복원 설정은 MSBuild 프로젝트 파일의 속성에서 가져올 수 있습니다. 또한 값은 `-p:` 스위치를 사용하여 명령줄에서 설정할 수 있습니다(아래 예제 참조).
 
-| 속성 | Description |
+| 속성 | 설명 |
 |--------|--------|
 | `RestoreSources` | 세미콜론으로 구분된 패키지 원본의 목록입니다. |
 | `RestorePackagesPath` | 사용자 패키지 폴더에 대한 경로입니다. |
@@ -427,7 +451,7 @@ nuspecdotnet.exe 또는 msbuild를 사용 하 여를 압축 하면 기본적으�
 | `RestorePackagesConfig` | packages.config를 사용 하 여 프로젝트를 복원 하는 옵트인 스위치. 만 지원 `MSBuild -t:restore` 합니다. |
 | `RestoreUseStaticGraphEvaluation` | 표준 평가 대신 정적 그래프 평가를 사용 하는 옵트인 스위치입니다 MSBuild . 정적 그래프 평가는 큰 리포지토리 및 솔루션에 대해 훨씬 더 빠른 실험적 기능입니다. |
 
-#### <a name="examples"></a>예제
+#### <a name="examples"></a>예
 
 명령줄:
 
@@ -447,7 +471,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 restore는 `obj` 빌드 폴더에 다음 파일을 만듭니다.
 
-| 파일 | Description |
+| 파일 | 설명 |
 |--------|--------|
 | `project.assets.json` | 모든 패키지 참조의 종속성 그래프를 포함 합니다. |
 | `{projectName}.projectFileExtension.nuget.g.props` | MSBuild패키지에 포함 된 props에 대 한 참조 |

@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 4028657862cfd56d0653b370e8344cab8392d69d
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: a8a8058032b0b6c6ddcd5eed1cf22e75f0e3af72
+ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859501"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387415"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -83,7 +83,7 @@ Nuget.org에 패키지를 업로드 하는 경우 `id` 이 필드는 128 자로 
 
 Nuget.org에 패키지를 업로드 하는 경우 `version` 이 필드는 64 자로 제한 됩니다.
 
-#### <a name="description"></a>설명
+#### <a name="description"></a>description
 UI 표시를 위한 패키지에 대 한 설명입니다.
 
 Nuget.org에 패키지를 업로드 하는 경우 `description` 이 필드는 4000 자로 제한 됩니다.
@@ -118,18 +118,18 @@ Nuget.org에 패키지를 업로드 하는 경우 `licenseUrl` 이 필드는 400
 
 ***NuGet 4.9.0** 이상에서 지원 됨*
 
-Nuget.org와 같은 Ui에 표시 되는 패키지 내 라이선스 파일의 SPDX 라이선스 식 또는 경로입니다. MIT 또는 BSD-2 절과 같은 일반적인 라이선스를 사용 하 여 패키지에 라이선스를 부여 하는 경우 연결 된 [Spdx 라이선스 식별자](https://spdx.org/licenses/)를 사용 합니다. 예를 들어:
+Nuget.org와 같은 Ui에 표시 되는 패키지 내 라이선스 파일의 SPDX 라이선스 식 또는 경로입니다. MIT 또는 BSD-2 절과 같은 일반적인 라이선스를 사용 하 여 패키지에 라이선스를 부여 하는 경우 연결 된 [Spdx 라이선스 식별자](https://spdx.org/licenses/)를 사용 합니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
 
 `<license type="expression">MIT</license>`
 
 > [!Note]
 > NuGet.org는 오픈 소스 이니셔티브 또는 무료 Software Foundation에서 승인한 라이선스 식만 허용 합니다.
 
-패키지가 여러 일반적인 라이선스에서 사용이 허가 된 경우 [Spdx 식 구문 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)을 사용 하 여 복합 라이선스를 지정할 수 있습니다. 예를 들어:
+패키지가 여러 일반적인 라이선스에서 사용이 허가 된 경우 [Spdx 식 구문 버전 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)을 사용 하 여 복합 라이선스를 지정할 수 있습니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-라이선스 식에서 지원 하지 않는 사용자 지정 라이선스를 사용 하는 경우 `.txt` 라이선스의 텍스트를 사용 하 여 또는 파일을 패키지할 수 있습니다 `.md` . 예를 들어:
+라이선스 식에서 지원 하지 않는 사용자 지정 라이선스를 사용 하는 경우 `.txt` 라이선스의 텍스트를 사용 하 여 또는 파일을 패키지할 수 있습니다 `.md` . 예를 들어 다음과 같은 가치를 제공해야 합니다.
 
 ```xml
 <package>
@@ -205,6 +205,29 @@ MSBuild에 해당 하는 경우 [아이콘 이미지 파일 압축](msbuild-targ
 > [!Tip]
 > 및를 모두 지정 `icon` 하 여를 `iconUrl` 지원 하지 않는 소스와의 호환성을 유지할 수 있습니다 `icon` . Visual Studio는 `icon` 이후 릴리스에서 폴더 기반 소스에서 가져온 패키지를 지원 합니다.
 
+#### <a name="readme"></a>추가 정보
+
+추가 정보 파일을 압축 하는 경우 요소를 사용 하 여 패키지 `readme` 의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 이 외에도 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 지원 되는 파일 형식에는 Markdown (*md*)만 포함 됩니다.
+
+예를 들어 프로젝트와 함께 추가 정보 파일을 압축 하기 위해 nuspec에 다음을 추가 합니다.
+
+```xml
+<package>
+  <metadata>
+    ...
+    <readme>docs\readme.md</readme>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="..\readme.md" target="docs\" />
+    ...
+  </files>
+</package>
+```
+
+MSBuild에 해당 하는 경우 [추가 정보 파일 압축](msbuild-targets.md#packagereadmefile)을 참조 하세요.
+
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 패키지를 설치하기 전에 클라이언트에서 소비자가 패키지 라이선스에 동의하도록 요구하는 메시지를 표시해야 할지 여부를 지정하는 부울 값입니다.
 
@@ -243,7 +266,7 @@ Nuget.org에 패키지를 업로드 하는 경우 `tags` 이 필드는 4000 자�
 #### <a name="repository"></a>리포지토리
 저장소 메타 데이터는 `type` 및 `url` *(4.0 +)*, 및 `branch` 및 `commit` *(4.6 +)* 의 네 가지 선택적 특성으로 구성 됩니다. 이러한 특성을 사용 하 여를 `.nupkg` 빌드한 리포지토리에 매핑할 수 있으며, 패키지를 작성 하는 개별 분기 이름 또는 커밋 sha-1 해시를 자세히 파악할 수 있습니다. 이 url은 버전 제어 소프트웨어에서 직접 호출할 수 있는 공개적으로 사용할 수 있는 url 이어야 합니다. 이는 컴퓨터에 대 한 것 이므로 html 페이지가 되어서는 안 됩니다. 프로젝트 페이지에 연결 하려면 `projectUrl` 필드를 대신 사용 합니다.
 
-예를 들어:
+예를 들어 다음과 같은 가치를 제공해야 합니다.
 ```xml
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
@@ -279,7 +302,7 @@ Nuget.org에 패키지를 업로드 하는 경우이 `title` 필드는 256 자�
 #### <a name="contentfiles"></a>contentFiles
 *(3.3 이상)* 사용하는 프로젝트에 포함할 콘텐츠 파일을 식별하는 `<files>` 요소 컬렉션입니다. 이러한 파일은 프로젝트 시스템 내에서 사용되는 방법을 설명하는 일단의 특성으로 지정됩니다. 아래의 [패키지에 포함할 파일 지정](#specifying-files-to-include-in-the-package)을 참조하세요.
 
-#### <a name="files"></a>파일 
+#### <a name="files"></a>files 
 `<package>`노드에는에 대 한 형제로 노드가 포함 될 수 있으며 `<files>` `<metadata>` `<contentFiles>` ,이에 따라 `<metadata>` 패키지에 포함할 어셈블리 및 콘텐츠 파일을 지정할 수 있습니다. 자세한 내용은 이 항목의 뒷부분에 있는 [어셈블리 파일 포함](#including-assembly-files) 및 [콘텐츠 파일 포함](#including-content-files)을 참조하세요.
 
 ### <a name="metadata-attributes"></a>메타 데이터 특성
@@ -358,7 +381,7 @@ nuget pack MyProject.csproj
 
 `<metadata>` 내의 `<dependencies>` 요소에는 최상위 패키지가 종속되는 다른 패키지를 식별하는 임의 개수의 `<dependency>` 요소가 포함됩니다. 각 `<dependency>`에 대한 특성은 다음과 같습니다.
 
-| attribute | Description |
+| attribute | 설명 |
 | --- | --- |
 | `id` | (필수) 패키지 페이지에서 “EntityFramework” 및 “NUnit” 패키지 nuget.org의 이름인 같은 종속성의 패키지 ID를 보여 줍니다. |
 | `version` | (필수) 종속성으로 허용되는 버전 범위입니다. 정확한 구문은 [패키지 버전 관리](../concepts/package-versioning.md#version-ranges)를 참조하세요. 부동 버전은 지원 되지 않습니다. |
@@ -508,7 +531,7 @@ Nuget.org에 패키지를 업로드 하는 경우 각 종속성의 `id` 특성�
 > [!Important]
 > 패키지가 프로젝트에 설치되면 어셈블리 참조가 지역화된 위성 어셈블리로 간주되므로 NuGet은 `.resources.dll`이라는 DLL을 *제외한* 패키지의 DLL에 해당 어셈블리 참조를 자동으로 추가합니다. 이러한 이유로 다른 경우에 필수 패키지 코드가 포함되는 파일에는 `.resources.dll`을 사용하지 마세요.
 
-이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들어:
+이러한 자동 동작을 무시하고 패키지에 포함되는 파일을 명시적으로 제어하려면 `<files>` 요소를 `<package>`의 자식(및 `<metadata>`의 형제)으로 배치하고 각 파일을 별도의 `<file>` 요소로 식별합니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
 
 ```xml
 <files>
@@ -524,13 +547,13 @@ NuGet 2.x 및 이전 버전과 `packages.config`를 사용하는 프로젝트의
 
 각 `<file>` 요소는 다음과 같은 특성을 지정합니다.
 
-| attribute | Description |
+| attribute | 설명 |
 | --- | --- |
 | **src** | `exclude` 특성으로 지정된 제외에 따라 포함할 파일의 위치입니다. 절대 경로가 지정되지 않으면 경로는 `.nuspec` 파일에 대한 상대 경로입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 | **대상** | 원본 파일이 있는 패키지 내의 폴더에 대한 상대 경로이며, `lib`, `content`, `build` 또는 `tools`로 시작해야 합니다. [규칙 기반 작업 디렉터리에서 .nuspec 만들기](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)를 참조하세요. |
 | **시키고** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 
-### <a name="examples"></a>예제
+### <a name="examples"></a>예
 
 **단일 어셈블리**
 
@@ -755,7 +778,7 @@ Packaged result:
 
 이러한 파일은 프로젝트 시스템 내에서 사용되는 방법을 설명하는 일단의 특성으로 지정됩니다.
 
-| attribute | Description |
+| attribute | 설명 |
 | --- | --- |
 | **되어야** | (필수) `exclude` 특성으로 지정된 제외에 따라 포함할 파일의 위치입니다. `contentFiles`절대 경로를 지정 하지 않으면 폴더에 대 한 상대 경로입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
 | **시키고** | `src` 위치에서 제외할 파일 또는 파일 패턴에 대한 세미콜론으로 구분된 목록입니다. `*` 와일드카드 문자가 허용되고, `**` 이중 와일드카드는 재귀적 폴더 검색을 의미합니다. |
@@ -777,7 +800,7 @@ Packaged result:
 - `TxM`은 NuGet에서 지원하는 모든 법적 대상 프레임워크 모니커입니다([대상 프레임워크](../reference/target-frameworks.md) 참조).
 - 모든 폴더 구조는 이 구문의 끝에 추가될 수 있습니다.
 
-예를 들어:
+예를 들어 다음과 같은 가치를 제공해야 합니다.
 
 ```
 Language- and framework-agnostic:
