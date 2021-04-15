@@ -5,12 +5,12 @@ author: erdembayar
 ms.author: eryondon
 ms.date: 3/11/2021
 ms.topic: conceptual
-ms.openlocfilehash: 24933ebb51851da2583b03e7fd3e55fade5e8a18
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 50fd277a4f1f39b4a68a89cd07af4e21f0d3d831
+ms.sourcegitcommit: 1462f9f42ae36b3c990762ad4f02e38ab799ad09
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859539"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107508815"
 ---
 # <a name="nuget-59-release-notes"></a>NuGet 5.9 릴리스 정보
 
@@ -18,12 +18,13 @@ NuGet 배포 차량:
 
 | NuGet 버전 | Visual Studio 버전에서 사용 가능 | .NET SDK에서 사용 가능 |
 |:---|:---|:---|
-| [**5.9**](https://nuget.org/downloads) | [Visual Studio 2019 버전 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.9.0**](https://nuget.org/downloads) | [Visual Studio 2019 버전 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0.200](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.9.1**](https://nuget.org/downloads) | [Visual Studio 2019 버전 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0.202](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 
 <sup>1</sup> .net Core 워크 로드와 함께 Visual Studio 2019와 함께 설치 됨
   
 > [!NOTE]
-> Visual Studio 16.9, MSBuild 16.9 및 .NET 5.0.3 +에 NuGet.exe 5.9 이상이 필요 합니다.
+> Visual Studio 16.9, MSBuild 16.9 및 .NET 5.0.200 +에 NuGet.exe 5.9 이상이 필요 합니다.
 
 ## <a name="summary-whats-new-in-59"></a>요약: 5.9의 새로운 기능
 
@@ -187,7 +188,6 @@ NuGet 배포 차량:
 
 * NuGetPackageFileService fix-삭제 가능 memorystream에 using 사용- [#10503](https://github.com/NuGet/Home/issues/10503)
 
-
 **[이 릴리스에서 수정 된 모든 문제 목록-5.9.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f6be8c10485c0236b7ef889)**
 
 **[이 릴리스의 커밋 목록-5.9.0](https://github.com/NuGet/NuGet.Client/compare/5.8.1.7021...5.9.0.7134)**
@@ -211,6 +211,15 @@ NuGet 배포 차량:
 [rolfbjarne](https://github.com/rolfbjarne) | [3743](https://github.com/NuGet/NuGet.Client/pull/3743) | 리디렉션된 경우 macOS에서 출력이 80 문자로 래핑됩니다 [#10198](https://github.com/NuGet/Home/issues/10198)
 [xen2](https://github.com/xen2) | [2861](https://github.com/NuGet/NuGet.Client/pull/2861) | NuGet. PackageManagement를 .NET Standard 패키지로 사용할 수 있도록 설정- [#6150](https://github.com/NuGet/Home/issues/6150)
 [Anipik](https://github.com/Anipik) | [3810](https://github.com/NuGet/NuGet.Client/pull/3810) | Pack 작업 중에 특정 tfm에 대 한 빌드 출력을 제외 하는 새 msbuild 속성을 소개 합니다.- [#10396](https://github.com/NuGet/Home/issues/10396)
+
+## <a name="summary-whats-new-in-591"></a>요약: 5.9.1의 새로운 기능
+
+* "dotnet nuget remove source nuget.org"는 처음으로 작동 하지 않습니다 [#10745](https://github.com/NuGet/Home/issues/10745)
+* Linux에서는 기본 유효성 검사를 사용 하지 않도록 설정 하 고 Windows에서는 기본적으로 사용 하도록 설정 [#10713](https://github.com/NuGet/Home/issues/10713)
+
+**[이 릴리스에서 수정 된 모든 문제 목록-5.9.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=6075f42efd068017639b4036)**
+
+**[이 릴리스의 커밋 목록-5.9.1](https://github.com/NuGet/NuGet.Client/compare/5.9.0.7134...5.9.1.8)**
 
 ## <a name="feedback-welcome"></a>사용자 의견 환영
 
