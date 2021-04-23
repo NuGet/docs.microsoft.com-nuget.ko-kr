@@ -10,12 +10,12 @@ no-loc:
 - MSBuild
 - .nuspec
 - nuspec
-ms.openlocfilehash: 47411641db47884f79f2bc9a4aa00035fc79993b
-ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
+ms.openlocfilehash: 0a10a6f1e4c71903232281c25a6c4b6bbc65fb34
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107387376"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901487"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>NuGet대상으로 팩 및 복원 MSBuild
 
@@ -55,7 +55,7 @@ ms.locfileid: "107387376"
 | 특성/ nuspec 값 | MSBuild 속성 | 기본값 | 참고 |
 |--------|--------|--------|--------|
 | `Id` | `PackageId` | `$(AssemblyName)` | MSBuild의 `$(AssemblyName)` |
-| `Version` | `PackageVersion` | 버전 | 이는 semver와 호환 됩니다. 예를 들어, 또는입니다. `1.0.0` `1.0.0-beta``1.0.0-beta-00345` |
+| `Version` | `PackageVersion` | Version | 이는 semver와 호환 됩니다. 예를 들어, 또는입니다. `1.0.0` `1.0.0-beta``1.0.0-beta-00345` |
 | `VersionPrefix` | `PackageVersionPrefix` | 비어 있음 | `PackageVersion`덮어쓰기 설정`PackageVersionPrefix` |
 | `VersionSuffix` | `PackageVersionSuffix` | 비어 있음 | `$(VersionSuffix)` 에서 MSBuild . `PackageVersion`덮어쓰기 설정`PackageVersionSuffix` |
 | `Authors` | `Authors` | 현재 사용자의 사용자 이름 | Nuget.org의 프로필 이름과 일치 하는, 세미콜론으로 구분 된 패키지 작성자 목록입니다. 이러한는 NuGet nuget.org의 갤러리에 표시 되 고 동일한 작성자가 패키지를 상호 참조 하는 데 사용 됩니다. |
@@ -162,6 +162,8 @@ ms.locfileid: "107387376"
 이에 대 한 nuspec [ nuspec 참조는 아이콘에 대 한 참조](nuspec.md#icon)를 살펴보겠습니다.
 
 ### <a name="packagereadmefile"></a>PackageReadmeFile
+
+***NuGet 5.10.0 preview 2**  /  **.net 5.0.3** 이상에서 지원 됨*
 
 추가 정보 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageReadmeFile` 의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 이 외에도 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 지원 되는 파일 형식에는 Markdown (*md*)만 포함 됩니다.
 
@@ -365,7 +367,7 @@ nuspecdotnet.exe 또는 msbuild를 사용 하 여를 압축 하면 기본적으�
 - `FinalOutputPath`: 파일의 절대 경로입니다. 제공 하지 않으면 Id가 원본 경로를 평가 하는 데 사용 됩니다.
 - `TargetPath`: (선택 사항) `lib\<TargetFramework>` 해당 문화권 폴더 아래에 있는 위성 어셈블리와 같이 파일을 내 하위 폴더로 이동 해야 하는 경우에 설정 합니다. 기본값은 파일의 이름입니다.
 
-예:
+예제:
 
 ```xml
 <PropertyGroup>

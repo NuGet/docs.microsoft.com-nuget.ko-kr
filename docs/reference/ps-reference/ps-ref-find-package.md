@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 6/1/2017
 ms.topic: reference
-ms.openlocfilehash: 83d0d62bbda07d07ea1e3b58e531447e2001b680
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 263835da64340a13737b32ab54ab057cb640a080
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777511"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901761"
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>Find-Package (Visual Studio의 패키지 관리자 콘솔)
 
-*버전 3.0 이상; 이 항목에서는 Windows의 Visual Studio에서 [패키지 관리자 콘솔](../../consume-packages/install-use-packages-powershell.md) 내의 명령을 설명 합니다. 일반 PowerShell Find-Package 명령의 경우 [Powershell PackageManagement 참조](/powershell/module/packagemanagement/?view=powershell-6)를 참조 하세요.*
+*버전 3.0 이상; 이 항목에서는 Windows의 Visual Studio에서 [패키지 관리자 콘솔](../../consume-packages/install-use-packages-powershell.md) 내의 명령을 설명 합니다. 일반 PowerShell Find-Package 명령의 경우 [Powershell PackageManagement 참조](/powershell/module/packagemanagement)를 참조 하세요.*
 
 패키지 원본에서 지정 된 ID 또는 키워드를 사용 하 여 원격 패키지 집합을 가져옵니다.
 
@@ -27,7 +27,7 @@ Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
 
 ## <a name="parameters"></a>매개 변수
 
-| 매개 변수 | Description |
+| 매개 변수 | 설명 |
 | --- | --- |
 | Id &lt; 키워드&gt; | 하다 패키지 소스를 검색할 때 사용할 키워드입니다. 패키지 ID가 키워드와 일치 하는 패키지만 반환 하려면-ExactMatch을 사용 합니다. 키워드를 지정 하지 않으면에서 `Find-Package` 다운로드 하 여 상위 20 개 패키지의 목록을 반환 하거나,-First로 지정 된 숫자를 반환 합니다. -Id는 선택 사항이 며 작동 하지 않습니다. |
 | 원본 | 검색할 패키지 원본에 대 한 URL 또는 폴더 경로입니다. 로컬 폴더 경로는 절대 경로 이거나 현재 폴더에 대 한 상대 경로일 수 있습니다. 생략 하면 `Find-Package` 현재 선택 된 패키지 소스를 검색 합니다. |

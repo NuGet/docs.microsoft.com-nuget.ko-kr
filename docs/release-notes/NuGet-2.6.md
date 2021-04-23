@@ -1,16 +1,16 @@
 ---
 title: NuGet 2.6 릴리스 정보
-description: 알려진 문제, 버그 수정, 추가 된 기능 및 Ecrs를 포함 하 여 WebMatrix 용 NuGet 2.6.1에 대 한 릴리스 정보입니다.
+description: 알려진 문제, 버그 수정, 추가 된 기능 및 Ecrs를 비롯 한 NuGet 2.6에 대 한 릴리스 정보입니다.
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 812a0e806e29c5a2141db4f2fbab4bf91b0983f9
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 6b25b9df062afc88466ad107e718f632878debfc
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98776835"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901423"
 ---
 # <a name="nuget-26-release-notes"></a>NuGet 2.6 릴리스 정보
 
@@ -41,7 +41,7 @@ NuGet 클라이언트에 대해 가장 많이 요청 되는 기능 중 하나는
 
 2013 년 4 월에는 NuGet 지원과 관련 하 여 XDT에 대 한 두 가지 큰 공지를 만들었습니다. 첫 번째는 XDT 라이브러리 자체가 [NuGet 패키지로 릴리스](https://nuget.org/packages/Microsoft.Web.Xdt) 되었으며 [CodePlex에서 오픈](http://xdt.codeplex.com/)소스 였습니다. 이 단계를 통해 NuGet 클라이언트를 비롯 한 다른 오픈 소스 소프트웨어에서 자유롭게 XDT 엔진을 사용할 수 있습니다. 두 번째 알림은 NuGet 클라이언트의 변환에 XDT 엔진을 사용할 수 있도록 지 원하는 계획 이었습니다. NuGet 2.6은 이러한 통합을 포함 합니다.
 
-#### <a name="how-it-works"></a>작동 방법
+#### <a name="how-it-works"></a>작동 방식
 
 NuGet의 XDT 지원 기능을 활용 하기 위해 메커니즘은 [현재 구성 변환 기능과](../create-packages/source-and-config-file-transformations.md)유사 합니다.
 변환 파일은 패키지의 콘텐츠 폴더에 추가 됩니다. 그러나 구성 변환에서 설치 및 제거에 대해 단일 파일을 사용 하는 동안 XDT 변환은 다음 파일을 사용 하 여 이러한 두 프로세스를 세부적으로 제어할 수 있도록 합니다.
@@ -102,6 +102,6 @@ NuGet 2.6 부터는 이제 설치 작업을 위해 해당 데이터가 전송 �
 
 다른 작업 이름 외에도 설치를 위해 종속 패키지 id가 기록 됩니다.  NuGet 갤러리에 대 한 향후 업데이트는 패키지 작성자가 개발자가 패키지를 설치 하는 방식을 완전히 이해할 수 있도록 보고서 내에 해당 데이터를 노출 합니다.
 
-## <a name="bug-fixes"></a>버그 픽스
+## <a name="bug-fixes"></a>버그 수정
 
 NuGet 2.6에도 여러 버그 수정이 포함 되어 있습니다. NuGet 2.6에서 수정 된 작업 항목의 전체 목록은 [이 릴리스에 대 한 Nuget 문제 추적기](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.6&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All)를 확인 하세요.

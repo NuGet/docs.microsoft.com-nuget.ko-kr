@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: a8a8058032b0b6c6ddcd5eed1cf22e75f0e3af72
-ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
+ms.openlocfilehash: ed865aad6f72752adcf3e3921287a20b961c4a8a
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107387415"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901813"
 ---
 # <a name="nuspec-reference"></a>.nuspec 참조
 
@@ -207,6 +207,8 @@ MSBuild에 해당 하는 경우 [아이콘 이미지 파일 압축](msbuild-targ
 
 #### <a name="readme"></a>추가 정보
 
+***NuGet 5.10.0 preview 2** 이상에서 지원 됨*
+
 추가 정보 파일을 압축 하는 경우 요소를 사용 하 여 패키지 `readme` 의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 이 외에도 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 지원 되는 파일 형식에는 Markdown (*md*)만 포함 됩니다.
 
 예를 들어 프로젝트와 함께 추가 정보 파일을 압축 하기 위해 nuspec에 다음을 추가 합니다.
@@ -226,7 +228,7 @@ MSBuild에 해당 하는 경우 [아이콘 이미지 파일 압축](msbuild-targ
 </package>
 ```
 
-MSBuild에 해당 하는 경우 [추가 정보 파일 압축](msbuild-targets.md#packagereadmefile)을 참조 하세요.
+MSBuild에 해당 하는 경우 [추가 정보 파일 압축](msbuild-targets.md#packagereadmefile)을 참조 하세요. 
 
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 패키지를 설치하기 전에 클라이언트에서 소비자가 패키지 라이선스에 동의하도록 요구하는 메시지를 표시해야 할지 여부를 지정하는 부울 값입니다.
@@ -392,7 +394,7 @@ Nuget.org에 패키지를 업로드 하는 경우 각 종속성의 `id` 특성�
 
 | include/exclude 태그 | 영향을 받는 대상 폴더 |
 | --- | --- |
-| contentFiles | 콘텐츠 |
+| contentFiles | Content |
 | 런타임 | Runtime, Resources 및 FrameworkAssemblies |
 | compile | lib |
 | 빌드 | build(MSBuild props 및 targets) |

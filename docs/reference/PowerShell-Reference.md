@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 98bea8a225f4864953f898ef57b26e9093f7c2e9
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 7bc0395a98e75fe006e048b91d84cb5c17220161
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98779370"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901891"
 ---
 # <a name="powershell-reference"></a>PowerShell 참조
 
@@ -20,16 +20,16 @@ ms.locfileid: "98779370"
 > 모든 PowerShell 명령은 패키지 사용량과만 관련 됩니다. 패키지를 만들고 게시 하는 것과 관련 된 PowerShell 명령은 없습니다. 단, 패키지가 다른 패키지의 소비자 일 수도 있습니다.
 
 > [!Important]
-> 여기에 나열된 명령은 Visual Studio의 패키지 관리자 콘솔과 관련이 있으며 일반 PowerShell 환경에서 사용할 수 있는 [패키지 관리 모듈 명령](/powershell/module/packagemanagement/?view=powershell-6)과 다릅니다. 특히, 각 환경은 다른 환경에서 사용할 수 없는 명령이 있으며 명령의 이름이 같더라도 특정 인수가 다를 수도 있습니다. Visual Studio에서 패키지 관리 콘솔을 사용하는 경우 이 문서에 설명된 명령과 인수가 적용됩니다.
+> 여기에 나열된 명령은 Visual Studio의 패키지 관리자 콘솔과 관련이 있으며 일반 PowerShell 환경에서 사용할 수 있는 [패키지 관리 모듈 명령](/powershell/module/packagemanagement)과 다릅니다. 특히, 각 환경은 다른 환경에서 사용할 수 없는 명령이 있으며 명령의 이름이 같더라도 특정 인수가 다를 수도 있습니다. Visual Studio에서 패키지 관리 콘솔을 사용하는 경우 이 문서에 설명된 명령과 인수가 적용됩니다.
 
-| 일반 명령 | Description | NuGet 버전 |
+| 일반 명령 | 설명 | NuGet 버전 |
 | --- | --- | --- |
 | [Install-Package](ps-reference/ps-ref-install-package.md) | 패키지와 해당 종속성을 프로젝트에 설치합니다. | 모두 |
 | [Update-Package](ps-reference/ps-ref-update-package.md) | 패키지와 해당 종속성 또는 프로젝트의 모든 패키지를 업데이트 합니다. | 모두 |
 | [Find-Package](ps-reference/ps-ref-find-package.md) | 패키지 ID 또는 키워드를 사용 하 여 패키지 소스를 검색 합니다. | 3.0+ |
 | [Get-Package](ps-reference/ps-ref-get-package.md) | 로컬 리포지토리에 설치 된 패키지 목록을 검색 하거나 패키지 원본에서 사용할 수 있는 패키지를 나열 합니다. | 모두 |
 
-| 보조 명령 | Description | NuGet 버전 |
+| 보조 명령 | 설명 | NuGet 버전 |
 | --- | --- | --- |
 | [Add-BindingRedirect](ps-reference/ps-ref-add-bindingredirect.md) | 프로젝트의 출력 경로에 있는 모든 어셈블리를 검사 하 고 필요에 따라 또는에 바인딩 리디렉션을 추가 합니다 `app.config` `web.config` . | 모두 |
 | [Get-Project](ps-reference/ps-ref-get-project.md) | 기본 또는 지정 된 프로젝트에 대 한 정보를 표시 합니다. | 3.0+ |

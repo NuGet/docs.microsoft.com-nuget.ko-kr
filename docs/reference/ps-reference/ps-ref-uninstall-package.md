@@ -5,20 +5,20 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: 961a9d68e5cba09030401fc871a93bf1145b23a3
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 371e95c341efbce1c4a15facefc15cd51b266141
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777398"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901787"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package (Visual Studio의 패키지 관리자 콘솔)
 
-*이 항목에서는 Windows의 Visual Studio에서 [패키지 관리자 콘솔](../../consume-packages/install-use-packages-powershell.md) 내의 명령을 설명 합니다. 일반 PowerShell Uninstall-Package 명령의 경우 [Powershell PackageManagement 참조](/powershell/module/packagemanagement/?view=powershell-6)를 참조 하세요.*
+*이 항목에서는 Windows의 Visual Studio에서 [패키지 관리자 콘솔](../../consume-packages/install-use-packages-powershell.md) 내의 명령을 설명 합니다. 일반 PowerShell Uninstall-Package 명령의 경우 [Powershell PackageManagement 참조](/powershell/module/packagemanagement)를 참조 하세요.*
 
 프로젝트에서 패키지를 제거 하 고 필요에 따라 해당 종속성을 제거 합니다. 이 패키지에 다른 패키지가 종속된 경우 –Force 옵션을 지정하지 않으면 명령이 실패합니다.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>구문
 
 ```ps
 Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [-Force]
@@ -29,10 +29,10 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 
 ## <a name="parameters"></a>매개 변수
 
-| 매개 변수 | Description |
+| 매개 변수 | 설명 |
 | --- | --- |
 | Id | 하다 제거할 패키지의 식별자입니다. -Id 스위치 자체는 선택 사항입니다. |
-| 버전 | 제거할 패키지의 버전입니다. 기본값은 현재 설치 된 버전입니다. |
+| Version | 제거할 패키지의 버전입니다. 기본값은 현재 설치 된 버전입니다. |
 | RemoveDependencies | 패키지와 사용 되지 않는 종속성을 제거 합니다. 즉, 종속성에 종속 된 다른 패키지가 있는 경우이를 건너뜁니다. |
 | ProjectName | 패키지를 제거할 프로젝트 이며 기본 프로젝트를 기본값으로 합니다. |
 | Force | 다른 패키지에 종속 된 경우에도 패키지를 강제로 제거 합니다. |

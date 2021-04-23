@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 04/02/2019
 ms.topic: conceptual
-ms.openlocfilehash: 637db1ae128ce020c33e54e56148c848a5f905a5
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 19173d2be7cd66b65651655385466b40f5e08352
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98776223"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901748"
 ---
 # <a name="nuget-50-release-notes"></a>NuGet 5.0 릴리스 정보
 
@@ -27,7 +27,7 @@ NuGet 배포 차량:
 
 ## <a name="summary-whats-new-in-50"></a>요약: 5.0의 새로운 기능
 
-* Visual Studio 2019에서 [필터링 된 솔루션](/visualstudio/ide/filtered-solutions?view=vs-2019) 복원 지원- [#5820](https://github.com/NuGet/Home/issues/5820)
+* Visual Studio 2019에서 [필터링 된 솔루션](/visualstudio/ide/filtered-solutions) 복원 지원- [#5820](https://github.com/NuGet/Home/issues/5820)
 * `BuildTransitive` 폴더를 사용 하면 패키지에서 대상/props을 호스트 프로젝트에 전이적으로 적용할 수 있습니다.- [#6091](https://github.com/NuGet/Home/issues/6091)
 * NuGet Iv Api [#7005](https://github.com/NuGet/Home/issues/7005), [#7493](https://github.com/NuGet/Home/issues/7493) 에서 PackageReference 시나리오에 대 한 지원 향상
 * `nuget.exe pack project.json` 사용 되지 않음- [#7928](https://github.com/NuGet/Home/issues/7928)
