@@ -7,6 +7,7 @@
 ## [패키지 게시](publish-a-package.md)
 ## [패키지 ID 접두사 예약](id-prefix-reservation.md)
 ## [패키지 사용 중단](deprecate-packages.md)
+## [패키지 추가 정보](package-readme-on-nuget-org.md)
 # 정책
 ## [데이터 요청](policies/Data-requests.md)
 ## [분쟁 해결](policies/dispute-resolution.md)
