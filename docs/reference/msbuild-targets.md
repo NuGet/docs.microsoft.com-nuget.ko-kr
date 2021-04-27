@@ -10,12 +10,12 @@ no-loc:
 - MSBuild
 - .nuspec
 - nuspec
-ms.openlocfilehash: 0a10a6f1e4c71903232281c25a6c4b6bbc65fb34
-ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
+ms.openlocfilehash: 8ebf0329f9dc7af09a59f1498a934754842df365
+ms.sourcegitcommit: 08c5b2c956a1a45f0ea9fb3f50f55e41312d8ce3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2021
-ms.locfileid: "107901487"
+ms.lasthandoff: 04/27/2021
+ms.locfileid: "108067312"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>NuGet대상으로 팩 및 복원 MSBuild
 
@@ -52,10 +52,10 @@ ms.locfileid: "107901487"
 > [!NOTE]
 > `Owners` 및 `Summary` 의 속성 `.nuspec` 은에서 지원 되지 않습니다 MSBuild .
 
-| 특성/ nuspec 값 | MSBuild 속성 | 기본값 | 참고 |
+| 특성/ nuspec 값 | MSBuild 속성 | 기본값 | 메모 |
 |--------|--------|--------|--------|
 | `Id` | `PackageId` | `$(AssemblyName)` | MSBuild의 `$(AssemblyName)` |
-| `Version` | `PackageVersion` | Version | 이는 semver와 호환 됩니다. 예를 들어, 또는입니다. `1.0.0` `1.0.0-beta``1.0.0-beta-00345` |
+| `Version` | `PackageVersion` | 버전 | 이는 semver와 호환 됩니다. 예를 들어, 또는입니다. `1.0.0` `1.0.0-beta``1.0.0-beta-00345` |
 | `VersionPrefix` | `PackageVersionPrefix` | 비어 있음 | `PackageVersion`덮어쓰기 설정`PackageVersionPrefix` |
 | `VersionSuffix` | `PackageVersionSuffix` | 비어 있음 | `$(VersionSuffix)` 에서 MSBuild . `PackageVersion`덮어쓰기 설정`PackageVersionSuffix` |
 | `Authors` | `Authors` | 현재 사용자의 사용자 이름 | Nuget.org의 프로필 이름과 일치 하는, 세미콜론으로 구분 된 패키지 작성자 목록입니다. 이러한는 NuGet nuget.org의 갤러리에 표시 되 고 동일한 작성자가 패키지를 상호 참조 하는 데 사용 됩니다. |
@@ -77,12 +77,12 @@ ms.locfileid: "107901487"
 | `Repository/Type` | `RepositoryType` | 비어 있음 | 리포지토리 유형입니다. 예: `git` (기본값), `tfs` . |
 | `Repository/Branch` | `RepositoryBranch` | 비어 있음 | 선택적 리포지토리 분기 정보입니다. `RepositoryUrl`도 이 속성을 포함하도록 지정해야 합니다. 예: *master* ( NuGet 4.7.0 +). |
 | `Repository/Commit` | `RepositoryCommit` | 비어 있음 | 패키지가 빌드된 소스를 나타내는 선택적 리포지토리 커밋 또는 변경 집합입니다. `RepositoryUrl`도 이 속성을 포함하도록 지정해야 합니다. 예: *0e4d1b598f350b3dc675018d539114d1328189ef* ( NuGet 4.7.0 +). |
-| `PackageType` | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
+| `PackageType` | `<PackageType>CustomType1, 1.0.0.0;CustomType2</PackageType>` | | 패키지의 용도를 나타냅니다. 패키지 유형은 패키지 Id와 동일한 형식을 사용 하며로 구분 됩니다 `;` . 및 문자열을 추가 하 여 패키지 형식의 버전을 지정할 수 있습니다 `,` [`Version`](/dotnet/api/system.version) . [ NuGet 패키지 형식 설정](../create-packages/set-package-type.md) ( NuGet 3.5.0 +)을 참조 하세요. |
 | `Summary` | 지원되지 않음 | | |
 
 ### <a name="pack-target-inputs"></a>pack 대상 입력
 
-| 속성 | 설명 |
+| 속성 | Description |
 | - | - |
 | `IsPackable` | 프로젝트를 압축할 수 있는지 여부를 지정하는 부울 값입니다. 기본값은 `true`입니다. |
 | `SuppressDependenciesWhenPacking` | 생성 된 `true` 패키지에서 패키지 종속성을 표시 하지 않으려면로 설정 NuGet 합니다. |
@@ -141,7 +141,7 @@ ms.locfileid: "107901487"
 
 아이콘 이미지 파일을 압축 하는 경우 `PackageIcon` 속성을 사용 하 여 패키지의 루트에 상대적인 아이콘 파일 경로를 지정 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 합니다. 이미지 파일 크기는 1mb로 제한 됩니다. 지원 되는 파일 형식에는 JPEG 및 PNG가 있습니다. 128x128 이미지를 확인 하는 것이 좋습니다.
 
-예를 들어 다음과 같은 가치를 제공해야 합니다.
+예를 들면 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -163,11 +163,11 @@ ms.locfileid: "107901487"
 
 ### <a name="packagereadmefile"></a>PackageReadmeFile
 
-***NuGet 5.10.0 preview 2**  /  **.net 5.0.3** 이상에서 지원 됨*
+***NuGet 5.10.0 preview 2**  /  **.net SDK 5.0.300** 이상에서 지원 됨*
 
 추가 정보 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageReadmeFile` 의 루트에 상대적인 패키지 경로를 지정 해야 합니다. 이 외에도 파일이 패키지에 포함 되어 있는지 확인 해야 합니다. 지원 되는 파일 형식에는 Markdown (*md*)만 포함 됩니다.
 
-예를 들어 다음과 같은 가치를 제공해야 합니다.
+예를 들면 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -200,7 +200,7 @@ MSBuild출력 어셈블리의 이동 위치를 제어 하기 위해 프로젝트
 
 ### <a name="project-to-project-references"></a>프로젝트 간 참조
 
-프로젝트 간 참조는 기본적으로 패키지 참조로 간주 됩니다 NuGet . 예를 들어 다음과 같은 가치를 제공해야 합니다.
+프로젝트 간 참조는 기본적으로 패키지 참조로 간주 됩니다 NuGet . 예를 들면 다음과 같습니다.
 
 ```xml
 <ProjectReference Include="..\UwpLibrary2\UwpLibrary2.csproj"/>
@@ -275,7 +275,7 @@ Compile 형식의 파일이 프로젝트 폴더의 외부에 있는 경우 이 �
 
 . 조직에서 허용 하는 라이선스 식 및 라이선스에 대 한 자세한 NuGet 내용은 [라이선스 메타 데이터](nuspec.md#license)를 참조 하세요.
 
-라이선스 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageLicenseFile` 의 루트에 상대적인 패키지 경로를 지정 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 합니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
+라이선스 파일을 압축 하는 경우 속성을 사용 하 여 패키지 `PackageLicenseFile` 의 루트에 상대적인 패키지 경로를 지정 합니다. 또한 파일이 패키지에 포함 되어 있는지 확인 합니다. 예를 들면 다음과 같습니다.
 
 ```xml
 <PropertyGroup>
@@ -429,7 +429,7 @@ nuspecdotnet.exe 또는 msbuild를 사용 하 여를 압축 하면 기본적으�
 
 추가 복원 설정은 MSBuild 프로젝트 파일의 속성에서 가져올 수 있습니다. 또한 값은 `-p:` 스위치를 사용하여 명령줄에서 설정할 수 있습니다(아래 예제 참조).
 
-| 속성 | 설명 |
+| 속성 | Description |
 |--------|--------|
 | `RestoreSources` | 세미콜론으로 구분된 패키지 원본의 목록입니다. |
 | `RestorePackagesPath` | 사용자 패키지 폴더에 대한 경로입니다. |
@@ -473,7 +473,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 restore는 `obj` 빌드 폴더에 다음 파일을 만듭니다.
 
-| 파일 | 설명 |
+| 파일 | Description |
 |--------|--------|
 | `project.assets.json` | 모든 패키지 참조의 종속성 그래프를 포함 합니다. |
 | `{projectName}.projectFileExtension.nuget.g.props` | MSBuild패키지에 포함 된 props에 대 한 참조 |
