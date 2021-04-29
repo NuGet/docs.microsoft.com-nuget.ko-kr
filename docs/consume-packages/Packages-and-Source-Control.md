@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9bae65573ca49c68d07250228c1923890e0f14ac
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: fa3ec6992002224c9fb56a53aee9096e6d2c6fbb
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775009"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901670"
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>소스 제어 시스템에서 NuGet 패키지 생략
 
@@ -63,7 +63,7 @@ project.assets.json
 선택한 파일에서 TFVC를 사용하여 소스 제어 통합을 사용하지 않으려면:
 
 1. (`.sln` 파일이 있는)솔루션 폴더에서 `.nuget`라는 폴더를 만듭니다.
-    - 팁: Windows의 Windows 탐색기에서 이 폴더를 만들려면 후행 점을 ‘포함한’ `.nuget.`이라는 이름을 사용합니다. 
+    - 팁: Windows의 Windows 탐색기에서 이 폴더를 만들려면 후행 점을  *포함한*`.nuget.`이라는 이름을 사용합니다.
 
 1. 해당 폴더에서 `NuGet.Config`라는 파일을 만들고 편집하기 위해 엽니다.
 
@@ -80,7 +80,7 @@ project.assets.json
 
 1. TFS 2010 이전 버전을 사용하는 경우 매핑 작업 영역에서 `packages` 폴더를 숨깁니다.
 
-1. [서버에 파일 추가](/vsts/tfvc/add-files-server?view=vsts#tfignore)에 설명된 대로 TFS 2012 이상 또는 Visual Studio Team Services를 사용하여 `.tfignore` 파일을 만듭니다. 해당 파일에서 리포지토리 수준의 `\packages` 폴더 및 다른 몇 가지 중간 파일에 대한 수정을 명시적으로 무시하려면 아래 내용을 포함합니다. (후행 점이 있는 `.tfignore.`라는 이름을 사용하여 Windows 탐색기에서 파일을 만들 수 있지만 먼저 "알려진 파일 확장명 숨기기" 옵션을 비활성화해야 합니다.)
+1. [서버에 파일 추가](/vsts/tfvc/add-files-server?view=vsts#tfignore&preserve-view=true)에 설명된 대로 TFS 2012 이상 또는 Visual Studio Team Services를 사용하여 `.tfignore` 파일을 만듭니다. 해당 파일에서 리포지토리 수준의 `\packages` 폴더 및 다른 몇 가지 중간 파일에 대한 수정을 명시적으로 무시하려면 아래 내용을 포함합니다. (후행 점이 있는 `.tfignore.`라는 이름을 사용하여 Windows 탐색기에서 파일을 만들 수 있지만 먼저 "알려진 파일 확장명 숨기기" 옵션을 비활성화해야 합니다.)
 
    ```cli
    # Ignore NuGet Packages

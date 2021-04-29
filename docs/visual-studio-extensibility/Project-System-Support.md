@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: reference
-ms.openlocfilehash: 7af330f88b47352666933598719d9c8f8cb66a78
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 9f1ddfd20835cc3a0f9af40a8b4e712c218b31bc
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98779413"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901410"
 ---
 # <a name="nuget-support-for-the-visual-studio-project-system"></a>Visual Studio 프로젝트 시스템에 대한 NuGet 지원
 
@@ -25,7 +25,7 @@ NuGet과 통합하려면 프로젝트 시스템은 이 항목에서 설명된 �
 
 NuGet 클라이언트는 다음 표에 설명된 대로 [프로젝트의 기능](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md)에 따라 프로젝트 형식과 호환 가능한 패키지를 결정합니다.
 
-| 기능 | Description |
+| 기능 | 설명 |
 | --- | --- |
 | AssemblyReferences | 프로젝트가 어셈블리 참조를 지원함을 나타냅니다(WinRTReferences와 구별). |
 | DeclaredSourceItems | 프로젝트가 프로젝트 자체에서 소스 항목을 선언하는 (DNX가 아닌) 일반적인 MSBuild 프로젝트임을 나타냅니다. |
@@ -113,6 +113,6 @@ case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:
 
 ## <a name="dte-support"></a>DTE 지원
 
-NuGet에서는 프로젝트 시스템을 최상위 Visual Studio 자동화 인터페이스인 [DTE](/dotnet/api/envdte.dte?view=visualstudiosdk-2017)로 호출하여 참조, 콘텐츠 항목 및 MSBuild 가져오기를 추가하도록 합니다. DTE는 구현할 수 있는 COM 인터페이스의 집합입니다.
+NuGet에서는 프로젝트 시스템을 최상위 Visual Studio 자동화 인터페이스인 [DTE](/dotnet/api/envdte.dte)로 호출하여 참조, 콘텐츠 항목 및 MSBuild 가져오기를 추가하도록 합니다. DTE는 구현할 수 있는 COM 인터페이스의 집합입니다.
 
 프로젝트 형식이 CPS에 기반하는 경우 DTE는 자동으로 구현됩니다.

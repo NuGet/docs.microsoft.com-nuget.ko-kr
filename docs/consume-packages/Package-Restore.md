@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: e5dfd9f8dd0439751ddd3863cad03f3b463e1487
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 6cdc826c85f233c7108a53ad244aa8c47df0be67
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859241"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901839"
 ---
 # <a name="restore-packages-using-package-restore"></a>패키지 복원을 사용하여 패키지 복원
 
@@ -181,7 +181,7 @@ msbuild -restore
 
 ## <a name="restore-using-azure-pipelines"></a>Azure Pipelines를 사용하여 복원
 
-Azure Pipelines에서 빌드 정의를 만들 때 빌드 작업 전에 NuGet [복원](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) 또는 .NET Core [복원](/azure/devops/pipelines/tasks/build/dotnet-core-cli?view=azure-devops) 작업을 정의에 포함합니다. 몇 가지 빌드 템플릿에는 기본적으로 복원 작업이 포함되어 있습니다.
+Azure Pipelines에서 빌드 정의를 만들 때 빌드 작업 전에 NuGet [복원](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) 또는 .NET Core [복원](/azure/devops/pipelines/tasks/build/dotnet-core-cli) 작업을 정의에 포함합니다. 몇 가지 빌드 템플릿에는 기본적으로 복원 작업이 포함되어 있습니다.
 
 ## <a name="restore-using-azure-devops-server"></a>Azure DevOps Server를 사용하여 복원
 

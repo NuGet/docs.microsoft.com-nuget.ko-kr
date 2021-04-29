@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 02/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: bb624ec6987dd5c6ee38d5bb7e01200487dd4bed
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e76fefaf4d3c86aa15cf279090c0adb8ed779aab
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231742"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901514"
 ---
 # <a name="consuming-packages-from-authenticated-feeds"></a>인증된 피드의 패키지 사용
 
@@ -61,7 +61,7 @@ Visual Studio에는 Azure DevOps를 지원하기 위해 기본 제공되는 자�
 
 #### <a name="available-credential-providers-for-nugetexe"></a>nuget.exe에 사용 가능한 자격 증명 공급자
 
-* [Azure DevOps V2 자격 증명 공급자](/azure/devops/artifacts/nuget/nuget-exe?view=azure-devops#add-a-feed-to-nuget-482-or-later) 또는 [Azure Artifacts 자격 증명 공급자](https://github.com/microsoft/artifacts-credprovider)
+* [Azure DevOps V2 자격 증명 공급자](/azure/devops/artifacts/nuget/nuget-exe#add-a-feed-to-nuget-482-or-later) 또는 [Azure Artifacts 자격 증명 공급자](https://github.com/microsoft/artifacts-credprovider)
 
 Visual Studio 2017 버전 15.9 이상에서는 Azure DevOps 자격 증명 공급자가 Visual Studio와 함께 제공됩니다.
 `nuget.exe`가 해당 Visual Studio 도구 세트의 MSBuild를 사용하는 경우 플러그 인이 자동으로 검색됩니다.
@@ -102,4 +102,4 @@ Visual Studio 2019 업데이트 9에서 NuGet은 모든 클라이언트에서 �
 
 * [Azure Artifacts 자격 증명 공급자](https://github.com/microsoft/artifacts-credprovider)
 
-Visual Studio 2017 업데이트 9 이상에서는 Azure DevOps 자격 증명 공급자가 Visual Studio와 함께 제공됩니다. 추가 단계는 필요하지 않습니다.
+Visual Studio 2017 업데이트 9 이상에서는 Azure DevOps 자격 증명 공급자가 Visual Studio와 함께 제공됩니다. 추가 단계가 필요하지 않습니다.
