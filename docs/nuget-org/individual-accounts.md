@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 7951b3db0cdcaee0a1eb955a5bf6fedce24c79c9
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 5224a4f5be519e1d72285562c1611d047582f7de
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237616"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901566"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>NuGet.org의 개별 계정
 
@@ -54,7 +54,7 @@ NuGet.org 계정을 만들려면 개인 MSA(Microsoft 계정) 또는 AAD(Azure A
 
    ![2FA 사용](media/nuget-org-register-2fa.png)
 
-   다음에 nuget.org  에 로그인 할 때 추가 자격 증명을 묻는 메시지가 표시 됩니다.
+   다음에 nuget.org 에 로그인 할 때 추가 자격 증명을 묻는 메시지가 표시 됩니다.
 
 2. 지금 인증을 완료하려면 로그아웃했다가 다시 로그인합니다.
 
@@ -62,11 +62,11 @@ NuGet.org 계정을 만들려면 개인 MSA(Microsoft 계정) 또는 AAD(Azure A
 
    Microsoft 계정에 이미 연결되어 있는 전화 번호 또는 메일을 확인합니다. 계정의 새 전화 번호 또는 메일을 입력해야 할 수 있습니다. 필요한 경우 지침에 따라 필요한 정보를 입력하고 **다음** 을 클릭합니다.
 
-   ![2FA 사용](media/nuget-org-sign-in-2fa.png)
+   ![2FA 사용 및 전화 입력](media/nuget-org-sign-in-2fa.png)
 
 4. 디바이스 또는 메일 계정을 확인하고 방금 받은 코드를 입력합니다.
 
-   ![2FA 사용](media/nuget-org-enter-code-2fa.png)
+   ![2FA 사용 및 코드 입력](media/nuget-org-enter-code-2fa.png)
 
 5. 추가 지침에 따라 2단계 인증을 완료합니다.
 

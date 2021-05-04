@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 64b28c29ae3b533bde7c8f41dd38a4ab0a5afef7
-ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
+ms.openlocfilehash: c0622520a325000d5fcb8fb884cb509ee4b641f4
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550377"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901904"
 ---
 # <a name="signing-nuget-packages"></a>NuGet 패키지 서명
 
@@ -19,9 +19,9 @@ ms.locfileid: "94550377"
 
 ## <a name="get-a-code-signing-certificate"></a>코드 서명 인증서 가져오기
 
-유효한 인증서는 [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 등의 공용 인증서 기관에서 얻을 수 있으며, Windows에서 신뢰할 수 있는 인증 기관의 전체 목록은 [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list)에서 확인할 수 있습니다.
+[DigiCert](https://www.digicert.com/code-signing/), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 등과 같은 공용 인증 기관에서 유효한 인증서를 가져올 수 있습니다. Windows에서 신뢰할 수 있는 인증 기관의 전체 목록은 [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list)에서 가져올 수 있습니다.
 
-테스트 목적으로 자체 발급된 인증서를 사용할 수 있습니다. 그러나 자체 발급된 인증서를 사용하여 서명된 패키지는 NuGet.org에서 수락되지 않습니다. [테스트 인증서 만들기](#create-a-test-certificate)에 대해 자세히 알아보세요.
+테스트 목적으로 자체 발급된 인증서를 사용할 수 있습니다. 그러나 자체 발급된 인증서를 사용하여 서명된 패키지는 NuGet.org에서 사용할 수 없습니다. [테스트 인증서 만들기](#create-a-test-certificate)에 대해 자세히 알아보세요.
 
 ## <a name="export-the-certificate-file"></a>인증서 파일 가져오기
 
@@ -59,7 +59,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 1. 이전에 내보낸 인증서 파일을 찾아서 선택합니다.
   ![등록된 인증서](../reference/media/registered-certs.png)
 
-**참고:**
+**참고**
 * 한 명의 사용자가 여러 인증서를 제출하고 여러 사용자가 동일한 인증서를 등록할 수 있습니다.
 * 한 명의 사용자에게 하나의 인증서가 등록되면 이후 모든 패키지 제출 시 이러한 인증서 중 하나로 **반드시** 서명해야 합니다. [NuGet.org에서 패키지에 대한 서명 요구 사항 관리](#manage-signing-requirements-for-your-package-on-nugetorg)를 참조하세요.
 * 사용자는 계정에서 등록된 인증서를 제거할 수도 있습니다. 인증서가 제거되면 해당 인증서로 서명한 새 패키지는 제출에 실패합니다. 기존 패키지는 영향을 받지 않습니다.
@@ -90,7 +90,7 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 > NuGet.org는 자체 발급된 인증서로 서명된 패키지를 수락하지 않습니다.
 
 ## <a name="manage-signing-requirements-for-your-package-on-nugetorg"></a>NuGet.org에서 패키지에 대한 서명 요구 사항 관리
-1. NuGet.org로 [로그인](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)합니다.
+1. NuGet.org레 [로그인](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)합니다.
 
 1. `Manage Packages` 
    ![패키지 서명자 구성](../reference/media/configure-package-signers.png)으로 이동

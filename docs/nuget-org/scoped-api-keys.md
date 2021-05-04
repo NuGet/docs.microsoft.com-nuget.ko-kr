@@ -5,18 +5,18 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 12d12d5294a474c4d3e4f5d3cad468bb515d21d5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: a3d2504528249f3545e2eb5d9bce7713029638db
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "67426948"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901592"
 ---
 # <a name="scoped-api-keys"></a>범위가 지정된 API 키
 
 NuGet을 패키지 배포를 위한 보다 안전한 환경으로 만들기 위해 범위를 추가하여 API 키를 제어할 수 있습니다.
 
-API 키에 범위를 제공하는 기능을 통해 API를 보다 잘 제어할 수 있습니다. 다음을 수행할 수 있습니다.
+API 키에 범위를 제공하는 기능을 통해 API를 보다 잘 제어할 수 있습니다. 다음 작업을 수행할 수 있습니다.
 
 - 만료 기간이 다양한 여러 패키지에 사용할 수 있는 범위가 지정된 API 키를 만듭니다.
 - API 키를 안전하게 얻습니다.
@@ -49,7 +49,7 @@ API 키에 범위를 제공하는 기능을 통해 API를 보다 잘 제어할 �
 
 여러 패키지에서 작업하고 관리할 패키지 목록이 많은 경우 globbing 패턴을 사용하여 여러 패키지를 함께 선택할 수 있습니다. 예를 들어 ID가 `Fabrikam.Service`로 시작하는 모든 패키지의 키에 특정 범위를 부여하려는 경우 **Glob 패턴** 텍스트 상자에 `fabrikam.service.*`를 지정하여 이 작업을 수행할 수 있습니다.
 
-![API 키 만들기](media/scoped-api-keys-glob-pattern.png)
+![API 키 만들기 - 2](media/scoped-api-keys-glob-pattern.png)
 
 GLOB 패턴을 사용하여 API 키 사용 권한을 결정하는 것은 GLOB 패턴과 일치하는 새 패키지에도 적용됩니다. 예를 들어 `Fabrikam.Service.Framework`라는 새 패키지를 푸시하려고 하면 패키지가 GLOB 패턴 `fabrikam.service.*`와 일치하므로 이전에 만든 키를 사용하여 이 작업을 수행할 수 있습니다.
 
@@ -57,23 +57,23 @@ GLOB 패턴을 사용하여 API 키 사용 권한을 결정하는 것은 GLOB �
 
 보안을 위해 새로 만든 키는 화면에 표시되지 않으며 **복사** 단추를 통해서만 사용할 수 있습니다. 마찬가지로 페이지를 새로 고친 후에는 키에 액세스할 수 없습니다.
 
-![API 키 만들기](media/scoped-api-keys-obtain-keys.png)
+![API 키 만들기 - 3](media/scoped-api-keys-obtain-keys.png)
 
 ## <a name="edit-existing-api-keys"></a>기존 API 키 편집
 
 키 자체를 변경하지 않고 키 사용 권한 및 범위를 업데이트할 수도 있습니다. 단일 패키지에 대해 특정 범위의 키가 있는 경우 하나 이상의 다른 패키지에 동일한 범위를 적용하도록 선택할 수 있습니다.
 
-![API 키 만들기](media/scoped-api-keys-edit.png)
+![API 키 만들기 - 4](media/scoped-api-keys-edit.png)
 
 ## <a name="refresh-or-delete-existing-api-keys"></a>기존 API 키 새로 고침 또는 삭제
 
 계정 소유자는 키를 새로 고치도록 선택할 수 있습니다. 이 경우 사용 권한(패키지), 범위 및 만료는 그대로 유지되지만, 새 키가 발급되어 이전 키를 사용할 수 없게 됩니다. 이는 부실한 키를 관리하거나 API 키 누출 가능성이 있는 경우에 유용합니다.
 
-![API 키 만들기](media/scoped-api-keys-refresh.png)
+![API 키 만들기 - 5](media/scoped-api-keys-refresh.png)
 
 이러한 키가 더 이상 필요하지 않은 경우 삭제할 수도 있습니다. 키를 삭제하면 키가 제거되어 사용할 수 없게 됩니다.
 
-## <a name="faqs"></a>FAQ
+## <a name="faqs"></a>FAQ(질문과 대답)
 
 ### <a name="what-happens-to-my-old-legacy-api-key"></a>내 이전(레거시) API 키는 어떻게 되나요?
 

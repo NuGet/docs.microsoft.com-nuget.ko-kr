@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 5be7a4d4c31df9f2f4bda7bdb1ff9f4887108578
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 05a16d8bf609d727aba3ddbc42959a3deb97b24b
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775994"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901917"
 ---
 # <a name="publishing-packages"></a>패키지 게시
 
@@ -38,11 +38,9 @@ nuget.org의 경우 계정을 Microsoft 계정으로 로그인해야 하며, 이
 
 1. nuget.org는 패키지 이름을 사용할 수 있는 경우 알려 줍니다. 그렇지 않으면 프로젝트에서 패키지 식별자를 변경하고 다시 빌드한 다음, 업로드를 다시 시도합니다.
 
-1. 패키지 이름을 사용할 수 있는 경우 nuget.org는 패키지 매니페스트에서 메타데이터를 검토할 수 있는 **확인** 섹션을 엽니다. 메타데이터를 변경하려면 프로젝트(프로젝트 파일 또는 `.nuspec` 파일)을 편집하고, 다시 빌드하고, 패키지를 다시 만들고, 다시 업로드합니다.
+1. 패키지 이름을 사용할 수 있는 경우 nuget.org는 패키지 매니페스트에서 메타데이터를 검토할 수 있는 **확인** 섹션을 엽니다. 패키지에 [추가 정보 파일](/docs/nuget-org/package-readme-on-nuget-org.md)을 포함하는 경우에는 미리 보기를 확인하여 모든 콘텐츠가 제대로 렌더링되는지 확인합니다. 메타데이터를 변경하려면 프로젝트(프로젝트 파일 또는 `.nuspec` 파일)을 편집하고, 다시 빌드하고, 패키지를 다시 만들고, 다시 업로드합니다.
 
-1. **설명서 가져오기** 에서 Markdown을 붙여넣거나, URL로 문서를 가리키거나, 설명서 파일을 업로드할 수 있습니다.
-
-1. 모든 정보가 준비되면 **제출** 단추를 선택합니다.
+2. 모든 정보가 준비되면 **제출** 단추를 선택합니다.
 
 ### <a name="command-line"></a>명령줄
 

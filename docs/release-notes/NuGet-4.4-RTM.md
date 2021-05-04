@@ -1,17 +1,17 @@
 ---
 title: NuGet 4.4 RTM 릴리스 정보
-description: NuGet 4.3 RTM에 대한 릴리스 정보(알려진 문제, 버그 수정, 추가된 기능 및 DCR 포함).
+description: NuGet 4.4 RTM에 대한 릴리스 정보(알려진 문제, 버그 수정, 추가된 기능 및 DCR 포함).
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 970a920a401b8a74c04d84cbad9933c54e3cd19e
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 980afffcd4202e019ffa87de5dccf947300a9c13
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98776290"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901709"
 ---
 # <a name="nuget-44-release-notes"></a>NuGet 4.4 릴리스 정보
 
@@ -35,7 +35,7 @@ ms.locfileid: "98776290"
 
 ### <a name="while-using-package-manager-console-enter-key-may-not-work"></a>패키지 관리자 콘솔을 사용하는 동안 'Enter' 키가 작동하지 않을 수 있음
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 경우에 따라 패키지 관리자 콘솔에서 Enter 키가 작동하지 않습니다. 이런 경우 수정 진행 상황을 확인하고 재현 단계에 대해 도움이 되는 추가 정보를 제공하세요. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
 
@@ -45,7 +45,7 @@ Visual Studio를 다시 시작하고 솔루션을 열기 전에 PMC를 엽니다
 
 ### <a name="you-are-unable-to-view-add-or-update-dotnetclitools-using-nuget-package-manager"></a>NuGet 패키지 관리자를 사용하여 DotNetCLITools를 보거나 추가 또는 업데이트할 수 없음
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 않으며 허용하지도 않습니다. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
@@ -55,7 +55,7 @@ NuGet 패키지 관리자는 DotNetCLITools 추가/업데이트를 표시하지 
 
 ### <a name="retargeting-target-framework-version-may-lead-to-incomplete-intellisense"></a>대상 프레임워크 버전의 대상을 변경하면 불완전한 IntelliSense가 발생할 수 있음
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불완전한 IntelliSense가 발생할 수 있습니다. 이 문제는 PackageReferences를 패키지 관리자 형식으로 사용하는 경우에 발생합니다. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
@@ -65,7 +65,7 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 ### <a name="a-package-in-a-net-core-project-that-contains-an-assembly-with-an-invalid-signature-can-trigger-an-infinite-restore-loop"></a>잘못된 시그니처와 함께 어셈블리가 포함된 .NET Core 프로젝트의 패키지는 무한 복원 루프를 트리거할 수 있음
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 경우에 따라 잘못된 시그니처와 함께 어셈블리가 포함된 패키지를 사용하거나 패키지 버전이 'DateTime' 표시기로 설정된 경우 패키지 자동 복원이 무한 루프로 실행됩니다(dotnet/project-system#1457).
 
@@ -175,9 +175,9 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 - [경고 및 오류] NoWarn이 P2P 참조를 통해 과도하게 이동하지 않습니다. - [#5501](https://github.com/NuGet/Home/issues/5501)
 
-- 경량 솔루션 로드: PM UI, PMC 및 IV에 대한 공통 핵심 - - [#5057](https://github.com/NuGet/Home/issues/5057)
+- 경량 솔루션 로드: PM UI, PMC 및 IV용 공통 핵심 기능 - [#5057](https://github.com/NuGet/Home/issues/5057)
 
-- 경량 솔루션 로드: 지원 - PMC - [#5053](https://github.com/NuGet/Home/issues/5053)
+- 경량 솔루션 로드: PMC 지원 - [#5053](https://github.com/NuGet/Home/issues/5053)
 
 - Visual Studio에서 트리거하는 사전 복원 MSBuild 대상에 대한 지원을 추가합니다. - [#4781](https://github.com/NuGet/Home/issues/4781)
 
@@ -193,7 +193,7 @@ Visual Studio에서 대상 프레임워크 버전의 대상을 변경하면 불�
 
 - NuGet 경고 및 오류 관련 문서에 대한 업데이트 - [#5857](https://github.com/NuGet/Home/issues/5857)
 
-## <a name="links-to-github-issues-fixed-in-44-rtm"></a>4\.4 RTM에서 수정된 GitHub 문제에 대한 링크
+## <a name="links-to-github-issues-fixed-in-44-rtm"></a>4.4 RTM에서 수정된 GitHub 문제에 대한 링크
 
 [문제 목록 1](https://github.com/NuGet/Home/issues?q=is:issue+is:closed+milestone:"4.4")
 
