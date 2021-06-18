@@ -5,12 +5,12 @@ author: erdembayar
 ms.author: eryondon
 ms.date: 3/11/2021
 ms.topic: conceptual
-ms.openlocfilehash: 50fd277a4f1f39b4a68a89cd07af4e21f0d3d831
-ms.sourcegitcommit: 1462f9f42ae36b3c990762ad4f02e38ab799ad09
+ms.openlocfilehash: 1152af99cf1421918a42d0d1faa33f1452f54a8f
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107508815"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323884"
 ---
 # <a name="nuget-59-release-notes"></a>NuGet 5.9 릴리스 정보
 
@@ -186,42 +186,52 @@ NuGet 배포 차량:
 
 * V2FeedPackageInfo- [#10480](https://github.com/NuGet/Home/issues/10480) 의 복사-붙여넣기 오류
 
-* NuGetPackageFileService fix-삭제 가능 memorystream에 using 사용- [#10503](https://github.com/NuGet/Home/issues/10503)
+* NuGetPackageFileService 수정 - 삭제 가능한 메모리 스트림에 using 사용 - [#10503](https://github.com/NuGet/Home/issues/10503)
 
-**[이 릴리스에서 수정 된 모든 문제 목록-5.9.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f6be8c10485c0236b7ef889)**
+**[이 릴리스에서 해결된 모든 문제 목록 - 5.9.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f6be8c10485c0236b7ef889)**
 
-**[이 릴리스의 커밋 목록-5.9.0](https://github.com/NuGet/NuGet.Client/compare/5.8.1.7021...5.9.0.7134)**
+**[이 릴리스의 커밋 목록 - 5.9.0](https://github.com/NuGet/NuGet.Client/compare/5.8.1.7021...5.9.0.7134)**
 
 ### <a name="community-contributions"></a>커뮤니티 기여
 
-이 NuGet 릴리스를 위해 도움을 주는 모든 참가자에 게 감사 합니다.
+이 NuGet 릴리스를 만드는 데 도움을 주신 모든 기여자에게 감사드립니다.
 
-|대상|Pr|문제|
+|대상|Prs|문제|
 |----|----|----|
-[omajid](https://github.com/omajid) | [3865](https://github.com/NuGet/NuGet.Client/pull/3865) | V2FeedPackageInfo- [#10480](https://github.com/NuGet/Home/issues/10480) 의 복사-붙여넣기 오류
-[krystianc](https://github.com/marcin-krystianc) | [3812](https://github.com/NuGet/NuGet.Client/pull/3812) | PrivateAssets = "All" 특성- [#10397](https://github.com/NuGet/Home/issues/10397) 를 사용 하 여 패키지를 참조 하는 경우에 대 한 테스트가 없습니다.
-[krystianc](https://github.com/marcin-krystianc) | [3739](https://github.com/NuGet/NuGet.Client/pull/3739) | 여러 패키지 푸시에 대 한 지원 추가- [#4393](https://github.com/NuGet/Home/issues/4393)
-[krystianc](https://github.com/marcin-krystianc) | [3723](https://github.com/NuGet/NuGet.Client/pull/3723) | 어셈블리 서명을 사용 하지 않도록 설정 하면 NuGet 라이브러리 빌드가 중단 됨- [#10173](https://github.com/NuGet/Home/issues/10173)
-[kant2002](https://github.com/kant2002) | [3807](https://github.com/NuGet/NuGet.Client/pull/3807) | 기여 하는 문서 정리- [#10399](https://github.com/NuGet/Home/issues/10399)
-[PathogenDavid](https://github.com/PathogenDavid) | [3754](https://github.com/NuGet/NuGet.Client/pull/3754) | 라이선스 및 아이콘 파일 존재 검사는 항상 대/소문자를 구분 하는 비교를 사용 해야 합니다. [#9817](https://github.com/NuGet/Home/issues/9817)
-[campersau](https://github.com/campersau) | [3677](https://github.com/NuGet/NuGet.Client/pull/3677) | [#10037](https://github.com/NuGet/Home/issues/10037) DecodePixelWidth를 사용 하는 경우 BitmapCreateOptions. IgnoreColorProfile를 사용 하 여 WPF 문제를 해결 합니다.
-[bjorkstromm](https://github.com/bjorkstromm) | [3697](https://github.com/NuGet/NuGet.Client/pull/3697) | NuGet에서 Windows SDK 10 링크가 손상 되었습니다. 클라이언트 기여 가이드- [#10099](https://github.com/NuGet/Home/issues/10099)
-[bjorkstromm](https://github.com/bjorkstromm) | [3696](https://github.com/NuGet/NuGet.Client/pull/3696) | NuGet에서 상대 링크가 손상 되었습니다. 클라이언트 디버깅 가이드- [#10100](https://github.com/NuGet/Home/issues/10100)
-[Nirmal4G](https://github.com/Nirmal4G) | [3637](https://github.com/NuGet/NuGet.Client/pull/3637) | 테스트 설비 및 관련 코드 개선- [#9996](https://github.com/NuGet/Home/issues/9996)
-[rolfbjarne](https://github.com/rolfbjarne) | [3743](https://github.com/NuGet/NuGet.Client/pull/3743) | 리디렉션된 경우 macOS에서 출력이 80 문자로 래핑됩니다 [#10198](https://github.com/NuGet/Home/issues/10198)
-[xen2](https://github.com/xen2) | [2861](https://github.com/NuGet/NuGet.Client/pull/2861) | NuGet. PackageManagement를 .NET Standard 패키지로 사용할 수 있도록 설정- [#6150](https://github.com/NuGet/Home/issues/6150)
-[Anipik](https://github.com/Anipik) | [3810](https://github.com/NuGet/NuGet.Client/pull/3810) | Pack 작업 중에 특정 tfm에 대 한 빌드 출력을 제외 하는 새 msbuild 속성을 소개 합니다.- [#10396](https://github.com/NuGet/Home/issues/10396)
+[omajid](https://github.com/omajid) | [3865](https://github.com/NuGet/NuGet.Client/pull/3865) | V2FeedPackageInfo의 복사-붙여넣기 오류 - [#10480](https://github.com/NuGet/Home/issues/10480)
+[일치어 krystianc](https://github.com/marcin-krystianc) | [3812](https://github.com/NuGet/NuGet.Client/pull/3812) | 패키지를 PrivateAssets="All" 특성으로 참조하는 경우 테스트 누락 - [#10397](https://github.com/NuGet/Home/issues/10397)
+[일치어 krystianc](https://github.com/marcin-krystianc) | [3739](https://github.com/NuGet/NuGet.Client/pull/3739) | 여러 패키지 푸시에 대한 지원 추가 - [#4393](https://github.com/NuGet/Home/issues/4393)
+[일치어 krystianc](https://github.com/marcin-krystianc) | [3723](https://github.com/NuGet/NuGet.Client/pull/3723) | 어셈블리 서명을 사용하지 않도록 설정하면 NuGet 라이브러리 빌드가 끊어짐 - [#10173](https://github.com/NuGet/Home/issues/10173)
+[kant2002](https://github.com/kant2002) | [3807](https://github.com/NuGet/NuGet.Client/pull/3807) | 기여 문서 정리 - [#10399](https://github.com/NuGet/Home/issues/10399)
+[PathogenDavid](https://github.com/PathogenDavid) | [3754](https://github.com/NuGet/NuGet.Client/pull/3754) | 라이선스 및 아이콘 파일 존재 확인은 항상 대/소문자 구분 비교를 사용해야 [합니다. #9817](https://github.com/NuGet/Home/issues/9817)
+[campersau](https://github.com/campersau) | [3677](https://github.com/NuGet/NuGet.Client/pull/3677) | BitmapCreateOptions.IgnoreColorProfile을 사용하여 DecodePixelWidth를 사용할 때 WPF 문제를 해결합니다. - [#10037](https://github.com/NuGet/Home/issues/10037)
+[bjorkrkm](https://github.com/bjorkstromm) | [3697](https://github.com/NuGet/NuGet.Client/pull/3697) | Windows SDK 10 링크가 NuGet.Client 기여 가이드에서 끊어짐 - [#10099](https://github.com/NuGet/Home/issues/10099)
+[bjorkrkm](https://github.com/bjorkstromm) | [3696](https://github.com/NuGet/NuGet.Client/pull/3696) | NuGet.Client 디버깅 가이드에서 상대 링크가 끊어짐 - [#10100](https://github.com/NuGet/Home/issues/10100)
+[Nirmal4G](https://github.com/Nirmal4G) | [3637](https://github.com/NuGet/NuGet.Client/pull/3637) | 테스트 픽스처 및 관련 코드 개선 - [#9996](https://github.com/NuGet/Home/issues/9996)
+[rolfbjarne](https://github.com/rolfbjarne) | [3743](https://github.com/NuGet/NuGet.Client/pull/3743) | 출력은 리디렉션될 때 macOS에서 80자로 래핑됩니다. - [#10198](https://github.com/NuGet/Home/issues/10198)
+[xen2](https://github.com/xen2) | [2861](https://github.com/NuGet/NuGet.Client/pull/2861) | NuGet.PackageManagement를 .NET Standard 패키지로 사용할 수 있도록 만들기 - [#6150](https://github.com/NuGet/Home/issues/6150)
+[Anipik](https://github.com/Anipik) | [3810](https://github.com/NuGet/NuGet.Client/pull/3810) | pack 작업 중 특정 tfm에 대한 빌드 출력을 제외하는 새 msbuild 속성 소개 - [#10396](https://github.com/NuGet/Home/issues/10396)
 
-## <a name="summary-whats-new-in-591"></a>요약: 5.9.1의 새로운 기능
+## <a name="summary-whats-new-in-591"></a>요약: 5.9.1의 새로운 내용
 
-* "dotnet nuget remove source nuget.org"는 처음으로 작동 하지 않습니다 [#10745](https://github.com/NuGet/Home/issues/10745)
-* Linux에서는 기본 유효성 검사를 사용 하지 않도록 설정 하 고 Windows에서는 기본적으로 사용 하도록 설정 [#10713](https://github.com/NuGet/Home/issues/10713)
+* "dotnet nuget remove source nuget.org"가 처음으로 작동하지 않습니다. [#10745](https://github.com/NuGet/Home/issues/10745)
+* Linux에서 기본 유효성 검사를 사용하지 않도록 설정하지만 Windows에서 기본적으로 사용하도록 설정 - [#10713](https://github.com/NuGet/Home/issues/10713)
 
-**[이 릴리스에서 수정 된 모든 문제 목록-5.9.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=6075f42efd068017639b4036)**
+**[이 릴리스에서 해결된 모든 문제 목록 - 5.9.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=6075f42efd068017639b4036)**
 
-**[이 릴리스의 커밋 목록-5.9.1](https://github.com/NuGet/NuGet.Client/compare/5.9.0.7134...5.9.1.8)**
+**[이 릴리스의 커밋 목록 - 5.9.1](https://github.com/NuGet/NuGet.Client/compare/5.9.0.7134...5.9.1.8)**
 
-## <a name="feedback-welcome"></a>사용자 의견 환영
+## <a name="known-issues"></a>알려진 문제
 
-Microsoft는 사용자의 의견을 소중하게 생각합니다.  이 릴리스에 문제가 있는 경우 [GitHub 문제](https://github.com/NuGet/Home/issues) 및 [Visual Studio 개발자 커뮤니티](https://developercommunity.visualstudio.com/) 에서 기존 문제를 확인 하세요.  NuGet 내의 새로운 문제에 대 한 자세한 내용은 [GitHub 문제](https://github.com/NuGet/Home/issues/new)를 보고 하세요.
-일반적인 NuGet 환경 문제에 대 한 자세한 내용은 **문제 보고 > 도움말** 에서 즐겨 사용 하는 IDE의 [문제 보고](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) 옵션을 통해 알려주세요.
+### <a name="nuget-59-pack-raises-null-reference-exception---10685"></a>nuget 5.9 pack에서 `Null Reference` 예외가 발생합니다. - [#10685](https://github.com/NuGet/Home/issues/10685)
+
+#### <a name="issue"></a>문제
+파일을 사용할 때 를 대상으로 하는 프로젝트에 대해 를 `pack` `.nuspec` `NuGet 5.9` `null reference` 추가하지 않고 [명시적 어셈블리 참조를](../reference/nuspec.md#explicit-assembly-references) 지정하면 `reference groups` 버전에서 예외가 `multiple frameworks` 발생합니다.
+
+#### <a name="workaround"></a>해결 방법
+`nuget.exe` [5.8.1](https://dist.nuget.org/win-x86-commandline/v5.8.1/nuget.exe) 또는 이외의 최신 버전을 `5.9.1` 사용합니다.
+
+## <a name="feedback-welcome"></a>피드백 환영
+
+Microsoft는 사용자의 의견을 소중하게 생각합니다.  이 릴리스에 문제가 있는 경우 [GitHub 문제](https://github.com/NuGet/Home/issues) 및 기존 문제에 대한 [Visual Studio Developer Community](https://developercommunity.visualstudio.com/) 확인하세요.  NuGet 내의 새로운 문제는 [GitHub 문제](https://github.com/NuGet/Home/issues/new)를 보고하세요.
+일반적인 NuGet 환경 문제의 경우 도움말 > [문제 보고에서](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) 즐겨 찾는 IDE에 있는 **문제 보고** 옵션을 통해 알려주세요.
