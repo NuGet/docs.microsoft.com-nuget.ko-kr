@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5224a4f5be519e1d72285562c1611d047582f7de
-ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
+ms.openlocfilehash: d032b69f6eb4cbd3687ca60190c15aed9b7a4d79
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2021
-ms.locfileid: "107901566"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323897"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>NuGet.org의 개별 계정
 
@@ -75,4 +75,4 @@ NuGet.org 계정을 만들려면 개인 MSA(Microsoft 계정) 또는 AAD(Azure A
 
 ## <a name="delete-a-nugetorg-account"></a>NuGet.org 계정 삭제
 
-NuGet.org 계정 삭제처럼 추가 계정 관련 작업에 대해서는 [NuGet.org 계정 관리](nuget-org-faq.md#nugetorg-account-management)를 참조하세요.
+NuGet.org 계정 삭제처럼 추가 계정 관련 작업에 대해서는 [NuGet.org 계정 관리](/nuget/nuget-org/nuget-org-faq#nuget.org-account-management)를 참조하세요.

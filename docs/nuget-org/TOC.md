@@ -17,4 +17,4 @@
 ## [NuGet API](../api/overview.md)
 ## [licenses.nuget.org](licenses.nuget.org.md)
 # 리소스
-## [FAQ](nuget-org-faq.md)
+## [FAQ](nuget-org-faq.yml)

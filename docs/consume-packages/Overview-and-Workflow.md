@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 92968236262f891106ab2d4cd3ba399f1644400b
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: d1d6df3bcc36d8a78fcee97099b301c9ffc440d9
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859215"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323637"
 ---
 # <a name="package-consumption-workflow"></a>패키지 사용 워크플로
 
@@ -39,7 +39,7 @@ NuGet은 설치된 각 패키지의 ID와 버전 번호를 기억하여 프로�
 
 때로는 이미 프로젝트에 포함되어 있는 패키지를 다시 설치해야 하며, 종속성을 다시 설치할 수도 있습니다. 이 작업은 `nuget reinstall` 명령이나 NuGet 패키지 관리자 콘솔을 사용하여 쉽게 수행할 수 있습니다. 자세한 내용은 [패키지 다시 설치 및 업데이트](../consume-packages/reinstalling-and-updating-packages.md)를 참조하세요.
 
-마지막으로 NuGet의 동작은 `Nuget.Config` 파일로 구동됩니다. [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)에서 설명한 대로 여러 파일을 사용하여 서로 다른 수준의 특정 설정을 중앙 집중화할 수 있습니다.
+마지막으로 NuGet의 동작은 `NuGet.Config` 파일로 구동됩니다. [NuGet 동작 구성](../consume-packages/configuring-nuget-behavior.md)에서 설명한 대로 여러 파일을 사용하여 서로 다른 수준의 특정 설정을 중앙 집중화할 수 있습니다.
 
 ## <a name="ways-to-install-a-nuget-package"></a>NuGet 패키지를 설치하는 방법
 

@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: f1c7c4ce2872e18b1ed35ccbf3355a6192ab4a9c
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 0bd14104695a15d2e4c65a13b271143809c4ba8a
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775030"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323624"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>패키지 복원 오류 문제 해결
 
@@ -31,7 +31,7 @@ Visual Studio를 사용하는 경우 먼저 다음과 같이 패키지 복원을
 
 ![도구/옵션에서 NuGet 패키지 복원 활성화](../consume-packages/media/restore-01-autorestoreoptions.png)
 
-이러한 설정은 `NuGet.config` 파일에서도 변경할 수 있습니다. [동의](#consent) 섹션을 참조하세요. 프로젝트가 MSBuild 통합 패키지 복원을 사용하는 이전 프로젝트인 경우 자동 패키지 복원으로 [마이그레이션](package-restore.md#migrate-to-automatic-package-restore-visual-studio)해야 할 수 있습니다.
+이러한 설정은 `NuGet.Config` 파일에서도 변경할 수 있습니다. [동의](#consent) 섹션을 참조하세요. 프로젝트가 MSBuild 통합 패키지 복원을 사용하는 이전 프로젝트인 경우 자동 패키지 복원으로 [마이그레이션](package-restore.md#migrate-to-automatic-package-restore-visual-studio)해야 할 수 있습니다.
 
 <a name="missing"></a>
 
@@ -46,7 +46,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 이 오류는 하나 이상의 NuGet 패키지에 대한 참조를 포함하는 프로젝트를 빌드하려고 시도할 때 해당 패키지가 컴퓨터 또는 프로젝트에 현재 설치되지 않은 경우에 발생합니다.
 
-- [PackageReference](package-references-in-project-files.md) 관리 형식을 사용할 경우 이 오류는 packages.config에서 PackageReference로 마이그레이션한 결과일 수 있으며 프로젝트 파일에서 [수동으로 제거](../resources/NuGet-FAQ.md#working-with-packages)해야 합니다.
+- [PackageReference](package-references-in-project-files.md) 관리 형식을 사용할 경우 이 오류는 packages.config에서 PackageReference로 마이그레이션한 결과일 수 있으며 프로젝트 파일에서 [수동으로 제거](/nuget/resources/nuget-faq#working-with-packages)해야 합니다.
 - [packages.config](../reference/packages-config.md)를 사용할 경우 이 오류는 패키지가 솔루션 루트의 `packages` 폴더에 설치되어 있지 않음을 의미합니다.
 
 이러한 상황은 일반적으로 소스 제어 또는 다른 다운로드에서 프로젝트의 소스 코드를 가져올 때 발생합니다. 패키지는 nuget.org 같은 패키지 피드에서 복원할 수 있으므로 일반적으로 소스 제어 또는 다운로드에는 패키지가 없습니다([패키지 및 소스 제어](Packages-and-Source-Control.md) 참조). 그렇지 않고 이를 포함할 경우 리포지토리가 블로트되거나 불필요하게 큰 .zip 파일이 생성됩니다.

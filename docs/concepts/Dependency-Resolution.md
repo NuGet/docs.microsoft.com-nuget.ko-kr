@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0ef309d95c6ef5437765c02791da6dab13794678
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 69adbbad20debf2e53f247e85d638b3226c0491d
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775268"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323754"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet에서 패키지 종속성을 확인하는 방법
 
@@ -55,7 +55,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 #### <a name="floating-versions"></a>부동 버전
 
-부동 종속성 버전은 \* 문자로 지정합니다. `6.0.*`)을 입력합니다. 이 버전 사양에는 “최신 6.0.x 버전 사용”으로 표시됩니다. `4.*`는 “최신 4.x 버전 사용”을 의미합니다. 부동 버전을 사용하면 최신 종속성 버전을 유지하면서 프로젝트 파일 변경을 줄일 수 있습니다.
+부동 종속성 버전은 \* 문자로 지정합니다. 예: `6.0.*` 이 버전 사양에는 “최신 6.0.x 버전 사용”으로 표시됩니다. `4.*`는 “최신 4.x 버전 사용”을 의미합니다. 유동적인 버전을 사용하면 최신 버전의 종속성을 최신으로 유지하면서 프로젝트 파일의 변경을 줄입니다.
 
 부동 버전을 사용하는 경우 NuGet은 버전 패턴과 일치하는 최신 패키지 버전을 확인합니다. 예를 들어 `6.0.*`는 6.0으로 시작하는 최신 패키지 버전을 가져옵니다.
 
@@ -102,7 +102,7 @@ NuGet 복원 프로세스가 빌드하기 전에 실행되면, 먼저 메모리�
 
 `packages.config`를 사용하면 NuGet은 각각의 개별 패키지를 설치하는 동안 종속성 충돌을 해결하려고 합니다. 즉 A 패키지가 설치되고 B 패키지에 종속되어 있고 B 패키지가 이미 다른 패키지의 종속성으로 `packages.config`에 나열되어 있는 경우, NuGet은 요청된 B 패키지의 버전을 비교하고 모든 버전 제약 조건을 충족하는 버전을 찾으려고 합니다. 특히 NuGet은 종속성을 충족하는 더 낮은 *major.minor* 버전을 선택합니다.
 
-기본적으로 NuGet 2.8은 가장 낮은 패치 버전을 찾습니다([NuGet 2.8 릴리스 정보](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies) 참조). `Nuget.Config`의 `DependencyVersion` 특성 및 명령줄의 `-DependencyVersion` 스위치를 통해 이 설정을 제어할 수 있습니다.  
+기본적으로 NuGet 2.8은 가장 낮은 패치 버전을 찾습니다([NuGet 2.8 릴리스 정보](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies) 참조). `NuGet.Config`의 `DependencyVersion` 특성 및 명령줄의 `-DependencyVersion` 스위치를 통해 이 설정을 제어할 수 있습니다.  
 
 더 큰 종속성 그래프의 경우 종속성을 확인하기 위한 `packages.config` 프로세스가 복잡해집니다. 새 패키지를 설치할 때마다 그래프 전체를 통과해야 하며 버전 충돌이 발생할 가능성이 높습니다. 충돌이 발생하면 특히 프로젝트 파일 자체를 잠재적으로 수정하여 설치가 중지되고 프로젝트가 확정되지 않은 상태로 유지됩니다. 다른 패키지 관리 형식을 사용하는 경우에는 문제가 되지 않습니다.
 
