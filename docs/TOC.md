@@ -292,6 +292,7 @@
 ## 릴리스 정보
 ### [알려진 문제](release-notes/known-issues.md)
 ### NuGet 5.x
+#### [NuGet 5.10](release-notes/NuGet-5.10.md)
 #### [NuGet 5.9](release-notes/NuGet-5.9.md)
 #### [NuGet 5.8](release-notes/NuGet-5.8.md)
 #### [NuGet 5.7](release-notes/NuGet-5.7.md)
@@ -364,6 +365,6 @@
 #### [NuGet 1.3](release-notes/NuGet-1.3.md)
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
-## [FAQ](resources/nuget-faq.md)
+## [FAQ](resources/nuget-faq.yml)
 ## [프로젝트 형식](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
