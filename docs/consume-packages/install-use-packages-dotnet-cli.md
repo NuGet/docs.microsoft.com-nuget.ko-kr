@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: fecf14f0f04d5063f89080b2756f988739c1412c
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 62c05aad388c25120d5b9f5143017a2f4f3b276b
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859267"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323611"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>dotnet CLI를 사용하여 패키지 설치 및 관리
 
@@ -30,7 +30,7 @@ dotnet CLI는 .NET Core, .NET Standard 프로젝트(SDK 스타일 프로젝트 �
 
 1. 명령줄을 열고 프로젝트 파일이 포함된 디렉터리로 전환합니다.
 
-2. 다음 명령을 사용하여 Nuget 패키지를 설치합니다.
+2. 다음 명령을 사용하여 NuGet 패키지를 설치합니다.
 
     ```dotnetcli
     dotnet add package <PACKAGE_NAME>
@@ -54,7 +54,7 @@ dotnet CLI는 .NET Core, .NET Standard 프로젝트(SDK 스타일 프로젝트 �
 
 ## <a name="install-a-specific-version-of-a-package"></a>특정 버전의 패키지 설치
 
-버전이 지정되지 않은 경우 NuGet은 패키지의 최신 버전을 설치합니다. [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) 명령을 사용하여 특정 버전의 Nuget 패키지를 설치할 수도 있습니다.
+버전이 지정되지 않은 경우 NuGet은 패키지의 최신 버전을 설치합니다. [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) 명령을 사용하여 특정 버전의 NuGet 패키지를 설치할 수도 있습니다.
 
 ```dotnetcli
 dotnet add package <PACKAGE_NAME> --version <VERSION>
