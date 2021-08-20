@@ -6,16 +6,16 @@ ms.author: chgill
 ms.date: 02/23/2021
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: a5d68329128c9e9d047fe10e08ce41f1ae0895b4
-ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
+ms.openlocfilehash: ac0e89c1f5ef9eb19c29646bcc76bcb0b460c5cd
+ms.sourcegitcommit: adb261dd4b2a8cd75447f7b5ea6a9e5a1a54d61d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2021
-ms.locfileid: "107902229"
+ms.lasthandoff: 08/16/2021
+ms.locfileid: "122209945"
 ---
 # <a name="package-readme-on-nugetorg"></a>NuGet.org의 패키지 추가 정보
 
-사용자에게 더 풍부하고 자세한 패키지 세부 정보를 제공하기 위해 [NuGet 패키지에 추가 정보 파일을 포함합니다](https://docs.microsoft.com/nuget/reference/msbuild-targets#packagereadmefile).
+사용자에게 더 풍부하고 자세한 패키지 세부 정보를 제공하기 위해 [NuGet 패키지에 추가 정보 파일을 포함합니다](/nuget/reference/msbuild-targets#packagereadmefile).
 
 이는 사용자가 NuGet.org에서 패키지 세부 정보 페이지를 볼 때 첫 번째로 표시되는 요소 중 하나이며 좋은 인상을 주는 데 필수적입니다!
 
@@ -36,7 +36,7 @@ ms.locfileid: "107902229"
 
 ## <a name="preview-your-readme"></a>추가 정보 미리 보기
 
-NuGet.org에 출시되기 전에 추가 정보 파일을 미리 보려면 [NuGet.org에서 업로드 패키지 웹 포털](https://docs.microsoft.com/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg)을 사용하여 패키지를 업로드하고 메타데이터 미리 보기의 ‘추가 정보 파일’ 섹션으로 스크롤합니다. 다음과 같이 표시됩니다.
+NuGet.org에 출시되기 전에 추가 정보 파일을 미리 보려면 [NuGet.org에서 업로드 패키지 웹 포털](/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg)을 사용하여 패키지를 업로드하고 메타데이터 미리 보기의 ‘추가 정보 파일’ 섹션으로 스크롤합니다. 다음과 같이 표시됩니다.
 
 ![추가 정보 파일 미리 보기](media\readme-upload-preview.PNG)
 
@@ -48,6 +48,7 @@ NuGet.org에 출시되기 전에 추가 정보 파일을 미리 보려면 [NuGet
 NuGet.org를 사용하면 다음 신뢰할 수 있는 도메인에서 배지를 비롯한 모든 이미지를 렌더링할 수 있습니다.
 * api.bintray.com
 * api.codacy.com
+* app.codacy.com
 * api.codeclimate.com
 * api.dependabot.com
 * api.travis-ci.com
@@ -59,6 +60,7 @@ NuGet.org를 사용하면 다음 신뢰할 수 있는 도메인에서 배지를 
 * bettercodehub.com
 * buildstats.info
 * camo.githubusercontent.com
+* cdn.jsdelivr.net
 * ci.appveyor.com
 * circleci.com
 * codecov.io
@@ -68,6 +70,7 @@ NuGet.org를 사용하면 다음 신뢰할 수 있는 도메인에서 배지를 
 * github.com/.../workflows/.../badge.svg
 * gitlab.com
 * img.shields.io
+* i.imgur.com
 * isitmaintained.com
 * opencollective.com
 * raw.github.com
