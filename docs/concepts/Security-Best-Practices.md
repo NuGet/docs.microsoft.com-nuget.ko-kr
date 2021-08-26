@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: e0f235d99e41e23a4551fbf7577f6c42e3381f5b
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 4575d4779ed90150cec667489c85875b7fb87a8d
+ms.sourcegitcommit: 5f706c62c97b78bbe3d8c7e95659976535fe486f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859228"
+ms.lasthandoff: 08/23/2021
+ms.locfileid: "122726979"
 ---
 # <a name="best-practices-for-a-secure-software-supply-chain"></a>보안 소프트웨어 공급망에 대한 모범 사례
 
@@ -124,7 +124,7 @@ Dependabot 경고 및 보안 업데이트에 관한 자세한 내용은 [다음 
 
 여러 퍼블릭 및 프라이빗 NuGet 소스 피드를 사용하는 경우 모든 피드에서 패키지를 다운로드할 수 있습니다. 빌드가 예측 가능하고 [종속성 혼동](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610)과 같은 알려진 공격으로부터 보호되도록 하기 위해 패키지를 제공하는 특정 피드가 무엇인지 알고 있는 것이 가장 좋습니다. 보호를 위해 업스트림 기능이 있는 단일 피드 또는 프라이빗 피드를 사용할 수 있습니다.
 
-패키지 피드를 보호하는 방법에 관한 자세한 내용은 [3 Ways to Mitigate Risk When Using Private Package Feeds](https://azure.microsoft.com/en-us/resources/3-ways-to-mitigate-risk-using-private-package-feeds/)를 참조하세요.
+패키지 피드를 보호하는 방법에 관한 자세한 내용은 [3 Ways to Mitigate Risk When Using Private Package Feeds](https://azure.microsoft.com/resources/3-ways-to-mitigate-risk-using-private-package-feeds/)를 참조하세요.
 
 ### <a name="client-trust-policies"></a>클라이언트 트러스트 정책
 
